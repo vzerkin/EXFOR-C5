@@ -1,0 +1,172 @@
+#C5M.2.3
+#DATASET        A0905002   20111206
+#SUBENT         A0905002   20111206
+#ENTRY          A0905      20160316
+#TITLE          Measurement and simulation of the cross sections
+#+              for nuclide production of Gd-148 in thin W-nat and
+#+              Ta-181 targets irradiated with 0.4- to 2.6-GeV
+#+              protons.
+#AUTHORS        Yu.E.Titarenko, V.F.Batyaev, A.Yu.Titarenko,
+#+              M.A.Butko, K.V.Pavlov, S.N.Florya, R.S.Tikhonov,
+#+              V.M.Zhivun, A.V.Ignatyuk, S.G.Mashnik, S.Leray,
+#+              A.Boudard, J.Cugnon, D.Mancusi, Y.Yariv, K.Nishihara,
+#+              N.Matsuda, H.Kumawat, G.Mank, W.Gudowski
+#AUTHOR1        Yu.E.Titarenko+
+#YEAR           2011
+#X4REF1         J,YF,74,596,2011
+#REFERENCE1     Jour: Yadernaya Fizika, Vol.74, p.596 (2011)
+#DATE           20111206
+#INSTITUTE      4RUSITE,4RUSFEI,1USALAS,2FR SAC,2BLGLIE,3ISLSOR,2JPNJAE,3INDTRM,3ZZZIAE,2SWDKTH
+#METHOD         EXTB,GSPEC
+#REACTION       74-W-0(P,X)64-GD-148,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           74000            
+#TARGET         74000           [ ]             74-W-0          [ ] 
+#REAC1          P,X
+#PRODUCT        64-GD-148
+#C4ReaCode      (P,X),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=6
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 74000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-22,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27px}
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 74000   39000       4.0E8           0.00104   1.5E-4           64148.9                     Yu.E.Titarenko,      (11)A0905  2 6.5832E-5                     1.5E-4 6.33                       14.4     14.4    0.0158   0.001
+ 1001 74000   39000       6.0E8           0.00878  0.00108           64148.9                     Yu.E.Titarenko,      (11)A0905  2 5.4875E-4                    0.00108 6.25                       12.3     12.3    0.016    0.001
+ 1001 74000   39000       8.0E8             0.021    0.003           64148.9                     Yu.E.Titarenko,      (11)A0905  2 0.0013545                      0.003 6.45                       14.3     14.3    0.0155   0.001
+ 1001 74000   39000       1.2E9            0.0257   0.0032           64148.9                     Yu.E.Titarenko,      (11)A0905  2 .00178358                     0.0032 6.94                       12.5     12.5    0.0144   0.001
+ 1001 74000   39000       1.6E9            0.0267   0.0034           64148.9                     Yu.E.Titarenko,      (11)A0905  2 .00202386                     0.0034 7.58                       12.7     12.7    0.0132   0.001
+ 1001 74000   39000       2.6E9            0.0168   0.0029           64148.9                     Yu.E.Titarenko,      (11)A0905  2 .00132552                     0.0029 7.89                       17.3     17.3    0.0114   9.0E-4
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.0E8       2.6E9       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.0E8       4.0E8       0.00104     14.42        100
+6.0E8       6.0E8       0.00878     12.3         20 100
+8.0E8       8.0E8       0.021       14.29        16 21 100
+1.2E9       1.2E9       0.0257      12.45        16 21 21 100
+1.6E9       1.6E9       0.0267      12.73        13 16 17 27 100
+2.6E9       2.6E9       0.0168      17.26        10 12 10 13 15 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       A0905002 
+#DATASET        A0905003   20111206
+#SUBENT         A0905003   20111206
+#ENTRY          A0905      20160316
+#TITLE          Measurement and simulation of the cross sections
+#+              for nuclide production of Gd-148 in thin W-nat and
+#+              Ta-181 targets irradiated with 0.4- to 2.6-GeV
+#+              protons.
+#AUTHORS        Yu.E.Titarenko, V.F.Batyaev, A.Yu.Titarenko,
+#+              M.A.Butko, K.V.Pavlov, S.N.Florya, R.S.Tikhonov,
+#+              V.M.Zhivun, A.V.Ignatyuk, S.G.Mashnik, S.Leray,
+#+              A.Boudard, J.Cugnon, D.Mancusi, Y.Yariv, K.Nishihara,
+#+              N.Matsuda, H.Kumawat, G.Mank, W.Gudowski
+#AUTHOR1        Yu.E.Titarenko+
+#YEAR           2011
+#X4REF1         J,YF,74,596,2011
+#REFERENCE1     Jour: Yadernaya Fizika, Vol.74, p.596 (2011)
+#DATE           20111206
+#INSTITUTE      4RUSITE,4RUSFEI,1USALAS,2FR SAC,2BLGLIE,3ISLSOR,2JPNJAE,3INDTRM,3ZZZIAE,2SWDKTH
+#METHOD         EXTB,GSPEC
+#REACTION       73-TA-181(P,X)64-GD-148,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           73181            
+#TARGET         73181           [ ]             73-TA-181       [ ] 
+#REAC1          P,X
+#PRODUCT        64-GD-148
+#C4ReaCode      (P,X),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=6
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 73181   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-22,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27px}
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 73181   39000       4.0E8           0.00211   2.8E-4           64148.9                     Yu.E.Titarenko,      (11)A0905  3 1.3356E-4                     2.8E-4 6.33                       13.3     13.3    0.0158   0.001
+ 1001 73181   39000       6.0E8            0.0148   0.0023           64148.9                     Yu.E.Titarenko,      (11)A0905  3   9.25E-4                     0.0023 6.25                       15.5     15.5    0.016    0.001
+ 1001 73181   39000       8.0E8            0.0223   0.0028           64148.9                     Yu.E.Titarenko,      (11)A0905  3 .00143835                     0.0028 6.45                       12.6     12.6    0.0155   0.001
+ 1001 73181   39000       1.2E9            0.0277   0.0034           64148.9                     Yu.E.Titarenko,      (11)A0905  3 .00192238                     0.0034 6.94                       12.3     12.3    0.0144   0.001
+ 1001 73181   39000       1.6E9            0.0317   0.0048           64148.9                     Yu.E.Titarenko,      (11)A0905  3 .00240286                     0.0048 7.58                       15.1     15.1    0.0132   0.001
+ 1001 73181   39000       2.6E9            0.0214   0.0032           64148.9                     Yu.E.Titarenko,      (11)A0905  3 .00168846                     0.0032 7.89                       15       15      0.0114   9.0E-4
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.0E8       2.6E9       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.0E8       4.0E8       0.00211     13.27        100
+6.0E8       6.0E8       0.0148      15.54        17 100
+8.0E8       8.0E8       0.0223      12.56        20 19 100
+1.2E9       1.2E9       0.0277      12.27        17 17 24 100
+1.6E9       1.6E9       0.0317      15.14        12 11 16 23 100
+2.6E9       2.6E9       0.0214      14.95        13 11 14 15 14 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       A0905003 
+#/C5M.2.3       1               2               2               0               12              
