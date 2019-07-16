@@ -1,0 +1,88 @@
+#C5M.2.3
+#DATASET        F0005004   20190717
+#SUBENT         F0005004   20190717
+#ENTRY          F0005      20190717
+#TITLE          Absolute cross sections for the Li-6(p,He-3)He-4
+#+              reaction at energies below 1 MeV
+#AUTHORS        T.Shinozuka,Y.Tanaka,K.Sugiyama
+#AUTHOR1        T.Shinozuka+
+#YEAR           1979
+#X4REF1         J,NP/A,326,47,1979
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.326, p.47 (1979)
+#DATE           20190717
+#INSTITUTE      2JPNTOH
+#METHOD         PHD,BCINT
+#REACTION       3-LI-6(P,HE3)2-HE-4,,SIG
+#C4Reaction     (P,HE3),SIG
+#ReactionType   CS
+#MF             3
+#MT             106
+#PROJ           1001
+#TARG           3006             
+#TARGET         3006            [ ]             3-LI-6          [ ] 
+#REAC1          P,HE3
+#PRODUCT        2-HE-4
+#C4ReaCode      (P,HE3),SIG
+#CompNotes      ERR-ANALYS:(ERR-1,8.,10.)     ADDED AS COMMON:ERR-1,PER-CENT=8.0%
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001  3006   3 106   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         11
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001  3006   3 106    125000.0           0.00531   8.2E-4                                       T.Shinozuka,         (79)F0005  4  4.248E-4                     8.2E-4 8                          15.4     15.4
+ 1001  3006   3 106    175000.0           0.01561  0.00221                                       T.Shinozuka,         (79)F0005  4 0.0012488                    0.00221 8                          14.2     14.2
+ 1001  3006   3 106    225000.0           0.02461  0.00325                                       T.Shinozuka,         (79)F0005  4 0.0019688                    0.00325 8                          13.2     13.2
+ 1001  3006   3 106    275000.0           0.04052  0.00553                                       T.Shinozuka,         (79)F0005  4 0.0032416                    0.00553 8                          13.6     13.6
+ 1001  3006   3 106    325000.0           0.05335  0.00681                                       T.Shinozuka,         (79)F0005  4  0.004268                    0.00681 8                          12.8     12.8
+ 1001  3006   3 106    375000.0           0.06774  0.00607                                       T.Shinozuka,         (79)F0005  4 0.0054192                    0.00607 8                          8.96     8.96
+ 1001  3006   3 106    400000.0           0.07964  0.00657                                       T.Shinozuka,         (79)F0005  4 0.0063712                    0.00657 8                          8.25     8.25
+ 1001  3006   3 106    500000.0           0.08452  0.00581                                       T.Shinozuka,         (79)F0005  4 0.0067616                    0.00581 8                          6.87     6.87
+ 1001  3006   3 106    550000.0         .09273001  0.00878                                       T.Shinozuka,         (79)F0005  4 0.0074184                    0.00878 8                          9.47     9.47
+ 1001  3006   3 106    600000.0           0.09767  0.00806                                       T.Shinozuka,         (79)F0005  4 0.0078136                    0.00806 8                          8.25     8.25
+ 1001  3006   3 106    700000.0            0.1068  0.01113                                       T.Shinozuka,         (79)F0005  4  0.008544                    0.01113 8                          10.4     10.4
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           125000.0    700000.0    0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           11          11
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+125000.     125000.     0.00531     15.44        100
+175000.     175000.     0.01561     14.16        27 100
+225000.     225000.     0.02461     13.21        26 31 100
+275000.     275000.     0.04052     13.65        22 27 32 100
+325000.     325000.     0.05335     12.76        21 26 31 34 100
+375000.     375000.     0.06774     8.96         26 33 40 43 51 100
+400000.     400000.     0.07964     8.25         26 33 41 44 53 83 100
+500000.     500000.     0.08452     8.0          26 28 32 36 44 70 80 100
+550000.     550000.     0.09273     9.47         22 24 26 26 32 52 61 77 100
+600000.     600000.     0.09767     8.25         25 27 29 28 32 53 61 80 75 100
+700000.     700000.     0.1068      10.42        20 22 23 22 24 34 37 50 48 61 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       F0005004 
+#/C5M.2.3       1               1               3               0               11              
