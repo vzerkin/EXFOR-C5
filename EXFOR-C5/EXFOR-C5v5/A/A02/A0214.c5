@@ -1,0 +1,74 @@
+#C5M.2.3
+#DATASET        A0214002   20220330
+#SUBENT         A0214002   20220330
+#ENTRY          A0214      20220330
+#TITLE          Cross sections for the production of C-11 in C
+#+              targets by C-12 at relativistic energies
+#AUTHORS        A.R.Smith,J.B.Mccaslin,J.V.Geaga,J.C.Hill,J.P.Vary
+#AUTHOR1        A.R.Smith+
+#YEAR           1983
+#X4REF1         J,PR/C,28,1614,1983
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.28, p.1614 (1983)
+#DATE           20220330
+#INSTITUTE      1USABRK,1USAIOW
+#METHOD         EXTB,BCINT,SITA
+#REACTION       6-C-12(6-C-12,X)6-C-11,,SIG
+#C4Reaction     (6-C-12,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           6012
+#TARG           6012             
+#TARGET         6012            [ ]             6-C-12          [ ] 
+#REAC1          6-C-12,X
+#PRODUCT        6-C-11
+#C4ReaCode      (6-C-12,X),SIG
+#CompNotes      ERR-ANALYS:(ERR-T,,3.)        ADDED AS COMMON:ERR-T,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-1,,1.5)       ADDED AS COMMON:ERR-1,PER-CENT=0.75%
+#CompNotes      CONVERT ENERGY/ATOMIC-MASS TO ENERGY: E1=E0*12
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 6012  6012   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 6012  6012   39000       4.8E9            0.0635 9.525E-4            6011.9                     A.R.Smith,           (83)A0214  2 4.7625E-4   5.0E-4          9.525E-4 0.75     0.79              1.50     1.50
+ 6012  6012   39000    1.26e+10         .05740001  8.61E-4            6011.9                     A.R.Smith,           (83)A0214  2  4.305E-4   4.0E-4           8.61E-4 0.75     0.70              1.50     1.50
+ 6012  6012   39000    2.52e+10         .06090001 9.135E-4            6011.9                     A.R.Smith,           (83)A0214  2 4.5675E-4   6.0E-4          9.135E-4 0.75     0.99              1.50     1.50
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.8E9       2.5200001E100.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.8E9       4.8E9       0.0635      1.09         100
+1.26e+10    1.26e+10    0.0574      1.02         31 100
+2.52e+10    2.52e+10    0.0609      1.24         21 22 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       A0214002 
+#/C5M.2.3       1               1               1               0               3               
