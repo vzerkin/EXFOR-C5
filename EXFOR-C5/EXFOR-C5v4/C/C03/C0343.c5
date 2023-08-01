@@ -1,7 +1,7 @@
 #C5.2.3
 #DATASET        C0343002   20111118
 #SUBENT         C0343002   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -23,7 +23,11 @@
 #REAC1          P,X
 #PRODUCT        49-IN-109
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*] -5.66%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -48,12 +52,14 @@
 #+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
 #+              m0: [EN,MONIT];               #[0]#old monitor(energy)
 #+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (49-IN-0(P,X)49-IN-109,,SIG)
 #+               #[1]#DECAY-DATA (49-IN-109-G,4.3HR,DG,205.,0.70) #Ix_old=0.7
 #+                a1=0.7/0.742;               #[1]#DECAY-DATA: correction to new 203.3 keV gamma-yield per decay In-109-g Ix_new=0.742
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9433962
+#+              dy=dy*y;                      #to abs. uncertainties
 #+
 #/C5CORR        C0343002    0.943396    1.00000     0.943396    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
@@ -64,15 +70,15 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49000   39000       2.9E9         .00745283                    49109.9                     N.T.Porile*          (62)C0343  2                                                                                  0.0091                              0.9433962
- 1001 49000   39000       2.9E9         .00754717                    49109.9                     N.T.Porile*          (62)C0343  2                                                                                  0.0091                              0.9433962
- 1001 49000   39000      3.e+10          6.6038-3                    49109.9                     N.T.Porile*          (62)C0343  2                                                                                  0.0086                              0.9433962
- 1001 49000   39000      3.e+10          7.0755-3                    49109.9                     N.T.Porile*          (62)C0343  2                                                                                  0.0086                              0.9433962
+ 1001 49000   39000       2.9E9         .00745283 3.7264-4           49109.9                     N.T.Porile*          (62)C0343  2  3.7264-4                            5                                   5       0.0091                              0.94339620.9433962
+ 1001 49000   39000       2.9E9         .00754717 3.7736-4           49109.9                     N.T.Porile*          (62)C0343  2  3.7736-4                            5                                   5       0.0091                              0.94339620.9433962
+ 1001 49000   39000      3.e+10          6.6038-3 3.3019-4           49109.9                     N.T.Porile*          (62)C0343  2  3.3019-4                            5                                   5       0.0086                              0.94339620.9433962
+ 1001 49000   39000      3.e+10          7.0755-3 3.5377-4           49109.9                     N.T.Porile*          (62)C0343  2  3.5377-4                            5                                   5       0.0086                              0.94339620.9433962
 #/C5DATA        0
 #/DATASET       C0343002 
 #DATASET        C0343003   20111118
 #SUBENT         C0343003   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -94,6 +100,8 @@
 #REAC1          P,X
 #PRODUCT        49-IN-110-M
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -119,15 +127,15 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49000   39000M      2.9E9            0.0085                    49110.9                     N.T.Porile           (62)C0343  3                                                                                  0.0091
- 1001 49000   39000M      2.9E9            0.0088                    49110.9                     N.T.Porile           (62)C0343  3                                                                                  0.0091
- 1001 49000   39000M     3.e+10            0.0094                    49110.9                     N.T.Porile           (62)C0343  3                                                                                  0.0086
- 1001 49000   39000M     3.e+10            0.0096                    49110.9                     N.T.Porile           (62)C0343  3                                                                                  0.0086
+ 1001 49000   39000M      2.9E9            0.0085  4.25E-4           49110.9                     N.T.Porile           (62)C0343  3   4.25E-4                            5                                   5       0.0091
+ 1001 49000   39000M      2.9E9            0.0088   4.4E-4           49110.9                     N.T.Porile           (62)C0343  3    4.4E-4                            5                                   5       0.0091
+ 1001 49000   39000M     3.e+10            0.0094   4.7E-4           49110.9                     N.T.Porile           (62)C0343  3    4.7E-4                            5                                   5       0.0086
+ 1001 49000   39000M     3.e+10            0.0096   4.8E-4           49110.9                     N.T.Porile           (62)C0343  3    4.8E-4                            5                                   5       0.0086
 #/C5DATA        0
 #/DATASET       C0343003 
 #DATASET        C0343004   20111118
 #SUBENT         C0343004   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -149,6 +157,8 @@
 #REAC1          P,X
 #PRODUCT        49-IN-111
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -174,15 +184,15 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49000   39000       2.9E9            0.0147                    49111.9                     N.T.Porile           (62)C0343  4                                                                                  0.0091
- 1001 49000   39000       2.9E9            0.0151                    49111.9                     N.T.Porile           (62)C0343  4                                                                                  0.0091
- 1001 49000   39000      3.e+10            0.0132                    49111.9                     N.T.Porile           (62)C0343  4                                                                                  0.0086
- 1001 49000   39000      3.e+10            0.0112                    49111.9                     N.T.Porile           (62)C0343  4                                                                                  0.0086
+ 1001 49000   39000       2.9E9            0.0147  7.35E-4           49111.9                     N.T.Porile           (62)C0343  4   7.35E-4                            5                                   5       0.0091
+ 1001 49000   39000       2.9E9            0.0151  7.55E-4           49111.9                     N.T.Porile           (62)C0343  4   7.55E-4                            5                                   5       0.0091
+ 1001 49000   39000      3.e+10            0.0132   6.6E-4           49111.9                     N.T.Porile           (62)C0343  4    6.6E-4                            5                                   5       0.0086
+ 1001 49000   39000      3.e+10            0.0112   5.6E-4           49111.9                     N.T.Porile           (62)C0343  4    5.6E-4                            5                                   5       0.0086
 #/C5DATA        0
 #/DATASET       C0343004 
 #DATASET        C0343005   20111118
 #SUBENT         C0343005   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -204,6 +214,8 @@
 #REAC1          P,X
 #PRODUCT        49-IN-113-M
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -229,15 +241,15 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49000   39000M      2.9E9            0.0038                    49113.9                     N.T.Porile           (62)C0343  5                                                                                  0.0091
- 1001 49000   39000M      2.9E9            0.0036                    49113.9                     N.T.Porile           (62)C0343  5                                                                                  0.0091
- 1001 49000   39000M     3.e+10             0.004                    49113.9                     N.T.Porile           (62)C0343  5                                                                                  0.0086
- 1001 49000   39000M     3.e+10            0.0032                    49113.9                     N.T.Porile           (62)C0343  5                                                                                  0.0086
+ 1001 49000   39000M      2.9E9            0.0038   1.9E-4           49113.9                     N.T.Porile           (62)C0343  5    1.9E-4                            5                                   5       0.0091
+ 1001 49000   39000M      2.9E9            0.0036   1.8E-4           49113.9                     N.T.Porile           (62)C0343  5    1.8E-4                            5                                   5       0.0091
+ 1001 49000   39000M     3.e+10             0.004   2.0E-4           49113.9                     N.T.Porile           (62)C0343  5    2.0E-4                            5                                   5       0.0086
+ 1001 49000   39000M     3.e+10            0.0032   1.6E-4           49113.9                     N.T.Porile           (62)C0343  5    1.6E-4                            5                                   5       0.0086
 #/C5DATA        0
 #/DATASET       C0343005 
 #DATASET        C0343006   20111118
 #SUBENT         C0343006   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -259,7 +271,11 @@
 #REAC1          P,X
 #PRODUCT        49-IN-114-M
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*] +15.7%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -284,12 +300,14 @@
 #+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
 #+              m0: [EN,MONIT];               #[0]#old monitor(energy)
 #+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (49-IN-115(P,X)49-IN-114-M,,SIG)
 #+               #[1]#DECAY-DATA (49-IN-114-M,49.D,DG,191.,0.18) #Ix_old=0.18
 #+                a1=0.18/0.1556;             #[1]#DECAY-DATA: correction to new 190.27 keV gamma-yield per decay In-114-m Ix_new=0.1556
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.1568124
+#+              dy=dy*y;                      #to abs. uncertainties
 #+
 #/C5CORR        C0343006    1.15681     1.00000     1.15681     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
@@ -300,15 +318,15 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49115   39000M      2.9E9         0.0462725                    49114.9                     N.T.Porile*          (62)C0343  6                                                                                  0.0091                              1.1568124
- 1001 49115   39000M      2.9E9         .04511569                    49114.9                     N.T.Porile*          (62)C0343  6                                                                                  0.0091                              1.1568124
- 1001 49115   39000M     3.e+10         .04511569                    49114.9                     N.T.Porile*          (62)C0343  6                                                                                  0.0086                              1.1568124
- 1001 49115   39000M     3.e+10         0.0462725                    49114.9                     N.T.Porile*          (62)C0343  6                                                                                  0.0086                              1.1568124
+ 1001 49115   39000M      2.9E9         0.0462725 2.3136-3           49114.9                     N.T.Porile*          (62)C0343  6  2.3136-3                            5                                   5       0.0091                              1.15681241.1568124
+ 1001 49115   39000M      2.9E9         .04511569 2.2558-3           49114.9                     N.T.Porile*          (62)C0343  6  2.2558-3                            5                                   5       0.0091                              1.15681241.1568124
+ 1001 49115   39000M     3.e+10         .04511569 2.2558-3           49114.9                     N.T.Porile*          (62)C0343  6  2.2558-3                            5                                   5       0.0086                              1.15681241.1568124
+ 1001 49115   39000M     3.e+10         0.0462725 2.3136-3           49114.9                     N.T.Porile*          (62)C0343  6  2.3136-3                            5                                   5       0.0086                              1.15681241.1568124
 #/C5DATA        0
 #/DATASET       C0343006 
 #DATASET        C0343007   20111118
 #SUBENT         C0343007   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -330,7 +348,11 @@
 #REAC1          P,INL
 #PRODUCT        49-IN-115-M
 #C4ReaCode      (P,INL),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*] +4.58%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -355,12 +377,14 @@
 #+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
 #+              m0: [EN,MONIT];               #[0]#old monitor(energy)
 #+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (49-IN-115(P,INL)49-IN-115-M,,SIG)
 #+               #[1]#DECAY-DATA (49-IN-115-M,4.5HR,DG,335.,0.48) #Ix_old=0.48
 #+                a1=0.48/0.459;              #[1]#DECAY-DATA: correction to new 336.241 keV gamma-yield per decay In-115-m Ix_new=0.459
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0457516
+#+              dy=dy*y;                      #to abs. uncertainties
 #+
 #/C5CORR        C0343007    1.04575     1.00000     1.04575     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
@@ -371,15 +395,15 @@
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49115   3 103M      2.9E9          2.1961-3                                                N.T.Porile*          (62)C0343  7                                                                                  0.0091                              1.0457516
- 1001 49115   3 103M      2.9E9          2.0915-3                                                N.T.Porile*          (62)C0343  7                                                                                  0.0091                              1.0457516
- 1001 49115   3 103M     3.e+10          2.0915-3                                                N.T.Porile*          (62)C0343  7                                                                                  0.0086                              1.0457516
- 1001 49115   3 103M     3.e+10          1.8824-3                                                N.T.Porile*          (62)C0343  7                                                                                  0.0086                              1.0457516
+ 1001 49115   3 103M      2.9E9          2.1961-3 1.0980-4                                       N.T.Porile*          (62)C0343  7  1.0980-4                            5                                   5       0.0091                              1.04575161.0457516
+ 1001 49115   3 103M      2.9E9          2.0915-3 1.0458-4                                       N.T.Porile*          (62)C0343  7  1.0458-4                            5                                   5       0.0091                              1.04575161.0457516
+ 1001 49115   3 103M     3.e+10          2.0915-3 1.0458-4                                       N.T.Porile*          (62)C0343  7  1.0458-4                            5                                   5       0.0086                              1.04575161.0457516
+ 1001 49115   3 103M     3.e+10          1.8824-3 9.4118-5                                       N.T.Porile*          (62)C0343  7  9.4118-5                            5                                   5       0.0086                              1.04575161.0457516
 #/C5DATA        0
 #/DATASET       C0343007 
-#DATASET        C0343008   20111118
-#SUBENT         C0343008   20111118
-#ENTRY          C0343      20111118
+#DATASET        C0343008   20230802
+#SUBENT         C0343008   20230802
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -387,10 +411,10 @@
 #YEAR           1962
 #X4REF1         J,PR,128,1916,1962
 #REFERENCE1     Jour: Physical Review, Vol.128, p.1916 (1962)
-#DATE           20111118
+#DATE           20230802
 #INSTITUTE      1USABNL
 #METHOD         ACTIV,CHSEP,STTA
-#REACTION       49-IN-115(P,X)48-CD-115,,SIG
+#REACTION       49-IN-115(P,X)48-CD-115-G,,SIG
 #C4Reaction     (P,X),SIG
 #ReactionType   CS
 #MF             3
@@ -399,15 +423,17 @@
 #TARG           49115            
 #TARGET         49115           [ ]             49-IN-115       [ ] 
 #REAC1          P,X
-#PRODUCT        48-CD-115
+#PRODUCT        48-CD-115-G
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
 #D4REAC         R0#
 #ReaCombi       a
 #C4FOUND        1 
-#C4BEGIN        [ 1001 49115   39000   ]
+#C4BEGIN        [ 1001 49115   39000G  ]
 #DATA-HDR       DATA
 #VarFamily      [0 2        ]
 #xVariables     1
@@ -426,15 +452,15 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49115   39000       2.9E9            5.9E-5                    48115.9                     N.T.Porile           (62)C0343  8                                                                                  0.0091
- 1001 49115   39000       2.9E9            5.5E-5                    48115.9                     N.T.Porile           (62)C0343  8                                                                                  0.0091
- 1001 49115   39000      3.e+10            2.8E-5                    48115.9                     N.T.Porile           (62)C0343  8                                                                                  0.0086
- 1001 49115   39000      3.e+10            2.4E-5                    48115.9                     N.T.Porile           (62)C0343  8                                                                                  0.0086
+ 1001 49115   39000G      2.9E9            5.9E-5  2.95E-6           48115.9                     N.T.Porile           (62)C0343  8   2.95E-6                            5                                   5       0.0091
+ 1001 49115   39000G      2.9E9            5.5E-5  2.75E-6           48115.9                     N.T.Porile           (62)C0343  8   2.75E-6                            5                                   5       0.0091
+ 1001 49115   39000G     3.e+10            2.8E-5   1.4E-6           48115.9                     N.T.Porile           (62)C0343  8    1.4E-6                            5                                   5       0.0086
+ 1001 49115   39000G     3.e+10            2.4E-5   1.2E-6           48115.9                     N.T.Porile           (62)C0343  8    1.2E-6                            5                                   5       0.0086
 #/C5DATA        0
 #/DATASET       C0343008 
 #DATASET        C0343009   20111118
 #SUBENT         C0343009   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -456,6 +482,8 @@
 #REAC1          P,X
 #PRODUCT        48-CD-115-M
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -481,15 +509,15 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49115   39000M      2.9E9            1.8E-4                    48115.9                     N.T.Porile           (62)C0343  9                                                                                  0.0091
- 1001 49115   39000M      2.9E9            1.4E-4                    48115.9                     N.T.Porile           (62)C0343  9                                                                                  0.0091
- 1001 49115   39000M     3.e+10            1.8E-4                    48115.9                     N.T.Porile           (62)C0343  9                                                                                  0.0086
- 1001 49115   39000M     3.e+10            1.4E-4                    48115.9                     N.T.Porile           (62)C0343  9                                                                                  0.0086
+ 1001 49115   39000M      2.9E9            1.8E-4   9.0E-6           48115.9                     N.T.Porile           (62)C0343  9    9.0E-6                            5                                   5       0.0091
+ 1001 49115   39000M      2.9E9            1.4E-4   7.0E-6           48115.9                     N.T.Porile           (62)C0343  9    7.0E-6                            5                                   5       0.0091
+ 1001 49115   39000M     3.e+10            1.8E-4   9.0E-6           48115.9                     N.T.Porile           (62)C0343  9    9.0E-6                            5                                   5       0.0086
+ 1001 49115   39000M     3.e+10            1.4E-4   7.0E-6           48115.9                     N.T.Porile           (62)C0343  9    7.0E-6                            5                                   5       0.0086
 #/C5DATA        0
 #/DATASET       C0343009 
 #DATASET        C0343010   20111118
 #SUBENT         C0343010   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -511,6 +539,8 @@
 #REAC1          P,X
 #PRODUCT        48-CD-115
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -536,13 +566,13 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49115   39000 D     2.9E9            1.8E-4                    48115.9                     N.T.Porile           (62)C0343 10                                                                                  0.0091
- 1001 49115   39000 D    3.e+10            1.2E-4                    48115.9                     N.T.Porile           (62)C0343 10                                                                                  0.0086
+ 1001 49115   39000 D     2.9E9            1.8E-4   9.0E-6           48115.9                     N.T.Porile           (62)C0343 10    9.0E-6                            5                                   5       0.0091
+ 1001 49115   39000 D    3.e+10            1.2E-4   6.0E-6           48115.9                     N.T.Porile           (62)C0343 10    6.0E-6                            5                                   5       0.0086
 #/C5DATA        0
 #/DATASET       C0343010 
 #DATASET        C0343011   20111118
 #SUBENT         C0343011   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -565,6 +595,8 @@
 #PRODUCT        47-AG-115-G
 #C4ReaCode      (P,X),SIG
 #CompNotes      OPERATION...  Value=Max  Max:DATA-MAX
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -590,13 +622,13 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-#1001 49115   39000G3     2.9E9            6.0E-6                    47115.9                     N.T.Porile           (62)C0343 11                                                                                  0.0091
-#1001 49115   39000G3    3.e+10            3.0E-7                    47115.9                     N.T.Porile           (62)C0343 11                                                                                  0.0086
+#1001 49115   39000G3     2.9E9            6.0E-6   3.0E-7           47115.9                     N.T.Porile           (62)C0343 11    3.0E-7                            5                                   5       0.0091
+#1001 49115   39000G3    3.e+10            3.0E-7   1.5E-8           47115.9                     N.T.Porile           (62)C0343 11    1.5E-8                            5                                   5       0.0086
 #/C5DATA        0
 #/DATASET       C0343011 
 #DATASET        C0343013   20111118
 #SUBENT         C0343013   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -618,7 +650,11 @@
 #REAC1          P,X
 #PRODUCT        49-IN-109
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*] -5.66%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -643,12 +679,14 @@
 #+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
 #+              m0: [EN,MONIT];               #[0]#old monitor(energy)
 #+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (49-IN-0(P,X)49-IN-109,,SIG)
 #+               #[1]#DECAY-DATA (49-IN-109-G,4.3HR,DG,205.,0.70) #Ix_old=0.7
 #+                a1=0.7/0.742;               #[1]#DECAY-DATA: correction to new 203.3 keV gamma-yield per decay In-109-g Ix_new=0.742
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9433962
+#+              dy=dy*y;                      #to abs. uncertainties
 #+
 #/C5CORR        C0343013    0.943396    1.00000     0.943396    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
@@ -659,13 +697,13 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49000   39000       2.9E9         .00745283                    49109.9                     N.T.Porile*          (62)C0343 13                                                                                  0.0091                              0.9433962
- 1001 49000   39000      3.e+10          7.2642-3                    49109.9                     N.T.Porile*          (62)C0343 13                                                                                  0.0086                              0.9433962
+ 1001 49000   39000       2.9E9         .00745283 3.7264-4           49109.9                     N.T.Porile*          (62)C0343 13  3.7264-4                            5                                   5       0.0091                              0.94339620.9433962
+ 1001 49000   39000      3.e+10          7.2642-3 3.6321-4           49109.9                     N.T.Porile*          (62)C0343 13  3.6321-4                            5                                   5       0.0086                              0.94339620.9433962
 #/C5DATA        0
 #/DATASET       C0343013 
 #DATASET        C0343014   20111118
 #SUBENT         C0343014   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -687,6 +725,8 @@
 #REAC1          P,X
 #PRODUCT        49-IN-110-M
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -712,13 +752,13 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49000   39000M      2.9E9            0.0091                    49110.9                     N.T.Porile           (62)C0343 14                                                                                  0.0091
- 1001 49000   39000M     3.e+10            0.0095                    49110.9                     N.T.Porile           (62)C0343 14                                                                                  0.0086
+ 1001 49000   39000M      2.9E9            0.0091  4.55E-4           49110.9                     N.T.Porile           (62)C0343 14   4.55E-4                            5                                   5       0.0091
+ 1001 49000   39000M     3.e+10            0.0095  4.75E-4           49110.9                     N.T.Porile           (62)C0343 14   4.75E-4                            5                                   5       0.0086
 #/C5DATA        0
 #/DATASET       C0343014 
 #DATASET        C0343015   20111118
 #SUBENT         C0343015   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -740,6 +780,8 @@
 #REAC1          P,X
 #PRODUCT        49-IN-111
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -765,13 +807,13 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49000   39000       2.9E9            0.0134                    49111.9                     N.T.Porile           (62)C0343 15                                                                                  0.0091
- 1001 49000   39000      3.e+10            0.0137                    49111.9                     N.T.Porile           (62)C0343 15                                                                                  0.0086
+ 1001 49000   39000       2.9E9            0.0134   6.7E-4           49111.9                     N.T.Porile           (62)C0343 15    6.7E-4                            5                                   5       0.0091
+ 1001 49000   39000      3.e+10            0.0137  6.85E-4           49111.9                     N.T.Porile           (62)C0343 15   6.85E-4                            5                                   5       0.0086
 #/C5DATA        0
 #/DATASET       C0343015 
 #DATASET        C0343016   20111118
 #SUBENT         C0343016   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -793,6 +835,8 @@
 #REAC1          P,X
 #PRODUCT        49-IN-113-M
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -818,13 +862,13 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49000   39000M      2.9E9             0.004                    49113.9                     N.T.Porile           (62)C0343 16                                                                                  0.0091
- 1001 49000   39000M     3.e+10            0.0028                    49113.9                     N.T.Porile           (62)C0343 16                                                                                  0.0086
+ 1001 49000   39000M      2.9E9             0.004   2.0E-4           49113.9                     N.T.Porile           (62)C0343 16    2.0E-4                            5                                   5       0.0091
+ 1001 49000   39000M     3.e+10            0.0028   1.4E-4           49113.9                     N.T.Porile           (62)C0343 16    1.4E-4                            5                                   5       0.0086
 #/C5DATA        0
 #/DATASET       C0343016 
 #DATASET        C0343017   20111118
 #SUBENT         C0343017   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -846,7 +890,11 @@
 #REAC1          P,X
 #PRODUCT        49-IN-114-M
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*] +15.7%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -871,12 +919,14 @@
 #+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
 #+              m0: [EN,MONIT];               #[0]#old monitor(energy)
 #+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (49-IN-115(P,X)49-IN-114-M,,SIG)
 #+               #[1]#DECAY-DATA (49-IN-114-M,49.D,DG,191.,0.18) #Ix_old=0.18
 #+                a1=0.18/0.1556;             #[1]#DECAY-DATA: correction to new 190.27 keV gamma-yield per decay In-114-m Ix_new=0.1556
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.1568124
+#+              dy=dy*y;                      #to abs. uncertainties
 #+
 #/C5CORR        C0343017    1.15681     1.00000     1.15681     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
@@ -887,13 +937,13 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49115   39000M      2.9E9         .04742931                    49114.9                     N.T.Porile*          (62)C0343 17                                                                                  0.0091                              1.1568124
- 1001 49115   39000M     3.e+10         .04858612                    49114.9                     N.T.Porile*          (62)C0343 17                                                                                  0.0086                              1.1568124
+ 1001 49115   39000M      2.9E9         .04742931 2.3715-3           49114.9                     N.T.Porile*          (62)C0343 17  2.3715-3                            5                                   5       0.0091                              1.15681241.1568124
+ 1001 49115   39000M     3.e+10         .04858612 2.4293-3           49114.9                     N.T.Porile*          (62)C0343 17  2.4293-3                            5                                   5       0.0086                              1.15681241.1568125
 #/C5DATA        0
 #/DATASET       C0343017 
 #DATASET        C0343018   20111118
 #SUBENT         C0343018   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -915,7 +965,11 @@
 #REAC1          P,INL
 #PRODUCT        49-IN-115-M
 #C4ReaCode      (P,INL),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*] +4.58%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -940,12 +994,14 @@
 #+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
 #+              m0: [EN,MONIT];               #[0]#old monitor(energy)
 #+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (49-IN-115(P,INL)49-IN-115-M,,SIG)
 #+               #[1]#DECAY-DATA (49-IN-115-M,4.5HR,DG,335.,0.48) #Ix_old=0.48
 #+                a1=0.48/0.459;              #[1]#DECAY-DATA: correction to new 336.241 keV gamma-yield per decay In-115-m Ix_new=0.459
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0457516
+#+              dy=dy*y;                      #to abs. uncertainties
 #+
 #/C5CORR        C0343018    1.04575     1.00000     1.04575     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
@@ -956,13 +1012,13 @@
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49115   3 103M      2.9E9          2.6144-3                                                N.T.Porile*          (62)C0343 18                                                                                  0.0091                              1.0457516
- 1001 49115   3 103M     3.e+10          2.3007-3                                                N.T.Porile*          (62)C0343 18                                                                                  0.0086                              1.0457516
+ 1001 49115   3 103M      2.9E9          2.6144-3 1.3072-4                                       N.T.Porile*          (62)C0343 18  1.3072-4                            5                                   5       0.0091                              1.04575161.0457516
+ 1001 49115   3 103M     3.e+10          2.3007-3 1.1503-4                                       N.T.Porile*          (62)C0343 18  1.1503-4                            5                                   5       0.0086                              1.04575161.0457516
 #/C5DATA        0
 #/DATASET       C0343018 
 #DATASET        C0343019   20111118
 #SUBENT         C0343019   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -984,6 +1040,8 @@
 #REAC1          P,X
 #PRODUCT        48-CD-115-G
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1009,13 +1067,13 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49115   39000G      2.9E9            7.9E-5                    48115.9                     N.T.Porile           (62)C0343 19                                                                                  0.0091
- 1001 49115   39000G     3.e+10            3.0E-5                    48115.9                     N.T.Porile           (62)C0343 19                                                                                  0.0086
+ 1001 49115   39000G      2.9E9            7.9E-5  3.95E-6           48115.9                     N.T.Porile           (62)C0343 19   3.95E-6                            5                                   5       0.0091
+ 1001 49115   39000G     3.e+10            3.0E-5   1.5E-6           48115.9                     N.T.Porile           (62)C0343 19    1.5E-6                            5                                   5       0.0086
 #/C5DATA        0
 #/DATASET       C0343019 
 #DATASET        C0343020   20111118
 #SUBENT         C0343020   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -1037,6 +1095,8 @@
 #REAC1          P,X
 #PRODUCT        48-CD-115-M
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1062,13 +1122,13 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49115   39000M      2.9E9            2.2E-4                    48115.9                     N.T.Porile           (62)C0343 20                                                                                  0.0091
- 1001 49115   39000M     3.e+10            2.3E-4                    48115.9                     N.T.Porile           (62)C0343 20                                                                                  0.0086
+ 1001 49115   39000M      2.9E9            2.2E-4   1.1E-5           48115.9                     N.T.Porile           (62)C0343 20    1.1E-5                            5                                   5       0.0091
+ 1001 49115   39000M     3.e+10            2.3E-4  1.15E-5           48115.9                     N.T.Porile           (62)C0343 20   1.15E-5                            5                                   5       0.0086
 #/C5DATA        0
 #/DATASET       C0343020 
 #DATASET        C0343021   20111118
 #SUBENT         C0343021   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -1090,7 +1150,11 @@
 #REAC1          P,X
 #PRODUCT        49-IN-109
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*] -5.66%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1115,12 +1179,14 @@
 #+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
 #+              m0: [EN,MONIT];               #[0]#old monitor(energy)
 #+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (49-IN-0(P,X)49-IN-109,,SIG)
 #+               #[1]#DECAY-DATA (49-IN-109-G,4.3HR,DG,205.,0.70) #Ix_old=0.7
 #+                a1=0.7/0.742;               #[1]#DECAY-DATA: correction to new 203.3 keV gamma-yield per decay In-109-g Ix_new=0.742
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9433962
+#+              dy=dy*y;                      #to abs. uncertainties
 #+
 #/C5CORR        C0343021    0.943396    1.00000     0.943396    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
@@ -1131,13 +1197,13 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49000   39000 D     2.9E9         .00745283                    49109.9                     N.T.Porile*          (62)C0343 21                                                                                  0.0091                              0.9433962
- 1001 49000   39000 D    3.e+10          6.9811-3                    49109.9                     N.T.Porile*          (62)C0343 21                                                                                  0.0086                              0.9433962
+ 1001 49000   39000 D     2.9E9         .00745283 3.7264-4           49109.9                     N.T.Porile*          (62)C0343 21  3.7264-4                            5                                   5       0.0091                              0.94339620.9433962
+ 1001 49000   39000 D    3.e+10          6.9811-3 3.4906-4           49109.9                     N.T.Porile*          (62)C0343 21  3.4906-4                            5                                   5       0.0086                              0.94339620.9433963
 #/C5DATA        0
 #/DATASET       C0343021 
 #DATASET        C0343022   20111118
 #SUBENT         C0343022   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -1159,6 +1225,8 @@
 #REAC1          P,X
 #PRODUCT        49-IN-110-M
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1184,13 +1252,13 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49000   39000MD     2.9E9            0.0088                    49110.9                     N.T.Porile           (62)C0343 22                                                                                  0.0091
- 1001 49000   39000MD    3.e+10            0.0095                    49110.9                     N.T.Porile           (62)C0343 22                                                                                  0.0086
+ 1001 49000   39000MD     2.9E9            0.0088   4.4E-4           49110.9                     N.T.Porile           (62)C0343 22    4.4E-4                            5                                   5       0.0091
+ 1001 49000   39000MD    3.e+10            0.0095  4.75E-4           49110.9                     N.T.Porile           (62)C0343 22   4.75E-4                            5                                   5       0.0086
 #/C5DATA        0
 #/DATASET       C0343022 
 #DATASET        C0343023   20111118
 #SUBENT         C0343023   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -1212,6 +1280,8 @@
 #REAC1          P,X
 #PRODUCT        49-IN-111
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1237,13 +1307,13 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49000   39000 D     2.9E9            0.0144                    49111.9                     N.T.Porile           (62)C0343 23                                                                                  0.0091
- 1001 49000   39000 D    3.e+10            0.0129                    49111.9                     N.T.Porile           (62)C0343 23                                                                                  0.0086
+ 1001 49000   39000 D     2.9E9            0.0144   7.2E-4           49111.9                     N.T.Porile           (62)C0343 23    7.2E-4                            5                                   5       0.0091
+ 1001 49000   39000 D    3.e+10            0.0129  6.45E-4           49111.9                     N.T.Porile           (62)C0343 23   6.45E-4                            5                                   5       0.0086
 #/C5DATA        0
 #/DATASET       C0343023 
 #DATASET        C0343024   20111118
 #SUBENT         C0343024   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -1265,6 +1335,8 @@
 #REAC1          P,X
 #PRODUCT        49-IN-113-M
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1290,13 +1362,13 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49000   39000MD     2.9E9            0.0038                    49113.9                     N.T.Porile           (62)C0343 24                                                                                  0.0091
- 1001 49000   39000MD    3.e+10            0.0033                    49113.9                     N.T.Porile           (62)C0343 24                                                                                  0.0086
+ 1001 49000   39000MD     2.9E9            0.0038   1.9E-4           49113.9                     N.T.Porile           (62)C0343 24    1.9E-4                            5                                   5       0.0091
+ 1001 49000   39000MD    3.e+10            0.0033  1.65E-4           49113.9                     N.T.Porile           (62)C0343 24   1.65E-4                            5                                   5       0.0086
 #/C5DATA        0
 #/DATASET       C0343024 
 #DATASET        C0343025   20111118
 #SUBENT         C0343025   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -1318,7 +1390,11 @@
 #REAC1          P,X
 #PRODUCT        49-IN-114-M
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*] +15.7%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1343,12 +1419,14 @@
 #+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
 #+              m0: [EN,MONIT];               #[0]#old monitor(energy)
 #+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (49-IN-115(P,X)49-IN-114-M,,SIG)
 #+               #[1]#DECAY-DATA (49-IN-114-M,49.D,DG,191.,0.18) #Ix_old=0.18
 #+                a1=0.18/0.1556;             #[1]#DECAY-DATA: correction to new 190.27 keV gamma-yield per decay In-114-m Ix_new=0.1556
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.1568124
+#+              dy=dy*y;                      #to abs. uncertainties
 #+
 #/C5CORR        C0343025    1.15681     1.00000     1.15681     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
@@ -1359,13 +1437,13 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49115   39000MD     2.9E9         0.0462725                    49114.9                     N.T.Porile*          (62)C0343 25                                                                                  0.0091                              1.1568124
- 1001 49115   39000MD    3.e+10         0.0462725                    49114.9                     N.T.Porile*          (62)C0343 25                                                                                  0.0086                              1.1568124
+ 1001 49115   39000MD     2.9E9         0.0462725 2.3136-3           49114.9                     N.T.Porile*          (62)C0343 25  2.3136-3                            5                                   5       0.0091                              1.15681241.1568124
+ 1001 49115   39000MD    3.e+10         0.0462725 2.3136-3           49114.9                     N.T.Porile*          (62)C0343 25  2.3136-3                            5                                   5       0.0086                              1.15681241.1568124
 #/C5DATA        0
 #/DATASET       C0343025 
 #DATASET        C0343026   20111118
 #SUBENT         C0343026   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -1387,7 +1465,11 @@
 #REAC1          P,INL
 #PRODUCT        49-IN-115-M
 #C4ReaCode      (P,INL),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*] +4.58%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1412,12 +1494,14 @@
 #+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
 #+              m0: [EN,MONIT];               #[0]#old monitor(energy)
 #+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (49-IN-115(P,INL)49-IN-115-M,,SIG)
 #+               #[1]#DECAY-DATA (49-IN-115-M,4.5HR,DG,335.,0.48) #Ix_old=0.48
 #+                a1=0.48/0.459;              #[1]#DECAY-DATA: correction to new 336.241 keV gamma-yield per decay In-115-m Ix_new=0.459
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0457516
+#+              dy=dy*y;                      #to abs. uncertainties
 #+
 #/C5CORR        C0343026    1.04575     1.00000     1.04575     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
@@ -1428,13 +1512,13 @@
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49115   3 103MD     2.9E9          1.9869-3                                                N.T.Porile*          (62)C0343 26                                                                                  0.0091                              1.0457516
- 1001 49115   3 103MD    3.e+10          1.7778-3                                                N.T.Porile*          (62)C0343 26                                                                                  0.0086                              1.0457516
+ 1001 49115   3 103MD     2.9E9          1.9869-3 9.9346-5                                       N.T.Porile*          (62)C0343 26  9.9346-5                            5                                   5       0.0091                              1.04575161.0457516
+ 1001 49115   3 103MD    3.e+10          1.7778-3 8.8889-5                                       N.T.Porile*          (62)C0343 26  8.8889-5                            5                                   5       0.0086                              1.04575161.0457516
 #/C5DATA        0
 #/DATASET       C0343026 
 #DATASET        C0343027   20111118
 #SUBENT         C0343027   20111118
-#ENTRY          C0343      20111118
+#ENTRY          C0343      20230802
 #TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
 #+               GeV Protons
 #AUTHORS        N.T.Porile
@@ -1456,6 +1540,8 @@
 #REAC1          P,X
 #PRODUCT        48-CD-115-G
 #C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1481,8 +1567,63 @@
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 49115   39000GD     2.9E9            4.8E-5                    48115.9                     N.T.Porile           (62)C0343 27                                                                                  0.0091
- 1001 49115   39000GD    3.e+10            2.3E-5                    48115.9                     N.T.Porile           (62)C0343 27                                                                                  0.0086
+ 1001 49115   39000GD     2.9E9            4.8E-5   2.4E-6           48115.9                     N.T.Porile           (62)C0343 27    2.4E-6                            5                                   5       0.0091
+ 1001 49115   39000GD    3.e+10            2.3E-5  1.15E-6           48115.9                     N.T.Porile           (62)C0343 27   1.15E-6                            5                                   5       0.0086
 #/C5DATA        0
 #/DATASET       C0343027 
-#/C5.2.3        1               25              26              0               66              
+#DATASET        C0343028   20230802
+#SUBENT         C0343028   20230802
+#ENTRY          C0343      20230802
+#TITLE          Simple Nuclear Reactions of Indium with 30- and 2.9-
+#+               GeV Protons
+#AUTHORS        N.T.Porile
+#AUTHOR1        N.T.Porile
+#YEAR           1962
+#X4REF1         J,PR,128,1916,1962
+#REFERENCE1     Jour: Physical Review, Vol.128, p.1916 (1962)
+#DATE           20230802
+#INSTITUTE      1USABNL
+#METHOD         ACTIV,CHSEP,STTA
+#REACTION       49-IN-115(P,X)48-CD-115-M,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           49115            
+#TARGET         49115           [ ]             49-IN-115       [ ] 
+#REAC1          P,X
+#PRODUCT        48-CD-115-M
+#C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(DATA-ERR,5.,20.)  ADDED AS COMMON:DATA-ERR,PER-CENT=5.0%
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 49115   39000MD ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27px}
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 49115   39000MD     2.9E9            1.3E-4   6.5E-6           48115.9                     N.T.Porile           (62)C0343 28    6.5E-6                            5                                   5       0.0091
+ 1001 49115   39000MD    3.e+10            1.0E-4   5.0E-6           48115.9                     N.T.Porile           (62)C0343 28    5.0E-6                            5                                   5       0.0086
+#/C5DATA        0
+#/DATASET       C0343028 
+#/C5.2.3        1               26              26              0               68              
