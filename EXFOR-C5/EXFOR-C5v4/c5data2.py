@@ -42,8 +42,8 @@ import plotly
 from plotly.graph_objs import Scatter, Layout 
 from pprint import pprint
 
-print("Program: c5data1.py, ver. 2023-12-22")
-print("Author:  V.Zerkin, IAEA-NDS, Vienna, 2023")
+print("Program: c5data2.py, ver. 2024-03-08")
+print("Author:  V.Zerkin, IAEA-NDS, Vienna, 2023-2024")
 print("Purpose: find datasets by reaction, select renormalized datasets, load C5-dataset,")
 print("         extract data, recalculate original values, plot by Plotly\n")
 
@@ -141,9 +141,9 @@ for ds in dss:
 	,mode="markers"
 	)
     if (ds['dy'] is not None): tr.error_y=dict(type='data',array=ds['dy'],visible=True,thickness=0.9)
-    if (ds['dy'] is not None): tr.error_x=dict(type='data',array=ds['dx'],visible=True,thickness=0.9)
-    if ii%2==0: tr.name=str((ii//2)+1)+')  '+tr.name
-    else: tr.name=str((ii//2)+1)+'* '+tr.name
+    if (ds['dx'] is not None): tr.error_x=dict(type='data',array=ds['dx'],visible=True,thickness=0.9)
+    if ii%2==0: tr.name=str((ii//2)+1)+'. '+tr.name
+    else: 	tr.name=str((ii//2)+1)+'* '+tr.name
     if (ds['x4lbl'].find('*')>0): tr.marker.line=dict(color='Black',width=0.8)
     if (ds['x4lbl'].find('*')<0): tr.marker.size=11
     data1.append(tr)
@@ -151,7 +151,7 @@ for ds in dss:
 #    break
 
 xtype='linear';ytype='linear'
-xtype='log'#;ytype='log'
+xtype='log';  #ytype='log'
 plotTitle=reacode;
 
 #_________________Plot data from EXFOR_________________
@@ -170,7 +170,7 @@ if (valuableDiff>0): txtDiff=" (diff>%.1f%%)" % ((valuableDiff-1)*100)
 plot1['layout']=Layout(title='Cross sections \u03c3(E): '+plotTitle
 	+' -- original vs. automatically renormalized data'
 	+txtDiff
-	+'<br><i>EXFOR-C5, by V.Zerkin, IAEA-NDS, 2010-2023, ver.2023-12-22 //running:'+ct+'</i>'
+	+'<br><i>EXFOR-C5, by V.Zerkin, IAEA-NDS, 2010-2024, ver.2024-03-08 //running:'+ct+'</i>'
 	,xaxis=xaxis,yaxis=yaxis
 	,plot_bgcolor='white'
 	,legend=dict(traceorder="grouped")
