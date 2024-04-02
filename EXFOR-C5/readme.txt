@@ -7,7 +7,7 @@
 
                             Full EXFOR in C5 format
            Created 3-August-2023 by Viktor Zerkin, V.Zerkin@iaea.org
-                Last updated: 19-March-2024, V.Zerkin@gmail.com
+                Last updated: 02-April-2024, V.Zerkin@gmail.com
 _______________________________________________________________________________
 
 Contents:
@@ -141,6 +141,8 @@ Questions and Answers.
 		      - auto-renormalized using modern monitor CS data
 	   EXFOR-C5v4 - options from EXFOR-C5v3 +
 		      - auto-renormalized using modern Decay-data
+	   EXFOR-C5v5 - options from EXFOR-C5v4 +
+		      - auto-generated correlation matrix
 
 5.Q: What is the contents of C5 columns additional to C4?
   A: Columns 132:167:
@@ -169,13 +171,17 @@ Questions and Answers.
 	   N5 - total number of data points
 
 7.Q: Is there any alternative way to get EXFOR data in computational form?
-  A: NDS provides several ways/methods to get EXFOR data in computational form:
+  A: There are several ways/methods to get EXFOR data in computational form:
 	a) Web EXFOR retrieval system:
-	   http://www-nds.iaea.org/exfor/
+	   http://nds.iaea.org/exfor/
 	b) X4Pro - universal, fully relational EXFOR database (SQLite)
-	   http://www-nds.iaea.org/cdroms/#x4pro1
+	   http://nds.iaea.org/cdroms/#x4pro1
 	c) EXFOR-X5json - comprehensive presentation of full EXFOR library 
 	   with supplementary data in X5-json format
-	   http://www-nds.iaea.org/cdroms/#x5json
+	   http://nds.iaea.org/cdroms/#x5json
+	   https://github.com/vzerkin/EXFOR-X5json
+	d) EXFOR-C5 - full EXFOR library translated to computational format C5
+	   https://nds.iaea.org/cdroms/#c5
+	   https://github.com/vzerkin/EXFOR-C5
 
 -End-
