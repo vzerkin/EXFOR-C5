@@ -2,13 +2,18 @@
 cat EXFOR-C5.txt
 echo "        +------------------------------------------+"
 echo "        |     EXFOR-C5: full EXFOR in C5 format.   |"
-echo "        |  V.Zerkin@iaea.org, IAEA-NDS, 2010-2023  |"
-echo "        |            Version 2023-08-28.           |"
+echo "        |  v.zerkin@iaea.org, IAEA-NDS 2010-2023   |"
+echo "        |  v.zerkin@gmail.com, version 2024-04-02  |"
 echo "        +------------------------------------------+"
 echo ""
 echo "Create single C5 file from C5 files stored in sub-directories"
 echo "Script:$0 `date +%F`,`date +%T` on `uname -n`/`uname -s`"
 t00=`date +%s`
+
+FMT="C5.2.3"
+if [ "$1" != "" ] ; then
+    FMT=$1
+fi
 
 #cat */*/*.c5 |grep -v "^#C5.2.3" |grep -v "^#\_\_" |grep -v "^#/C5.2.3" >all.c5
 
@@ -23,14 +28,14 @@ for name in $filenames; do
 #	if [[ "${name:0:5}" != "1/135" ]]; then continue; fi	#only files from 1/135
 #	printf "%5d) %-18s %s \r" $ii ${name} `date +%F,%T`
 	if [ $ii -eq 1 ]; then
-	    cat ${name}|grep -v "^#/C5.2.3">>all.c5
+	    cat ${name}|grep -v "^#/${FMT}">>all.c5
 	else
-	    cat ${name}|grep -v "^#\_\_\_"|grep -v "^#/C5.2.3">>all.c5
+	    cat ${name}|grep -v "^#\_\_\_"|grep -v "^#/${FMT}">>all.c5
 	fi
 #	nEn=`cat ${name}|grep "^#ENTRY"|sort -u|wc -l`
 	nEn=1	#one ENTRY in one C5 file
 	nDs=`cat ${name}|grep "^#DATASET"|wc -l`
-	nXD=`cat ${name}|grep "^#/C5.2.3"|awk '{print $4}'`
+	nXD=`cat ${name}|grep "^#/${FMT}"|awk '{print $4}'`
 	str=`cat ${name}|grep "#C5DATA"|awk '{print $2}'`
 	nDa=0
 	for nn in $str; do
@@ -41,10 +46,10 @@ for name in $filenames; do
 	nXDatasets=$(($nXDatasets+$nXD))  #all Datasets in input EXFOR file
 	nPoints=$(($nPoints+$nDa))        #converted data points
 	printf "%5d) %-18s %s Datasets:%d Pt:%d \r" $ii ${name} `date +%F,%T` $nDatasets $nPoints
-#tst	if [ $ii -ge 3 ]; then break; fi  #tst
+#tst	if [ $ii -ge 10 ]; then break; fi  #tst
     fi
 done
-printf "%-16s%-16d%-16d%-16d%-16d%-16d\n" '#/C5.2.3' $nEntry $nDatasets $nXDatasets 0 $nPoints >>all.c5
+printf "%2s%-14s%-16d%-16d%-16d%-16d%-16d\n" '#/' $FMT $nEntry $nDatasets $nXDatasets 0 $nPoints >>all.c5
 echo ""
 #exit
 
@@ -77,6 +82,9 @@ echo "	#Datasets:           $nDatasets"
 
 nCorr=`cat all.c5|grep "^#C5CORR"|wc -l`
 echo "	#Corrected Datasets: $nCorr"
+
+nCovar=`cat all.c5|grep "^#COVARIANCE"|wc -l`
+echo "	#Covariance Data:    $nCovar"
 
 str=`cat all.c5|grep "#C5DATA"|awk '{printf $2"+"}'`
 nDataPoints=`echo "${str}0"|bc`
