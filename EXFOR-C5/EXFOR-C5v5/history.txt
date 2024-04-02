@@ -1,0 +1,71 @@
+                     Nuclear Data Section (NDS)
+            Department of Nuclear Sciences and Applications
+               International Atomic Energy Agency (IAEA)
+                  Wagramer Strasse 5, P.O.Box 100
+                       A-1400 Vienna, Austria
+               Tel:(+43 1) 2600-21714; Fax:(+43 1) 26007
+
+                       Full EXFOR in C5 format
+                       Full EXFOR in C4 format
+                        Full EXFOR by Entries
+     Created 3-July-2007 by Viktor Zerkin, e-mail: V.Zerkin@iaea.org
+                    Last updated: 28-August-2023
+
+-------------------------------------------------------------------------------
+History:
+-------------------------------------------------------------------------------
+2012-11-06
+	#DATA-HDR has been added to the Header
+	Purpose: to distingush data in C4 translated from EXFOR data
+		 having headers DATA vs. DATA-MAX, DATA-MIN, etc.
+-------------------------------------------------------------------------------
+2010-06-11
+	#PRODUCT has been added to the Header
+-------------------------------------------------------------------------------
+2009-09-15
+	EXFOR24A.DAT was extended by KT 
+	if given: output energy value for MXW instead of 0.0253eV
+-------------------------------------------------------------------------------
+2008-11-04
+	X4TOC4 was corrected to treat cases:
+	1) conversion Angstrom to eV: debugged
+	2) conversion Rutherford-rations to cross sections (MF4):
+	   not finalized for natural elements (tmp: A=2*Z)
+-------------------------------------------------------------------------------
+2008-07-03
+	X4TOC4 was corrected by A.Trkov to treat properly cases:
+	two columns with the same header DATA-ERR,
+	and one of them has units PER-CENT.
+	Two action should be performed: 
+	    1) per-cent to absolute value
+	    2) max of two error-values
+	(Bug: per-cent was not calculated if located in 2-nd column.)
+-------------------------------------------------------------------------------
+*Note. Since 2018, superseded EXFOR data are excluded from the distribution.
+       Since 2020, only experimental EXFOR data are included.
+       Since 2023, x4toc5 is used for converting EXFOR files to C4.
+-------------------------------------------------------------------------------
+2023-08-17
+	C5 replacing XC4 in the distribution with following changes:
+	1) C5 format has slightly different hierarchy and keywords
+	2) C5 files are stored in sub-directories (one file for on Entry)
+	3) script create1c5file.sh creates single C5 file and generates statistics
+	4) file .TBL (index) is not privided, instead - python code index1data.py
+	   generating JSON and CSV indeces
+	5) versions of C5 data:
+	   EXFOR-C5v0 - default optons of C4:
+		      - converted incident energy from C.M. to Lab.
+		      - converted Rutherford-Ratio to B/SR (MF4)
+	   EXFOR-C5v1 - options from EXFOR-C5v0 +
+		      - datasets with unknown MT are included (MF>0, MT=0)
+	   EXFOR-C5v2 - converted C.M. to Lab. (for MT4)
+		      - replaced Q-Value by E-Level
+		      - reset MT51, MT601, by MT+iLevel (for partial reactions)
+		      - sort data: CS(EN), DA(EN:AN), DE(EN,E2), DAE(EN:AN:E2)
+	   EXFOR-C5v3 - options from EXFOR-C5v2 +
+		      - auto-renormalized using modern monitor CS data
+	   EXFOR-C5v4 - options from EXFOR-C5v3 +
+		      - auto-renormalized using modern Decay-data
+	   EXFOR-C5v5 - options from EXFOR-C5v4 +
+		      - auto-generated correlation matrix
+-------------------------------------------------------------------------------
