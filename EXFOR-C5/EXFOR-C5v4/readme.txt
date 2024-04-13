@@ -7,7 +7,7 @@
 
                             Full EXFOR in C5 format
            Created 3-August-2023 by Viktor Zerkin, V.Zerkin@iaea.org
-                Last updated: 02-April-2024, V.Zerkin@gmail.com
+                Last updated: 13-April-2024, V.Zerkin@gmail.com
 _______________________________________________________________________________
 
 Contents:
@@ -45,6 +45,8 @@ Data Versions:
 	      - auto-renormalized using modern monitor CS data
    EXFOR-C5v4 - options from EXFOR-C5v3 +
 	      - auto-renormalized using modern Decay-data
+   EXFOR-C5v5 - options from EXFOR-C5v4 +
+	      - generated correlation matrix (DOI:10.1051/epjconf/20122700009)
 _______________________________________________________________________________
 
 Examples.
