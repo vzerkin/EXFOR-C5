@@ -9,8 +9,8 @@ import json
 import sys
 import csv
 
-print("Program: index1data.py, ver. 2023-12-22")
-print("Author:  V.Zerkin, IAEA-NDS, Vienna, 2023")
+print("Program: index1data.py, ver. 2024-04-17")
+print("Author:  V.Zerkin, IAEA-NDS, Vienna, 2023-2024")
 print("Purpose: scan dir recursively, find files by extension .c5,")
 print("         create index of Datasets for data search,")
 print("         store index in JSON and CSV files\n")
@@ -63,6 +63,7 @@ def exctractC5DatasetLines(ds,delLines=True,flagDataLines=False):
     #initialize only to define order in JSON output
     ds['Entry']=None
     ds['DatasetID']=None
+    ds['x4status']=None
     ds['updated']=None
     ds['year1']=None
     ds['author1']=None
@@ -93,6 +94,7 @@ def exctractC5DatasetLines(ds,delLines=True,flagDataLines=False):
         if   line1.startswith("#ENTRY "):    ds['Entry']=subs[1]
         elif line1.startswith("#DATASET "):  ds['DatasetID']=subs[1]
         elif line1.startswith("#DATE "):     ds['updated']=int(subs[1])
+        elif line1.startswith("#STATUS "):   ds['x4status']=subs[1]
         elif line1.startswith("#YEAR "):     ds['year1']=int(subs[1])
         elif line1.startswith("#AUTHOR1 "):  ds['author1']=line1[16:].strip().rstrip('+')
 #        elif line1.startswith("#C5CORR "):   ds['corrected']='CORRECTED'
@@ -156,7 +158,9 @@ Datasets=sorted(Datasets, key=lambda i:i['DatasetID'])
 with open('Datasets.json','w') as outfile: json.dump(Datasets,outfile,indent=2)
 
 #out index of data to CSV file: selected columns only
-cols=['c5file','Entry','DatasetID','updated','year1','author1'
+cols=['c5file','Entry','DatasetID'
+	,'x4status'
+	,'updated','year1','author1'
 	,'zaProj1','zaTarg1','zTarg1','Targ1','Proj1','Emis1'
 	,'ReactionType','MF','MT','nPoints','ReactionCode']
 with open("Datasets.csv", "w", newline="") as ff:
