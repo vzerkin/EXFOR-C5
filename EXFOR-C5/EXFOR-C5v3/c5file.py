@@ -96,6 +96,7 @@ def exctractC5DatasetLines(ds,delLines=True,flagDataLines=False):
     #initialize only to define order in JSON output
     ds['Entry']=None
     ds['DatasetID']=None
+    ds['x4status']=None
     ds['updated']=None
     ds['year1']=None
     ds['author1']=None
@@ -126,6 +127,7 @@ def exctractC5DatasetLines(ds,delLines=True,flagDataLines=False):
         if   line1.startswith("#ENTRY "):    ds['Entry']=subs[1]
         elif line1.startswith("#DATASET "):  ds['DatasetID']=subs[1]
         elif line1.startswith("#DATE "):     ds['updated']=int(subs[1])
+        elif line1.startswith("#STATUS "):   ds['x4status']=subs[1]
         elif line1.startswith("#YEAR "):     ds['year1']=int(subs[1])
         elif line1.startswith("#AUTHOR1 "):  ds['author1']=line1[16:].strip().rstrip('+')
 #        elif line1.startswith("#C5CORR "):   ds['corrected']='CORRECTED'
