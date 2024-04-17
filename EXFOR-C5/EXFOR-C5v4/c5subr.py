@@ -35,3 +35,15 @@ def filter_datasets(datasets,nam,val):
         array.append(dataset)
         ii+=1
     return array
+
+def not_filter_datasets(datasets,nam,val):
+    array=[]
+    ii=0
+    for dataset in datasets:
+        #print(str(ii),'\t',dataset)
+        xx=dataset.get(nam)
+        #print(str(ii),'\txx:',xx)
+        if (xx==val): continue
+        array.append(dataset)
+        ii+=1
+    return array
