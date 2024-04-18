@@ -42,7 +42,7 @@ import plotly
 from plotly.graph_objs import Scatter, Layout 
 from pprint import pprint
 
-print("Program: c5data1.py, ver. 2023-12-22")
+print("Program: c5data1.py, ver.2024-04-17")
 print("Author:  V.Zerkin, IAEA-NDS, Vienna, 2023")
 print("Purpose: find datasets by reaction, load C5-file, extract data, plot by Plotly\n")
 
@@ -67,11 +67,16 @@ reacode='13-AL-27(N,A)11-NA-24,,SIG'
 #reacode='25-MN-55(N,A)23-V-52,,SIG'
 
 datasets=filter_datasets(datasets,'ReactionCode',reacode)
-nDatasets=len(datasets)
+n1=nDatasets=len(datasets)
 print('-1-Datasets:'+str(nDatasets))
+datasets=not_filter_datasets(datasets,'x4status','SPSDD')
+datasets=not_filter_datasets(datasets,'x4status','PRELIM')
+n2=nDatasets=len(datasets)
+print('-2-Datasets:'+str(nDatasets))
 if (nDatasets<=0):
     print("---No data found---")
     sys.exit(2)
+with open('data1lst.json','w') as outfile: json.dump(datasets,outfile,indent=2)
 
 xtitle='Incident energy (eV)'
 ytitle='Cross section (b)'
@@ -133,9 +138,13 @@ yaxis={'title':ytitle,'showline':True,'linecolor':'black'
 	,'showgrid':True, 'gridcolor':'#aaaaaa','ticks':'outside','type':ytype
 	,'zeroline':True, 'zerolinecolor':'#dddddd'#, 'zerolinewidth':0.1
 }
+xaxis['mirror']='ticks'; yaxis['mirror']='ticks' 
+
 plot1['layout']=Layout(title='EXFOR cross sections \u03c3(E): '+plotTitle
-	+'  Datasets:'+' original: '+str(iorig)+' renormalized: '+str(irenorm)
-	+'<br><i>EXFOR-C5, by V.Zerkin, IAEA-NDS, 2010-2023, ver.2023-12-22 //running:'+ct+'</i>'
+	+'  #Datasets:'+' original:'+str(iorig)+' renormalized:'+str(irenorm)
+	+' total:'+str(iorig+irenorm)
+	+' excluded:'+str(n1-n2) #superseded or withdrawn, and preliminary
+	+'<br><i>EXFOR-C5, by V.Zerkin, IAEA-NDS, 2010-2024, ver.2024-04-18 //running:'+ct+'</i>'
 	,xaxis=xaxis,yaxis=yaxis
 	,plot_bgcolor='white'
 	,legend=dict(traceorder="grouped")
