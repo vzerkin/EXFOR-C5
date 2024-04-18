@@ -42,7 +42,7 @@ import plotly
 from plotly.graph_objs import Scatter, Layout 
 from pprint import pprint
 
-print("Program: c5data2.py, ver. 2024-03-08")
+print("Program: c5data2.py, ver.2024-04-18")
 print("Author:  V.Zerkin, IAEA-NDS, Vienna, 2023-2024")
 print("Purpose: find datasets by reaction, select renormalized datasets, load C5-dataset,")
 print("         extract data, recalculate original values, plot by Plotly\n")
@@ -66,6 +66,7 @@ print('-0-Datasets:'+str(nDatasets))
 reacode='13-AL-27(N,A)11-NA-24,,SIG'
 #reacode='93-NP-237(A,2N)95-AM-239,,SIG'
 #reacode='25-MN-55(N,A)23-V-52,,SIG'
+#reacode='30-ZN-64(N,P)29-CU-64,,SIG'
 
 valuableDiff=1.01  #set min difference = 1%, otherwise ignore dataset
 valuableDiff=1.005 #set min difference = 0.5%, otherwise ignore dataset
@@ -73,8 +74,12 @@ valuableDiff=0     #set min difference = 0, show all renormalized datasets
 valuableDiff=1.02  #set min difference = 2%, otherwise ignore dataset
 
 datasets=filter_datasets(datasets,'ReactionCode',reacode)
-nDatasets=len(datasets)
+n1=nDatasets=len(datasets)
 print('-1-Datasets:'+str(nDatasets))
+datasets=not_filter_datasets(datasets,'x4status','SPSDD')
+datasets=not_filter_datasets(datasets,'x4status','PRELIM')
+n2=nDatasets=len(datasets)
+print('-2-Datasets:'+str(nDatasets))
 if (nDatasets<=0):
     print("---No data found---")
     sys.exit(2)
@@ -82,7 +87,7 @@ if (nDatasets<=0):
 xtitle='Incident energy (MeV)'
 ytitle='Cross section (mb)'
 fx=1e-6;fy=1e3
-dss=[];ii=0
+dss=[];ii=0;iok=0
 for dataset in datasets:
     ii+=1
     c5file=base+dataset['c5file']
@@ -91,12 +96,13 @@ for dataset in datasets:
 #    print(str(ii+1)+')\tFile:'+c5file+' Dataset:'+DatasetID)
     ds=readC5fileDataset(c5file,DatasetID)
     if ds is None: continue
-    print(str(ii)+') File:'+c5file+' Dataset:'+DatasetID
+    print(str(iok)+'/'+str(ii)+') File:'+c5file+' Dataset:'+DatasetID
 	+' '+str(ds['year1'])+' '+ds['author1'].title()
 	+' #dataPoints:'+str(len(ds['dataLines'])))
     if (ds['author1'].find('*')<0): continue
     exctractC5Data(ds,fx=fx,fy=fy)
     if ds['maxDiff']<valuableDiff: continue
+    iok+=1
     print('	Energy:	',ds['data'][0])
     print('	dEnergy:',ds['data'][1])
     print('	*Data:  ',ds['data'][2])
@@ -163,6 +169,8 @@ yaxis={'title':ytitle,'showline':True,'linecolor':'black'
 	,'showgrid':True, 'gridcolor':'#aaaaaa','ticks':'outside','type':ytype
 	,'zeroline':True, 'zerolinecolor':'#dddddd'#, 'zerolinewidth':0.1
 }
+xaxis['mirror']='ticks'; yaxis['mirror']='ticks' 
+
 txtDiff=''
 #if (valuableDiff>0): txtDiff=f' (diff>{(valuableDiff-1)*100:.1f}%)'
 if (valuableDiff>0): txtDiff=" (diff>%.1f%%)" % ((valuableDiff-1)*100)
@@ -170,7 +178,10 @@ if (valuableDiff>0): txtDiff=" (diff>%.1f%%)" % ((valuableDiff-1)*100)
 plot1['layout']=Layout(title='Cross sections \u03c3(E): '+plotTitle
 	+' -- original vs. automatically renormalized data'
 	+txtDiff
-	+'<br><i>EXFOR-C5, by V.Zerkin, IAEA-NDS, 2010-2024, ver.2024-03-08 //running:'+ct+'</i>'
+	+' #Datasets:'+str(iok)
+	+'/'+str(n2) #total after filtering out: superseded or withdrawn, and preliminary
+	+'/'+str(n1) #total
+	+'<br><i>EXFOR-C5, by V.Zerkin, IAEA-NDS, 2010-2024, ver.2024-04-18 //running:'+ct+'</i>'
 	,xaxis=xaxis,yaxis=yaxis
 	,plot_bgcolor='white'
 	,legend=dict(traceorder="grouped")
