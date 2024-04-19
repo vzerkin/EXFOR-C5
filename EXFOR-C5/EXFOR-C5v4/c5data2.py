@@ -57,7 +57,7 @@ def sort_ya1(ds):
     rr=str(ds['year1'])+','+ds['author1']
     return rr
 
-datasets=read_csv_file('Datasets.csv')
+datasets=read_csv_file("C5-Datasets.csv")
 nDatasets=len(datasets)
 print('-0-Datasets:'+str(nDatasets))
 
@@ -66,7 +66,7 @@ print('-0-Datasets:'+str(nDatasets))
 reacode='13-AL-27(N,A)11-NA-24,,SIG'
 #reacode='93-NP-237(A,2N)95-AM-239,,SIG'
 #reacode='25-MN-55(N,A)23-V-52,,SIG'
-#reacode='30-ZN-64(N,P)29-CU-64,,SIG'
+reacode='30-ZN-64(N,P)29-CU-64,,SIG'
 
 valuableDiff=1.01  #set min difference = 1%, otherwise ignore dataset
 valuableDiff=1.005 #set min difference = 0.5%, otherwise ignore dataset
