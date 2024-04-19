@@ -4,6 +4,7 @@
  * Author: Viktor Zerkin, V.Zerkin@iaea.org, (IAEA-NDS)               *
  **********************************************************************
 """
+import math #round
 from c5line import *
 
 def readC5fileDataset(fileName,DatasetID):
@@ -38,20 +39,25 @@ def exctractC5Data(ds,fx=1,fy=1,recalc2orig=False):
     for i in range(8): ds['data'].append([])
     ii=0
     FcMax=0;FcMin=0
+    prec=12
     for line1 in lines:
         ii+=1
 #        print(str(ii)+'\t['+line1+']')
         c5=c5line(line1)
-        ds['data'][0].append(c5.Energy*fx)
-        ds['data'][1].append(c5.dEnergy*fx)
+        #ds['data'][0].append(c5.Energy*fx)
+        #ds['data'][1].append(c5.dEnergy*fx)
+        ds['data'][0].append(round(c5.Energy*fx,prec))
+        ds['data'][1].append(round(c5.dEnergy*fx,prec))
         Data=c5.Data
         dData=c5.dData
         if recalc2orig:
             #renormalized data: recalculate back to original
             if c5.Fc>0: Data/=c5.Fc
             if c5.FcErr>0: dData/=c5.FcErr
-        ds['data'][2].append(Data*fy)
-        ds['data'][3].append(dData*fy)
+        #ds['data'][2].append(Data*fy)
+        #ds['data'][3].append(dData*fy)
+        ds['data'][2].append(round(Data*fy,prec))
+        ds['data'][3].append(round(dData*fy,prec))
 
         #renormalized data: collect MinMax Factor for display
         if c5.Fc>0 :
