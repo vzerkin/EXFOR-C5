@@ -155,7 +155,7 @@ print('')
 Datasets=sorted(Datasets, key=lambda i:i['DatasetID'])
 
 #out index of data to JSON file
-with open('Datasets.json','w') as outfile: json.dump(Datasets,outfile,indent=2)
+with open("C5-Datasets.json",'w') as outfile: json.dump(Datasets,outfile,indent=2)
 
 #out index of data to CSV file: selected columns only
 cols=['c5file','Entry','DatasetID'
@@ -163,7 +163,7 @@ cols=['c5file','Entry','DatasetID'
 	,'updated','year1','author1'
 	,'zaProj1','zaTarg1','zTarg1','Targ1','Proj1','Emis1'
 	,'ReactionType','MF','MT','nPoints','ReactionCode']
-with open("Datasets.csv", "w", newline="") as ff:
+with open("C5-Datasets.csv", "w", newline="") as ff:
     writer=csv.DictWriter(ff,fieldnames=cols,extrasaction='ignore')
     writer.writeheader()
     writer.writerows(Datasets)
