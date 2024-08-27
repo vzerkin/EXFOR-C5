@@ -34,7 +34,7 @@ _______________________________________________________________________________
 Data Versions:
    EXFOR-C5v0 - converted incident energy from C.M. to Lab.
 	      - converted Rutherford-Ratio to B/SR (MF4)
-   EXFOR-C5v1 - options from EXFOR-C5v0 +
+   EXFOR-C5v1 - options from EXFOR-C5v2 +
 	      - datasets with unknown MT are included (MF>0, MT=0)
    EXFOR-C5v2 - options from EXFOR-C5v0 +
 	      - angle and data: C.M. to Lab. (for MF4)
