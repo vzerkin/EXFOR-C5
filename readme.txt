@@ -7,11 +7,11 @@
 
                             Full EXFOR in C5 format
            Created 3-August-2023 by Viktor Zerkin, V.Zerkin@iaea.org
-                 Last updated: 28-August-2024, V.Zerkin@gmail.com
+               Last updated: 15-September-2024, V.Zerkin@gmail.com
 _______________________________________________________________________________
 
 Contents:
-1. EXFOR-C5v[N]-YYYYMMDD.zip (size:~133Mb) contains:
+1. EXFOR-C5v[N]-YYYYMMDD.zip (size:~250Mb) contains:
    1) C5 files (total size:~2.6Gb):
       in a directory structure - one ENTRY in one file;
       full EXFOR translated into C5* format, data version [N]:0|1|2|3|4
