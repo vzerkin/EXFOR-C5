@@ -1,0 +1,225 @@
+#C5.2.3
+#DATASET        13133002   20210920
+#SUBENT         13133002   20210920
+#ENTRY          13133      20210920
+#TITLE          Partial neutron cross sections for 47Ti and 48Ti
+#+               between 14.3 and 19.1 MeV
+#AUTHORS        W.V.Hecker,J.R.Williams,W.L.Alford,S.K.Ghorai
+#AUTHOR1        W.V.Hecker+
+#YEAR           1989
+#X4REF1         J,NIM/B,40-41,478,1989
+#REFERENCE1     Jour: Nucl. Instrum. Methods in Physics Res., Sect.B, Vol.40-41, p.478 (1989)
+#DATE           20210920
+#INSTITUTE      1USAAUB,1USAALS
+#METHOD         ACTIV
+#REACTION       22-TI-47(N,P)21-SC-47,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           22047            
+#TARGET         22047           [ ]             22-TI-47        [ ] 
+#REAC1          N,P
+#PRODUCT        21-SC-47
+#C4ReaCode      (N,P),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=6
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9566342(1.4e7) Data[5]*1.0140042(1.9e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 22047   3 103 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 22-TI-47(N,P)21-SC-47,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        13133002    0.974279    0.974279    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          13133002    CS          6           0.914828    1.05831     0.974279    -2.57%      1.09310     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 22047   3 103 A    1.43E7 600000.00.1511482 4.1285-3                                       W.V.Hecker*,         (89)13133  2  6.9990-4                   4.1285-3 0.46                       2.73     2.73    0.1236   0.0062   0.11824  4.9618-4 0.95663420.4587239
+    1 22047   3 103 A    1.49E71200000.00.14007820.0118376                                       W.V.Hecker*,         (89)13133  2  6.2845-4                  0.0118376 0.45                       8.45     8.45    0.111    0.011    0.10949784.8906-4 0.98646640.9864664
+    1 22047   3 103 A    1.62E7 400000.00.1199208 5.3117-3                                       W.V.Hecker*,         (89)13133  2  8.9104-4                   5.3117-3 0.74                       4.43     4.43    0.0975   0.003    0.089254 6.517E-4 0.91542560.758809
+    1 22047   3 103 A    1.71E7 200000.00.1090064 5.1219-3                                       W.V.Hecker*,         (89)13133  2  8.9627-4                   5.1219-3 0.82                       4.70     4.70    0.0706   0.0025   0.074717 6.1779E-41.05831440.8536494
+    1 22047   3 103 A    1.82E7 200000.00.1143535.00914828                                       W.V.Hecker*,         (89)13133  2  1.1077-3                  .00914828 0.97                       8        8       0.064    0.007    0.058549 5.5036E-40.91482810.9148281
+    1 22047   3 103 A    1.91E7 200000.00.1237085 5.8554-3                                       W.V.Hecker*,         (89)13133  2  1.4592-3                   5.8554-3 1.18                       4.73     4.73    0.0467   0.0027   0.047354 5.6221E-41.01400420.6506042
+#/C5DATA        0
+#/DATASET       13133002 
+#DATASET        13133003   20210920
+#SUBENT         13133003   20210920
+#ENTRY          13133      20210920
+#TITLE          Partial neutron cross sections for 47Ti and 48Ti
+#+               between 14.3 and 19.1 MeV
+#AUTHORS        W.V.Hecker,J.R.Williams,W.L.Alford,S.K.Ghorai
+#AUTHOR1        W.V.Hecker+
+#YEAR           1989
+#X4REF1         J,NIM/B,40-41,478,1989
+#REFERENCE1     Jour: Nucl. Instrum. Methods in Physics Res., Sect.B, Vol.40-41, p.478 (1989)
+#DATE           20210920
+#INSTITUTE      1USAAUB,1USAALS
+#METHOD         ACTIV
+#REACTION       22-TI-48(N,P)21-SC-48,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           22048            
+#TARGET         22048           [ ]             22-TI-48        [ ] 
+#REAC1          N,P
+#PRODUCT        21-SC-48
+#C4ReaCode      (N,P),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=5
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9566342(1.4e7) Data[4]*0.91482806(1.8e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 22048   3 103 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 22-TI-48(N,P)21-SC-48,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        13133003    0.966334    0.966334    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          13133003    CS          5           0.914828    1.05831     0.966334    -3.37%      1.09310     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 22048   3 103 A    1.43E7 600000.0.06887766 2.8699-3                                       W.V.Hecker*,         (89)13133  3  3.1894-4                   2.8699-3 0.46                       4.17     4.17    0.1236   0.0062   0.11824  4.9618-4 0.95663420.9566342
+    1 22048   3 103 A    1.49E71200000.0.06806619 5.9188-3                                       W.V.Hecker*,         (89)13133  3  3.0534-4                   5.9188-3 0.45                       8.70     8.70    0.111    0.011    0.10949784.8906-4 0.98646640.9864664
+    1 22048   3 103 A    1.62E7 400000.0.05492553 3.2730-3                                       W.V.Hecker*,         (89)13133  3  4.0811-4                   3.2730-3 0.74                       5.96     5.96    0.0975   0.003    0.089254 6.517E-4 0.91542560.8182583
+    1 22048   3 103 A    1.71E7 200000.0.05291572 1.0773-3                                       W.V.Hecker*,         (89)13133  3  4.3508-4                   1.0773-3 0.82                       2.04     2.04    0.0706   0.0025   0.074717 6.1779E-41.05831440.5386266
+    1 22048   3 103 A    1.82E7 200000.0.04391175 3.6593-3                                       W.V.Hecker*,         (89)13133  3  4.2535-4                   3.6593-3 0.97                       8.33     8.33    0.064    0.007    0.058549 5.5036E-40.91482810.9148281
+#/C5DATA        0
+#/DATASET       13133003 
+#DATASET        13133004   20210920
+#SUBENT         13133004   20210920
+#ENTRY          13133      20210920
+#TITLE          Partial neutron cross sections for 47Ti and 48Ti
+#+               between 14.3 and 19.1 MeV
+#AUTHORS        W.V.Hecker,J.R.Williams,W.L.Alford,S.K.Ghorai
+#AUTHOR1        W.V.Hecker+
+#YEAR           1989
+#X4REF1         J,NIM/B,40-41,478,1989
+#REFERENCE1     Jour: Nucl. Instrum. Methods in Physics Res., Sect.B, Vol.40-41, p.478 (1989)
+#DATE           20210920
+#INSTITUTE      1USAAUB,1USAALS
+#METHOD         ACTIV
+#REACTION       22-TI-48(N,X)21-SC-47,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           22048            
+#TARGET         22048           [ ]             22-TI-48        [ ] 
+#REAC1          N,X
+#PRODUCT        21-SC-47
+#C4ReaCode      (N,X),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=5
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9566342(1.4e7) Data[4]*0.91482806(1.8e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 22048   39000 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 22-TI-48(N,X)21-SC-47,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        13133004    0.966334    0.966334    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          13133004    CS          5           0.914828    1.05831     0.966334    -3.37%      1.09310     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 22048   39000 A    1.43E7 600000.0 9.0880-3 3.5084-4           21047.9                     W.V.Hecker*,         (89)13133  4  4.2082-5                   3.5084-4 0.46                       3.86     3.86    0.1236   0.0062   0.11824  4.9618-4 0.95663420.584734
+    1 22048   39000 A    1.49E71200000.00.0145997 3.1699-4           21047.9                     W.V.Hecker*,         (89)13133  4  6.5500-5                   3.1699-4 0.45                       2.17     2.17    0.111    0.011    0.10949784.8906-4 0.98646640.2113263
+    1 22048   39000 A    1.62E7 400000.0.02251947 1.3008-3           21047.9                     W.V.Hecker*,         (89)13133  4  1.6732-4                   1.3008-3 0.74                       5.78     5.78    0.0975   0.003    0.089254 6.517E-4 0.91542560.8130304
+    1 22048   39000 A    1.71E7 200000.0.05556151 2.1225-3           21047.9                     W.V.Hecker*,         (89)13133  4  4.5684-4                   2.1225-3 0.82                       3.82     3.82    0.0706   0.0025   0.074717 6.1779E-41.05831440.7861199
+    1 22048   39000 A    1.82E7 200000.0.08947019 8.0505-3           21047.9                     W.V.Hecker*,         (89)13133  4  8.6665-4                   8.0505-3 0.97                       9        9       0.064    0.007    0.058549 5.5036E-40.91482810.9148281
+#/C5DATA        0
+#/DATASET       13133004 
+#/C5.2.3        1               3               3               0               16              

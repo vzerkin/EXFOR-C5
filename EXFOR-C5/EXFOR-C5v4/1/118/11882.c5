@@ -1,0 +1,396 @@
+#C5.2.3
+#DATASET        11882002   20200504
+#SUBENT         11882002   20200504
+#ENTRY          11882      20200504
+#TITLE          A study of the spin dependence of the nuclear level
+#+              density by means of the Y89(n,gamma)Y90g,90m reactions
+#+              with fast neutrons.
+#AUTHORS        H.A.Grench,K.L.Coop,H.O.Menlove,F.J.Vaughn
+#AUTHOR1        H.A.Grench+
+#YEAR           1967
+#X4REF1         J,NP/A,94,157,1967
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.94, p.157 (1967)
+#DATE           20200504
+#INSTITUTE      1USALOK
+#METHOD         ACTIV
+#REACTION       39-Y-89(N,G)39-Y-90-M,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           39089            
+#TARGET         39089           [ ]             39-Y-89         [ ] 
+#REAC1          N,G
+#PRODUCT        39-Y-90-M
+#C4ReaCode      (N,G),SIG
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.95796466(1.4e5) Data[11]*0.9662064(1.2e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 39089   3 102M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-235(N,F),,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$u235nf}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 39-Y-89(N,G)39-Y-90-M,,SIG
+#+              #[0]#Monitor:  92-U-235(N,F),,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$u235nf;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11882002    0.953194    0.953194    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11882002    CS          12          0.927978    0.972769    0.953194    -4.68%      1.07761     [EN,MONIT,MONIT-ERR]::u235nf
+#C5DATA         12
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 39089   3 102M   143000.032000.002 2.5673-4 6.2845-6                                       H.A.Grench*,         (67)11882  2  6.2845-6                            2.45                                2.45    1.5150001.075750011.4513166.019644190.95796470.4342545
+    1 39089   3 102M   223000.0  35000.0 3.2748-4 8.0842-6                                       H.A.Grench*,         (67)11882  2  8.0842-6                            2.47                                2.47    1.37900010.06895  1.3166   .018310350.95474980.4364672
+    1 39089   3 102M   318000.0  33000.0 3.4995-4 8.5905-6                                       H.A.Grench*,         (67)11882  2  8.5905-6                            2.45                                2.45    1.3050001.065250011.234272 .016860660.94580230.4299555
+    1 39089   3 102M   426000.0  29000.0 3.9675-4 9.8285-6                                       H.A.Grench*,         (67)11882  2  9.8285-6                            2.48                                2.48    1.2500001.062500011.200812 .016883580.96064950.4407017
+    1 39089   3 102M   525000.0  31000.0 4.3419-4 1.0683-5                                       H.A.Grench*,         (67)11882  2  1.0683-5                            2.46                                2.46    1.21900010.06095  1.1358   .015631650.93174730.4245508
+    1 39089   3 102M   609000.0  31000.0 4.2223-4 1.0288-5                                       H.A.Grench*,         (67)11882  2  1.0288-5                            2.44                                2.44    1.19800010.0599   1.1117179.014820310.92797820.4187292
+    1 39089   3 102M   724000.0  31000.0 4.6010-4 1.1184-5                                       H.A.Grench*,         (67)11882  2  1.1184-5                            2.43                                2.43    1.18000010.059    1.1240441.014862880.95257970.4287876
+    1 39089   3 102M   824000.0  34000.0 4.9244-4 1.1978-5                                       H.A.Grench*,         (67)11882  2  1.1978-5                            2.43                                2.43    1.184    0.0592   1.11482  .014773180.94157090.424107
+    1 39089   3 102M   926000.0  34000.0 4.6018-4 1.1236-5                                       H.A.Grench*,         (67)11882  2  1.1236-5                            2.44                                2.44    1.205    0.06025  1.162515 .015601760.96474270.4361972
+    1 39089   3 102M  1027000.0  30000.0 2.7724-4 6.7045-6                                       H.A.Grench*,         (67)11882  2  6.7045-6                            2.42                                2.42    1.2340001.061700011.200397 .015597180.972769 0.4356419
+    1 39089   3 102M  1085000.032000.002 3.0674-4 7.4091-6                                       H.A.Grench*,         (67)11882  2  7.4091-6                            2.42                                2.42    1.243    0.06215  1.195235 .015465470.96157280.4301112
+    1 39089   3 102M  1223000.0  34000.0 2.6281-4 6.3495-6                                       H.A.Grench*,         (67)11882  2  6.3495-6                            2.42                                2.42    1.2500001.062500011.2077581.015640750.96620640.4322889
+#/C5DATA        0
+#/DATASET       11882002 
+#DATASET        11882003   20200504
+#SUBENT         11882003   20200504
+#ENTRY          11882      20200504
+#TITLE          A study of the spin dependence of the nuclear level
+#+              density by means of the Y89(n,gamma)Y90g,90m reactions
+#+              with fast neutrons.
+#AUTHORS        H.A.Grench,K.L.Coop,H.O.Menlove,F.J.Vaughn
+#AUTHOR1        H.A.Grench+
+#YEAR           1967
+#X4REF1         J,NP/A,94,157,1967
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.94, p.157 (1967)
+#DATE           20200504
+#INSTITUTE      1USALOK
+#METHOD         ACTIV
+#REACTION       39-Y-89(N,G)39-Y-90-G,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           39089            
+#TARGET         39089           [ ]             39-Y-89         [ ] 
+#REAC1          N,G
+#PRODUCT        39-Y-90-G
+#C4ReaCode      (N,G),SIG
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.95796466(1.4e5) Data[11]*0.9662064(1.2e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 39089   3 102G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-235(N,F),,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$u235nf}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 39-Y-89(N,G)39-Y-90-G,,SIG
+#+              #[0]#Monitor:  92-U-235(N,F),,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$u235nf;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11882003    0.953194    0.953194    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11882003    CS          12          0.927978    0.972769    0.953194    -4.68%      1.07761     [EN,MONIT,MONIT-ERR]::u235nf
+#C5DATA         12
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 39089   3 102G   143000.032000.002.01033644 2.5302-4                                       H.A.Grench*,         (67)11882  3  2.5302-4                            2.45                                2.45    1.5150001.075750011.4513166.019644190.95796470.4342547
+    1 39089   3 102G   223000.0  35000.0 7.5998-3 1.8761-4                                       H.A.Grench*,         (67)11882  3  1.8761-4                            2.47                                2.47    1.37900010.06895  1.3166   .018310350.95474980.4364672
+    1 39089   3 102G   318000.0  33000.0 7.6705-3 1.8829-4                                       H.A.Grench*,         (67)11882  3  1.8829-4                            2.45                                2.45    1.3050001.065250011.234272 .016860660.94580230.4299554
+    1 39089   3 102G   426000.0  29000.0 6.1386-3 1.5207-4                                       H.A.Grench*,         (67)11882  3  1.5207-4                            2.48                                2.48    1.2500001.062500011.200812 .016883580.96064950.4407017
+    1 39089   3 102G   525000.0  31000.0.00600977 1.4787-4                                       H.A.Grench*,         (67)11882  3  1.4787-4                            2.46                                2.46    1.21900010.06095  1.1358   .015631650.93174730.4245509
+    1 39089   3 102G   609000.0  31000.0 5.8555-3 1.4268-4                                       H.A.Grench*,         (67)11882  3  1.4268-4                            2.44                                2.44    1.19800010.0599   1.1117179.014820310.92797820.4187292
+    1 39089   3 102G   724000.0  31000.0 6.2870-3 1.5282-4                                       H.A.Grench*,         (67)11882  3  1.5282-4                            2.43                                2.43    1.18000010.059    1.1240441.014862880.95257970.4287876
+    1 39089   3 102G   824000.0  34000.0.00596956 1.4520-4                                       H.A.Grench*,         (67)11882  3  1.4520-4                            2.43                                2.43    1.184    0.0592   1.11482  .014773180.94157090.424107
+    1 39089   3 102G   926000.0  34000.0 5.3736-3 1.3120-4                                       H.A.Grench*,         (67)11882  3  1.3120-4                            2.44                                2.44    1.205    0.06025  1.162515 .015601760.96474270.4361972
+    1 39089   3 102G  1027000.0  30000.0 4.6109-3 1.1151-4                                       H.A.Grench*,         (67)11882  3  1.1151-4                            2.42                                2.42    1.2340001.061700011.200397 .015597180.972769 0.4356421
+    1 39089   3 102G  1085000.032000.002 4.6252-3 1.1172-4                                       H.A.Grench*,         (67)11882  3  1.1172-4                            2.42                                2.42    1.243    0.06215  1.195235 .015465470.96157280.4301111
+    1 39089   3 102G  1223000.0  34000.0 4.5702-3 1.1042-4                                       H.A.Grench*,         (67)11882  3  1.1042-4                            2.42                                2.42    1.2500001.062500011.2077581.015640750.96620640.4322889
+#/C5DATA        0
+#/DATASET       11882003 
+#DATASET        11882004   20200504
+#SUBENT         11882004   20200504
+#ENTRY          11882      20200504
+#TITLE          A study of the spin dependence of the nuclear level
+#+              density by means of the Y89(n,gamma)Y90g,90m reactions
+#+              with fast neutrons.
+#AUTHORS        H.A.Grench,K.L.Coop,H.O.Menlove,F.J.Vaughn
+#AUTHOR1        H.A.Grench+
+#YEAR           1967
+#X4REF1         J,NP/A,94,157,1967
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.94, p.157 (1967)
+#DATE           20200504
+#INSTITUTE      1USALOK
+#METHOD         ACTIV
+#REACTION       39-Y-89(N,G)39-Y-90-M,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           39089            
+#TARGET         39089           [ ]             39-Y-89         [ ] 
+#REAC1          N,G
+#PRODUCT        39-Y-90-M
+#C4ReaCode      (N,G),SIG
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.95647836(1.4e5) Data[11]*0.8353205(1.2e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 39089   3 102M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 39-Y-89(N,G)39-Y-90-M,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11882004    0.851254    0.851254    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11882004    CS          12          0.784261    0.956478    0.851254    -14.9%      1.27509     [EN,MONIT,MONIT-ERR]::au197ng
+#C5DATA         12
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 39089   3 102M   143000.032000.002 2.2860-4 4.4000-6                                       H.A.Grench*,         (67)11882  4  4.4000-6                            1.92                                1.92    0.294    0.0441   0.28120475.4126-3 0.95647840.1227347
+    1 39089   3 102M   223000.0  35000.0 2.9959-4 6.2018-6                                       H.A.Grench*,         (67)11882  4  6.2018-6                            2.07                                2.07    0.272    .040800010.249962 5.1745-3 0.91897790.1268255
+    1 39089   3 102M   318000.0  33000.0 2.9822-4 5.8844-6                                       H.A.Grench*,         (67)11882  4  5.8844-6                            1.97                                1.97    0.229    0.03435  0.191832 3.7852-3 0.83769420.1101948
+    1 39089   3 102M   426000.0  29000.0 3.5671-4 7.1127-6                                       H.A.Grench*,         (67)11882  4  7.1127-6                            1.99                                1.99    0.182    0.0273   0.1542092.003074850.84730320.1126319
+    1 39089   3 102M   525000.0  31000.03.9621E-4 8.1644-6                                       H.A.Grench*,         (67)11882  4  8.1644-6                            2.06                                2.06    0.155    0.02325  0.12874752.6530-3 0.83062890.1141078
+    1 39089   3 102M   609000.0  31000.0 3.9135-4 7.9963-6                                       H.A.Grench*,         (67)11882  4  7.9963-6                            2.04                                2.04    0.138    0.0207   0.108228 2.2114-3 0.78426080.1068307
+    1 39089   3 102M   724000.0  31000.0 4.1842-4 8.6571-6                                       H.A.Grench*,         (67)11882  4  8.6571-6                            2.07                                2.07    0.117    0.01755  0.09543021.9744-3 0.81564270.1125035
+    1 39089   3 102M   824000.0  34000.0 4.5367-4 1.0730-5                                       H.A.Grench*,         (67)11882  4  1.0730-5                            2.37                                2.37    0.106    0.0159   .08775284.002075440.827857 0.1305308
+    1 39089   3 102M   926000.0  34000.0 4.2278-4 1.4769-5                                       H.A.Grench*,         (67)11882  4  1.4769-5                            3.49                                3.49    0.0987   0.014805 .085160852.9749-3 0.86282520.2009402
+    1 39089   3 102M  1027000.0  30000.0 2.6817-4 5.5466-6                                       H.A.Grench*,         (67)11882  4  5.5466-6                            2.07                                2.07    0.094    0.0141   .079271641.6396-3 0.84331530.1162814
+    1 39089   3 102M  1085000.032000.002 3.0429-4 6.4973-6                                       H.A.Grench*,         (67)11882  4  6.4973-6                            2.14                                2.14    .092400010.01386  .078978751.6864-3 0.85474830.1216728
+    1 39089   3 102M  1223000.0  34000.0 2.5477-4 5.7056-6                                       H.A.Grench*,         (67)11882  4  5.7056-6                            2.24                                2.24    0.0895   0.013425 .074761181.6743-3 0.83532050.1247116
+#/C5DATA        0
+#/DATASET       11882004 
+#DATASET        11882005   20200504
+#SUBENT         11882005   20200504
+#ENTRY          11882      20200504
+#TITLE          A study of the spin dependence of the nuclear level
+#+              density by means of the Y89(n,gamma)Y90g,90m reactions
+#+              with fast neutrons.
+#AUTHORS        H.A.Grench,K.L.Coop,H.O.Menlove,F.J.Vaughn
+#AUTHOR1        H.A.Grench+
+#YEAR           1967
+#X4REF1         J,NP/A,94,157,1967
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.94, p.157 (1967)
+#DATE           20200504
+#INSTITUTE      1USALOK
+#METHOD         ACTIV
+#REACTION       39-Y-89(N,G)39-Y-90-G,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           39089            
+#TARGET         39089           [ ]             39-Y-89         [ ] 
+#REAC1          N,G
+#PRODUCT        39-Y-90-G
+#C4ReaCode      (N,G),SIG
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9585895(1.4e5) Data[11]*0.8353205(1.2e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 39089   3 102G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 39-Y-89(N,G)39-Y-90-G,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11882005    0.851430    0.851430    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11882005    CS          12          0.784261    0.958589    0.851430    -14.9%      1.27509     [EN,MONIT,MONIT-ERR]::au197ng
+#C5DATA         12
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 39089   3 102G   142000.032000.002 9.2120-3 1.7720-4                                       H.A.Grench*,         (67)11882  5  1.7720-4                            1.92                                1.92    0.294    0.0441   0.2818253.005421140.95858950.122929
+    1 39089   3 102G   223000.0  35000.0 6.9475-3 1.4382-4                                       H.A.Grench*,         (67)11882  5  1.4382-4                            2.07                                2.07    0.272    .040800010.249962 5.1745-3 0.91897790.1268255
+    1 39089   3 102G   318000.0  33000.0 6.5424-3 1.2909-4                                       H.A.Grench*,         (67)11882  5  1.2909-4                            1.97                                1.97    0.229    0.03435  0.191832 3.7852-3 0.83769420.1101948
+    1 39089   3 102G   426000.0  29000.0 5.5244-3 1.1015-4                                       H.A.Grench*,         (67)11882  5  1.1015-4                            1.99                                1.99    0.182    0.0273   0.1542092.003074850.84730320.1126319
+    1 39089   3 102G   525000.0  31000.0 5.4822-3 1.1297-4                                       H.A.Grench*,         (67)11882  5  1.1297-4                            2.06                                2.06    0.155    0.02325  0.12874752.6530-3 0.83062890.1141073
+    1 39089   3 102G   609000.0  31000.0 5.4192-3 1.1073-4                                       H.A.Grench*,         (67)11882  5  1.1073-4                            2.04                                2.04    0.138    0.0207   0.108228 2.2114-3 0.78426080.1068302
+    1 39089   3 102G   724000.0  31000.0 5.7258-3 1.1847-4                                       H.A.Grench*,         (67)11882  5  1.1847-4                            2.07                                2.07    0.117    0.01755  0.09543021.9744-3 0.81564270.112504
+    1 39089   3 102G   824000.0  34000.0 5.4887-3 1.2981-4                                       H.A.Grench*,         (67)11882  5  1.2981-4                            2.37                                2.37    0.106    0.0159   .08775284.002075440.827857 0.1305304
+    1 39089   3 102G   926000.0  34000.0 5.0044-3 1.7482-4                                       H.A.Grench*,         (67)11882  5  1.7482-4                            3.49                                3.49    0.0987   0.014805 .085160852.9749-3 0.86282520.2009405
+    1 39089   3 102G  1027000.0  30000.0 4.4864-3 9.2793-5                                       H.A.Grench*,         (67)11882  5  9.2793-5                            2.07                                2.07    0.094    0.0141   .079271641.6396-3 0.84331530.1162819
+    1 39089   3 102G  1085000.032000.002 4.5729-3 9.7642-5                                       H.A.Grench*,         (67)11882  5  9.7642-5                            2.14                                2.14    .092400010.01386  .078978751.6864-3 0.85474830.1216728
+    1 39089   3 102G  1223000.0  34000.0 4.4105-3 9.8771-5                                       H.A.Grench*,         (67)11882  5  9.8771-5                            2.24                                2.24    0.0895   0.013425 .074761181.6743-3 0.83532050.1247111
+#/C5DATA        0
+#/DATASET       11882005 
+#DATASET        11882006   20200504
+#SUBENT         11882006   20200504
+#ENTRY          11882      20200504
+#TITLE          A study of the spin dependence of the nuclear level
+#+              density by means of the Y89(n,gamma)Y90g,90m reactions
+#+              with fast neutrons.
+#AUTHORS        H.A.Grench,K.L.Coop,H.O.Menlove,F.J.Vaughn
+#AUTHOR1        H.A.Grench+
+#YEAR           1967
+#X4REF1         J,NP/A,94,157,1967
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.94, p.157 (1967)
+#DATE           20200504
+#INSTITUTE      1USALOK
+#METHOD         ACTIV
+#REACTION       39-Y-89(N,G)39-Y-90-M,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           39089            
+#TARGET         39089           [ ]             39-Y-89         [ ] 
+#REAC1          N,G
+#PRODUCT        39-Y-90-M
+#C4ReaCode      (N,G),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99101186(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 39089   3 102M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.112(8%)  EN-NRM(eV):1.48E7
+#M1             Point: XS(b)=0.1109933(0.43%)  EN-NRM(eV):1.48E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 39-Y-89(N,G)39-Y-90-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.48E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.112
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11882006    0.991012    0.991012    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11882006    CS          1           0.991012    0.991012    0.991012    -0.899%     1.00907     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 39089   3 102M     1.48E7 800000.0 4.9551-4 5.6969-5                                       H.A.Grench*,         (67)11882  6  2.1205-6                   5.6969-5 0.43                       11.5     11.5    0.112    0.00896  0.11099334.7501-4 0.99101190.8138397
+#/C5DATA        0
+#/DATASET       11882006 
+#/C5.2.3        1               5               5               0               49              

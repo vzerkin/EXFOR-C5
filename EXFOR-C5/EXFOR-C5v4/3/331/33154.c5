@@ -1,0 +1,75 @@
+#C5.2.3
+#DATASET        33154002   20210424
+#SUBENT         33154002   20210424
+#ENTRY          33154      20210424
+#TITLE          Neutron radiative capture cross section for sodium
+#+              with covariance analysis
+#AUTHORS        A.Gandhi, A.Sharma, R.Pachuau, B.Lalremruata, M.Mehta,
+#+              P.N.Patil, S.V.Suryanarayana, L.S.Danu, B.K.Nayak,
+#+              A.Kumar
+#AUTHOR1        A.Gandhi+
+#YEAR           2021
+#X4REF1         J,EPJ/A,57,1,2021
+#REFERENCE1     Jour: European Physical Journal A: Hadrons and Nuclei, Vol.57, p.1 (2021)
+#DATE           20210424
+#INSTITUTE      3INDBHU,3INDKUD,3INDTRM,3INDIND
+#METHOD         ACTIV
+#REACTION       11-NA-23(N,G)11-NA-24,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           11023            
+#TARGET         11023           [ ]             11-NA-23        [ ] 
+#REAC1          N,G
+#PRODUCT        11-NA-24
+#C4ReaCode      (N,G),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.74413043(6.1e5) Data[2]*1.0012635(3.1e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dOther
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 11023   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,INL)49-IN-115-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$in115ninl}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 11-NA-23(N,G)11-NA-24,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,INL)49-IN-115-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$in115ninl;          #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        33154002    0.916566    0.916566    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          33154002    CS          3           0.744130    1.00430     0.916566    -8.34%      1.34385     [EN,MONIT,MONIT-ERR]::in115ninl
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 11023   3 102    610000.0  20000.0 1.0418-4 1.8465-5                                       A.Gandhi*,           (21)33154  2 6.1552E-62.3667E-5 3.5717-6 1.8465-5 5.91     22.7     3.43     17.7     17.7    0.01303  4.2999E-4.009696023.3242-4 0.74413040.745156
+    1 11023   3 102   2110000.0  40000.0 2.1894-4 3.7439-5                                       A.Gandhi*,           (21)33154  2 9.5844E-63.5584E-5 5.7657-6 3.7439-5 4.38     16.3     2.63     17.1     17.1    0.29587  7.7900-3 0.29714337.8252-3 1.00430351.0043086
+    1 11023   3 102   3130000.0  40000.0 1.5119-4 2.1620-5                                       A.Gandhi*,           (21)33154  2 6.6388E-62.0257E-5 3.5907-6 2.1620-5 4.39     13.4     2.37     14.3     14.3    0.33842  8.0398-3 0.33884768.0474-3 1.00126351.0012544
+#/C5DATA        0
+#/DATASET       33154002 
+#/C5.2.3        1               1               1               0               3               

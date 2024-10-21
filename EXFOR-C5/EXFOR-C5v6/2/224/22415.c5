@@ -1,0 +1,1575 @@
+#C5.2.3
+#DATASET        22415002   20120409
+#SUBENT         22415002   20120409
+#ENTRY          22415      20220102
+#TITLE          Measurement of activation cross section of short-lived
+#+               nuclei produced by 14 MeV neutrons - Ru, Pd, Cd, Sn
+#AUTHORS        Y.Kasugai, T.Tokushima,  K.Kawade, H.Yamamoto,
+#+               T.Katoh, A.Takahashi, T.Iida
+#AUTHOR1        Y.Kasugai+
+#YEAR           1992
+#X4REF1         S,JAERI-M-92-027,268,1992
+#REFERENCE1     Conf: JAERI-M Reports, No.92-027, p.268 (1992)
+#DATE           20120409
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       44-RU-101(N,P)43-TC-101,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           44101            
+#TARGET         44101           [ ]             44-RU-101       [ ] 
+#REAC1          N,P
+#PRODUCT        43-TC-101
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.5,40.)    ADDED AS COMMON:ERR-S,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-2,,0.1)       ADDED AS COMMON:ERR-2,PER-CENT=0.05%
+#CompNotes      ERR-ANALYS:(ERR-4,1.5,5.)     ADDED AS COMMON:ERR-4,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-6,,0.3)       ADDED AS COMMON:ERR-6,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-7,,0.4)       ADDED AS COMMON:ERR-7,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,0.4)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-9,0.,0.3)     ADDED AS COMMON:ERR-9,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-10,0.,5.)     ADDED AS COMMON:ERR-10,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-12,0.,20.)    ADDED AS COMMON:ERR-12,PER-CENT=10.0%
+#CompNotes      ERR-ANALYS:(ERR-13,0.,5.)     ADDED AS COMMON:ERR-13,PER-CENT=2.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9595639(1.5e7) Data[5]*0.9792993(1.3e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 44101   3 103 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{endfb5$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 44-RU-101(N,P)43-TC-101,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,,3,ENDF/B-V,,1978} $ al27na;#[0]#old monit-ref
+#+              m0: endfb5$al27na;            #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        22415002    0.974361    0.974361    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22415002    CS          6           0.959564    0.984224    0.974361    -2.56%      1.04214     endfb5::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 44101   3 103 S    1.34E7         .01841083 1.0772-3                                       Y.Kasugai*,          (92)22415  2  1.7528-3   9.4E-5          1.0772-3 9.52     0.51              5.85     5.85    0.128112 7.6206-3 0.12546  9.9781E-40.97929930.9792992
+    1 44101   3 103 S   1.365E7         .019389222.6189E-4                                       Y.Kasugai*,          (92)22415  2  1.8405-3  9.85E-5         2.6189E-4 9.49     0.51              1.35     1.35    0.126968 0.007579 0.124965 7.4057-4 0.98422440.2182417
+    1 44101   3 103 S   1.388E7         .02016139 1.1802-3                                       Y.Kasugai*,          (92)22415  2  1.9102-3 1.025E-4          1.1802-3 9.47     0.51              5.85     5.85    0.12547767.5143-3 0.123405 6.1043-4 0.98348240.9834823
+    1 44101   3 103 S   1.428E7         .02249387 1.8104-4                                       Y.Kasugai*,          (92)22415  2 .00212574 1.155E-4          1.8104-4 9.45     0.51              0.80     0.80    0.12170960.00732920.118516 5.0251-4 0.97376050.1293112
+    1 44101   3 103 S   1.458E7         .02472533.00144875                                       Y.Kasugai*,          (92)22415  2  2.3322-3  1.28E-4         .00144875 9.43     0.52              5.86     5.86    0.11832647.1554-3 0.11428364.4410-4 0.96583310.9658331
+    1 44101   3 103 S   1.487E7         .02475675 1.4393-3                                       Y.Kasugai*,          (92)22415  2  2.3319-3  1.29E-4          1.4393-3 9.42     0.52              5.81     5.81    0.11457966.9566-3 0.10994644.8485-4 0.95956390.9595639
+#/C5DATA        0
+#/DATASET       22415002 
+#DATASET        22415003   20120409
+#SUBENT         22415003   20120409
+#ENTRY          22415      20220102
+#TITLE          Measurement of activation cross section of short-lived
+#+               nuclei produced by 14 MeV neutrons - Ru, Pd, Cd, Sn
+#AUTHORS        Y.Kasugai, T.Tokushima,  K.Kawade, H.Yamamoto,
+#+               T.Katoh, A.Takahashi, T.Iida
+#AUTHOR1        Y.Kasugai+
+#YEAR           1992
+#X4REF1         S,JAERI-M-92-027,268,1992
+#REFERENCE1     Conf: JAERI-M Reports, No.92-027, p.268 (1992)
+#DATE           20120409
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       44-RU-102(N,P)43-TC-102-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           44102            
+#TARGET         44102           [ ]             44-RU-102       [ ] 
+#REAC1          N,P
+#PRODUCT        43-TC-102-M
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.5,40.)    ADDED AS COMMON:ERR-S,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-2,,0.1)       ADDED AS COMMON:ERR-2,PER-CENT=0.05%
+#CompNotes      ERR-ANALYS:(ERR-4,1.5,5.)     ADDED AS COMMON:ERR-4,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-6,,0.3)       ADDED AS COMMON:ERR-6,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-7,,0.4)       ADDED AS COMMON:ERR-7,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,0.4)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-9,0.,0.3)     ADDED AS COMMON:ERR-9,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-10,0.,5.)     ADDED AS COMMON:ERR-10,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-12,0.,20.)    ADDED AS COMMON:ERR-12,PER-CENT=10.0%
+#CompNotes      ERR-ANALYS:(ERR-13,0.,5.)     ADDED AS COMMON:ERR-13,PER-CENT=2.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9595639(1.5e7) Data[5]*0.9792993(1.3e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.95%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 44102   3 103MS ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{endfb5$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 44-RU-102(N,P)43-TC-102-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,,3,ENDF/B-V,,1978} $ al27na;#[0]#old monit-ref
+#+              m0: endfb5$al27na;            #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (44-RU-102(N,P)43-TC-102-M,,SIG)
+#+               #[1]#DECAY-DATA (43-TC-102-M,4.35MIN,DG,475.1,0.853) #Ix_old=0.853
+#+                a1=0.853/0.87;              #[1]#DECAY-DATA: correction to new 475.2 keV gamma-yield per decay Tc-102-m Ix_new=0.87
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.98045975
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        22415003    0.955321    0.974361    0.980460    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22415003    CS          6           0.940814    0.964992    0.955321    -4.47%      1.06291     endfb5::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 44102   3 103MS    1.34E7          3.8407-3 2.2084-4                                       Y.Kasugai*,          (92)22415  3  3.6565-4   2.0E-5          2.2084-4 9.52     0.52              5.75     5.75    0.128112 7.6206-3 0.12546  9.9781E-40.96016350.9601635
+    1 44102   3 103MS   1.365E7          4.5837-3 2.6055-4                                       Y.Kasugai*,          (92)22415  3  4.3511-4 2.375E-5          2.6055-4 9.49     0.52              5.68     5.68    0.126968 0.007579 0.124965 7.4057-4 0.96499240.9649923
+    1 44102   3 103MS   1.388E7          5.1974-3 2.7964-4                                       Y.Kasugai*,          (92)22415  3  4.9243-4 2.695E-5          2.7964-4 9.47     0.52              5.38     5.38    0.12547767.5143-3 0.123405 6.1043-4 0.96426490.9642649
+    1 44102   3 103MS   1.428E7          5.3847-3 3.1506-4                                       Y.Kasugai*,          (92)22415  3  5.0886-4  2.82E-5          3.1506-4 9.45     0.52              5.85     5.85    0.12170960.00732920.118516 5.0251-4 0.954733 0.954733
+    1 44102   3 103MS   1.458E7          6.6193-3 3.5984-4                                       Y.Kasugai*,          (92)22415  3  6.2436-4 3.495E-5          3.5984-4 9.43     0.53              5.44     5.44    0.11832647.1554-3 0.11428364.4410-4 0.94696050.9469605
+    1 44102   3 103MS   1.487E7          6.6610-3 3.5751-4                                       Y.Kasugai*,          (92)22415  3  6.2740-4  3.54E-5          3.5751-4 9.42     0.53              5.37     5.37    0.11457966.9566-3 0.10994644.8485-4 0.94081380.9408138
+#/C5DATA        0
+#/DATASET       22415003 
+#DATASET        22415004   20120409
+#SUBENT         22415004   20120409
+#ENTRY          22415      20220102
+#TITLE          Measurement of activation cross section of short-lived
+#+               nuclei produced by 14 MeV neutrons - Ru, Pd, Cd, Sn
+#AUTHORS        Y.Kasugai, T.Tokushima,  K.Kawade, H.Yamamoto,
+#+               T.Katoh, A.Takahashi, T.Iida
+#AUTHOR1        Y.Kasugai+
+#YEAR           1992
+#X4REF1         S,JAERI-M-92-027,268,1992
+#REFERENCE1     Conf: JAERI-M Reports, No.92-027, p.268 (1992)
+#DATE           20120409
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#REACTION       44-RU-102(N,X)43-TC-101,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           44102            
+#TARGET         44102           [ ]             44-RU-102       [ ] 
+#REAC1          N,X
+#PRODUCT        43-TC-101
+#C4ReaCode      (N,X),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.5,40.)    ADDED AS COMMON:ERR-S,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-2,,0.1)       ADDED AS COMMON:ERR-2,PER-CENT=0.05%
+#CompNotes      ERR-ANALYS:(ERR-4,1.5,5.)     ADDED AS COMMON:ERR-4,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-6,,0.3)       ADDED AS COMMON:ERR-6,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-7,,0.4)       ADDED AS COMMON:ERR-7,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,0.4)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-9,0.,0.3)     ADDED AS COMMON:ERR-9,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-10,0.,5.)     ADDED AS COMMON:ERR-10,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-12,0.,20.)    ADDED AS COMMON:ERR-12,PER-CENT=10.0%
+#CompNotes      ERR-ANALYS:(ERR-13,0.,5.)     ADDED AS COMMON:ERR-13,PER-CENT=2.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9595639(1.5e7) Data[5]*0.9792993(1.3e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 44102   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{endfb5$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 44-RU-102(N,X)43-TC-101,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,,3,ENDF/B-V,,1978} $ al27na;#[0]#old monit-ref
+#+              m0: endfb5$al27na;            #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        22415004    0.974361    0.974361    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22415004    CS          6           0.959564    0.984224    0.974361    -2.56%      1.04214     endfb5::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 44102   39000      1.34E7          5.6799-4 5.9817-5           43101.9                     Y.Kasugai*,          (92)22415  4  5.4074-5   2.9E-6          5.9817-5 9.52     0.51              10.5     10.5    0.128112 7.6206-3 0.12546  9.9781E-40.97929930.8545322
+    1 44102   39000     1.365E7          6.9880-4 5.4989-5           43101.9                     Y.Kasugai*,          (92)22415  4  6.6333-5  3.55E-6          5.4989-5 9.49     0.51              7.87     7.87    0.126968 0.007579 0.124965 7.4057-4 0.98422440.7855589
+    1 44102   39000     1.388E7          9.2447-4 2.0927-5           43101.9                     Y.Kasugai*,          (92)22415  4  8.7593-5   4.7E-6          2.0927-5 9.47     0.51              2.26     2.26    0.12547767.5143-3 0.123405 6.1043-4 0.98348240.3487864
+    1 44102   39000     1.428E7          1.4314-3 7.9125-5           43101.9                     Y.Kasugai*,          (92)22415  4  1.3528-4  7.35E-6          7.9125-5 9.45     0.51              5.53     5.53    0.12170960.00732920.118516 5.0251-4 0.97376050.6593778
+    1 44102   39000     1.458E7          2.1345-3 8.5373-5           43101.9                     Y.Kasugai*,          (92)22415  4  2.0134-4 1.105E-5          8.5373-5 9.43     0.52              4        4       0.11832647.1554-3 0.11428364.4410-4 0.96583310.5335786
+    1 44102   39000     1.487E7          2.8307-3 8.6309-5           43101.9                     Y.Kasugai*,          (92)22415  4  2.6663-4 1.475E-5          8.6309-5 9.42     0.52              3.05     3.05    0.11457966.9566-3 0.10994644.8485-4 0.95956390.4315426
+#/C5DATA        0
+#/DATASET       22415004 
+#DATASET        22415005   20120409
+#SUBENT         22415005   20120409
+#ENTRY          22415      20220102
+#TITLE          Measurement of activation cross section of short-lived
+#+               nuclei produced by 14 MeV neutrons - Ru, Pd, Cd, Sn
+#AUTHORS        Y.Kasugai, T.Tokushima,  K.Kawade, H.Yamamoto,
+#+               T.Katoh, A.Takahashi, T.Iida
+#AUTHOR1        Y.Kasugai+
+#YEAR           1992
+#X4REF1         S,JAERI-M-92-027,268,1992
+#REFERENCE1     Conf: JAERI-M Reports, No.92-027, p.268 (1992)
+#DATE           20120409
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       44-RU-104(N,P)43-TC-104,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           44104            
+#TARGET         44104           [ ]             44-RU-104       [ ] 
+#REAC1          N,P
+#PRODUCT        43-TC-104
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.5,40.)    ADDED AS COMMON:ERR-S,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-2,,0.1)       ADDED AS COMMON:ERR-2,PER-CENT=0.05%
+#CompNotes      ERR-ANALYS:(ERR-4,1.5,5.)     ADDED AS COMMON:ERR-4,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-6,,0.3)       ADDED AS COMMON:ERR-6,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-7,,0.4)       ADDED AS COMMON:ERR-7,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,0.4)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-9,0.,0.3)     ADDED AS COMMON:ERR-9,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-10,0.,5.)     ADDED AS COMMON:ERR-10,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-12,0.,20.)    ADDED AS COMMON:ERR-12,PER-CENT=10.0%
+#CompNotes      ERR-ANALYS:(ERR-13,0.,5.)     ADDED AS COMMON:ERR-13,PER-CENT=2.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9595639(1.5e7) Data[5]*0.9792993(1.3e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-11.2%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 44104   3 103 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{endfb5$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 44-RU-104(N,P)43-TC-104,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,,3,ENDF/B-V,,1978} $ al27na;#[0]#old monit-ref
+#+              m0: endfb5$al27na;            #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (44-RU-104(N,P)43-TC-104,,SIG)
+#+               #[1]#DECAY-DATA (43-TC-104,18.3MIN,DG,358.0,0.79) #Ix_old=0.79
+#+                a1=0.79/0.89;               #[1]#DECAY-DATA: correction to new 358 keV gamma-yield per decay Tc-104 Ix_new=0.89
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.8876405
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        22415005    0.864882    0.974360    0.887640    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22415005    CS          6           0.851748    0.873637    0.864882    -13.5%      1.17406     endfb5::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 44104   3 103 S    1.34E7          3.4944-3 3.4272-4                                       Y.Kasugai*,          (92)22415  5  3.3269-4  2.01E-5          3.4272-4 9.52     0.58              9.81     9.81    0.128112 7.6206-3 0.12546  9.9781E-40.86926570.7450358
+    1 44104   3 103 S   1.365E7          4.2371-3 5.7648-4                                       Y.Kasugai*,          (92)22415  5  4.0221-4 2.425E-5          5.7648-4 9.49     0.57              13.6     13.6    0.126968 0.007579 0.124965 7.4057-4 0.87363740.8006611
+    1 44104   3 103 S   1.388E7          4.5919-3 4.3610-4                                       Y.Kasugai*,          (92)22415  5  4.3507-4  2.63E-5          4.3610-4 9.47     0.57              9.50     9.50    0.12547767.5143-3 0.123405 6.1043-4 0.87297870.7391511
+    1 44104   3 103 S   1.428E7          5.5405-3 5.3606-4                                       Y.Kasugai*,          (92)22415  5  5.2358-4 3.205E-5          5.3606-4 9.45     0.58              9.68     9.68    0.12170960.00732920.118516 5.0251-4 0.86434920.7343349
+    1 44104   3 103 S   1.458E7          6.4556-3 6.1584-4                                       Y.Kasugai*,          (92)22415  5 6.0891E-4 3.765E-5          6.1584-4 9.43     0.58              9.54     9.54    0.11832647.1554-3 0.11428364.4410-4 0.85731260.7245175
+    1 44104   3 103 S   1.487E7         .00665215 6.2198-4                                       Y.Kasugai*,          (92)22415  5  6.2658-4 3.905E-5          6.2198-4 9.42     0.59              9.35     9.35    0.11457966.9566-3 0.10994644.8485-4 0.85174780.714915
+#/C5DATA        0
+#/DATASET       22415005 
+#DATASET        22415006   20120409
+#SUBENT         22415006   20120409
+#ENTRY          22415      20220102
+#TITLE          Measurement of activation cross section of short-lived
+#+               nuclei produced by 14 MeV neutrons - Ru, Pd, Cd, Sn
+#AUTHORS        Y.Kasugai, T.Tokushima,  K.Kawade, H.Yamamoto,
+#+               T.Katoh, A.Takahashi, T.Iida
+#AUTHOR1        Y.Kasugai+
+#YEAR           1992
+#X4REF1         S,JAERI-M-92-027,268,1992
+#REFERENCE1     Conf: JAERI-M Reports, No.92-027, p.268 (1992)
+#DATE           20120409
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       44-RU-104(N,A)42-MO-101,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           44104            
+#TARGET         44104           [ ]             44-RU-104       [ ] 
+#REAC1          N,A
+#PRODUCT        42-MO-101
+#C4ReaCode      (N,A),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.5,40.)    ADDED AS COMMON:ERR-S,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-2,,0.1)       ADDED AS COMMON:ERR-2,PER-CENT=0.05%
+#CompNotes      ERR-ANALYS:(ERR-4,1.5,5.)     ADDED AS COMMON:ERR-4,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-6,,0.3)       ADDED AS COMMON:ERR-6,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-7,,0.4)       ADDED AS COMMON:ERR-7,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,0.4)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-9,0.,0.3)     ADDED AS COMMON:ERR-9,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-10,0.,5.)     ADDED AS COMMON:ERR-10,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-12,0.,20.)    ADDED AS COMMON:ERR-12,PER-CENT=10.0%
+#CompNotes      ERR-ANALYS:(ERR-13,0.,5.)     ADDED AS COMMON:ERR-13,PER-CENT=2.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9595639(1.5e7) Data[5]*0.9792993(1.3e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+3.24%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 44104   3 107 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{endfb5$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 44-RU-104(N,A)42-MO-101,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,,3,ENDF/B-V,,1978} $ al27na;#[0]#old monit-ref
+#+              m0: endfb5$al27na;            #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (44-RU-104(N,A)42-MO-101,,SIG)
+#+               #[1]#DECAY-DATA (42-MO-101,14.6MIN,DG,191.9,0.188) #Ix_old=0.188
+#+                a1=0.188/0.1821;            #[1]#DECAY-DATA: correction to new 191.92 keV gamma-yield per decay Mo-101 Ix_new=0.1821
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0323998
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        22415006    1.00593     0.974361    1.03240     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22415006    CS          6           0.990654    1.01611     1.00593     +0.593%     1.01611     endfb5::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 44104   3 107 S    1.34E7          1.5368-3 2.1416-4                                       Y.Kasugai*,          (92)22415  6  1.4630-4   7.6E-6          2.1416-4 9.52     0.49              13.9     13.9    0.128112 7.6206-3 0.12546  9.9781E-41.01102840.9311484
+    1 44104   3 107 S   1.365E7          1.4226-3 2.8230-4                                       Y.Kasugai*,          (92)22415  6  1.3504-4   7.0E-6          2.8230-4 9.49     0.49              19.8     19.8    0.126968 0.007579 0.124965 7.4057-4 1.016113 0.9734432
+    1 44104   3 107 S   1.388E7          1.8378-3 2.2892-4                                       Y.Kasugai*,          (92)22415  6  1.7413-4  9.05E-6          2.2892-4 9.47     0.49              12.5     12.5    0.12547767.5143-3 0.123405 6.1043-4 1.015347 0.9156709
+    1 44104   3 107 S   1.428E7          2.0207-3 3.0875-4                                       Y.Kasugai*,          (92)22415  6  1.9095-4 1.005E-5          3.0875-4 9.45     0.50              15.3     15.3    0.12170960.00732920.118516 5.0251-4 1.00531  0.9356053
+    1 44104   3 107 S   1.458E7          2.5925-3 3.3412-4                                       Y.Kasugai*,          (92)22415  6  2.4454-4   1.3E-5          3.3412-4 9.43     0.50              12.9     12.9    0.11832647.1554-3 0.11428364.4410-4 0.99712590.9030311
+    1 44104   3 107 S   1.487E7          2.5064-3 2.7832-4                                       Y.Kasugai*,          (92)22415  6  2.3608-4 1.265E-5          2.7832-4 9.42     0.50              11.1     11.1    0.11457966.9566-3 0.10994644.8485-4 0.99065360.8697445
+#/C5DATA        0
+#/DATASET       22415006 
+#DATASET        22415007   20120409
+#SUBENT         22415007   20120409
+#ENTRY          22415      20220102
+#TITLE          Measurement of activation cross section of short-lived
+#+               nuclei produced by 14 MeV neutrons - Ru, Pd, Cd, Sn
+#AUTHORS        Y.Kasugai, T.Tokushima,  K.Kawade, H.Yamamoto,
+#+               T.Katoh, A.Takahashi, T.Iida
+#AUTHOR1        Y.Kasugai+
+#YEAR           1992
+#X4REF1         S,JAERI-M-92-027,268,1992
+#REFERENCE1     Conf: JAERI-M Reports, No.92-027, p.268 (1992)
+#DATE           20120409
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       46-PD-104(N,P)45-RH-104-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           46104            
+#TARGET         46104           [ ]             46-PD-104       [ ] 
+#REAC1          N,P
+#PRODUCT        45-RH-104-M
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.5,40.)    ADDED AS COMMON:ERR-S,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-2,,0.1)       ADDED AS COMMON:ERR-2,PER-CENT=0.05%
+#CompNotes      ERR-ANALYS:(ERR-4,1.5,5.)     ADDED AS COMMON:ERR-4,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-6,,0.3)       ADDED AS COMMON:ERR-6,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-7,,0.4)       ADDED AS COMMON:ERR-7,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,0.4)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-9,0.,0.3)     ADDED AS COMMON:ERR-9,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-10,0.,5.)     ADDED AS COMMON:ERR-10,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-12,0.,20.)    ADDED AS COMMON:ERR-12,PER-CENT=10.0%
+#CompNotes      ERR-ANALYS:(ERR-13,0.,5.)     ADDED AS COMMON:ERR-13,PER-CENT=2.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9595639(1.5e7) Data[5]*0.9792993(1.3e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 46104   3 103MS ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{endfb5$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 46-PD-104(N,P)45-RH-104-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,,3,ENDF/B-V,,1978} $ al27na;#[0]#old monit-ref
+#+              m0: endfb5$al27na;            #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        22415007    0.974361    0.974361    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22415007    CS          6           0.959564    0.984224    0.974361    -2.56%      1.04214     endfb5::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 46104   3 103MS    1.34E7         .01674602 1.4604-3                                       Y.Kasugai*,          (92)22415  7  1.5943-3  8.55E-5          1.4604-3 9.52     0.51              8.72     8.72    0.128112 7.6206-3 0.12546  9.9781E-40.97929930.8113251
+    1 46104   3 103MS   1.365E7         .01830657 1.5214-3                                       Y.Kasugai*,          (92)22415  7  1.7378-3   9.3E-5          1.5214-3 9.49     0.51              8.31     8.31    0.126968 0.007579 0.124965 7.4057-4 0.98422440.8007343
+    1 46104   3 103MS   1.388E7         .01917791.00159967                                       Y.Kasugai*,          (92)22415  7  1.8170-3  9.75E-5         .00159967 9.47     0.51              8.34     8.34    0.12547767.5143-3 0.123405 6.1043-4 0.98348240.7998348
+    1 46104   3 103MS   1.428E7         .02083847 1.7385-3                                       Y.Kasugai*,          (92)22415  7  1.9693-3  1.07E-4          1.7385-3 9.45     0.51              8.34     8.34    0.12170960.00732920.118516 5.0251-4 0.97376050.7902361
+    1 46104   3 103MS   1.458E7         .02153808.00191931                                       Y.Kasugai*,          (92)22415  7  2.0316-3 1.115E-4         .00191931 9.43     0.52              8.91     8.91    0.11832647.1554-3 0.11428364.4410-4 0.96583310.7997123
+    1 46104   3 103MS   1.487E7         .02063062 1.8194-3                                       Y.Kasugai*,          (92)22415  7  1.9432-3 1.075E-4          1.8194-3 9.42     0.52              8.82     8.82    0.11457966.9566-3 0.10994644.8485-4 0.95956390.7910402
+#/C5DATA        0
+#/DATASET       22415007 
+#DATASET        22415008   20150824
+#SUBENT         22415008   20150824
+#ENTRY          22415      20220102
+#TITLE          Measurement of activation cross section of short-lived
+#+               nuclei produced by 14 MeV neutrons - Ru, Pd, Cd, Sn
+#AUTHORS        Y.Kasugai, T.Tokushima,  K.Kawade, H.Yamamoto,
+#+               T.Katoh, A.Takahashi, T.Iida
+#AUTHOR1        Y.Kasugai+
+#YEAR           1992
+#X4REF1         S,JAERI-M-92-027,268,1992
+#REFERENCE1     Conf: JAERI-M Reports, No.92-027, p.268 (1992)
+#DATE           20150824
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       46-PD-105(N,X)45-RH-104-M,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           46105            
+#TARGET         46105           [ ]             46-PD-105       [ ] 
+#REAC1          N,X
+#PRODUCT        45-RH-104-M
+#C4ReaCode      (N,X),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.5,40.)    ADDED AS COMMON:ERR-S,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-2,,0.1)       ADDED AS COMMON:ERR-2,PER-CENT=0.05%
+#CompNotes      ERR-ANALYS:(ERR-4,1.5,5.)     ADDED AS COMMON:ERR-4,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-6,,0.3)       ADDED AS COMMON:ERR-6,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-7,,0.4)       ADDED AS COMMON:ERR-7,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,0.4)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-9,0.,0.3)     ADDED AS COMMON:ERR-9,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-10,0.,5.)     ADDED AS COMMON:ERR-10,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-12,0.,20.)    ADDED AS COMMON:ERR-12,PER-CENT=10.0%
+#CompNotes      ERR-ANALYS:(ERR-13,0.,5.)     ADDED AS COMMON:ERR-13,PER-CENT=2.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9595639(1.5e7) Data[5]*0.9792993(1.3e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 46105   39000MS ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{endfb5$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 46-PD-105(N,X)45-RH-104-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,,3,ENDF/B-V,,1978} $ al27na;#[0]#old monit-ref
+#+              m0: endfb5$al27na;            #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        22415008    0.974361    0.974361    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22415008    CS          6           0.959564    0.984224    0.974361    -2.56%      1.04214     endfb5::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 46105   39000MS    1.34E7          6.6592-3 7.8912-4           45104.9                     Y.Kasugai*,          (92)22415  8  6.3398-4   3.4E-5          7.8912-4 9.52     0.51              11.8     11.8    0.128112 7.6206-3 0.12546  9.9781E-40.97929930.8767973
+    1 46105   39000MS   1.365E7          8.1691-3 9.6783-4           45104.9                     Y.Kasugai*,          (92)22415  8  7.7545-4  4.15E-5          9.6783-4 9.49     0.51              11.8     11.8    0.126968 0.007579 0.124965 7.4057-4 0.98422440.879841
+    1 46105   39000MS   1.388E7          8.4579-3 9.5685-4           45104.9                     Y.Kasugai*,          (92)22415  8  8.0136-4   4.3E-5          9.5685-4 9.47     0.51              11.3     11.3    0.12547767.5143-3 0.123405 6.1043-4 0.98348240.8698611
+    1 46105   39000MS   1.428E7         .00886122.00114854           45104.9                     Y.Kasugai*,          (92)22415  8  8.3741-4  4.55E-5         .00114854 9.45     0.51              13       13      0.12170960.00732920.118516 5.0251-4 0.97376050.8834924
+    1 46105   39000MS   1.458E7          7.6301-3 8.4901-4           45104.9                     Y.Kasugai*,          (92)22415  8  7.1969-4  3.95E-5          8.4901-4 9.43     0.52              11.1     11.1    0.11832647.1554-3 0.11428364.4410-4 0.96583310.8490095
+    1 46105   39000MS   1.487E7         .00930777 1.0041-3           45104.9                     Y.Kasugai*,          (92)22415  8  8.7674-4  4.85E-5          1.0041-3 9.42     0.52              10.8     10.8    0.11457966.9566-3 0.10994644.8485-4 0.95956390.8367564
+#/C5DATA        0
+#/DATASET       22415008 
+#DATASET        22415009   20120409
+#SUBENT         22415009   20120409
+#ENTRY          22415      20220102
+#TITLE          Measurement of activation cross section of short-lived
+#+               nuclei produced by 14 MeV neutrons - Ru, Pd, Cd, Sn
+#AUTHORS        Y.Kasugai, T.Tokushima,  K.Kawade, H.Yamamoto,
+#+               T.Katoh, A.Takahashi, T.Iida
+#AUTHOR1        Y.Kasugai+
+#YEAR           1992
+#X4REF1         S,JAERI-M-92-027,268,1992
+#REFERENCE1     Conf: JAERI-M Reports, No.92-027, p.268 (1992)
+#DATE           20120409
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       46-PD-105(N,P)45-RH-105-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           46105            
+#TARGET         46105           [ ]             46-PD-105       [ ] 
+#REAC1          N,P
+#PRODUCT        45-RH-105-M
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.5,40.)    ADDED AS COMMON:ERR-S,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-2,,0.1)       ADDED AS COMMON:ERR-2,PER-CENT=0.05%
+#CompNotes      ERR-ANALYS:(ERR-4,1.5,5.)     ADDED AS COMMON:ERR-4,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-6,,0.3)       ADDED AS COMMON:ERR-6,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-7,,0.4)       ADDED AS COMMON:ERR-7,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,0.4)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-9,0.,0.3)     ADDED AS COMMON:ERR-9,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-10,0.,5.)     ADDED AS COMMON:ERR-10,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-12,0.,20.)    ADDED AS COMMON:ERR-12,PER-CENT=10.0%
+#CompNotes      ERR-ANALYS:(ERR-13,0.,5.)     ADDED AS COMMON:ERR-13,PER-CENT=2.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9595639(1.5e7) Data[5]*0.9792993(1.3e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.19%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 46105   3 103MS ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{endfb5$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 46-PD-105(N,P)45-RH-105-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,,3,ENDF/B-V,,1978} $ al27na;#[0]#old monit-ref
+#+              m0: endfb5$al27na;            #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (46-PD-105(N,P)45-RH-105-M,,SIG)
+#+               #[1]#DECAY-DATA (45-RH-105-M,42.4SEC,DG,129.6,.200) #Ix_old=0.2
+#+                a1=0.2/0.2024;              #[1]#DECAY-DATA: correction to new 129.782 keV gamma-yield per decay Rh-105-m Ix_new=0.2024
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9881423
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        22415009    0.962807    0.974361    0.988142    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22415009    CS          6           0.948186    0.972554    0.962807    -3.72%      1.05465     endfb5::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 46105   3 103MS    1.34E7          9.4833-4 6.6781-5                                       Y.Kasugai*,          (92)22415  9  9.0288-5   4.9E-6          6.6781-5 9.52     0.52              7.04     7.04    0.128112 7.6206-3 0.12546  9.9781E-40.96768710.7420104
+    1 46105   3 103MS   1.365E7          1.6825-3 7.7444-5                                       Y.Kasugai*,          (92)22415  9  1.5971-4  8.65E-6          7.7444-5 9.49     0.51              4.60     4.60    0.126968 0.007579 0.124965 7.4057-4 0.97255370.595726
+    1 46105   3 103MS   1.388E7          2.0505-3 7.9205-5                                       Y.Kasugai*,          (92)22415  9  1.9428-4 1.055E-5          7.9205-5 9.47     0.51              3.86     3.86    0.12547767.5143-3 0.123405 6.1043-4 0.97182050.5280305
+    1 46105   3 103MS   1.428E7          2.8578-3 1.0659-4                                       Y.Kasugai*,          (92)22415  9  2.7006-4 1.485E-5          1.0659-4 9.45     0.52              3.73     3.73    0.12170960.00732920.118516 5.0251-4 0.96221390.5075732
+    1 46105   3 103MS   1.458E7          3.9702-3 1.1835-4                                       Y.Kasugai*,          (92)22415  9  3.7448-4  2.08E-5          1.1835-4 9.43     0.52              2.98     2.98    0.11832647.1554-3 0.11428364.4410-4 0.95438060.4226696
+    1 46105   3 103MS   1.487E7          5.1676-3 1.1053-4                                       Y.Kasugai*,          (92)22415  9  4.8674-4 2.725E-5          1.1053-4 9.42     0.53              2.14     2.14    0.11457966.9566-3 0.10994644.8485-4 0.94818570.3158015
+#/C5DATA        0
+#/DATASET       22415009 
+#DATASET        22415010   20150824
+#SUBENT         22415010   20150824
+#ENTRY          22415      20220102
+#TITLE          Measurement of activation cross section of short-lived
+#+               nuclei produced by 14 MeV neutrons - Ru, Pd, Cd, Sn
+#AUTHORS        Y.Kasugai, T.Tokushima,  K.Kawade, H.Yamamoto,
+#+               T.Katoh, A.Takahashi, T.Iida
+#AUTHOR1        Y.Kasugai+
+#YEAR           1992
+#X4REF1         S,JAERI-M-92-027,268,1992
+#REFERENCE1     Conf: JAERI-M Reports, No.92-027, p.268 (1992)
+#DATE           20150824
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       46-PD-106(N,X)45-RH-105-M,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           46106            
+#TARGET         46106           [ ]             46-PD-106       [ ] 
+#REAC1          N,X
+#PRODUCT        45-RH-105-M
+#C4ReaCode      (N,X),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.5,40.)    ADDED AS COMMON:ERR-S,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-2,,0.1)       ADDED AS COMMON:ERR-2,PER-CENT=0.05%
+#CompNotes      ERR-ANALYS:(ERR-4,1.5,5.)     ADDED AS COMMON:ERR-4,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-6,,0.3)       ADDED AS COMMON:ERR-6,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-7,,0.4)       ADDED AS COMMON:ERR-7,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,0.4)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-9,0.,0.3)     ADDED AS COMMON:ERR-9,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-10,0.,5.)     ADDED AS COMMON:ERR-10,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-12,0.,20.)    ADDED AS COMMON:ERR-12,PER-CENT=10.0%
+#CompNotes      ERR-ANALYS:(ERR-13,0.,5.)     ADDED AS COMMON:ERR-13,PER-CENT=2.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9595639(1.5e7) Data[3]*0.98348236(1.4e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.19%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 46106   39000MS ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{endfb5$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 46-PD-106(N,X)45-RH-105-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,,3,ENDF/B-V,,1978} $ al27na;#[0]#old monit-ref
+#+              m0: endfb5$al27na;            #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (46-PD-106(N,X)45-RH-105-M,,SIG)
+#+               #[1]#DECAY-DATA (45-RH-105-M,42.4SEC,DG,129.6,.200) #Ix_old=0.2
+#+                a1=0.2/0.2024;              #[1]#DECAY-DATA: correction to new 129.782 keV gamma-yield per decay Rh-105-m Ix_new=0.2024
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9881423
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        22415010    0.959150    0.970660    0.988142    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22415010    CS          4           0.948186    0.971821    0.959150    -4.08%      1.05465     endfb5::al27na
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 46106   39000MS   1.388E7          4.8591-4 1.9219-4           45105.9                     Y.Kasugai*,          (92)22415 10  4.6038-5   2.5E-6          1.9219-4 9.47     0.51              39.6     39.6    0.12547767.5143-3 0.123405 6.1043-4 0.97182050.9609427
+    1 46106   39000MS   1.428E7          9.6221-4 3.8052-4           45105.9                     Y.Kasugai*,          (92)22415 10  9.0934-5   5.0E-6          3.8052-4 9.45     0.52              39.5     39.5    0.12170960.00732920.118516 5.0251-4 0.96221390.9513022
+    1 46106   39000MS   1.458E7          1.4316-3 4.6930-4           45105.9                     Y.Kasugai*,          (92)22415 10  1.3503-4   7.5E-6          4.6930-4 9.43     0.52              32.8     32.8    0.11832647.1554-3 0.11428364.4410-4 0.95438060.93861
+    1 46106   39000MS   1.487E7          1.2326-3 3.7186-4           45105.9                     Y.Kasugai*,          (92)22415 10  1.1610-4   6.5E-6          3.7186-4 9.42     0.53              30.2     30.2    0.11457966.9566-3 0.10994644.8485-4 0.94818570.9296427
+#/C5DATA        0
+#/DATASET       22415010 
+#DATASET        22415011   20150824
+#SUBENT         22415011   20150824
+#ENTRY          22415      20220102
+#TITLE          Measurement of activation cross section of short-lived
+#+               nuclei produced by 14 MeV neutrons - Ru, Pd, Cd, Sn
+#AUTHORS        Y.Kasugai, T.Tokushima,  K.Kawade, H.Yamamoto,
+#+               T.Katoh, A.Takahashi, T.Iida
+#AUTHOR1        Y.Kasugai+
+#YEAR           1992
+#X4REF1         S,JAERI-M-92-027,268,1992
+#REFERENCE1     Conf: JAERI-M Reports, No.92-027, p.268 (1992)
+#DATE           20150824
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       46-PD-108(N,X)45-RH-107,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           46108            
+#TARGET         46108           [ ]             46-PD-108       [ ] 
+#REAC1          N,X
+#PRODUCT        45-RH-107
+#C4ReaCode      (N,X),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.5,40.)    ADDED AS COMMON:ERR-S,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-2,,0.1)       ADDED AS COMMON:ERR-2,PER-CENT=0.05%
+#CompNotes      ERR-ANALYS:(ERR-4,1.5,5.)     ADDED AS COMMON:ERR-4,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-6,,0.3)       ADDED AS COMMON:ERR-6,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-7,,0.4)       ADDED AS COMMON:ERR-7,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,0.4)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-9,0.,0.3)     ADDED AS COMMON:ERR-9,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-10,0.,5.)     ADDED AS COMMON:ERR-10,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-12,0.,20.)    ADDED AS COMMON:ERR-12,PER-CENT=10.0%
+#CompNotes      ERR-ANALYS:(ERR-13,0.,5.)     ADDED AS COMMON:ERR-13,PER-CENT=2.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9595639(1.5e7) Data[5]*0.9792993(1.3e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 46108   39000 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{endfb5$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 46-PD-108(N,X)45-RH-107,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,,3,ENDF/B-V,,1978} $ al27na;#[0]#old monit-ref
+#+              m0: endfb5$al27na;            #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        22415011    0.974361    0.974361    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22415011    CS          6           0.959564    0.984224    0.974361    -2.56%      1.04214     endfb5::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 46108   39000 S    1.34E7          3.2317-4 8.6053-5           45107.9                     Y.Kasugai*,          (92)22415 11  3.0766-5  1.65E-6          8.6053-5 9.52     0.51              26.6     26.6    0.128112 7.6206-3 0.12546  9.9781E-40.97929930.9561488
+    1 46108   39000 S   1.365E7          2.9527-4 7.6760-5           45107.9                     Y.Kasugai*,          (92)22415 11  2.8028-5   1.5E-6          7.6760-5 9.49     0.51              26       26      0.126968 0.007579 0.124965 7.4057-4 0.98422440.9594986
+    1 46108   39000 S   1.388E7          5.4092-41.2371E-4           45107.9                     Y.Kasugai*,          (92)22415 11  5.1250-5  2.75E-6         1.2371E-4 9.47     0.51              22.9     22.9    0.12547767.5143-3 0.123405 6.1043-4 0.98348240.9516155
+    1 46108   39000 S   1.428E7          8.5691-4 1.9791-4           45107.9                     Y.Kasugai*,          (92)22415 11  8.0978-5   4.4E-6          1.9791-4 9.45     0.51              23.1     23.1    0.12170960.00732920.118516 5.0251-4 0.97376050.9424058
+    1 46108   39000 S   1.458E7          1.1204-3 2.3180-4           45107.9                     Y.Kasugai*,          (92)22415 11  1.0567-4   5.8E-6          2.3180-4 9.43     0.52              20.7     20.7    0.11832647.1554-3 0.11428364.4410-4 0.96583310.9271969
+    1 46108   39000 S   1.487E7          0.001756 3.4879-4           45107.9                     Y.Kasugai*,          (92)22415 11  1.6540-4  9.15E-6          3.4879-4 9.42     0.52              19.9     19.9    0.11457966.9566-3 0.10994644.8485-4 0.95956390.9178577
+#/C5DATA        0
+#/DATASET       22415011 
+#DATASET        22415012   20220102
+#SUBENT         22415012   20220102
+#ENTRY          22415      20220102
+#TITLE          Measurement of activation cross section of short-lived
+#+               nuclei produced by 14 MeV neutrons - Ru, Pd, Cd, Sn
+#AUTHORS        Y.Kasugai, T.Tokushima,  K.Kawade, H.Yamamoto,
+#+               T.Katoh, A.Takahashi, T.Iida
+#AUTHOR1        Y.Kasugai+
+#YEAR           1992
+#X4REF1         S,JAERI-M-92-027,268,1992
+#REFERENCE1     Conf: JAERI-M Reports, No.92-027, p.268 (1992)
+#DATE           20220102
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       46-PD-108(N,P)45-RH-108-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           46108            
+#TARGET         46108           [ ]             46-PD-108       [ ] 
+#REAC1          N,P
+#PRODUCT        45-RH-108-M
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.5,40.)    ADDED AS COMMON:ERR-S,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-2,,0.1)       ADDED AS COMMON:ERR-2,PER-CENT=0.05%
+#CompNotes      ERR-ANALYS:(ERR-4,1.5,5.)     ADDED AS COMMON:ERR-4,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-6,,0.3)       ADDED AS COMMON:ERR-6,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-7,,0.4)       ADDED AS COMMON:ERR-7,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,0.4)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-9,0.,0.3)     ADDED AS COMMON:ERR-9,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-10,0.,5.)     ADDED AS COMMON:ERR-10,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-12,0.,20.)    ADDED AS COMMON:ERR-12,PER-CENT=10.0%
+#CompNotes      ERR-ANALYS:(ERR-13,0.,5.)     ADDED AS COMMON:ERR-13,PER-CENT=2.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9595639(1.5e7) Data[5]*0.9792993(1.3e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.67%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 46108   3 103MS ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{endfb5$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 46-PD-108(N,P)45-RH-108-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,,3,ENDF/B-V,,1978} $ al27na;#[0]#old monit-ref
+#+              m0: endfb5$al27na;            #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (46-PD-108(N,P)45-RH-108-M,,SIG)
+#+               #[1]#DECAY-DATA (45-RH-108-M,6.0MIN,DG,581.0,0.59) #Ix_old=0.59
+#+                a1=0.59/0.6;                #[1]#DECAY-DATA: correction to new 581.1 keV gamma-yield per decay Rh-108-m Ix_new=0.6
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.98333323
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        22415012    0.958121    0.974361    0.983333    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22415012    CS          6           0.943571    0.967821    0.958121    -4.19%      1.05980     endfb5::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 46108   3 103MS    1.34E7          1.5504-3 3.1440-4                                       Y.Kasugai*,          (92)22415 12  1.4760-4  8.05E-6          3.1440-4 9.52     0.52              20.3     20.3    0.128112 7.6206-3 0.12546  9.9781E-40.96297750.9246979
+    1 46108   3 103MS   1.365E7          1.4808-3 3.0703-4                                       Y.Kasugai*,          (92)22415 12  1.4056-4  7.65E-6          3.0703-4 9.49     0.52              20.7     20.7    0.126968 0.007579 0.124965 7.4057-4 0.96782050.930398
+    1 46108   3 103MS   1.388E7          1.7698-3 3.5199-4                                       Y.Kasugai*,          (92)22415 12  1.6768-4  9.15E-6          3.5199-4 9.47     0.52              19.9     19.9    0.12547767.5143-3 0.123405 6.1043-4 0.96709090.9262869
+    1 46108   3 103MS   1.428E7          1.8768-3 4.0595-4                                       Y.Kasugai*,          (92)22415 12  1.7735-4   9.8E-6          4.0595-4 9.45     0.52              21.6     21.6    0.12170960.00732920.118516 5.0251-4 0.957531 0.9226149
+    1 46108   3 103MS   1.458E7          2.6403-3 5.3721-4                                       Y.Kasugai*,          (92)22415 12  2.4903-4  1.39E-5          5.3721-4 9.43     0.53              20.3     20.3    0.11832647.1554-3 0.11428364.4410-4 0.94973580.9105321
+    1 46108   3 103MS   1.487E7          3.1043-3 6.0360-4                                       Y.Kasugai*,          (92)22415 12  2.9240-4 1.645E-5          6.0360-4 9.42     0.53              19.4     19.4    0.11457966.9566-3 0.10994644.8485-4 0.94357110.9008934
+#/C5DATA        0
+#/DATASET       22415012 
+#DATASET        22415013   20150824
+#SUBENT         22415013   20150824
+#ENTRY          22415      20220102
+#TITLE          Measurement of activation cross section of short-lived
+#+               nuclei produced by 14 MeV neutrons - Ru, Pd, Cd, Sn
+#AUTHORS        Y.Kasugai, T.Tokushima,  K.Kawade, H.Yamamoto,
+#+               T.Katoh, A.Takahashi, T.Iida
+#AUTHOR1        Y.Kasugai+
+#YEAR           1992
+#X4REF1         S,JAERI-M-92-027,268,1992
+#REFERENCE1     Conf: JAERI-M Reports, No.92-027, p.268 (1992)
+#DATE           20150824
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       46-PD-108(N,2N)46-PD-107-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           46108            
+#TARGET         46108           [ ]             46-PD-108       [ ] 
+#REAC1          N,2N
+#PRODUCT        46-PD-107-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.5,40.)    ADDED AS COMMON:ERR-S,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-2,,0.1)       ADDED AS COMMON:ERR-2,PER-CENT=0.05%
+#CompNotes      ERR-ANALYS:(ERR-4,1.5,5.)     ADDED AS COMMON:ERR-4,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-6,,0.3)       ADDED AS COMMON:ERR-6,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-7,,0.4)       ADDED AS COMMON:ERR-7,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,0.4)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-9,0.,0.3)     ADDED AS COMMON:ERR-9,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-10,0.,5.)     ADDED AS COMMON:ERR-10,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-12,0.,20.)    ADDED AS COMMON:ERR-12,PER-CENT=10.0%
+#CompNotes      ERR-ANALYS:(ERR-13,0.,5.)     ADDED AS COMMON:ERR-13,PER-CENT=2.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9595639(1.5e7) Data[5]*0.9792993(1.3e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.437%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 46108   3  16MS ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{endfb5$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 46-PD-108(N,2N)46-PD-107-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,,3,ENDF/B-V,,1978} $ al27na;#[0]#old monit-ref
+#+              m0: endfb5$al27na;            #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (46-PD-108(N,2N)46-PD-107-M,,SIG)
+#+               #[1]#DECAY-DATA (46-PD-107-M,21.3SEC,DG,214.9,0.690) #Ix_old=0.69
+#+                a1=0.69/0.687;              #[1]#DECAY-DATA: correction to new 214.9 keV gamma-yield per decay Pd-107-m Ix_new=0.687
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0043669
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        22415013    0.978616    0.974361    1.00437     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22415013    CS          6           0.963754    0.988522    0.978616    -2.14%      1.03761     endfb5::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 46108   3  16MS    1.34E7         0.3472022.01868794                                       Y.Kasugai*,          (92)22415 13 .03305475 0.001765         .01868794 9.52     0.51              5.38     5.38    0.128112 7.6206-3 0.12546  9.9781E-40.98357580.9835758
+    1 46108   3  16MS   1.365E7         0.3835467.02174749                                       Y.Kasugai*,          (92)22415 13 .03640808  0.00194         .02174749 9.49     0.51              5.67     5.67    0.126968 0.007579 0.124965 7.4057-4 0.98852240.9885224
+    1 46108   3  16MS   1.388E7         0.3516487.01777999                                       Y.Kasugai*,          (92)22415 13 .03331755  0.00178         .01777999 9.47     0.51              5.06     5.06    0.12547767.5143-3 0.123405 6.1043-4 0.98777710.9877771
+    1 46108   3  16MS   1.428E7         0.3647988.01956026                                       Y.Kasugai*,          (92)22415 13 .03447383 0.001865         .01956026 9.45     0.51              5.36     5.36    0.12170960.00732920.118516 5.0251-4 0.97801280.9780129
+    1 46108   3  16MS   1.458E7         0.3773498.01940102                                       Y.Kasugai*,          (92)22415 13 .03559309 0.001945         .01940102 9.43     0.52              5.14     5.14    0.11832647.1554-3 0.11428364.4410-4 0.97005080.9700508
+    1 46108   3  16MS   1.487E7         0.3729729.01927508                                       Y.Kasugai*,          (92)22415 13 .03513083 0.001935         .01927508 9.42     0.52              5.17     5.17    0.11457966.9566-3 0.10994644.8485-4 0.96375420.9637542
+#/C5DATA        0
+#/DATASET       22415013 
+#DATASET        22415014   20120409
+#SUBENT         22415014   20120409
+#ENTRY          22415      20220102
+#TITLE          Measurement of activation cross section of short-lived
+#+               nuclei produced by 14 MeV neutrons - Ru, Pd, Cd, Sn
+#AUTHORS        Y.Kasugai, T.Tokushima,  K.Kawade, H.Yamamoto,
+#+               T.Katoh, A.Takahashi, T.Iida
+#AUTHOR1        Y.Kasugai+
+#YEAR           1992
+#X4REF1         S,JAERI-M-92-027,268,1992
+#REFERENCE1     Conf: JAERI-M Reports, No.92-027, p.268 (1992)
+#DATE           20120409
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       48-CD-116(N,P)47-AG-116-G,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           48116            
+#TARGET         48116           [ ]             48-CD-116       [ ] 
+#REAC1          N,P
+#PRODUCT        47-AG-116-G
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.5,40.)    ADDED AS COMMON:ERR-S,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-2,,0.1)       ADDED AS COMMON:ERR-2,PER-CENT=0.05%
+#CompNotes      ERR-ANALYS:(ERR-4,1.5,5.)     ADDED AS COMMON:ERR-4,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-6,,0.3)       ADDED AS COMMON:ERR-6,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-7,,0.4)       ADDED AS COMMON:ERR-7,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,0.4)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-9,0.,0.3)     ADDED AS COMMON:ERR-9,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-10,0.,5.)     ADDED AS COMMON:ERR-10,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-12,0.,20.)    ADDED AS COMMON:ERR-12,PER-CENT=10.0%
+#CompNotes      ERR-ANALYS:(ERR-13,0.,5.)     ADDED AS COMMON:ERR-13,PER-CENT=2.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9595639(1.5e7) Data[5]*0.9792993(1.3e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+58.3%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 48116   3 103GS ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{endfb5$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 48-CD-116(N,P)47-AG-116-G,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,,3,ENDF/B-V,,1978} $ al27na;#[0]#old monit-ref
+#+              m0: endfb5$al27na;            #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (48-CD-116(N,P)47-AG-116-G,,SIG)
+#+               #[1]#DECAY-DATA (47-AG-116-G,2.68MIN,DG,513.5,0.76) #Ix_old=0.76
+#+                a1=0.76/0.48;               #[1]#DECAY-DATA: correction to new 513.5 keV gamma-yield per decay Ag-116-g Ix_new=0.48
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.5833334
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        22415014    1.54274     0.974361    1.58333     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22415014    CS          6           1.51931     1.55836     1.54274     +54.3%      1.55836     endfb5::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 48116   3 103GS    1.34E7          1.2094-3 1.5495-4                                       Y.Kasugai*,          (92)22415 14  1.1514-4   3.9E-6          1.5495-4 9.52     0.32              12.8     12.8    0.128112 7.6206-3 0.12546  9.9781E-41.55055731.4085923
+    1 48116   3 103GS   1.365E7          1.3869-3 1.6788-4                                       Y.Kasugai*,          (92)22415 14  1.3165-4  4.45E-6          1.6788-4 9.49     0.32              12.1     12.1    0.126968 0.007579 0.124965 7.4057-4 1.55835531.3989946
+    1 48116   3 103GS   1.388E7          1.9776-3 2.0156-4                                       Y.Kasugai*,          (92)22415 14  1.8737-4  6.35E-6          2.0156-4 9.47     0.32              10.2     10.2    0.12547767.5143-3 0.123405 6.1043-4 1.55718041.3437604
+    1 48116   3 103GS   1.428E7          2.2664-3 2.4183-4                                       Y.Kasugai*,          (92)22415 14  2.1419-4  7.35E-6          2.4183-4 9.45     0.32              10.7     10.7    0.12170960.00732920.118516 5.0251-4 1.54178751.34352
+    1 48116   3 103GS   1.458E7          2.5385-3 2.2869-4                                       Y.Kasugai*,          (92)22415 14  2.3944-4   8.3E-6          2.2869-4 9.43     0.33              9.01     9.01    0.11832647.1554-3 0.11428364.4410-4 1.52923581.2705275
+    1 48116   3 103GS   1.487E7          3.4640-3 3.3473-4                                       Y.Kasugai*,          (92)22415 14  3.2629-4  1.14E-5          3.3473-4 9.42     0.33              9.66     9.66    0.11457966.9566-3 0.10994644.8485-4 1.51930951.2874119
+#/C5DATA        0
+#/DATASET       22415014 
+#DATASET        22415015   20120409
+#SUBENT         22415015   20120409
+#ENTRY          22415      20220102
+#TITLE          Measurement of activation cross section of short-lived
+#+               nuclei produced by 14 MeV neutrons - Ru, Pd, Cd, Sn
+#AUTHORS        Y.Kasugai, T.Tokushima,  K.Kawade, H.Yamamoto,
+#+               T.Katoh, A.Takahashi, T.Iida
+#AUTHOR1        Y.Kasugai+
+#YEAR           1992
+#X4REF1         S,JAERI-M-92-027,268,1992
+#REFERENCE1     Conf: JAERI-M Reports, No.92-027, p.268 (1992)
+#DATE           20120409
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       48-CD-112(N,A)46-PD-109-M,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           48112            
+#TARGET         48112           [ ]             48-CD-112       [ ] 
+#REAC1          N,A
+#PRODUCT        46-PD-109-M
+#C4ReaCode      (N,A),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.5,40.)    ADDED AS COMMON:ERR-S,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-2,,0.1)       ADDED AS COMMON:ERR-2,PER-CENT=0.05%
+#CompNotes      ERR-ANALYS:(ERR-4,1.5,5.)     ADDED AS COMMON:ERR-4,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-6,,0.3)       ADDED AS COMMON:ERR-6,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-7,,0.4)       ADDED AS COMMON:ERR-7,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,0.4)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-9,0.,0.3)     ADDED AS COMMON:ERR-9,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-10,0.,5.)     ADDED AS COMMON:ERR-10,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-12,0.,20.)    ADDED AS COMMON:ERR-12,PER-CENT=10.0%
+#CompNotes      ERR-ANALYS:(ERR-13,0.,5.)     ADDED AS COMMON:ERR-13,PER-CENT=2.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9595639(1.5e7) Data[5]*0.9792993(1.3e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.357%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 48112   3 107MS ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{endfb5$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 48-CD-112(N,A)46-PD-109-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,,3,ENDF/B-V,,1978} $ al27na;#[0]#old monit-ref
+#+              m0: endfb5$al27na;            #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (48-CD-112(N,A)46-PD-109-M,,SIG)
+#+               #[1]#DECAY-DATA (46-PD-109-M,4.69MIN,DG,188.9,0.558) #Ix_old=0.558
+#+                a1=0.558/0.56;              #[1]#DECAY-DATA: correction to new 188.9 keV gamma-yield per decay Pd-109-m Ix_new=0.56
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9964286
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        22415015    0.970881    0.974361    0.996429    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22415015    CS          6           0.956137    0.980709    0.970881    -2.91%      1.04588     endfb5::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 48112   3 107MS    1.34E7          3.8056-4 9.4966-5                                       Y.Kasugai*,          (92)22415 15  3.6231-5  1.95E-6          9.4966-5 9.52     0.51              25       25      0.128112 7.6206-3 0.12546  9.9781E-40.97580180.949663
+    1 48112   3 107MS   1.365E7          3.7267-4 9.5540-5                                       Y.Kasugai*,          (92)22415 15  3.5375-5   1.9E-6          9.5540-5 9.49     0.51              25.6     25.6    0.126968 0.007579 0.124965 7.4057-4 0.98070930.9554017
+    1 48112   3 107MS   1.388E7          5.3898-4 1.0289-4                                       Y.Kasugai*,          (92)22415 15  5.1067-5  2.75E-6          1.0289-4 9.47     0.51              19.1     19.1    0.12547767.5143-3 0.123405 6.1043-4 0.97997  0.935322
+    1 48112   3 107MS   1.428E7          5.2395-4 1.1210-4                                       Y.Kasugai*,          (92)22415 15  4.9514-5   2.7E-6          1.1210-4 9.45     0.52              21.4     21.4    0.12170960.00732920.118516 5.0251-4 0.97028280.9341619
+    1 48112   3 107MS   1.458E7          5.7743-4 1.4999-4                                       Y.Kasugai*,          (92)22415 15  5.4466-5   3.0E-6          1.4999-4 9.43     0.52              26       26      0.11832647.1554-3 0.11428364.4410-4 0.96238370.937417
+    1 48112   3 107MS   1.487E7          6.0237-4 1.7797-4                                       Y.Kasugai*,          (92)22415 15  5.6737-5  3.15E-6          1.7797-4 9.42     0.52              29.5     29.5    0.11457966.9566-3 0.10994644.8485-4 0.95613690.936666
+#/C5DATA        0
+#/DATASET       22415015 
+#DATASET        22415016   20120409
+#SUBENT         22415016   20120409
+#ENTRY          22415      20220102
+#TITLE          Measurement of activation cross section of short-lived
+#+               nuclei produced by 14 MeV neutrons - Ru, Pd, Cd, Sn
+#AUTHORS        Y.Kasugai, T.Tokushima,  K.Kawade, H.Yamamoto,
+#+               T.Katoh, A.Takahashi, T.Iida
+#AUTHOR1        Y.Kasugai+
+#YEAR           1992
+#X4REF1         S,JAERI-M-92-027,268,1992
+#REFERENCE1     Conf: JAERI-M Reports, No.92-027, p.268 (1992)
+#DATE           20120409
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       50-SN-120(N,P)49-IN-120-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           50120            
+#TARGET         50120           [ ]             50-SN-120       [ ] 
+#REAC1          N,P
+#PRODUCT        49-IN-120-M
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.5,40.)    ADDED AS COMMON:ERR-S,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-2,,0.1)       ADDED AS COMMON:ERR-2,PER-CENT=0.05%
+#CompNotes      ERR-ANALYS:(ERR-4,1.5,5.)     ADDED AS COMMON:ERR-4,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-6,,0.3)       ADDED AS COMMON:ERR-6,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-7,,0.4)       ADDED AS COMMON:ERR-7,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,0.4)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-9,0.,0.3)     ADDED AS COMMON:ERR-9,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-10,0.,5.)     ADDED AS COMMON:ERR-10,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-12,0.,20.)    ADDED AS COMMON:ERR-12,PER-CENT=10.0%
+#CompNotes      ERR-ANALYS:(ERR-13,0.,5.)     ADDED AS COMMON:ERR-13,PER-CENT=2.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9595639(1.5e7) Data[5]*0.9792993(1.3e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.90%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 50120   3 103MS ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{endfb5$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 50-SN-120(N,P)49-IN-120-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,,3,ENDF/B-V,,1978} $ al27na;#[0]#old monit-ref
+#+              m0: endfb5$al27na;            #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (50-SN-120(N,P)49-IN-120-M,,SIG)
+#+               #[1]#DECAY-DATA (49-IN-120-M,44.4SEC,DG,1171.4,0.971) #Ix_old=0.971
+#+                a1=0.971/1.0;               #[1]#DECAY-DATA: correction to new 1171.22 keV gamma-yield per decay In-120-m Ix_new=1.0
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.971
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        22415016    0.946104    0.974361    0.971000    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22415016    CS          6           0.931737    0.955682    0.946104    -5.39%      1.07326     endfb5::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 50120   3 103MS    1.34E7          1.6831-3 2.3680-4                                       Y.Kasugai*,          (92)22415 16  1.6024-4  8.85E-6          2.3680-4 9.52     0.53              14.1     14.1    0.128112 7.6206-3 0.12546  9.9781E-40.95089970.8770244
+    1 50120   3 103MS   1.365E7          2.4561-3 3.0100-4                                       Y.Kasugai*,          (92)22415 16  2.3315-4 1.285E-5          3.0100-4 9.49     0.52              12.3     12.3    0.126968 0.007579 0.124965 7.4057-4 0.95568190.859995
+    1 50120   3 103MS   1.388E7          2.2728-3 3.0547-4                                       Y.Kasugai*,          (92)22415 16  2.1534-4  1.19E-5          3.0547-4 9.47     0.52              13.4     13.4    0.12547767.5143-3 0.123405 6.1043-4 0.95496140.8727853
+    1 50120   3 103MS   1.428E7          2.9122-3 3.9821-4                                       Y.Kasugai*,          (92)22415 16  2.7521-4  1.54E-5          3.9821-4 9.45     0.53              13.7     13.7    0.12170960.00732920.118516 5.0251-4 0.94552150.8656726
+    1 50120   3 103MS   1.458E7          3.4887-3 4.1899-4                                       Y.Kasugai*,          (92)22415 16  3.2906-4  1.86E-5          4.1899-4 9.43     0.53              12       12      0.11832647.1554-3 0.11428364.4410-4 0.937824 0.8379841
+    1 50120   3 103MS   1.487E7          4.0903-3 3.7238-4                                       Y.Kasugai*,          (92)22415 16  3.8528-4 2.195E-5          3.7238-4 9.42     0.54              9.10     9.10    0.11457966.9566-3 0.10994644.8485-4 0.93173660.7758021
+#/C5DATA        0
+#/DATASET       22415016 
+#DATASET        22415017   20120409
+#SUBENT         22415017   20120409
+#ENTRY          22415      20220102
+#TITLE          Measurement of activation cross section of short-lived
+#+               nuclei produced by 14 MeV neutrons - Ru, Pd, Cd, Sn
+#AUTHORS        Y.Kasugai, T.Tokushima,  K.Kawade, H.Yamamoto,
+#+               T.Katoh, A.Takahashi, T.Iida
+#AUTHOR1        Y.Kasugai+
+#YEAR           1992
+#X4REF1         S,JAERI-M-92-027,268,1992
+#REFERENCE1     Conf: JAERI-M Reports, No.92-027, p.268 (1992)
+#DATE           20120409
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       50-SN-119(N,P)49-IN-119-G,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           50119            
+#TARGET         50119           [ ]             50-SN-119       [ ] 
+#REAC1          N,P
+#PRODUCT        49-IN-119-G
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.5,40.)    ADDED AS COMMON:ERR-S,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-2,,0.1)       ADDED AS COMMON:ERR-2,PER-CENT=0.05%
+#CompNotes      ERR-ANALYS:(ERR-4,1.5,5.)     ADDED AS COMMON:ERR-4,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-6,,0.3)       ADDED AS COMMON:ERR-6,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-7,,0.4)       ADDED AS COMMON:ERR-7,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,0.4)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-9,0.,0.3)     ADDED AS COMMON:ERR-9,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-10,0.,5.)     ADDED AS COMMON:ERR-10,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-12,0.,20.)    ADDED AS COMMON:ERR-12,PER-CENT=10.0%
+#CompNotes      ERR-ANALYS:(ERR-13,0.,5.)     ADDED AS COMMON:ERR-13,PER-CENT=2.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9595639(1.5e7) Data[4]*0.9792993(1.3e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+7.70%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 50119   3 103GS ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{endfb5$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 50-SN-119(N,P)49-IN-119-G,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,,3,ENDF/B-V,,1978} $ al27na;#[0]#old monit-ref
+#+              m0: endfb5$al27na;            #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (50-SN-119(N,P)49-IN-119-G,,SIG)
+#+               #[1]#DECAY-DATA (49-IN-119-G,2.4MIN,DG,763.1,0.9908) #Ix_old=0.9908
+#+                a1=0.9908/0.92;             #[1]#DECAY-DATA: correction to new 763.14 keV gamma-yield per decay In-119-g Ix_new=0.92
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0769565
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        22415017    1.04722     0.972388    1.07696     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22415017    CS          5           1.03341     1.05917     1.04722     +4.72%      1.05917     endfb5::al27na
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 50119   3 103GS    1.34E7          3.1640-3 2.0101-4                                       Y.Kasugai*,          (92)22415 17  3.0122-4   1.5E-5          2.0101-4 9.52     0.47              6.35     6.35    0.128112 7.6206-3 0.12546  9.9781E-41.05466280.7731024
+    1 50119   3 103GS   1.388E7          4.3214-3 2.3591-4                                       Y.Kasugai*,          (92)22415 17  4.0943-4  2.04E-5          2.3591-4 9.47     0.47              5.46     5.46    0.12547767.5143-3 0.123405 6.1043-4 1.05916770.7148738
+    1 50119   3 103GS   1.428E7          5.3693-3 3.1515-4                                       Y.Kasugai*,          (92)22415 17  5.0741-4  2.56E-5          3.1515-4 9.45     0.48              5.87     5.87    0.12170960.00732920.118516 5.0251-4 1.04869770.7329087
+    1 50119   3 103GS   1.458E7          5.5753-3 2.9470-4                                       Y.Kasugai*,          (92)22415 17  5.2587-4  2.68E-5          2.9470-4 9.43     0.48              5.29     5.29    0.11832647.1554-3 0.11428364.4410-4 1.04016030.6853592
+    1 50119   3 103GS   1.487E7          6.4588-3 2.5158-4                                       Y.Kasugai*,          (92)22415 17  6.0836-4 3.125E-5          2.5158-4 9.42     0.48              3.90     3.90    0.11457966.9566-3 0.10994644.8485-4 1.03340860.5590746
+#/C5DATA        0
+#/DATASET       22415017 
+#DATASET        22415018   20150824
+#SUBENT         22415018   20150824
+#ENTRY          22415      20220102
+#TITLE          Measurement of activation cross section of short-lived
+#+               nuclei produced by 14 MeV neutrons - Ru, Pd, Cd, Sn
+#AUTHORS        Y.Kasugai, T.Tokushima,  K.Kawade, H.Yamamoto,
+#+               T.Katoh, A.Takahashi, T.Iida
+#AUTHOR1        Y.Kasugai+
+#YEAR           1992
+#X4REF1         S,JAERI-M-92-027,268,1992
+#REFERENCE1     Conf: JAERI-M Reports, No.92-027, p.268 (1992)
+#DATE           20150824
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       50-SN-119(N,P)49-IN-119-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           50119            
+#TARGET         50119           [ ]             50-SN-119       [ ] 
+#REAC1          N,P
+#PRODUCT        49-IN-119-M
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.5,40.)    ADDED AS COMMON:ERR-S,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-2,,0.1)       ADDED AS COMMON:ERR-2,PER-CENT=0.05%
+#CompNotes      ERR-ANALYS:(ERR-4,1.5,5.)     ADDED AS COMMON:ERR-4,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-6,,0.3)       ADDED AS COMMON:ERR-6,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-7,,0.4)       ADDED AS COMMON:ERR-7,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,0.4)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-9,0.,0.3)     ADDED AS COMMON:ERR-9,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-10,0.,5.)     ADDED AS COMMON:ERR-10,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-12,0.,20.)    ADDED AS COMMON:ERR-12,PER-CENT=10.0%
+#CompNotes      ERR-ANALYS:(ERR-13,0.,5.)     ADDED AS COMMON:ERR-13,PER-CENT=2.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9595639(1.5e7) Data[4]*0.9792993(1.3e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 50119   3 103MS ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{endfb5$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 50-SN-119(N,P)49-IN-119-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,,3,ENDF/B-V,,1978} $ al27na;#[0]#old monit-ref
+#+              m0: endfb5$al27na;            #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        22415018    0.972388    0.972388    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22415018    CS          5           0.959564    0.983482    0.972388    -2.76%      1.04214     endfb5::al27na
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 50119   3 103MS    1.34E7          2.5462-3 5.6809-4                                       Y.Kasugai*,          (92)22415 18  2.4241-4   1.3E-5          5.6809-4 9.52     0.51              22.3     22.3    0.128112 7.6206-3 0.12546  9.9781E-40.97929930.9468083
+    1 50119   3 103MS   1.388E7          3.4422-3 7.5949-4                                       Y.Kasugai*,          (92)22415 18  3.2614-4  1.75E-5          7.5949-4 9.47     0.51              22.1     22.1    0.12547767.5143-3 0.123405 6.1043-4 0.98348240.949366
+    1 50119   3 103MS   1.428E7          4.2845-3 1.0398-3                                       Y.Kasugai*,          (92)22415 18  4.0490-4   2.2E-5          1.0398-3 9.45     0.51              24.3     24.3    0.12170960.00732920.118516 5.0251-4 0.97376050.9452336
+    1 50119   3 103MS   1.458E7          4.4428-3 1.0280-3                                       Y.Kasugai*,          (92)22415 18  4.1906-4   2.3E-5          1.0280-3 9.43     0.52              23.1     23.1    0.11832647.1554-3 0.11428364.4410-4 0.96583310.9345723
+    1 50119   3 103MS   1.487E7          5.1816-3 1.2073-3                                       Y.Kasugai*,          (92)22415 18  4.8806-4   2.7E-5          1.2073-3 9.42     0.52              23.3     23.3    0.11457966.9566-3 0.10994644.8485-4 0.95956390.9287133
+#/C5DATA        0
+#/DATASET       22415018 
+#/C5.2.3        1               17              17              0               98              

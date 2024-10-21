@@ -1,0 +1,454 @@
+#C5M.2.3
+#DATASET        14235002   20090602
+#SUBENT         14235002   20090602
+#ENTRY          14235      20160804
+#TITLE          Activation cross sections for reactions induced by
+#+              14 MeV neutrons on natural tantalum
+#AUTHORS        Junhua Luo,Fei Tuo,Xiangzhong Kong
+#AUTHOR1        Junhua Luo+
+#YEAR           2009
+#X4REF1         J,PR/C,79,057603,2009
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.79, p.057603 (2009)
+#DATE           20090602
+#INSTITUTE      3CPRLNZ,3CPRHXU,3CPRCPR
+#METHOD         ACTIV
+#REACTION       73-TA-181(N,N+A)71-LU-177-M,,SIG
+#C4Reaction     (N,N+A),SIG
+#ReactionType   CS
+#MF             3
+#MT             22
+#PROJ           1
+#TARG           73181            
+#TARGET         73181           [ ]             73-TA-181       [ ] 
+#REAC1          N,N+A
+#PRODUCT        71-LU-177-M
+#C4ReaCode      (N,N+A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99999005(1.5e7) Data[3]*0.9983289(1.4e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-4.67%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 73181   3  22M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{wagner90$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 73-TA-181(N,N+A)71-LU-177-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,M.Wagner+,B,PH-DAT,13-5,1990} $ al27na;#[0]#old monit-ref
+#+              m0: wagner90$al27na;          #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (73-TA-181(N,N+A)71-LU-177-M,,SIG)
+#+               #[1]#DECAY-DATA (71-LU-177-M,160.4D,DG,112.95,0.204) #Ix_old=0.204
+#+                a1=0.204/0.214;             #[1]#DECAY-DATA: correction to new 112.9498 keV gamma-yield per decay Lu-177-m Ix_new=0.214
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.95327103
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        14235002    0.951650    0.998299    0.953271    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          14235002    CS          4           0.948801    0.953262    0.951650    -4.84%      1.05396     wagner90::al27na
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 73181   3  22M     1.35E7 200000.0 9.7071-5 5.7304-6                                       Junhua Luo*,         (09)14235  2                             5.7304-6                            5.90     5.90    0.12567  7.8E-4   0.12546  9.9784E-40.951678 0.9550733
+    1 73181   3  22M     1.41E7 100000.0 1.1196-4 7.5899-6                                       Junhua Luo*,         (09)14235  2                             7.5899-6                            6.78     6.78    0.12157  5.7E-4   0.121    5.5949E-40.94880140.9487392
+    1 73181   3  22M     1.45E7 200000.0 1.1911-4 8.5650-6                                       Junhua Luo*,         (09)14235  2                             8.5650-6                            7.19     7.19    0.11553  6.0E-4   0.11548  4.3286E-40.95285840.9516699
+    1 73181   3  22M     1.47E7 200000.0 1.2392-4 9.5327-6                                       Junhua Luo*,         (09)14235  2                             9.5327-6                            7.69     7.69    0.11249  4.6E-4   0.11248894.6096-4 0.95326160.9532672
+#/C5DATA        0
+#/DATASET       14235002 
+#DATASET        14235003   20160804
+#SUBENT         14235003   20160804
+#ENTRY          14235      20160804
+#TITLE          Activation cross sections for reactions induced by
+#+              14 MeV neutrons on natural tantalum
+#AUTHORS        Junhua Luo,Fei Tuo,Xiangzhong Kong
+#AUTHOR1        Junhua Luo+
+#YEAR           2009
+#X4REF1         J,PR/C,79,057603,2009
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.79, p.057603 (2009)
+#DATE           20160804
+#INSTITUTE      3CPRLNZ,3CPRHXU,3CPRCPR
+#METHOD         ACTIV
+#REACTION       73-TA-181(N,T)72-HF-179-M2,,SIG
+#C4Reaction     (N,T),SIG
+#ReactionType   CS
+#MF             3
+#MT             105
+#PROJ           1
+#TARG           73181            
+#TARGET         73181           [ ]             73-TA-181       [ ] 
+#REAC1          N,T
+#PRODUCT        72-HF-179-M2
+#C4ReaCode      (N,T),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99999005(1.5e7) Data[2]*0.99531126(1.4e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 73181   3 105N  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{wagner90$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 73-TA-181(N,T)72-HF-179-M2,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,M.Wagner+,B,PH-DAT,13-5,1990} $ al27na;#[0]#old monit-ref
+#+              m0: wagner90$al27na;          #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        14235003    0.998290    0.998290    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          14235003    CS          3           0.995311    0.999990    0.998290    -0.171%     1.00471     wagner90::al27na
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 73181   3 105N     1.41E7 100000.0 9.7540-5 2.5878-5                                       Junhua Luo*,         (09)14235  3                             2.5878-5                            26.5     26.5    0.12157  5.7E-4   0.121    5.5949E-40.99531130.9953069
+    1 73181   3 105N     1.45E7 200000.0 1.2095-4 2.9984-5                                       Junhua Luo*,         (09)14235  3                             2.9984-5                            24.8     24.8    0.11553  6.0E-4   0.11548  4.3286E-40.99956720.9994621
+    1 73181   3 105N     1.47E7 200000.0 1.3700-4 2.8000-5                                       Junhua Luo*,         (09)14235  3                             2.8000-5                            20.4     20.4    0.11249  4.6E-4   0.11248894.6096-4 0.99999  0.9999908
+#/C5DATA        0
+#/DATASET       14235003 
+#DATASET        14235004   20090602
+#SUBENT         14235004   20090602
+#ENTRY          14235      20160804
+#TITLE          Activation cross sections for reactions induced by
+#+              14 MeV neutrons on natural tantalum
+#AUTHORS        Junhua Luo,Fei Tuo,Xiangzhong Kong
+#AUTHOR1        Junhua Luo+
+#YEAR           2009
+#X4REF1         J,PR/C,79,057603,2009
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.79, p.057603 (2009)
+#DATE           20090602
+#INSTITUTE      3CPRLNZ,3CPRHXU,3CPRCPR
+#METHOD         ACTIV
+#REACTION       73-TA-181(N,X)72-HF-180-M,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           73181            
+#TARGET         73181           [ ]             73-TA-181       [ ] 
+#REAC1          N,X
+#PRODUCT        72-HF-180-M
+#C4ReaCode      (N,X),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99999005(1.5e7) Data[2]*0.9983289(1.4e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.70%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 73181   39000M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{wagner90$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 73-TA-181(N,X)72-HF-180-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,M.Wagner+,B,PH-DAT,13-5,1990} $ al27na;#[0]#old monit-ref
+#+              m0: wagner90$al27na;          #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (73-TA-181(N,X)72-HF-180-M,,SIG)
+#+               #[1]#DECAY-DATA (72-HF-180-M,5.5HR,DG,332.277,0.924) #Ix_old=0.924
+#+                a1=0.924/0.94;              #[1]#DECAY-DATA: correction to new 332.274 keV gamma-yield per decay Hf-180-m Ix_new=0.94
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.98297876
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        14235004    0.980892    0.997877    0.982979    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          14235004    CS          3           0.978370    0.982969    0.980892    -1.91%      1.02211     wagner90::al27na
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 73181   39000M     1.35E7 200000.0 1.0893-4 7.8694-6           72180.9                     Junhua Luo*,         (09)14235  4                             7.8694-6                            7.22     7.22    0.12567  7.8E-4   0.12546  9.9784E-40.98133610.9836698
+    1 73181   39000M     1.41E7 100000.0 1.3991-4 7.8262-6           72180.9                     Junhua Luo*,         (09)14235  4                             7.8262-6                            5.59     5.59    0.12157  5.7E-4   0.121    5.5949E-40.97836980.9782756
+    1 73181   39000M     1.47E7 200000.0 1.6612-4 9.8298-6           72180.9                     Junhua Luo*,         (09)14235  4                             9.8298-6                            5.92     5.92    0.11249  4.6E-4   0.11248894.6096-4 0.982969 0.9829789
+#/C5DATA        0
+#/DATASET       14235004 
+#DATASET        14235005   20090602
+#SUBENT         14235005   20090602
+#ENTRY          14235      20160804
+#TITLE          Activation cross sections for reactions induced by
+#+              14 MeV neutrons on natural tantalum
+#AUTHORS        Junhua Luo,Fei Tuo,Xiangzhong Kong
+#AUTHOR1        Junhua Luo+
+#YEAR           2009
+#X4REF1         J,PR/C,79,057603,2009
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.79, p.057603 (2009)
+#DATE           20090602
+#INSTITUTE      3CPRLNZ,3CPRHXU,3CPRCPR
+#METHOD         ACTIV
+#REACTION       73-TA-181(N,A)71-LU-178-M,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           73181            
+#TARGET         73181           [ ]             73-TA-181       [ ] 
+#REAC1          N,A
+#PRODUCT        71-LU-178-M
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99999005(1.5e7) Data[2]*0.9983289(1.4e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 73181   3 107M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{wagner90$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 73-TA-181(N,A)71-LU-178-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,M.Wagner+,B,PH-DAT,13-5,1990} $ al27na;#[0]#old monit-ref
+#+              m0: wagner90$al27na;          #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        14235005    0.997877    0.997877    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          14235005    CS          3           0.995311    0.999990    0.997877    -0.212%     1.00471     wagner90::al27na
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 73181   3 107M     1.35E7 200000.0 1.9667-4 1.0031-5                                       Junhua Luo*,         (09)14235  5                             1.0031-5                            5.10     5.10    0.12567  7.8E-4   0.12546  9.9784E-40.99832891.003109
+    1 73181   3 107M     1.41E7 100000.0 2.1300-4 1.2938-5                                       Junhua Luo*,         (09)14235  5                             1.2938-5                            6.07     6.07    0.12157  5.7E-4   0.121    5.5949E-40.99531130.99523
+    1 73181   3 107M     1.47E7 200000.0 2.5600-4 1.8000-5                                       Junhua Luo*,         (09)14235  5                             1.8000-5                            7.03     7.03    0.11249  4.6E-4   0.11248894.6096-4 0.99999  0.9999971
+#/C5DATA        0
+#/DATASET       14235005 
+#DATASET        14235006   20090602
+#SUBENT         14235006   20090602
+#ENTRY          14235      20160804
+#TITLE          Activation cross sections for reactions induced by
+#+              14 MeV neutrons on natural tantalum
+#AUTHORS        Junhua Luo,Fei Tuo,Xiangzhong Kong
+#AUTHOR1        Junhua Luo+
+#YEAR           2009
+#X4REF1         J,PR/C,79,057603,2009
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.79, p.057603 (2009)
+#DATE           20090602
+#INSTITUTE      3CPRLNZ,3CPRHXU,3CPRCPR
+#METHOD         ACTIV
+#REACTION       73-TA-181(N,P)72-HF-181,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           73181            
+#TARGET         73181           [ ]             73-TA-181       [ ] 
+#REAC1          N,P
+#PRODUCT        72-HF-181
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99999005(1.5e7) Data[3]*0.9983289(1.4e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 73181   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{wagner90$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 73-TA-181(N,P)72-HF-181,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,M.Wagner+,B,PH-DAT,13-5,1990} $ al27na;#[0]#old monit-ref
+#+              m0: wagner90$al27na;          #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        14235006    0.998299    0.998299    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          14235006    CS          4           0.995311    0.999990    0.998299    -0.170%     1.00471     wagner90::al27na
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 73181   3 103      1.35E7 200000.0 2.0965-3 1.9994-4                                       Junhua Luo*,         (09)14235  6                             1.9994-4                            9.54     9.54    0.12567  7.8E-4   0.12546  9.9784E-40.99832890.9996892
+    1 73181   3 103      1.41E7 100000.0 3.3841-3 1.9904-4                                       Junhua Luo*,         (09)14235  6                             1.9904-4                            5.88     5.88    0.12157  5.7E-4   0.121    5.5949E-40.99531130.9952245
+    1 73181   3 103      1.45E7 200000.0 3.9983-3 2.9953-4                                       Junhua Luo*,         (09)14235  6                             2.9953-4                            7.49     7.49    0.11553  6.0E-4   0.11548  4.3286E-40.99956720.9984184
+    1 73181   3 103      1.47E7 200000.0 4.5000-3 4.0000-4                                       Junhua Luo*,         (09)14235  6                             4.0000-4                            8.89     8.89    0.11249  4.6E-4   0.11248894.6096-4 0.99999  0.9999945
+#/C5DATA        0
+#/DATASET       14235006 
+#DATASET        14235007   20090602
+#SUBENT         14235007   20090602
+#ENTRY          14235      20160804
+#TITLE          Activation cross sections for reactions induced by
+#+              14 MeV neutrons on natural tantalum
+#AUTHORS        Junhua Luo,Fei Tuo,Xiangzhong Kong
+#AUTHOR1        Junhua Luo+
+#YEAR           2009
+#X4REF1         J,PR/C,79,057603,2009
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.79, p.057603 (2009)
+#DATE           20090602
+#INSTITUTE      3CPRLNZ,3CPRHXU,3CPRCPR
+#METHOD         ACTIV
+#REACTION       73-TA-181(N,2N)73-TA-180-G,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           73181            
+#TARGET         73181           [ ]             73-TA-181       [ ] 
+#REAC1          N,2N
+#PRODUCT        73-TA-180-G
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99999005(1.5e7) Data[2]*0.9983289(1.4e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.222%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 73181   3  16G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{wagner90$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 73-TA-181(N,2N)73-TA-180-G,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,M.Wagner+,B,PH-DAT,13-5,1990} $ al27na;#[0]#old monit-ref
+#+              m0: wagner90$al27na;          #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (73-TA-181(N,2N)73-TA-180-G,,SIG)
+#+               #[1]#DECAY-DATA (73-TA-180-G,8.152HR,DG,93.4,0.045) #Ix_old=0.045
+#+                a1=0.045/0.0451;            #[1]#DECAY-DATA: correction to new 93.324 keV gamma-yield per decay Ta-180-g Ix_new=0.0451
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99778277
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        14235007    0.995664    0.997877    0.997783    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          14235007    CS          3           0.993104    0.997773    0.995664    -0.434%     1.00694     wagner90::al27na
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 73181   3  16G     1.35E7 200000.01.1903579.04126757                                       Junhua Luo*,         (09)14235  7                            .04126757                            3.47     3.47    0.12567  7.8E-4   0.12546  9.9784E-40.99611541.006526
+    1 73181   3  16G     1.41E7 100000.0 1.207615.04467986                                       Junhua Luo*,         (09)14235  7                            .04467986                            3.70     3.70    0.12157  5.7E-4   0.121    5.5949E-40.99310440.9928857
+    1 73181   3  16G     1.47E7 200000.01.3150647.05088761                                       Junhua Luo*,         (09)14235  7                            .05088761                            3.87     3.87    0.11249  4.6E-4   0.11248894.6096-4 0.99777280.9977962
+#/C5DATA        0
+#/DATASET       14235007 
+#/C5M.2.3       1               6               6               0               20              

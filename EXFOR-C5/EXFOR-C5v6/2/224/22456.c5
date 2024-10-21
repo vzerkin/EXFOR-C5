@@ -1,0 +1,154 @@
+#C5.2.3
+#DATASET        22456002   20121223
+#SUBENT         22456002   20121223
+#ENTRY          22456      20190101
+#TITLE          .Measurement of neutron capture on 46Ca and 50Ti at
+#+               thermonuclear energies
+#AUTHORS        P.V.Sedyshev, Yu.P.Popov, P.Mohr, H.Beer,
+#+               H.Oberhummer, W.Rochow
+#AUTHOR1        P.V.Sedyshev+
+#YEAR           1998
+#X4REF1         S,ISINN-6,205,199805
+#REFERENCE1     Conf: Int.Sem.on Interactions of Neutrons with Nuclei, No.6, p.205 (1998)
+#DATE           20121223
+#INSTITUTE      4ZZZDUB,2GERTHD,2AUSTHV,2GERKFK,2GERTUE
+#METHOD         ACTIV,GSPEC,STTA
+#REACTION       20-CA-46(N,G)20-CA-47,,SIG,,MXW
+#C4Reaction     (N,G),SIG,,MXW
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           20046            
+#TARGET         20046           [ ]             20-CA-46        [ ] 
+#REAC1          N,G
+#PRODUCT        20-CA-47
+#C4ReaCode      (N,G),SIG,,MXW
+#CompNotes      ERR-ANALYS:(ERR-3,2.,7.)      ADDED AS COMMON:ERR-3,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-4,,5.)        ADDED AS COMMON:ERR-4,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(MONIT-ERR,1.5,3.) ADDED AS COMMON:MONIT-ERR,PER-CENT=1.5%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+10.4%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.126%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 20046   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 20-CA-46(N,G)20-CA-47,,SIG,,MXW
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (20-CA-46(N,G)20-CA-47,,SIG,,MXW)
+#+               #[1]#DECAY-DATA (20-CA-47,4.536D,DG,1297.09,0.74) #Ix_old=0.74
+#+                a1=0.74/0.67;               #[1]#DECAY-DATA: correction to new 1297.09 keV gamma-yield per decay Ca-47 Ix_new=0.67
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.1044776
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW)
+#+               #[2]#DECAY-MON  (79-AU-198-G,2.69D,DG,411.8047,0.9550) #Im_old=0.955
+#+                a2=0.9562/0.955;            #[2]#DECAY-MON: correction to new 411.80205 keV gamma-yield per decay Au-198-g Im_new=0.9562
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0012566
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22456002    1.10587     -           1.10448     1.00126
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22456002    CS          2           1.10587     1.10587     1.10587     +10.6%      1.10587                
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                    SpT     dSpT     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 20046   3 102     25000.0          3.9922-3 3.4282-4                                       P.V.Sedyshev*,       (98)22456  2  5.0577-4                   3.4282-4 12.7                       8.59     8.59                                        1.10586551.1058655
+    1 20046   3 102     52000.0          3.0256-3 1.2496-4                                       P.V.Sedyshev*,       (98)22456  2  3.8332-4                   1.2496-4 12.7                       4.13     4.13                                        1.10586551.1058656
+#/C5DATA        0
+#/DATASET       22456002 
+#DATASET        22456003   20121223
+#SUBENT         22456003   20121223
+#ENTRY          22456      20190101
+#TITLE          .Measurement of neutron capture on 46Ca and 50Ti at
+#+               thermonuclear energies
+#AUTHORS        P.V.Sedyshev, Yu.P.Popov, P.Mohr, H.Beer,
+#+               H.Oberhummer, W.Rochow
+#AUTHOR1        P.V.Sedyshev+
+#YEAR           1998
+#X4REF1         S,ISINN-6,205,199805
+#REFERENCE1     Conf: Int.Sem.on Interactions of Neutrons with Nuclei, No.6, p.205 (1998)
+#DATE           20121223
+#INSTITUTE      4ZZZDUB,2GERTHD,2AUSTHV,2GERKFK,2GERTUE
+#METHOD         ACTIV,GSPEC,STTA
+#REACTION       20-CA-46(N,G)20-CA-47,,SIG,,SPA
+#C4Reaction     (N,G),SIG,,SPA
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           20046            
+#TARGET         20046           [ ]             20-CA-46        [ ] 
+#REAC1          N,G
+#PRODUCT        20-CA-47
+#C4ReaCode      (N,G),SIG,,SPA
+#CompNotes      ERR-ANALYS:(ERR-3,2.,7.)      ADDED AS COMMON:ERR-3,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-4,,0.5)       ADDED AS COMMON:ERR-4,PER-CENT=0.25%
+#CompNotes      ERR-ANALYS:(MONIT-ERR,1.5,3.) ADDED AS COMMON:MONIT-ERR,PER-CENT=1.5%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+10.4%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.126%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [    1 20046   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 20-CA-46(N,G)20-CA-47,,SIG,,SPA
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (20-CA-46(N,G)20-CA-47,,SIG,,SPA)
+#+               #[1]#DECAY-DATA (20-CA-47,4.536D,DG,1297.09,0.74) #Ix_old=0.74
+#+                a1=0.74/0.67;               #[1]#DECAY-DATA: correction to new 1297.09 keV gamma-yield per decay Ca-47 Ix_new=0.67
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.1044776
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW)
+#+               #[2]#DECAY-MON  (79-AU-198-G,2.69D,DG,411.8047,0.9550) #Im_old=0.955
+#+                a2=0.9562/0.955;            #[2]#DECAY-MON: correction to new 411.80205 keV gamma-yield per decay Au-198-g Im_new=0.9562
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0012566
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22456003    1.10587     -           1.10448     1.00126
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22456003    CS          2           1.10587     1.10587     1.10587     +10.6%      1.10587                
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                    SpE     dSpE     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 20046   3 102    149000.0  20000.0 7.8074-4 1.0285-4                                       P.V.Sedyshev*,       (98)22456  3  9.6986-5                   1.0285-4 12.4                       13.2     13.2                                        1.10586551.1058654
+    1 20046   3 102    214000.0  23000.0 8.5152-4 1.1059-4                                       P.V.Sedyshev*,       (98)22456  3  1.0578-4                   1.1059-4 12.4                       13       13                                          1.10586551.1058655
+#/C5DATA        0
+#/DATASET       22456003 
+#/C5.2.3        1               2               2               0               4               

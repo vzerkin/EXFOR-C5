@@ -1,0 +1,983 @@
+#C5M.2.3
+#DATASET        40969002   20170720
+#SUBENT         40969002   20170720
+#ENTRY          40969      20170720
+#TITLE          Activation-measured radiative neutron-capture cross
+#+               sections for 236U, 238U, and 237Np
+#AUTHORS        N.N.Buleeva, A.N.Davletshin, A.O.Tipunkov,
+#+               S.V.Tikhonov,V.A.Tolstikov
+#AUTHOR1        N.N.Buleeva+
+#YEAR           1988
+#X4REF1         J,AE,65,(5),348,1988
+#REFERENCE1     Jour: Atomnaya Energiya, Vol.65, Issue.5, p.348 (1988)
+#DATE           20170720
+#INSTITUTE      4RUSFEI
+#METHOD         ACTIV
+#REACTION       92-U-236(N,G)92-U-237,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           92236            
+#TARGET         92236           [ ]             92-U-236        [ ] 
+#REAC1          N,G
+#PRODUCT        92-U-237
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-2,0.4,1.1)    ADDED AS COMMON:ERR-2,PER-CENT=0.4%
+#CompNotes      ERR-ANALYS:(MONIT-ERR,0.7,0.9) ADDED AS COMMON:MONIT-ERR,PER-CENT=0.7%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0059385(1.6e5) Data[6]*1.0002979(6.5e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      WARNING! UNCHANGED+CHANGED POINTS: 11+2=13; EN(eV):[1.6e5,1.1e6]
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92236   3 102 C ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$h1nel}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 92-U-236(N,G)92-U-237,,SIG
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$h1nel;              #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        40969002    1.00312     1.00312     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          40969002    CS          2/13        1.00030     1.00594     1.00312     +0.312%     1.00594     [EN,MONIT,MONIT-ERR]::h1nel
+#C5DATA         13
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92236   3 102 C  164000.0  46000.00.2384074.01185358                                       N.N.Buleeva*,        (88)40969  2  8.6027-3                  .01185358 3.61                       4.97     4.97    10.464   0.073248 10.52614 .048306961.00593851.0003018
+    1 92236   3 102 C  344000.0  48000.0     0.18   0.0072                                       N.N.Buleeva,         (88)40969  2 .00656445                     0.0072 3.65                       4        4                0.7      7.429146 .02865394
+    1 92236   3 102 C  544000.0  56000.0    0.152  0.00608                                       N.N.Buleeva,         (88)40969  2 0.0055433                    0.00608 3.65                       4        4                0.7      5.865609 .02130038
+    1 92236   3 102 C  626000.0  68000.0    0.184  0.00736                                       N.N.Buleeva,         (88)40969  2 0.0067103                    0.00736 3.65                       4        4                0.7      5.449948 .01958523
+    1 92236   3 102 C  635000.0  42000.0    0.178  0.00712                                       N.N.Buleeva,         (88)40969  2 0.0064915                    0.00712 3.65                       4        4                0.7      5.4085712.01941853
+    1 92236   3 102 C  637000.0  40000.0    0.178  0.00712                                       N.N.Buleeva,         (88)40969  2 0.0064915                    0.00712 3.65                       4        4                0.7      5.3993764.01938149
+    1 92236   3 102 C  645000.0  46000.00.1760524.00696212                                       N.N.Buleeva*,        (88)40969  2  6.3327-3                  .00696212 3.60                       3.95     3.95    5.361    0.037527 5.362597 .019233311.00029790.9889374
+    1 92236   3 102 C  710000.0  46000.0    0.162  0.00648                                       N.N.Buleeva,         (88)40969  2  0.005908                    0.00648 3.65                       4        4                0.7      5.098036 0.0181911
+    1 92236   3 102 C  779000.0  62000.0    0.189  0.00756                                       N.N.Buleeva,         (88)40969  2 0.0068927                    0.00756 3.65                       4        4                0.7      4.8544345.01725482
+    1 92236   3 102 C  782000.0  34000.0    0.176  0.00704                                       N.N.Buleeva,         (88)40969  2 0.0064186                    0.00704 3.65                       4        4                0.7      4.8444552.01721684
+    1 92236   3 102 C 1037000.0  36000.0     0.15    0.006                                       N.N.Buleeva,         (88)40969  2 0.0054704                      0.006 3.65                       4        4                0.7      4.1714087.01473769
+    1 92236   3 102 C 1133000.0  40000.0    0.132  0.00528                                       N.N.Buleeva,         (88)40969  2 .00481393                    0.00528 3.65                       4        4                0.7      3.9776475.01405098
+    1 92236   3 102 C 1134000.0  42000.0    0.133  0.00532                                       N.N.Buleeva,         (88)40969  2 0.0048504                    0.00532 3.65                       4        4                0.7      3.9758048.01404453
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           164000.0    1134000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           13          13
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+164000.     164000.     0.238407    4.97         100
+344000.     344000.     0.18        4.0          54 100
+544000.     544000.     0.152       4.0          40 66 100
+626000.     626000.     0.184       4.0          35 59 76 100
+635000.     635000.     0.178       4.0          34 58 75 82 100
+637000.     637000.     0.178       4.0          34 58 75 82 83 100
+645000.     645000.     0.176052    3.95         33 57 74 81 82 82 100
+710000.     710000.     0.162       4.0          33 52 69 76 77 77 77 100
+779000.     779000.     0.189       4.0          33 46 63 70 71 71 71 77 100
+782000.     782000.     0.176       4.0          33 46 63 70 71 71 71 77 83 100
+1037000.    1037000.    0.15        4.0          33 42 42 48 49 49 49 55 61 61 100
+1133000.    1133000.    0.132       4.0          33 42 42 42 42 42 41 47 53 53 75 100
+1134000.    1134000.    0.133       4.0          33 42 42 42 42 42 41 47 53 53 75 83 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       40969002 
+#DATASET        40969003   20170720
+#SUBENT         40969003   20170720
+#ENTRY          40969      20170720
+#TITLE          Activation-measured radiative neutron-capture cross
+#+               sections for 236U, 238U, and 237Np
+#AUTHORS        N.N.Buleeva, A.N.Davletshin, A.O.Tipunkov,
+#+               S.V.Tikhonov,V.A.Tolstikov
+#AUTHOR1        N.N.Buleeva+
+#YEAR           1988
+#X4REF1         J,AE,65,(5),348,1988
+#REFERENCE1     Jour: Atomnaya Energiya, Vol.65, Issue.5, p.348 (1988)
+#DATE           20170720
+#INSTITUTE      4RUSFEI
+#METHOD         ACTIV
+#REACTION       92-U-236(N,G)92-U-237,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           92236            
+#TARGET         92236           [ ]             92-U-236        [ ] 
+#REAC1          N,G
+#PRODUCT        92-U-237
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-2,0.4,1.1)    ADDED AS COMMON:ERR-2,PER-CENT=0.4%
+#CompNotes      ERR-ANALYS:(ERR-4,0.3,0.6)    ADDED AS COMMON:ERR-4,PER-CENT=0.3%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0197184(1.5e5) Data[15]*1.0231329(1.1e6)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92236   3 102 C ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 92-U-236(N,G)92-U-237,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        40969003    1.01281     1.01281     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          40969003    CS          16          0.991186    1.06048     1.01281     +1.28%      1.06048     [EN,MONIT]::au197ng
+#C5DATA         16
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92236   3 102 C  154000.0  48000.0 0.249831 0.011025                                       N.N.Buleeva*,        (88)40969  3 0.0055111                   0.011025 2.21                       4.41     4.41    0.27              0.275324 5.6505-3 1.0197184
+    1 92236   3 102 C  164000.0  46000.00.2428509 0.010305                                       N.N.Buleeva*,        (88)40969  3 0.0051512                   0.010305 2.12                       4.24     4.24    0.256             0.271484 6.3951-3 1.0604843
+    1 92236   3 102 C  198000.0  32000.00.2183752  0.00848                                       N.N.Buleeva*,        (88)40969  3 0.0047688                    0.00848 2.18                       3.88     3.88    0.251             0.258548 5.2137-3 1.0300719
+    1 92236   3 102 C  231000.0  30000.00.2044614    0.008                                       N.N.Buleeva*,        (88)40969  3 0.0044989                      0.008 2.20                       3.91     3.91    0.241             0.246376 0.00516111.0223072
+    1 92236   3 102 C  344000.0  48000.00.1749651  0.00696                                       N.N.Buleeva*,        (88)40969  3  0.003914                    0.00696 2.24                       3.98     3.98    0.18              0.18099843.5438-3 1.0055466
+    1 92236   3 102 C  544000.0  56000.00.1607658  0.00636                                       N.N.Buleeva*,        (88)40969  3 0.0035766                    0.00636 2.22                       3.96     3.96    0.123             0.124366 2.6591-3 1.0111057
+    1 92236   3 102 C  626000.0  68000.00.1925831  0.00764                                       N.N.Buleeva*,        (88)40969  3 0.0042964                    0.00764 2.23                       3.97     3.97    0.104             0.104862 2.1526-3 1.0082884
+    1 92236   3 102 C  635000.0  42000.00.1808953  0.00716                                       N.N.Buleeva*,        (88)40969  3 0.0040265                    0.00716 2.23                       3.96     3.96    0.102             0.10308  2.1215-3 1.0105883
+    1 92236   3 102 C  645000.0  46000.00.1731713  0.00692                                       N.N.Buleeva*,        (88)40969  3 0.0038915                    0.00692 2.25                       4        4       0.101             0.1011   2.0869-3 1.00099
+    1 92236   3 102 C  710000.0  46000.0 0.171837  0.00688                                       N.N.Buleeva*,        (88)40969  3  0.003869                    0.00688 2.25                       4        4       0.096             0.095909 1.9903-3 0.999052
+    1 92236   3 102 C  779000.0  62000.00.1996965  0.00796                                       N.N.Buleeva*,        (88)40969  3 0.0044764                    0.00796 2.24                       3.99     3.99    0.091             .091318521.9430-3 1.0035002
+    1 92236   3 102 C  882000.0  34000.00.1598225  0.00644                                       N.N.Buleeva*,        (88)40969  3 0.0036216                    0.00644 2.27                       4.03     4.03    0.085             .084378322.2141-3 0.9926862
+    1 92236   3 102 C  884000.0  40000.00.1625546  0.00656                                       N.N.Buleeva*,        (88)40969  3 0.0036891                    0.00656 2.27                       4.04     4.04    0.085             .084250852.2138-3 0.9911864
+    1 92236   3 102 C 1037000.0  36000.00.1464087  0.00584                                       N.N.Buleeva*,        (88)40969  3 0.0032842                    0.00584 2.24                       3.99     3.99    0.079             .079221141.6476-3 1.0027993
+    1 92236   3 102 C 1133000.0  40000.00.1248763  0.00488                                       N.N.Buleeva*,        (88)40969  3 0.0027443                    0.00488 2.20                       3.91     3.91    0.076             .077791781.6920-3 1.0235761
+    1 92236   3 102 C 1134000.0  42000.00.1278916    0.005                                       N.N.Buleeva*,        (88)40969  3 0.0028118                      0.005 2.20                       3.91     3.91    0.076             0.07775811.6918-3 1.0231329
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           154000.0    1134000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           16          16
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+154000.     154000.     0.249831    4.41         100
+164000.     164000.     0.242851    4.24         25 100
+198000.     198000.     0.218375    3.88         27 27 100
+231000.     231000.     0.204461    3.91         26 26 31 100
+344000.     344000.     0.174965    3.98         23 23 27 28 100
+544000.     544000.     0.160766    3.96         17 17 20 22 25 100
+626000.     626000.     0.192583    3.97         15 15 18 19 23 29 100
+635000.     635000.     0.180895    3.96         14 15 18 19 22 29 31 100
+645000.     645000.     0.173171    4.0          14 14 17 18 22 28 31 31 100
+710000.     710000.     0.171837    4.0          14 14 16 16 20 26 29 29 30 100
+779000.     779000.     0.199696    3.99         14 14 16 16 18 24 27 27 27 29 100
+882000.     882000.     0.159822    4.03         14 14 16 16 16 21 23 24 24 26 28 100
+884000.     884000.     0.162555    4.04         14 14 16 16 16 21 23 24 24 26 28 32 100
+1037000.    1037000.    0.146409    3.99         14 14 16 16 16 16 18 19 19 21 23 27 27 100
+1133000.    1133000.    0.124876    3.91         14 14 16 16 16 16 16 16 16 18 20 24 24 29 100
+1134000.    1134000.    0.127892    3.91         14 14 16 16 16 16 16 16 16 18 20 23 24 28 32 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       40969003 
+#DATASET        40969004   20170720
+#SUBENT         40969004   20170720
+#ENTRY          40969      20170720
+#TITLE          Activation-measured radiative neutron-capture cross
+#+               sections for 236U, 238U, and 237Np
+#AUTHORS        N.N.Buleeva, A.N.Davletshin, A.O.Tipunkov,
+#+               S.V.Tikhonov,V.A.Tolstikov
+#AUTHOR1        N.N.Buleeva+
+#YEAR           1988
+#X4REF1         J,AE,65,(5),348,1988
+#REFERENCE1     Jour: Atomnaya Energiya, Vol.65, Issue.5, p.348 (1988)
+#DATE           20170720
+#INSTITUTE      4RUSFEI
+#METHOD         ACTIV
+#REACTION       92-U-236(N,G)92-U-237,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           92236            
+#TARGET         92236           [ ]             92-U-236        [ ] 
+#REAC1          N,G
+#PRODUCT        92-U-237
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-2,0.4,1.1)    ADDED AS COMMON:ERR-2,PER-CENT=0.4%
+#CompNotes      RENORMALIZE(SIG-MON): Data[1]*0.9780824(6.4e5) Data[4]*0.984635(7.8e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      WARNING! UNCHANGED+CHANGED POINTS: 2+3=5; EN(eV):[6.3e5,7.8e5]
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92236   3 102 C ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-235(N,F),,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$u235nf}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 92-U-236(N,G)92-U-237,,SIG
+#+              #[0]#Monitor:  92-U-235(N,F),,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$u235nf;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        40969004    0.981142    0.981142    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          40969004    CS          3/5         0.978082    0.984635    0.981142    -1.89%      1.02241     [EN,MONIT,MONIT-ERR]::u235nf
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92236   3 102 C  626000.0  68000.0    0.194  0.01067                                       N.N.Buleeva,         (88)40969  4 0.0093985                    0.01067 4.84                       5.50     5.50             3.5      1.115152 .01482561
+    1 92236   3 102 C  635000.0  42000.00.1789891 7.9569-3                                       N.N.Buleeva*,        (88)40969  4  6.4492-3                   7.9569-3 3.60                       4.45     4.45    1.142    0.03997  1.1169701.014828420.97808240.7905561
+    1 92236   3 102 C  637000.0  40000.0    0.181 0.009955                                       N.N.Buleeva,         (88)40969  4 0.0087687                   0.009955 4.84                       5.50     5.50             3.5      1.117374 .01482904
+    1 92236   3 102 C  645000.0  46000.00.1765278 7.8464-3                                       N.N.Buleeva*,        (88)40969  4  6.3592-3                   7.8464-3 3.60                       4.44     4.44    1.141    0.039935 1.11899  .014831540.98070990.792567
+    1 92236   3 102 C  779000.0  62000.00.1851114 8.2264-3                                       N.N.Buleeva*,        (88)40969  4  6.6663-3                   8.2264-3 3.60                       4.44     4.44    1.137    0.039795 1.11953  .014806380.984635 0.7955854
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           626000.0    779000.0    0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           5           5
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+626000.     626000.     0.194       5.5          100
+635000.     635000.     0.178989    4.45         67 100
+637000.     637000.     0.181       5.5          72 70 100
+645000.     645000.     0.176528    4.44         63 61 68 100
+779000.     779000.     0.185111    4.44         36 33 36 33 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       40969004 
+#DATASET        40969005   20170720
+#SUBENT         40969005   20170720
+#ENTRY          40969      20170720
+#TITLE          Activation-measured radiative neutron-capture cross
+#+               sections for 236U, 238U, and 237Np
+#AUTHORS        N.N.Buleeva, A.N.Davletshin, A.O.Tipunkov,
+#+               S.V.Tikhonov,V.A.Tolstikov
+#AUTHOR1        N.N.Buleeva+
+#YEAR           1988
+#X4REF1         J,AE,65,(5),348,1988
+#REFERENCE1     Jour: Atomnaya Energiya, Vol.65, Issue.5, p.348 (1988)
+#DATE           20170720
+#INSTITUTE      4RUSFEI
+#METHOD         ACTIV
+#REACTION       92-U-238(N,G)92-U-239,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           92238            
+#TARGET         92238           [ ]             92-U-238        [ ] 
+#REAC1          N,G
+#PRODUCT        92-U-239
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-2,0.4,1.3)    ADDED AS COMMON:ERR-2,PER-CENT=0.4%
+#CompNotes      ERR-ANALYS:(MONIT-ERR,0.7,0.9) ADDED AS COMMON:MONIT-ERR,PER-CENT=0.7%
+#CompNotes      RENORMALIZE(SIG-MON): Data[3]*1.0040209(3.4e5) Data[5]*0.9990322(5.9e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      WARNING! UNCHANGED+CHANGED POINTS: 15+2=17; EN(eV):[3.4e5,1.4e6]
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92238   3 102 C ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$h1nel}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 92-U-238(N,G)92-U-239,,SIG
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$h1nel;              #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        40969005    1.00153     1.00153     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          40969005    CS          2/17        0.999032    1.00402     1.00153     +0.153%     1.00402     [EN,MONIT,MONIT-ERR]::h1nel
+#C5DATA         17
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92238   3 102 C  339000.0  32000.0    0.119 0.004165                                       N.N.Buleeva,         (88)40969  5 0.0045687                   0.004165 3.84                       3.50     3.50             0.7      7.48328450.0289316
+    1 92238   3 102 C  340000.0  34000.0    0.119 0.004165                                       N.N.Buleeva,         (88)40969  5 0.0045687                   0.004165 3.84                       3.50     3.50             0.7      7.47174  0.0288711
+    1 92238   3 102 C  340000.0  30000.0    0.115 0.004025                                       N.N.Buleeva,         (88)40969  5 0.0044152                   0.004025 3.84                       3.50     3.50             0.7      7.47174  0.0288711
+    1 92238   3 102 C  343000.0  20000.00.1114463 4.4101-3                                       N.N.Buleeva*,        (88)40969  5  4.2289-3                   4.4101-3 3.79                       3.96     3.96    7.41     0.05187  7.4397945.028708231.00402090.993261
+    1 92238   3 102 C  580000.0  28000.0    0.123  0.00492                                       N.N.Buleeva,         (88)40969  5 0.0047223                    0.00492 3.84                       4        4                0.7      5.673628 .02049716
+    1 92238   3 102 C  590000.0  28000.00.1118916 4.4251-3                                       N.N.Buleeva*,        (88)40969  5 .00424308                   4.4251-3 3.79                       3.95     3.95    5.627    0.039389 5.621554 .020281980.99903220.9877345
+    1 92238   3 102 C  596000.0  40000.0    0.109  0.00436                                       N.N.Buleeva,         (88)40969  5 0.0041848                    0.00436 3.84                       4        4                0.7      5.5903096.02015287
+    1 92238   3 102 C  619000.0  70000.0    0.121  0.00484                                       N.N.Buleeva,         (88)40969  5 0.0046455                    0.00484 3.84                       4        4                0.7      5.4821296.01971488
+    1 92238   3 102 C  693000.0  44000.0    0.125 0.004375                                       N.N.Buleeva,         (88)40969  5 0.0047991                   0.004375 3.84                       3.50     3.50             0.7      5.163491 .01844642
+    1 92238   3 102 C  780000.0  62000.0    0.121  0.00484                                       N.N.Buleeva,         (88)40969  5 0.0046455                    0.00484 3.84                       4        4                0.7      4.851108 .01724216
+    1 92238   3 102 C  782000.0  28000.0    0.133 0.005985                                       N.N.Buleeva,         (88)40969  5 .00510623                   0.005985 3.84                       4.50     4.50             0.7      4.8444552.01721684
+    1 92238   3 102 C 1015000.0  28000.0    0.125    0.005                                       N.N.Buleeva,         (88)40969  5 0.0047991                      0.005 3.84                       4        4                0.7      4.2178354.01490317
+    1 92238   3 102 C 1183000.0  38000.0    0.087 0.003045                                       N.N.Buleeva,         (88)40969  5 0.0033402                   0.003045 3.84                       3.50     3.50             0.7      3.8855076.01372853
+    1 92238   3 102 C 1198000.0  26000.0    0.086  0.00301                                       N.N.Buleeva,         (88)40969  5 0.0033018                    0.00301 3.84                       3.50     3.50             0.7      3.85786580.0136318
+    1 92238   3 102 C 1387000.0  32000.0    0.073 0.002555                                       N.N.Buleeva,         (88)40969  5 0.0028027                   0.002555 3.84                       3.50     3.50             0.7      3.5646849.01262544
+    1 92238   3 102 C 1391000.0  38000.0     0.07  0.00245                                       N.N.Buleeva,         (88)40969  5 .00268749                    0.00245 3.84                       3.50     3.50             0.7      3.558865 .01260561
+    1 92238   3 102 C 1391000.0  38000.0    0.076  0.00266                                       N.N.Buleeva,         (88)40969  5 0.0029178                    0.00266 3.84                       3.50     3.50             0.7      3.558865 .01260561
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           339000.0    1391000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           17          17
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+339000.     339000.     0.119       3.84         100
+340000.     340000.     0.119       3.84         100 100
+340000.     340000.     0.115       3.84         100 100 100
+343000.     343000.     0.111446    3.96         96 96 96 100
+580000.     580000.     0.123       4.0          74 74 74 71 100
+590000.     590000.     0.111892    3.95         73 73 73 70 91 100
+596000.     596000.     0.109       4.0          73 73 73 70 91 92 100
+619000.     619000.     0.121       4.0          70 71 71 68 89 89 90 100
+693000.     693000.     0.125       3.84         66 66 66 64 86 86 87 89 100
+780000.     780000.     0.121       4.0          56 56 56 54 75 75 76 78 88 100
+782000.     782000.     0.133       4.5          49 49 49 48 66 67 67 69 78 82 100
+1015000.    1015000.    0.125       4.0          48 48 48 46 54 55 55 57 67 72 64 100
+1183000.    1183000.    0.087       3.84         50 50 50 48 48 48 48 48 53 59 53 81 100
+1198000.    1198000.    0.086       3.84         50 50 50 48 48 48 48 48 52 58 52 79 99 100
+1387000.    1387000.    0.073       3.84         50 50 50 48 48 48 48 48 50 48 43 62 81 82 100
+1391000.    1391000.    0.07        3.84         50 50 50 48 48 48 48 48 50 48 43 62 80 82 100 100
+1391000.    1391000.    0.076       3.84         50 50 50 48 48 48 48 48 50 48 43 62 80 82 100 100 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       40969005 
+#DATASET        40969006   20170720
+#SUBENT         40969006   20170720
+#ENTRY          40969      20170720
+#TITLE          Activation-measured radiative neutron-capture cross
+#+               sections for 236U, 238U, and 237Np
+#AUTHORS        N.N.Buleeva, A.N.Davletshin, A.O.Tipunkov,
+#+               S.V.Tikhonov,V.A.Tolstikov
+#AUTHOR1        N.N.Buleeva+
+#YEAR           1988
+#X4REF1         J,AE,65,(5),348,1988
+#REFERENCE1     Jour: Atomnaya Energiya, Vol.65, Issue.5, p.348 (1988)
+#DATE           20170720
+#INSTITUTE      4RUSFEI
+#METHOD         ACTIV
+#REACTION       92-U-238(N,G)92-U-239,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           92238            
+#TARGET         92238           [ ]             92-U-238        [ ] 
+#REAC1          N,G
+#PRODUCT        92-U-239
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-2,0.4,1.3)    ADDED AS COMMON:ERR-2,PER-CENT=0.4%
+#CompNotes      ERR-ANALYS:(ERR-4,0.3,0.6)    ADDED AS COMMON:ERR-4,PER-CENT=0.3%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9402478(6.2e5) Data[1]*0.9807247(7.8e5)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92238   3 102 C ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 92-U-238(N,G)92-U-239,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        40969006    0.960486    0.960486    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          40969006    CS          2           0.940248    0.980725    0.960486    -3.95%      1.06355     [EN,MONIT]::au197ng
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92238   3 102 C  619000.0  70000.00.1194115 0.005715                                       N.N.Buleeva*,        (88)40969  6 0.0032379                   0.005715 2.71                       4.79     4.79    0.113             0.106248 2.1768-3 0.9402478
+    1 92238   3 102 C  780000.0  62000.00.1216099  0.00558                                       N.N.Buleeva*,        (88)40969  6 0.0031614                    0.00558 2.60                       4.59     4.59    0.093             0.0912074.001942890.9807247
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           619000.0    780000.0    0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+619000.     619000.     0.119411    4.79         100
+780000.     780000.     0.12161     4.59         16 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       40969006 
+#DATASET        40969007   20170720
+#SUBENT         40969007   20170720
+#ENTRY          40969      20170720
+#TITLE          Activation-measured radiative neutron-capture cross
+#+               sections for 236U, 238U, and 237Np
+#AUTHORS        N.N.Buleeva, A.N.Davletshin, A.O.Tipunkov,
+#+               S.V.Tikhonov,V.A.Tolstikov
+#AUTHOR1        N.N.Buleeva+
+#YEAR           1988
+#X4REF1         J,AE,65,(5),348,1988
+#REFERENCE1     Jour: Atomnaya Energiya, Vol.65, Issue.5, p.348 (1988)
+#DATE           20170720
+#INSTITUTE      4RUSFEI
+#METHOD         ACTIV
+#REACTION       92-U-238(N,G)92-U-239,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           92238            
+#TARGET         92238           [ ]             92-U-238        [ ] 
+#REAC1          N,G
+#PRODUCT        92-U-239
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-2,0.4,1.3)    ADDED AS COMMON:ERR-2,PER-CENT=0.4%
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92238   3 102 C ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92238   3 102 C  619000.0  70000.0    0.125  0.00625                                       N.N.Buleeva,         (88)40969  7 .00623874                    0.00625 4.99                       5        5                         1.1137381.01482343
+    1 92238   3 102 C  780000.0  62000.0    0.125  0.00625                                       N.N.Buleeva,         (88)40969  7 .00623874                    0.00625 4.99                       5        5                         1.1191   .01480164
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           619000.0    780000.0    0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+619000.     619000.     0.125       5.0          100
+780000.     780000.     0.125       5.0          50 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       40969007 
+#DATASET        40969008   20170720
+#SUBENT         40969008   20170720
+#ENTRY          40969      20170720
+#TITLE          Activation-measured radiative neutron-capture cross
+#+               sections for 236U, 238U, and 237Np
+#AUTHORS        N.N.Buleeva, A.N.Davletshin, A.O.Tipunkov,
+#+               S.V.Tikhonov,V.A.Tolstikov
+#AUTHOR1        N.N.Buleeva+
+#YEAR           1988
+#X4REF1         J,AE,65,(5),348,1988
+#REFERENCE1     Jour: Atomnaya Energiya, Vol.65, Issue.5, p.348 (1988)
+#DATE           20170720
+#INSTITUTE      4RUSFEI
+#METHOD         ACTIV
+#REACTION       93-NP-237(N,G)93-NP-238,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           93237            
+#TARGET         93237           [ ]             93-NP-237       [ ] 
+#REAC1          N,G
+#PRODUCT        93-NP-238
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-2,1.,2.4)     ADDED AS COMMON:ERR-2,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(MONIT-ERR,0.7,0.9) ADDED AS COMMON:MONIT-ERR,PER-CENT=0.7%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.006329(1.7e5) Data[9]*1.0071565(8.8e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      WARNING! UNCHANGED+CHANGED POINTS: 10+3=13; EN(eV):[1.7e5,1.1e6]
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 93237   3 102 C ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$h1nel}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 93-NP-237(N,G)93-NP-238,,SIG
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$h1nel;              #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        40969008    1.00804     1.00804     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          40969008    CS          3/13        1.00633     1.01063     1.00804     +0.804%     1.01063     [EN,MONIT,MONIT-ERR]::h1nel
+#C5DATA         13
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 93237   3 102 C  166000.0  44000.00.8714809.04332866                                       N.N.Buleeva*,        (88)40969  8 0.0365079                  .04332866 4.19                       4.97     4.97    10.406   0.072842 10.47186 .047898841.006329 1.000662
+    1 93237   3 102 C  344000.0  48000.0 0.476007.02363736                                       N.N.Buleeva*,        (88)40969  8 .01990641                  .02363736 4.18                       4.97     4.97    7.351    0.051457 7.429146 .028653941.01063061.0037097
+    1 93237   3 102 C  471000.0  44000.0    0.326   0.0163                                       N.N.Buleeva,         (88)40969  8 .01376554                     0.0163 4.22                       5        5                0.7      6.322628 0.023337
+    1 93237   3 102 C  475000.0  42000.0    0.337  0.01685                                       N.N.Buleeva,         (88)40969  8 .01423002                    0.01685 4.22                       5        5                0.7      6.29462  .02321118
+    1 93237   3 102 C  544000.0  54000.0    0.266   0.0133                                       N.N.Buleeva,         (88)40969  8 .01123201                     0.0133 4.22                       5        5                0.7      5.865609 .02130038
+    1 93237   3 102 C  636000.0  68000.0    0.248   0.0124                                       N.N.Buleeva,         (88)40969  8 .01047194                     0.0124 4.22                       5        5                0.7      5.4039736.01940001
+    1 93237   3 102 C  637000.0  40000.0    0.247  0.01235                                       N.N.Buleeva,         (88)40969  8 .01042972                    0.01235 4.22                       5        5                0.7      5.3993764.01938149
+    1 93237   3 102 C  708000.0  44000.0    0.198   0.0099                                       N.N.Buleeva,         (88)40969  8 0.0083607                     0.0099 4.22                       5        5                0.7      5.105393 .01821956
+    1 93237   3 102 C  763000.0  68000.0    0.211  0.01055                                       N.N.Buleeva,         (88)40969  8 0.0089096                    0.01055 4.22                       5        5                0.7      4.907657 .01745735
+    1 93237   3 102 C  881000.0  42000.00.1470449 7.2984-3                                       N.N.Buleeva*,        (88)40969  8  6.1452-3                   7.2984-3 4.18                       4.96     4.96    4.515    0.031605 4.54731130.01610341.00715650.9997855
+    1 93237   3 102 C  885000.0  42000.0    0.142   0.0071                                       N.N.Buleeva,         (88)40969  8  0.005996                     0.0071 4.22                       5        5                0.7      4.536229 .01606237
+    1 93237   3 102 C 1042000.0  44000.0    0.099  0.00495                                       N.N.Buleeva,         (88)40969  8 0.0041803                    0.00495 4.22                       5        5                0.7      4.160857 .01470008
+    1 93237   3 102 C 1142000.0  34000.0    0.094   0.0047                                       N.N.Buleeva,         (88)40969  8 0.0039692                     0.0047 4.22                       5        5                0.7      3.9610624.01399294
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           166000.0    1142000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           13          13
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+166000.     166000.     0.871481    4.97         100
+344000.     344000.     0.476007    4.97         58 100
+471000.     471000.     0.326       5.0          49 62 100
+475000.     475000.     0.337       5.0          49 62 71 100
+544000.     544000.     0.266       5.0          44 57 66 66 100
+636000.     636000.     0.248       5.0          37 50 59 60 65 100
+637000.     637000.     0.247       5.0          37 50 59 59 65 71 100
+708000.     708000.     0.198       5.0          36 45 54 54 59 66 66 100
+763000.     763000.     0.211       5.0          36 41 50 50 55 62 62 67 100
+881000.     881000.     0.147045    4.96         35 35 41 42 47 53 53 59 63 100
+885000.     885000.     0.142       5.0          36 36 41 41 46 53 53 58 62 71 100
+1042000.    1042000.    0.099       5.0          36 36 36 36 36 42 42 47 51 59 60 100
+1142000.    1142000.    0.094       5.0          36 36 36 36 36 36 36 40 44 52 53 64 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       40969008 
+#DATASET        40969009   20170720
+#SUBENT         40969009   20170720
+#ENTRY          40969      20170720
+#TITLE          Activation-measured radiative neutron-capture cross
+#+               sections for 236U, 238U, and 237Np
+#AUTHORS        N.N.Buleeva, A.N.Davletshin, A.O.Tipunkov,
+#+               S.V.Tikhonov,V.A.Tolstikov
+#AUTHOR1        N.N.Buleeva+
+#YEAR           1988
+#X4REF1         J,AE,65,(5),348,1988
+#REFERENCE1     Jour: Atomnaya Energiya, Vol.65, Issue.5, p.348 (1988)
+#DATE           20170720
+#INSTITUTE      4RUSFEI
+#METHOD         ACTIV
+#REACTION       93-NP-237(N,G)93-NP-238,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           93237            
+#TARGET         93237           [ ]             93-NP-237       [ ] 
+#REAC1          N,G
+#PRODUCT        93-NP-238
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-2,1.,2.4)     ADDED AS COMMON:ERR-2,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-4,0.3,0.6)    ADDED AS COMMON:ERR-4,PER-CENT=0.3%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0254395(1.7e5) Data[16]*1.0195885(1.1e6)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 93237   3 102 C ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 93-NP-237(N,G)93-NP-238,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        40969009    1.01064     1.01064     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          40969009    CS          17          0.989273    1.03007     1.01064     +1.06%      1.03007     [EN,MONIT]::au197ng
+#C5DATA         17
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 93237   3 102 C  166000.0  44000.00.7506217  0.02928                                       N.N.Buleeva*,        (88)40969  9 .02266837                    0.02928 3.02                       3.90     3.90    0.264             0.270716 6.5440-3 1.0254395
+    1 93237   3 102 C  198000.0  32000.00.6839677  0.02656                                       N.N.Buleeva*,        (88)40969  9 .02056257                    0.02656 3.01                       3.88     3.88    0.251             0.258548 5.2137-3 1.0300719
+    1 93237   3 102 C  231000.0  30000.00.6052058  0.02368                                       N.N.Buleeva*,        (88)40969  9 .01833289                    0.02368 3.03                       3.91     3.91    0.241             0.246376 0.00516111.0223072
+    1 93237   3 102 C  344000.0  48000.0 0.474618  0.01888                                       N.N.Buleeva*,        (88)40969  9 .01461677                    0.01888 3.08                       3.98     3.98    0.18              0.18099843.5438-3 1.0055466
+    1 93237   3 102 C  467000.0  42000.00.3335874   0.0132                                       N.N.Buleeva*,        (88)40969  9 .01021935                     0.0132 3.06                       3.96     3.96    0.141             0.14253282.8226-3 1.0108708
+    1 93237   3 102 C  471000.0  44000.00.3209996  0.01268                                       N.N.Buleeva*,        (88)40969  9 0.0098168                    0.01268 3.06                       3.95     3.95    0.14              0.14176642.8112-3 1.0126171
+    1 93237   3 102 C  475000.0  42000.00.3398202   0.0134                                       N.N.Buleeva*,        (88)40969  9 .01037419                     0.0134 3.05                       3.94     3.94    0.139             0.141    .002799831.0143886
+    1 93237   3 102 C  479000.0  38000.00.3346263  0.01316                                       N.N.Buleeva*,        (88)40969  9 .01018838                    0.01316 3.04                       3.93     3.93    0.138             0.14036  2.7903-3 1.0171014
+    1 93237   3 102 C  544000.0  54000.00.2760319  0.01092                                       N.N.Buleeva*,        (88)40969  9 .00845419                    0.01092 3.06                       3.96     3.96    0.123             0.124366 2.6591-3 1.0111057
+    1 93237   3 102 C  636000.0  68000.00.2582137  0.01024                                       N.N.Buleeva*,        (88)40969  9 0.0079277                    0.01024 3.07                       3.97     3.97    0.102             0.102882 2.1181-3 1.0086471
+    1 93237   3 102 C  637000.0  40000.00.2526832  0.01004                                       N.N.Buleeva*,        (88)40969  9 0.0077729                    0.01004 3.08                       3.97     3.97    0.102             0.102684 2.1146-3 1.0067059
+    1 93237   3 102 C  708000.0  44000.00.1813352  0.00724                                       N.N.Buleeva*,        (88)40969  9 0.0056052                    0.00724 3.09                       3.99     3.99    0.0958            0.09597741.9926-3 1.0018518
+    1 93237   3 102 C  763000.0  68000.0 0.213747  0.00844                                       N.N.Buleeva*,        (88)40969  9 .00653419                    0.00844 3.06                       3.95     3.95    0.0919            .093096441.9440-3 1.013019
+    1 93237   3 102 C  881000.0  42000.00.1316623  0.00532                                       N.N.Buleeva*,        (88)40969  9 0.0041187                    0.00532 3.13                       4.04     4.04    0.0853            .084442062.2143-3 0.9899421
+    1 93237   3 102 C  885000.0  42000.00.1335518   0.0054                                       N.N.Buleeva*,        (88)40969  9 0.0041806                     0.0054 3.13                       4.04     4.04    0.0851            .084187112.2136-3 0.9892727
+    1 93237   3 102 C 1042000.0  44000.0.09824301  0.00392                                       N.N.Buleeva*,        (88)40969  9 0.0030348                    0.00392 3.09                       3.99     3.99    0.079             .079195891.6517-3 1.0024797
+    1 93237   3 102 C 1142000.0  34000.0.09074338  0.00356                                       N.N.Buleeva*,        (88)40969  9 0.0027561                    0.00356 3.04                       3.92     3.92    0.076             .07748872.001690221.0195885
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           166000.0    1142000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           17          17
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+166000.     166000.     0.750622    3.9          100
+198000.     198000.     0.683968    3.88         58 100
+231000.     231000.     0.605206    3.91         56 58 100
+344000.     344000.     0.474618    3.98         49 51 53 100
+467000.     467000.     0.333587    3.96         41 43 45 52 100
+471000.     471000.     0.321       3.95         41 43 45 52 60 100
+475000.     475000.     0.33982     3.94         41 43 45 52 59 60 100
+479000.     479000.     0.334626    3.93         41 43 45 52 59 59 60 100
+544000.     544000.     0.276032    3.96         37 39 41 48 55 55 56 56 100
+636000.     636000.     0.258214    3.97         31 33 35 42 50 50 50 50 54 100
+637000.     637000.     0.252683    3.97         31 33 35 42 49 50 50 50 54 60 100
+708000.     708000.     0.181335    3.99         30 30 31 38 45 45 46 46 50 56 56 100
+763000.     763000.     0.213747    3.95         30 30 30 34 42 42 42 42 46 52 52 57 100
+881000.     881000.     0.131662    4.04         30 30 30 30 35 35 35 35 39 45 45 49 53 100
+885000.     885000.     0.133552    4.04         30 30 30 30 34 35 35 35 39 45 45 49 52 60 100
+1042000.    1042000.    0.098243    3.99         30 30 30 30 30 30 30 30 30 35 35 39 43 50 50 100
+1142000.    1142000.    9.0743-2    3.92         30 30 30 30 30 30 30 30 30 30 30 33 37 44 44 54 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       40969009 
+#DATASET        40969010   20170720
+#SUBENT         40969010   20170720
+#ENTRY          40969      20170720
+#TITLE          Activation-measured radiative neutron-capture cross
+#+               sections for 236U, 238U, and 237Np
+#AUTHORS        N.N.Buleeva, A.N.Davletshin, A.O.Tipunkov,
+#+               S.V.Tikhonov,V.A.Tolstikov
+#AUTHOR1        N.N.Buleeva+
+#YEAR           1988
+#X4REF1         J,AE,65,(5),348,1988
+#REFERENCE1     Jour: Atomnaya Energiya, Vol.65, Issue.5, p.348 (1988)
+#DATE           20170720
+#INSTITUTE      4RUSFEI
+#METHOD         ACTIV
+#REACTION       93-NP-237(N,G)93-NP-238,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           93237            
+#TARGET         93237           [ ]             93-NP-237       [ ] 
+#REAC1          N,G
+#PRODUCT        93-NP-238
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-2,1.,2.4)     ADDED AS COMMON:ERR-2,PER-CENT=1.0%
+#CompNotes      RENORMALIZE(SIG-MON): Data[1]*0.9792935(6.4e5) Data[2]*0.99068606(7.6e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      WARNING! UNCHANGED+CHANGED POINTS: 1+2=3; EN(eV):[6.4e5,7.6e5]
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 93237   3 102 C ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-235(N,F),,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$u235nf}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 93-NP-237(N,G)93-NP-238,,SIG
+#+              #[0]#Monitor:  92-U-235(N,F),,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$u235nf;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        40969010    0.984990    0.984990    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          40969010    CS          2/3         0.979294    0.990686    0.984990    -1.50%      1.02114     [EN,MONIT,MONIT-ERR]::u235nf
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 93237   3 102 C  636000.0  68000.0    0.263  0.01578                                       N.N.Buleeva,         (88)40969 10 .01391665                    0.01578 5.29                       6        6                3.5      1.117172 .01482873
+    1 93237   3 102 C  637000.0  40000.00.24776120.0125141                                       N.N.Buleeva*,        (88)40969 10 .01036794                  0.0125141 4.18                       5.05     5.05    1.141    0.039935 1.117374 .014829040.97929350.8243806
+    1 93237   3 102 C  763000.0  68000.00.20804410.0105048                                       N.N.Buleeva*,        (88)40969 10  8.7020-3                  0.0105048 4.18                       5.05     5.05    1.137    0.039795 1.12641  .014882250.99068610.8337147
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           636000.0    763000.0    0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+636000.     636000.     0.263       6.0          100
+637000.     637000.     0.247761    5.05         72 100
+763000.     763000.     0.208044    5.05         37 34 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       40969010 
+#DATASET        40969011   20170720
+#SUBENT         40969011   20170720
+#ENTRY          40969      20170720
+#TITLE          Activation-measured radiative neutron-capture cross
+#+               sections for 236U, 238U, and 237Np
+#AUTHORS        N.N.Buleeva, A.N.Davletshin, A.O.Tipunkov,
+#+               S.V.Tikhonov,V.A.Tolstikov
+#AUTHOR1        N.N.Buleeva+
+#YEAR           1988
+#X4REF1         J,AE,65,(5),348,1988
+#REFERENCE1     Jour: Atomnaya Energiya, Vol.65, Issue.5, p.348 (1988)
+#DATE           20170720
+#INSTITUTE      4RUSFEI
+#REACTION       92-U-235(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           92235            
+#TARGET         92235           [ ]             92-U-235        [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#CompNotes      ERR-ANALYS:(MONIT-ERR,0.7,0.9) ADDED AS COMMON:MONIT-ERR,PER-CENT=0.7%
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92235   3  18 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         13
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92235   3  18 A  624000.0  70000.0      1.1   0.0473                                       N.N.Buleeva,         (88)40969 11 .04804873                     0.0473 4.37                       4.30     4.30                      5.459142 .01962227
+    1 92235   3  18 A  632000.0  68000.0     1.08.04644001                                       N.N.Buleeva,         (88)40969 11 .04717511                  .04644001 4.37                       4.30     4.30                      5.42236330.0194741
+    1 92235   3  18 A  634000.0  60000.0     1.11  0.04773                                       N.N.Buleeva,         (88)40969 11 .04848553                    0.04773 4.37                       4.30     4.30                      5.4131684.01943705
+    1 92235   3  18 A  635000.0  74000.0     1.07  0.04601                                       N.N.Buleeva,         (88)40969 11 0.0467383                    0.04601 4.37                       4.30     4.30                      5.4085712.01941853
+    1 92235   3  18 A  641000.0  66000.0     1.07  0.04601                                       N.N.Buleeva,         (88)40969 11 0.0467383                    0.04601 4.37                       4.30     4.30                      5.38098670.0193074
+    1 92235   3  18 A  641000.0  40000.0      1.1   0.0473                                       N.N.Buleeva,         (88)40969 11 .04804873                     0.0473 4.37                       4.30     4.30                      5.38098670.0193074
+    1 92235   3  18 A  642000.0  36000.0     1.11  0.04773                                       N.N.Buleeva,         (88)40969 11 .04848553                    0.04773 4.37                       4.30     4.30                      5.3763895.01928888
+    1 92235   3  18 A  642000.0  36000.0     1.12.04816001                                       N.N.Buleeva,         (88)40969 11 .04892234                  .04816001 4.37                       4.30     4.30                      5.3763895.01928888
+    1 92235   3  18 A  651000.0  44000.0     1.11  0.04773                                       N.N.Buleeva,         (88)40969 11 .04848553                    0.04773 4.37                       4.30     4.30                      5.335514 .01912455
+    1 92235   3  18 A  769000.0  66000.0     1.13  0.04859                                       N.N.Buleeva,         (88)40969 11 .04935915                    0.04859 4.37                       4.30     4.30                      4.88769870.0173814
+    1 92235   3  18 A  785000.0  60000.0     1.12.04816001                                       N.N.Buleeva,         (88)40969 11 .04892234                  .04816001 4.37                       4.30     4.30                      4.834476 .01717887
+    1 92235   3  18 A  785000.0  60000.0     1.08.04644001                                       N.N.Buleeva,         (88)40969 11 .04717511                  .04644001 4.37                       4.30     4.30                      4.834476 .01717887
+    1 92235   3  18 A  785000.0  60000.0     1.09  0.04687                                       N.N.Buleeva,         (88)40969 11 .04761192                    0.04687 4.37                       4.30     4.30                      4.834476 .01717887
+#/C5DATA        0
+#/DATASET       40969011 
+#/C5M.2.3       1               10              10              0               101             

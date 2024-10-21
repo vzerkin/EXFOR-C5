@@ -1,0 +1,75 @@
+#C5M.2.3
+#DATASET        20196002   20170425
+#SUBENT         20196002   20170425
+#ENTRY          20196      20170425
+#TITLE          Angular distribution of tritons emitted from the
+#+                Li-6(n,t)He-4-reaction
+#AUTHORS        Y.Baudinet-Robinet, E.Donneaux, G.Robaye, L.Winand
+#AUTHOR1        Y.Baudinet-robinet+
+#YEAR           1963
+#X4REF1         J,JPR,24,803,1963
+#REFERENCE1     Jour: Journal de Physique, Vol.24, p.803 (1963)
+#DATE           20170425
+#INSTITUTE      2BLGLIE
+#REACTION       3-LI-6(N,T)2-HE-4,,DA
+#C4Reaction     (N,T),DA
+#ReactionType   DA
+#MF             4
+#MT             105
+#PROJ           1
+#TARG           3006             
+#TARGET         3006            [ ]             3-LI-6          [ ] 
+#REAC1          N,T
+#PRODUCT        2-HE-4
+#C4ReaCode      (N,T),DA
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1675143(1.9e5) Data[5]*1.1675143(1.9e5)
+#CompNotes      Conversion from C.M. to Lab: successful [20196002 ]
+#CompNotes      Converted Angle C.M. to LAB 1:(156.1 TO 154.5) 6:(15.2 TO 14.3)
+#CompNotes      Converted Data C.M. to LAB 1:(0.121422 to 0.107651 fc:0.8866) 6:(0.221828 to 0.250399 fc:1.129)
+#Quantity       Differential c/s with respect to angle
+#DataUnits0     B/SR
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1  3006   4 105   ]
+#DATA-HDR       DATA-CM
+#VarFamily      [0 2 4      ]
+#xVariables     2
+#+              Y = Y(X1,X2)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      3-LI-6(N,T)2-HE-4,,SIG
+#M0             Point: XS(b)=1.4  EN-NRM(eV):190000.0
+#M1             Point: XS(b)=1.63452(1.12%)  EN-NRM(eV):190000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 3-LI-6(N,T)2-HE-4,,DA
+#+              #[0]#Monitor:  3-LI-6(N,T)2-HE-4,,SIG
+#+              #[0]#En=190000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 1.4
+#+              a1=recom$li6nt[EN];           #[0]#new monitor point [0.19MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20196002    1.16751     1.16751     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20196002    DA          6           1.16751     1.16751     1.16751     +16.8%      1.16751     [MONIT]::li6nt
+#C5DATA         6
+#C.M.Flag       0000
+#Headers                     EN      dEN     Data    dData      COS     dCOS                  
+#Units                       EV       EV     B/SR     B/SR   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1  3006   4 105    190000.0         0.2503988 9.0304-30.9690157                              Y.Baudinet-Robinet*, (63)20196  2           9.0304-3                            3.61                       3.61    1.4               1.63452  0.01826771.1675143
+    1  3006   4 105    190000.0         0.1880416 7.6696-30.7313537                              Y.Baudinet-Robinet*, (63)20196  2           7.6696-3                            4.08                       4.08    1.4               1.63452  0.01826771.1675143
+    1  3006   4 105    190000.0         0.1130921 4.1663-30.3321611                              Y.Baudinet-Robinet*, (63)20196  2           4.1663-3                            3.68                       3.68    1.4               1.63452  0.01826771.1675143
+    1  3006   4 105    190000.0         0.1039919 3.9152-3-.1495353                              Y.Baudinet-Robinet*, (63)20196  2           3.9152-3                            3.76                       3.76    1.4               1.63452  0.01826771.1675143
+    1  3006   4 105    190000.0         0.1077873 4.6161-3-.5962249                              Y.Baudinet-Robinet*, (63)20196  2           4.6161-3                            4.28                       4.28    1.4               1.63452  0.01826771.1675143
+    1  3006   4 105    190000.0         0.1076509 4.4329-3-.9025853                              Y.Baudinet-Robinet*, (63)20196  2           4.4329-3                            4.12                       4.12    1.4               1.63452  0.01826771.1675143
+#/C5DATA        0
+#/DATASET       20196002 
+#/C5M.2.3       1               1               1               0               6               

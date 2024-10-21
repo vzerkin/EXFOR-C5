@@ -1,0 +1,170 @@
+#C5.2.3
+#DATASET        31647002   20080823
+#SUBENT         31647002   20080823
+#ENTRY          31647      20081128
+#TITLE          Thermal neutron capture cross sections for the
+#+              152Sm(n,gamma)153Sm and 154Sm(n,gamma)155Sm
+#+              reactions at 0.0536 eV energy
+#AUTHORS        M.S.Uddin,M.H.Chowdhury,S.M.Hossain,Sk.A.Latif,
+#+              M.A.Islam,M.A.Hafiz,S.H.Mubin,A.K.M.Zakaria,
+#+              S.M.Yunus,S.M.Azharul Islam
+#AUTHOR1        M.S.Uddin+
+#YEAR           2008
+#X4REF1         J,NIM/B,266,4855,2008
+#REFERENCE1     Jour: Nucl. Instrum. Methods in Physics Res., Sect.B, Vol.266, p.4855 (2008)
+#DATE           20080823
+#INSTITUTE      3BANSAV,3BANDAC
+#METHOD         EXTB,GSPEC
+#REACTION       62-SM-152(N,G)62-SM-153,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           62152            
+#TARGET         62152           [ ]             62-SM-152       [ ] 
+#REAC1          N,G
+#PRODUCT        62-SM-153
+#C4ReaCode      (N,G),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=2.48%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.88%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.126%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 62152   3 102 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             Point: XS(b)=68.5(2.48%)  EN-NRM(eV):0.0536
+#M1             Point: XS(b)=  EN-NRM(eV):0.0536
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 62-SM-152(N,G)62-SM-153,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              #[0]#En=0.0536
+#+              a0=[MONIT];                   #[0]#old monitor point 68.5
+#+              a1=recom$au197ng[EN];         #[0]#new monitor point [5.3599997E-8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (62-SM-152(N,G)62-SM-153,,SIG)
+#+               #[1]#DECAY-DATA (62-SM-153,46.5HR,DG,103.17,0.283) #Ix_old=0.283
+#+                a1=0.283/0.2914;            #[1]#DECAY-DATA: correction to new 103.18012 keV gamma-yield per decay Sm-153 Ix_new=0.2914
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.97117364
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
+#+               #[2]#DECAY-MON  (79-AU-198,2.695D,DG,411.8,0.955) #Im_old=0.955
+#+                a2=0.9562/0.955;            #[2]#DECAY-MON: correction to new 411.80205 keV gamma-yield per decay Au-198 Im_new=0.9562
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0012566
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31647002    0.972394    1.00000     0.971174    1.00126
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31647002    CS          1           0.972394    0.972394    0.972394    -2.76%      1.02839     [MONIT]::au197ng
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 62152   3 102 A    0.0536   2.6E-4140.60817 8.362588                                       M.S.Uddin*,          (08)31647  2 7.3661103                   8.362588 5.24                       5.95     5.95    68.5     1.7                        0.972394 0.9723939
+#/C5DATA        0
+#/DATASET       31647002 
+#DATASET        31647003   20080823
+#SUBENT         31647003   20080823
+#ENTRY          31647      20081128
+#TITLE          Thermal neutron capture cross sections for the
+#+              152Sm(n,gamma)153Sm and 154Sm(n,gamma)155Sm
+#+              reactions at 0.0536 eV energy
+#AUTHORS        M.S.Uddin,M.H.Chowdhury,S.M.Hossain,Sk.A.Latif,
+#+              M.A.Islam,M.A.Hafiz,S.H.Mubin,A.K.M.Zakaria,
+#+              S.M.Yunus,S.M.Azharul Islam
+#AUTHOR1        M.S.Uddin+
+#YEAR           2008
+#X4REF1         J,NIM/B,266,4855,2008
+#REFERENCE1     Jour: Nucl. Instrum. Methods in Physics Res., Sect.B, Vol.266, p.4855 (2008)
+#DATE           20080823
+#INSTITUTE      3BANSAV,3BANDAC
+#METHOD         EXTB,GSPEC
+#REACTION       62-SM-154(N,G)62-SM-155,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           62154            
+#TARGET         62154           [ ]             62-SM-154       [ ] 
+#REAC1          N,G
+#PRODUCT        62-SM-155
+#C4ReaCode      (N,G),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=2.48%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.01%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.126%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 62154   3 102 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             Point: XS(b)=68.5(2.48%)  EN-NRM(eV):0.0536
+#M1             Point: XS(b)=  EN-NRM(eV):0.0536
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 62-SM-154(N,G)62-SM-155,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              #[0]#En=0.0536
+#+              a0=[MONIT];                   #[0]#old monitor point 68.5
+#+              a1=recom$au197ng[EN];         #[0]#new monitor point [5.3599997E-8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (62-SM-154(N,G)62-SM-155,,SIG)
+#+               #[1]#DECAY-DATA (62-SM-155,22.2MIN,DG,104.32,0.73) #Ix_old=0.73
+#+                a1=0.73/0.745;              #[1]#DECAY-DATA: correction to new 104.32 keV gamma-yield per decay Sm-155 Ix_new=0.745
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9798658
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
+#+               #[2]#DECAY-MON  (79-AU-198,2.695D,DG,411.8,0.955) #Im_old=0.955
+#+                a2=0.9562/0.955;            #[2]#DECAY-MON: correction to new 411.80205 keV gamma-yield per decay Au-198 Im_new=0.9562
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0012566
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31647003    0.981097    1.00000     0.979866    1.00126
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31647003    CS          1           0.981097    0.981097    0.981097    -1.89%      1.01927     [MONIT]::au197ng
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 62154   3 102 A    0.0536   2.6E-4 5.7884730.2845182                                       M.S.Uddin*,          (08)31647  3 0.3225504                  0.2845182 5.57                       4.92     4.92    68.5     1.7                        0.98109710.9810972
+#/C5DATA        0
+#/DATASET       31647003 
+#/C5.2.3        1               2               2               0               2               

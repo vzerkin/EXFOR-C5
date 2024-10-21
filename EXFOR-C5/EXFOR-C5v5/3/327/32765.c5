@@ -1,0 +1,310 @@
+#C5M.2.3
+#DATASET        32765002   20210128
+#SUBENT         32765002   20210128
+#ENTRY          32765      20210128
+#TITLE          Measurement of fission cross section for
+#+              232Th(n,f)Z-X-131 (Z = 50, 51, 52, 53) reaction
+#+              induced by neutrons around 14 MeV
+#AUTHORS        Chang-Lin Lan,Yi-Jia Qiu,Qiang Wang,Zheng-Wei Zhang,
+#+              Qian Zhang,Jun-Cai Tan,Cai-Feng Lai,Kai-Hong Fang
+#AUTHOR1        Chang-Lin Lan+
+#YEAR           2017
+#X4REF1         J,EPJ/A,53,131,2017
+#REFERENCE1     Jour: European Physical Journal A: Hadrons and Nuclei, Vol.53, p.131 (2017)
+#DATE           20210128
+#INSTITUTE      3CPRLNZ,3CPRNPC
+#METHOD         ACTIV
+#REACTION       90-TH-232(N,F)51-SB-131,(CUM),SIG
+#C4Reaction     (N,F)(CUM),SIG
+#ReactionType   CS+
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          N,F
+#PRODUCT        51-SB-131
+#C4ReaCode      (N,F)(CUM),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=6
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0024855(1.4e7) Data[5]*0.98398334(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section (uncertain if cumulative)
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [    1 90232   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 90-TH-232(N,F)51-SB-131,(CUM),SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32765002    0.991723    0.991723    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32765002    CS+         6           0.983983    1.00249     0.991723    -0.828%     1.01628     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 90232   3  18      1.41E7 300000.0.00761889 5.8317-4     51.0    131.0                     Chang-Lin Lan*,      (17)32765  2 1.5651E-4  2.28E-4          5.8317-4 2.05     2.99              7.65     7.65    0.1207   0.0024   0.121    5.5949E-41.00248550.9719431
+    1 90232   3  18      1.41E7 300000.0 6.5162-3 6.9033-4     51.0    131.0                     Chang-Lin Lan*,      (17)32765  2  1.3386-4  1.95E-4          6.9033-4 2.05     2.99              10.6     10.6    0.1207   0.0024   0.121    5.5949E-41.00248550.9861892
+    1 90232   3  18      1.45E7 300000.0 6.4265-3 5.8006-4     51.0    131.0                     Chang-Lin Lan*,      (17)32765  2  1.3081-4  1.95E-4          5.8006-4 2.04     3.03              9.03     9.03    0.1168   0.0023   0.11548  4.3286E-40.98869850.9667734
+    1 90232   3  18      1.45E7 300000.0 6.2288-3 5.8087-4     51.0    131.0                     Chang-Lin Lan*,      (17)32765  2  1.2680-4  1.89E-4          5.8087-4 2.04     3.03              9.33     9.33    0.1168   0.0023   0.11548  4.3286E-40.98869850.9681161
+    1 90232   3  18      1.48E7 300000.0 4.5263-3 3.8405-4     51.0    131.0                     Chang-Lin Lan*,      (17)32765  2  9.2558-5  1.38E-4          3.8405-4 2.04     3.05              8.48     8.48    0.1128   0.0022   0.11099334.7501-4 0.98398330.9601358
+    1 90232   3  18      1.48E7 300000.0 6.0023-3 5.7924-4     51.0    131.0                     Chang-Lin Lan*,      (17)32765  2  1.2274-4  1.83E-4          5.7924-4 2.04     3.05              9.65     9.65    0.1128   0.0022   0.11099334.7501-4 0.98398330.9653953
+#/C5DATA        0
+#/DATASET       32765002 
+#DATASET        32765003   20210128
+#SUBENT         32765003   20210128
+#ENTRY          32765      20210128
+#TITLE          Measurement of fission cross section for
+#+              232Th(n,f)Z-X-131 (Z = 50, 51, 52, 53) reaction
+#+              induced by neutrons around 14 MeV
+#AUTHORS        Chang-Lin Lan,Yi-Jia Qiu,Qiang Wang,Zheng-Wei Zhang,
+#+              Qian Zhang,Jun-Cai Tan,Cai-Feng Lai,Kai-Hong Fang
+#AUTHOR1        Chang-Lin Lan+
+#YEAR           2017
+#X4REF1         J,EPJ/A,53,131,2017
+#REFERENCE1     Jour: European Physical Journal A: Hadrons and Nuclei, Vol.53, p.131 (2017)
+#DATE           20210128
+#INSTITUTE      3CPRLNZ,3CPRNPC
+#METHOD         ACTIV
+#REACTION       90-TH-232(N,F)52-TE-131-G,(CUM),SIG
+#C4Reaction     (N,F)(CUM),SIG
+#ReactionType   CS+
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          N,F
+#PRODUCT        52-TE-131-G
+#C4ReaCode      (N,F)(CUM),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=6
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0024855(1.4e7) Data[5]*0.98398334(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section (uncertain if cumulative)
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [    1 90232   3  18G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 90-TH-232(N,F)52-TE-131-G,(CUM),SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32765003    0.991723    0.991723    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32765003    CS+         6           0.983983    1.00249     0.991723    -0.828%     1.01628     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 90232   3  18G     1.41E7 300000.0 1.8045-3 9.3979-5     52.0    131.0                     Chang-Lin Lan*,      (17)32765  3  3.7070-5   5.4E-5          9.3979-5 2.05     2.99              5.21     5.21    0.1207   0.0024   0.121    5.5949E-41.00248550.9397874
+    1 90232   3  18G     1.41E7 300000.0 1.7042-3 9.4676-5     52.0    131.0                     Chang-Lin Lan*,      (17)32765  3  3.5010-5   5.1E-5          9.4676-5 2.05     2.99              5.56     5.56    0.1207   0.0024   0.121    5.5949E-41.00248550.9467603
+    1 90232   3  18G     1.45E7 300000.0 1.4830-3 9.4622-5     52.0    131.0                     Chang-Lin Lan*,      (17)32765  3  3.0189-5   4.5E-5          9.4622-5 2.04     3.03              6.38     6.38    0.1168   0.0023   0.11548  4.3286E-40.98869850.946218
+    1 90232   3  18G     1.45E7 300000.0 1.3842-3 9.5180-5     52.0    131.0                     Chang-Lin Lan*,      (17)32765  3  2.8176-5   4.2E-5          9.5180-5 2.04     3.03              6.88     6.88    0.1168   0.0023   0.11548  4.3286E-40.98869850.9517998
+    1 90232   3  18G     1.48E7 300000.0 1.3776-3 9.4843-5     52.0    131.0                     Chang-Lin Lan*,      (17)32765  3  2.8170-5   4.2E-5          9.4843-5 2.04     3.05              6.88     6.88    0.1128   0.0022   0.11099334.7501-4 0.98398330.9484261
+    1 90232   3  18G     1.48E7 300000.0 1.2792-3 9.5340-5     52.0    131.0                     Chang-Lin Lan*,      (17)32765  3  2.6159-5   3.9E-5          9.5340-5 2.04     3.05              7.45     7.45    0.1128   0.0022   0.11099334.7501-4 0.98398330.9534029
+#/C5DATA        0
+#/DATASET       32765003 
+#DATASET        32765004   20210128
+#SUBENT         32765004   20210128
+#ENTRY          32765      20210128
+#TITLE          Measurement of fission cross section for
+#+              232Th(n,f)Z-X-131 (Z = 50, 51, 52, 53) reaction
+#+              induced by neutrons around 14 MeV
+#AUTHORS        Chang-Lin Lan,Yi-Jia Qiu,Qiang Wang,Zheng-Wei Zhang,
+#+              Qian Zhang,Jun-Cai Tan,Cai-Feng Lai,Kai-Hong Fang
+#AUTHOR1        Chang-Lin Lan+
+#YEAR           2017
+#X4REF1         J,EPJ/A,53,131,2017
+#REFERENCE1     Jour: European Physical Journal A: Hadrons and Nuclei, Vol.53, p.131 (2017)
+#DATE           20210128
+#INSTITUTE      3CPRLNZ,3CPRNPC
+#METHOD         ACTIV
+#REACTION       90-TH-232(N,F)52-TE-131-G,(CUM),SIG,,AV
+#C4Reaction     (N,F)(CUM),SIG,,AV
+#ReactionType   CS+
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          N,F
+#PRODUCT        52-TE-131-G
+#C4ReaCode      (N,F)(CUM),SIG,,AV
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=3
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0024855(1.4e7) Data[2]*0.98398334(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section (uncertain if cumulative)
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [    1 90232   3  18GD ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 90-TH-232(N,F)52-TE-131-G,(CUM),SIG,,AV
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32765004    0.991722    0.991722    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32765004    CS+         3           0.983983    1.00249     0.991722    -0.828%     1.01628     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 90232   3  18GD    1.41E7 300000.0 1.8045-3 9.3979-5     52.0    131.0                     Chang-Lin Lan*,      (17)32765  4  3.7070-5   5.4E-5          9.3979-5 2.05     2.99              5.21     5.21    0.1207   0.0024   0.121    5.5949E-41.00248550.9397874
+    1 90232   3  18GD    1.45E7 300000.0 1.4830-3 9.4622-5     52.0    131.0                     Chang-Lin Lan*,      (17)32765  4  3.0189-5   4.5E-5          9.4622-5 2.04     3.03              6.38     6.38    0.1168   0.0023   0.11548  4.3286E-40.98869850.946218
+    1 90232   3  18GD    1.48E7 300000.0 1.3776-3 9.4843-5     52.0    131.0                     Chang-Lin Lan*,      (17)32765  4  2.8170-5   4.2E-5          9.4843-5 2.04     3.05              6.88     6.88    0.1128   0.0022   0.11099334.7501-4 0.98398330.9484261
+#/C5DATA        0
+#/DATASET       32765004 
+#DATASET        32765005   20210128
+#SUBENT         32765005   20210128
+#ENTRY          32765      20210128
+#TITLE          Measurement of fission cross section for
+#+              232Th(n,f)Z-X-131 (Z = 50, 51, 52, 53) reaction
+#+              induced by neutrons around 14 MeV
+#AUTHORS        Chang-Lin Lan,Yi-Jia Qiu,Qiang Wang,Zheng-Wei Zhang,
+#+              Qian Zhang,Jun-Cai Tan,Cai-Feng Lai,Kai-Hong Fang
+#AUTHOR1        Chang-Lin Lan+
+#YEAR           2017
+#X4REF1         J,EPJ/A,53,131,2017
+#REFERENCE1     Jour: European Physical Journal A: Hadrons and Nuclei, Vol.53, p.131 (2017)
+#DATE           20210128
+#INSTITUTE      3CPRLNZ,3CPRNPC
+#METHOD         ACTIV
+#REACTION       90-TH-232(N,F)53-I-131,(CUM),SIG
+#C4Reaction     (N,F)(CUM),SIG
+#ReactionType   CS+
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          N,F
+#PRODUCT        53-I-131
+#C4ReaCode      (N,F)(CUM),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=9
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0024855(1.4e7) Data[8]*0.98398334(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section (uncertain if cumulative)
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [    1 90232   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 90-TH-232(N,F)53-I-131,(CUM),SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32765005    0.991723    0.991723    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32765005    CS+         9           0.983983    1.00249     0.991723    -0.828%     1.01628     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         9
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 90232   3  18      1.41E7 300000.0 2.0050-3 6.0024-4     53.0    131.0                     Chang-Lin Lan*,      (17)32765  5  4.1188-5   6.0E-5          6.0024-4 2.05     2.99              29.9     29.9    0.1207   0.0024   0.121    5.5949E-41.00248551.0004004
+    1 90232   3  18      1.41E7 300000.0 1.8045-3 1.9744-4     53.0    131.0                     Chang-Lin Lan*,      (17)32765  5  3.7070-5   5.4E-5          1.9744-4 2.05     2.99              10.9     10.9    0.1207   0.0024   0.121    5.5949E-41.00248550.9871843
+    1 90232   3  18      1.41E7 300000.0 1.8045-3 5.0003-4     53.0    131.0                     Chang-Lin Lan*,      (17)32765  5  3.7070-5   5.4E-5          5.0003-4 2.05     2.99              27.7     27.7    0.1207   0.0024   0.121    5.5949E-41.00248551.000053
+    1 90232   3  18      1.45E7 300000.0 1.6808-3 4.9328-4     53.0    131.0                     Chang-Lin Lan*,      (17)32765  5  3.4214-5   5.1E-5          4.9328-4 2.04     3.03              29.3     29.3    0.1168   0.0023   0.11548  4.3286E-40.98869850.9865605
+    1 90232   3  18      1.45E7 300000.0 1.5819-3 1.9536-4     53.0    131.0                     Chang-Lin Lan*,      (17)32765  5  3.2202-5   4.8E-5          1.9536-4 2.04     3.03              12.3     12.3    0.1168   0.0023   0.11548  4.3286E-40.98869850.9768032
+    1 90232   3  18      1.45E7 300000.0 1.1864-3 3.9481-4     53.0    131.0                     Chang-Lin Lan*,      (17)32765  5  2.4152-5   3.6E-5          3.9481-4 2.04     3.03              33.3     33.3    0.1168   0.0023   0.11548  4.3286E-40.98869850.9870344
+    1 90232   3  18      1.48E7 300000.0 1.4760-3 4.9119-4     53.0    131.0                     Chang-Lin Lan*,      (17)32765  5  3.0182-5   4.5E-5          4.9119-4 2.04     3.05              33.3     33.3    0.1128   0.0022   0.11099334.7501-4 0.98398330.9823788
+    1 90232   3  18      1.48E7 300000.0 1.4760-3 9.4305-5     53.0    131.0                     Chang-Lin Lan*,      (17)32765  5  3.0182-5   4.5E-5          9.4305-5 2.04     3.05              6.39     6.39    0.1128   0.0022   0.11099334.7501-4 0.98398330.9430512
+    1 90232   3  18      1.48E7 300000.0 1.6728-3 4.9096-4     53.0    131.0                     Chang-Lin Lan*,      (17)32765  5  3.4207-5   5.1E-5          4.9096-4 2.04     3.05              29.4     29.4    0.1128   0.0022   0.11099334.7501-4 0.98398330.9819219
+#/C5DATA        0
+#/DATASET       32765005 
+#/C5M.2.3       1               4               4               0               24              

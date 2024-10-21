@@ -1,0 +1,204 @@
+#C5.2.3
+#DATASET        O1728002   20221217
+#SUBENT         O1728002   20221217
+#ENTRY          O1728      20221217
+#TITLE          Experimental and theoretical studies of the yields
+#+              of residual product nuclei produced in thin Pb and Bi
+#+              targets irradiated by 40-2600 MeV protons
+#AUTHORS        Yu.E.Titarenko,V.F.Batyaev, E.I.Karpikhin, V.M.Zhivun,
+#+              A.V.Ignatyuk, V.P.Lunev, N.N.Titarenko, Yu.N.Shubin,
+#+              V.S.Barashenkov
+#AUTHOR1        Yu.E.Titarenko+
+#YEAR           2009
+#X4REF1         R,INDC(CCP)-0447,2009
+#REFERENCE1     Rept: USSR report to the I.N.D.C., No.0447 (2009)
+#DATE           20221217
+#INSTITUTE      4RUSITE
+#METHOD         EXTB,GSPEC
+#REACTION       13-AL-27(P,X)4-BE-7,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          P,X
+#PRODUCT        4-BE-7
+#C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.57,1.39)  ADDED AS COMMON:ERR-S,PER-CENT=0.57%
+#CompNotes      ERR-ANALYS:(ERR-1,0.01,0.04)  ADDED AS COMMON:ERR-1,PER-CENT=0.01%
+#CompNotes      ERR-ANALYS:(ERR-4,0.03,0.10)  ADDED AS COMMON:ERR-4,PER-CENT=0.03%
+#CompNotes      ERR-ANALYS:(ERR-5,6.00,9.05)  ADDED AS COMMON:ERR-5,PER-CENT=6.0%
+#CompNotes      ERR-ANALYS:(ERR-6,3.35,3.59)  ADDED AS COMMON:ERR-6,PER-CENT=3.35%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=19
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.766%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#CompNotes      RENORMALIZE(SIG-MON): Data[8]*0.56111115(9.9e7) Data[18]*0.027149322(3.6e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 13027   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-22,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27px}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 13-AL-27(P,X)4-BE-7,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-22,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (13-AL-27(P,X)4-BE-7,,SIG)
+#+               #[1]#DECAY-DATA (4-BE-7,53.29D,DG,477.6,0.1052) #Ix_old=0.1052
+#+                a1=0.1052/0.1044;           #[1]#DECAY-DATA: correction to new 477.6035 keV gamma-yield per decay Be-7 Ix_new=0.1044
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0076628
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O1728002    0.598255    0.593706    1.00766     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O1728002    CS          19          0.0273574   1.00766     0.598255    -40.2%      36.5532     [EN,MONIT,MONIT-ERR]::al27px
+#C5DATA         19
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 13027   39000      3.55E71300000.0 8.9732-6 2.5148-6            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  2.4888-61.8696E-6          2.5148-6 27.7     20.8              28       28      0.0221   0.002    6.0E-4   1.6E-4   .02735736.06133763
+ 1001 13027   39000      3.63E71200000.0 4.5854-6 1.3916-6            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  1.2759-6 9.462E-7          1.3916-6 27.8     20.6              30.3     30.3    0.0259   0.002    7.1E-4   1.9E-4   .02762319.05154183
+ 1001 13027   39000      3.69E71100000.0 5.6202-6 2.4661-6            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  1.5363-61.1286E-6          2.4661-6 27.3     20.1              43.9     43.9    0.0284   0.002    8.0E-4   2.1E-4   .02838487.03473312
+ 1001 13027   39000      3.69E71100000.0 4.9168-6 1.6135-6            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  1.3440-6 9.804E-7          1.6135-6 27.3     19.9              32.8     32.8    0.0282   0.002    8.0E-4   2.1E-4   .02858618.04481848
+ 1001 13027   39000       3.7E71100000.0 5.9438-6 1.8662-6            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  1.6768-61.1913E-6          1.8662-6 28.2     20                31.4     31.4    0.0287   0.002    0.00081  2.2E-4   .02843926.05183969
+ 1001 13027   39000      6.71E7 900000.0 3.3707-4 2.1933-5            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  2.9868-53.7506E-6          2.1933-5 8.86     1.11              6.51     6.51    0.0227   0.0014   0.01154  5.2E-4   0.51226550.4300678
+ 1001 13027   39000      6.78E7 800000.0 3.0708-4 1.9883-5            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  2.7187-5 3.363E-6          1.9883-5 8.85     1.10              6.47     6.47    0.0224   0.0014   0.01157  5.2E-4   0.52047580.4322416
+ 1001 13027   39000      6.79E7 800000.0 3.3623-4 2.0271-5            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  2.9767-53.6822E-6          2.0271-5 8.85     1.10              6.03     6.03    0.0224   0.0014   0.01157  5.2E-4   0.52047580.4223045
+ 1001 13027   39000      6.81E7 800000.0 4.4687-4 2.9064-5            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  3.9559-54.8678E-6          2.9064-5 8.85     1.09              6.50     6.50    0.0223   0.0014   0.01158  5.2E-4   0.52326170.4337919
+ 1001 13027   39000      6.82E7 800000.0 3.5163-4 2.1775-5            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  3.1129-53.8304E-6          2.1775-5 8.85     1.09              6.19     6.19    0.0223   0.0014   0.01158  5.2E-4   0.52326170.4269634
+ 1001 13027   39000      9.87E7 800000.0 5.4110-4 2.4859-5            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  4.4289-55.4549E-6          2.4859-5 8.19     1.01              4.59     4.59    0.0198   0.0012   0.01111  3.3E-4   0.56541080.3710288
+ 1001 13027   39000      1.49E81000000.0 1.2697-3 9.0690-5            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  1.2666-4 7.182E-6          9.0690-5 9.98     0.57              7.14     7.14    0.0171   0.0011                     1.00766281.0076628
+ 1001 13027   39000      2.49E81000000.0 1.8037-3 1.2092-4            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  1.7504-41.0203E-5          1.2092-4 9.70     0.57              6.70     6.70    0.015    9.0E-4                     1.00766281.0076628
+ 1001 13027   39000      3.99E82000000.0 3.1338-3 2.2169-4            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  3.1062-41.7727E-5          2.2169-4 9.91     0.57              7.07     7.07    0.0158   0.001                      1.00766281.0076628
+ 1001 13027   39000      5.99E82000000.0 4.9275-3 3.4261-4            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  4.8591-42.7873E-5          3.4261-4 9.86     0.57              6.95     6.95    0.016    0.001                      1.00766281.0076628
+ 1001 13027   39000      7.99E82000000.0 6.3785-3 4.9375-4            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  6.6468-43.6081E-5          4.9375-4 10.4     0.57              7.74     7.74    0.0155   0.0011                     1.00766281.0076628
+ 1001 13027   39000     1.194E93000000.0 8.2931-3 6.3483-4            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  8.5520-44.6911E-5          6.3483-4 10.3     0.57              7.65     7.65    0.0144   0.001                      1.00766281.0076628
+ 1001 13027   39000    1.5990+94000000.0 9.1294-3 7.5575-4            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  9.8173-45.1642E-5          7.5575-4 10.8     0.57              8.28     8.28    0.0132   0.001                      1.00766281.0076628
+ 1001 13027   39000    2.6060+98000000.0 9.2503-3 7.8598-4            4007.9                     Yu.E.Titarenko*,     (09)O1728  2  1.0151-35.2326E-5          7.8598-4 11       0.57              8.50     8.50    0.0114   9.0E-4                     1.00766281.0076628
+#/C5DATA        0
+#/DATASET       O1728002 
+#DATASET        O1728013   20221217
+#SUBENT         O1728013   20221217
+#ENTRY          O1728      20221217
+#TITLE          Experimental and theoretical studies of the yields
+#+              of residual product nuclei produced in thin Pb and Bi
+#+              targets irradiated by 40-2600 MeV protons
+#AUTHORS        Yu.E.Titarenko,V.F.Batyaev, E.I.Karpikhin, V.M.Zhivun,
+#+              A.V.Ignatyuk, V.P.Lunev, N.N.Titarenko, Yu.N.Shubin,
+#+              V.S.Barashenkov
+#AUTHOR1        Yu.E.Titarenko+
+#YEAR           2009
+#X4REF1         R,INDC(CCP)-0447,2009
+#REFERENCE1     Rept: USSR report to the I.N.D.C., No.0447 (2009)
+#DATE           20221217
+#INSTITUTE      4RUSITE
+#METHOD         EXTB,GSPEC
+#REACTION       13-AL-27(P,X)11-NA-24,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          P,X
+#PRODUCT        11-NA-24
+#C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.57,1.39)  ADDED AS COMMON:ERR-S,PER-CENT=0.57%
+#CompNotes      ERR-ANALYS:(ERR-1,0.01,0.04)  ADDED AS COMMON:ERR-1,PER-CENT=0.01%
+#CompNotes      ERR-ANALYS:(ERR-4,0.03,0.10)  ADDED AS COMMON:ERR-4,PER-CENT=0.03%
+#CompNotes      ERR-ANALYS:(ERR-5,6.00,9.05)  ADDED AS COMMON:ERR-5,PER-CENT=6.0%
+#CompNotes      ERR-ANALYS:(ERR-6,3.35,3.59)  ADDED AS COMMON:ERR-6,PER-CENT=3.35%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=19
+#CompNotes      RENORMALIZE(SIG-MON): Data[8]*0.56111115(9.9e7) Data[18]*0.027149322(3.6e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      WARNING! UNCHANGED+CHANGED POINTS: 8+11=19; EN(eV):[3.6e7,2.6e9]
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 13027   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-22,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27px}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 13-AL-27(P,X)11-NA-24,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-22,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O1728013    0.298219    0.298219    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O1728013    CS          11/19       0.0271493   0.561111    0.298219    -70.2%      36.8333     [EN,MONIT,MONIT-ERR]::al27px
+#C5DATA         19
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 13027   39000      3.55E71300000.0 1.5312-5 4.1210-6           11024.9                     Yu.E.Titarenko*,     (09)O1728 13  4.2470-63.2148E-6          4.1210-6 27.7     21                26.9     26.9    0.0221   0.002    6.0E-4   1.6E-4   .02714932.07492687
+ 1001 13027   39000      3.63E71200000.0 1.9271-5 5.2045-6           11024.9                     Yu.E.Titarenko*,     (09)O1728 13  5.3624-64.0071E-6          5.2045-6 27.8     20.8              27       27      0.0259   0.002    7.1E-4   1.9E-4   .02741313.08674177
+ 1001 13027   39000      3.69E71100000.0 2.2648-5 6.0042-6           11024.9                     Yu.E.Titarenko*,     (09)O1728 13  6.1908-64.5828E-6          6.0042-6 27.3     20.2              26.5     26.5    0.0284   0.002    8.0E-4   2.1E-4   .02816901.09381539
+ 1001 13027   39000      3.69E71100000.0 2.2582-5 5.9890-6           11024.9                     Yu.E.Titarenko*,     (09)O1728 13  6.1727-64.5372E-6          5.9890-6 27.3     20.1              26.5     26.5    0.0282   0.002    8.0E-4   2.1E-4   .02836879.09357883
+ 1001 13027   39000       3.7E71100000.0 2.3256-5 6.3746-6           11024.9                     Yu.E.Titarenko*,     (09)O1728 13  6.5608-64.6968E-6          6.3746-6 28.2     20.2              27.4     27.4    0.0287   0.002    0.00081  2.2E-4   .02822299.09807085
+ 1001 13027   39000      6.71E7 900000.0 5.9428-3 3.4602-4           11024.9                     Yu.E.Titarenko*,     (09)O1728 13  5.2661-46.6633E-5          3.4602-4 8.86     1.12              5.82     5.82    0.0227   0.0014   0.01154  5.2E-4   0.50837  0.4119284
+ 1001 13027   39000      6.78E7 800000.0 5.7282-3 3.2993-4           11024.9                     Yu.E.Titarenko*,     (09)O1728 13  5.0713-46.3213E-5          3.2993-4 8.85     1.10              5.76     5.76    0.0224   0.0014   0.01157  5.2E-4   0.51651780.4124101
+ 1001 13027   39000      6.79E7 800000.0 6.0433-3 3.5195-4           11024.9                     Yu.E.Titarenko*,     (09)O1728 13  5.3505-4 6.669E-5          3.5195-4 8.85     1.10              5.82     5.82    0.0224   0.0014   0.01157  5.2E-4   0.51651780.4140552
+ 1001 13027   39000      6.81E7 800000.0 6.0964-3 3.5112-4           11024.9                     Yu.E.Titarenko*,     (09)O1728 13 5.3967E-46.6918E-5          3.5112-4 8.85     1.10              5.76     5.76    0.0223   0.0014   0.01158  5.2E-4   0.51928250.4130814
+ 1001 13027   39000      6.82E7 800000.0 6.0964-3 3.5112-4           11024.9                     Yu.E.Titarenko*,     (09)O1728 13 5.3967E-46.6918E-5          3.5112-4 8.85     1.10              5.76     5.76    0.0223   0.0014   0.01158  5.2E-4   0.51928250.4130814
+ 1001 13027   39000      9.87E7 800000.0 6.5818-3 2.8390-4           11024.9                     Yu.E.Titarenko*,     (09)O1728 13  5.3871-46.6861E-5          2.8390-4 8.18     1.02              4.31     4.31    0.0198   0.0012   0.01111  3.3E-4   0.56111120.3548791
+ 1001 13027   39000      1.49E81000000.0  0.01102   7.9E-4           11024.9                     Yu.E.Titarenko,      (09)O1728 13 0.00109946.2814E-5            7.9E-4 9.98     0.57              7.17     7.17    0.0171   0.0011
+ 1001 13027   39000      2.49E81000000.0  0.01065   7.2E-4           11024.9                     Yu.E.Titarenko,      (09)O1728 13 0.00103356.0705E-5            7.2E-4 9.70     0.57              6.76     6.76    0.015    9.0E-4
+ 1001 13027   39000      3.99E82000000.0  0.01201   8.5E-4           11024.9                     Yu.E.Titarenko,      (09)O1728 13 0.00119046.8457E-5            8.5E-4 9.91     0.57              7.08     7.08    0.0158   0.001
+ 1001 13027   39000      5.99E82000000.0  0.01309   9.2E-4           11024.9                     Yu.E.Titarenko,      (09)O1728 13 0.00129087.4613E-5            9.2E-4 9.86     0.57              7.03     7.03    0.016    0.001
+ 1001 13027   39000      7.99E82000000.0   0.0134  0.00104           11024.9                     Yu.E.Titarenko,      (09)O1728 13 0.0013964 7.638E-5           0.00104 10.4     0.57              7.76     7.76    0.0155   0.0011
+ 1001 13027   39000     1.194E93000000.0  0.01326  0.00101           11024.9                     Yu.E.Titarenko,      (09)O1728 13 .001367417.5582E-5           0.00101 10.3     0.57              7.62     7.62    0.0144   0.001
+ 1001 13027   39000    1.5990+94000000.0  0.01259  0.00103           11024.9                     Yu.E.Titarenko,      (09)O1728 13 0.00135397.1763E-5           0.00103 10.8     0.57              8.18     8.18    0.0132   0.001
+ 1001 13027   39000    2.6060+98000000.0  0.01087   9.2E-4           11024.9                     Yu.E.Titarenko,      (09)O1728 13 0.00119296.1959E-5            9.2E-4 11       0.57              8.46     8.46    0.0114   9.0E-4
+#/C5DATA        0
+#/DATASET       O1728013 
+#/C5.2.3        1               2               12              0               38              

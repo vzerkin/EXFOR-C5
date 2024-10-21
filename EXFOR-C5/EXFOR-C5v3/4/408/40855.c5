@@ -1,0 +1,78 @@
+#C5.2.3
+#DATASET        40855002   20180321
+#SUBENT         40855002   20180321
+#ENTRY          40855      20180321
+#TITLE          Neutron radiative capture cross-sections of 98Mo for
+#+                0.3 - 2. MeV
+#AUTHORS        Yu.N.Trofimov,Yu.A.Nemilov
+#AUTHOR1        Yu.N.Trofimov+
+#YEAR           1984
+#X4REF1         J,YK,,(3/57),15,1984
+#REFERENCE1     Jour: Vop.At.Nauki i Tekhn.,Ser.Yaderno-Reak.Konstanty, Issue.3/57, p.15 (1984)
+#DATE           20180321
+#INSTITUTE      4RUSRI
+#METHOD         ACTIV
+#REACTION       42-MO-98(N,G)42-MO-99,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           42098            
+#TARGET         42098           [ ]             42-MO-98        [ ] 
+#REAC1          N,G
+#PRODUCT        42-MO-99
+#C4ReaCode      (N,G),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9251331(3.0e5) Data[11]*0.9821851(2.0e6)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 42098   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 42-MO-98(N,G)42-MO-99,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        40855002    0.978000    0.978000    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          40855002    CS          12          0.925133    1.00834     0.978000    -2.20%      1.08093     [EN,MONIT]::au197ng
+#C5DATA         12
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 42098   3 102    300000.0 140000.0.02405346    0.003                                       Yu.N.Trofimov*,      (84)40855  2                                0.003                            12.5     12.5    0.2065            0.19104  .003790650.9251331
+    1 42098   3 102    400000.0 140000.0.02319179    0.002                                       Yu.N.Trofimov*,      (84)40855  2                                0.002                            8.62     8.62    0.1595            0.16083  .003201621.0083386
+    1 42098   3 102    550000.0129999.99.02083625    0.002                                       Yu.N.Trofimov*,      (84)40855  2                                0.002                            9.60     9.60    0.1244            0.12343  .002636970.9922025
+    1 42098   3 102    700000.0129999.99.02096556    0.002                                       Yu.N.Trofimov*,      (84)40855  2                                0.002                            9.54     9.54    0.101             0.096251 .002001690.9529802
+    1 42098   3 102    800000.0129999.99.01911021    0.002                                       Yu.N.Trofimov*,      (84)40855  2                                0.002                            10.5     10.5    .09080001         0.088985 .001941530.9800109
+    1 42098   3 102    850000.0 120000.0.01783858    0.002                                       Yu.N.Trofimov*,      (84)40855  2                                0.002                            11.2     11.2    0.0872            0.086418 .002220510.9910321
+    1 42098   3 102   1000000.0 120000.0.01339412   0.0015                                       Yu.N.Trofimov*,      (84)40855  2                               0.0015                            11.2     11.2    0.083             0.079408 .001617780.9567228
+    1 42098   3 102   1200000.0 110000.0.01739308   0.0015                                       Yu.N.Trofimov*,      (84)40855  2                               0.0015                            8.62     8.62    .07600001         .075535671.6788-3 0.9938903
+    1 42098   3 102   1400000.0 100000.00.0172691   0.0015                                       Yu.N.Trofimov*,      (84)40855  2                               0.0015                            8.69     8.69    0.072             0.07105  .001668630.9868056
+    1 42098   3 102   1600000.0  90000.0.01579733   0.0015                                       Yu.N.Trofimov*,      (84)40855  2                               0.0015                            9.50     9.50    .06900001         0.068126 .001672940.9873332
+    1 42098   3 102   1800000.0  90000.0.01566985   0.0015                                       Yu.N.Trofimov*,      (84)40855  2                               0.0015                            9.57     9.57    .06150001         0.060231 .001508550.9793658
+    1 42098   3 102   2000000.0  80000.0.01276841    0.001                                       Yu.N.Trofimov*,      (84)40855  2                                0.001                            7.83     7.83    .05400001         0.053038 .001288390.9821851
+#/C5DATA        0
+#/DATASET       40855002 
+#/C5.2.3        1               1               1               0               12              

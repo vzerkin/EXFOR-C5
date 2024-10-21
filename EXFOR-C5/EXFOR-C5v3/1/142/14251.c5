@@ -1,0 +1,404 @@
+#C5.2.3
+#DATASET        142510021  20091124
+#SUBENT         14251002   20091124
+#ENTRY          14251      20100509
+#TITLE          Measurement of 67Zn(n,p)67Cu, 92Mo(n,p)92mNb,and
+#+              98Mo(n,g)99Mo Reaction Cross Sections at Incident
+#+              Neutron Energies of En = 1.6 and 3.7 MeV
+#AUTHORS        M.Bhike,A.Saxena,B.J.Roy,R.K.Choudhury,S.Kailas,
+#+              S.Ganesan
+#AUTHOR1        M.Bhike+
+#YEAR           2009
+#X4REF1         J,NSE,163,175,2009
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.163, p.175 (2009)
+#DATE           20091124
+#INSTITUTE      3INDTRM
+#METHOD         ACTIV
+#REACTION       30-ZN-67(N,P)29-CU-67,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           30067            
+#TARGET         30067           [ ]             30-ZN-67        [ ] 
+#REAC1          N,P
+#PRODUCT        29-CU-67
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,2.4,23.0)   ADDED AS COMMON:ERR-S,PER-CENT=2.4%
+#CompNotes      ERR-ANALYS:(ERR-1,2.0,3.0)    ADDED AS COMMON:ERR-1,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-2,0.002,0.62) ADDED AS COMMON:ERR-2,PER-CENT=0.002%
+#CompNotes      ERR-ANALYS:(ERR-3,0.089,2.0)  ADDED AS COMMON:ERR-3,PER-CENT=0.089%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=2
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9999266(1.6e6) Data[1]*1.0155135(3.7e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 30067   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,INL)49-IN-115-M,,SIG
+#M0             exfor:[EN,MONIT:1,MONIT-ERR]
+#M1             Monitor:{recom$in115ninl}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 30-ZN-67(N,P)29-CU-67,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,INL)49-IN-115-M,,SIG
+#+              #[0]#Ratio is also given: (30-ZN-67(N,P)29-CU-67,,SIG)/(49-IN-115(N,INL)49-IN-115-M,,SIG)
+#+              m0: [EN,MONIT:1,MONIT-ERR];   #[0]#old monitor(energy)
+#+              m1: recom$in115ninl;          #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        142510021   1.00772     1.00772     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          142510021   CS          2           0.999927    1.01551     1.00772     +0.772%     1.01551     [EN,MONIT:1,MONIT-ERR]::in115ninl
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30067   3 103   1600000.0  30000.0 1.2999-4 1.9834-5                                       M.Bhike*,            (09)14251  21 4.5862-6  3.12E-6          1.9834-5 3.53     2.40              15.3     15.3    0.1909   0.0067   0.190886 .005544780.99992660.9916962
+    1 30067   3 103   3700000.0  30000.0.00265049 2.2380-4                                       M.Bhike*,            (09)14251  21 8.3381-5 6.264E-5          2.2380-4 3.15     2.36              8.44     8.44    0.3232   0.0113   0.328214 .007946581.01551350.9730265
+#/C5DATA        0
+#/DATASET       142510021
+#DATASET        142510022  20091124
+#SUBENT         14251002   20091124
+#ENTRY          14251      20100509
+#TITLE          Measurement of 67Zn(n,p)67Cu, 92Mo(n,p)92mNb,and
+#+              98Mo(n,g)99Mo Reaction Cross Sections at Incident
+#+              Neutron Energies of En = 1.6 and 3.7 MeV
+#AUTHORS        M.Bhike,A.Saxena,B.J.Roy,R.K.Choudhury,S.Kailas,
+#+              S.Ganesan
+#AUTHOR1        M.Bhike+
+#YEAR           2009
+#X4REF1         J,NSE,163,175,2009
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.163, p.175 (2009)
+#DATE           20091124
+#INSTITUTE      3INDTRM
+#METHOD         ACTIV
+#REACTION       (30-ZN-67(N,P)29-CU-67,,SIG)/(49-IN-115(N,INL)49-IN-115-M,,SIG)
+#C4Reaction     ((N,P),SIG)/((N,INL),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             103
+#PROJ           1
+#TARG           30067            
+#TARGET         30067           [ ]             30-ZN-67        [ ] 
+#REAC1          N,P
+#PRODUCT        29-CU-67
+#C4ReaCode      ((N,P),SIG)/((N,INL),SIG)
+#CompNotes      ERR-ANALYS:(ERR-S,2.4,23.0)   ADDED AS COMMON:ERR-S,PER-CENT=2.4%
+#CompNotes      ERR-ANALYS:(ERR-1,2.0,3.0)    ADDED AS COMMON:ERR-1,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-2,0.002,0.62) ADDED AS COMMON:ERR-2,PER-CENT=0.002%
+#CompNotes      ERR-ANALYS:(ERR-3,0.089,2.0)  ADDED AS COMMON:ERR-3,PER-CENT=0.089%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 30067 203 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (30-ZN-67(N,P)29-CU-67,,SIG)/(49-IN-115(N,INL)49-IN-115-M,,SIG)
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30067 203 103   1600000.0  30000.0  6.81E-42.1284E-5      4.9  49115.9                     M.Bhike,             (09)14251  221.3633E-51.6344E-5                   2        2.40                       3.13                      0.190886 .00554478
+    1 30067 203 103   3700000.0  30000.0  0.007962.4878E-4      4.9  49115.9                     M.Bhike,             (09)14251  221.5936E-41.9104E-4                   2        2.40                       3.13                      0.328214 .00794658
+#/C5DATA        0
+#/DATASET       142510022
+#DATASET        142510031  20091124
+#SUBENT         14251003   20091124
+#ENTRY          14251      20100509
+#TITLE          Measurement of 67Zn(n,p)67Cu, 92Mo(n,p)92mNb,and
+#+              98Mo(n,g)99Mo Reaction Cross Sections at Incident
+#+              Neutron Energies of En = 1.6 and 3.7 MeV
+#AUTHORS        M.Bhike,A.Saxena,B.J.Roy,R.K.Choudhury,S.Kailas,
+#+              S.Ganesan
+#AUTHOR1        M.Bhike+
+#YEAR           2009
+#X4REF1         J,NSE,163,175,2009
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.163, p.175 (2009)
+#DATE           20091124
+#INSTITUTE      3INDTRM
+#METHOD         ACTIV
+#REACTION       42-MO-92(N,P)41-NB-92-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           42092            
+#TARGET         42092           [ ]             42-MO-92        [ ] 
+#REAC1          N,P
+#PRODUCT        41-NB-92-M
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,2.4,23.0)   ADDED AS COMMON:ERR-S,PER-CENT=2.4%
+#CompNotes      ERR-ANALYS:(ERR-1,2.0,3.0)    ADDED AS COMMON:ERR-1,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-2,0.002,0.62) ADDED AS COMMON:ERR-2,PER-CENT=0.002%
+#CompNotes      ERR-ANALYS:(ERR-3,0.089,2.0)  ADDED AS COMMON:ERR-3,PER-CENT=0.089%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=2
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9999266(1.6e6) Data[1]*1.0155135(3.7e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 42092   3 103M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,INL)49-IN-115-M,,SIG
+#M0             exfor:[EN,MONIT:1,MONIT-ERR]
+#M1             Monitor:{recom$in115ninl}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 42-MO-92(N,P)41-NB-92-M,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,INL)49-IN-115-M,,SIG
+#+              #[0]#Ratio is also given: (42-MO-92(N,P)41-NB-92-M,,SIG)/(49-IN-115(N,INL)49-IN-115-M,,SIG)
+#+              m0: [EN,MONIT:1,MONIT-ERR];   #[0]#old monitor(energy)
+#+              m1: recom$in115ninl;          #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        142510031   1.00772     1.00772     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          142510031   CS          2           0.999927    1.01551     1.00772     +0.772%     1.01551     [EN,MONIT:1,MONIT-ERR]::in115ninl
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 42092   3 103M  1600000.0  30000.0 1.4999-4 5.9923-5                                       M.Bhike*,            (09)14251  31 5.2918-6   3.6E-6          5.9923-5 3.53     2.40              40       40      0.1909   0.0067   0.190886 .005544780.99992660.9987134
+    1 42092   3 103M  3700000.0  30000.0.02366146 2.8839-3                                       M.Bhike*,            (09)14251  31 7.4433-4 5.592E-4          2.8839-3 3.15     2.36              12.2     12.2    0.3232   0.0113   0.328214 .007946581.01551350.994442
+#/C5DATA        0
+#/DATASET       142510031
+#DATASET        142510032  20091124
+#SUBENT         14251003   20091124
+#ENTRY          14251      20100509
+#TITLE          Measurement of 67Zn(n,p)67Cu, 92Mo(n,p)92mNb,and
+#+              98Mo(n,g)99Mo Reaction Cross Sections at Incident
+#+              Neutron Energies of En = 1.6 and 3.7 MeV
+#AUTHORS        M.Bhike,A.Saxena,B.J.Roy,R.K.Choudhury,S.Kailas,
+#+              S.Ganesan
+#AUTHOR1        M.Bhike+
+#YEAR           2009
+#X4REF1         J,NSE,163,175,2009
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.163, p.175 (2009)
+#DATE           20091124
+#INSTITUTE      3INDTRM
+#METHOD         ACTIV
+#REACTION       (42-MO-92(N,P)41-NB-92-M,,SIG)/(49-IN-115(N,INL)49-IN-115-M,,SIG)
+#C4Reaction     ((N,P),SIG)/((N,INL),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             103
+#PROJ           1
+#TARG           42092            
+#TARGET         42092           [ ]             42-MO-92        [ ] 
+#REAC1          N,P
+#PRODUCT        41-NB-92-M
+#C4ReaCode      ((N,P),SIG)/((N,INL),SIG)
+#CompNotes      ERR-ANALYS:(ERR-S,2.4,23.0)   ADDED AS COMMON:ERR-S,PER-CENT=2.4%
+#CompNotes      ERR-ANALYS:(ERR-1,2.0,3.0)    ADDED AS COMMON:ERR-1,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-2,0.002,0.62) ADDED AS COMMON:ERR-2,PER-CENT=0.002%
+#CompNotes      ERR-ANALYS:(ERR-3,0.089,2.0)  ADDED AS COMMON:ERR-3,PER-CENT=0.089%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 42092 203 103M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (42-MO-92(N,P)41-NB-92-M,,SIG)/(49-IN-115(N,INL)49-IN-115-M,,SIG)
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 42092 203 103M  1600000.0  30000.0  7.86E-42.4565E-5      4.9  49115.9                     M.Bhike,             (09)14251  321.5736E-51.8864E-5                   2        2.40                       3.13                      0.190886 .00554478
+    1 42092 203 103M  3700000.0  30000.0    0.071 0.002219      4.9  49115.9                     M.Bhike,             (09)14251  320.0014214 0.001704                   2        2.40                       3.13                      0.328214 .00794658
+#/C5DATA        0
+#/DATASET       142510032
+#DATASET        142510041  20091124
+#SUBENT         14251004   20091124
+#ENTRY          14251      20100509
+#TITLE          Measurement of 67Zn(n,p)67Cu, 92Mo(n,p)92mNb,and
+#+              98Mo(n,g)99Mo Reaction Cross Sections at Incident
+#+              Neutron Energies of En = 1.6 and 3.7 MeV
+#AUTHORS        M.Bhike,A.Saxena,B.J.Roy,R.K.Choudhury,S.Kailas,
+#+              S.Ganesan
+#AUTHOR1        M.Bhike+
+#YEAR           2009
+#X4REF1         J,NSE,163,175,2009
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.163, p.175 (2009)
+#DATE           20091124
+#INSTITUTE      3INDTRM
+#METHOD         ACTIV
+#REACTION       42-MO-98(N,G)42-MO-99,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           42098            
+#TARGET         42098           [ ]             42-MO-98        [ ] 
+#REAC1          N,G
+#PRODUCT        42-MO-99
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,2.4,23.0)   ADDED AS COMMON:ERR-S,PER-CENT=2.4%
+#CompNotes      ERR-ANALYS:(ERR-1,2.0,3.0)    ADDED AS COMMON:ERR-1,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-2,0.002,0.62) ADDED AS COMMON:ERR-2,PER-CENT=0.002%
+#CompNotes      ERR-ANALYS:(ERR-3,0.089,2.0)  ADDED AS COMMON:ERR-3,PER-CENT=0.089%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=3.51%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9999266(1.6e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 42098   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,INL)49-IN-115-M,,SIG
+#M0             Point: XS(b)=0.1909(3.51%)  EN-NRM(eV):1600000.0
+#M1             Point: XS(b)=0.190886(2.90%)  EN-NRM(eV):1600000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 42-MO-98(N,G)42-MO-99,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,INL)49-IN-115-M,,SIG
+#+              #[0]#En=1600000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1909
+#+              a1=recom$in115ninl[EN];       #[0]#new monitor point [1.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        142510041   0.999927    0.999927    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          142510041   CS          1           0.999927    0.999927    0.999927    -0.00734%   1.00007     [MONIT]::in115ninl
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 42098   3 102   1600000.0  30000.0.02279833 2.4591-3                                       M.Bhike*,            (09)14251  41 8.0435-4 5.472E-4          2.4591-3 3.53     2.40              10.8     10.8    0.1909   0.0067   0.190886 .005544780.99992660.9836584
+#/C5DATA        0
+#/DATASET       142510041
+#DATASET        142510042  20091124
+#SUBENT         14251004   20091124
+#ENTRY          14251      20100509
+#TITLE          Measurement of 67Zn(n,p)67Cu, 92Mo(n,p)92mNb,and
+#+              98Mo(n,g)99Mo Reaction Cross Sections at Incident
+#+              Neutron Energies of En = 1.6 and 3.7 MeV
+#AUTHORS        M.Bhike,A.Saxena,B.J.Roy,R.K.Choudhury,S.Kailas,
+#+              S.Ganesan
+#AUTHOR1        M.Bhike+
+#YEAR           2009
+#X4REF1         J,NSE,163,175,2009
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.163, p.175 (2009)
+#DATE           20091124
+#INSTITUTE      3INDTRM
+#METHOD         ACTIV
+#REACTION       (42-MO-98(N,G)42-MO-99,,SIG)/(49-IN-115(N,INL)49-IN-115-M,,SIG)
+#C4Reaction     ((N,G),SIG)/((N,INL),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             102
+#PROJ           1
+#TARG           42098            
+#TARGET         42098           [ ]             42-MO-98        [ ] 
+#REAC1          N,G
+#PRODUCT        42-MO-99
+#C4ReaCode      ((N,G),SIG)/((N,INL),SIG)
+#CompNotes      ERR-ANALYS:(ERR-S,2.4,23.0)   ADDED AS COMMON:ERR-S,PER-CENT=2.4%
+#CompNotes      ERR-ANALYS:(ERR-1,2.0,3.0)    ADDED AS COMMON:ERR-1,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-2,0.002,0.62) ADDED AS COMMON:ERR-2,PER-CENT=0.002%
+#CompNotes      ERR-ANALYS:(ERR-3,0.089,2.0)  ADDED AS COMMON:ERR-3,PER-CENT=0.089%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 42098 203 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (42-MO-98(N,G)42-MO-99,,SIG)/(49-IN-115(N,INL)49-IN-115-M,,SIG)
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 42098 203 102   1600000.0  30000.0     0.13 0.004063      4.9  49115.9                     M.Bhike,             (09)14251  420.0026026  0.00312                   2        2.40                       3.13                      0.190886 .00554478
+#/C5DATA        0
+#/DATASET       142510042
+#/C5.2.3        1               6               6               0               10              

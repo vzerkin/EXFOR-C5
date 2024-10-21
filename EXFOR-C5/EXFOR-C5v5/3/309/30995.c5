@@ -1,0 +1,378 @@
+#C5M.2.3
+#DATASET        30995002   20090919
+#SUBENT         30995002   20090919
+#ENTRY          30995      20090919
+#TITLE          Neutron activation cross sections for Ni-60(n,p)Co-60-m
+#+              Ni-60(n,p)Co-60-m+g and Ni-58(n,p)Co-58-m
+#+              reactions in the 5 to 12 MeV energy range.
+#AUTHORS        S.Sudar,J.Csikai,S.M.Qaim,G.Stoecklin
+#AUTHOR1        S.Sudar+
+#YEAR           1991
+#X4REF1         C,91JUELIC,,291,199105
+#REFERENCE1     Conf: Conf.on Nucl.Data for Sci.and Technol.,Juelich 1991, p.291 (1991)
+#DATE           20090919
+#INSTITUTE      3HUNKOS,2GERJUL
+#METHOD         ACTIV
+#REACTION       28-NI-60(N,P)27-CO-60,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           28060            
+#TARGET         28060           [ ]             28-NI-60        [ ] 
+#REAC1          N,P
+#PRODUCT        27-CO-60
+#C4ReaCode      (N,P),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=9
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0628245(5.4e6) Data[8]*1.0222884(1.2e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 28060   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      28-NI-58(N,P)27-CO-58,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$ni58np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 28-NI-60(N,P)27-CO-60,,SIG
+#+              #[0]#Monitor:  28-NI-58(N,P)27-CO-58,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$ni58np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30995002    1.02916     1.02916     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30995002    CS          9           1.01453     1.06282     1.02916     +2.92%      1.06282     [EN,MONIT,MONIT-ERR]::ni58np
+#C5DATA         9
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 28060   3 103   5427000.0  55000.0.01828058 1.8633-3                                       S.Sudar*,            (91)30995  2  4.2548-4                   1.8633-3 2.33                       10.2     10.2    0.508    0.041    0.5399148.012582651.06282450.8469604
+    1 28060   3 103   5935000.0  55000.0.02943853.00204288                                       S.Sudar*,            (91)30995  2  6.7779-4                  .00204288 2.30                       6.94     6.94    0.57400010.046    0.58268  0.01349511.01512180.6809599
+    1 28060   3 103   6433000.0  55000.0.04443649 2.2421-3                                       S.Sudar*,            (91)30995  2  1.0191-3                   2.2421-3 2.29                       5.05     5.05    0.604    0.048    0.6127772.013990251.01453170.5605261
+    1 28060   3 103   6847000.0  57000.0.05226574 3.2080-3                                       S.Sudar*,            (91)30995  2  1.1709-3                   3.2080-3 2.24                       6.14     6.14    0.613    0.049    0.629448 .014179591.02683190.641605
+    1 28060   3 103   8070000.0  57000.00.0847052 4.7465-3                                       S.Sudar*,            (91)30995  2  1.8710-3                   4.7465-3 2.21                       5.60     5.60    0.627    0.05     0.6461089.014375681.03047670.6085291
+    1 28060   3 103   8480000.0  55000.0.08382857 5.1395-3                                       S.Sudar*,            (91)30995  2  1.8429-3                   5.1395-3 2.20                       6.13     6.13    0.628    0.05     0.6451512.014224861.02731080.6424348
+    1 28060   3 103   8960000.0  57000.0.09232726 5.9007-3                                       S.Sudar*,            (91)30995  2 .00199852                   5.9007-3 2.16                       6.39     6.39    0.626    0.05     0.64218740.01383481.02585840.6556304
+    1 28060   3 103       1.1E7  54000.00.1192813 6.8413-3                                       S.Sudar*,            (91)30995  2  2.6889-3                   6.8413-3 2.25                       5.74     5.74    0.589    0.047    0.610928 0.013764 1.03722910.6219328
+    1 28060   3 103      1.23E7  81000.00.1502764.02162091                                       S.Sudar*,            (91)30995  2  2.9917-3                  .02162091 1.99                       14.4     14.4    0.527    0.042    0.538746 0.01071771.02228840.9008712
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           5427000.0   1.23E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           9           9
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+5427000.    5427000.    1.8281-2    10.19        100
+5935000.    5935000.    2.9439-2    6.94          7 100
+6433000.    6433000.    4.4436-2    5.05          9 14 100
+6847000.    6847000.    5.2266-2    6.14          7 11 16 100
+8070000.    8070000.    8.4705-2    5.6           6  9 14 12 100
+8480000.    8480000.    8.3829-2    6.13          5  7 11 10 13 100
+8960000.    8960000.    9.2327-2    6.39          4  6 10  9 12 11 100
+1.1E7       1.1E7       0.119281    5.74          4  7  9  7  9  9  9 100
+1.23E7      1.23E7      0.150276    14.39         2  2  3  3  3  2  2  4 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       30995002 
+#DATASET        30995003   20090919
+#SUBENT         30995003   20090919
+#ENTRY          30995      20090919
+#TITLE          Neutron activation cross sections for Ni-60(n,p)Co-60-m
+#+              Ni-60(n,p)Co-60-m+g and Ni-58(n,p)Co-58-m
+#+              reactions in the 5 to 12 MeV energy range.
+#AUTHORS        S.Sudar,J.Csikai,S.M.Qaim,G.Stoecklin
+#AUTHOR1        S.Sudar+
+#YEAR           1991
+#X4REF1         C,91JUELIC,,291,199105
+#REFERENCE1     Conf: Conf.on Nucl.Data for Sci.and Technol.,Juelich 1991, p.291 (1991)
+#DATE           20090919
+#INSTITUTE      3HUNKOS,2GERJUL
+#METHOD         ACTIV
+#REACTION       28-NI-60(N,P)27-CO-60,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           28060            
+#TARGET         28060           [ ]             28-NI-60        [ ] 
+#REAC1          N,P
+#PRODUCT        27-CO-60
+#C4ReaCode      (N,P),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=10
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.079023(5.2e6) Data[9]*1.0321537(1.0e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 28060   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      28-NI-58(N,P)27-CO-58,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$ni58np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 28-NI-60(N,P)27-CO-60,,SIG
+#+              #[0]#Monitor:  28-NI-58(N,P)27-CO-58,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$ni58np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30995003    1.03302     1.03302     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30995003    CS          10          1.01493     1.07902     1.03302     +3.30%      1.07902     [EN,MONIT,MONIT-ERR]::ni58np
+#C5DATA         10
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 28060   3 103   5230000.0 100000.0.01499842 2.6219-3                                       S.Sudar*,            (91)30995  3  3.4891-4                   2.6219-3 2.33                       17.5     17.5    0.482    0.034    0.5200891.012160871.079023 1.0084165
+    1 28060   3 103   6300000.0 100000.0.03816123 2.7676-3                                       S.Sudar*,            (91)30995  3  8.8055-4                   2.7676-3 2.31                       7.25     7.25    0.59700010.042    0.605911 0.01389161.01492620.7479967
+    1 28060   3 103   6800000.0 110000.0.05356061 3.5463-3                                       S.Sudar*,            (91)30995  3  1.2148-3                   3.5463-3 2.27                       6.62     6.62    0.612    0.043    0.627952 0.01416771.02606520.7237344
+    1 28060   3 103   7290000.0 110000.0.06546348 4.2035-3                                       S.Sudar*,            (91)30995  3 .00146948                   4.2035-3 2.24                       6.42     6.42    0.62000010.044    0.640179 .014304861.03254680.7124517
+    1 28060   3 103   7770000.0 120000.0.07072803 5.2594-3                                       S.Sudar*,            (91)30995  3  1.5765-3                   5.2594-3 2.23                       7.44     7.44    0.62500010.038    0.6453289.014383711.03252610.8217742
+    1 28060   3 103   8240000.0 120000.0.08148986 8.7575-3                                       S.Sudar*,            (91)30995  3 .00181266                   8.7575-3 2.22                       10.7     10.7    0.627    0.044    0.6459436.014318241.030213 0.8757539
+    1 28060   3 103   8710000.0 120000.0.09674183 6.1801-3                                       S.Sudar*,            (91)30995  3  2.1178-3                   6.1801-3 2.19                       6.39     6.39    0.627    0.044    0.6439186.014045561.02698340.710356
+    1 28060   3 103   9170000.0129999.99.09494597 7.3740-3                                       S.Sudar*,            (91)30995  3  2.0240-3                   7.3740-3 2.13                       7.77     7.77    0.624    0.044    0.6405003.013679511.02644280.7762132
+    1 28060   3 103   9630000.0129999.99.09974226 6.3116-3                                       S.Sudar*,            (91)30995  3  2.1090-3                   6.3116-3 2.11                       6.33     6.33    0.618    0.044    0.6361271.013444831.02933180.7012842
+    1 28060   3 103     1.008E7 140000.00.1088922 6.0340-3                                       S.Sudar*,            (91)30995  3  2.3369-3                   6.0340-3 2.15                       5.54     5.54    0.61100010.046    0.630646 .013502881.03215370.6285394
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           5230000.0   1.008E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           10          10
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+5230000.    5230000.    1.4998-2    17.48        100
+6.3e+06     6.3e+06     3.8161-2    7.25          3 100
+6.8e+06     6.8e+06     5.3561-2    6.62          3 10 100
+7290000.    7290000.    6.5463-2    6.42          3  9 11 100
+7770000.    7770000.    0.070728    7.44          2  7  8  9 100
+8240000.    8240000.    8.1490-2    10.75         1  4  5  6  6 100
+8710000.    8710000.    9.6742-2    6.39          2  5  7  8  8  6 100
+9170000.    9170000.    0.094946    7.77          2  4  5  6  6  5  9 100
+9630000.    9630000.    9.9742-2    6.33          2  5  6  6  6  5  9  8 100
+1.008E7     1.008E7     0.108892    5.54          3  6  7  7  6  5 10  9 12 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       30995003 
+#DATASET        30995004   20090919
+#SUBENT         30995004   20090919
+#ENTRY          30995      20090919
+#TITLE          Neutron activation cross sections for Ni-60(n,p)Co-60-m
+#+              Ni-60(n,p)Co-60-m+g and Ni-58(n,p)Co-58-m
+#+              reactions in the 5 to 12 MeV energy range.
+#AUTHORS        S.Sudar,J.Csikai,S.M.Qaim,G.Stoecklin
+#AUTHOR1        S.Sudar+
+#YEAR           1991
+#X4REF1         C,91JUELIC,,291,199105
+#REFERENCE1     Conf: Conf.on Nucl.Data for Sci.and Technol.,Juelich 1991, p.291 (1991)
+#DATE           20090919
+#INSTITUTE      3HUNKOS,2GERJUL
+#METHOD         ACTIV
+#REACTION       28-NI-60(N,P)27-CO-60-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           28060            
+#TARGET         28060           [ ]             28-NI-60        [ ] 
+#REAC1          N,P
+#PRODUCT        27-CO-60-M
+#C4ReaCode      (N,P),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 28060   3 103M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         10
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 28060   3 103M  5208000.0 100000.0   0.0088    0.001                                       S.Sudar,             (91)30995  4                                0.001                            11.4     11.4
+    1 28060   3 103M  6273000.0 100000.0   0.0323   0.0039                                       S.Sudar,             (91)30995  4                               0.0039                            12.1     12.1
+    1 28060   3 103M  6774000.0 110000.0   0.0397    0.004                                       S.Sudar,             (91)30995  4                                0.004                            10.1     10.1
+    1 28060   3 103M  7256000.0 110000.0   0.0483    0.005                                       S.Sudar,             (91)30995  4                                0.005                            10.4     10.4
+    1 28060   3 103M  7738000.0 120000.0   0.0552   0.0056                                       S.Sudar,             (91)30995  4                               0.0056                            10.1     10.1
+    1 28060   3 103M  8209000.0 120000.0   0.0645   0.0063                                       S.Sudar,             (91)30995  4                               0.0063                            9.77     9.77
+    1 28060   3 103M  8675000.0 140000.0   0.0684   0.0067                                       S.Sudar,             (91)30995  4                               0.0067                            9.80     9.80
+    1 28060   3 103M  9132000.0 140000.0.07210001   0.0067                                       S.Sudar,             (91)30995  4                               0.0067                            9.29     9.29
+    1 28060   3 103M  9590000.0 150000.0   0.0797   0.0074                                       S.Sudar,             (91)30995  4                               0.0074                            9.28     9.28
+    1 28060   3 103M    1.004E7 150000.0.08180001   0.0074                                       S.Sudar,             (91)30995  4                               0.0074                            9.05     9.05
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           5208000.0   1.004E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           10          10
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+5208000.    5208000.    0.0088      11.36        100
+6273000.    6273000.    0.0323      12.07        39 100
+6774000.    6774000.    0.0397      10.08        34 45 100
+7256000.    7256000.    0.0483      10.35        29 40 45 100
+7738000.    7738000.    0.0552      10.14        25 35 40 45 100
+8209000.    8209000.    0.0645      9.77         25 30 35 40 45 100
+8675000.    8675000.    0.0684      9.8          25 25 30 35 40 45 100
+9132000.    9132000.    0.0721      9.29         25 25 26 31 36 40 45 100
+9590000.    9590000.    0.0797      9.28         25 25 25 26 31 36 41 45 100
+1.004E7     1.004E7     0.0818      9.05         25 25 25 25 26 31 36 41 45 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       30995004 
+#DATASET        30995005   20090919
+#SUBENT         30995005   20090919
+#ENTRY          30995      20090919
+#TITLE          Neutron activation cross sections for Ni-60(n,p)Co-60-m
+#+              Ni-60(n,p)Co-60-m+g and Ni-58(n,p)Co-58-m
+#+              reactions in the 5 to 12 MeV energy range.
+#AUTHORS        S.Sudar,J.Csikai,S.M.Qaim,G.Stoecklin
+#AUTHOR1        S.Sudar+
+#YEAR           1991
+#X4REF1         C,91JUELIC,,291,199105
+#REFERENCE1     Conf: Conf.on Nucl.Data for Sci.and Technol.,Juelich 1991, p.291 (1991)
+#DATE           20090919
+#INSTITUTE      3HUNKOS,2GERJUL
+#METHOD         ACTIV
+#REACTION       28-NI-58(N,P)27-CO-58-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           28058            
+#TARGET         28058           [ ]             28-NI-58        [ ] 
+#REAC1          N,P
+#PRODUCT        27-CO-58-M
+#C4ReaCode      (N,P),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 28058   3 103M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         10
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 28058   3 103M  5208000.0 100000.0    0.135    0.012                                       S.Sudar,             (91)30995  5                                0.012                            8.89     8.89
+    1 28058   3 103M  6273000.0 100000.0    0.229    0.024                                       S.Sudar,             (91)30995  5                                0.024                            10.5     10.5
+    1 28058   3 103M  6774000.0 110000.0    0.217    0.017                                       S.Sudar,             (91)30995  5                                0.017                            7.83     7.83
+    1 28058   3 103M  7256000.0 110000.0    0.239    0.022                                       S.Sudar,             (91)30995  5                                0.022                            9.21     9.21
+    1 28058   3 103M  7738000.0 120000.0    0.251    0.018                                       S.Sudar,             (91)30995  5                                0.018                            7.17     7.17
+    1 28058   3 103M  8209000.0 120000.0    0.276    0.023                                       S.Sudar,             (91)30995  5                                0.023                            8.33     8.33
+    1 28058   3 103M  8675000.0 140000.0    0.273    0.023                                       S.Sudar,             (91)30995  5                                0.023                            8.42     8.42
+    1 28058   3 103M  9132000.0 140000.0    0.281    0.022                                       S.Sudar,             (91)30995  5                                0.022                            7.83     7.83
+    1 28058   3 103M  9590000.0 150000.0    0.302    0.023                                       S.Sudar,             (91)30995  5                                0.023                            7.62     7.62
+    1 28058   3 103M    1.004E7 150000.0    0.271     0.02                                       S.Sudar,             (91)30995  5                                 0.02                            7.38     7.38
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           5208000.0   1.004E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           10          10
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+5208000.    5208000.    0.135       8.89         100
+6273000.    6273000.    0.229       10.48        39 100
+6774000.    6774000.    0.217       7.83         34 45 100
+7256000.    7256000.    0.239       9.21         29 40 45 100
+7738000.    7738000.    0.251       7.17         25 35 40 45 100
+8209000.    8209000.    0.276       8.33         25 30 35 40 45 100
+8675000.    8675000.    0.273       8.42         25 25 30 35 40 45 100
+9132000.    9132000.    0.281       7.83         25 25 26 31 36 40 45 100
+9590000.    9590000.    0.302       7.62         25 25 25 26 31 36 41 45 100
+1.004E7     1.004E7     0.271       7.38         25 25 25 25 26 31 36 41 45 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       30995005 
+#/C5M.2.3       1               4               4               0               39              

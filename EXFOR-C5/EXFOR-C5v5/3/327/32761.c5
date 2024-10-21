@@ -1,0 +1,180 @@
+#C5M.2.3
+#DATASET        32761004   20181119
+#SUBENT         32761004   20181119
+#ENTRY          32761      20181119
+#TITLE          Cross section measurements for 199Hg(n,p)199Au,
+#+              198Hg(n,p)198Au, 196Hg(n,p)196Au and 196Hg(n,d+np+pn)
+#+              195Au reactions
+#AUTHORS        Yuan Junqian, Kong Xiangzhong, Yang Jingkang,
+#+              Wang Huaiyi
+#AUTHOR1        Yuan Junqian+
+#YEAR           1995
+#X4REF1         J,CNDP,13,16,1995
+#REFERENCE1     Jour: Communication of Nuclear Data Progress, Vol.13, p.16 (1995)
+#DATE           20181119
+#INSTITUTE      3CPRLNZ,3CPRNIX
+#REACTION       80-HG-196(N,P)79-AU-196,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           80196            
+#TARGET         80196           [ ]             80-HG-196       [ ] 
+#REAC1          N,P
+#PRODUCT        79-AU-196
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.15%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 80196   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 80-HG-196(N,P)79-AU-196,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (80-HG-196(N,P)79-AU-196,,SIG)
+#+               #[1]#DECAY-DATA (79-AU-196-G,6.18D,DG,355.7,0.88) #Ix_old=0.88
+#+                a1=0.88/0.87;               #[1]#DECAY-DATA: correction to new 355.73 keV gamma-yield per decay Au-196-g Ix_new=0.87
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0114943
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32761004    1.01149     -           1.01149     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32761004    CS          4           1.01149     1.01149     1.01149     +1.15%      1.01149                
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 80196   3 103      1.41E7          6.2713-3 7.0805-4                                       Yuan Junqian*,       (95)32761  4  1.2543-4                   7.0805-4 2                          11.3     11.3                                        1.01149431.0114942
+    1 80196   3 103      1.45E7         .00525977 5.0575-4                                       Yuan Junqian*,       (95)32761  4  1.0520-4                   5.0575-4 2                          9.62     9.62                                        1.01149431.0114943
+    1 80196   3 103      1.47E7         .01345287 1.1126-3                                       Yuan Junqian*,       (95)32761  4  2.6906-4                   1.1126-3 2                          8.27     8.27                                        1.01149431.0114942
+    1 80196   3 103      1.48E7         0.0182069 1.0115-3                                       Yuan Junqian*,       (95)32761  4  3.6414-4                   1.0115-3 2                          5.56     5.56                                        1.01149431.0114943
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.41E7      1.48E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.41E7      1.41E7      6.2713-3    11.29        100
+1.45E7      1.45E7      5.2598-3    9.62          2 100
+1.47E7      1.47E7      1.3453-2    8.27          2  4 100
+1.48E7      1.48E7      1.8207-2    5.56          3  4  7 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       32761004 
+#DATASET        32761005   20181119
+#SUBENT         32761005   20181119
+#ENTRY          32761      20181119
+#TITLE          Cross section measurements for 199Hg(n,p)199Au,
+#+              198Hg(n,p)198Au, 196Hg(n,p)196Au and 196Hg(n,d+np+pn)
+#+              195Au reactions
+#AUTHORS        Yuan Junqian, Kong Xiangzhong, Yang Jingkang,
+#+              Wang Huaiyi
+#AUTHOR1        Yuan Junqian+
+#YEAR           1995
+#X4REF1         J,CNDP,13,16,1995
+#REFERENCE1     Jour: Communication of Nuclear Data Progress, Vol.13, p.16 (1995)
+#DATE           20181119
+#INSTITUTE      3CPRLNZ,3CPRNIX
+#REACTION       80-HG-196(N,X)79-AU-195,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           80196            
+#TARGET         80196           [ ]             80-HG-196       [ ] 
+#REAC1          N,X
+#PRODUCT        79-AU-195
+#C4ReaCode      (N,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.77%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 80196   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 80-HG-196(N,X)79-AU-195,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (80-HG-196(N,X)79-AU-195,,SIG)
+#+               #[1]#DECAY-DATA (79-AU-195-G,186.0D,DG,98.86,0.109) #Ix_old=0.109
+#+                a1=0.109/0.1121;            #[1]#DECAY-DATA: correction to new 98.857 keV gamma-yield per decay Au-195-g Ix_new=0.1121
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9723461
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32761005    0.972346    -           0.972346    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32761005    CS          5           0.972346    0.972346    0.972346    -2.77%      1.02844                
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 80196   39000      1.38E7         0.6154951.08945585           79195.9                     Yuan Junqian*,       (95)32761  5 0.0123099                  .08945585 2                          14.5     14.5                                        0.97234610.9723461
+    1 80196   39000      1.41E7         0.6456378.06514719           79195.9                     Yuan Junqian*,       (95)32761  5 .01291276                  .06514719 2                          10.1     10.1                                        0.97234610.9723461
+    1 80196   39000      1.45E7         0.7059234.07973239           79195.9                     Yuan Junqian*,       (95)32761  5 .01411847                  .07973239 2                          11.3     11.3                                        0.97234610.9723462
+    1 80196   39000      1.47E7         0.5610437.03597681           79195.9                     Yuan Junqian*,       (95)32761  5 .01122087                  .03597681 2                          6.41     6.41                                        0.97234610.9723462
+    1 80196   39000      1.48E7          0.587297.03111508           79195.9                     Yuan Junqian*,       (95)32761  5 .01174594                  .03111508 2                          5.30     5.30                                        0.97234610.9723461
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.38E7      1.48E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           5           5
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.38E7      1.38E7      0.615495    14.53        100
+1.41E7      1.41E7      0.645638    10.09         2 100
+1.45E7      1.45E7      0.705923    11.29         1  2 100
+1.47E7      1.47E7      0.561044    6.41          2  3  4 100
+1.48E7      1.48E7      0.587297    5.3           3  4  5 11 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       32761005 
+#/C5M.2.3       1               2               4               0               9               

@@ -1,0 +1,224 @@
+#C5.2.3
+#DATASET        32813002   20211129
+#SUBENT         32813002   20211129
+#ENTRY          32813      20211129
+#TITLE          Cross-section measurements for 58,60,61Ni(n,a)
+#+              55,57,58Fe reactions in the 4.50 - 5.50 MeV neutron
+#+              energy region
+#AUTHORS        Haoyu Jiang,Zengqi Cui,Yiwei Hu,Jie Liu,
+#+              Jinxiang Chen,Guohui Zhang,Yu.M.Gledenov,
+#+              E.Sansarbayar,G.Khuukhenkhuu,L.Krupa,I.Chuprakov
+#AUTHOR1        Haoyu Jiang+
+#YEAR           2020
+#X4REF1         J,CPH/C,44,114102,2020
+#REFERENCE1     Jour: Chinese Physics C, Vol.44, p.114102 (2020)
+#DATE           20211129
+#INSTITUTE      3CPRBJG,4ZZZDUB,3MGLNUM,3CZRCTI
+#REACTION       28-NI-58(N,A)26-FE-55,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           28058            
+#TARGET         28058           [ ]             28-NI-58        [ ] 
+#REAC1          N,A
+#PRODUCT        26-FE-55
+#C4ReaCode      (N,A),SIG
+#CompNotes      ERR-ANALYS:(ERR-12,,0.5)      ADDED AS COMMON:ERR-12,PER-CENT=0.25%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0061696(4.5e6) Data[4]*0.99896026(5.5e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 28058   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-238(N,F),,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$u238nf}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 28-NI-58(N,A)26-FE-55,,SIG
+#+              #[0]#Monitor:  92-U-238(N,F),,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$u238nf;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32813002    1.00117     1.00117     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32813002    CS          5           0.998024    1.00617     1.00117     +0.117%     1.00617     [EN,MONIT,MONIT-ERR]::u238nf
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 28058   3 107   4500000.0 140000.0.02585856 1.3455-3                                       Haoyu Jiang*,        (20)32813  2  1.7982-3                   1.3455-3 6.95                       5.20     5.20    0.5592   0.00335520.56265  .007647871.00616961.0350049
+    1 28058   3 107   4750000.0 140000.0.02873952 2.0332-3                                       Haoyu Jiang*,        (20)32813  2  2.7890-3                   2.0332-3 9.70                       7.07     7.07    0.5579   0.00334740.55866837.5943-3 1.00137711.0166016
+    1 28058   3 107   5000000.0 140000.0.03724817 2.2462-3                                       Haoyu Jiang*,        (20)32813  2  3.0240-3                   2.2462-3 8.12                       6.03     6.03    0.5483   0.00383810.54901  .007529141.00129491.0210084
+    1 28058   3 107   5250000.0 160000.0.04451188.00274662                                       Haoyu Jiang*,        (20)32813  2  3.7704-3                  .00274662 8.47                       6.17     6.17    0.5517   0.00386190.55061  7.6232-3 0.99802431.0172668
+    1 28058   3 107   5500000.0 160000.0.05164624 3.0605-3                                       Haoyu Jiang*,        (20)32813  2  4.0353-3                   3.0605-3 7.81                       5.93     5.93    0.5482   0.00383740.54763  0.00761810.99896031.0201725
+#/C5DATA        0
+#/DATASET       32813002 
+#DATASET        32813003   20211129
+#SUBENT         32813003   20211129
+#ENTRY          32813      20211129
+#TITLE          Cross-section measurements for 58,60,61Ni(n,a)
+#+              55,57,58Fe reactions in the 4.50 - 5.50 MeV neutron
+#+              energy region
+#AUTHORS        Haoyu Jiang,Zengqi Cui,Yiwei Hu,Jie Liu,
+#+              Jinxiang Chen,Guohui Zhang,Yu.M.Gledenov,
+#+              E.Sansarbayar,G.Khuukhenkhuu,L.Krupa,I.Chuprakov
+#AUTHOR1        Haoyu Jiang+
+#YEAR           2020
+#X4REF1         J,CPH/C,44,114102,2020
+#REFERENCE1     Jour: Chinese Physics C, Vol.44, p.114102 (2020)
+#DATE           20211129
+#INSTITUTE      3CPRBJG,4ZZZDUB,3MGLNUM,3CZRCTI
+#REACTION       28-NI-60(N,A)26-FE-57,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           28060            
+#TARGET         28060           [ ]             28-NI-60        [ ] 
+#REAC1          N,A
+#PRODUCT        26-FE-57
+#C4ReaCode      (N,A),SIG
+#CompNotes      ERR-ANALYS:(ERR-12,,0.5)      ADDED AS COMMON:ERR-12,PER-CENT=0.25%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0012949(5.0e6) Data[1]*0.99896026(5.5e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 28060   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-238(N,F),,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$u238nf}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 28-NI-60(N,A)26-FE-57,,SIG
+#+              #[0]#Monitor:  92-U-238(N,F),,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$u238nf;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32813003    1.00013     1.00013     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32813003    CS          2           0.998960    1.00129     1.00013     +0.0128%    1.00129     [EN,MONIT,MONIT-ERR]::u238nf
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 28060   3 107   5000000.0 140000.0 4.2255-3 6.3278-4                                       Haoyu Jiang*,        (20)32813  3  1.0060-3                   6.3278-4 23.8                       15       15      0.5483   0.00383810.54901  .007529141.00129491.004414
+    1 28060   3 107   5500000.0 160000.0 7.8618-3 1.0930-3                                       Haoyu Jiang*,        (20)32813  3  1.6245-3                   1.0930-3 20.7                       13.9     13.9    0.5482   0.00383740.54763  0.00761810.99896031.0027162
+#/C5DATA        0
+#/DATASET       32813003 
+#DATASET        32813004   20211129
+#SUBENT         32813004   20211129
+#ENTRY          32813      20211129
+#TITLE          Cross-section measurements for 58,60,61Ni(n,a)
+#+              55,57,58Fe reactions in the 4.50 - 5.50 MeV neutron
+#+              energy region
+#AUTHORS        Haoyu Jiang,Zengqi Cui,Yiwei Hu,Jie Liu,
+#+              Jinxiang Chen,Guohui Zhang,Yu.M.Gledenov,
+#+              E.Sansarbayar,G.Khuukhenkhuu,L.Krupa,I.Chuprakov
+#AUTHOR1        Haoyu Jiang+
+#YEAR           2020
+#X4REF1         J,CPH/C,44,114102,2020
+#REFERENCE1     Jour: Chinese Physics C, Vol.44, p.114102 (2020)
+#DATE           20211129
+#INSTITUTE      3CPRBJG,4ZZZDUB,3MGLNUM,3CZRCTI
+#REACTION       28-NI-61(N,A)26-FE-58,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           28061            
+#TARGET         28061           [ ]             28-NI-61        [ ] 
+#REAC1          N,A
+#PRODUCT        26-FE-58
+#C4ReaCode      (N,A),SIG
+#CompNotes      ERR-ANALYS:(ERR-12,,0.5)      ADDED AS COMMON:ERR-12,PER-CENT=0.25%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0012949(5.0e6) Data[1]*0.99896026(5.5e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 28061   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-238(N,F),,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$u238nf}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 28-NI-61(N,A)26-FE-58,,SIG
+#+              #[0]#Monitor:  92-U-238(N,F),,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$u238nf;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32813004    1.00013     1.00013     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32813004    CS          2           0.998960    1.00129     1.00013     +0.0128%    1.00129     [EN,MONIT,MONIT-ERR]::u238nf
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 28061   3 107   5000000.0 140000.0 9.4122-3 8.4838-4                                       Haoyu Jiang*,        (20)32813  4  1.1897-3                   8.4838-4 12.6                       9.01     9.01    0.5483   0.00383810.54901  .007529141.00129491.0099765
+    1 28061   3 107   5500000.0 160000.0.01188763.00110811                                       Haoyu Jiang*,        (20)32813  4  1.5569-3                  .00110811 13.1                       9.32     9.32    0.5482   0.00383740.54763  0.00761810.99896031.0073727
+#/C5DATA        0
+#/DATASET       32813004 
+#/C5.2.3        1               3               3               0               9               

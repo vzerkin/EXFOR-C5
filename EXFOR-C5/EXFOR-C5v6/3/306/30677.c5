@@ -1,0 +1,189 @@
+#C5.2.3
+#DATASET        30677002   20090903
+#SUBENT         30677002   20090903
+#ENTRY          30677      20090903
+#TITLE          Critical evaluation and experimental determination of
+#+              the nuclear activation and decay parameters for the
+#+              reactions Cr-50(n,gamma)Cr-51, Fe-58(n,gamma)Fe-59,
+#+              Ag-109(n,gamma)Ag-110-m
+#AUTHORS        A.Simonits,F.de Corte,L.Moens,J.Hoste
+#AUTHOR1        A.Simonits+
+#YEAR           1984
+#X4REF1         J,JRN,81,(2),369,198402
+#REFERENCE1     Jour: Journal of Radioanalytical and Nuclear Chemistry, Vol.81, Issue.2, p.369 (1984)
+#DATE           20090903
+#INSTITUTE      3HUNKFI,2BLGGHT
+#METHOD         ACTIV
+#REACTION       24-CR-50(N,G)24-CR-51,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           24050            
+#TARGET         24050           [ ]             24-CR-50        [ ] 
+#REAC1          N,G
+#PRODUCT        24-CR-51
+#C4ReaCode      (N,G),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.08%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.605%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 24050   3 102 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             Point: XS(b)=98.65(0.08%)  EN-NRM(eV):0.0253
+#M1             Point: XS(b)=  EN-NRM(eV):0.0253
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 24-CR-50(N,G)24-CR-51,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              #[0]#En=0.0253
+#+              a0=[MONIT];                   #[0]#old monitor point 98.65
+#+              a1=therm$au197ng[0.0253];     #[0]#new monitor point [2.53E-8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (24-CR-50(N,G)24-CR-51,,SIG)
+#+               #[1]#DECAY-DATA (24-CR-51,27.70D,DG,320.1,0.0985) #Ix_old=0.0985
+#+                a1=0.0985/0.0991;           #[1]#DECAY-DATA: correction to new 320.0824 keV gamma-yield per decay Cr-51 Ix_new=0.0991
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9939455
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30677002    0.993945    1.00000     0.993945    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30677002    CS          1           0.993945    0.993945    0.993945    -0.605%     1.00609     [MONIT]::au197ng
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 24050   3 102 A    0.0253         15.1079710.1987891                                       A.Simonits*,         (84)30677  2 .01208638                  0.1987891 0.08                       1.32     1.32    98.65    0.08                       0.99394550.9939454
+#/C5DATA        0
+#/DATASET       30677002 
+#DATASET        30677003   20090903
+#SUBENT         30677003   20090903
+#ENTRY          30677      20090903
+#TITLE          Critical evaluation and experimental determination of
+#+              the nuclear activation and decay parameters for the
+#+              reactions Cr-50(n,gamma)Cr-51, Fe-58(n,gamma)Fe-59,
+#+              Ag-109(n,gamma)Ag-110-m
+#AUTHORS        A.Simonits,F.de Corte,L.Moens,J.Hoste
+#AUTHOR1        A.Simonits+
+#YEAR           1984
+#X4REF1         J,JRN,81,(2),369,198402
+#REFERENCE1     Jour: Journal of Radioanalytical and Nuclear Chemistry, Vol.81, Issue.2, p.369 (1984)
+#DATE           20090903
+#INSTITUTE      3HUNKFI,2BLGGHT
+#METHOD         ACTIV
+#REACTION       26-FE-58(N,G)26-FE-59,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           26058            
+#TARGET         26058           [ ]             26-FE-58        [ ] 
+#REAC1          N,G
+#PRODUCT        26-FE-59
+#C4ReaCode      (N,G),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.08%
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 26058   3 102 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             Point: XS(b)=98.65(0.08%)  EN-NRM(eV):0.0253
+#M1             Point: XS(b)=  EN-NRM(eV):0.0253
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26058   3 102 A    0.0253              1.31     0.03                                       A.Simonits,          (84)30677  3  0.001048                       0.03 0.08                       2.29     2.29    98.65    0.08
+#/C5DATA        0
+#/DATASET       30677003 
+#DATASET        30677004   20090903
+#SUBENT         30677004   20090903
+#ENTRY          30677      20090903
+#TITLE          Critical evaluation and experimental determination of
+#+              the nuclear activation and decay parameters for the
+#+              reactions Cr-50(n,gamma)Cr-51, Fe-58(n,gamma)Fe-59,
+#+              Ag-109(n,gamma)Ag-110-m
+#AUTHORS        A.Simonits,F.de Corte,L.Moens,J.Hoste
+#AUTHOR1        A.Simonits+
+#YEAR           1984
+#X4REF1         J,JRN,81,(2),369,198402
+#REFERENCE1     Jour: Journal of Radioanalytical and Nuclear Chemistry, Vol.81, Issue.2, p.369 (1984)
+#DATE           20090903
+#INSTITUTE      3HUNKFI,2BLGGHT
+#METHOD         ACTIV
+#REACTION       47-AG-109(N,G)47-AG-110-M,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           47109            
+#TARGET         47109           [ ]             47-AG-109       [ ] 
+#REAC1          N,G
+#PRODUCT        47-AG-110-M
+#C4ReaCode      (N,G),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.08%
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 47109   3 102MA ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             Point: XS(b)=98.65(0.08%)  EN-NRM(eV):0.0253
+#M1             Point: XS(b)=  EN-NRM(eV):0.0253
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 47109   3 102MA    0.0253              3.89     0.05                                       A.Simonits,          (84)30677  4  0.003112                       0.05 0.08                       1.29     1.29    98.65    0.08
+#/C5DATA        0
+#/DATASET       30677004 
+#/C5.2.3        1               3               3               0               3               

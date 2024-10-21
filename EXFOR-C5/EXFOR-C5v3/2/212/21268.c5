@@ -1,0 +1,81 @@
+#C5.2.3
+#DATASET        21268002   20220218
+#SUBENT         21268002   20220218
+#ENTRY          21268      20220218
+#TITLE          Measurement of the Angular Distribution in the
+#+               Reaction 27Al(n,p)27Mg at 14 MeV
+#AUTHORS        L.Colli,M.Mangialajo,F.Marcelja,F.Merzari,P.G.Sona
+#AUTHOR1        L.Colli+
+#YEAR           1963
+#X4REF1         J,NC,29,983,1963
+#REFERENCE1     Jour: Nuovo Cimento, Vol.29, p.983 (1963)
+#DATE           20220218
+#INSTITUTE      2ITYCIS
+#REACTION       13-AL-27(N,P)12-MG-27,PAR,DA
+#C4Reaction     (N,P)PAR,DA
+#ReactionType   DAP
+#MF             4
+#MT             601
+#PROJ           1
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          N,P
+#PRODUCT        12-MG-27
+#C4ReaCode      (N,P)PAR,DA
+#CompNotes      RESET MT601 to MT600: ZAP=12027 iLvl=0   eLvl=0.0 eV
+#CompNotes      RESET MT601 to MT601: ZAP=12027 iLvl=1   eLvl=985000.0 eV
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99128675(1.4e7) Data[9]*0.99128675(1.4e7)
+#CompNotes      Conversion from C.M. to Lab: successful [21268002 ]
+#CompNotes      Converted Angle C.M. to LAB 1:(56.5 TO 54.6) 10:(23.8 TO 22.9)
+#CompNotes      Converted Data C.M. to LAB 1:(3.7669-4 to 3.9421-4 fc:1.047) 10:(5.6503-4 to 6.0755-4 fc:1.075)
+#Quantity       Partial differential cross section d/dA
+#DataUnits0     B/SR
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 13027   4 601   ]
+#DATA-HDR       DATA-CM
+#VarFamily      [0 234      ]
+#xVariables     3
+#+              Y = Y(X1,X2,X3)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             Point: XS(b)=0.689  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.6829966(0.42%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 13-AL-27(N,P)12-MG-27,PAR,DA
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              #[0]#En=1.41E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.689
+#+              a1=recom$h1nel[EN];           #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        21268002    0.991287    0.991287    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          21268002    DAP         10          0.991287    0.991287    0.991287    -0.871%     1.00879     [MONIT]::h1nel
+#C5DATA         10
+#C.M.Flag       0000
+#Headers                     EN      dEN     Data    dData      COS     dCOS      LVL     dLVL
+#Units                       EV       EV     B/SR     B/SR   NO-DIM   NO-DIM       EV       EV
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 13027   4 600      1.41E7 100000.0.00350358 2.7021-40.9868557               0.0         LVLL.Colli*,            (63)21268  2                             2.7021-4                            7.71     7.71    0.689             0.68299662.8608-3 0.9912868
+    1 13027   4 600      1.41E7 100000.0 3.6472-3 2.6974-40.9650165               0.0         LVLL.Colli*,            (63)21268  2                             2.6974-4                            7.40     7.40    0.689             0.68299662.8608-3 0.9912868
+    1 13027   4 600      1.41E7 100000.0 1.9186-3 1.9354-40.9211854               0.0         LVLL.Colli*,            (63)21268  2                             1.9354-4                            10.1     10.1    0.689             0.68299662.8608-3 0.9912868
+    1 13027   4 600      1.41E7 100000.0 7.6222-4 1.2815-40.8348479               0.0         LVLL.Colli*,            (63)21268  2                             1.2815-4                            16.8     16.8    0.689             0.68299662.8608-3 0.9912868
+    1 13027   4 600      1.41E7 100000.0 8.0694-4 1.2686-40.7071068               0.0         LVLL.Colli*,            (63)21268  2                             1.2686-4                            15.7     15.7    0.689             0.68299662.8608-3 0.9912868
+    1 13027   4 600      1.41E7 100000.0 3.9421-4 8.3722-50.5792812               0.0         LVLL.Colli*,            (63)21268  2                             8.3722-5                            21.2     21.2    0.689             0.68299662.8608-3 0.9912868
+    1 13027   4 601      1.41E7 100000.0 6.0755-4 1.1828-40.9211854         1172000.0         LVLL.Colli*,            (63)21268  2                             1.1828-4                            19.5     19.5    0.689             0.68299662.8608-3 0.9912868
+    1 13027   4 601      1.41E7 100000.0 4.3404-4 1.1747-40.8348479         1172000.0         LVLL.Colli*,            (63)21268  2                             1.1747-4                            27.1     27.1    0.689             0.68299662.8608-3 0.9912868
+    1 13027   4 601      1.41E7 100000.0 2.3055-4 1.1629-40.7071068         1172000.0         LVLL.Colli*,            (63)21268  2                             1.1629-4                            50.4     50.4    0.689             0.68299662.8608-3 0.9912868
+    1 13027   4 601      1.41E7 100000.0 2.2823-4 1.1512-40.5792812         1172000.0         LVLL.Colli*,            (63)21268  2                             1.1512-4                            50.4     50.4    0.689             0.68299662.8608-3 0.9912868
+#/C5DATA        0
+#/DATASET       21268002 
+#/C5.2.3        1               1               1               0               10              

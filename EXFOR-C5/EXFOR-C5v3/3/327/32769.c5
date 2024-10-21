@@ -1,0 +1,430 @@
+#C5.2.3
+#DATASET        327690021  20180712
+#SUBENT         32769002   20180712
+#ENTRY          32769      20180712
+#TITLE          Activation cross section and isomeric cross section
+#+              ratio for the (n,2n) reaction on 132,134Ba
+#AUTHORS        Junhua Luo,Chunlei Wu,Li Jiang,Suyuan Li
+#AUTHOR1        Junhua Luo+
+#YEAR           2017
+#X4REF1         J,RCA,105,779,2017
+#REFERENCE1     Jour: Radiochimica Acta, Vol.105, p.779 (2017)
+#DATE           20180712
+#INSTITUTE      3CPRHXU,3CPRNPC
+#METHOD         ACTIV
+#REACTION       56-BA-132(N,2N)56-BA-131-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           56132            
+#TARGET         56132           [ ]             56-BA-132       [ ] 
+#REAC1          N,2N
+#PRODUCT        56-BA-131-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.1,6.5)    ADDED AS COMMON:ERR-S,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-1,2.0,3.0)    ADDED AS COMMON:ERR-1,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-4,0.1,1.0)    ADDED AS COMMON:ERR-4,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-5,0.2,1.4)    ADDED AS COMMON:ERR-5,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-6,0.1,1.4)    ADDED AS COMMON:ERR-6,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-7,0.8,1.0)    ADDED AS COMMON:ERR-7,PER-CENT=0.8%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=3
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9892946(1.4e7) Data[2]*1.0010875(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 56132   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 56-BA-132(N,2N)56-BA-131-M,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        327690021   0.996692    0.996692    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          327690021   CS          3           0.989295    1.00109     0.996692    -0.331%     1.01082     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56132   3  16M     1.35E7 200000.00.67272040.0626483                                       Junhua Luo*,         (17)32769  21.01658061   6.8E-4         0.0626483 2.46     0.10              9.31     9.31    0.4579   0.0068   0.452998 .002680130.98929460.9788796
+    1 56132   3  16M     1.41E7 200000.00.7667648.06006293                                       Junhua Luo*,         (17)32769  21.01879693  7.67E-4         .06006293 2.45     0.10              7.83     7.83    0.4598   0.0068   0.459659 .002502550.99969330.9846383
+    1 56132   3  16M     1.48E7 200000.00.8299017.05756406                                       Junhua Luo*,         (17)32769  21.02043031  8.29E-4         .05756406 2.46     0.10              6.94     6.94    0.4597   0.005    0.4602   .002704061.00108750.9924839
+#/C5DATA        0
+#/DATASET       327690021
+#DATASET        327690023  20180712
+#SUBENT         32769002   20180712
+#ENTRY          32769      20180712
+#TITLE          Activation cross section and isomeric cross section
+#+              ratio for the (n,2n) reaction on 132,134Ba
+#AUTHORS        Junhua Luo,Chunlei Wu,Li Jiang,Suyuan Li
+#AUTHOR1        Junhua Luo+
+#YEAR           2017
+#X4REF1         J,RCA,105,779,2017
+#REFERENCE1     Jour: Radiochimica Acta, Vol.105, p.779 (2017)
+#DATE           20180712
+#INSTITUTE      3CPRHXU,3CPRNPC
+#METHOD         ACTIV
+#REACTION       56-BA-132(N,2N)56-BA-131,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           56132            
+#TARGET         56132           [ ]             56-BA-132       [ ] 
+#REAC1          N,2N
+#PRODUCT        56-BA-131
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.1,6.5)    ADDED AS COMMON:ERR-S,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-1,2.0,3.0)    ADDED AS COMMON:ERR-1,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-4,0.1,1.0)    ADDED AS COMMON:ERR-4,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-5,0.2,1.4)    ADDED AS COMMON:ERR-5,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-6,0.1,1.4)    ADDED AS COMMON:ERR-6,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-7,0.8,1.0)    ADDED AS COMMON:ERR-7,PER-CENT=0.8%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=3
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9892946(1.4e7) Data[2]*1.0010875(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 56132   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 56-BA-132(N,2N)56-BA-131,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        327690023   0.996692    0.996692    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          327690023   CS          3           0.989295    1.00109     0.996692    -0.331%     1.01082     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56132   3  16      1.35E7 200000.01.14461390.1047001                                       Junhua Luo*,         (17)32769  23.02821141 0.001157         0.1047001 2.46     0.10              9.15     9.15    0.4579   0.0068   0.452998 .002680130.98929460.9785055
+    1 56132   3  16      1.41E7 200000.01.29360320.1044639                                       Junhua Luo*,         (17)32769  23.03171216 0.001294         0.1044639 2.45     0.10              8.08     8.08    0.4598   0.0068   0.459659 .002502550.99969330.9855087
+    1 56132   3  16      1.48E7 200000.01.37649550.1013307                                       Junhua Luo*,         (17)32769  23.03388623 0.001375         0.1013307 2.46     0.10              7.36     7.36    0.4597   0.005    0.4602   .002704061.00108750.9934381
+#/C5DATA        0
+#/DATASET       327690023
+#DATASET        327690024  20180712
+#SUBENT         32769002   20180712
+#ENTRY          32769      20180712
+#TITLE          Activation cross section and isomeric cross section
+#+              ratio for the (n,2n) reaction on 132,134Ba
+#AUTHORS        Junhua Luo,Chunlei Wu,Li Jiang,Suyuan Li
+#AUTHOR1        Junhua Luo+
+#YEAR           2017
+#X4REF1         J,RCA,105,779,2017
+#REFERENCE1     Jour: Radiochimica Acta, Vol.105, p.779 (2017)
+#DATE           20180712
+#INSTITUTE      3CPRHXU,3CPRNPC
+#METHOD         ACTIV
+#REACTION       56-BA-132(N,2N)56-BA-131-M/G,,SIG/RAT
+#C4Reaction     (N,2N),SIG/RAT
+#ReactionType   CS
+#MF             203
+#MT             16
+#PROJ           1
+#TARG           56132            
+#TARGET         56132           [ ]             56-BA-132       [ ] 
+#REAC1          N,2N
+#PRODUCT        56-BA-131-M/G
+#C4ReaCode      (N,2N),SIG/RAT
+#CompNotes      ERR-ANALYS:(ERR-S,0.1,6.5)    ADDED AS COMMON:ERR-S,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-1,2.0,3.0)    ADDED AS COMMON:ERR-1,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-4,0.1,1.0)    ADDED AS COMMON:ERR-4,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-5,0.2,1.4)    ADDED AS COMMON:ERR-5,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-6,0.1,1.4)    ADDED AS COMMON:ERR-6,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-7,0.8,1.0)    ADDED AS COMMON:ERR-7,PER-CENT=0.8%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=3
+#Quantity       Cross section ratio
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 56132 203  16/  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV   NO-DIM   NO-DIM                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56132 203  16/     1.35E7 200000.0     1.43     0.19           56131.9                     Junhua Luo,          (17)32769  24.04026942  0.00143              0.19 2.82     0.10              13.3     13.3
+    1 56132 203  16/     1.41E7 200000.0     1.46     0.17           56131.9                     Junhua Luo,          (17)32769  24.04103717  0.00146              0.17 2.81     0.10              11.6     11.6
+    1 56132 203  16/     1.48E7 200000.0     1.52     0.16           56131.9                     Junhua Luo,          (17)32769  24.03992163  0.00152              0.16 2.63     0.10              10.5     10.5
+#/C5DATA        0
+#/DATASET       327690024
+#DATASET        327690031  20180712
+#SUBENT         32769003   20180712
+#ENTRY          32769      20180712
+#TITLE          Activation cross section and isomeric cross section
+#+              ratio for the (n,2n) reaction on 132,134Ba
+#AUTHORS        Junhua Luo,Chunlei Wu,Li Jiang,Suyuan Li
+#AUTHOR1        Junhua Luo+
+#YEAR           2017
+#X4REF1         J,RCA,105,779,2017
+#REFERENCE1     Jour: Radiochimica Acta, Vol.105, p.779 (2017)
+#DATE           20180712
+#INSTITUTE      3CPRHXU,3CPRNPC
+#METHOD         ACTIV
+#REACTION       56-BA-134(N,2N)56-BA-133-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           56134            
+#TARGET         56134           [ ]             56-BA-134       [ ] 
+#REAC1          N,2N
+#PRODUCT        56-BA-133-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.1,6.5)    ADDED AS COMMON:ERR-S,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-1,2.0,3.0)    ADDED AS COMMON:ERR-1,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-4,0.1,1.0)    ADDED AS COMMON:ERR-4,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-5,0.2,1.4)    ADDED AS COMMON:ERR-5,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-6,0.1,1.4)    ADDED AS COMMON:ERR-6,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-7,0.8,1.0)    ADDED AS COMMON:ERR-7,PER-CENT=0.8%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=3
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9892946(1.4e7) Data[2]*1.0010875(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 56134   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 56-BA-134(N,2N)56-BA-133-M,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        327690031   0.996692    0.996692    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          327690031   CS          3           0.989295    1.00109     0.996692    -0.331%     1.01082     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56134   3  16M     1.35E7 200000.00.6489773.03142719                                       Junhua Luo*,         (17)32769  310.0159954  6.56E-4         .03142719 2.46     0.10              4.84     4.84    0.4579   0.0068   0.452998 .002680130.98929460.9523391
+    1 56134   3  16M     1.41E7 200000.0 0.697786.03364799                                       Junhua Luo*,         (17)32769  31.01710594  6.98E-4         .03364799 2.45     0.10              4.82     4.82    0.4598   0.0068   0.459659 .002502550.99969330.9613712
+    1 56134   3  16M     1.48E7 200000.0 0.743808.03437029                                       Junhua Luo*,         (17)32769  31.01831089  7.43E-4         .03437029 2.46     0.10              4.62     4.62    0.4597   0.005    0.4602   .002704061.00108750.9820082
+#/C5DATA        0
+#/DATASET       327690031
+#DATASET        327690033  20180712
+#SUBENT         32769003   20180712
+#ENTRY          32769      20180712
+#TITLE          Activation cross section and isomeric cross section
+#+              ratio for the (n,2n) reaction on 132,134Ba
+#AUTHORS        Junhua Luo,Chunlei Wu,Li Jiang,Suyuan Li
+#AUTHOR1        Junhua Luo+
+#YEAR           2017
+#X4REF1         J,RCA,105,779,2017
+#REFERENCE1     Jour: Radiochimica Acta, Vol.105, p.779 (2017)
+#DATE           20180712
+#INSTITUTE      3CPRHXU,3CPRNPC
+#METHOD         ACTIV
+#REACTION       56-BA-134(N,2N)56-BA-133,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           56134            
+#TARGET         56134           [ ]             56-BA-134       [ ] 
+#REAC1          N,2N
+#PRODUCT        56-BA-133
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.1,6.5)    ADDED AS COMMON:ERR-S,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-1,2.0,3.0)    ADDED AS COMMON:ERR-1,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-4,0.1,1.0)    ADDED AS COMMON:ERR-4,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-5,0.2,1.4)    ADDED AS COMMON:ERR-5,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-6,0.1,1.4)    ADDED AS COMMON:ERR-6,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-7,0.8,1.0)    ADDED AS COMMON:ERR-7,PER-CENT=0.8%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=3
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9892946(1.4e7) Data[2]*1.0010875(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 56134   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 56-BA-134(N,2N)56-BA-133,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        327690033   0.996692    0.996692    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          327690033   CS          3           0.989295    1.00109     0.996692    -0.331%     1.01082     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56134   3  16      1.35E7 200000.01.34247290.0861275                                       Junhua Luo*,         (17)32769  33.03308807 0.001357         0.0861275 2.46     0.10              6.42     6.42    0.4579   0.0068   0.452998 .002680130.98929460.9677246
+    1 56134   3  16      1.41E7 200000.01.4265624.09190102                                       Junhua Luo*,         (17)32769  330.0349716 0.001427         .09190102 2.45     0.10              6.44     6.44    0.4598   0.0068   0.459659 .002502550.99969330.9776704
+    1 56134   3  16      1.48E7 200000.01.4946239.09411427                                       Junhua Luo*,         (17)32769  33.03679429 0.001493         .09411427 2.46     0.10              6.30     6.30    0.4597   0.005    0.4602   .002704061.00108750.9906763
+#/C5DATA        0
+#/DATASET       327690033
+#DATASET        327690034  20180712
+#SUBENT         32769003   20180712
+#ENTRY          32769      20180712
+#TITLE          Activation cross section and isomeric cross section
+#+              ratio for the (n,2n) reaction on 132,134Ba
+#AUTHORS        Junhua Luo,Chunlei Wu,Li Jiang,Suyuan Li
+#AUTHOR1        Junhua Luo+
+#YEAR           2017
+#X4REF1         J,RCA,105,779,2017
+#REFERENCE1     Jour: Radiochimica Acta, Vol.105, p.779 (2017)
+#DATE           20180712
+#INSTITUTE      3CPRHXU,3CPRNPC
+#METHOD         ACTIV
+#REACTION       56-BA-134(N,2N)56-BA-133-M/G,,SIG/RAT
+#C4Reaction     (N,2N),SIG/RAT
+#ReactionType   CS
+#MF             203
+#MT             16
+#PROJ           1
+#TARG           56134            
+#TARGET         56134           [ ]             56-BA-134       [ ] 
+#REAC1          N,2N
+#PRODUCT        56-BA-133-M/G
+#C4ReaCode      (N,2N),SIG/RAT
+#CompNotes      ERR-ANALYS:(ERR-S,0.1,6.5)    ADDED AS COMMON:ERR-S,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-1,2.0,3.0)    ADDED AS COMMON:ERR-1,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-4,0.1,1.0)    ADDED AS COMMON:ERR-4,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-5,0.2,1.4)    ADDED AS COMMON:ERR-5,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-6,0.1,1.4)    ADDED AS COMMON:ERR-6,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-7,0.8,1.0)    ADDED AS COMMON:ERR-7,PER-CENT=0.8%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=3
+#Quantity       Cross section ratio
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 56134 203  16/  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV   NO-DIM   NO-DIM                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56134 203  16/     1.35E7 200000.0     0.94     0.09           56133.9                     Junhua Luo,          (17)32769  34.02647081   9.4E-4              0.09 2.82     0.10              9.57     9.57
+    1 56134 203  16/     1.41E7 200000.0     0.96     0.09           56133.9                     Junhua Luo,          (17)32769  34.02698334   9.6E-4              0.09 2.81     0.10              9.38     9.38
+    1 56134 203  16/     1.48E7 200000.0     0.99     0.09           56133.9                     Junhua Luo,          (17)32769  34.02600159   9.9E-4              0.09 2.63     0.10              9.09     9.09
+#/C5DATA        0
+#/DATASET       327690034
+#/C5.2.3        1               6               8               0               18              

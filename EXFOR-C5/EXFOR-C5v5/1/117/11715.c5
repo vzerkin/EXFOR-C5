@@ -1,0 +1,288 @@
+#C5M.2.3
+#DATASET        11715002   20200503
+#SUBENT         11715002   20200503
+#ENTRY          11715      20200503
+#TITLE          Excitation function for Fe56(n,p)Mn56.
+#AUTHORS        J.Terrell,D.M.Holm
+#AUTHOR1        J.Terrell+
+#YEAR           1958
+#X4REF1         J,PR,109,2031,1958
+#REFERENCE1     Jour: Physical Review, Vol.109, p.2031 (1958)
+#DATE           20200503
+#INSTITUTE      1USALAS
+#METHOD         ACTIV
+#REACTION       26-FE-54(N,2N)26-FE-53,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           26054            
+#TARGET         26054           [ ]             26-FE-54        [ ] 
+#REAC1          N,2N
+#PRODUCT        26-FE-53
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=9.09%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0153182(1.7e7) Data[1]*1.0153182(1.8e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 26054   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             Point: XS(b)=0.11(9.09%)  EN-NRM(eV):1.43E7
+#M1             Point: XS(b)=0.111685(1.08%)  EN-NRM(eV):1.43E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-54(N,2N)26-FE-53,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.11
+#+              a1=recom$fe56np[EN-NRM];      #[0]#new monitor point [14.3MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11715002    1.01532     1.01532     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11715002    CS          2           1.01532     1.01532     1.01532     +1.53%      1.01532     [MONIT]::fe56np
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26054   3  16     1.689E7 320000.00.1218382.03485753                                       J.Terrell*,          (58)11715  2  1.3027-3                  .03485753 1.07                       28.6     28.6    0.11     0.01     0.111685 0.00120271.01531820.9682649
+    1 26054   3  16     1.789E7  80000.00.1726041.04938151                                       J.Terrell*,          (58)11715  2  1.8454-3                  .04938151 1.07                       28.6     28.6    0.11     0.01     0.111685 0.00120271.01531820.9682649
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.689E7     1.789E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.689E7     1.689E7     0.121838    28.61        100
+1.789E7     1.789E7     0.172604    28.61         0 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       11715002 
+#DATASET        11715003   20200503
+#SUBENT         11715003   20200503
+#ENTRY          11715      20200503
+#TITLE          Excitation function for Fe56(n,p)Mn56.
+#AUTHORS        J.Terrell,D.M.Holm
+#AUTHOR1        J.Terrell+
+#YEAR           1958
+#X4REF1         J,PR,109,2031,1958
+#REFERENCE1     Jour: Physical Review, Vol.109, p.2031 (1958)
+#DATE           20200503
+#INSTITUTE      1USALAS
+#METHOD         ACTIV
+#REACTION       26-FE-56(N,P)25-MN-56,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           26056            
+#TARGET         26056           [ ]             26-FE-56        [ ] 
+#REAC1          N,P
+#PRODUCT        25-MN-56
+#C4ReaCode      (N,P),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=9.09%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0153182(3.4e6) Data[9]*1.0153182(8.2e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 26056   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             Point: XS(b)=0.11(9.09%)  EN-NRM(eV):1.43E7
+#M1             Point: XS(b)=0.111685(1.08%)  EN-NRM(eV):1.43E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-56(N,P)25-MN-56,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.11
+#+              a1=recom$fe56np[EN-NRM];      #[0]#new monitor point [14.3MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11715003    1.01532     1.01532     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11715003    CS          10          1.01532     1.01532     1.01532     +1.53%      1.01532     [MONIT]::fe56np
+#C5DATA         10
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26056   3 103   3430000.0 290000.0 2.0306-5 1.3198-4                                       J.Terrell*,          (58)11715  3  2.1711-7                   1.3198-4 1.07                       649.9    649.9   0.11     0.01     0.111685 0.00120271.01531821.0152202
+    1 26056   3 103   3940000.0 280000.0-7.1072-5-0.000142                                       J.Terrell*,          (58)11715  3 -7.5988-7                  -0.000142                                             0.11     0.01     0.111685 0.00120271.0153182
+    1 26056   3 103   4440000.0 240000.0 3.0460-5 1.4212-4                                       J.Terrell*,          (58)11715  3  3.2566-7                   1.4212-4 1.07                       466.6    466.6   0.11     0.01     0.111685 0.00120271.01531821.0151281
+    1 26056   3 103   4560000.0 330000.0 4.0613-4 6.0809-4                                       J.Terrell*,          (58)11715  3  4.3422-6                   6.0809-4 1.07                       149.7    149.7   0.11     0.01     0.111685 0.00120271.01531821.013478
+    1 26056   3 103   4860000.0 160000.0 1.2184-3 1.0153-4                                       J.Terrell*,          (58)11715  3  1.3026-5                   1.0153-4 1.07                       8.33     8.33    0.11     0.01     0.111685 0.00120271.01531821.0153182
+    1 26056   3 103   5240000.0  50000.0 2.6398-3 2.0306-4                                       J.Terrell*,          (58)11715  3  2.8224-5                   2.0306-4 1.07                       7.69     7.69    0.11     0.01     0.111685 0.00120271.01531821.0153182
+    1 26056   3 103   5550000.0 340000.0 5.6858-3 6.2955-4                                       J.Terrell*,          (58)11715  3  6.0790-5                   6.2955-4 1.07                       11.1     11.1    0.11     0.01     0.111685 0.00120271.01531820.7869362
+    1 26056   3 103   6540000.0 310000.0.02030636 8.7376-4                                       J.Terrell*,          (58)11715  3  2.1711-4                   8.7376-4 1.07                       4.30     4.30    0.11     0.01     0.111685 0.00120271.01531820.4368821
+    1 26056   3 103   7410000.0 230000.0.03452082 2.6045-3                                       J.Terrell*,          (58)11715  3  3.6908-4                   2.6045-3 1.07                       7.54     7.54    0.11     0.01     0.111685 0.00120271.01531820.6511278
+    1 26056   3 103   8210000.0  20000.0.03959741 3.6049-3                                       J.Terrell*,          (58)11715  3  4.2336-4                   3.6049-3 1.07                       9.10     9.10    0.11     0.01     0.111685 0.00120271.01531820.7209798
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           3430000.0   8210000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           10          10
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+3430000.    3430000.    2.0306-5    649.94       100
+3940000.    3940000.    -7.1072-5   199.8         0 100
+4440000.    4440000.    3.0460-5    466.58        0  0 100
+4560000.    4560000.    4.0613-4    149.73        0  0  0 100
+4860000.    4860000.    1.2184-3    8.33          0  0  0  0 100
+5240000.    5240000.    2.6398-3    7.69          0  0  0  0  2 100
+5550000.    5550000.    5.6858-3    11.07         0  0  0  0  1  1 100
+6540000.    6540000.    2.0306-2    4.3           0  0  0  0  2  3  2 100
+7410000.    7410000.    3.4521-2    7.54          0  0  0  0  1  1  1  3 100
+8210000.    8210000.    3.9597-2    9.1           0  0  0  0  1  1  1  2  1 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       11715003 
+#DATASET        11715004   20200503
+#SUBENT         11715004   20200503
+#ENTRY          11715      20200503
+#TITLE          Excitation function for Fe56(n,p)Mn56.
+#AUTHORS        J.Terrell,D.M.Holm
+#AUTHOR1        J.Terrell+
+#YEAR           1958
+#X4REF1         J,PR,109,2031,1958
+#REFERENCE1     Jour: Physical Review, Vol.109, p.2031 (1958)
+#DATE           20200503
+#INSTITUTE      1USALAS
+#METHOD         ACTIV
+#REACTION       26-FE-56(N,P)25-MN-56,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           26056            
+#TARGET         26056           [ ]             26-FE-56        [ ] 
+#REAC1          N,P
+#PRODUCT        25-MN-56
+#C4ReaCode      (N,P),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=9.09%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0153182(1.2e7) Data[7]*1.0153182(1.8e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 26056   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             Point: XS(b)=0.11(9.09%)  EN-NRM(eV):1.43E7
+#M1             Point: XS(b)=0.111685(1.08%)  EN-NRM(eV):1.43E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-56(N,P)25-MN-56,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.11
+#+              a1=recom$fe56np[EN-NRM];      #[0]#new monitor point [14.3MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11715004    1.01532     1.01532     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11715004    CS          8           1.01532     1.01532     1.01532     +1.53%      1.01532     [MONIT]::fe56np
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26056   3 103     1.243E7 110000.00.1127003 3.0460-3                                       J.Terrell*,          (58)11715  4  1.2050-3                   3.0460-3 1.07                       2.70     2.70    0.11     0.01     0.111685 0.00120271.01531821.0153182
+    1 26056   3 103     1.335E7 290000.00.1177769 3.0460-3                                       J.Terrell*,          (58)11715  4  1.2592-3                   3.0460-3 1.07                       2.59     2.59    0.11     0.01     0.111685 0.00120271.01531821.0153182
+    1 26056   3 103     1.399E7 390000.00.1157463 2.0306-3                                       J.Terrell*,          (58)11715  4  1.2375-3                   2.0306-3 1.07                       1.75     1.75    0.11     0.01     0.111685 0.00120271.01531821.015318
+    1 26056   3 103     1.471E7 440000.00.1066084 2.0306-3                                       J.Terrell*,          (58)11715  4 .00113982                   2.0306-3 1.07                       1.90     1.90    0.11     0.01     0.111685 0.00120271.01531821.0153182
+    1 26056   3 103     1.548E7 440000.0.09747054 2.0306-3                                       J.Terrell*,          (58)11715  4  1.0421-3                   2.0306-3 1.07                       2.08     2.08    0.11     0.01     0.111685 0.00120271.01531821.0153182
+    1 26056   3 103     1.623E7 410000.0.08528672 2.0306-3                                       J.Terrell*,          (58)11715  4  9.1186-4                   2.0306-3 1.07                       2.38     2.38    0.11     0.01     0.111685 0.00120271.01531821.0153182
+    1 26056   3 103     1.689E7 320000.0.07513355 2.0306-3                                       J.Terrell*,          (58)11715  4  8.0330-4                   2.0306-3 1.07                       2.70     2.70    0.11     0.01     0.111685 0.00120271.01531821.0153182
+    1 26056   3 103     1.789E7  80000.0.06294972 2.0306-3                                       J.Terrell*,          (58)11715  4  6.7303-4                   2.0306-3 1.07                       3.23     3.23    0.11     0.01     0.111685 0.00120271.01531821.0153182
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.243E7     1.789E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           8           8
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.243E7     1.243E7     0.1127      2.7          100
+1.335E7     1.335E7     0.117777    2.59         14 100
+1.399E7     1.399E7     0.115746    1.75         17 22 100
+1.471E7     1.471E7     0.106608    1.9          13 17 30 100
+1.548E7     1.548E7     9.7471-2    2.08         10 13 23 25 100
+1.623E7     1.623E7     8.5287-2    2.38          9  9 16 18 20 100
+1.689E7     1.689E7     7.5134-2    2.7           8  8 12 13 15 16 100
+1.789E7     1.789E7     6.2950-2    3.23          7  7 10  9 10 10 11 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       11715004 
+#/C5M.2.3       1               3               3               0               20              

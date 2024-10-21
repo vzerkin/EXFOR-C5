@@ -1,0 +1,69 @@
+#C5M.2.3
+#DATASET        40982002   20131212
+#SUBENT         40982002   20131212
+#ENTRY          40982      20131212
+#TITLE          Cl-36(n,p)S-36 reaction cross-section measurement
+#+               for thermal neutrons
+#AUTHORS        V.P.Vertebnyy,A.V.Grebnev,V.A.Pshenichnyy,
+#+              Yu.Anzheevskiy,Yu.M.Gledenov,T.S.Zvarova,M.P.Mitrikov,
+#+              Yu.P.Popov,V.I.Salatskiy,Fung-Van-Zuan
+#AUTHOR1        V.P.Vertebnyy+
+#YEAR           1987
+#X4REF1         C,87KIEV,2,293,198709
+#REFERENCE1     Conf: 1.Int.Conf.on Neutron Physics, Kiev,14-18 Sep 1987, Vol.2, p.293 (1987)
+#DATE           20131212
+#INSTITUTE      4ZZZDUB,4UKRIJD
+#REACTION       17-CL-36(N,P)16-S-36,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           17036            
+#TARGET         17036           [ ]             17-CL-36        [ ] 
+#REAC1          N,P
+#PRODUCT        16-S-36
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9978702(2.5e-2)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 17036   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      3-LI-6(N,T)2-HE-4,,SIG
+#M0             Point: XS(b)=940.0  EN-NRM(eV):0.0253
+#M1             Point: XS(b)=937.998(0.51%)  EN-NRM(eV):0.0253
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 17-CL-36(N,P)16-S-36,,SIG
+#+              #[0]#Monitor:  3-LI-6(N,T)2-HE-4,,SIG
+#+              #[0]#En=0.0253
+#+              a0=[MONIT];                   #[0]#old monitor point 940.0
+#+              a1=therm$li6nt[0.0253];       #[0]#new monitor point [2.53E-8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        40982002    0.997870    0.997870    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          40982002    CS          1           0.997870    0.997870    0.997870    -0.213%     1.00213     [MONIT]::li6nt
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                    SpE     dSpE     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 17036   3 103      0.0253         0.3991481      0.1                                       V.P.Vertebnyy*,      (87)40982  2                                  0.1                            25.1     25.1    940.0             937.998  4.76898  0.9978702
+#/C5DATA        0
+#/DATASET       40982002 
+#/C5M.2.3       1               1               1               0               1               

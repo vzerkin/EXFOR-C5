@@ -1,0 +1,678 @@
+#C5M.2.3
+#DATASET        22145002   20210820
+#SUBENT         22145002   20210820
+#ENTRY          22145      20210820
+#TITLE          Stellar krypton cross sections at kT = 25 and 52 keV
+#AUTHORS        F.Kaeppeler,A.A.Naqvi,M.Al-Ohali
+#AUTHOR1        F.Kaeppeler+
+#YEAR           1987
+#X4REF1         J,PR/C,35,936,1987
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.35, p.936 (1987)
+#DATE           20210820
+#INSTITUTE      2GERKFK,3SARDHA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       36-KR-84(N,G)36-KR-85-M,,SIG,,SPA
+#C4Reaction     (N,G),SIG,,SPA
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           36084            
+#TARGET         36084           [ ]             36-KR-84        [ ] 
+#REAC1          N,G
+#PRODUCT        36-KR-85-M
+#C4ReaCode      (N,G),SIG,,SPA
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-2,2.8,7.1)    ADDED AS COMMON:ERR-2,PER-CENT=2.8%
+#CompNotes      ERR-ANALYS:(ERR-3,,2.)        ADDED AS COMMON:ERR-3,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-4,,2.)        ADDED AS COMMON:ERR-4,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-5,3.,6.)      ADDED AS COMMON:ERR-5,PER-CENT=3.0%
+#CompNotes      ERR-ANALYS:(ERR-7,,1.)        ADDED AS COMMON:ERR-7,PER-CENT=0.5%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=2
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.126%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [    1 36084   3 102MS ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 36-KR-84(N,G)36-KR-85-M,,SIG,,SPA
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW)
+#+               #[2]#DECAY-MON  (79-AU-198-G,2.696D,DG,412.,0.955) #Im_old=0.955
+#+                a2=0.9562/0.955;            #[2]#DECAY-MON: correction to new 411.80205 keV gamma-yield per decay Au-198-g Im_new=0.9562
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0012566
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22145002    1.00126     -           -           1.00126
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22145002    CS          2           1.00126     1.00126     1.00126     +0.126%     1.00126                
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                    SpT     dSpT     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 36084   3 102MS   25000.0         .01932425 1.3016-3                                       F.Kaeppeler*,        (87)22145  2  1.2561-3 3.088E-4          1.3016-3 6.50     1.60              6.74     6.74                                        1.00125661.0012566
+    1 36084   3 102MS   52000.0         .01071345 9.0113-4                                       F.Kaeppeler*,        (87)22145  2  9.2136-4 3.852E-4          9.0113-4 8.60     3.60              8.41     8.41                                        1.00125661.0012566
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           25000.0     52000.0     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+25000.      25000.      1.9324-2    6.69         100
+52000.      52000.      1.0713-2    9.32         45 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22145002 
+#DATASET        22145003   20210820
+#SUBENT         22145003   20210820
+#ENTRY          22145      20210820
+#TITLE          Stellar krypton cross sections at kT = 25 and 52 keV
+#AUTHORS        F.Kaeppeler,A.A.Naqvi,M.Al-Ohali
+#AUTHOR1        F.Kaeppeler+
+#YEAR           1987
+#X4REF1         J,PR/C,35,936,1987
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.35, p.936 (1987)
+#DATE           20210820
+#INSTITUTE      2GERKFK,3SARDHA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       36-KR-86(N,G)36-KR-87,,SIG,,SPA
+#C4Reaction     (N,G),SIG,,SPA
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           36086            
+#TARGET         36086           [ ]             36-KR-86        [ ] 
+#REAC1          N,G
+#PRODUCT        36-KR-87
+#C4ReaCode      (N,G),SIG,,SPA
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-2,2.8,7.1)    ADDED AS COMMON:ERR-2,PER-CENT=2.8%
+#CompNotes      ERR-ANALYS:(ERR-3,,2.)        ADDED AS COMMON:ERR-3,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-4,,2.)        ADDED AS COMMON:ERR-4,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-5,3.,6.)      ADDED AS COMMON:ERR-5,PER-CENT=3.0%
+#CompNotes      ERR-ANALYS:(ERR-7,,1.)        ADDED AS COMMON:ERR-7,PER-CENT=0.5%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=2
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.126%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [    1 36086   3 102 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 36-KR-86(N,G)36-KR-87,,SIG,,SPA
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW)
+#+               #[2]#DECAY-MON  (79-AU-198-G,2.696D,DG,412.,0.955) #Im_old=0.955
+#+                a2=0.9562/0.955;            #[2]#DECAY-MON: correction to new 411.80205 keV gamma-yield per decay Au-198-g Im_new=0.9562
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0012566
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22145003    1.00126     -           -           1.00126
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22145003    CS          2           1.00126     1.00126     1.00126     +0.126%     1.00126                
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                    SpT     dSpT     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 36086   3 102 S   25000.0          3.5845-3 3.0038-4                                       F.Kaeppeler*,        (87)22145  3  3.0827-4 8.234E-5          3.0038-4 8.60     2.30              8.38     8.38                                        1.00125661.0012566
+    1 36086   3 102 S   52000.0          3.3041-3 5.0063-4                                       F.Kaeppeler*,        (87)22145  3  3.8659-4 2.871E-4          5.0063-4 11.7     8.69              15.2     15.2                                        1.00125661.0012566
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           25000.0     52000.0     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+25000.      25000.      3.5845-3    8.9          100
+52000.      52000.      3.3041-3    14.57        39 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22145003 
+#DATASET        22145004   20210820
+#SUBENT         22145004   20210820
+#ENTRY          22145      20210820
+#TITLE          Stellar krypton cross sections at kT = 25 and 52 keV
+#AUTHORS        F.Kaeppeler,A.A.Naqvi,M.Al-Ohali
+#AUTHOR1        F.Kaeppeler+
+#YEAR           1987
+#X4REF1         J,PR/C,35,936,1987
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.35, p.936 (1987)
+#DATE           20210820
+#INSTITUTE      2GERKFK,3SARDHA
+#METHOD         ACTIV
+#REACTION       36-KR-84(N,G)36-KR-85-M/T,,SIG/RAT,,SPA
+#C4Reaction     (N,G),SIG/RAT,,SPA
+#ReactionType   CS
+#MF             203
+#MT             102
+#PROJ           1
+#TARG           36084            
+#TARGET         36084           [ ]             36-KR-84        [ ] 
+#REAC1          N,G
+#PRODUCT        36-KR-85-M/T
+#C4ReaCode      (N,G),SIG/RAT,,SPA
+#CompNotes      ERR-ANALYS:(ERR-S,0.4,8.7)    ADDED AS COMMON:ERR-S,PER-CENT=0.4%
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-2,2.8,7.1)    ADDED AS COMMON:ERR-2,PER-CENT=2.8%
+#CompNotes      ERR-ANALYS:(ERR-3,,2.)        ADDED AS COMMON:ERR-3,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-4,,2.)        ADDED AS COMMON:ERR-4,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-5,3.,6.)      ADDED AS COMMON:ERR-5,PER-CENT=3.0%
+#CompNotes      ERR-ANALYS:(ERR-7,,1.)        ADDED AS COMMON:ERR-7,PER-CENT=0.5%
+#Quantity       Cross section ratio
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        3 
+#C4BEGIN        [    1 36084 203 102/  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                    SpT     dSpT     Data    dData                                    
+#Units                       EV       EV   NO-DIM   NO-DIM                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 36084 203 102/    25000.0              0.49     0.06           36085.9                     F.Kaeppeler,         (87)22145  4 .02466604  0.00196              0.06 5.03     0.40              12.2     12.2
+    1 36084 203 102/    52000.0              0.42     0.06           36085.9                     F.Kaeppeler,         (87)22145  4 .02114232  0.00168              0.06 5.03     0.40              14.3     14.3
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           25000.0     52000.0     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(no-dim)Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+25000.      25000.      0.49        5.05         100
+52000.      52000.      0.42        5.05         50 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22145004 
+#DATASET        22145005   20210820
+#SUBENT         22145005   20210820
+#ENTRY          22145      20210820
+#TITLE          Stellar krypton cross sections at kT = 25 and 52 keV
+#AUTHORS        F.Kaeppeler,A.A.Naqvi,M.Al-Ohali
+#AUTHOR1        F.Kaeppeler+
+#YEAR           1987
+#X4REF1         J,PR/C,35,936,1987
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.35, p.936 (1987)
+#DATE           20210820
+#INSTITUTE      2GERKFK,3SARDHA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#DERIVED        3  Derived data in EXFOR
+#REACTION       36-KR-84(N,G)36-KR-85-M,,SIG,,MXW,DERIV
+#C4Reaction     (N,G),SIG,,MXW
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           36084            
+#TARGET         36084           [ ]             36-KR-84        [ ] 
+#REAC1          N,G
+#PRODUCT        36-KR-85-M
+#C4ReaCode      (N,G),SIG,,MXW
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-2,2.8,7.1)    ADDED AS COMMON:ERR-2,PER-CENT=2.8%
+#CompNotes      ERR-ANALYS:(ERR-3,,2.)        ADDED AS COMMON:ERR-3,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-4,,2.)        ADDED AS COMMON:ERR-4,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-5,3.,6.)      ADDED AS COMMON:ERR-5,PER-CENT=3.0%
+#CompNotes      ERR-ANALYS:(ERR-7,,1.)        ADDED AS COMMON:ERR-7,PER-CENT=0.5%
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 36084   3 102MS ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                    SpT     dSpT     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 36084   3 102MS   30000.0            0.0167   0.0012                                       F.Kaeppeler,         (87)22145  5 9.7863E-4                     0.0012 5.86                       7.19     7.19
+#/C5DATA        0
+#/DATASET       22145005 
+#DATASET        22145006   20210820
+#SUBENT         22145006   20210820
+#ENTRY          22145      20210820
+#TITLE          Stellar krypton cross sections at kT = 25 and 52 keV
+#AUTHORS        F.Kaeppeler,A.A.Naqvi,M.Al-Ohali
+#AUTHOR1        F.Kaeppeler+
+#YEAR           1987
+#X4REF1         J,PR/C,35,936,1987
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.35, p.936 (1987)
+#DATE           20210820
+#INSTITUTE      2GERKFK,3SARDHA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#DERIVED        3  Derived data in EXFOR
+#REACTION       36-KR-86(N,G)36-KR-87,,SIG,,MXW,DERIV
+#C4Reaction     (N,G),SIG,,MXW
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           36086            
+#TARGET         36086           [ ]             36-KR-86        [ ] 
+#REAC1          N,G
+#PRODUCT        36-KR-87
+#C4ReaCode      (N,G),SIG,,MXW
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-2,2.8,7.1)    ADDED AS COMMON:ERR-2,PER-CENT=2.8%
+#CompNotes      ERR-ANALYS:(ERR-3,,2.)        ADDED AS COMMON:ERR-3,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-4,,2.)        ADDED AS COMMON:ERR-4,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-5,3.,6.)      ADDED AS COMMON:ERR-5,PER-CENT=3.0%
+#CompNotes      ERR-ANALYS:(ERR-7,,1.)        ADDED AS COMMON:ERR-7,PER-CENT=0.5%
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 36086   3 102 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                    SpT     dSpT     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 36086   3 102 S   30000.0            0.0035   3.0E-4                                       F.Kaeppeler,         (87)22145  6  2.051E-4                     3.0E-4 5.86                       8.57     8.57
+#/C5DATA        0
+#/DATASET       22145006 
+#DATASET        22145007   20210820
+#SUBENT         22145007   20210820
+#ENTRY          22145      20210820
+#TITLE          Stellar krypton cross sections at kT = 25 and 52 keV
+#AUTHORS        F.Kaeppeler,A.A.Naqvi,M.Al-Ohali
+#AUTHOR1        F.Kaeppeler+
+#YEAR           1987
+#X4REF1         J,PR/C,35,936,1987
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.35, p.936 (1987)
+#DATE           20210820
+#INSTITUTE      2GERKFK,3SARDHA
+#METHOD         ACTIV
+#DERIVED        3  Derived data in EXFOR
+#REACTION       36-KR-84(N,G)36-KR-85-M/T,,SIG/RAT,,MXW,DERIV
+#C4Reaction     (N,G),SIG/RAT,,MXW
+#ReactionType   CS
+#MF             203
+#MT             102
+#PROJ           1
+#TARG           36084            
+#TARGET         36084           [ ]             36-KR-84        [ ] 
+#REAC1          N,G
+#PRODUCT        36-KR-85-M/T
+#C4ReaCode      (N,G),SIG/RAT,,MXW
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-2,2.8,7.1)    ADDED AS COMMON:ERR-2,PER-CENT=2.8%
+#CompNotes      ERR-ANALYS:(ERR-3,,2.)        ADDED AS COMMON:ERR-3,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-4,,2.)        ADDED AS COMMON:ERR-4,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-5,3.,6.)      ADDED AS COMMON:ERR-5,PER-CENT=3.0%
+#CompNotes      ERR-ANALYS:(ERR-7,,1.)        ADDED AS COMMON:ERR-7,PER-CENT=0.5%
+#Quantity       Cross section ratio
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        3 
+#C4BEGIN        [    1 36084 203 102/  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                    SpT     dSpT     Data    dData                                    
+#Units                       EV       EV   NO-DIM   NO-DIM                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 36084 203 102/    30000.0              0.48     0.06           36085.9                     F.Kaeppeler,         (87)22145  7 .02416265                       0.06 5.03                       12.5     12.5
+#/C5DATA        0
+#/DATASET       22145007 
+#DATASET        221450082  20210820
+#SUBENT         22145008   20210820
+#ENTRY          22145      20210820
+#TITLE          Stellar krypton cross sections at kT = 25 and 52 keV
+#AUTHORS        F.Kaeppeler,A.A.Naqvi,M.Al-Ohali
+#AUTHOR1        F.Kaeppeler+
+#YEAR           1987
+#X4REF1         J,PR/C,35,936,1987
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.35, p.936 (1987)
+#DATE           20210820
+#INSTITUTE      2GERKFK,3SARDHA
+#METHOD         ACTIV
+#REACTION       36-KR-84(N,G)36-KR-85-M,,SIG,,SPA
+#C4Reaction     (N,G),SIG,,SPA
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           36084            
+#TARGET         36084           [ ]             36-KR-84        [ ] 
+#REAC1          N,G
+#PRODUCT        36-KR-85-M
+#C4ReaCode      (N,G),SIG,,SPA
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-2,2.8,7.1)    ADDED AS COMMON:ERR-2,PER-CENT=2.8%
+#CompNotes      ERR-ANALYS:(ERR-3,,2.)        ADDED AS COMMON:ERR-3,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-4,,2.)        ADDED AS COMMON:ERR-4,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-5,3.,6.)      ADDED AS COMMON:ERR-5,PER-CENT=3.0%
+#CompNotes      ERR-ANALYS:(ERR-7,,1.)        ADDED AS COMMON:ERR-7,PER-CENT=0.5%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=2
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [    1 36084   3 102M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                    SpT     dSpT     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 36084   3 102M    25000.0            0.0212   0.0012                                       F.Kaeppeler,         (87)22145  820.0010893                     0.0012 5.14                       5.66     5.66
+    1 36084   3 102M    52000.0            0.0118   9.1E-4                                       F.Kaeppeler,         (87)22145  826.0678E-4                     9.1E-4 5.14                       7.71     7.71
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           25000.0     52000.0     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+25000.      25000.      0.0212      5.66         100
+52000.      52000.      0.0118      7.71         30 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       221450082
+#DATASET        221450092  20210820
+#SUBENT         22145009   20210820
+#ENTRY          22145      20210820
+#TITLE          Stellar krypton cross sections at kT = 25 and 52 keV
+#AUTHORS        F.Kaeppeler,A.A.Naqvi,M.Al-Ohali
+#AUTHOR1        F.Kaeppeler+
+#YEAR           1987
+#X4REF1         J,PR/C,35,936,1987
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.35, p.936 (1987)
+#DATE           20210820
+#INSTITUTE      2GERKFK,3SARDHA
+#METHOD         ACTIV
+#REACTION       36-KR-84(N,G)36-KR-85-M,,SIG,,SPA
+#C4Reaction     (N,G),SIG,,SPA
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           36084            
+#TARGET         36084           [ ]             36-KR-84        [ ] 
+#REAC1          N,G
+#PRODUCT        36-KR-85-M
+#C4ReaCode      (N,G),SIG,,SPA
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-2,2.8,7.1)    ADDED AS COMMON:ERR-2,PER-CENT=2.8%
+#CompNotes      ERR-ANALYS:(ERR-3,,2.)        ADDED AS COMMON:ERR-3,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-4,,2.)        ADDED AS COMMON:ERR-4,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-5,3.,6.)      ADDED AS COMMON:ERR-5,PER-CENT=3.0%
+#CompNotes      ERR-ANALYS:(ERR-7,,1.)        ADDED AS COMMON:ERR-7,PER-CENT=0.5%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=2
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [    1 36084   3 102M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                    SpT     dSpT     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 36084   3 102M    25000.0           0.00394   3.0E-4                                       F.Kaeppeler,         (87)22145  922.0244E-4                     3.0E-4 5.14                       7.61     7.61
+    1 36084   3 102M    52000.0           0.00363   5.4E-4                                       F.Kaeppeler,         (87)22145  921.8666E-4                     5.4E-4 5.14                       14.9     14.9
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           25000.0     52000.0     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+25000.      25000.      0.00394     7.61         100
+52000.      52000.      0.00363     14.88        12 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       221450092
+#DATASET        22145010   20210820
+#SUBENT         22145010   20210820
+#ENTRY          22145      20210820
+#TITLE          Stellar krypton cross sections at kT = 25 and 52 keV
+#AUTHORS        F.Kaeppeler,A.A.Naqvi,M.Al-Ohali
+#AUTHOR1        F.Kaeppeler+
+#YEAR           1987
+#X4REF1         J,PR/C,35,936,1987
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.35, p.936 (1987)
+#DATE           20210820
+#INSTITUTE      2GERKFK,3SARDHA
+#METHOD         ACTIV
+#DERIVED        3  Derived data in EXFOR
+#REACTION       36-KR-84(N,G)36-KR-85-M,,SIG,,MXW,DERIV
+#C4Reaction     (N,G),SIG,,MXW
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           36084            
+#TARGET         36084           [ ]             36-KR-84        [ ] 
+#REAC1          N,G
+#PRODUCT        36-KR-85-M
+#C4ReaCode      (N,G),SIG,,MXW
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-2,2.8,7.1)    ADDED AS COMMON:ERR-2,PER-CENT=2.8%
+#CompNotes      ERR-ANALYS:(ERR-3,,2.)        ADDED AS COMMON:ERR-3,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-4,,2.)        ADDED AS COMMON:ERR-4,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-5,3.,6.)      ADDED AS COMMON:ERR-5,PER-CENT=3.0%
+#CompNotes      ERR-ANALYS:(ERR-7,,1.)        ADDED AS COMMON:ERR-7,PER-CENT=0.5%
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 36084   3 102MD ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                    SpT     dSpT     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 36084   3 102MD   30000.0            0.0184   0.0012                                       F.Kaeppeler,         (87)22145 10 9.2623E-4                     0.0012 5.03                       6.52     6.52
+#/C5DATA        0
+#/DATASET       22145010 
+#DATASET        22145011   20210820
+#SUBENT         22145011   20210820
+#ENTRY          22145      20210820
+#TITLE          Stellar krypton cross sections at kT = 25 and 52 keV
+#AUTHORS        F.Kaeppeler,A.A.Naqvi,M.Al-Ohali
+#AUTHOR1        F.Kaeppeler+
+#YEAR           1987
+#X4REF1         J,PR/C,35,936,1987
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.35, p.936 (1987)
+#DATE           20210820
+#INSTITUTE      2GERKFK,3SARDHA
+#METHOD         ACTIV
+#DERIVED        3  Derived data in EXFOR
+#REACTION       36-KR-86(N,G)36-KR-87,,SIG,,MXW,DERIV
+#C4Reaction     (N,G),SIG,,MXW
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           36086            
+#TARGET         36086           [ ]             36-KR-86        [ ] 
+#REAC1          N,G
+#PRODUCT        36-KR-87
+#C4ReaCode      (N,G),SIG,,MXW
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-2,2.8,7.1)    ADDED AS COMMON:ERR-2,PER-CENT=2.8%
+#CompNotes      ERR-ANALYS:(ERR-3,,2.)        ADDED AS COMMON:ERR-3,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-4,,2.)        ADDED AS COMMON:ERR-4,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-5,3.,6.)      ADDED AS COMMON:ERR-5,PER-CENT=3.0%
+#CompNotes      ERR-ANALYS:(ERR-7,,1.)        ADDED AS COMMON:ERR-7,PER-CENT=0.5%
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 36086   3 102 D ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                    SpT     dSpT     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 36086   3 102 D   30000.0            0.0035   3.0E-4                                       F.Kaeppeler,         (87)22145 11 1.7619E-4                     3.0E-4 5.03                       8.57     8.57
+#/C5DATA        0
+#/DATASET       22145011 
+#/C5M.2.3       1               10              12              0               15              

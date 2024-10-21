@@ -1,0 +1,86 @@
+#C5.2.3
+#DATASET        32740002   20161108
+#SUBENT         32740002   20161108
+#ENTRY          32740      20161108
+#TITLE          Cross-section measurement for the 206Pb(n,a)203Hg
+#+              reaction induced by neutrons around 14 MeV
+#AUTHORS        Shuqing Yuan, Yueli Song, Fengqun Zhou, Yong Li,
+#+              Mingli Tian, Changlin Lan
+#AUTHOR1        Shuqing Yuan+
+#YEAR           2015
+#X4REF1         J,NIM/B,349,130,2015
+#REFERENCE1     Jour: Nucl. Instrum. Methods in Physics Res., Sect.B, Vol.349, p.130 (2015)
+#DATE           20161108
+#INSTITUTE      3CPRPDU,3CPRLNZ
+#METHOD         ACTIV
+#REACTION       82-PB-206(N,A)80-HG-203,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           82206            
+#TARGET         82206           [ ]             82-PB-206       [ ] 
+#REAC1          N,A
+#PRODUCT        80-HG-203
+#C4ReaCode      (N,A),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.5,7.58)   ADDED AS COMMON:ERR-S,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-2,0.1,0.15)   ADDED AS COMMON:ERR-2,PER-CENT=0.1%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=3
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9921112(1.4e7) Data[2]*1.0012401(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.123%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 82206   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 82-PB-206(N,A)80-HG-203,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (82-PB-206(N,A)80-HG-203,,SIG)
+#+               #[1]#DECAY-DATA (80-HG-203,46.612D,DG,279.1967,0.8146) #Ix_old=0.8146
+#+                a1=0.8146/0.8156;           #[1]#DECAY-DATA: correction to new 279.1952 keV gamma-yield per decay Hg-203 Ix_new=0.8156
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99877393
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32740002    0.996792    0.998016    0.998774    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32740002    CS          3           0.990895    1.00001     0.996792    -0.321%     1.00919     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 82206   3 107      1.35E7 200000.0 9.8099-4 6.3075-5                                       Shuqing Yuan*,       (15)32740  2  2.5216-5  4.95E-6          6.3075-5 2.57     0.50              6.43     6.43    0.4566   0.0137   0.452998 .002680130.99089480.9010773
+    1 82206   3 107      1.44E7 200000.0 1.2293-3 1.0379-4                                       Shuqing Yuan*,       (15)32740  2  3.1472-5  6.15E-6          1.0379-4 2.56     0.50              8.44     8.44    0.4598   0.0138   0.46012  .002526620.999469 0.9435022
+    1 82206   3 107      1.47E7 200000.0 1.3900-3 1.1279-4                                       Shuqing Yuan*,       (15)32740  2  3.5646-5  6.95E-6          1.1279-4 2.56     0.50              8.11     8.11    0.4596   0.0138   0.46017  .002650861.00001250.9399511
+#/C5DATA        0
+#/DATASET       32740002 
+#/C5.2.3        1               1               1               0               3               

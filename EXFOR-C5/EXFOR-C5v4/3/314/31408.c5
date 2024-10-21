@@ -1,0 +1,263 @@
+#C5.2.3
+#DATASET        31408002   20130131
+#SUBENT         31408002   20130131
+#ENTRY          31408      20240216
+#TITLE          Activation cross section of Zn and Zr for 13-18 MeV
+#+              neutrons
+#AUTHORS        Lu Hanlin, Zhao Wenrong, Yu Weixiang
+#AUTHOR1        Lu Hanlin+
+#YEAR           1991
+#X4REF1         J,CNP,13,11,1991
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.13, p.11 (1991)
+#DATE           20130131
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       30-ZN-66(N,2N)30-ZN-65,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           30066            
+#TARGET         30066           [ ]             30-ZN-66        [ ] 
+#REAC1          N,2N
+#PRODUCT        30-ZN-65
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=9
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0033737(1.3e7) Data[8]*1.068584(1.8e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.42%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 30066   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 30-ZN-66(N,2N)30-ZN-65,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (30-ZN-66(N,2N)30-ZN-65,,SIG)
+#+               #[1]#DECAY-DATA (30-ZN-65,244.1D,DG,1116.,.5075) #Ix_old=0.5075
+#+                a1=0.5075/0.5004;           #[1]#DECAY-DATA: correction to new 1115.539 keV gamma-yield per decay Zn-65 Ix_new=0.5004
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0141886
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (41-NB-93(N,2N)41-NB-92-M,,SIG)
+#+               #[2]#DECAY-MON  (41-NB-92-M,10.15D,DG,934.,.990) #Im_old=0.99
+#+                a2=0.9915/0.99;             #[2]#DECAY-MON: correction to new 934.44 keV gamma-yield per decay Nb-92-m Im_new=0.9915
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31408002    1.04036     1.02425     1.01419     1.00152
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31408002    CS          9           1.01804     1.08754     1.04036     +4.04%      1.08754     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         9
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30066   3  16     1.282E7 450000.00.2792477 5.3363-3                                       Lu Hanlin*,          (91)31408  2 .00193525                   5.3363-3 0.69                       1.91     1.91    0.434    0.012    0.43546423.1031-3 1.01915220.5929219
+    1 30066   3  16     1.409E7 120000.00.6001269.01219418                                       Lu Hanlin*,          (91)31408  2  3.2960-3                  .01219418 0.55                       2.03     2.03    0.4574   0.0047   0.45960592.5030-3 1.02062380.9380137
+    1 30066   3  16     1.447E7 170000.00.6293966.01963457                                       Lu Hanlin*,          (91)31408  2  3.4412-3                  .01963457 0.55                       3.12     3.12    0.4589   0.0047   0.460127 2.5515-3 1.01844110.9817284
+    1 30066   3  16     1.458E7 170000.00.7594575.01476138                                       Lu Hanlin*,          (91)31408  2 .00431438                  .01476138 0.57                       1.94     1.94    0.4591   0.0049   0.460146 2.5906-3 1.01803950.9225862
+    1 30066   3  16     1.478E7 350000.0  0.75323.02309183                                       Lu Hanlin*,          (91)31408  2  4.3911-3                  .02309183 0.58                       3.07     3.07    0.4586   0.0056   0.460194 .002693421.01925580.9621595
+    1 30066   3  16      1.48E7 190000.00.7807599.01517878                                       Lu Hanlin*,          (91)31408  2  4.5696-3                  .01517878 0.59                       1.94     1.94    0.4586   0.0056   0.4602   .002704061.01926890.8928693
+    1 30066   3  16     1.686E7 960000.00.8303215.01756473                                       Lu Hanlin*,          (91)31408  2  8.6480-3                  .01756473 1.04                       2.12     2.12    0.415    0.0117   0.43944124.5683-3 1.07554590.6755663
+    1 30066   3  16     1.763E7 210000.00.8624193.01950894                                       Lu Hanlin*,          (91)31408  2 .01016733                  .01950894 1.18                       2.26     2.26    0.3968   0.0105   0.424855 4.9721-3 1.08754010.7503439
+    1 30066   3  16     1.769E7 250000.0 0.890018.01917119                                       Lu Hanlin*,          (91)31408  2 .01049348                  .01917119 1.18                       2.15     2.15    0.3965   0.0115   0.42369364.9994-3 1.08538770.6846853
+#/C5DATA        0
+#/DATASET       31408002 
+#DATASET        31408004   20130131
+#SUBENT         31408004   20130131
+#ENTRY          31408      20240216
+#TITLE          Activation cross section of Zn and Zr for 13-18 MeV
+#+              neutrons
+#AUTHORS        Lu Hanlin, Zhao Wenrong, Yu Weixiang
+#AUTHOR1        Lu Hanlin+
+#YEAR           1991
+#X4REF1         J,CNP,13,11,1991
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.13, p.11 (1991)
+#DATE           20130131
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       30-ZN-70(N,2N)30-ZN-69-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           30070            
+#TARGET         30070           [ ]             30-ZN-70        [ ] 
+#REAC1          N,2N
+#PRODUCT        30-ZN-69-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=5
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0033737(1.3e7) Data[4]*1.070703(1.8e7)
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 30070   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 30-ZN-70(N,2N)30-ZN-69-M,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (41-NB-93(N,2N)41-NB-92-M,,SIG)
+#+               #[2]#DECAY-MON  (41-NB-92-M,10.15D,DG,934.,.990) #Im_old=0.99
+#+                a2=0.9915/0.99;             #[2]#DECAY-MON: correction to new 934.44 keV gamma-yield per decay Nb-92-m Im_new=0.9915
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31408004    1.02957     1.02801     -           1.00152
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31408004    CS          5           1.00380     1.07233     1.02957     +2.96%      1.07233     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30070   3  16M    1.282E7 450000.00.3969331 7.6293-3                                       Lu Hanlin*,          (91)31408  4  2.7508-3                   7.6293-3 0.69                       1.92     1.92    0.434    0.012    0.43546423.1031-3 1.004894 0.5868658
+    1 30070   3  16M    1.409E7 120000.00.5675786.01211166                                       Lu Hanlin*,          (91)31408  4  3.1173-3                  .01211166 0.55                       2.13     2.13    0.4574   0.0047   0.45960592.5030-3 1.006345 0.9316662
+    1 30070   3  16M    1.458E7 170000.00.6735479.01485423                                       Lu Hanlin*,          (91)31408  4  3.8263-3                  .01485423 0.57                       2.21     2.21    0.4591   0.0049   0.460146 2.5906-3 1.00379690.9283896
+    1 30070   3  16M    1.686E7 960000.00.6829613.01657147                                       Lu Hanlin*,          (91)31408  4  7.1132-3                  .01657147 1.04                       2.43     2.43    0.415    0.0117   0.43944124.5683-3 1.06049880.7204986
+    1 30070   3  16M    1.763E7 210000.00.6980838.01679444                                       Lu Hanlin*,          (91)31408  4  8.2299-3                  .01679444 1.18                       2.41     2.41    0.3968   0.0105   0.424855 4.9721-3 1.07232530.7633836
+#/C5DATA        0
+#/DATASET       31408004 
+#DATASET        31408005   20130131
+#SUBENT         31408005   20130131
+#ENTRY          31408      20240216
+#TITLE          Activation cross section of Zn and Zr for 13-18 MeV
+#+              neutrons
+#AUTHORS        Lu Hanlin, Zhao Wenrong, Yu Weixiang
+#AUTHOR1        Lu Hanlin+
+#YEAR           1991
+#X4REF1         J,CNP,13,11,1991
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.13, p.11 (1991)
+#DATE           20130131
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       40-ZR-96(N,2N)40-ZR-95,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           40096            
+#TARGET         40096           [ ]             40-ZR-96        [ ] 
+#REAC1          N,2N
+#PRODUCT        40-ZR-95
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=7
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0033737(1.3e7) Data[6]*1.068584(1.8e7)
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40096   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-96(N,2N)40-ZR-95,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (41-NB-93(N,2N)41-NB-92-M,,SIG)
+#+               #[2]#DECAY-MON  (41-NB-92-M,10.15D,DG,934.,.990) #Im_old=0.99
+#+                a2=0.9915/0.99;             #[2]#DECAY-MON: correction to new 934.44 keV gamma-yield per decay Nb-92-m Im_new=0.9915
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31408005    1.03187     1.03031     -           1.00152
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31408005    CS          7           1.00381     1.07233     1.03187     +3.19%      1.07233     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40096   3  16     1.282E7 450000.0 1.432979.02406806                                       Lu Hanlin*,          (91)31408  5 .00993086                  .02406806 0.69                       1.68     1.68    0.434    0.012    0.43546423.1031-3 1.004894 0.5348459
+    1 40096   3  16     1.409E7 120000.01.5085113.03159018                                       Lu Hanlin*,          (91)31408  5  8.2851-3                  .03159018 0.55                       2.09     2.09    0.4574   0.0047   0.45960592.5030-3 1.006345 0.929123
+    1 40096   3  16      1.46E7 300000.01.5197618.02790759                                       Lu Hanlin*,          (91)31408  5  8.6568-3                  .02790759 0.57                       1.84     1.84    0.4591   0.0049   0.46015  .002597721.00380560.9002449
+    1 40096   3  16      1.48E7 190000.01.6019847.02720696                                       Lu Hanlin*,          (91)31408  5  9.3761-3                  .02720696 0.59                       1.70     1.70    0.4586   0.0056   0.4602   .002704061.00500920.8502176
+    1 40096   3  16     1.686E7 960000.0 1.377588.02608822                                       Lu Hanlin*,          (91)31408  5 .01434799                  .02608822 1.04                       1.89     1.89    0.415    0.0117   0.43944124.5683-3 1.06049880.6211482
+    1 40096   3  16     1.763E7 210000.01.2546208.02456889                                       Lu Hanlin*,          (91)31408  5 .01479111                  .02456889 1.18                       1.96     1.96    0.3968   0.0105   0.424855 4.9721-3 1.07232530.6824693
+    1 40096   3  16     1.769E7 250000.01.3056477.02699282                                       Lu Hanlin*,          (91)31408  5 .01539385                  .02699282 1.18                       2.07     2.07    0.3965   0.0115   0.42369364.9994-3 1.07020310.6583614
+#/C5DATA        0
+#/DATASET       31408005 
+#/C5.2.3        1               3               4               0               21              

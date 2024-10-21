@@ -1,0 +1,1032 @@
+#C5M.2.3
+#DATASET        31421002   20100220
+#SUBENT         31421002   20100220
+#ENTRY          31421      20240216
+#TITLE          Activation cross section for element barium
+#AUTHORS        Lu Hanlin, Zhao Wenrong, Yu Weixiang
+#AUTHOR1        Lu Hanlin+
+#YEAR           1992
+#X4REF1         J,CNP,14,244,1992
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.14, p.244 (1992)
+#DATE           20100220
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       56-BA-130(N,X)55-CS-129,CUM,SIG
+#C4Reaction     (N,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           1
+#TARG           56130            
+#TARGET         56130           [ ]             56-BA-130       [ ] 
+#REAC1          N,X
+#PRODUCT        55-CS-129
+#C4ReaCode      (N,X)CUM,SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=4
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0050181(1.4e7) Data[3]*1.0686426(1.8e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.654%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 56130   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 56-BA-130(N,X)55-CS-129,CUM,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (56-BA-130(N,X)55-CS-129,CUM,SIG)
+#+               #[1]#DECAY-DATA (55-CS-129,32.3HR,DG,372.411,.308) #Ix_old=0.308
+#+                a1=0.308/0.306;             #[1]#DECAY-DATA: correction to new 371.918 keV gamma-yield per decay Cs-129 Ix_new=0.306
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.006536
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (41-NB-93(N,2N)41-NB-92-M,,SIG)
+#+               #[2]#DECAY-MON  (41-NB-92-M,10.15D,DG,934.,.990) #Im_old=0.99
+#+                a2=0.9915/0.99;             #[2]#DECAY-MON: correction to new 934.44 keV gamma-yield per decay Nb-92-m Im_new=0.9915
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31421002    1.04304     1.03470     1.00654     1.00152
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31421002    CS          4           1.01293     1.07726     1.04304     +4.30%      1.07726     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56130   39001     1.421E7 170000.01.5875585.04580438           55129.9                     Lu Hanlin*,          (92)31421  2  8.5295-3                  .04580438 0.54                       2.89     2.89    0.4577   0.0045   0.45999682.4980-3 1.01311960.9745613
+    1 56130   39001     1.482E7 210000.01.8840575.05007477           55129.9                     Lu Hanlin*,          (92)31421  2 .01116788                  .05007477 0.59                       2.66     2.66    0.458    0.006    0.460214 2.7284-3 1.01293410.9273103
+    1 56130   39001     1.695E7 330000.01.9944692.05247648           55129.9                     Lu Hanlin*,          (92)31421  2 .02097616                  .05247648 1.05                       2.63     2.63    0.413    0.011    0.437904 4.6435-3 1.06884730.783231
+    1 56130   39001     1.798E7 210000.01.94875810.0571032           55129.9                     Lu Hanlin*,          (92)31421  2 .02374866                  0.0571032 1.22                       2.93     2.93    0.388    0.015    0.41463334.9998-3 1.077257 0.6718023
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.421E7     1.798E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.421E7     1.421E7     1.58756     2.89         100
+1.482E7     1.482E7     1.88406     2.66          3 100
+1.695E7     1.695E7     1.99447     2.63          4  4 100
+1.798E7     1.798E7     1.94876     2.93          4  5 12 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       31421002 
+#DATASET        31421003   20100220
+#SUBENT         31421003   20100220
+#ENTRY          31421      20240216
+#TITLE          Activation cross section for element barium
+#AUTHORS        Lu Hanlin, Zhao Wenrong, Yu Weixiang
+#AUTHOR1        Lu Hanlin+
+#YEAR           1992
+#X4REF1         J,CNP,14,244,1992
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.14, p.244 (1992)
+#DATE           20100220
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       56-BA-132(N,2N)56-BA-131,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           56132            
+#TARGET         56132           [ ]             56-BA-132       [ ] 
+#REAC1          N,2N
+#PRODUCT        56-BA-131
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=4
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0050181(1.4e7) Data[3]*1.0686426(1.8e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-8.33%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 56132   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 56-BA-132(N,2N)56-BA-131,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (56-BA-132(N,2N)56-BA-131,,SIG)
+#+               #[1]#DECAY-DATA (56-BA-131-G,11.8D,DG,496.,.44) #Ix_old=0.44
+#+                a1=0.44/0.48;               #[1]#DECAY-DATA: correction to new 496.321 keV gamma-yield per decay Ba-131-g Ix_new=0.48
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9166667
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (41-NB-93(N,2N)41-NB-92-M,,SIG)
+#+               #[2]#DECAY-MON  (41-NB-92-M,10.15D,DG,934.,.990) #Im_old=0.99
+#+                a2=0.9915/0.99;             #[2]#DECAY-MON: correction to new 934.44 keV gamma-yield per decay Nb-92-m Im_new=0.9915
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31421003    0.949911    1.03470     0.916667    1.00152
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31421003    CS          4           0.922494    0.981073    0.949911    -5.01%      1.08402     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56132   3  16     1.421E7 170000.0 1.5694490.1452121                                       Lu Hanlin*,          (92)31421  3  8.4322-3                  0.1452121 0.54                       9.25     9.25    0.4577   0.0045   0.45999682.4980-3 0.92266250.9190638
+    1 56132   3  16     1.482E7 210000.01.60329390.1473357                                       Lu Hanlin*,          (92)31421  3  9.5036-3                  0.1473357 0.59                       9.19     9.19    0.458    0.006    0.460214 2.7284-3 0.92249350.9151286
+    1 56132   3  16     1.695E7 330000.0 1.657725  0.15341                                       Lu Hanlin*,          (92)31421  3 .01743456                    0.15341 1.05                       9.25     9.25    0.413    0.011    0.437904 4.6435-3 0.97341450.9411657
+    1 56132   3  16     1.798E7 210000.01.65016540.1532706                                       Lu Hanlin*,          (92)31421  3 .02010988                  0.1532706 1.22                       9.29     9.29    0.388    0.015    0.41463334.9998-3 0.98107330.9123248
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.421E7     1.798E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.421E7     1.421E7     1.56945     9.25         100
+1.482E7     1.482E7     1.60329     9.19          0 100
+1.695E7     1.695E7     1.65772     9.25          0  0 100
+1.798E7     1.798E7     1.65016     9.29          0  0  1 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       31421003 
+#DATASET        31421004   20100220
+#SUBENT         31421004   20100220
+#ENTRY          31421      20240216
+#TITLE          Activation cross section for element barium
+#AUTHORS        Lu Hanlin, Zhao Wenrong, Yu Weixiang
+#AUTHOR1        Lu Hanlin+
+#YEAR           1992
+#X4REF1         J,CNP,14,244,1992
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.14, p.244 (1992)
+#DATE           20100220
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       56-BA-134(N,2N)56-BA-133-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           56134            
+#TARGET         56134           [ ]             56-BA-134       [ ] 
+#REAC1          N,2N
+#PRODUCT        56-BA-133-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=4
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0050181(1.4e7) Data[3]*1.0686426(1.8e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.13%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 56134   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 56-BA-134(N,2N)56-BA-133-M,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (56-BA-134(N,2N)56-BA-133-M,,SIG)
+#+               #[1]#DECAY-DATA (56-BA-133-M,1.621D,DG,276.,.175) #Ix_old=0.175
+#+                a1=0.175/0.177;             #[1]#DECAY-DATA: correction to new 275.925 keV gamma-yield per decay Ba-133-m Ix_new=0.177
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.98870057
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (41-NB-93(N,2N)41-NB-92-M,,SIG)
+#+               #[2]#DECAY-MON  (41-NB-92-M,10.15D,DG,934.,.990) #Im_old=0.99
+#+                a2=0.9915/0.99;             #[2]#DECAY-MON: correction to new 934.44 keV gamma-yield per decay Nb-92-m Im_new=0.9915
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31421004    1.02456     1.03470     0.988701    1.00152
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31421004    CS          4           0.994985    1.05817     1.02456     +2.46%      1.05817     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56134   3  16M    1.421E7 170000.00.7374192.03227959                                       Lu Hanlin*,          (92)31421  4  3.9619-3                  .03227959 0.54                       4.38     4.38    0.4577   0.0045   0.45999682.4980-3 0.99516760.9781694
+    1 56134   3  16M    1.482E7 210000.00.7323093.03170043                                       Lu Hanlin*,          (92)31421  4  4.3408-3                  .03170043 0.59                       4.33     4.33    0.458    0.006    0.460214 2.7284-3 0.99498530.9606192
+    1 56134   3  16M    1.695E7 330000.00.94281730.0424482                                       Lu Hanlin*,          (92)31421  4  9.9158-3                  0.0424482 1.05                       4.50     4.50    0.413    0.011    0.437904 4.6435-3 1.04990780.9227869
+    1 56134   3  16M    1.798E7 210000.00.9206067.04069215                                       Lu Hanlin*,          (92)31421  4 .01121902                  .04069215 1.22                       4.42     4.42    0.388    0.015    0.41463334.9998-3 1.05816840.813843
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.421E7     1.798E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.421E7     1.421E7     0.737419    4.38         100
+1.482E7     1.482E7     0.732309    4.33          1 100
+1.695E7     1.695E7     0.942817    4.5           1  2 100
+1.798E7     1.798E7     0.920607    4.42          2  2  5 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       31421004 
+#DATASET        31421005   20100220
+#SUBENT         31421005   20100220
+#ENTRY          31421      20240216
+#TITLE          Activation cross section for element barium
+#AUTHORS        Lu Hanlin, Zhao Wenrong, Yu Weixiang
+#AUTHOR1        Lu Hanlin+
+#YEAR           1992
+#X4REF1         J,CNP,14,244,1992
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.14, p.244 (1992)
+#DATE           20100220
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       56-BA-134(N,2N)56-BA-133,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           56134            
+#TARGET         56134           [ ]             56-BA-134       [ ] 
+#REAC1          N,2N
+#PRODUCT        56-BA-133
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=6
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0091289(1.4e7) Data[5]*1.0686426(1.8e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.242%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 56134   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 56-BA-134(N,2N)56-BA-133,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (56-BA-134(N,2N)56-BA-133,,SIG)
+#+               #[1]#DECAY-DATA (56-BA-133-G,10.54YR,DG,355.,.622) #Ix_old=0.622
+#+                a1=0.622/0.6205;            #[1]#DECAY-DATA: correction to new 356.0129 keV gamma-yield per decay Ba-133-g Ix_new=0.6205
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0024173
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (41-NB-93(N,2N)41-NB-92-M,,SIG)
+#+               #[2]#DECAY-MON  (41-NB-92-M,10.15D,DG,934.,.990) #Im_old=0.99
+#+                a2=0.9915/0.99;             #[2]#DECAY-MON: correction to new 934.44 keV gamma-yield per decay Nb-92-m Im_new=0.9915
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31421005    1.02935     1.02532     1.00242     1.00152
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31421005    CS          6           1.00647     1.07285     1.02935     +2.94%      1.07285     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56134   3  16      1.35E7 150000.01.6868132.04112362                                       Lu Hanlin*,          (92)31421  5 0.0100514                  .04112362 0.60                       2.44     2.44    0.4489   0.0074   0.452998 .002680131.013101 0.856742
+    1 56134   3  16      1.41E7 150000.01.7409892.04285246                                       Lu Hanlin*,          (92)31421  5  9.5074-3                  .04285246 0.55                       2.46     2.46    0.4567   0.0047   0.459659 .002502551.01044060.9522769
+    1 56134   3  16     1.464E7 210000.01.8186895.03984533                                       Lu Hanlin*,          (92)31421  5 .01037451                  .03984533 0.57                       2.19     2.19    0.459    0.005    0.460158 2.6190-3 1.00646890.9266355
+    1 56134   3  16     1.482E7 210000.01.7754691.04375469                                       Lu Hanlin*,          (92)31421  5 .01052422                  .04375469 0.59                       2.46     2.46    0.458    0.006    0.460214 2.7284-3 1.00878920.9115561
+    1 56134   3  16     1.695E7 330000.01.7020936.04563253                                       Lu Hanlin*,          (92)31421  5 0.0179012                  .04563253 1.05                       2.68     2.68    0.413    0.011    0.437904 4.6435-3 1.06447370.7867678
+    1 56134   3  16     1.798E7 210000.0 1.741234.04882456                                       Lu Hanlin*,          (92)31421  5 .02121966                  .04882456 1.22                       2.80     2.80    0.388    0.015    0.41463334.9998-3 1.07284890.6509941
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.35E7      1.798E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.35E7      1.35E7      1.68681     2.44         100
+1.41E7      1.41E7      1.74099     2.46          5 100
+1.464E7     1.464E7     1.81869     2.19          5  5 100
+1.482E7     1.482E7     1.77547     2.46          4  4  6 100
+1.695E7     1.695E7     1.70209     2.68          5  4  5  5 100
+1.798E7     1.798E7     1.74123     2.8           5  5  6  5 13 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       31421005 
+#DATASET        31421006   20100220
+#SUBENT         31421006   20100220
+#ENTRY          31421      20240216
+#TITLE          Activation cross section for element barium
+#AUTHORS        Lu Hanlin, Zhao Wenrong, Yu Weixiang
+#AUTHOR1        Lu Hanlin+
+#YEAR           1992
+#X4REF1         J,CNP,14,244,1992
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.14, p.244 (1992)
+#DATE           20100220
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       56-BA-0(N,X)55-CS-134,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           56000            
+#TARGET         56000           [ ]             56-BA-0         [ ] 
+#REAC1          N,X
+#PRODUCT        55-CS-134
+#C4ReaCode      (N,X),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=6
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0091289(1.4e7) Data[5]*1.0686426(1.8e7)
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 56000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 56-BA-0(N,X)55-CS-134,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (41-NB-93(N,2N)41-NB-92-M,,SIG)
+#+               #[2]#DECAY-MON  (41-NB-92-M,10.15D,DG,934.,.990) #Im_old=0.99
+#+                a2=0.9915/0.99;             #[2]#DECAY-MON: correction to new 934.44 keV gamma-yield per decay Nb-92-m Im_new=0.9915
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31421006    1.02687     1.02532     -           1.00152
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31421006    CS          6           1.00404     1.07026     1.02687     +2.69%      1.07026     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56000   39000      1.35E7 150000.0 4.5884-4 1.5664-5           55134.9                     Lu Hanlin*,          (92)31421  6  2.7341-6                   1.5664-5 0.60                       3.41     3.41    0.4489   0.0074   0.452998 .002680131.01065790.9213931
+    1 56000   39000      1.41E7 150000.0 5.2618-4 1.6508-5           55134.9                     Lu Hanlin*,          (92)31421  6  2.8734-6                   1.6508-5 0.55                       3.14     3.14    0.4567   0.0047   0.459659 .002502551.008004 0.9710854
+    1 56000   39000     1.464E7 210000.0 6.9379-4 2.3219-5           55134.9                     Lu Hanlin*,          (92)31421  6  3.9577-6                   2.3219-5 0.57                       3.35     3.35    0.459    0.005    0.460158 2.6190-3 1.00404180.9674741
+    1 56000   39000     1.482E7 210000.0 6.4507-4 2.0818-5           55134.9                     Lu Hanlin*,          (92)31421  6  3.8237-6                   2.0818-5 0.59                       3.23     3.23    0.458    0.006    0.460214 2.7284-3 1.00635650.9462661
+    1 56000   39000     1.695E7 330000.0 1.9008-3 5.8040-5           55134.9                     Lu Hanlin*,          (92)31421  6  1.9991-5                   5.8040-5 1.05                       3.05     3.05    0.413    0.011    0.437904 4.6435-3 1.06190670.8291418
+    1 56000   39000     1.798E7 210000.0 1.4449-3 5.2879-5           55134.9                     Lu Hanlin*,          (92)31421  6  1.7608-5                   5.2879-5 1.22                       3.66     3.66    0.388    0.015    0.41463334.9998-3 1.07026170.7554173
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.35E7      1.798E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.35E7      1.35E7      4.5884-4    3.41         100
+1.41E7      1.41E7      5.2618-4    3.14          3 100
+1.464E7     1.464E7     6.9379-4    3.35          2  3 100
+1.482E7     1.482E7     6.4507-4    3.23          2  3  3 100
+1.695E7     1.695E7     1.9008-3    3.05          3  3  3  3 100
+1.798E7     1.798E7     1.4449-3    3.66          3  3  3  3  9 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       31421006 
+#DATASET        31421007   20100220
+#SUBENT         31421007   20100220
+#ENTRY          31421      20240216
+#TITLE          Activation cross section for element barium
+#AUTHORS        Lu Hanlin, Zhao Wenrong, Yu Weixiang
+#AUTHOR1        Lu Hanlin+
+#YEAR           1992
+#X4REF1         J,CNP,14,244,1992
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.14, p.244 (1992)
+#DATE           20100220
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       56-BA-134(N,A)54-XE-131-M,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           56134            
+#TARGET         56134           [ ]             56-BA-134       [ ] 
+#REAC1          N,A
+#PRODUCT        54-XE-131-M
+#C4ReaCode      (N,A),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=2
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0603002(1.7e7) Data[1]*1.0686426(1.8e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.513%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 56134   3 107M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 56-BA-134(N,A)54-XE-131-M,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (56-BA-134(N,A)54-XE-131-M,,SIG)
+#+               #[1]#DECAY-DATA (54-XE-131-M,11.9D,DG,164.,.0196) #Ix_old=0.0196
+#+                a1=0.0196/0.0195;           #[1]#DECAY-DATA: correction to new 163.93 keV gamma-yield per decay Xe-131-m Ix_new=0.0195
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0051281
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (41-NB-93(N,2N)41-NB-92-M,,SIG)
+#+               #[2]#DECAY-MON  (41-NB-92-M,10.15D,DG,934.,.990) #Im_old=0.99
+#+                a2=0.9915/0.99;             #[2]#DECAY-MON: correction to new 934.44 keV gamma-yield per decay Nb-92-m Im_new=0.9915
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31421007    1.07155     1.06447     1.00513     1.00152
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31421007    CS          2           1.06735     1.07575     1.07155     +7.16%      1.07575     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56134   3 107M    1.695E7 330000.0 0.148362 5.2795-3                                       Lu Hanlin*,          (92)31421  7  1.5603-3                   5.2795-3 1.05                       3.56     3.56    0.413    0.011    0.437904 4.6435-3 1.06735240.8799158
+    1 56134   3 107M    1.798E7 210000.00.1064993 5.1340-3                                       Lu Hanlin*,          (92)31421  7 .00129786                   5.1340-3 1.22                       4.82     4.82    0.388    0.015    0.41463334.9998-3 1.07575020.8556688
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.695E7     1.798E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.695E7     1.695E7     0.148362    3.56         100
+1.798E7     1.798E7     0.106499    4.82          4 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       31421007 
+#DATASET        31421008   20100220
+#SUBENT         31421008   20100220
+#ENTRY          31421      20240216
+#TITLE          Activation cross section for element barium
+#AUTHORS        Lu Hanlin, Zhao Wenrong, Yu Weixiang
+#AUTHOR1        Lu Hanlin+
+#YEAR           1992
+#X4REF1         J,CNP,14,244,1992
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.14, p.244 (1992)
+#DATE           20100220
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       56-BA-136(N,2N)56-BA-135-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           56136            
+#TARGET         56136           [ ]             56-BA-136       [ ] 
+#REAC1          N,2N
+#PRODUCT        56-BA-135-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=4
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0050181(1.4e7) Data[3]*1.0686426(1.8e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.50%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 56136   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 56-BA-136(N,2N)56-BA-135-M,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (56-BA-136(N,2N)56-BA-135-M,,SIG)
+#+               #[1]#DECAY-DATA (56-BA-135-M,1.196D,DG,268.,.156) #Ix_old=0.156
+#+                a1=0.156/0.16;              #[1]#DECAY-DATA: correction to new 268.218 keV gamma-yield per decay Ba-135-m Ix_new=0.16
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.975
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (41-NB-93(N,2N)41-NB-92-M,,SIG)
+#+               #[2]#DECAY-MON  (41-NB-92-M,10.15D,DG,934.,.990) #Im_old=0.99
+#+                a2=0.9915/0.99;             #[2]#DECAY-MON: correction to new 934.44 keV gamma-yield per decay Nb-92-m Im_new=0.9915
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31421008    1.01036     1.03470     0.975000    1.00152
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31421008    CS          4           0.981198    1.04351     1.01036     +1.04%      1.04351     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56136   3  16M    1.421E7 170000.00.9401596.02637606                                       Lu Hanlin*,          (92)31421  8  5.0512-3                  .02637606 0.54                       2.81     2.81    0.4577   0.0045   0.45999682.4980-3 0.98137740.9420022
+    1 56136   3  16M    1.482E7 210000.0 0.968442.02503595                                       Lu Hanlin*,          (92)31421  8 .00574051                  .02503595 0.59                       2.59     2.59    0.458    0.006    0.460214 2.7284-3 0.98119760.8941411
+    1 56136   3  16M    1.695E7 330000.01.2693504.03476927                                       Lu Hanlin*,          (92)31421  8 .01334997                  .03476927 1.05                       2.74     2.74    0.413    0.011    0.437904 4.6435-3 1.03535910.7726504
+    1 56136   3  16M    1.798E7 210000.01.2386408.03498547                                       Lu Hanlin*,          (92)31421  8 .01509479                  .03498547 1.22                       2.82     2.82    0.388    0.015    0.41463334.9998-3 1.04350530.6360994
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.421E7     1.798E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.421E7     1.421E7     0.94016     2.81         100
+1.482E7     1.482E7     0.968442    2.59          4 100
+1.695E7     1.695E7     1.26935     2.74          4  4 100
+1.798E7     1.798E7     1.23864     2.82          4  5 12 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       31421008 
+#DATASET        31421009   20100220
+#SUBENT         31421009   20100220
+#ENTRY          31421      20240216
+#TITLE          Activation cross section for element barium
+#AUTHORS        Lu Hanlin, Zhao Wenrong, Yu Weixiang
+#AUTHOR1        Lu Hanlin+
+#YEAR           1992
+#X4REF1         J,CNP,14,244,1992
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.14, p.244 (1992)
+#DATE           20100220
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       56-BA-0(N,X)55-CS-136,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           56000            
+#TARGET         56000           [ ]             56-BA-0         [ ] 
+#REAC1          N,X
+#PRODUCT        55-CS-136
+#C4ReaCode      (N,X),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=4
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0050181(1.4e7) Data[3]*1.0686426(1.8e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+3.85%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 56000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 56-BA-0(N,X)55-CS-136,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (56-BA-0(N,X)55-CS-136,,SIG)
+#+               #[1]#DECAY-DATA (55-CS-136-G,13.16D,DG,340.,.486) #Ix_old=0.486
+#+                a1=0.486/0.468;             #[1]#DECAY-DATA: correction to new 340.547 keV gamma-yield per decay Cs-136-g Ix_new=0.468
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0384616
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (41-NB-93(N,2N)41-NB-92-M,,SIG)
+#+               #[2]#DECAY-MON  (41-NB-92-M,10.15D,DG,934.,.990) #Im_old=0.99
+#+                a2=0.9915/0.99;             #[2]#DECAY-MON: correction to new 934.44 keV gamma-yield per decay Nb-92-m Im_new=0.9915
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31421009    1.07612     1.03470     1.03846     1.00152
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31421009    CS          4           1.04506     1.11143     1.07612     +7.61%      1.11143     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56000   39000     1.421E7 170000.0 4.4841-4 1.9517-5           55136.9                     Lu Hanlin*,          (92)31421  9  2.4092-6                   1.9517-5 0.54                       4.35     4.35    0.4577   0.0045   0.45999682.4980-3 1.045254 1.0272003
+    1 56000   39000     1.482E7 210000.0 5.4552-4 2.2090-5           55136.9                     Lu Hanlin*,          (92)31421  9  3.2336-6                   2.2090-5 0.59                       4.05     4.05    0.458    0.006    0.460214 2.7284-3 1.04506271.004113
+    1 56000   39000     1.695E7 330000.0 1.2351-3 4.6147-5           55136.9                     Lu Hanlin*,          (92)31421  9  1.2990-5                   4.6147-5 1.05                       3.74     3.74    0.413    0.011    0.437904 4.6435-3 1.10274930.9229391
+    1 56000   39000     1.798E7 210000.0 1.6005-3 6.6707-5           55136.9                     Lu Hanlin*,          (92)31421  9  1.9504-5                   6.6707-5 1.22                       4.17     4.17    0.388    0.015    0.41463334.9998-3 1.11142580.8338408
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.421E7     1.798E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.421E7     1.421E7     4.4841-4    4.35         100
+1.482E7     1.482E7     5.4552-4    4.05          2 100
+1.695E7     1.695E7     1.2351-3    3.74          2  2 100
+1.798E7     1.798E7     1.6005-3    4.17          2  2  6 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       31421009 
+#DATASET        31421010   20100220
+#SUBENT         31421010   20100220
+#ENTRY          31421      20240216
+#TITLE          Activation cross section for element barium
+#AUTHORS        Lu Hanlin, Zhao Wenrong, Yu Weixiang
+#AUTHOR1        Lu Hanlin+
+#YEAR           1992
+#X4REF1         J,CNP,14,244,1992
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.14, p.244 (1992)
+#DATE           20100220
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       56-BA-136(N,A)54-XE-133-M,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           56136            
+#TARGET         56136           [ ]             56-BA-136       [ ] 
+#REAC1          N,A
+#PRODUCT        54-XE-133-M
+#C4ReaCode      (N,A),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=3.87%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0686426(1.8e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.78%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 56136   3 107M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             Point: XS(b)=0.388(3.87%)  EN-NRM(eV):1.798E7
+#M1             Point: XS(b)=0.4146333(1.21%)  EN-NRM(eV):1.798E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 56-BA-136(N,A)54-XE-133-M,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              #[0]#En=1.798E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.388
+#+              a1=recom$nb93n2n[EN];         #[0]#new monitor point [17.98MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (56-BA-136(N,A)54-XE-133-M,,SIG)
+#+               #[1]#DECAY-DATA (54-XE-133-M,2.19HR,DG,233.,.103) #Ix_old=0.103
+#+                a1=0.103/0.1012;            #[1]#DECAY-DATA: correction to new 233.221 keV gamma-yield per decay Xe-133-m Ix_new=0.1012
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0177866
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (41-NB-93(N,2N)41-NB-92-M,,SIG)
+#+               #[2]#DECAY-MON  (41-NB-92-M,10.15D,DG,934.,.990) #Im_old=0.99
+#+                a2=0.9915/0.99;             #[2]#DECAY-MON: correction to new 934.44 keV gamma-yield per decay Nb-92-m Im_new=0.9915
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31421010    1.08930     1.06864     1.01779     1.00152
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31421010    CS          1           1.08930     1.08930     1.08930     +8.93%      1.08930     [MONIT]::nb93n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56136   3 107M    1.798E7 210000.0 2.1132-3 7.6424-5                                       Lu Hanlin*,          (92)31421 10  2.5753-5                   7.6424-5 1.22                       3.62     3.62    0.388    0.015    0.41463334.9998-3 1.08929810.7642369
+#/C5DATA        0
+#/DATASET       31421010 
+#DATASET        31421011   20100220
+#SUBENT         31421011   20100220
+#ENTRY          31421      20240216
+#TITLE          Activation cross section for element barium
+#AUTHORS        Lu Hanlin, Zhao Wenrong, Yu Weixiang
+#AUTHOR1        Lu Hanlin+
+#YEAR           1992
+#X4REF1         J,CNP,14,244,1992
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.14, p.244 (1992)
+#DATE           20100220
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       56-BA-138(N,A)54-XE-135,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           56138            
+#TARGET         56138           [ ]             56-BA-138       [ ] 
+#REAC1          N,A
+#PRODUCT        54-XE-135
+#C4ReaCode      (N,A),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=4
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0050181(1.4e7) Data[3]*1.0686426(1.8e7)
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 56138   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 56-BA-138(N,A)54-XE-135,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (41-NB-93(N,2N)41-NB-92-M,,SIG)
+#+               #[2]#DECAY-MON  (41-NB-92-M,10.15D,DG,934.,.990) #Im_old=0.99
+#+                a2=0.9915/0.99;             #[2]#DECAY-MON: correction to new 934.44 keV gamma-yield per decay Nb-92-m Im_new=0.9915
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31421011    1.03627     1.03470     -           1.00152
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31421011    CS          4           1.00636     1.07026     1.03627     +3.63%      1.07026     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56138   3 107     1.421E7 170000.0 2.2848-3 8.8632-5                                       Lu Hanlin*,          (92)31421 11  1.2276-5                   8.8632-5 0.54                       3.88     3.88    0.4577   0.0045   0.45999682.4980-3 1.00654090.9847996
+    1 56138   3 107     1.482E7 210000.0 3.1499-3 1.1502-4                                       Lu Hanlin*,          (92)31421 11  1.8671-5                   1.1502-4 0.59                       3.65     3.65    0.458    0.006    0.460214 2.7284-3 1.00635650.9584991
+    1 56138   3 107     1.695E7 330000.0 4.7467-3 1.9047-4                                       Lu Hanlin*,          (92)31421 11  4.9917-5                   1.9047-4 1.05                       4.01     4.01    0.413    0.011    0.437904 4.6435-3 1.06190670.9070033
+    1 56138   3 107     1.798E7 210000.0 3.8529-3 1.4602-4                                       Lu Hanlin*,          (92)31421 11  4.6954-5                   1.4602-4 1.22                       3.79     3.79    0.388    0.015    0.41463334.9998-3 1.07026170.7685356
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.421E7     1.798E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.421E7     1.421E7     2.2848-3    3.88         100
+1.482E7     1.482E7     3.1499-3    3.65          2 100
+1.695E7     1.695E7     4.7467-3    4.01          2  2 100
+1.798E7     1.798E7     3.8529-3    3.79          2  3  6 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       31421011 
+#/C5M.2.3       1               10              10              0               39              

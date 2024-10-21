@@ -1,0 +1,230 @@
+#C5.2.3
+#DATASET        30737002   20101216
+#SUBENT         30737002   20101216
+#ENTRY          30737      20130716
+#TITLE          Measurement of Nb-93(n,na)Y-89m, Nb-93(n,a)Y-90m and
+#+               Nb-93(n,2n)Nb-92m cross sections for 14 MeV neutrons
+#AUTHORS        Y.S.Kim, N.B.Kim, K.H.Chung, H.I.Bak
+#AUTHOR1        Y.S.Kim+
+#YEAR           1986
+#X4REF1         J,KNS,18,(2),92,198606
+#REFERENCE1     Jour: Journal of the Korean Nuclear Society, Vol.18, Issue.2, p.92 (1986)
+#DATE           20101216
+#INSTITUTE      3KORKOR,3KORNSU
+#METHOD         ACTIV
+#REACTION       41-NB-93(N,N+A)39-Y-89-M,,SIG
+#C4Reaction     (N,N+A),SIG
+#ReactionType   CS
+#MF             3
+#MT             22
+#PROJ           1
+#TARG           41093            
+#TARGET         41093           [ ]             41-NB-93        [ ] 
+#REAC1          N,N+A
+#PRODUCT        39-Y-89-M
+#C4ReaCode      (N,N+A),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=10.67%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9121013(1.5e7)
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-1.64%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 41093   3  22M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,P)12-MG-27,,SIG
+#M0             Point: XS(b)=0.075(10.7%)  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.0684076(1.46%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 41-NB-93(N,N+A)39-Y-89-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,P)12-MG-27,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.075
+#+              a1=recom$al27np[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (13-AL-27(N,P)12-MG-27,,SIG)
+#+               #[2]#DECAY-MON  (12-MG-27,9.462MIN,DG,843.8,0.73) #Im_old=0.73
+#+                a2=0.718/0.73;              #[2]#DECAY-MON: correction to new 843.76 keV gamma-yield per decay Mg-27 Im_new=0.718
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.98356164
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30737002    0.897108    0.912101    -           0.983562
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30737002    CS          1           0.897108    0.897108    0.897108    -10.3%      1.11469     [MONIT]::al27np
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 41093   3  22M     1.46E7 400000.0 2.2159-3 9.0965-5                                       Y.S.Kim*,            (86)30737  2  5.8692-5 6.669E-5          9.0965-5 2.65     3.01              4.11     4.11    0.075    0.008    0.06840769.9711-4 0.89710790.3248745
+#/C5DATA        0
+#/DATASET       30737002 
+#DATASET        30737003   20101216
+#SUBENT         30737003   20101216
+#ENTRY          30737      20130716
+#TITLE          Measurement of Nb-93(n,na)Y-89m, Nb-93(n,a)Y-90m and
+#+               Nb-93(n,2n)Nb-92m cross sections for 14 MeV neutrons
+#AUTHORS        Y.S.Kim, N.B.Kim, K.H.Chung, H.I.Bak
+#AUTHOR1        Y.S.Kim+
+#YEAR           1986
+#X4REF1         J,KNS,18,(2),92,198606
+#REFERENCE1     Jour: Journal of the Korean Nuclear Society, Vol.18, Issue.2, p.92 (1986)
+#DATE           20101216
+#INSTITUTE      3KORKOR,3KORNSU
+#METHOD         ACTIV
+#REACTION       41-NB-93(N,A)39-Y-90-M,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           41093            
+#TARGET         41093           [ ]             41-NB-93        [ ] 
+#REAC1          N,A
+#PRODUCT        39-Y-90-M
+#C4ReaCode      (N,A),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.23%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99811244(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.552%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 41093   3 107M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1142(1.23%)  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 41-NB-93(N,A)39-Y-90-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1142
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (41-NB-93(N,A)39-Y-90-M,,SIG)
+#+               #[1]#DECAY-DATA (39-Y-90-M,3.19HR,DG,479.5,0.91) #Ix_old=0.91
+#+                a1=0.91/0.905;              #[1]#DECAY-DATA: correction to new 479.51 keV gamma-yield per decay Y-90-m Ix_new=0.905
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0055249
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30737003    1.00363     0.998112    1.00552     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30737003    CS          1           1.00363     1.00363     1.00363     +0.363%     1.00363     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 41093   3 107M     1.46E7 400000.0 5.3995-3 3.2010-3                                       Y.S.Kim*,            (86)30737  3  3.8266-4  5.38E-5          3.2010-3 7.09     1                 59.3     59.3    0.1142   0.0014   0.11398444.4691-4 1.003627 1.0034344
+#/C5DATA        0
+#/DATASET       30737003 
+#DATASET        30737004   20101216
+#SUBENT         30737004   20101216
+#ENTRY          30737      20130716
+#TITLE          Measurement of Nb-93(n,na)Y-89m, Nb-93(n,a)Y-90m and
+#+               Nb-93(n,2n)Nb-92m cross sections for 14 MeV neutrons
+#AUTHORS        Y.S.Kim, N.B.Kim, K.H.Chung, H.I.Bak
+#AUTHOR1        Y.S.Kim+
+#YEAR           1986
+#X4REF1         J,KNS,18,(2),92,198606
+#REFERENCE1     Jour: Journal of the Korean Nuclear Society, Vol.18, Issue.2, p.92 (1986)
+#DATE           20101216
+#INSTITUTE      3KORKOR,3KORNSU
+#METHOD         ACTIV
+#REACTION       41-NB-93(N,2N)41-NB-92-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           41093            
+#TARGET         41093           [ ]             41-NB-93        [ ] 
+#REAC1          N,2N
+#PRODUCT        41-NB-92-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.23%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99811244(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 41093   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1142(1.23%)  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1142
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30737004    0.998112    0.998112    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30737004    CS          1           0.998112    0.998112    0.998112    -0.189%     1.00189     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 41093   3  16M     1.46E7 400000.00.4541412 9.6290-3                                       Y.S.Kim*,            (86)30737  4 .00979698  0.00273          9.6290-3 2.16     0.60              2.12     2.12    0.1142   0.0014   0.11398444.4691-4 0.99811240.8753662
+#/C5DATA        0
+#/DATASET       30737004 
+#/C5.2.3        1               3               3               0               3               

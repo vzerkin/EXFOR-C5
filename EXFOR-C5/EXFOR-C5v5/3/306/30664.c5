@@ -1,0 +1,85 @@
+#C5M.2.3
+#DATASET        30664002   20090830
+#SUBENT         30664002   20090830
+#ENTRY          30664      20090830
+#TITLE          Sr-87(n,n')Sr-87m inelastic scattering.
+#AUTHORS        Xie Kuan-Zhong,Chen Xue-Si,Zhou Sheng-Mo
+#AUTHOR1        Xie Kuan-Zhong+
+#YEAR           1983
+#X4REF1         J,PHE,7,(4),462,198307
+#REFERENCE1     Jour: High Energy Physics and Nucl.Physics,Chinese ed., Vol.7, Issue.4, p.462 (1983)
+#DATE           20090830
+#INSTITUTE      3CPRNRS
+#METHOD         ACTIV
+#REACTION       38-SR-87(N,INL)38-SR-87-M,,SIG
+#C4Reaction     (N,INL),SIG
+#ReactionType   CS
+#MF             3
+#MT             4
+#PROJ           1
+#TARG           38087            
+#TARGET         38087           [ ]             38-SR-87        [ ] 
+#REAC1          N,INL
+#PRODUCT        38-SR-87-M
+#C4ReaCode      (N,INL),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+20.9%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 38087   3   4M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 38-SR-87(N,INL)38-SR-87-M,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (38-SR-87(N,INL)38-SR-87-M,,SIG)
+#+               #[1]#DECAY-DATA (38-SR-87-M,2.83HR,DG,388.,0.9935) #Ix_old=0.9935
+#+                a1=0.9935/0.8219;           #[1]#DECAY-DATA: correction to new 388.531 keV gamma-yield per decay Sr-87-m Ix_new=0.8219
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.2087845
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30664002    1.20878     -           1.20878     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30664002    CS          3           1.20878     1.20878     1.20878     +20.9%      1.20878                
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 38087   3   4M   683000.0  35000.0.01547244 1.0879-3                                       Xie Kuan-Zhong*,     (83)30664  2                             1.0879-3                            7.03     7.03                                        1.20878451.2087845
+    1 38087   3   4M   997000.0  30000.0.04182394 2.9011-3                                       Xie Kuan-Zhong*,     (83)30664  2                             2.9011-3                            6.94     6.94                                        1.20878451.2087843
+    1 38087   3   4M  1509000.0  60000.00.2353503.01643947                                       Xie Kuan-Zhong*,     (83)30664  2                            .01643947                            6.99     6.99                                        1.20878451.2087845
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           683000.0    1509000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+683000.     683000.     1.5472-2    7.03         100
+997000.     997000.     4.1824-2    6.94         31 100
+1509000.    1509000.    0.23535     6.99         25 25 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       30664002 
+#/C5M.2.3       1               1               1               0               3               

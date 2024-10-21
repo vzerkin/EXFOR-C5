@@ -1,0 +1,164 @@
+#C5.2.3
+#DATASET        32786002   20220901
+#SUBENT         32786002   20220901
+#ENTRY          32786      20220901
+#TITLE          56,54Fe(n,a)53,51Cr cross sections in the MeV region
+#AUTHORS        Huaiyong Bai, Haoyu Jiang, Yi Lu, Zengqi Cui,
+#+              Jinxiang Chen, Guohui Zhang, Yu.M.Gledenov,
+#+              M.V.Sedysheva, G.Khuukhenkhuu, Xichao Ruan,
+#+              Hanxiong Huang, Jie Ren, Qiwen Fan
+#AUTHOR1        Huaiyong Bai+
+#YEAR           2019
+#X4REF1         J,PR/C,99,024619,2019
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.99, p.024619 (2019)
+#DATE           20220901
+#INSTITUTE      3CPRBJG,4ZZZDUB,3MGLNUM,3CPRAEP
+#REACTION       26-FE-56(N,A)24-CR-53,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           26056            
+#TARGET         26056           [ ]             26-FE-56        [ ] 
+#REAC1          N,A
+#PRODUCT        24-CR-53
+#C4ReaCode      (N,A),SIG
+#CompNotes      ERR-ANALYS:(ERR-3,2.1,11.4,U) ADDED AS COMMON:ERR-3,PER-CENT=2.1%
+#CompNotes      ERR-ANALYS:(ERR-4,0.1,0.4,U)  ADDED AS COMMON:ERR-4,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-5,0.4,2.5)    ADDED AS COMMON:ERR-5,PER-CENT=0.4%
+#CompNotes      ERR-ANALYS:(ERR-6,1.0,1.2)    ADDED AS COMMON:ERR-6,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-7,3.3,4.3)    ADDED AS COMMON:ERR-7,PER-CENT=3.3%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,3.6)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(MONIT-ERR,0.8,1.0) ADDED AS COMMON:MONIT-ERR,PER-CENT=0.8%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0024346(5.5e6) Data[4]*1.0076847(1.1e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 26056   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-238(N,F),,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$u238nf}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-56(N,A)24-CR-53,,SIG
+#+              #[0]#Monitor:  92-U-238(N,F),,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$u238nf;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32786002    1.00665     1.00665     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32786002    CS          5           1.00243     1.00846     1.00665     +0.665%     1.00846     [EN,MONIT,MONIT-ERR]::u238nf
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26056   3 107   5500000.0          1.0225-3 1.3084-4                                       Huaiyong Bai*,       (19)32786  2  3.9963-52.1444E-5          1.3084-4 3.91     2.10              12.8     12.8    0.5463   0.00437040.54763  0.00761811.00243461.0064231
+    1 26056   3 107   7700000.0          9.3344-3 1.0846-3                                       Huaiyong Bai*,       (19)32786  2  3.6720-41.9468E-4          1.0846-3 3.93     2.09              11.6     11.6    0.9876   7.9008-3 0.995532 .014548161.00803151.013661
+    1 26056   3 107   8500000.0         .01508964 8.5410-4                                       Huaiyong Bai*,       (19)32786  2  5.9137-43.1515E-4          8.5410-4 3.92     2.09              5.66     5.66    1.008    0.008064 1.0147   0.01441761.00664691.029035
+    1 26056   3 107   9500000.0         .02195412 1.7349-3                                       Huaiyong Bai*,       (19)32786  2  8.6287-44.5769E-4          1.7349-3 3.93     2.08              7.90     7.90    1.005    0.00804  1.0135   .014712951.00845771.0205194
+    1 26056   3 107      1.05E7         .02364028 2.9576-3                                       Huaiyong Bai*,       (19)32786  2  9.3305-44.9322E-4          2.9576-3 3.95     2.09              12.5     12.5    1.002    0.008016 1.00970010.01510331.00768471.0128667
+#/C5DATA        0
+#/DATASET       32786002 
+#DATASET        32786003   20220901
+#SUBENT         32786003   20220901
+#ENTRY          32786      20220901
+#TITLE          56,54Fe(n,a)53,51Cr cross sections in the MeV region
+#AUTHORS        Huaiyong Bai, Haoyu Jiang, Yi Lu, Zengqi Cui,
+#+              Jinxiang Chen, Guohui Zhang, Yu.M.Gledenov,
+#+              M.V.Sedysheva, G.Khuukhenkhuu, Xichao Ruan,
+#+              Hanxiong Huang, Jie Ren, Qiwen Fan
+#AUTHOR1        Huaiyong Bai+
+#YEAR           2019
+#X4REF1         J,PR/C,99,024619,2019
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.99, p.024619 (2019)
+#DATE           20220901
+#INSTITUTE      3CPRBJG,4ZZZDUB,3MGLNUM,3CPRAEP
+#REACTION       26-FE-54(N,A)24-CR-51,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           26054            
+#TARGET         26054           [ ]             26-FE-54        [ ] 
+#REAC1          N,A
+#PRODUCT        24-CR-51
+#C4ReaCode      (N,A),SIG
+#CompNotes      ERR-ANALYS:(ERR-3,2.1,11.4,U) ADDED AS COMMON:ERR-3,PER-CENT=2.1%
+#CompNotes      ERR-ANALYS:(ERR-4,0.1,0.4,U)  ADDED AS COMMON:ERR-4,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-5,0.4,2.5)    ADDED AS COMMON:ERR-5,PER-CENT=0.4%
+#CompNotes      ERR-ANALYS:(ERR-6,1.0,1.2)    ADDED AS COMMON:ERR-6,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-7,3.3,4.3)    ADDED AS COMMON:ERR-7,PER-CENT=3.3%
+#CompNotes      ERR-ANALYS:(ERR-8,0.2,3.6)    ADDED AS COMMON:ERR-8,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(MONIT-ERR,0.8,1.0) ADDED AS COMMON:MONIT-ERR,PER-CENT=0.8%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0024346(5.5e6) Data[4]*1.0076847(1.1e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 26054   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-238(N,F),,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$u238nf}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-54(N,A)24-CR-51,,SIG
+#+              #[0]#Monitor:  92-U-238(N,F),,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$u238nf;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32786003    1.00665     1.00665     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32786003    CS          5           1.00243     1.00846     1.00665     +0.665%     1.00846     [EN,MONIT,MONIT-ERR]::u238nf
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26054   3 107   5500000.0          3.7692-3 2.4438-4                                       Huaiyong Bai*,       (19)32786  3  1.4732-47.9049E-5          2.4438-4 3.91     2.10              6.48     6.48    0.5463   0.00437040.54763  0.00761811.00243461.0182432
+    1 26054   3 107   7700000.0         .02892042 2.2756-3                                       Huaiyong Bai*,       (19)32786  3  1.1377-36.0317E-4          2.2756-3 3.93     2.09              7.87     7.87    0.9876   7.9008-3 0.995532 .014548161.00803151.0204316
+    1 26054   3 107   8500000.0         .03589703 1.6844-3                                       Huaiyong Bai*,       (19)32786  3  1.4068-37.4971E-4          1.6844-3 3.92     2.09              4.69     4.69    1.008    0.008064 1.0147   0.01441761.00664691.0397316
+    1 26054   3 107   9500000.0         .04165939 2.1280-3                                       Huaiyong Bai*,       (19)32786  3  1.6374-38.6849E-4          2.1280-3 3.93     2.08              5.11     5.11    1.005    0.00804  1.0135   .014712951.00845771.0380689
+    1 26054   3 107      1.05E7         .04410636.00359059                                       Huaiyong Bai*,       (19)32786  3  1.7408-39.2021E-4         .00359059 3.95     2.09              8.14     8.14    1.002    0.008016 1.00970010.01510331.00768471.020054
+#/C5DATA        0
+#/DATASET       32786003 
+#/C5.2.3        1               2               2               0               10              

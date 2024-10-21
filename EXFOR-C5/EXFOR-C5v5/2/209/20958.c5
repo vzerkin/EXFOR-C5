@@ -1,0 +1,1265 @@
+#C5M.2.3
+#DATASET        20958002   20120811
+#SUBENT         20958002   20120811
+#ENTRY          20958      20120811
+#TITLE          Spin assignments in Al-27 from neutron scattering
+#+               studies
+#AUTHORS        J.H.Towle,W.B.Gilboy
+#AUTHOR1        J.H.Towle+
+#YEAR           1962
+#X4REF1         J,NP,39,300,196212
+#REFERENCE1     Jour: Nuclear Physics, Vol.39, p.300 (1962)
+#DATE           20120811
+#INSTITUTE      2UK ALD
+#METHOD         TOF,TRN
+#REACTION       13-AL-27(N,TOT),,SIG
+#C4Reaction     (N,TOT),SIG
+#ReactionType   CS
+#MF             3
+#MT             1
+#PROJ           1
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          N,TOT
+#C4ReaCode      (N,TOT),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9992069(9.8e5) Data[3]*1.006926(4.0e6)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 13027   3   1   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$h1nel}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 13-AL-27(N,TOT),,SIG
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$h1nel;              #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20958002    1.00518     1.00518     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20958002    CS          4           0.999207    1.01437     1.00518     +0.518%     1.01437     [EN,MONIT]::h1nel
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 13027   3   1    980000.0 100000.02.9876287     0.09                                       J.H.Towle*,          (62)20958  2                                 0.09                            3.01     3.01    4.3               4.29659  .015186520.9992069
+    1 13027   3   1   2010000.0  70000.0 3.150688     0.06                                       J.H.Towle*,          (62)20958  2                                 0.06                            1.90     1.90    2.9               2.9006336.010444441.0002184
+    1 13027   3   1   3010000.0  60000.02.6170785     0.05                                       J.H.Towle*,          (62)20958  2                                 0.05                            1.91     1.91    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   3   1   3990000.0  63000.02.3159297     0.05                                       J.H.Towle*,          (62)20958  2                                 0.05                            2.16     2.16    1.89              1.90309  7.4079-3 1.006926
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         1           1.0E-5      2.0E7       0.05        
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+980000.     980000.     2.98763     3.01         100
+2010000.    2010000.    3.15069     1.9          37 100
+3010000.    3010000.    2.61708     1.91         30 43 100
+3990000.    3990000.    2.31593     2.16         25 38 45 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       20958002 
+#DATASET        20958003   20120811
+#SUBENT         20958003   20120811
+#ENTRY          20958      20120811
+#TITLE          Spin assignments in Al-27 from neutron scattering
+#+               studies
+#AUTHORS        J.H.Towle,W.B.Gilboy
+#AUTHOR1        J.H.Towle+
+#YEAR           1962
+#X4REF1         J,NP,39,300,196212
+#REFERENCE1     Jour: Nuclear Physics, Vol.39, p.300 (1962)
+#DATE           20120811
+#INSTITUTE      2UK ALD
+#METHOD         TOF
+#REACTION       13-AL-27(N,SCT)13-AL-27,,SIG
+#C4Reaction     (N,SCT),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          N,SCT
+#PRODUCT        13-AL-27
+#C4ReaCode      (N,SCT),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9992069(9.8e5) Data[3]*1.006926(4.0e6)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 13027   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$h1nel}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 13-AL-27(N,SCT)13-AL-27,,SIG
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$h1nel;              #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20958003    1.00518     1.00518     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20958003    CS          4           0.999207    1.01437     1.00518     +0.518%     1.01437     [EN,MONIT]::h1nel
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 13027   39000    980000.0 100000.02.9176843      0.1           13027.9                     J.H.Towle*,          (62)20958  3                                  0.1                            3.43     3.43    4.3               4.29659  .015186520.9992069
+    1 13027   39000   2010000.0  70000.03.2006989      0.1           13027.9                     J.H.Towle*,          (62)20958  3                                  0.1                            3.12     3.12    2.9               2.9006336.010444441.0002184
+    1 13027   39000   3010000.0  60000.0  2.56636     0.08           13027.9                     J.H.Towle*,          (62)20958  3                                 0.08                            3.12     3.12    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   39000   3990000.0  63000.02.3562067     0.06           13027.9                     J.H.Towle*,          (62)20958  3                                 0.06                            2.55     2.55    1.89              1.90309  7.4079-3 1.006926
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         1           1.0E-5      2.0E7       0.05        
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+980000.     980000.     2.91768     3.43         100
+2010000.    2010000.    3.2007      3.12         37 100
+3010000.    3010000.    2.56636     3.12         30 43 100
+3990000.    3990000.    2.35621     2.55         25 38 45 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       20958003 
+#DATASET        20958004   20120811
+#SUBENT         20958004   20120811
+#ENTRY          20958      20120811
+#TITLE          Spin assignments in Al-27 from neutron scattering
+#+               studies
+#AUTHORS        J.H.Towle,W.B.Gilboy
+#AUTHOR1        J.H.Towle+
+#YEAR           1962
+#X4REF1         J,NP,39,300,196212
+#REFERENCE1     Jour: Nuclear Physics, Vol.39, p.300 (1962)
+#DATE           20120811
+#INSTITUTE      2UK ALD
+#METHOD         TOF
+#REACTION       13-AL-27(N,EL)13-AL-27,,DA
+#C4Reaction     (N,EL),DA
+#ReactionType   DA
+#MF             4
+#MT             2
+#PROJ           1
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          N,EL
+#PRODUCT        13-AL-27
+#C4ReaCode      (N,EL),DA
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9992069(9.8e5) Data[8]*0.9992069(9.8e5)
+#CompNotes      Conversion from C.M. to Lab: successful [20958004 ]
+#CompNotes      Converted Angle C.M. to LAB 1:(138.6 TO 137.1) 9:(31.8 TO 30.7)
+#CompNotes      Converted Data C.M. to LAB 1:(0.119905 to 0.113385 fc:0.9456) 9:(0.409675 to 0.436362 fc:1.065)
+#Quantity       Differential c/s with respect to angle
+#DataUnits0     B/SR
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 13027   4   2   ]
+#DATA-HDR       DATA-CM
+#VarFamily      [0 2 4      ]
+#xVariables     2
+#+              Y = Y(X1,X2)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             Point: XS(b)=4.3  EN-NRM(eV):980000.0
+#M1             Point: XS(b)=4.29659(0.35%)  EN-NRM(eV):980000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 13-AL-27(N,EL)13-AL-27,,DA
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              #[0]#En=980000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 4.3
+#+              a1=recom$h1nel[EN];           #[0]#new monitor point [0.98MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20958004    0.999207    0.999207    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20958004    DA          9           0.999207    0.999207    0.999207    -0.0793%    1.00079     [MONIT]::h1nel
+#C5DATA         9
+#C.M.Flag       0000
+#Headers                     EN      dEN     Data    dData      COS     dCOS                  
+#Units                       EV       EV     B/SR     B/SR   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 13027   4   2    980000.0 100000.00.4363624 8.7342-30.8598523                              J.H.Towle*,          (62)20958  4                             8.7342-3                            2        2       4.3               4.29659  .015186520.9992069
+    1 13027   4   2    980000.0 100000.00.3963523 7.9333-30.7660444                              J.H.Towle*,          (62)20958  4                             7.9333-3                            2        2       4.3               4.29659  .015186520.9992069
+    1 13027   4   2    980000.0 100000.00.3387084 6.7795-30.5750052                              J.H.Towle*,          (62)20958  4                             6.7795-3                            2        2       4.3               4.29659  .015186520.9992069
+    1 13027   4   2    980000.0 100000.00.2661494 5.3272-30.3338069                              J.H.Towle*,          (62)20958  4                             5.3272-3                            2        2       4.3               4.29659  .015186520.9992069
+    1 13027   4   2    980000.0 100000.0  0.21528 4.3090-3.03664371                              J.H.Towle*,          (62)20958  4                             4.3090-3                            2        2       4.3               4.29659  .015186520.9992069
+    1 13027   4   2    980000.0 100000.00.1726082 3.4549-3-0.163326                              J.H.Towle*,          (62)20958  4                             3.4549-3                            2        2       4.3               4.29659  .015186520.9992069
+    1 13027   4   2    980000.0 100000.00.1354559 2.7113-3-.4194521                              J.H.Towle*,          (62)20958  4                             2.7113-3                            2        2       4.3               4.29659  .015186520.9992069
+    1 13027   4   2    980000.0 100000.00.1204845 2.4116-3-.5750052                              J.H.Towle*,          (62)20958  4                             2.4116-3                            2        2       4.3               4.29659  .015186520.9992069
+    1 13027   4   2    980000.0 100000.00.1133854 2.2695-3-.7325429                              J.H.Towle*,          (62)20958  4                             2.2695-3                            2        2       4.3               4.29659  .015186520.9992069
+#/C5DATA        0
+#/DATASET       20958004 
+#DATASET        20958005   20120811
+#SUBENT         20958005   20120811
+#ENTRY          20958      20120811
+#TITLE          Spin assignments in Al-27 from neutron scattering
+#+               studies
+#AUTHORS        J.H.Towle,W.B.Gilboy
+#AUTHOR1        J.H.Towle+
+#YEAR           1962
+#X4REF1         J,NP,39,300,196212
+#REFERENCE1     Jour: Nuclear Physics, Vol.39, p.300 (1962)
+#DATE           20120811
+#INSTITUTE      2UK ALD
+#METHOD         TOF
+#REACTION       13-AL-27(N,EL)13-AL-27,,DA
+#C4Reaction     (N,EL),DA
+#ReactionType   DA
+#MF             4
+#MT             2
+#PROJ           1
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          N,EL
+#PRODUCT        13-AL-27
+#C4ReaCode      (N,EL),DA
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0002184(2.0e6) Data[7]*1.0002184(2.0e6)
+#CompNotes      Conversion from C.M. to Lab: successful [20958005 ]
+#CompNotes      Converted Angle C.M. to LAB 1:(137.7 TO 136.3) 8:(31.8 TO 30.7)
+#CompNotes      Converted Data C.M. to LAB 1:(0.111024 to 0.105072 fc:0.9464) 8:(0.475104 to 0.506054 fc:1.065)
+#Quantity       Differential c/s with respect to angle
+#DataUnits0     B/SR
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 13027   4   2   ]
+#DATA-HDR       DATA-CM
+#VarFamily      [0 2 4      ]
+#xVariables     2
+#+              Y = Y(X1,X2)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             Point: XS(b)=2.9  EN-NRM(eV):2010000.0
+#M1             Point: XS(b)=2.9006336(0.36%)  EN-NRM(eV):2010000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 13-AL-27(N,EL)13-AL-27,,DA
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              #[0]#En=2010000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 2.9
+#+              a1=recom$h1nel[EN];           #[0]#new monitor point [2.01MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20958005    1.00022     1.00022     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20958005    DA          8           1.00022     1.00022     1.00022     +0.0218%    1.00022     [MONIT]::h1nel
+#C5DATA         8
+#C.M.Flag       0000
+#Headers                     EN      dEN     Data    dData      COS     dCOS                  
+#Units                       EV       EV     B/SR     B/SR   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 13027   4   2   2010000.0  70000.00.5060535.010118860.8598523                              J.H.Towle*,          (62)20958  5                            .01011886                            2        2       2.9               2.9006336.010444441.0002184
+    1 13027   4   2   2010000.0  70000.00.4103214 8.2046-30.6896195                              J.H.Towle*,          (62)20958  5                             8.2046-3                            2        2       2.9               2.9006336.010444441.0002184
+    1 13027   4   2   2010000.0  70000.00.2905504 5.8097-30.5030199                              J.H.Towle*,          (62)20958  5                             5.8097-3                            2        2       2.9               2.9006336.010444441.0002184
+    1 13027   4   2   2010000.0  70000.00.2241215 4.4815-30.2554457                              J.H.Towle*,          (62)20958  5                             4.4815-3                            2        2       2.9               2.9006336.010444441.0002184
+    1 13027   4   2   2010000.0  70000.00.1600115 3.1995-3.00698126                              J.H.Towle*,          (62)20958  5                             3.1995-3                            2        2       2.9               2.9006336.010444441.0002184
+    1 13027   4   2   2010000.0  70000.00.1323769 2.6470-3-.2554457                              J.H.Towle*,          (62)20958  5                             2.6470-3                            2        2       2.9               2.9006336.010444441.0002184
+    1 13027   4   2   2010000.0  70000.00.1136622 2.2727-3-.4924236                              J.H.Towle*,          (62)20958  5                             2.2727-3                            2        2       2.9               2.9006336.010444441.0002184
+    1 13027   4   2   2010000.0  70000.00.1050718 2.1010-3-.7229671                              J.H.Towle*,          (62)20958  5                             2.1010-3                            2        2       2.9               2.9006336.010444441.0002184
+#/C5DATA        0
+#/DATASET       20958005 
+#DATASET        20958006   20120811
+#SUBENT         20958006   20120811
+#ENTRY          20958      20120811
+#TITLE          Spin assignments in Al-27 from neutron scattering
+#+               studies
+#AUTHORS        J.H.Towle,W.B.Gilboy
+#AUTHOR1        J.H.Towle+
+#YEAR           1962
+#X4REF1         J,NP,39,300,196212
+#REFERENCE1     Jour: Nuclear Physics, Vol.39, p.300 (1962)
+#DATE           20120811
+#INSTITUTE      2UK ALD
+#METHOD         TOF
+#REACTION       13-AL-27(N,EL)13-AL-27,,DA
+#C4Reaction     (N,EL),DA
+#ReactionType   DA
+#MF             4
+#MT             2
+#PROJ           1
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          N,EL
+#PRODUCT        13-AL-27
+#C4ReaCode      (N,EL),DA
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0143715(3.0e6) Data[10]*1.0143715(3.0e6)
+#CompNotes      Conversion from C.M. to Lab: successful [20958006 ]
+#CompNotes      Converted Angle C.M. to LAB 1:(138.6 TO 137.1) 11:(31.8 TO 30.7)
+#CompNotes      Converted Data C.M. to LAB 1:(9.5351-2 to 9.0167-2 fc:0.9456) 11:(0.395605 to 0.421376 fc:1.065)
+#Quantity       Differential c/s with respect to angle
+#DataUnits0     B/SR
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 13027   4   2   ]
+#DATA-HDR       DATA-CM
+#VarFamily      [0 2 4      ]
+#xVariables     2
+#+              Y = Y(X1,X2)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             Point: XS(b)=2.25  EN-NRM(eV):3010000.0
+#M1             Point: XS(b)=2.282336(0.37%)  EN-NRM(eV):3010000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 13-AL-27(N,EL)13-AL-27,,DA
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              #[0]#En=3010000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 2.25
+#+              a1=recom$h1nel[EN];           #[0]#new monitor point [3.01MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20958006    1.01437     1.01437     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20958006    DA          11          1.01437     1.01437     1.01437     +1.44%      1.01437     [MONIT]::h1nel
+#C5DATA         11
+#C.M.Flag       0000
+#Headers                     EN      dEN     Data    dData      COS     dCOS                  
+#Units                       EV       EV     B/SR     B/SR   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 13027   4   2   3010000.0  60000.00.4213759 8.3081-30.8598523                              J.H.Towle*,          (62)20958  6                             8.3081-3                            1.97     1.97    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4   2   3010000.0  60000.00.3218941 6.3467-30.7660444                              J.H.Towle*,          (62)20958  6                             6.3467-3                            1.97     1.97    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4   2   3010000.0  60000.00.2339969 4.6136-30.6467898                              J.H.Towle*,          (62)20958  6                             4.6136-3                            1.97     1.97    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4   2   3010000.0  60000.00.1704828 3.3613-30.5030199                              J.H.Towle*,          (62)20958  6                             3.3613-3                            1.97     1.97    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4   2   3010000.0  60000.00.1206769 2.3793-3 0.348572                              J.H.Towle*,          (62)20958  6                             2.3793-3                            1.97     1.97    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4   2   3010000.0  60000.0.09456302 1.8645-30.1856666                              J.H.Towle*,          (62)20958  6                             1.8645-3                            1.97     1.97    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4   2   3010000.0  60000.0.07907978 1.5592-3 1.7453-3                              J.H.Towle*,          (62)20958  6                             1.5592-3                            1.97     1.97    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4   2   3010000.0  60000.0.07704164 0.001519-.1736482                              J.H.Towle*,          (62)20958  6                             0.001519                            1.97     1.97    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4   2   3010000.0  60000.0.07409687 1.4609-3-.3420202                              J.H.Towle*,          (62)20958  6                             1.4609-3                            1.97     1.97    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4   2   3010000.0  60000.0.07377612 1.4546-3-.5750052                              J.H.Towle*,          (62)20958  6                             1.4546-3                            1.97     1.97    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4   2   3010000.0  60000.0.09016653 1.7778-3-.7325429                              J.H.Towle*,          (62)20958  6                             1.7778-3                            1.97     1.97    2.25              2.282336 8.5410-3 1.0143715
+#/C5DATA        0
+#/DATASET       20958006 
+#DATASET        20958007   20120811
+#SUBENT         20958007   20120811
+#ENTRY          20958      20120811
+#TITLE          Spin assignments in Al-27 from neutron scattering
+#+               studies
+#AUTHORS        J.H.Towle,W.B.Gilboy
+#AUTHOR1        J.H.Towle+
+#YEAR           1962
+#X4REF1         J,NP,39,300,196212
+#REFERENCE1     Jour: Nuclear Physics, Vol.39, p.300 (1962)
+#DATE           20120811
+#INSTITUTE      2UK ALD
+#METHOD         TOF
+#REACTION       13-AL-27(N,EL)13-AL-27,,DA
+#C4Reaction     (N,EL),DA
+#ReactionType   DA
+#MF             4
+#MT             2
+#PROJ           1
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          N,EL
+#PRODUCT        13-AL-27
+#C4ReaCode      (N,EL),DA
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.006926(4.0e6) Data[10]*1.006926(4.0e6)
+#CompNotes      Conversion from C.M. to Lab: successful [20958007 ]
+#CompNotes      Converted Angle C.M. to LAB 1:(138.6 TO 137.1) 11:(31.8 TO 30.7)
+#CompNotes      Converted Data C.M. to LAB 1:(4.5312-2 to 0.042848 fc:0.9456) 11:(0.377597 to 0.402195 fc:1.065)
+#Quantity       Differential c/s with respect to angle
+#DataUnits0     B/SR
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 13027   4   2   ]
+#DATA-HDR       DATA-CM
+#VarFamily      [0 2 4      ]
+#xVariables     2
+#+              Y = Y(X1,X2)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             Point: XS(b)=1.89  EN-NRM(eV):3990000.0
+#M1             Point: XS(b)=1.90309(0.39%)  EN-NRM(eV):3990000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 13-AL-27(N,EL)13-AL-27,,DA
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              #[0]#En=3990000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 1.89
+#+              a1=recom$h1nel[EN];           #[0]#new monitor point [3.99MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20958007    1.00693     1.00693     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20958007    DA          11          1.00693     1.00693     1.00693     +0.693%     1.00693     [MONIT]::h1nel
+#C5DATA         11
+#C.M.Flag       0000
+#Headers                     EN      dEN     Data    dData      COS     dCOS                  
+#Units                       EV       EV     B/SR     B/SR   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 13027   4   2   3990000.0  63000.00.4021951.023965720.8598523                              J.H.Towle*,          (62)20958  7                            .02396572                            5.96     5.96    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4   2   3990000.0  63000.0 0.244974.014597340.7660444                              J.H.Towle*,          (62)20958  7                            .01459734                            5.96     5.96    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4   2   3990000.0  63000.00.2109398.012569330.6320293                              J.H.Towle*,          (62)20958  7                            .01256933                            5.96     5.96    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4   2   3990000.0  63000.00.1407743 8.3884-30.4786918                              J.H.Towle*,          (62)20958  7                             8.3884-3                            5.96     5.96    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4   2   3990000.0  63000.00.1032308 6.1512-30.3436597                              J.H.Towle*,          (62)20958  7                             6.1512-3                            5.96     5.96    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4   2   3990000.0  63000.0.07321388 4.3626-30.1409012                              J.H.Towle*,          (62)20958  7                             4.3626-3                            5.96     5.96    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4   2   3990000.0  63000.0.05333929 3.1783-3 1.7453-3                              J.H.Towle*,          (62)20958  7                             3.1783-3                            5.96     5.96    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4   2   3990000.0  63000.00.0437339 2.6060-3-0.163326                              J.H.Towle*,          (62)20958  7                             2.6060-3                            5.96     5.96    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4   2   3990000.0  63000.0.03537365.00210782-.3173047                              J.H.Towle*,          (62)20958  7                            .00210782                            5.96     5.96    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4   2   3990000.0  63000.0.03331029 1.9849-3-.5490228                              J.H.Towle*,          (62)20958  7                             1.9849-3                            5.96     5.96    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4   2   3990000.0  63000.0 0.042848 2.5532-3-.7325429                              J.H.Towle*,          (62)20958  7                             2.5532-3                            5.96     5.96    1.89              1.90309  7.4079-3 1.006926
+#/C5DATA        0
+#/DATASET       20958007 
+#DATASET        20958008   20120811
+#SUBENT         20958008   20120811
+#ENTRY          20958      20120811
+#TITLE          Spin assignments in Al-27 from neutron scattering
+#+               studies
+#AUTHORS        J.H.Towle,W.B.Gilboy
+#AUTHOR1        J.H.Towle+
+#YEAR           1962
+#X4REF1         J,NP,39,300,196212
+#REFERENCE1     Jour: Nuclear Physics, Vol.39, p.300 (1962)
+#DATE           20120811
+#INSTITUTE      2UK ALD
+#METHOD         TOF
+#REACTION       13-AL-27(N,INL)13-AL-27,PAR,DA
+#C4Reaction     (N,INL)PAR,DA
+#ReactionType   DAP
+#MF             4
+#MT             51
+#PROJ           1
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          N,INL
+#PRODUCT        13-AL-27
+#C4ReaCode      (N,INL)PAR,DA
+#CompNotes      LVL: SELECT SMALLEST AND LARGEST VALUES
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0002184(2.0e6) Data[7]*1.0002184(2.0e6)
+#CompNotes      Conversion from C.M. to Lab: successful [20958008 ]
+#CompNotes      Converted Angle C.M. to LAB 1:(139.2 TO 137.8) 8:(31.6 TO 30.5)
+#CompNotes      Converted Data C.M. to LAB 1:(2.4605-2 to 2.3254-2 fc:0.9451) 8:(2.5206-2 to 2.6851-2 fc:1.065)
+#Quantity       Partial differential cross section d/dA
+#DataUnits0     B/SR
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 13027   4  51   ]
+#DATA-HDR       DATA-CM
+#VarFamily      [0 234      ]
+#xVariables     3
+#+              Y = Y(X1,X2,X3)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             Point: XS(b)=2.9  EN-NRM(eV):2010000.0
+#M1             Point: XS(b)=2.9006336(0.36%)  EN-NRM(eV):2010000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 13-AL-27(N,INL)13-AL-27,PAR,DA
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              #[0]#En=2010000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 2.9
+#+              a1=recom$h1nel[EN];           #[0]#new monitor point [2.01MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20958008    1.00022     1.00022     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20958008    DAP         8           1.00022     1.00022     1.00022     +0.0218%    1.00022     [MONIT]::h1nel
+#C5DATA         8
+#C.M.Flag       0000
+#Headers                     EN      dEN     Data    dData      COS     dCOS      LVL     dLVL
+#Units                       EV       EV     B/SR     B/SR   NO-DIM   NO-DIM       EV       EV
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 13027   4  51   2010000.0  70000.0.02685118.001065290.8616292          842000.01013000.0LVLJ.H.Towle*,          (62)20958  8                            .00106529                            3.97     3.97    2.9               2.9006336.010444441.0002184
+    1 13027   4  51   2010000.0  70000.0.02642455 1.0525-30.6984153          842000.01013000.0LVLJ.H.Towle*,          (62)20958  8                             1.0525-3                            3.98     3.98    2.9               2.9006336.010444441.0002184
+    1 13027   4  51   2010000.0  70000.0.02549775 9.3264-40.4878597          842000.01013000.0LVLJ.H.Towle*,          (62)20958  8                             9.3264-4                            3.66     3.66    2.9               2.9006336.010444441.0002184
+    1 13027   4  51   2010000.0  70000.0.02279962 1.0176-3 0.243615          842000.01013000.0LVLJ.H.Towle*,          (62)20958  8                             1.0176-3                            4.46     4.46    2.9               2.9006336.010444441.0002184
+    1 13027   4  51   2010000.0  70000.0.02365913 8.9825-4-1.7452-2          842000.01013000.0LVLJ.H.Towle*,          (62)20958  8                             8.9825-4                            3.80     3.80    2.9               2.9006336.010444441.0002184
+    1 13027   4  51   2010000.0  70000.0.02398895 9.7893-4-.2739592          842000.01013000.0LVLJ.H.Towle*,          (62)20958  8                             9.7893-4                            4.08     4.08    2.9               2.9006336.010444441.0002184
+    1 13027   4  51   2010000.0  70000.0.02413939 9.6152-4-.5120429          842000.01013000.0LVLJ.H.Towle*,          (62)20958  8                             9.6152-4                            3.98     3.98    2.9               2.9006336.010444441.0002184
+    1 13027   4  51   2010000.0  70000.0.02325447 8.5059-4-.7408046          842000.01013000.0LVLJ.H.Towle*,          (62)20958  8                             8.5059-4                            3.66     3.66    2.9               2.9006336.010444441.0002184
+#/C5DATA        0
+#/DATASET       20958008 
+#DATASET        20958009   20120811
+#SUBENT         20958009   20120811
+#ENTRY          20958      20120811
+#TITLE          Spin assignments in Al-27 from neutron scattering
+#+               studies
+#AUTHORS        J.H.Towle,W.B.Gilboy
+#AUTHOR1        J.H.Towle+
+#YEAR           1962
+#X4REF1         J,NP,39,300,196212
+#REFERENCE1     Jour: Nuclear Physics, Vol.39, p.300 (1962)
+#DATE           20120811
+#INSTITUTE      2UK ALD
+#METHOD         TOF
+#REACTION       13-AL-27(N,INL)13-AL-27,PAR,DA
+#C4Reaction     (N,INL)PAR,DA
+#ReactionType   DAP
+#MF             4
+#MT             51
+#PROJ           1
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          N,INL
+#PRODUCT        13-AL-27
+#C4ReaCode      (N,INL)PAR,DA
+#CompNotes      LVL: SELECT SMALLEST AND LARGEST VALUES
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0143715(3.0e6) Data[10]*1.0143715(3.0e6)
+#CompNotes      Conversion from C.M. to Lab: successful [20958009 ]
+#CompNotes      Converted Angle C.M. to LAB 1:(138. TO 136.5) 11:(32.3 TO 31.2)
+#CompNotes      Converted Data C.M. to LAB 1:(0.020896 to 0.019771 fc:0.9462) 11:(3.1040-2 to 3.3050-2 fc:1.065)
+#Quantity       Partial differential cross section d/dA
+#DataUnits0     B/SR
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 13027   4  51   ]
+#DATA-HDR       DATA-CM
+#VarFamily      [0 234      ]
+#xVariables     3
+#+              Y = Y(X1,X2,X3)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             Point: XS(b)=2.25  EN-NRM(eV):3010000.0
+#M1             Point: XS(b)=2.282336(0.37%)  EN-NRM(eV):3010000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 13-AL-27(N,INL)13-AL-27,PAR,DA
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              #[0]#En=3010000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 2.25
+#+              a1=recom$h1nel[EN];           #[0]#new monitor point [3.01MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20958009    1.01437     1.01437     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20958009    DAP         11          1.01437     1.01437     1.01437     +1.44%      1.01437     [MONIT]::h1nel
+#C5DATA         11
+#C.M.Flag       0000
+#Headers                     EN      dEN     Data    dData      COS     dCOS      LVL     dLVL
+#Units                       EV       EV     B/SR     B/SR   NO-DIM   NO-DIM       EV       EV
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 13027   4  51   3010000.0  60000.0.03305038 7.4534-40.8553643          842000.01013000.0LVLJ.H.Towle*,          (62)20958  9                             7.4534-4                            2.26     2.26    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  51   3010000.0  60000.00.0268189 6.3453-40.7626683          842000.01013000.0LVLJ.H.Towle*,          (62)20958  9                             6.3453-4                            2.37     2.37    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  51   3010000.0  60000.0.02784726 6.2869-4 0.637424          842000.01013000.0LVLJ.H.Towle*,          (62)20958  9                             6.2869-4                            2.26     2.26    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  51   3010000.0  60000.0.02364603 6.2163-40.4848096          842000.01013000.0LVLJ.H.Towle*,          (62)20958  9                             6.2163-4                            2.63     2.63    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  51   3010000.0  60000.0.02483837 6.1472-40.3338069          842000.01013000.0LVLJ.H.Towle*,          (62)20958  9                             6.1472-4                            2.47     2.47    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  51   3010000.0  60000.00.0226789 6.0699-40.1650476          842000.01013000.0LVLJ.H.Towle*,          (62)20958  9                             6.0699-4                            2.68     2.68    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  51   3010000.0  60000.0.02269139 5.9919-4-8.7265-3          842000.01013000.0LVLJ.H.Towle*,          (62)20958  9                             5.9919-4                            2.64     2.64    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  51   3010000.0  60000.0.02069701 5.9141-4-.1822355          842000.01013000.0LVLJ.H.Towle*,          (62)20958  9                             5.9141-4                            2.86     2.86    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  51   3010000.0  60000.0.02290646 5.8402-4-.3502074          842000.01013000.0LVLJ.H.Towle*,          (62)20958  9                             5.8402-4                            2.55     2.55    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  51   3010000.0  60000.0.02299923 5.7401-4-.5792812          842000.01013000.0LVLJ.H.Towle*,          (62)20958  9                             5.7401-4                            2.50     2.50    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  51   3010000.0  60000.0.01977099 5.6770-4-.7253744          842000.01013000.0LVLJ.H.Towle*,          (62)20958  9                             5.6770-4                            2.87     2.87    2.25              2.282336 8.5410-3 1.0143715
+#/C5DATA        0
+#/DATASET       20958009 
+#DATASET        20958010   20120811
+#SUBENT         20958010   20120811
+#ENTRY          20958      20120811
+#TITLE          Spin assignments in Al-27 from neutron scattering
+#+               studies
+#AUTHORS        J.H.Towle,W.B.Gilboy
+#AUTHOR1        J.H.Towle+
+#YEAR           1962
+#X4REF1         J,NP,39,300,196212
+#REFERENCE1     Jour: Nuclear Physics, Vol.39, p.300 (1962)
+#DATE           20120811
+#INSTITUTE      2UK ALD
+#METHOD         TOF
+#REACTION       13-AL-27(N,INL)13-AL-27,PAR,DA
+#C4Reaction     (N,INL)PAR,DA
+#ReactionType   DAP
+#MF             4
+#MT             51
+#PROJ           1
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          N,INL
+#PRODUCT        13-AL-27
+#C4ReaCode      (N,INL)PAR,DA
+#CompNotes      RESET MT51 to MT53: ZAP=13027 iLvl=3   eLvl=2212000.0 eV
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0143715(3.0e6) Data[10]*1.0143715(3.0e6)
+#CompNotes      Conversion from C.M. to Lab: successful [20958010 ]
+#CompNotes      Converted Angle C.M. to LAB 1:(139.5 TO 138.) 11:(32.2 TO 31.1)
+#CompNotes      Converted Data C.M. to LAB 1:(0.01694 to 1.6006-2 fc:0.9449) 11:(1.4201-2 to 1.5122-2 fc:1.065)
+#Quantity       Partial differential cross section d/dA
+#DataUnits0     B/SR
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 13027   4  51   ]
+#DATA-HDR       DATA-CM
+#VarFamily      [0 234      ]
+#xVariables     3
+#+              Y = Y(X1,X2,X3)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             Point: XS(b)=2.25  EN-NRM(eV):3010000.0
+#M1             Point: XS(b)=2.282336(0.37%)  EN-NRM(eV):3010000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 13-AL-27(N,INL)13-AL-27,PAR,DA
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              #[0]#En=3010000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 2.25
+#+              a1=recom$h1nel[EN];           #[0]#new monitor point [3.01MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20958010    1.01437     1.01437     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20958010    DAP         11          1.01437     1.01437     1.01437     +1.44%      1.01437     [MONIT]::h1nel
+#C5DATA         11
+#C.M.Flag       0000
+#Headers                     EN      dEN     Data    dData      COS     dCOS      LVL     dLVL
+#Units                       EV       EV     B/SR     B/SR   NO-DIM   NO-DIM       EV       EV
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 13027   4  53   3010000.0  60000.0.01512213 5.3242-40.8562671         2210000.0         LVLJ.H.Towle*,          (62)20958 10                             5.3242-4                            3.52     3.52    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  53   3010000.0  60000.0.01425373 5.2826-4 0.750111         2210000.0         LVLJ.H.Towle*,          (62)20958 10                             5.2826-4                            3.71     3.71    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  53   3010000.0  60000.0.01517978 5.2324-40.6197791         2210000.0         LVLJ.H.Towle*,          (62)20958 10                             5.2324-4                            3.45     3.45    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  53   3010000.0  60000.0.01459231 5.1747-40.4710119         2210000.0         LVLJ.H.Towle*,          (62)20958 10                             5.1747-4                            3.55     3.55    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  53   3010000.0  60000.0.01680306 5.1127-40.3073566         2210000.0         LVLJ.H.Towle*,          (62)20958 10                             5.1127-4                            3.04     3.04    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  53   3010000.0  60000.0.01699966 5.0478-40.1374445         2210000.0         LVLJ.H.Towle*,          (62)20958 10                             5.0478-4                            2.97     2.97    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  53   3010000.0  60000.0.01606941 3.9853-4-4.0132-2         2210000.0         LVLJ.H.Towle*,          (62)20958 10                             3.9853-4                            2.48     2.48    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  53   3010000.0  60000.0.01636265 4.9179-4-.2113248         2210000.0         LVLJ.H.Towle*,          (62)20958 10                             4.9179-4                            3.01     3.01    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  53   3010000.0  60000.0.01773649 4.8570-4-.3778408         2210000.0         LVLJ.H.Towle*,          (62)20958 10                             4.8570-4                            2.74     2.74    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  53   3010000.0  60000.0.01579303 4.7759-4-.6004202         2210000.0         LVLJ.H.Towle*,          (62)20958 10                             4.7759-4                            3.02     3.02    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   4  53   3010000.0  60000.00.0160061 4.7244-4-.7431448         2210000.0         LVLJ.H.Towle*,          (62)20958 10                             4.7244-4                            2.95     2.95    2.25              2.282336 8.5410-3 1.0143715
+#/C5DATA        0
+#/DATASET       20958010 
+#DATASET        20958011   20120811
+#SUBENT         20958011   20120811
+#ENTRY          20958      20120811
+#TITLE          Spin assignments in Al-27 from neutron scattering
+#+               studies
+#AUTHORS        J.H.Towle,W.B.Gilboy
+#AUTHOR1        J.H.Towle+
+#YEAR           1962
+#X4REF1         J,NP,39,300,196212
+#REFERENCE1     Jour: Nuclear Physics, Vol.39, p.300 (1962)
+#DATE           20120811
+#INSTITUTE      2UK ALD
+#METHOD         TOF
+#REACTION       13-AL-27(N,INL)13-AL-27,PAR,DA
+#C4Reaction     (N,INL)PAR,DA
+#ReactionType   DAP
+#MF             4
+#MT             51
+#PROJ           1
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          N,INL
+#PRODUCT        13-AL-27
+#C4ReaCode      (N,INL)PAR,DA
+#CompNotes      LVL: SELECT SMALLEST AND LARGEST VALUES
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.006926(4.0e6) Data[4]*1.006926(4.0e6)
+#CompNotes      Conversion from C.M. to Lab: successful [20958011 ]
+#CompNotes      Converted Angle C.M. to LAB 1:(138.2 TO 136.7) 5:(92.3 TO 90.2)
+#CompNotes      Converted Data C.M. to LAB 1:(1.7118-2 to 1.6194-2 fc:0.946) 5:(1.8527-2 to 1.8509-2 fc:0.999)
+#Quantity       Partial differential cross section d/dA
+#DataUnits0     B/SR
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 13027   4  51   ]
+#DATA-HDR       DATA-CM
+#VarFamily      [0 234      ]
+#xVariables     3
+#+              Y = Y(X1,X2,X3)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             Point: XS(b)=1.89  EN-NRM(eV):3990000.0
+#M1             Point: XS(b)=1.90309(0.39%)  EN-NRM(eV):3990000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 13-AL-27(N,INL)13-AL-27,PAR,DA
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              #[0]#En=3990000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 1.89
+#+              a1=recom$h1nel[EN];           #[0]#new monitor point [3.99MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20958011    1.00693     1.00693     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20958011    DAP         5           1.00693     1.00693     1.00693     +0.693%     1.00693     [MONIT]::h1nel
+#C5DATA         5
+#C.M.Flag       0000
+#Headers                     EN      dEN     Data    dData      COS     dCOS      LVL     dLVL
+#Units                       EV       EV     B/SR     B/SR   NO-DIM   NO-DIM       EV       EV
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 13027   4  51   3990000.0  63000.0.01850947 8.9913-4-3.4907-3          842000.01013000.0LVLJ.H.Towle*,          (62)20958 11                             8.9913-4                            4.86     4.86    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  51   3990000.0  63000.0.01747494 1.1833-3-.1770847          842000.01013000.0LVLJ.H.Towle*,          (62)20958 11                             1.1833-3                            6.77     6.77    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  51   3990000.0  63000.00.0173518 1.1683-3-.3469357          842000.01013000.0LVLJ.H.Towle*,          (62)20958 11                             1.1683-3                            6.73     6.73    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  51   3990000.0  63000.0.01512633 8.6115-4-.5778576          842000.01013000.0LVLJ.H.Towle*,          (62)20958 11                             8.6115-4                            5.69     5.69    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  51   3990000.0  63000.0.01619351 9.4601-4-.7277728          842000.01013000.0LVLJ.H.Towle*,          (62)20958 11                             9.4601-4                            5.84     5.84    1.89              1.90309  7.4079-3 1.006926
+#/C5DATA        0
+#/DATASET       20958011 
+#DATASET        20958012   20120811
+#SUBENT         20958012   20120811
+#ENTRY          20958      20120811
+#TITLE          Spin assignments in Al-27 from neutron scattering
+#+               studies
+#AUTHORS        J.H.Towle,W.B.Gilboy
+#AUTHOR1        J.H.Towle+
+#YEAR           1962
+#X4REF1         J,NP,39,300,196212
+#REFERENCE1     Jour: Nuclear Physics, Vol.39, p.300 (1962)
+#DATE           20120811
+#INSTITUTE      2UK ALD
+#METHOD         TOF
+#REACTION       13-AL-27(N,INL)13-AL-27,PAR,DA
+#C4Reaction     (N,INL)PAR,DA
+#ReactionType   DAP
+#MF             4
+#MT             51
+#PROJ           1
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          N,INL
+#PRODUCT        13-AL-27
+#C4ReaCode      (N,INL)PAR,DA
+#CompNotes      RESET MT51 to MT53: ZAP=13027 iLvl=3   eLvl=2212000.0 eV
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.006926(4.0e6) Data[10]*1.006926(4.0e6)
+#CompNotes      Conversion from C.M. to Lab: successful [20958012 ]
+#CompNotes      Converted Angle C.M. to LAB 1:(138.9 TO 137.4) 11:(31.7 TO 30.6)
+#CompNotes      Converted Data C.M. to LAB 1:(1.5909-2 to 1.5041-2 fc:0.9454) 11:(1.6212-2 to 1.7269-2 fc:1.065)
+#Quantity       Partial differential cross section d/dA
+#DataUnits0     B/SR
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 13027   4  51   ]
+#DATA-HDR       DATA-CM
+#VarFamily      [0 234      ]
+#xVariables     3
+#+              Y = Y(X1,X2,X3)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             Point: XS(b)=1.89  EN-NRM(eV):3990000.0
+#M1             Point: XS(b)=1.90309(0.39%)  EN-NRM(eV):3990000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 13-AL-27(N,INL)13-AL-27,PAR,DA
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              #[0]#En=3990000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 1.89
+#+              a1=recom$h1nel[EN];           #[0]#new monitor point [3.99MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20958012    1.00693     1.00693     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20958012    DAP         11          1.00693     1.00693     1.00693     +0.693%     1.00693     [MONIT]::h1nel
+#C5DATA         11
+#C.M.Flag       0000
+#Headers                     EN      dEN     Data    dData      COS     dCOS      LVL     dLVL
+#Units                       EV       EV     B/SR     B/SR   NO-DIM   NO-DIM       EV       EV
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 13027   4  53   3990000.0  63000.0.01726877 1.5978-3 0.860742         2210000.0         LVLJ.H.Towle*,          (62)20958 12                             1.5978-3                            9.25     9.25    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  53   3990000.0  63000.0.01969207 1.5857-30.7569951         2210000.0         LVLJ.H.Towle*,          (62)20958 12                             1.5857-3                            8.05     8.05    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  53   3990000.0  63000.0.01592483.001047370.6320293         2210000.0         LVLJ.H.Towle*,          (62)20958 12                            .00104737                            6.58     6.58    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  53   3990000.0  63000.0.01648406 1.0361-30.4863354         2210000.0         LVLJ.H.Towle*,          (62)20958 12                             1.0361-3                            6.29     6.29    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  53   3990000.0  63000.0.01422519.001023720.3239174         2210000.0         LVLJ.H.Towle*,          (62)20958 12                            .00102372                            7.20     7.20    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  53   3990000.0  63000.0.01598239 1.1121-30.1564345         2210000.0         LVLJ.H.Towle*,          (62)20958 12                             1.1121-3                            6.96     6.96    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  53   3990000.0  63000.00.0157733 9.9776-4-2.0942-2         2210000.0         LVLJ.H.Towle*,          (62)20958 12                             9.9776-4                            6.33     6.33    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  53   3990000.0  63000.0.01398489 9.8501-4-0.192522         2210000.0         LVLJ.H.Towle*,          (62)20958 12                             9.8501-4                            7.04     7.04    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  53   3990000.0  63000.0.01371078 9.7261-4-.3599968         2210000.0         LVLJ.H.Towle*,          (62)20958 12                             9.7261-4                            7.09     7.09    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  53   3990000.0  63000.0.01434535 8.6054-4-.5863724         2210000.0         LVLJ.H.Towle*,          (62)20958 12                             8.6054-4                            6        6       1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  53   3990000.0  63000.0.01504079 9.4540-4-.7360971         2210000.0         LVLJ.H.Towle*,          (62)20958 12                             9.4540-4                            6.29     6.29    1.89              1.90309  7.4079-3 1.006926
+#/C5DATA        0
+#/DATASET       20958012 
+#DATASET        20958013   20120811
+#SUBENT         20958013   20120811
+#ENTRY          20958      20120811
+#TITLE          Spin assignments in Al-27 from neutron scattering
+#+               studies
+#AUTHORS        J.H.Towle,W.B.Gilboy
+#AUTHOR1        J.H.Towle+
+#YEAR           1962
+#X4REF1         J,NP,39,300,196212
+#REFERENCE1     Jour: Nuclear Physics, Vol.39, p.300 (1962)
+#DATE           20120811
+#INSTITUTE      2UK ALD
+#METHOD         TOF
+#REACTION       13-AL-27(N,INL)13-AL-27,PAR,DA
+#C4Reaction     (N,INL)PAR,DA
+#ReactionType   DAP
+#MF             4
+#MT             51
+#PROJ           1
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          N,INL
+#PRODUCT        13-AL-27
+#C4ReaCode      (N,INL)PAR,DA
+#CompNotes      RESET MT51 to MT54: ZAP=13027 iLvl=4   eLvl=2735000.0 eV
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.006926(4.0e6) Data[10]*1.006926(4.0e6)
+#CompNotes      Conversion from C.M. to Lab: successful [20958013 ]
+#CompNotes      Converted Angle C.M. to LAB 1:(139.4 TO 137.9) 11:(32. TO 30.9)
+#CompNotes      Converted Data C.M. to LAB 1:(1.0371-2 to 9.8004-3 fc:0.9449) 11:(1.2687-2 to 1.3512-2 fc:1.065)
+#Quantity       Partial differential cross section d/dA
+#DataUnits0     B/SR
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 13027   4  51   ]
+#DATA-HDR       DATA-CM
+#VarFamily      [0 234      ]
+#xVariables     3
+#+              Y = Y(X1,X2,X3)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             Point: XS(b)=1.89  EN-NRM(eV):3990000.0
+#M1             Point: XS(b)=1.90309(0.39%)  EN-NRM(eV):3990000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 13-AL-27(N,INL)13-AL-27,PAR,DA
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              #[0]#En=3990000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 1.89
+#+              a1=recom$h1nel[EN];           #[0]#new monitor point [3.99MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20958013    1.00693     1.00693     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20958013    DAP         11          1.00693     1.00693     1.00693     +0.693%     1.00693     [MONIT]::h1nel
+#C5DATA         11
+#C.M.Flag       0000
+#Headers                     EN      dEN     Data    dData      COS     dCOS      LVL     dLVL
+#Units                       EV       EV     B/SR     B/SR   NO-DIM   NO-DIM       EV       EV
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 13027   4  54   3990000.0  63000.0.01351189 1.2780-30.8580649         2730000.0         LVLJ.H.Towle*,          (62)20958 13                             1.2780-3                            9.46     9.46    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  54   3990000.0  63000.0.01021574 1.2682-30.7535634         2730000.0         LVLJ.H.Towle*,          (62)20958 13                             1.2682-3                            12.4     12.4    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  54   3990000.0  63000.0.01296547 1.0469-30.6252427         2730000.0         LVLJ.H.Towle*,          (62)20958 13                             1.0469-3                            8.07     8.07    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  54   3990000.0  63000.0.01073748 1.0353-30.4756242         2730000.0         LVLJ.H.Towle*,          (62)20958 13                             1.0353-3                            9.64     9.64    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  54   3990000.0  63000.0.01060809 1.0228-30.3123349         2730000.0         LVLJ.H.Towle*,          (62)20958 13                             1.0228-3                            9.64     9.64    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  54   3990000.0  63000.0 9.5592-3.001009940.1409012         2730000.0         LVLJ.H.Towle*,          (62)20958 13                            .00100994                            10.6     10.6    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  54   3990000.0  63000.0 8.6324-39.9686E-4-3.3155-2         2730000.0         LVLJ.H.Towle*,          (62)20958 13                            9.9686E-4                            11.5     11.5    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  54   3990000.0  63000.0.01109671 9.8396-4-.2062042         2730000.0         LVLJ.H.Towle*,          (62)20958 13                             9.8396-4                            8.87     8.87    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  54   3990000.0  63000.0 7.9259-3 9.7178-4-.3713678         2730000.0         LVLJ.H.Towle*,          (62)20958 13                             9.7178-4                            12.3     12.3    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  54   3990000.0  63000.0 7.9853-3 9.5547-4-.5962249         2730000.0         LVLJ.H.Towle*,          (62)20958 13                             9.5547-4                            12       12      1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  54   3990000.0  63000.0 9.8004-3 9.4495-4-.7419758         2730000.0         LVLJ.H.Towle*,          (62)20958 13                             9.4495-4                            9.64     9.64    1.89              1.90309  7.4079-3 1.006926
+#/C5DATA        0
+#/DATASET       20958013 
+#DATASET        20958014   20120811
+#SUBENT         20958014   20120811
+#ENTRY          20958      20120811
+#TITLE          Spin assignments in Al-27 from neutron scattering
+#+               studies
+#AUTHORS        J.H.Towle,W.B.Gilboy
+#AUTHOR1        J.H.Towle+
+#YEAR           1962
+#X4REF1         J,NP,39,300,196212
+#REFERENCE1     Jour: Nuclear Physics, Vol.39, p.300 (1962)
+#DATE           20120811
+#INSTITUTE      2UK ALD
+#METHOD         TOF
+#REACTION       13-AL-27(N,INL)13-AL-27,PAR,DA
+#C4Reaction     (N,INL)PAR,DA
+#ReactionType   DAP
+#MF             4
+#MT             51
+#PROJ           1
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          N,INL
+#PRODUCT        13-AL-27
+#C4ReaCode      (N,INL)PAR,DA
+#CompNotes      LVL: SELECT SMALLEST AND LARGEST VALUES
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.006926(4.0e6) Data[10]*1.006926(4.0e6)
+#CompNotes      Conversion from C.M. to Lab: successful [20958014 ]
+#CompNotes      Converted Angle C.M. to LAB 1:(139.6 TO 138.2) 11:(32.3 TO 31.2)
+#CompNotes      Converted Data C.M. to LAB 1:(1.8628-2 to 1.7598-2 fc:0.9447) 11:(1.8527-2 to 1.9728-2 fc:1.065)
+#Quantity       Partial differential cross section d/dA
+#DataUnits0     B/SR
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 13027   4  51   ]
+#DATA-HDR       DATA-CM
+#VarFamily      [0 234      ]
+#xVariables     3
+#+              Y = Y(X1,X2,X3)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             Point: XS(b)=1.89  EN-NRM(eV):3990000.0
+#M1             Point: XS(b)=1.90309(0.39%)  EN-NRM(eV):3990000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 13-AL-27(N,INL)13-AL-27,PAR,DA
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              #[0]#En=3990000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 1.89
+#+              a1=recom$h1nel[EN];           #[0]#new monitor point [3.99MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20958014    1.00693     1.00693     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20958014    DAP         11          1.00693     1.00693     1.00693     +0.693%     1.00693     [MONIT]::h1nel
+#C5DATA         11
+#C.M.Flag       0000
+#Headers                     EN      dEN     Data    dData      COS     dCOS      LVL     dLVL
+#Units                       EV       EV     B/SR     B/SR   NO-DIM   NO-DIM       EV       EV
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 13027   4  51   3990000.0  63000.0.01972756 1.3842-30.8553643         2980000.03000000.0LVLJ.H.Towle*,          (62)20958 14                             1.3842-3                            7.02     7.02    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  51   3990000.0  63000.0.01712547 1.3733-30.7477981         2980000.03000000.0LVLJ.H.Towle*,          (62)20958 14                             1.3733-3                            8.02     8.02    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  51   3990000.0  63000.0.01759482 1.0463-30.6184084         2980000.03000000.0LVLJ.H.Towle*,          (62)20958 14                             1.0463-3                            5.95     5.95    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  51   3990000.0  63000.0.01854541 1.0347-30.4679298         2980000.03000000.0LVLJ.H.Towle*,          (62)20958 14                             1.0347-3                            5.58     5.58    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  51   3990000.0  63000.0.01780711 1.0222-30.3040331         2980000.03000000.0LVLJ.H.Towle*,          (62)20958 14                             1.0222-3                            5.74     5.74    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  51   3990000.0  63000.0.01788615 1.0093-30.1322564         2980000.03000000.0LVLJ.H.Towle*,          (62)20958 14                             1.0093-3                            5.64     5.64    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  51   3990000.0  63000.0.01845539 8.9650-4-4.1876-2         2980000.03000000.0LVLJ.H.Towle*,          (62)20958 14                             8.9650-4                            4.86     4.86    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  51   3990000.0  63000.0.01891229 9.8336-4-.2147353         2980000.03000000.0LVLJ.H.Towle*,          (62)20958 14                             9.8336-4                            5.20     5.20    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  51   3990000.0  63000.0.01799337 9.7117-4-.3794562         2980000.03000000.0LVLJ.H.Towle*,          (62)20958 14                             9.7117-4                            5.40     5.40    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  51   3990000.0  63000.0.01865568 9.5502-4-0.601815         2980000.03000000.0LVLJ.H.Towle*,          (62)20958 14                             9.5502-4                            5.12     5.12    1.89              1.90309  7.4079-3 1.006926
+    1 13027   4  51   3990000.0  63000.0.01759834 9.4472-4-0.745476         2980000.03000000.0LVLJ.H.Towle*,          (62)20958 14                             9.4472-4                            5.37     5.37    1.89              1.90309  7.4079-3 1.006926
+#/C5DATA        0
+#/DATASET       20958014 
+#DATASET        20958015   20120811
+#SUBENT         20958015   20120811
+#ENTRY          20958      20120811
+#TITLE          Spin assignments in Al-27 from neutron scattering
+#+               studies
+#AUTHORS        J.H.Towle,W.B.Gilboy
+#AUTHOR1        J.H.Towle+
+#YEAR           1962
+#X4REF1         J,NP,39,300,196212
+#REFERENCE1     Jour: Nuclear Physics, Vol.39, p.300 (1962)
+#DATE           20120811
+#INSTITUTE      2UK ALD
+#METHOD         TOF
+#REACTION       13-AL-27(N,EL)13-AL-27,,SIG
+#C4Reaction     (N,EL),SIG
+#ReactionType   CS
+#MF             3
+#MT             2
+#PROJ           1
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          N,EL
+#PRODUCT        13-AL-27
+#C4ReaCode      (N,EL),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9992069(9.8e5) Data[3]*1.006926(4.0e6)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 13027   3   2 D ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$h1nel}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 13-AL-27(N,EL)13-AL-27,,SIG
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$h1nel;              #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20958015    1.00518     1.00518     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20958015    CS          4           0.999207    1.01437     1.00518     +0.518%     1.01437     [EN,MONIT]::h1nel
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 13027   3   2 D  980000.0 100000.02.9176843     0.09                                       J.H.Towle*,          (62)20958 15                                 0.09                            3.08     3.08    4.3               4.29659  .015186520.9992069
+    1 13027   3   2 D 2010000.0  70000.02.8906312     0.09                                       J.H.Towle*,          (62)20958 15                                 0.09                            3.11     3.11    2.9               2.9006336.010444441.0002184
+    1 13027   3   2 D 3010000.0  60000.02.0084555     0.06                                       J.H.Towle*,          (62)20958 15                                 0.06                            2.99     2.99    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   3   2 D 3990000.0  63000.01.5828876    0.047                                       J.H.Towle*,          (62)20958 15                                0.047                            2.97     2.97    1.89              1.90309  7.4079-3 1.006926
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         1           1.0E-5      2.0E7       0.05        
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+980000.     980000.     2.91768     3.08         100
+2010000.    2010000.    2.89063     3.11         37 100
+3010000.    3010000.    2.00846     2.99         30 43 100
+3990000.    3990000.    1.58289     2.97         25 38 45 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       20958015 
+#DATASET        20958016   20120811
+#SUBENT         20958016   20120811
+#ENTRY          20958      20120811
+#TITLE          Spin assignments in Al-27 from neutron scattering
+#+               studies
+#AUTHORS        J.H.Towle,W.B.Gilboy
+#AUTHOR1        J.H.Towle+
+#YEAR           1962
+#X4REF1         J,NP,39,300,196212
+#REFERENCE1     Jour: Nuclear Physics, Vol.39, p.300 (1962)
+#DATE           20120811
+#INSTITUTE      2UK ALD
+#METHOD         TOF
+#REACTION       13-AL-27(N,INL)13-AL-27,PAR,SIG
+#C4Reaction     (N,INL)PAR,SIG
+#ReactionType   CSP
+#MF             3
+#MT             51
+#PROJ           1
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          N,INL
+#PRODUCT        13-AL-27
+#C4ReaCode      (N,INL)PAR,SIG
+#CompNotes      LVL: SELECT SMALLEST AND LARGEST VALUES
+#CompNotes      RESET MT51 to MT53: ZAP=13027 iLvl=3   eLvl=2212000.0 eV
+#CompNotes      RESET MT51 to MT54: ZAP=13027 iLvl=4   eLvl=2735000.0 eV
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0002184(2.0e6) Data[6]*1.006926(4.0e6)
+#Quantity       Partial cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 13027   3  51 D ]
+#DATA-HDR       DATA
+#VarFamily      [0 23       ]
+#xVariables     2
+#+              Y = Y(X1,X2)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$h1nel}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 13-AL-27(N,INL)13-AL-27,PAR,SIG
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$h1nel;              #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20958016    1.00810     1.00810     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20958016    CSP         7           1.00022     1.01437     1.00810     +0.810%     1.01437     [EN,MONIT]::h1nel
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                        LVL     dLVL
+#Units                       EV       EV        B        B                         EV       EV
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 13027   3  51 D 2010000.0  70000.00.3100677    0.009                   842000.01013000.0LVLJ.H.Towle*,          (62)20958 16                                0.009                            2.90     2.90    2.9               2.9006336.010444441.0002184
+    1 13027   3  51 D 3010000.0  60000.00.2941677    0.009                   842000.01013000.0LVLJ.H.Towle*,          (62)20958 16                                0.009                            3.06     3.06    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   3  51 D 3990000.0  63000.00.2185029    0.013                   842000.01013000.0LVLJ.H.Towle*,          (62)20958 16                                0.013                            5.95     5.95    1.89              1.90309  7.4079-3 1.006926
+    1 13027   3  53 D 3010000.0  60000.00.2028743    0.006                  2210000.0         LVLJ.H.Towle*,          (62)20958 16                                0.006                            2.96     2.96    2.25              2.282336 8.5410-3 1.0143715
+    1 13027   3  53 D 3990000.0  63000.00.1943367    0.008                  2210000.0         LVLJ.H.Towle*,          (62)20958 16                                0.008                            4.12     4.12    1.89              1.90309  7.4079-3 1.006926
+    1 13027   3  54 D 3990000.0  63000.00.1278796    0.008                  2730000.0         LVLJ.H.Towle*,          (62)20958 16                                0.008                            6.26     6.26    1.89              1.90309  7.4079-3 1.006926
+    1 13027   3  51 D 3990000.0  63000.00.2275653    0.009                  2980000.03000000.0LVLJ.H.Towle*,          (62)20958 16                                0.009                            3.95     3.95    1.89              1.90309  7.4079-3 1.006926
+#/C5DATA        0
+#/DATASET       20958016 
+#DATASET        20958017   20120811
+#SUBENT         20958017   20120811
+#ENTRY          20958      20120811
+#TITLE          Spin assignments in Al-27 from neutron scattering
+#+               studies
+#AUTHORS        J.H.Towle,W.B.Gilboy
+#AUTHOR1        J.H.Towle+
+#YEAR           1962
+#X4REF1         J,NP,39,300,196212
+#REFERENCE1     Jour: Nuclear Physics, Vol.39, p.300 (1962)
+#DATE           20120811
+#INSTITUTE      2UK ALD
+#METHOD         TOF
+#REACTION       13-AL-27(N,INL)13-AL-27,PAR,DA,,4PI
+#C4Reaction     (N,INL)PAR,DA,,4PI
+#ReactionType   CP4
+#MF             3
+#MT             51
+#PROJ           1
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          N,INL
+#PRODUCT        13-AL-27
+#C4ReaCode      (N,INL)PAR,DA,,4PI
+#CompNotes      RESET MT51 to MT51: ZAP=13027 iLvl=1   eLvl=844000.0 eV
+#CompNotes      LVL: SELECT SMALLEST AND LARGEST VALUES
+#CompNotes      RESET MT51 to MT52: ZAP=13027 iLvl=2   eLvl=1015000.0 eV
+#CompNotes      RESET MT51 to MT53: ZAP=13027 iLvl=3   eLvl=2212000.0 eV
+#Quantity       Partial diff. cross section d/dA * 4pi
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 13027   3  51   ]
+#DATA-HDR       DATA
+#VarFamily      [0 234      ]
+#xVariables     3
+#+              Y = Y(X1,X2,X3)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         15
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData      COS     dCOS      LVL     dLVL
+#Units                       EV       EV        B        B   NO-DIM   NO-DIM       EV       EV
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 13027   3  51   1400000.0             0.113    0.009-.5735765          842000.0         LVLJ.H.Towle,           (62)20958 17                                0.009                            7.96     7.96
+    1 13027   3  51   1610000.0             0.112    0.008-.5735765          842000.0         LVLJ.H.Towle,           (62)20958 17                                0.008                            7.14     7.14
+    1 13027   3  51   1610000.0             0.352    0.021-.5735765          842000.01013000.0LVLJ.H.Towle,           (62)20958 17                                0.021                            5.97     5.97
+    1 13027   3  51   1790000.0             0.052     0.01-.5735765          842000.0         LVLJ.H.Towle,           (62)20958 17                                 0.01                            19.2     19.2
+    1 13027   3  51   1790000.0             0.217    0.014-.5735765          842000.01013000.0LVLJ.H.Towle,           (62)20958 17                                0.014                            6.45     6.45
+    1 13027   3  51   1990000.0             0.325    0.019-.5735765          842000.01013000.0LVLJ.H.Towle,           (62)20958 17                                0.019                            5.85     5.85
+    1 13027   3  51   2010000.0             0.087    0.013-.5735765          842000.0         LVLJ.H.Towle,           (62)20958 17                                0.013                            14.9     14.9
+    1 13027   3  51   2200000.0             0.337    0.019-.5735765          842000.01013000.0LVLJ.H.Towle,           (62)20958 17                                0.019                            5.64     5.64
+    1 13027   3  51   2390000.0             0.222    0.014-.5735765          842000.01013000.0LVLJ.H.Towle,           (62)20958 17                                0.014                            6.31     6.31
+    1 13027   3  51   2610000.0             0.291    0.017-.5735765          842000.01013000.0LVLJ.H.Towle,           (62)20958 17                                0.017                            5.84     5.84
+    1 13027   3  51   2810000.0             0.285    0.019-.5735765          842000.01013000.0LVLJ.H.Towle,           (62)20958 17                                0.019                            6.67     6.67
+    1 13027   3  52   1610000.0              0.24    0.016-.5735765         1013000.0         LVLJ.H.Towle,           (62)20958 17                                0.016                            6.67     6.67
+    1 13027   3  52   1790000.0             0.165     0.01-.5735765         1013000.0         LVLJ.H.Towle,           (62)20958 17                                 0.01                            6.06     6.06
+    1 13027   3  52   2010000.0             0.223    0.013-.5735765         1013000.0         LVLJ.H.Towle,           (62)20958 17                                0.013                            5.83     5.83
+    1 13027   3  53   2810000.0             0.166    0.009-.5735765         2210000.0         LVLJ.H.Towle,           (62)20958 17                                0.009                            5.42     5.42
+#/C5DATA        0
+#/DATASET       20958017 
+#/C5M.2.3       1               16              16              0               141             

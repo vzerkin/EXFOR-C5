@@ -1,0 +1,96 @@
+#C5M.2.3
+#DATASET        32795002   20210108
+#SUBENT         32795002   20210108
+#ENTRY          32795      20210108
+#TITLE          Measurements of fast neutron capture cross section
+#+              for 180Hf
+#AUTHORS        Fengqun Zhou,Yueli Song,Yong Li,Xiaojun Sun,
+#+              Xinyi Chang
+#AUTHOR1        Fengqun Zhou+
+#YEAR           2019
+#X4REF1         J,NIM/B,451,24,2019
+#REFERENCE1     Jour: Nucl. Instrum. Methods in Physics Res., Sect.B, Vol.451, p.24 (2019)
+#DATE           20210108
+#INSTITUTE      3CPRPDU
+#METHOD         ACTIV
+#REACTION       72-HF-180(N,G)72-HF-181,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           72180            
+#TARGET         72180           [ ]             72-HF-180       [ ] 
+#REAC1          N,G
+#PRODUCT        72-HF-181
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.7,1.3)    ADDED AS COMMON:ERR-S,PER-CENT=0.7%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=4
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9892946(1.4e7) Data[3]*1.0010875(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 72180   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 72-HF-180(N,G)72-HF-181,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32795002    0.997693    0.997693    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32795002    CS          4           0.989295    1.00109     0.997693    -0.231%     1.01082     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 72180   3 102      1.35E7 300000.0.01177261 5.7151-4                                       Fengqun Zhou*,       (19)32795  2  3.1970-4  8.33E-5          5.7151-4 2.72     0.71              4.85     4.85    0.4579   0.0068   0.452998 .002680130.98929460.9525112
+    1 72180   3 102      1.41E7 200000.0.01179638 5.7747-4                                       Fengqun Zhou*,       (19)32795  2  3.1893-4  8.26E-5          5.7747-4 2.70     0.70              4.90     4.90    0.4598   0.0068   0.459659 .002502550.99969330.9624458
+    1 72180   3 102      1.44E7 300000.0.01040724 4.7950-4                                       Fengqun Zhou*,       (19)32795  2  2.8147-4  7.28E-5          4.7950-4 2.70     0.70              4.61     4.61    0.4598   0.0068   0.46012  .002526621.000696 0.9590095
+    1 72180   3 102      1.48E7 200000.0.01231338 5.8998-4                                       Fengqun Zhou*,       (19)32795  2  3.3406-4  8.61E-5          5.8998-4 2.71     0.70              4.79     4.79    0.4597   0.005    0.4602   .002704061.00108750.9833071
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.35E7      1.48E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.35E7      1.35E7      1.1773-2    2.81         100
+1.41E7      1.41E7      1.1796-2    2.79         50 100
+1.44E7      1.44E7      1.0407-2    2.79         47 72 100
+1.48E7      1.48E7      1.2313-2    2.8          47 47 65 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       32795002 
+#/C5M.2.3       1               1               1               0               4               

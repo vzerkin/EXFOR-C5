@@ -1,0 +1,77 @@
+#C5.2.3
+#DATASET        31452002   20100308
+#SUBENT         31452002   20100308
+#ENTRY          31452      20210512
+#TITLE          Measurement of neutron capture cross section for 152Sm
+#AUTHORS        Luo Xiaobing, Xia Yijun, Yang Zhihua, Liu Mantian
+#AUTHOR1        Luo Xiaobing+
+#YEAR           1994
+#X4REF1         J,CNP,16,275,1994
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.16, p.275 (1994)
+#DATE           20100308
+#INSTITUTE      3CPRSIU
+#METHOD         ACTIV
+#REACTION       62-SM-152(N,G)62-SM-153,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           62152            
+#TARGET         62152           [ ]             62-SM-152       [ ] 
+#REAC1          N,G
+#PRODUCT        62-SM-153
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.8,1.7)    ADDED AS COMMON:ERR-S,PER-CENT=0.8%
+#CompNotes      ERR-ANALYS:(ERR-7,3.,4.5)     ADDED AS COMMON:ERR-7,PER-CENT=3.0%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9778343(2.2e4) Data[9]*0.9951323(1.0e6)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 62152   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 62-SM-152(N,G)62-SM-153,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31452002    1.01019     1.01019     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31452002    CS          10          0.977834    1.03232     1.01019     +1.02%      1.03232     [EN,MONIT]::au197ng
+#C5DATA         10
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 62152   3 102     22000.0  10600.0 0.565286   0.0319                                       Luo Xiaobing*,       (94)31452  2 .026491870.0046248            0.0319 4.69     0.82              5.64     5.64    0.688             0.67275  .012030450.9778343
+    1 62152   3 102     48000.0  24200.00.3757392   0.0205                                       Luo Xiaobing*,       (94)31452  2 .017005940.0029688            0.0205 4.53     0.79              5.46     5.46    0.4438            0.449348 .008010951.0125011
+    1 62152   3 102    106000.0  34900.00.2740501   0.0146                                       Luo Xiaobing*,       (94)31452  2 .012290470.0021456            0.0146 4.48     0.78              5.33     5.33    0.3046            0.311244 5.9558-3 1.0218122
+    1 62152   3 102    178000.0  33300.00.2114184   0.0112                                       Luo Xiaobing*,       (94)31452  2 0.00938510.0016384            0.0112 4.44     0.77              5.30     5.30    0.2577            0.266028 6.5655-3 1.0323166
+    1 62152   3 102    189000.0  54100.00.1970081   0.0108                                       Luo Xiaobing*,       (94)31452  2 0.00880310.0015368            0.0108 4.47     0.78              5.48     5.48    0.2537            0.260182 5.3886-3 1.0255499
+    1 62152   3 102    211000.0  19900.00.1895291   0.0102                                       Luo Xiaobing*,       (94)31452  2  0.0085190.0014872            0.0102 4.49     0.78              5.38     5.38    0.2467            0.251516 5.1406-3 1.0195216
+    1 62152   3 102    336000.0 104500.00.1477007   0.0082                                       Luo Xiaobing*,       (94)31452  2 0.00668140.0011664            0.0082 4.52     0.79              5.55     5.55    0.1833            0.18568963.6445-3 1.0130365
+    1 62152   3 102    598000.0 140100.00.1168916   0.0068                                       Luo Xiaobing*,       (94)31452  2 0.0052745 9.208E-4            0.0068 4.51     0.79              5.82     5.82    0.109             0.11069672.2639-3 1.0155658
+    1 62152   3 102    889000.0 134500.00.1099323   0.0065                                       Luo Xiaobing*,       (94)31452  2 0.0050958 8.896E-4            0.0065 4.64     0.81              5.91     5.91    .08490001         .083932142.2128-3 0.9885999
+    1 62152   3 102   1019000.0  83500.0 0.105086   0.0069                                       Luo Xiaobing*,       (94)31452  2 0.0048392 8.448E-4            0.0069 4.60     0.80              6.57     6.57    0.0797            .079312051.6331-3 0.9951323
+#/C5DATA        0
+#/DATASET       31452002 
+#/C5.2.3        1               1               1               0               10              

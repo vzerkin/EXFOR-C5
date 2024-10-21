@@ -1,0 +1,88 @@
+#C5.2.3
+#DATASET        23160002   20120801
+#SUBENT         23160002   20120801
+#ENTRY          23160      20120801
+#TITLE          Measurements and model calculations of isomeric
+#+              cross-sections for (n,alpha) reaction on 140-Ce isotope
+#+              around 14 MeV neutrons.
+#AUTHORS        I.A.Reyhancan
+#AUTHOR1        I.A.Reyhancan
+#YEAR           2012
+#X4REF1         J,ANE,47,81,2012
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.47, p.81 (2012)
+#DATE           20120801
+#INSTITUTE      2TUKCNA,2TUKSTU
+#METHOD         ACTIV
+#REACTION       58-CE-140(N,A)56-BA-137-M,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           58140            
+#TARGET         58140           [ ]             58-CE-140       [ ] 
+#REAC1          N,A
+#PRODUCT        56-BA-137-M
+#C4ReaCode      (N,A),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,22.,41.)    ADDED AS COMMON:ERR-S,PER-CENT=22.0%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0706162(1.4e7) Data[4]*1.048844(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.234%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-1.64%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 58140   3 107M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,P)12-MG-27,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 58-CE-140(N,A)56-BA-137-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,P)12-MG-27,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$al27np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (58-CE-140(N,A)56-BA-137-M,,SIG)
+#+               #[1]#DECAY-DATA (56-BA-137-M,2.552MIN,DG,661.659,0.9011) #Ix_old=0.9011
+#+                a1=0.9011/0.899;            #[1]#DECAY-DATA: correction to new 661.657 keV gamma-yield per decay Ba-137-m Ix_new=0.899
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0023359
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (13-AL-27(N,P)12-MG-27,,SIG)
+#+               #[2]#DECAY-MON  (12-MG-27,9.458MIN,DG,843.8,0.73) #Im_old=0.73
+#+                a2=0.718/0.73;              #[2]#DECAY-MON: correction to new 843.76 keV gamma-yield per decay Mg-27 Im_new=0.718
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.98356164
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23160002    1.03839     1.05328     1.00234     0.983562
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23160002    CS          5           1.01659     1.06194     1.03839     +3.84%      1.06194     [EN,MONIT]::al27np
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 58140   3 107M    1.357E7  40000.0 1.4988-3 6.2273-4                                       I.A.Reyhancan*       (12)23160  2  6.5383-5 3.124E-4          6.2273-4 4.36     20.8              41.5     41.5    0.07664           .082052031.3474-3 1.05547691.0554769
+    1 58140   3 107M    1.375E7  50000.0 1.5717-3 4.9911-4                                       I.A.Reyhancan*       (12)23160  2  6.8562-5 3.256E-4          4.9911-4 4.36     20.7              31.8     31.8    0.07388           0.0795816.001267971.06194161.0619415
+    1 58140   3 107M    1.452E7  90000.0 1.5046-3 5.1846-4                                       I.A.Reyhancan*       (12)23160  2  6.5634-5 3.256E-4          5.1846-4 4.36     21.6              34.5     34.5    0.06731           .069408081.0089-3 1.01658891.0165889
+    1 58140   3 107M    1.475E7  90000.0 1.9762-3 5.6316-4                                       I.A.Reyhancan*       (12)23160  2  8.6208-5 4.246E-4          5.6316-4 4.36     21.5              28.5     28.5    0.0641            .066574659.9217-4 1.02391911.0239191
+    1 58140   3 107M    1.483E7 100000.0 2.1197-3 4.6531-4                                       I.A.Reyhancan*       (12)23160  2  9.2471-5  4.51E-4          4.6531-4 4.36     21.3              22       22      .06256001         .065615689.9854-4 1.03401241.0340124
+#/C5DATA        0
+#/DATASET       23160002 
+#/C5.2.3        1               1               1               0               5               

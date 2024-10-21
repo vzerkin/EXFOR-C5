@@ -1,0 +1,2288 @@
+#C5M.2.3
+#DATASET        C02720021  20160809
+#SUBENT         C0272002   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       26-FE-0(P,X)27-CO-57,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        27-CO-57
+#C4ReaCode      (P,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.64%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 26000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 26-FE-0(P,X)27-CO-57,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (26-FE-0(P,X)27-CO-57,,SIG)
+#+               #[1]#DECAY-DATA (27-CO-57,270.D,DG,122.,0.87) #Ix_old=0.87
+#+                a1=0.87/0.856;              #[1]#DECAY-DATA: correction to new 122.06065 keV gamma-yield per decay Co-57 Ix_new=0.856
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0163552
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        C02720021   1.01636     -           1.01636     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          C02720021   CS          3           1.01636     1.01636     1.01636     +1.64%      1.01636                
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000   39000      1.41E7          9.4521-3 1.3213-3           27057.9                     R.L.Brodzinski*,     (71)C0272  21                            1.3213-3                            14       14                                          1.01635521.0163552
+ 1001 26000   39000       1.5E7          5.6814-3 7.8259-4           27057.9                     R.L.Brodzinski*,     (71)C0272  21                            7.8259-4                            13.8     13.8                                        1.01635521.016355
+ 1001 26000   39000       4.5E7          7.0129-4 8.7407-5           27057.9                     R.L.Brodzinski*,     (71)C0272  21                            8.7407-5                            12.5     12.5                                        1.01635521.0163552
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.41E7      4.5E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.41E7      1.41E7      9.4521-3    13.98        100
+1.5E7       1.5E7       5.6814-3    13.77        49 100
+4.5E7       4.5E7       7.0129-4    12.46        25 25 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720021
+#DATASET        C02720022  20160809
+#SUBENT         C0272002   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       (26-FE-0(P,X)27-CO-57,,SIG)/(26-FE-0(P,X)25-MN-54,,SIG)
+#C4Reaction     ((P,X),SIG)/((P,X),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        27-CO-57
+#C4ReaCode      ((P,X),SIG)/((P,X),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [ 1001 26000 2039000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat      ZAP                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000 2039000       4.5E7           0.00368   1.1E-4   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  22                              1.1E-4                            2.99     2.99
+#/C5DATA        0
+#/DATASET       C02720022
+#DATASET        C02720031  20160809
+#SUBENT         C0272003   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       26-FE-0(P,X)27-CO-56,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        27-CO-56
+#C4ReaCode      (P,X),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 26000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27px}
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000   39000      1.41E7             0.398     0.05           27056.9                     R.L.Brodzinski,      (71)C0272  31                                0.05                            12.6     12.6
+ 1001 26000   39000       1.5E7             0.212    0.026           27056.9                     R.L.Brodzinski,      (71)C0272  31                               0.026                            12.3     12.3
+ 1001 26000   39000      2.95E7            0.0366   0.0049           27056.9                     R.L.Brodzinski,      (71)C0272  31                              0.0049                            13.4     13.4                      1.6E-4   6.0E-5
+ 1001 26000   39000       3.0E7            0.0336    0.008           27056.9                     R.L.Brodzinski,      (71)C0272  31                               0.008                            23.8     23.8                      1.8E-4   6.0E-5
+ 1001 26000   39000      4.46E7            0.0208   0.0029           27056.9                     R.L.Brodzinski,      (71)C0272  31                              0.0029                            13.9     13.9                      0.00301  0.00068
+ 1001 26000   39000       4.5E7            0.0204   0.0026           27056.9                     R.L.Brodzinski,      (71)C0272  31                              0.0026                            12.7     12.7                      0.00319  2.1E-4
+ 1001 26000   39000       1.2E8            0.0082   0.0015           27056.9                     R.L.Brodzinski,      (71)C0272  31                              0.0015                            18.3     18.3    0.0108
+ 1001 26000   39000      5.85E8            0.0033   0.0011           27056.9                     R.L.Brodzinski,      (71)C0272  31                              0.0011                            33.3     33.3    0.0108
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.41E7      5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           8           8
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.41E7      1.41E7      0.398       12.56        100
+1.5E7       1.5E7       0.212       12.26        50 100
+2.95E7      2.95E7      0.0366      13.39        49 49 100
+3.0E7       3.0E7       0.0336      23.81        49 49 50 100
+4.46E7      4.46E7      0.0208      13.94        47 47 49 49 100
+4.5E7       4.5E7       0.0204      12.75        47 47 49 49 50 100
+1.2E8       1.2E8       0.0082      18.29        41 41 42 42 43 43 100
+5.85E8      5.85E8      0.0033      33.33        25 25 25 25 25 25 25 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720031
+#DATASET        C02720032  20160809
+#SUBENT         C0272003   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       (26-FE-0(P,X)27-CO-56,,SIG)/(26-FE-0(P,X)25-MN-54,,SIG)
+#C4Reaction     ((P,X),SIG)/((P,X),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        27-CO-56
+#C4ReaCode      ((P,X),SIG)/((P,X),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [ 1001 26000 2039000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat      ZAP                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000 2039000      2.95E7             0.938    0.083   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  32                               0.083                            8.85     8.85
+ 1001 26000 2039000       3.0E7             0.881    0.077   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  32                               0.077                            8.74     8.74
+ 1001 26000 2039000      4.46E7             0.112    0.008   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  32                               0.008                            7.14     7.14
+ 1001 26000 2039000       4.5E7             0.109    0.004   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  32                               0.004                            3.67     3.67
+ 1001 26000 2039000       1.2E8             0.249    0.045   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  32                               0.045                            18.1     18.1
+ 1001 26000 2039000      5.85E8              0.16    0.028   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  32                               0.028                            17.5     17.5
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           2.95E7      5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(no-dim)Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+2.95E7      2.95E7      0.938       8.85         100
+3.0E7       3.0E7       0.881       8.74         50 100
+4.46E7      4.46E7      0.112       7.14         49 49 100
+4.5E7       4.5E7       0.109       3.67         49 49 50 100
+1.2E8       1.2E8       0.249       18.07        42 42 43 43 100
+5.85E8      5.85E8      0.16        17.5         25 25 25 25 25 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720032
+#DATASET        C0272004   20160809
+#SUBENT         C0272004   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       26-FE-0(P,X)25-MN-54,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        25-MN-54
+#C4ReaCode      (P,X),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 26000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27px}
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000   39000      2.95E7             0.039   0.0055           25054.9                     R.L.Brodzinski,      (71)C0272  4                               0.0055                            14.1     14.1                      1.6E-4   6.0E-5
+ 1001 26000   39000       3.0E7              0.04   0.0056           25054.9                     R.L.Brodzinski,      (71)C0272  4                               0.0056                            14       14                        1.8E-4   6.0E-5
+ 1001 26000   39000      4.46E7             0.186    0.023           25054.9                     R.L.Brodzinski,      (71)C0272  4                                0.023                            12.4     12.4                      0.00301  0.00068
+ 1001 26000   39000       4.5E7             0.187    0.023           25054.9                     R.L.Brodzinski,      (71)C0272  4                                0.023                            12.3     12.3                      0.00319  2.1E-4
+ 1001 26000   39000       1.2E8            0.0329   0.0057           25054.9                     R.L.Brodzinski,      (71)C0272  4                               0.0057                            17.3     17.3    0.0108
+ 1001 26000   39000       3.2E8            0.0229   0.0048           25054.9                     R.L.Brodzinski,      (71)C0272  4                               0.0048                            21       21      0.0113
+ 1001 26000   39000      4.34E8             0.016    0.003           25054.9                     R.L.Brodzinski,      (71)C0272  4                                0.003                            18.8     18.8    0.011
+ 1001 26000   39000      5.85E8            0.0208   0.0067           25054.9                     R.L.Brodzinski,      (71)C0272  4                               0.0067                            32.2     32.2    0.0108
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           2.95E7      5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           8           8
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+2.95E7      2.95E7      0.039       14.1         100
+3.0E7       3.0E7       0.04        14.0         50 100
+4.46E7      4.46E7      0.186       12.37        49 49 100
+4.5E7       4.5E7       0.187       12.3         49 49 50 100
+1.2E8       1.2E8       0.0329      17.33        42 42 43 43 100
+3.2E8       3.2E8       0.0229      20.96        25 25 25 25 32 100
+4.34E8      4.34E8      0.016       18.75        25 25 25 25 25 40 100
+5.85E8      5.85E8      0.0208      32.21        25 25 25 25 25 26 36 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C0272004 
+#DATASET        C02720051  20160809
+#SUBENT         C0272005   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       26-FE-0(P,X)27-CO-55,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        27-CO-55
+#C4ReaCode      (P,X),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 26000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000   39000      2.95E7            0.0658   0.0083           27055.9                     R.L.Brodzinski,      (71)C0272  51                              0.0083                            12.6     12.6
+ 1001 26000   39000       3.0E7            0.0575   0.0073           27055.9                     R.L.Brodzinski,      (71)C0272  51                              0.0073                            12.7     12.7
+ 1001 26000   39000      4.46E7            0.0101   0.0022           27055.9                     R.L.Brodzinski,      (71)C0272  51                              0.0022                            21.8     21.8
+ 1001 26000   39000       4.5E7            0.0115   0.0017           27055.9                     R.L.Brodzinski,      (71)C0272  51                              0.0017                            14.8     14.8
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           2.95E7      4.5E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+2.95E7      2.95E7      0.0658      12.61        100
+3.0E7       3.0E7       0.0575      12.7         48 100
+4.46E7      4.46E7      0.0101      21.78        25 25 100
+4.5E7       4.5E7       0.0115      14.78        25 25 49 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720051
+#DATASET        C02720052  20160809
+#SUBENT         C0272005   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       (26-FE-0(P,X)27-CO-55,,SIG)/(26-FE-0(P,X)25-MN-54,,SIG)
+#C4Reaction     ((P,X),SIG)/((P,X),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        27-CO-55
+#C4ReaCode      ((P,X),SIG)/((P,X),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [ 1001 26000 2039000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat      ZAP                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000 2039000      2.95E7              1.69     0.13   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  52                                0.13                            7.69     7.69
+ 1001 26000 2039000       3.0E7              1.44     0.11   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  52                                0.11                            7.64     7.64
+ 1001 26000 2039000      4.46E7             0.054     0.01   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  52                                0.01                            18.5     18.5
+ 1001 26000 2039000       4.5E7            0.0614   0.0052   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  52                              0.0052                            8.47     8.47
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           2.95E7      4.5E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(no-dim)Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+2.95E7      2.95E7      1.69        7.69         100
+3.0E7       3.0E7       1.44        7.64         48 100
+4.46E7      4.46E7      0.054       18.52        25 25 100
+4.5E7       4.5E7       0.0614      8.47         25 25 49 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720052
+#DATASET        C02720061  20160809
+#SUBENT         C0272006   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       26-FE-0(P,X)25-MN-52-G,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        25-MN-52-G
+#C4ReaCode      (P,X),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 26000   39000G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27px}
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000   39000G     2.95E7            0.0399   0.0049           25052.9                     R.L.Brodzinski,      (71)C0272  61                              0.0049                            12.3     12.3                      1.6E-4   6.0E-5
+ 1001 26000   39000G      3.0E7            0.0402   0.0049           25052.9                     R.L.Brodzinski,      (71)C0272  61                              0.0049                            12.2     12.2                      1.8E-4   6.0E-5
+ 1001 26000   39000G     4.46E7            0.0212   0.0026           25052.9                     R.L.Brodzinski,      (71)C0272  61                              0.0026                            12.3     12.3                      0.00301  0.00068
+ 1001 26000   39000G      4.5E7            0.0201   0.0025           25052.9                     R.L.Brodzinski,      (71)C0272  61                              0.0025                            12.4     12.4                      0.00319  2.1E-4
+ 1001 26000   39000G      1.2E8            0.0129   0.0016           25052.9                     R.L.Brodzinski,      (71)C0272  61                              0.0016                            12.4     12.4    0.0108
+ 1001 26000   39000G     4.34E8             0.006   9.9E-4           25052.9                     R.L.Brodzinski,      (71)C0272  61                              9.9E-4                            16.5     16.5    0.011
+ 1001 26000   39000G     5.85E8            0.0065    0.002           25052.9                     R.L.Brodzinski,      (71)C0272  61                               0.002                            30.8     30.8    0.0108
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           2.95E7      5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+2.95E7      2.95E7      0.0399      12.28        100
+3.0E7       3.0E7       0.0402      12.19        50 100
+4.46E7      4.46E7      0.0212      12.26        49 49 100
+4.5E7       4.5E7       0.0201      12.44        49 49 50 100
+1.2E8       1.2E8       0.0129      12.4         42 42 43 43 100
+4.34E8      4.34E8      0.006       16.5         25 25 25 25 25 100
+5.85E8      5.85E8      0.0065      30.77        25 25 25 25 25 36 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720061
+#DATASET        C02720062  20160809
+#SUBENT         C0272006   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       (26-FE-0(P,X)25-MN-52-G,,SIG)/(26-FE-0(P,X)25-MN-54,,SIG)
+#C4Reaction     ((P,X),SIG)/((P,X),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        25-MN-52-G
+#C4ReaCode      ((P,X),SIG)/((P,X),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [ 1001 26000 2039000G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat      ZAP                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000 2039000G     2.95E7             1.023    0.073   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  62                               0.073                            7.14     7.14
+ 1001 26000 2039000G      3.0E7             1.006    0.071   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  62                               0.071                            7.06     7.06
+ 1001 26000 2039000G     4.46E7            0.1138   0.0023   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  62                              0.0023                            2.02     2.02
+ 1001 26000 2039000G      4.5E7            0.1074   0.0027   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  62                              0.0027                            2.51     2.51
+ 1001 26000 2039000G      1.2E8             0.393     0.05   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  62                                0.05                            12.7     12.7
+ 1001 26000 2039000G     4.34E8             0.375    0.039   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  62                               0.039                            10.4     10.4
+ 1001 26000 2039000G     5.85E8             0.311    0.031   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  62                               0.031                            9.97     9.97
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           2.95E7      5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(no-dim)Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+2.95E7      2.95E7      1.023       7.14         100
+3.0E7       3.0E7       1.006       7.06         50 100
+4.46E7      4.46E7      0.1138      2.02         49 49 100
+4.5E7       4.5E7       0.1074      2.51         49 49 50 100
+1.2E8       1.2E8       0.393       12.72        42 42 43 43 100
+4.34E8      4.34E8      0.375       10.4         25 25 25 25 25 100
+5.85E8      5.85E8      0.311       9.97         25 25 25 25 25 36 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720062
+#DATASET        C02720071  20160809
+#SUBENT         C0272007   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       26-FE-0(P,X)24-CR-51,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        24-CR-51
+#C4ReaCode      (P,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-9.18%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 26000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27px}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-0(P,X)24-CR-51,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (26-FE-0(P,X)24-CR-51,,SIG)
+#+               #[1]#DECAY-DATA (24-CR-51,27.8D,DG,320.,0.09) #Ix_old=0.09
+#+                a1=0.09/0.0991;             #[1]#DECAY-DATA: correction to new 320.0824 keV gamma-yield per decay Cr-51 Ix_new=0.0991
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.90817356
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        C02720071   0.908174    1.00000     0.908174    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          C02720071   CS          5           0.908174    0.908174    0.908174    -9.18%      1.10111     [EN,MONIT]::al27px
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000   39000      4.46E7         0.1289607.01543895           24051.9                     R.L.Brodzinski*,     (71)C0272  71                           .01543895                            12       12                        0.00301  0.00068  0.90817360.9081736
+ 1001 26000   39000       4.5E7         0.1289607.01634713           24051.9                     R.L.Brodzinski*,     (71)C0272  71                           .01634713                            12.7     12.7                      0.00319  2.1E-4   0.90817360.9081737
+ 1001 26000   39000       1.2E8         .03986883 5.5399-3           24051.9                     R.L.Brodzinski*,     (71)C0272  71                            5.5399-3                            13.9     13.9    0.0108                              0.90817360.9081736
+ 1001 26000   39000      4.34E8         .02660949 4.7225-3           24051.9                     R.L.Brodzinski*,     (71)C0272  71                            4.7225-3                            17.7     17.7    0.011                               0.90817360.9081736
+ 1001 26000   39000      5.85E8         .02688194 8.3552-3           24051.9                     R.L.Brodzinski*,     (71)C0272  71                            8.3552-3                            31.1     31.1    0.0108                              0.90817360.9081735
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.46E7      5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           5           5
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.46E7      4.46E7      0.128961    11.97        100
+4.5E7       4.5E7       0.128961    12.68        50 100
+1.2E8       1.2E8       3.9869-2    13.9         43 43 100
+4.34E8      4.34E8      2.6609-2    17.75        25 25 25 100
+5.85E8      5.85E8      2.6882-2    31.08        25 25 25 36 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720071
+#DATASET        C02720072  20160809
+#SUBENT         C0272007   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       (26-FE-0(P,X)24-CR-51,,SIG)/(26-FE-0(P,X)25-MN-54,,SIG)
+#C4Reaction     ((P,X),SIG)/((P,X),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        24-CR-51
+#C4ReaCode      ((P,X),SIG)/((P,X),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [ 1001 26000 2039000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat      ZAP                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000 2039000      4.46E7             0.762    0.015   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  72                               0.015                            1.97     1.97
+ 1001 26000 2039000       4.5E7             0.759    0.021   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  72                               0.021                            2.77     2.77
+ 1001 26000 2039000       1.2E8              1.34     0.19   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  72                                0.19                            14.2     14.2
+ 1001 26000 2039000      4.34E8              1.83     0.22   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  72                                0.22                            12       12
+ 1001 26000 2039000      5.85E8              1.43     0.15   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  72                                0.15                            10.5     10.5
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.46E7      5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           5           5
+#EnMin(eV)  EnMax(eV)   Data(no-dim)Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.46E7      4.46E7      0.762       1.97         100
+4.5E7       4.5E7       0.759       2.77         50 100
+1.2E8       1.2E8       1.34        14.18        43 43 100
+4.34E8      4.34E8      1.83        12.02        25 25 25 100
+5.85E8      5.85E8      1.43        10.49        25 25 25 36 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720072
+#DATASET        C02720081  20160809
+#SUBENT         C0272008   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       26-FE-0(P,X)24-CR-48,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        24-CR-48
+#C4ReaCode      (P,X),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 26000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27px}
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000   39000       1.2E8           3.45E-4   4.5E-5           24048.9                     R.L.Brodzinski,      (71)C0272  81                              4.5E-5                            13       13      0.0108
+ 1001 26000   39000      4.34E8           4.54E-4   7.9E-5           24048.9                     R.L.Brodzinski,      (71)C0272  81                              7.9E-5                            17.4     17.4    0.011
+ 1001 26000   39000      5.85E8            5.5E-4   1.7E-4           24048.9                     R.L.Brodzinski,      (71)C0272  81                              1.7E-4                            30.9     30.9    0.0108
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.2E8       5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.2E8       1.2E8       3.45E-4     13.04        100
+4.34E8      4.34E8      4.54E-4     17.4         25 100
+5.85E8      5.85E8      5.5E-4      30.91        25 34 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720081
+#DATASET        C02720082  20160809
+#SUBENT         C0272008   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       (26-FE-0(P,X)24-CR-48,,SIG)/(26-FE-0(P,X)25-MN-54,,SIG)
+#C4Reaction     ((P,X),SIG)/((P,X),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        24-CR-48
+#C4ReaCode      ((P,X),SIG)/((P,X),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [ 1001 26000 2039000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat      ZAP                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000 2039000       1.2E8            0.0105   0.0014   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  82                              0.0014                            13.3     13.3
+ 1001 26000 2039000      4.34E8            0.0284   0.0033   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  82                              0.0033                            11.6     11.6
+ 1001 26000 2039000      5.85E8            0.0263   0.0026   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  82                              0.0026                            9.89     9.89
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.2E8       5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(no-dim)Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.2E8       1.2E8       0.0105      13.33        100
+4.34E8      4.34E8      0.0284      11.62        25 100
+5.85E8      5.85E8      0.0263      9.89         25 34 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720082
+#DATASET        C02720091  20160809
+#SUBENT         C0272009   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       26-FE-0(P,X)23-V-48,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        23-V-48
+#C4ReaCode      (P,X),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 26000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27px}
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000   39000      4.46E7           0.00391   5.4E-4           23048.9                     R.L.Brodzinski,      (71)C0272  91                              5.4E-4                            13.8     13.8                      0.00301  0.00068
+ 1001 26000   39000       4.5E7           0.00396   5.5E-4           23048.9                     R.L.Brodzinski,      (71)C0272  91                              5.5E-4                            13.9     13.9                      0.00319  2.1E-4
+ 1001 26000   39000       1.2E8            0.0094   0.0012           23048.9                     R.L.Brodzinski,      (71)C0272  91                              0.0012                            12.8     12.8    0.0108
+ 1001 26000   39000      4.34E8            0.0108   2.1E-4           23048.9                     R.L.Brodzinski,      (71)C0272  91                              2.1E-4                            1.94     1.94    0.011
+ 1001 26000   39000      5.85E8            0.0137   0.0043           23048.9                     R.L.Brodzinski,      (71)C0272  91                              0.0043                            31.4     31.4    0.0108
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.46E7      5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           5           5
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.46E7      4.46E7      0.00391     13.81        100
+4.5E7       4.5E7       0.00396     13.89        50 100
+1.2E8       1.2E8       0.0094      12.77        43 43 100
+4.34E8      4.34E8      0.0108      1.94         25 25 25 100
+5.85E8      5.85E8      0.0137      31.39        25 25 25 36 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720091
+#DATASET        C02720092  20160809
+#SUBENT         C0272009   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       (26-FE-0(P,X)23-V-48,,SIG)/(26-FE-0(P,X)25-MN-54,,SIG)
+#C4Reaction     ((P,X),SIG)/((P,X),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        23-V-48
+#C4ReaCode      ((P,X),SIG)/((P,X),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [ 1001 26000 2039000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat      ZAP                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000 2039000      4.46E7             0.021   0.0014   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  92                              0.0014                            6.67     6.67
+ 1001 26000 2039000       4.5E7            0.0212   0.0014   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  92                              0.0014                            6.60     6.60
+ 1001 26000 2039000       1.2E8             0.288   0.0013   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  92                              0.0013                            0.45     0.45
+ 1001 26000 2039000      4.34E8             0.676    0.068   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  92                               0.068                            10.1     10.1
+ 1001 26000 2039000      5.85E8             0.659    0.078   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272  92                               0.078                            11.8     11.8
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.46E7      5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           5           5
+#EnMin(eV)  EnMax(eV)   Data(no-dim)Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.46E7      4.46E7      0.021       6.67         100
+4.5E7       4.5E7       0.0212      6.6          50 100
+1.2E8       1.2E8       0.288       0.45         43 43 100
+4.34E8      4.34E8      0.676       10.06        25 25 25 100
+5.85E8      5.85E8      0.659       11.84        25 25 25 36 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720092
+#DATASET        C02720101  20160809
+#SUBENT         C0272010   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       26-FE-0(P,X)21-SC-48,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        21-SC-48
+#C4ReaCode      (P,X),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 26000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27px}
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000   39000      4.46E7           2.16E-5   6.7E-6           21048.9                     R.L.Brodzinski,      (71)C0272 101                              6.7E-6                            31       31                        0.00301  0.00068
+ 1001 26000   39000      5.85E8           2.36E-4   7.6E-5           21048.9                     R.L.Brodzinski,      (71)C0272 101                              7.6E-5                            32.2     32.2    0.0108
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.46E7      5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.46E7      4.46E7      2.16E-5     31.02        100
+5.85E8      5.85E8      2.36E-4     32.2         25 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720101
+#DATASET        C02720102  20160809
+#SUBENT         C0272010   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       (26-FE-0(P,X)21-SC-48,,SIG)/(26-FE-0(P,X)25-MN-54,,SIG)
+#C4Reaction     ((P,X),SIG)/((P,X),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        21-SC-48
+#C4ReaCode      ((P,X),SIG)/((P,X),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [ 1001 26000 2039000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat      ZAP                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000 2039000      4.46E7           1.16E-4   3.3E-5   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 102                              3.3E-5                            28.4     28.4
+ 1001 26000 2039000      5.85E8            0.0114   0.0015   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 102                              0.0015                            13.2     13.2
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.46E7      5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(no-dim)Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.46E7      4.46E7      1.16E-4     28.45        100
+5.85E8      5.85E8      0.0114      13.16        25 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720102
+#DATASET        C02720111  20160809
+#SUBENT         C0272011   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       26-FE-0(P,X)21-SC-47,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        21-SC-47
+#C4ReaCode      (P,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+6.88%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 26000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27px}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-0(P,X)21-SC-47,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (26-FE-0(P,X)21-SC-47,,SIG)
+#+               #[1]#DECAY-DATA (21-SC-47,3.43D,DG,158.,0.73) #Ix_old=0.73
+#+                a1=0.73/0.683;              #[1]#DECAY-DATA: correction to new 159.381 keV gamma-yield per decay Sc-47 Ix_new=0.683
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.068814
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        C02720111   1.06881     1.00000     1.06881     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          C02720111   CS          3           1.06881     1.06881     1.06881     +6.88%      1.06881     [EN,MONIT]::al27px
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000   39000       1.2E8          2.9606-4 4.7028-5           21047.9                     R.L.Brodzinski*,     (71)C0272 111                            4.7028-5                            15.9     15.9    0.0108                              1.068814 1.068814
+ 1001 26000   39000      4.34E8          1.4001-3 2.2445-4           21047.9                     R.L.Brodzinski*,     (71)C0272 111                            2.2445-4                            16       16      0.011                               1.068814 1.0688142
+ 1001 26000   39000      5.85E8          2.0307-3 6.1991-4           21047.9                     R.L.Brodzinski*,     (71)C0272 111                            6.1991-4                            30.5     30.5    0.0108                              1.068814 1.0688142
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.2E8       5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.2E8       1.2E8       2.9606-4    15.88        100
+4.34E8      4.34E8      1.4001-3    16.03        25 100
+5.85E8      5.85E8      2.0307-3    30.53        25 34 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720111
+#DATASET        C02720112  20160809
+#SUBENT         C0272011   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       (26-FE-0(P,X)21-SC-47,,SIG)/(26-FE-0(P,X)25-MN-54,,SIG)
+#C4Reaction     ((P,X),SIG)/((P,X),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        21-SC-47
+#C4ReaCode      ((P,X),SIG)/((P,X),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [ 1001 26000 2039000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat      ZAP                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000 2039000       1.2E8            0.0084   0.0013   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 112                              0.0013                            15.5     15.5
+ 1001 26000 2039000      4.34E8            0.0819   0.0079   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 112                              0.0079                            9.65     9.65
+ 1001 26000 2039000      5.85E8             0.096   0.0088   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 112                              0.0088                            9.17     9.17
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.2E8       5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(no-dim)Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.2E8       1.2E8       0.0084      15.48        100
+4.34E8      4.34E8      0.0819      9.65         25 100
+5.85E8      5.85E8      0.096       9.17         25 34 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720112
+#DATASET        C02720121  20160809
+#SUBENT         C0272012   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       26-FE-0(P,X)21-SC-46,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        21-SC-46
+#C4ReaCode      (P,X),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 26000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27px}
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000   39000       3.2E8           0.00374   8.8E-4           21046.9                     R.L.Brodzinski,      (71)C0272 121                              8.8E-4                            23.5     23.5    0.0113
+ 1001 26000   39000      4.34E8            0.0054   0.0014           21046.9                     R.L.Brodzinski,      (71)C0272 121                              0.0014                            25.9     25.9    0.011
+ 1001 26000   39000      5.85E8            0.0054   0.0018           21046.9                     R.L.Brodzinski,      (71)C0272 121                              0.0018                            33.3     33.3    0.0108
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           3.2E8       5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+3.2E8       3.2E8       0.00374     23.53        100
+4.34E8      4.34E8      0.0054      25.93        28 100
+5.85E8      5.85E8      0.0054      33.33        25 25 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720121
+#DATASET        C02720122  20160809
+#SUBENT         C0272012   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       (26-FE-0(P,X)21-SC-46,,SIG)/(26-FE-0(P,X)25-MN-54,,SIG)
+#C4Reaction     ((P,X),SIG)/((P,X),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        21-SC-46
+#C4ReaCode      ((P,X),SIG)/((P,X),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [ 1001 26000 2039000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat      ZAP                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000 2039000       3.2E8             0.163    0.018   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 122                               0.018                            11       11
+ 1001 26000 2039000      4.34E8              0.33     0.07   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 122                                0.07                            21.2     21.2
+ 1001 26000 2039000      5.85E8             0.262    0.036   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 122                               0.036                            13.7     13.7
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           3.2E8       5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(no-dim)Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+3.2E8       3.2E8       0.163       11.04        100
+4.34E8      4.34E8      0.33        21.21        28 100
+5.85E8      5.85E8      0.262       13.74        25 25 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720122
+#DATASET        C02720131  20160809
+#SUBENT         C0272013   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       26-FE-0(P,X)21-SC-44-M,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        21-SC-44-M
+#C4ReaCode      (P,X),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 26000   39000M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27px}
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000   39000M      1.2E8            8.9E-4   1.2E-4           21044.9                     R.L.Brodzinski,      (71)C0272 131                              1.2E-4                            13.5     13.5    0.0108
+ 1001 26000   39000M     4.34E8           0.00359   5.9E-4           21044.9                     R.L.Brodzinski,      (71)C0272 131                              5.9E-4                            16.4     16.4    0.011
+ 1001 26000   39000M     5.85E8            0.0052   0.0016           21044.9                     R.L.Brodzinski,      (71)C0272 131                              0.0016                            30.8     30.8    0.0108
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.2E8       5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.2E8       1.2E8       8.9E-4      13.48        100
+4.34E8      4.34E8      0.00359     16.43        25 100
+5.85E8      5.85E8      0.0052      30.77        25 34 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720131
+#DATASET        C02720132  20160809
+#SUBENT         C0272013   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       (26-FE-0(P,X)21-SC-44-M,,SIG)/(26-FE-0(P,X)25-MN-54,,SIG)
+#C4Reaction     ((P,X),SIG)/((P,X),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        21-SC-44-M
+#C4ReaCode      ((P,X),SIG)/((P,X),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [ 1001 26000 2039000M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat      ZAP                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000 2039000M      1.2E8            0.0272   0.0036   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 132                              0.0036                            13.2     13.2
+ 1001 26000 2039000M     4.34E8             0.224    0.022   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 132                               0.022                            9.82     9.82
+ 1001 26000 2039000M     5.85E8             0.248    0.024   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 132                               0.024                            9.68     9.68
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.2E8       5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(no-dim)Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.2E8       1.2E8       0.0272      13.24        100
+4.34E8      4.34E8      0.224       9.82         25 100
+5.85E8      5.85E8      0.248       9.68         25 34 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720132
+#DATASET        C02720141  20160809
+#SUBENT         C0272014   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       26-FE-0(P,X)22-TI-44,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        22-TI-44
+#C4ReaCode      (P,X),SIG
+#CompNotes      OPERATION...  Value=Max  Max:DATA-MAX
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 26000   39000   ]
+#DATA-HDR       DATA DATA-MAX:Col[X]=[3]
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27px}
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+#1001 26000   39000 3     3.2E8            1.4E-4                    22044.9                     R.L.Brodzinski,      (71)C0272 141                                                                                 0.0113
+#1001 26000   39000 3    4.34E8            0.0018                    22044.9                     R.L.Brodzinski,      (71)C0272 141                                                                                 0.011
+ 1001 26000   39000      5.85E8            2.5E-4   1.8E-4           22044.9                     R.L.Brodzinski,      (71)C0272 141                              1.8E-4                            72       72      0.0108
+#/C5DATA        0
+#/DATASET       C02720141
+#DATASET        C02720142  20160809
+#SUBENT         C0272014   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       (26-FE-0(P,X)22-TI-44,,SIG)/(26-FE-0(P,X)25-MN-54,,SIG)
+#C4Reaction     ((P,X),SIG)/((P,X),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        22-TI-44
+#C4ReaCode      ((P,X),SIG)/((P,X),SIG)
+#CompNotes      OPERATION...  Value=Max  Max:DATA-MAX
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [ 1001 26000 2039000   ]
+#DATA-HDR       DATA DATA-MAX:Col[X]=[3]
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat      ZAP                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+#1001 26000 2039000 3     3.2E8            0.0063            9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 142
+#1001 26000 2039000 3    4.34E8              0.11            9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 142
+ 1001 26000 2039000      5.85E8            0.0118   0.0077   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 142                              0.0077                            65.3     65.3
+#/C5DATA        0
+#/DATASET       C02720142
+#DATASET        C02720151  20160809
+#SUBENT         C0272015   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       26-FE-0(P,X)19-K-43,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        19-K-43
+#C4ReaCode      (P,X),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 26000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27px}
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000   39000      4.34E8           3.09E-4   9.6E-5           19043.9                     R.L.Brodzinski,      (71)C0272 151                              9.6E-5                            31.1     31.1    0.011
+ 1001 26000   39000      5.85E8            7.0E-4   2.3E-4           19043.9                     R.L.Brodzinski,      (71)C0272 151                              2.3E-4                            32.9     32.9    0.0108
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.34E8      5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.34E8      4.34E8      3.09E-4     31.07        100
+5.85E8      5.85E8      7.0E-4      32.86        25 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720151
+#DATASET        C02720152  20160809
+#SUBENT         C0272015   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       (26-FE-0(P,X)19-K-43,,SIG)/(26-FE-0(P,X)25-MN-54,,SIG)
+#C4Reaction     ((P,X),SIG)/((P,X),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        19-K-43
+#C4ReaCode      ((P,X),SIG)/((P,X),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [ 1001 26000 2039000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat      ZAP                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000 2039000      4.34E8            0.0193   0.0055   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 152                              0.0055                            28.5     28.5
+ 1001 26000 2039000      5.85E8            0.0336   0.0056   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 152                              0.0056                            16.7     16.7
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.34E8      5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(no-dim)Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.34E8      4.34E8      0.0193      28.5         100
+5.85E8      5.85E8      0.0336      16.67        25 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720152
+#DATASET        C02720161  20160809
+#SUBENT         C0272016   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       26-FE-0(P,X)19-K-42,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        19-K-42
+#C4ReaCode      (P,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.442%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 26000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27px}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-0(P,X)19-K-42,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (26-FE-0(P,X)19-K-42,,SIG)
+#+               #[1]#DECAY-DATA (19-K-42,12.36HR,DG,1525.,0.18) #Ix_old=0.18
+#+                a1=0.18/0.1808;             #[1]#DECAY-DATA: correction to new 1524.6 keV gamma-yield per decay K-42 Ix_new=0.1808
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99557525
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        C02720161   0.995575    1.00000     0.995575    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          C02720161   CS          2           0.995575    0.995575    0.995575    -0.442%     1.00444     [EN,MONIT]::al27px
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000   39000      4.34E8          1.6925-3 3.9823-4           19042.9                     R.L.Brodzinski*,     (71)C0272 161                            3.9823-4                            23.5     23.5    0.011                               0.99557520.9955752
+ 1001 26000   39000      5.85E8          2.4790-3 7.7655-4           19042.9                     R.L.Brodzinski*,     (71)C0272 161                            7.7655-4                            31.3     31.3    0.0108                              0.99557520.9955752
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.34E8      5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.34E8      4.34E8      1.6925-3    23.53        100
+5.85E8      5.85E8      2.4790-3    31.33        25 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720161
+#DATASET        C02720162  20160809
+#SUBENT         C0272016   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       (26-FE-0(P,X)19-K-42,,SIG)/(26-FE-0(P,X)25-MN-54,,SIG)
+#C4Reaction     ((P,X),SIG)/((P,X),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        19-K-42
+#C4ReaCode      ((P,X),SIG)/((P,X),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [ 1001 26000 2039000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat      ZAP                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000 2039000      4.34E8              0.11     0.02   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 162                                0.02                            18.2     18.2
+ 1001 26000 2039000      5.85E8              0.12    0.014   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 162                               0.014                            11.7     11.7
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.34E8      5.85E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(no-dim)Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.34E8      4.34E8      0.11        18.18        100
+5.85E8      5.85E8      0.12        11.67        25 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C02720162
+#DATASET        C02720171  20160809
+#SUBENT         C0272017   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       26-FE-0(P,X)11-NA-24,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        11-NA-24
+#C4ReaCode      (P,X),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 26000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             Point: XS(b)=0.0108  EN-NRM(eV):5.85E8
+#M1             Point: XS(b)=  EN-NRM(eV):5.85E8
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000   39000      5.85E8           2.66E-4   8.5E-5           11024.9                     R.L.Brodzinski,      (71)C0272 171                              8.5E-5                            32       32      0.0108
+#/C5DATA        0
+#/DATASET       C02720171
+#DATASET        C02720172  20160809
+#SUBENT         C0272017   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       (26-FE-0(P,X)11-NA-24,,SIG)/(26-FE-0(P,X)25-MN-54,,SIG)
+#C4Reaction     ((P,X),SIG)/((P,X),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        11-NA-24
+#C4ReaCode      ((P,X),SIG)/((P,X),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [ 1001 26000 2039000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat      ZAP                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000 2039000      5.85E8            0.0128   0.0017   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 172                              0.0017                            13.3     13.3
+#/C5DATA        0
+#/DATASET       C02720172
+#DATASET        C02720181  20160809
+#SUBENT         C0272018   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       26-FE-0(P,X)11-NA-22,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        11-NA-22
+#C4ReaCode      (P,X),SIG
+#CompNotes      OPERATION...  Value=Max  Max:DATA-MAX
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 26000   39000   ]
+#DATA-HDR       DATA DATA-MAX:Col[X]=[3]
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27px}
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+#1001 26000   39000 3     3.2E8            5.0E-5                    11022.9                     R.L.Brodzinski,      (71)C0272 181                                                                                 0.0113
+#1001 26000   39000 3    4.34E8            1.7E-4                    11022.9                     R.L.Brodzinski,      (71)C0272 181                                                                                 0.011
+ 1001 26000   39000      5.85E8            2.6E-4   9.7E-5           11022.9                     R.L.Brodzinski,      (71)C0272 181                              9.7E-5                            37.3     37.3    0.0108
+#/C5DATA        0
+#/DATASET       C02720181
+#DATASET        C02720182  20160809
+#SUBENT         C0272018   20160809
+#ENTRY          C0272      20160809
+#TITLE          High-Energy Proton Spallation of Iron
+#AUTHORS        R.L.Brodzinski,L.A.Rancitelli,J.A.Cooper,N.A.Wogman
+#AUTHOR1        R.L.Brodzinski+
+#YEAR           1971
+#X4REF1         J,PR/C,4,1257,1971
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.4, p.1257 (1971)
+#DATE           20160809
+#INSTITUTE      1USABAT
+#METHOD         ACTIV,BCINT
+#REACTION       (26-FE-0(P,X)11-NA-22,,SIG)/(26-FE-0(P,X)25-MN-54,,SIG)
+#C4Reaction     ((P,X),SIG)/((P,X),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        11-NA-22
+#C4ReaCode      ((P,X),SIG)/((P,X),SIG)
+#CompNotes      OPERATION...  Value=Max  Max:DATA-MAX
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [ 1001 26000 2039000   ]
+#DATA-HDR       DATA DATA-MAX:Col[X]=[3]
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat      ZAP                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+#1001 26000 2039000 3     3.2E8            0.0022            9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 182
+#1001 26000 2039000 3    4.34E8             0.011            9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 182
+ 1001 26000 2039000      5.85E8            0.0114   0.0022   9000.9  26000.9                     R.L.Brodzinski,      (71)C0272 182                              0.0022                            19.3     19.3
+#/C5DATA        0
+#/DATASET       C02720182
+#/C5M.2.3       1               33              33              0               118             

@@ -1,0 +1,71 @@
+#C5.2.3
+#DATASET        30925002   20090913
+#SUBENT         30925002   20090913
+#ENTRY          30925      20090913
+#TITLE          Measurement of the cross section for the reaction
+#+              93-Nb(n,inl)Nb-93m at 2.8 MeV
+#AUTHORS        M.Wagner,G.Winkler,H.Vonach,G.Peto
+#AUTHOR1        M.Wagner+
+#YEAR           1988
+#X4REF1         J,ANE,15,(7),363,1988
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.15, Issue.7, p.363 (1988)
+#DATE           20090913
+#INSTITUTE      3HUNKOS,2AUSIRK
+#METHOD         ACTIV,MOSEP
+#REACTION       41-NB-93(N,INL)41-NB-93-M,,SIG
+#C4Reaction     (N,INL),SIG
+#ReactionType   CS
+#MF             3
+#MT             4
+#PROJ           1
+#TARG           41093            
+#TARGET         41093           [ ]             41-NB-93        [ ] 
+#REAC1          N,INL
+#PRODUCT        41-NB-93-M
+#C4ReaCode      (N,INL),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0271167(2.8e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 41093   3   4M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-238(N,F),,SIG
+#M0             Point: XS(b)=0.5232(1%)  EN-NRM(eV):2830000.0
+#M1             Point: XS(b)=0.5373875(1.36%)  EN-NRM(eV):2830000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 41-NB-93(N,INL)41-NB-93-M,,SIG
+#+              #[0]#Monitor:  92-U-238(N,F),,SIG
+#+              #[0]#En=2830000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.5232
+#+              a1=recom$u238nf[EN];          #[0]#new monitor point [2.83MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30925002    1.02712     1.02712     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30925002    CS          1           1.02712     1.02712     1.02712     +2.71%      1.02712     [MONIT]::u238nf
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 41093   3   4M  2830000.0  40000.00.2592443.01144562                                       M.Wagner*,           (88)30925  2 .01135184.00275116         .01144562 4.38     1.06              4.41     4.41    0.5232   0.005232 0.5373875.007294171.02711671.0500568
+#/C5DATA        0
+#/DATASET       30925002 
+#/C5.2.3        1               1               1               0               1               

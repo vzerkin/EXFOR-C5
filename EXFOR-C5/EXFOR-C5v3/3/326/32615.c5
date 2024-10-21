@@ -1,0 +1,300 @@
+#C5.2.3
+#DATASET        32615002   20150529
+#SUBENT         32615002   20150529
+#ENTRY          32615      20150529
+#TITLE          Activation cross section measurement for the
+#+              Eu(n,gamma) reactions
+#AUTHORS        Yu Weixiang,Lu Hanlin,Zhao Wenrong
+#AUTHOR1        Yu Weixiang+
+#YEAR           1993
+#X4REF1         J,CNP,15,(1),71,1993
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.15, Issue.1, p.71 (1993)
+#DATE           20150529
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       63-EU-151(N,G)63-EU-152-G+M2,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           63151            
+#TARGET         63151           [ ]             63-EU-151       [ ] 
+#REAC1          N,G
+#PRODUCT        63-EU-152-G+M2
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,1.,5.)      ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-1,1.5,5.)     ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(MONIT-ERR,3.,4.5) ADDED AS COMMON:MONIT-ERR,PER-CENT=3.0%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0018874(3.6e4) Data[4]*1.0212733(1.1e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 63151   3 102+A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 63-EU-151(N,G)63-EU-152-G+M2,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32615002    1.01315     1.01315     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32615002    CS          5           1.00189     1.03090     1.01315     +1.32%      1.03090     [EN,MONIT,MONIT-ERR]::au197ng
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 63151   3 102+A   36000.0  31000.0 2.0027730.1674963                                       Yu Weixiang*,        (93)32615  2 .07802514  0.01999         0.1674963 3.90     1                 8.36     8.36    0.5372   0.016116 0.538214 9.5942-3 1.00188740.9626224
+    1 63151   3 102+A  175000.0  55000.00.9824503.06604506                                       Yu Weixiang*,        (93)32615  2 .04194644  0.00953         .06604506 4.27     0.97              6.72     6.72    0.2592   0.007776 0.26721  .006669161.03090261.0006826
+    1 63151   3 102+A  318000.0  34000.00.6836085.04030573                                       Yu Weixiang*,        (93)32615  2 .02725313  0.00681         .04030573 3.99     1                 5.90     5.90    0.1911   0.005733 0.191832 3.7852-3 1.00383030.9373425
+    1 63151   3 102+A  465000.0 110000.00.4837776.03460499                                       Yu Weixiang*,        (93)32615  2 .01930056   0.0048         .03460499 3.99     0.99              7.15     7.15    0.1418   0.004254 0.142916 2.8283-3 1.00787010.9612497
+    1 63151   3 102+A 1120000.0  80000.00.2706374.01963789                                       Yu Weixiang*,        (93)32615  2 .01105717  0.00265         .01963789 4.09     0.98              7.26     7.26    0.0766   0.002298 .078229531.6946-3 1.02127330.9818946
+#/C5DATA        0
+#/DATASET       32615002 
+#DATASET        32615003   20150529
+#SUBENT         32615003   20150529
+#ENTRY          32615      20150529
+#TITLE          Activation cross section measurement for the
+#+              Eu(n,gamma) reactions
+#AUTHORS        Yu Weixiang,Lu Hanlin,Zhao Wenrong
+#AUTHOR1        Yu Weixiang+
+#YEAR           1993
+#X4REF1         J,CNP,15,(1),71,1993
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.15, Issue.1, p.71 (1993)
+#DATE           20150529
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       63-EU-151(N,G)63-EU-152-M1,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           63151            
+#TARGET         63151           [ ]             63-EU-151       [ ] 
+#REAC1          N,G
+#PRODUCT        63-EU-152-M1
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,1.,5.)      ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-1,1.5,5.)     ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(MONIT-ERR,3.,4.5) ADDED AS COMMON:MONIT-ERR,PER-CENT=3.0%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0018874(3.6e4) Data[1]*1.0212733(1.1e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 63151   3 102MA ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 63-EU-151(N,G)63-EU-152-M1,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32615003    1.01158     1.01158     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32615003    CS          2           1.00189     1.02127     1.01158     +1.16%      1.02127     [EN,MONIT,MONIT-ERR]::au197ng
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 63151   3 102MA   36000.0  31000.01.1732103.06634901                                       Yu Weixiang*,        (93)32615  3 .04570657  0.01171         .06634901 3.90     1                 5.66     5.66    0.5372   0.016116 0.538214 9.5942-3 1.00188740.921514
+    1 63151   3 102MA 1120000.0  80000.00.1225528 6.6811-3                                       Yu Weixiang*,        (93)32615  3  5.0070-3   0.0012          6.6811-3 4.09     0.98              5.45     5.45    0.0766   0.002298 .078229531.6946-3 1.02127330.9544408
+#/C5DATA        0
+#/DATASET       32615003 
+#DATASET        32615004   20100910
+#SUBENT         32615004   20100910
+#ENTRY          32615      20150529
+#TITLE          Activation cross section measurement for the
+#+              Eu(n,gamma) reactions
+#AUTHORS        Yu Weixiang,Lu Hanlin,Zhao Wenrong
+#AUTHOR1        Yu Weixiang+
+#YEAR           1993
+#X4REF1         J,CNP,15,(1),71,1993
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.15, Issue.1, p.71 (1993)
+#DATE           20100910
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       63-EU-151(N,G)63-EU-152,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           63151            
+#TARGET         63151           [ ]             63-EU-151       [ ] 
+#REAC1          N,G
+#PRODUCT        63-EU-152
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,1.,5.)      ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-1,1.5,5.)     ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(MONIT-ERR,3.,4.5) ADDED AS COMMON:MONIT-ERR,PER-CENT=3.0%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0018874(3.6e4) Data[1]*1.0212733(1.1e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 63151   3 102 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 63-EU-151(N,G)63-EU-152,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32615004    1.01158     1.01158     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32615004    CS          2           1.00189     1.02127     1.01158     +1.16%      1.02127     [EN,MONIT,MONIT-ERR]::au197ng
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 63151   3 102 A   36000.0  31000.03.17598320.2342472                                       Yu Weixiang*,        (93)32615  4 0.1237317   0.0317         0.2342472 3.90     1                 7.38     7.38    0.5372   0.016116 0.538214 9.5942-3 1.00188740.9522244
+    1 63151   3 102 A 1120000.0  80000.00.3931902.02633909                                       Yu Weixiang*,        (93)32615  4 .01606419  0.00385         .02633909 4.09     0.98              6.70     6.70    0.0766   0.002298 .078229531.6946-3 1.02127330.9755217
+#/C5DATA        0
+#/DATASET       32615004 
+#DATASET        32615005   20100910
+#SUBENT         32615005   20100910
+#ENTRY          32615      20150529
+#TITLE          Activation cross section measurement for the
+#+              Eu(n,gamma) reactions
+#AUTHORS        Yu Weixiang,Lu Hanlin,Zhao Wenrong
+#AUTHOR1        Yu Weixiang+
+#YEAR           1993
+#X4REF1         J,CNP,15,(1),71,1993
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.15, Issue.1, p.71 (1993)
+#DATE           20100910
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       63-EU-153(N,G)63-EU-154,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           63153            
+#TARGET         63153           [ ]             63-EU-153       [ ] 
+#REAC1          N,G
+#PRODUCT        63-EU-154
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,1.,5.)      ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-1,1.5,5.)     ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(MONIT-ERR,3.,4.5) ADDED AS COMMON:MONIT-ERR,PER-CENT=3.0%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0018874(3.6e4) Data[4]*1.0212733(1.1e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 63153   3 102 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 63-EU-153(N,G)63-EU-154,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32615005    1.01315     1.01315     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32615005    CS          5           1.00189     1.03090     1.01315     +1.32%      1.03090     [EN,MONIT,MONIT-ERR]::au197ng
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 63153   3 102 A   36000.0  31000.02.30133560.1663043                                       Yu Weixiang*,        (93)32615  5 .08965673  0.02297         0.1663043 3.90     1                 7.23     7.23    0.5372   0.016116 0.538214 9.5942-3 1.00188740.9503105
+    1 63153   3 102 A  175000.0  55000.01.1360548.07496952                                       Yu Weixiang*,        (93)32615  5 0.0485047  0.01102         .07496952 4.27     0.97              6.60     6.60    0.2592   0.007776 0.26721  .006669161.03090260.9995936
+    1 63153   3 102 A  318000.0  34000.00.73580760.0441529                                       Yu Weixiang*,        (93)32615  5 .02933413  0.00733         0.0441529 3.99     1                 6        6       0.1911   0.005733 0.191832 3.7852-3 1.00383030.9394235
+    1 63153   3 102 A  465000.0 110000.00.4515258.02739799                                       Yu Weixiang*,        (93)32615  5 .01801386  0.00448         .02739799 3.99     0.99              6.07     6.07    0.1418   0.004254 0.142916 2.8283-3 1.00787010.9447584
+    1 63153   3 102 A 1120000.0  80000.00.2737013.01855402                                       Yu Weixiang*,        (93)32615  5 .01118234  0.00268         .01855402 4.09     0.98              6.78     6.78    0.0766   0.002298 .078229531.6946-3 1.02127330.9765272
+#/C5DATA        0
+#/DATASET       32615005 
+#/C5.2.3        1               4               4               0               14              

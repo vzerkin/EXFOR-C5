@@ -1,0 +1,68 @@
+#C5M.2.3
+#DATASET        21488002   20051121
+#SUBENT         21488002   20051121
+#ENTRY          21488      20180311
+#TITLE          Protons from the interaction of 14 MeV neutrons with
+#+               medium weight nuclei
+#AUTHORS        D.L.Allan
+#AUTHOR1        D.L.Allan
+#YEAR           1957
+#X4REF1         J,PPS/A,70,195,1957
+#REFERENCE1     Jour: Proc.Physical Society (London), Section A, Vol.70, p.195 (1957)
+#DATE           20051121
+#INSTITUTE      2UK HAR
+#METHOD         ACTIV
+#REACTION       26-FE-54(N,2N)26-FE-53,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           26054            
+#TARGET         26054           [ ]             26-FE-54        [ ] 
+#REAC1          N,2N
+#PRODUCT        26-FE-53
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9433215(1.4e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 26054   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-63(N,2N)29-CU-62,,SIG
+#M0             Point: XS(b)=0.482  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.454681(1.25%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-54(N,2N)26-FE-53,,SIG
+#+              #[0]#Monitor:  29-CU-63(N,2N)29-CU-62,,SIG
+#+              #[0]#En=1.41E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.482
+#+              a1=recom$cu63n2n[EN];         #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        21488002    0.943322    0.943322    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          21488002    CS          1           0.943322    0.943322    0.943322    -5.67%      1.06008     [MONIT]::cu63n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26054   3  16      1.41E7 100000.0 9.4332-3    0.004                                       D.L.Allan*           (57)21488  2              0.004                            42.4                       42.4    0.482             0.454681 .005687450.9433215
+#/C5DATA        0
+#/DATASET       21488002 
+#/C5M.2.3       1               1               1               0               1               

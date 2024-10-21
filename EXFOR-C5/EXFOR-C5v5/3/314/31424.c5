@@ -1,0 +1,71 @@
+#C5M.2.3
+#DATASET        31424002   20100220
+#SUBENT         31424002   20100220
+#ENTRY          31424      20160929
+#TITLE          Measurement of fast neutron induced fission cross
+#+              section of thorium using Lexan plastic track detector
+#AUTHORS        R.K.Jain, H.S.Virk, J.Rama Rao, S.K.Bose
+#AUTHOR1        R.K.Jain+
+#YEAR           1997
+#X4REF1         J,PRM,49,515,1997
+#REFERENCE1     Jour: Pramana, Vol.49, p.515 (1997)
+#DATE           20100220
+#INSTITUTE      3INDBHU
+#METHOD         FISCT
+#REACTION       90-TH-232(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.66%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9548547(1.4e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 90232   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-238(N,F),,SIG
+#M0             Point: XS(b)=1.205(1.66%)  EN-NRM(eV):1.4E7
+#M1             Point: XS(b)=1.1506(1.32%)  EN-NRM(eV):1.4E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 90-TH-232(N,F),,SIG
+#+              #[0]#Monitor:  92-U-238(N,F),,SIG
+#+              #[0]#En=1.4E7
+#+              a0=[MONIT];                   #[0]#old monitor point 1.205
+#+              a1=recom$u238nf[EN];          #[0]#new monitor point [14.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31424002    0.954855    0.954855    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31424002    CS          1           0.954855    0.954855    0.954855    -4.51%      1.04728     [MONIT]::u238nf
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 90232   3  18       1.4E7         0.3437477.03803767                                       R.K.Jain*,           (97)31424  2  4.5419-3                  .03803767 1.32                       11.1     11.1    1.205    0.02     1.1506   0.01519930.95485470.9509417
+#/C5DATA        0
+#/DATASET       31424002 
+#/C5M.2.3       1               1               1               0               1               

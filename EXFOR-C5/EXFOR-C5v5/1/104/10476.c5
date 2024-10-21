@@ -1,0 +1,266 @@
+#C5M.2.3
+#DATASET        10476002   20031103
+#SUBENT         10476002   20031103
+#ENTRY          10476      20031103
+#TITLE          The 40Ca(n,alpha)37Ar cross section from 3 to 14.7 MeV
+#AUTHORS        J.W.Barnes,B.P.Bayhurst,B.H.Erkkila,J.S.Gilmore,
+#+              N.Jarmie,R.J.Prestwood
+#AUTHOR1        J.W.Barnes+
+#YEAR           1975
+#X4REF1         J,JIN,37,399,197502
+#REFERENCE1     Jour: Journal of Inorganic and Nuclear Chemistry, Vol.37, p.399 (1975)
+#DATE           20031103
+#INSTITUTE      1USALAS
+#METHOD         ACTIV
+#REACTION       20-CA-40(N,A)18-AR-37,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           20040            
+#TARGET         20040           [ ]             20-CA-40        [ ] 
+#REAC1          N,A
+#PRODUCT        18-AR-37
+#C4ReaCode      (N,A),SIG
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0312543(3.0e6) Data[4]*1.0637019(6.8e6)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 20040   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,INL)49-IN-115-M,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$in115ninl}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 20-CA-40(N,A)18-AR-37,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,INL)49-IN-115-M,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$in115ninl;          #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10476002    1.02362     1.02362     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10476002    CS          5           0.971720    1.06370     1.02362     +2.36%      1.06370     [EN,MONIT]::in115ninl
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 20040   3 107   2980000.0  10000.0.06115338 0.003558                                       J.W.Barnes*,         (75)10476  2  0.003558                            5.82                                5.82    0.331             0.3413452.008132381.0312543
+    1 20040   3 107   3390000.0  10000.00.1241605  0.00738                                       J.W.Barnes*,         (75)10476  2   0.00738                            5.94                                5.94    0.331             0.334123 8.0156-3 1.009435
+    1 20040   3 107   4390000.0  10000.00.1739379  0.01074                                       J.W.Barnes*,         (75)10476  2   0.01074                            6.17                                6.17    0.331             0.32163937.8716-3 0.9717199
+    1 20040   3 107   5660000.0  10000.00.2104798  0.01212                                       J.W.Barnes*,         (75)10476  2   0.01212                            5.76                                5.76    0.327             0.3407272.010651341.0419792
+    1 20040   3 107   6820000.0  10000.0  0.22125  0.01248                                       J.W.Barnes*,         (75)10476  2   0.01248                            5.64                                5.64    0.314             0.33400240.01255271.0637019
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           2980000.0   6820000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           5           5
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+2980000.    2980000.    6.1153-2    5.82         100
+3390000.    3390000.    0.12416     5.94         89 100
+4390000.    4390000.    0.173938    6.17         63 74 100
+5660000.    5660000.    0.21048     5.76         50 50 67 100
+6820000.    6820000.    0.22125     5.64         50 50 50 70 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       10476002 
+#DATASET        10476003   20031103
+#SUBENT         10476003   20031103
+#ENTRY          10476      20031103
+#TITLE          The 40Ca(n,alpha)37Ar cross section from 3 to 14.7 MeV
+#AUTHORS        J.W.Barnes,B.P.Bayhurst,B.H.Erkkila,J.S.Gilmore,
+#+              N.Jarmie,R.J.Prestwood
+#AUTHOR1        J.W.Barnes+
+#YEAR           1975
+#X4REF1         J,JIN,37,399,197502
+#REFERENCE1     Jour: Journal of Inorganic and Nuclear Chemistry, Vol.37, p.399 (1975)
+#DATE           20031103
+#INSTITUTE      1USALAS
+#METHOD         ACTIV
+#REACTION       20-CA-40(N,A)18-AR-37,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           20040            
+#TARGET         20040           [ ]             20-CA-40        [ ] 
+#REAC1          N,A
+#PRODUCT        18-AR-37
+#C4ReaCode      (N,A),SIG
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.96160614(7.5e6) Data[4]*0.9751204(9.3e6)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 20040   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 20-CA-40(N,A)18-AR-37,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10476003    0.953716    0.953716    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10476003    CS          5           0.921326    0.976434    0.953716    -4.63%      1.08539     [EN,MONIT]::al27na
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 20040   3 107   7520000.0  10000.00.1990525  0.01242                                       J.W.Barnes*,         (75)10476  3   0.01242                            6.24                                6.24    0.029             .027886582.9181-4 0.9616061
+    1 20040   3 107   7850000.0  10000.0  0.18028  0.01158                                       J.W.Barnes*,         (75)10476  3   0.01158                            6.42                                6.42    0.0386            0.036056 3.3731E-40.9340932
+    1 20040   3 107   8550000.0  10000.00.1741307  0.01134                                       J.W.Barnes*,         (75)10476  3   0.01134                            6.51                                6.51    0.0605            .055740254.8421-4 0.9213265
+    1 20040   3 107   9280000.0  10000.00.1767345  0.01086                                       J.W.Barnes*,         (75)10476  3   0.01086                            6.14                                6.14    0.0772            0.07538076.6137-4 0.9764339
+    1 20040   3 107   9300000.0  10000.00.1803973   0.0111                                       J.W.Barnes*,         (75)10476  3    0.0111                            6.15                                6.15    .07780001         .075864376.6578-4 0.9751204
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           7520000.0   9300000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           5           5
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+7520000.    7520000.    0.199052    6.24         100
+7850000.    7850000.    0.18028     6.42         81 100
+8550000.    8550000.    0.174131    6.51         50 61 100
+9280000.    9280000.    0.176735    6.14         50 50 59 100
+9.3e+06     9.3e+06     0.180397    6.15         50 50 58 99 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       10476003 
+#DATASET        10476004   20031103
+#SUBENT         10476004   20031103
+#ENTRY          10476      20031103
+#TITLE          The 40Ca(n,alpha)37Ar cross section from 3 to 14.7 MeV
+#AUTHORS        J.W.Barnes,B.P.Bayhurst,B.H.Erkkila,J.S.Gilmore,
+#+              N.Jarmie,R.J.Prestwood
+#AUTHOR1        J.W.Barnes+
+#YEAR           1975
+#X4REF1         J,JIN,37,399,197502
+#REFERENCE1     Jour: Journal of Inorganic and Nuclear Chemistry, Vol.37, p.399 (1975)
+#DATE           20031103
+#INSTITUTE      1USALAS
+#METHOD         ACTIV
+#REACTION       20-CA-40(N,A)18-AR-37,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           20040            
+#TARGET         20040           [ ]             20-CA-40        [ ] 
+#REAC1          N,A
+#PRODUCT        18-AR-37
+#C4ReaCode      (N,A),SIG
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9918032(1.4e7) Data[1]*0.99547684(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 20040   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 20-CA-40(N,A)18-AR-37,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10476004    0.993640    0.993640    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10476004    CS          2           0.991803    0.995477    0.993640    -0.636%     1.00826     [EN,MONIT]::al27na
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 20040   3 107      1.41E7  50000.00.1368688  0.00828                                       J.W.Barnes*,         (75)10476  4   0.00828                            6.05                                6.05    0.122             0.121    5.5949E-40.9918032
+    1 20040   3 107      1.47E7 240000.00.1254301  0.00756                                       J.W.Barnes*,         (75)10476  4   0.00756                            6.03                                6.03    0.113             0.11248894.6096-4 0.9954768
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.41E7      1.47E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.41E7      1.41E7      0.136869    6.05         100
+1.47E7      1.47E7      0.12543     6.03         50 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       10476004 
+#/C5M.2.3       1               3               3               0               12              

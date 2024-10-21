@@ -1,0 +1,321 @@
+#C5.2.3
+#DATASET        22817002   20110509
+#SUBENT         22817002   20110509
+#ENTRY          22817      20151216
+#TITLE          Measurement of neutron activation cross sections for
+#+               the 99Tc(n,p)99Mo, 99Tc(n,alpha)96Nb,
+#+               99Tc(n,n'alpha)95Nb, and 99Tc(n,n')99mTc reactions
+#+               at 13.5 and 14.8 MeV
+#AUTHORS        Y.Ikeda, E.T.Cheng, C.Konno, H.Maekawa
+#AUTHOR1        Y.Ikeda+
+#YEAR           1994
+#X4REF1         J,NSE,116,28,1994
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.116, p.28 (1994)
+#DATE           20110509
+#INSTITUTE      2JPNJAE,1USAUSA
+#METHOD         ACTIV
+#REACTION       43-TC-99(N,P)42-MO-99,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           43099            
+#TARGET         43099           [ ]             43-TC-99        [ ] 
+#REAC1          N,P
+#PRODUCT        42-MO-99
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,2.,8.)      ADDED AS COMMON:ERR-S,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-3,,0.1)       ADDED AS COMMON:ERR-3,PER-CENT=0.05%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.53%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0002788(1.4e7) Data[1]*1.0002788(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.492%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 43099   3 103 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             Point: XS(b)=0.459(1.53%)  EN-NRM(eV):1.4E7
+#M1             Point: XS(b)=0.459128(0.55%)  EN-NRM(eV):1.4E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 43-TC-99(N,P)42-MO-99,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.459
+#+              a1=recom$nb93n2n[EN-NRM];     #[0]#new monitor point [14.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (43-TC-99(N,P)42-MO-99,,SIG)
+#+               #[1]#DECAY-DATA (42-MO-99,2.7477D,DG,739.51,0.1214) #Ix_old=0.1214
+#+                a1=0.1214/0.122;            #[1]#DECAY-DATA: correction to new 739.5 keV gamma-yield per decay Mo-99 Ix_new=0.122
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99508196
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22817002    0.995359    1.00028     0.995082    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22817002    CS          2           0.995359    0.995359    0.995359    -0.464%     1.00466     [MONIT]::nb93n2n
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 43099   3 103 A    1.35E7 200000.0.01065035 9.8374-4                                       Y.Ikeda*,            (94)22817  2  4.8393-4  2.14E-4          9.8374-4 4.54     2.01              9.24     9.24    0.459    0.007    0.459128 .002507510.99535940.9837389
+    1 43099   3 103 A    1.48E7 200000.0.01393503 8.7357-4                                       Y.Ikeda*,            (94)22817  2  6.3317-4   2.8E-4          8.7357-4 4.54     2.01              6.27     6.27    0.459    0.007    0.459128 .002507510.99535940.9706358
+#/C5DATA        0
+#/DATASET       22817002 
+#DATASET        22817003   20110509
+#SUBENT         22817003   20110509
+#ENTRY          22817      20151216
+#TITLE          Measurement of neutron activation cross sections for
+#+               the 99Tc(n,p)99Mo, 99Tc(n,alpha)96Nb,
+#+               99Tc(n,n'alpha)95Nb, and 99Tc(n,n')99mTc reactions
+#+               at 13.5 and 14.8 MeV
+#AUTHORS        Y.Ikeda, E.T.Cheng, C.Konno, H.Maekawa
+#AUTHOR1        Y.Ikeda+
+#YEAR           1994
+#X4REF1         J,NSE,116,28,1994
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.116, p.28 (1994)
+#DATE           20110509
+#INSTITUTE      2JPNJAE,1USAUSA
+#METHOD         ACTIV
+#REACTION       43-TC-99(N,A)41-NB-96,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           43099            
+#TARGET         43099           [ ]             43-TC-99        [ ] 
+#REAC1          N,A
+#PRODUCT        41-NB-96
+#C4ReaCode      (N,A),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,2.,3.)      ADDED AS COMMON:ERR-S,PER-CENT=2.0%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.53%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0002788(1.4e7) Data[1]*1.0002788(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.07%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 43099   3 107 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             Point: XS(b)=0.459(1.53%)  EN-NRM(eV):1.4E7
+#M1             Point: XS(b)=0.459128(0.55%)  EN-NRM(eV):1.4E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 43-TC-99(N,A)41-NB-96,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.459
+#+              a1=recom$nb93n2n[EN-NRM];     #[0]#new monitor point [14.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (43-TC-99(N,A)41-NB-96,,SIG)
+#+               #[1]#DECAY-DATA (41-NB-96,23.35HR,DG,568.86,0.568) #Ix_old=0.568
+#+                a1=0.568/0.58;              #[1]#DECAY-DATA: correction to new 568.871 keV gamma-yield per decay Nb-96 Ix_new=0.58
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9793104
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22817003    0.979583    1.00028     0.979310    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22817003    CS          2           0.979583    0.979583    0.979583    -2.04%      1.02084     [MONIT]::nb93n2n
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 43099   3 107 A    1.35E7 200000.0 4.4081-3 2.8709-4                                       Y.Ikeda*,            (94)22817  3  2.1936-4   9.0E-5          2.8709-4 4.98     2.04              6.51     6.51    0.459    0.007    0.459128 .002507510.97958340.9569787
+    1 43099   3 107 A    1.48E7 200000.0 5.4857-3 3.8397-4                                       Y.Ikeda*,            (94)22817  3  2.7299-4  1.12E-4          3.8397-4 4.98     2.04              7        7       0.459    0.007    0.459128 .002507510.97958340.9599221
+#/C5DATA        0
+#/DATASET       22817003 
+#DATASET        22817004   20110509
+#SUBENT         22817004   20110509
+#ENTRY          22817      20151216
+#TITLE          Measurement of neutron activation cross sections for
+#+               the 99Tc(n,p)99Mo, 99Tc(n,alpha)96Nb,
+#+               99Tc(n,n'alpha)95Nb, and 99Tc(n,n')99mTc reactions
+#+               at 13.5 and 14.8 MeV
+#AUTHORS        Y.Ikeda, E.T.Cheng, C.Konno, H.Maekawa
+#AUTHOR1        Y.Ikeda+
+#YEAR           1994
+#X4REF1         J,NSE,116,28,1994
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.116, p.28 (1994)
+#DATE           20110509
+#INSTITUTE      2JPNJAE,1USAUSA
+#METHOD         ACTIV
+#REACTION       43-TC-99(N,N+A)41-NB-95,,SIG
+#C4Reaction     (N,N+A),SIG
+#ReactionType   CS
+#MF             3
+#MT             22
+#PROJ           1
+#TARG           43099            
+#TARGET         43099           [ ]             43-TC-99        [ ] 
+#REAC1          N,N+A
+#PRODUCT        41-NB-95
+#C4ReaCode      (N,N+A),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.53%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0002788(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 43099   3  22 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             Point: XS(b)=0.459(1.53%)  EN-NRM(eV):1.4E7
+#M1             Point: XS(b)=0.459128(0.55%)  EN-NRM(eV):1.4E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 43-TC-99(N,N+A)41-NB-95,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.459
+#+              a1=recom$nb93n2n[EN-NRM];     #[0]#new monitor point [14.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22817004    1.00028     1.00028     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22817004    CS          1           1.00028     1.00028     1.00028     +0.0279%    1.00028     [MONIT]::nb93n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 43099   3  22 A    1.48E7 200000.0 2.0006-3 1.6002-3                                       Y.Ikeda*,            (94)22817  4  8.3410-5   0.0016          1.6002-3 4.17     80                80       80      0.459    0.007    0.459128 .002507511.00027881.0001204
+#/C5DATA        0
+#/DATASET       22817004 
+#DATASET        22817005   20151216
+#SUBENT         22817005   20151216
+#ENTRY          22817      20151216
+#TITLE          Measurement of neutron activation cross sections for
+#+               the 99Tc(n,p)99Mo, 99Tc(n,alpha)96Nb,
+#+               99Tc(n,n'alpha)95Nb, and 99Tc(n,n')99mTc reactions
+#+               at 13.5 and 14.8 MeV
+#AUTHORS        Y.Ikeda, E.T.Cheng, C.Konno, H.Maekawa
+#AUTHOR1        Y.Ikeda+
+#YEAR           1994
+#X4REF1         J,NSE,116,28,1994
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.116, p.28 (1994)
+#DATE           20151216
+#INSTITUTE      2JPNJAE,1USAUSA
+#METHOD         ACTIV
+#REACTION       43-TC-99(N,INL)43-TC-99-M,,SIG
+#C4Reaction     (N,INL),SIG
+#ReactionType   CS
+#MF             3
+#MT             4
+#PROJ           1
+#TARG           43099            
+#TARGET         43099           [ ]             43-TC-99        [ ] 
+#REAC1          N,INL
+#PRODUCT        43-TC-99-M
+#C4ReaCode      (N,INL),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.1,0.2)    ADDED AS COMMON:ERR-S,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-3,,0.1)       ADDED AS COMMON:ERR-3,PER-CENT=0.05%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.53%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0002788(1.4e7) Data[1]*1.0002788(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.02%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 43099   3   4MA ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             Point: XS(b)=0.459(1.53%)  EN-NRM(eV):1.4E7
+#M1             Point: XS(b)=0.459128(0.55%)  EN-NRM(eV):1.4E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 43-TC-99(N,INL)43-TC-99-M,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.459
+#+              a1=recom$nb93n2n[EN-NRM];     #[0]#new monitor point [14.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (43-TC-99(N,INL)43-TC-99-M,,SIG)
+#+               #[1]#DECAY-DATA (43-TC-99-M,6.006HR,DG,140.47,0.872) #Ix_old=0.872
+#+                a1=0.872/0.89;              #[1]#DECAY-DATA: correction to new 140.511 keV gamma-yield per decay Tc-99-m Ix_new=0.89
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.97977525
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22817005    0.980048    1.00028     0.979775    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22817005    CS          2           0.980048    0.980048    0.980048    -2.00%      1.02036     [MONIT]::nb93n2n
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 43099   3   4MA    1.35E7 200000.0 0.101925 5.6984-3                                       Y.Ikeda*,            (94)22817  5  6.8507-3  1.04E-4          5.6984-3 6.72     0.10              5.59     5.59    0.459    0.007    0.459128 .002507510.98004840.9497294
+    1 43099   3   4MA    1.48E7 200000.0.07448369 0.003774                                       Y.Ikeda*,            (94)22817  5  5.0063-3   7.6E-5          0.003774 6.72     0.10              5.07     5.07    0.459    0.007    0.459128 .002507510.98004840.9435005
+#/C5DATA        0
+#/DATASET       22817005 
+#/C5.2.3        1               4               4               0               7               

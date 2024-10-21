@@ -1,0 +1,73 @@
+#C5M.2.3
+#DATASET        30618002   20090805
+#SUBENT         30618002   20090805
+#ENTRY          30618      20090805
+#TITLE          The determination of Ni-65 average projectional recoi l
+#+              ranges in Cu-65(n,p)Ni-65 reaction with 13.9-15.6 MeV
+#+              neutrons.
+#AUTHORS        Zhao Zhenlan,Guo Yinghuan,Zhang Yuanji,Feng Xizhang
+#AUTHOR1        Zhao Zhenlan+
+#YEAR           1981
+#X4REF1         J,HFH,3,(2),113,198105
+#REFERENCE1     Jour: He Huaxue yu Fangshe Huaxue, Vol.3, Issue.2, p.113 (1981)
+#DATE           20090805
+#INSTITUTE      3CPRIHP
+#METHOD         ACTIV
+#REACTION       29-CU-65(N,P)28-NI-65,,SIG,,AV
+#C4Reaction     (N,P),SIG,,AV
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           29065            
+#TARGET         29065           [ ]             29-CU-65        [ ] 
+#REAC1          N,P
+#PRODUCT        28-NI-65
+#C4ReaCode      (N,P),SIG,,AV
+#CompNotes      ERR-ANALYS:(ERR-1,,4.)        ADDED AS COMMON:ERR-1,PER-CENT=2.0%
+#CompNotes      OPERATION...  Value=(Min+Max)/2  Min:EN-MIN, Max:EN-MAX
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9784072(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [    1 29065   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1165(3%)  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 29-CU-65(N,P)28-NI-65,,SIG,,AV
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1165
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30618002    0.978407    0.978407    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30618002    CS          1           0.978407    0.978407    0.978407    -2.16%      1.02207     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 29065   3 103     1.475E7 850000.0.02318825 2.2446-3                                       Zhao Zhenlan*,       (81)30618  2  1.3351-3                   2.2446-3 5.76                       9.68     9.68    0.1165   0.003495 0.11398444.4691-4 0.97840720.9352545
+#/C5DATA        0
+#/DATASET       30618002 
+#/C5M.2.3       1               1               1               0               1               

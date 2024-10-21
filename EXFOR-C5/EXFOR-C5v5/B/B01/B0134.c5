@@ -1,0 +1,86 @@
+#C5M.2.3
+#DATASET        B0134002   20011220
+#SUBENT         B0134002   20011220
+#ENTRY          B0134      20011220
+#TITLE          Cross Section For the Production of Beryllium-7
+#+              From Lithium-6, Lithium-6 Interactions.
+#AUTHORS        L.RUBY, R.V.PYLE, Y.C.WONG
+#AUTHOR1        L.Ruby+
+#YEAR           1977
+#X4REF1         J,NSE,63,197,1977
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.63, p.197 (1977)
+#DATE           20011220
+#INSTITUTE      1USABRK
+#METHOD         EXTB,SITA,EDEG,BCINT
+#REACTION       3-LI-6(3-LI-6,N+A)4-BE-7,,SIG,,,EXP
+#C4Reaction     (3-LI-6,N+A),SIG
+#ReactionType   CS
+#MF             3
+#MT             22
+#PROJ           3006
+#TARG           3006             
+#TARGET         3006            [ ]             3-LI-6          [ ] 
+#REAC1          3-LI-6,N+A
+#PRODUCT        4-BE-7
+#C4ReaCode      (3-LI-6,N+A),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.34%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 3006  3006   3  22   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 3-LI-6(3-LI-6,N+A)4-BE-7,,SIG,,,EXP
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (3-LI-6(3-LI-6,N+A)4-BE-7,,SIG,,,EXP)
+#+               #[1]#DECAY-DATA (4-BE-7,53.3D,DG,478.,0.103) #Ix_old=0.103
+#+                a1=0.103/0.1044;            #[1]#DECAY-DATA: correction to new 477.6035 keV gamma-yield per decay Be-7 Ix_new=0.1044
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.98659
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        B0134002    0.986590    -           0.986590    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          B0134002    CS          3           0.986590    0.986590    0.986590    -1.34%      1.01359                
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 3006  3006   3  22   1600000.0          3.8378-3 3.8477-4                                       L.RUBY*,             (77)B0134  2                             3.8477-4                            10       10                                          0.98659  0.9865901
+ 3006  3006   3  22   3500000.0         .09214751.00591954                                       L.RUBY*,             (77)B0134  2                            .00591954                            6.42     6.42                                        0.98659  0.98659
+ 3006  3006   3  22   5000000.0          0.175613 6.3142-3                                       L.RUBY*,             (77)B0134  2                             6.3142-3                            3.60     3.60                                        0.98659  0.98659
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1600000.0   5000000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.6e+06     1.6e+06     3.8378-3    10.03        100
+3.5e+06     3.5e+06     9.2148-2    6.42         25 100
+5.e+06      5.e+06      0.175613    3.6          25 28 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       B0134002 
+#/C5M.2.3       1               1               1               0               3               

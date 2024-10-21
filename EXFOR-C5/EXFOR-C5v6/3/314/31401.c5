@@ -1,0 +1,169 @@
+#C5.2.3
+#DATASET        31401002   20100220
+#SUBENT         31401002   20100220
+#ENTRY          31401      20240216
+#TITLE          Activation cross section for 204Pb(n,2n)203Pb reaction
+#AUTHORS        Lu Hanlin, Zhao Wenrong, Yu Weixiang, Yuan Xialin
+#AUTHOR1        Lu Hanlin+
+#YEAR           1990
+#X4REF1         J,CNP,12,269,1990
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.12, p.269 (1990)
+#DATE           20100220
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV,ASSOP
+#REACTION       82-PB-204(N,2N)82-PB-203,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           82204            
+#TARGET         82204           [ ]             82-PB-204       [ ] 
+#REAC1          N,2N
+#PRODUCT        82-PB-203
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-1,1.,1.6)     ADDED AS COMMON:ERR-1,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-2,1.5,1.8)    ADDED AS COMMON:ERR-2,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-3,0.6,1.)     ADDED AS COMMON:ERR-3,PER-CENT=0.6%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=2
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.98818797(1.4e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.04%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 82204   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 82-PB-204(N,2N)82-PB-203,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (82-PB-204(N,2N)82-PB-203,,SIG)
+#+               #[1]#DECAY-DATA (82-PB-203-G,52.06HR,DG,279.,0.801) #Ix_old=0.801
+#+                a1=0.801/0.8094;            #[1]#DECAY-DATA: correction to new 279.1952 keV gamma-yield per decay Pb-203-g Ix_new=0.8094
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.98962194
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31401002    0.983777    0.994094    0.989622    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31401002    CS          2           0.977933    0.989622    0.983777    -1.62%      1.02257     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 82204   3  16     1.449E7 400000.02.0086734.03520581                                       Lu Hanlin*,          (90)31401  2 .03899626                  .03520581 1.94                       1.75     1.75    0.117    0.0016   0.115618 4.3603-4 0.97793250.7823513
+    1 82204   3  16     1.458E7 160000.01.9970572.04255375                                       Lu Hanlin*,          (90)31401  2 0.0379966                  .04255375 1.90                       2.13     2.13                      0.11428364.4410-4 0.98962190.9896219
+#/C5DATA        0
+#/DATASET       31401002 
+#DATASET        31401003   20230707
+#SUBENT         31401003   20230707
+#ENTRY          31401      20240216
+#TITLE          Activation cross section for 204Pb(n,2n)203Pb reaction
+#AUTHORS        Lu Hanlin, Zhao Wenrong, Yu Weixiang, Yuan Xialin
+#AUTHOR1        Lu Hanlin+
+#YEAR           1990
+#X4REF1         J,CNP,12,269,1990
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.12, p.269 (1990)
+#DATE           20230707
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       82-PB-204(N,2N)82-PB-203,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           82204            
+#TARGET         82204           [ ]             82-PB-204       [ ] 
+#REAC1          N,2N
+#PRODUCT        82-PB-203
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-1,1.,1.6)     ADDED AS COMMON:ERR-1,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-2,1.5,1.8)    ADDED AS COMMON:ERR-2,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-3,0.6,1.)     ADDED AS COMMON:ERR-3,PER-CENT=0.6%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=2.19%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.04%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+1.05%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 82204   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      82-PB-204(N,2N)82-PB-203,,SIG
+#M0             Point: XS(b)=2.0540001(2.19%)  EN-NRM(eV):1.449E7
+#C5CORR         #Reaction: 82-PB-204(N,2N)82-PB-203,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (82-PB-204(N,2N)82-PB-203,,SIG)
+#+               #[1]#DECAY-DATA (82-PB-203-G,52.06HR,DG,279.,0.801) #Ix_old=0.801
+#+                a1=0.801/0.8094;            #[1]#DECAY-DATA: correction to new 279.1952 keV gamma-yield per decay Pb-203-g Ix_new=0.8094
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.98962194
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (82-PB-204(N,2N)82-PB-203,,SIG)
+#+               #[2]#DECAY-MON  (82-PB-203-G,52.06HR,DG,279.,0.801) #Im_old=0.801
+#+                a2=0.8094/0.801;            #[2]#DECAY-MON: correction to new 279.1952 keV gamma-yield per decay Pb-203-g Im_new=0.8094
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.010487
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31401003    1.00000     -           0.989622    1.01049
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31401003    CS          10          1.00000     1.00000     1.00000     +1.53e-05%  1.00000     [MONIT]::pb204n2n
+#C5DATA         10
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 82204   3  16   9410000.0 450000.0    0.332    0.014                                       Lu Hanlin*,          (90)31401  3  9.6315-3                      0.014 2.90                       4.22     4.22                                        1.00000011.0000001
+    1 82204   3  16     1.034E7 400000.00.8320002     0.03                                       Lu Hanlin*,          (90)31401  3 .02413675                       0.03 2.90                       3.61     3.61                                        1.00000011.0000001
+    1 82204   3  16     1.104E7 350000.01.2550002    0.044                                       Lu Hanlin*,          (90)31401  3 0.0364082                      0.044 2.90                       3.51     3.51                                        1.00000011.0000001
+    1 82204   3  16     1.212E7 350000.01.7530004.09000002                                       Lu Hanlin*,          (90)31401  3 .05085545                  .09000002 2.90                       5.13     5.13                                        1.00000011.0000001
+    1 82204   3  16     1.305E7 200000.02.0290003.09300001                                       Lu Hanlin*,          (90)31401  3 .05886234                  .09300001 2.90                       4.58     4.58                                        1.00000011.0000001
+    1 82204   3  16      1.34E7 200000.01.9210004.06900003                                       Lu Hanlin*,          (90)31401  3 .05572921                  .06900003 2.90                       3.59     3.59                                        1.00000011.0000002
+    1 82204   3  16      1.36E7 200000.01.9310004.07000002                                       Lu Hanlin*,          (90)31401  3 .05601932                  .07000002 2.90                       3.63     3.63                                        1.00000011.0000002
+    1 82204   3  16      1.41E7 200000.01.9980004.07200001                                       Lu Hanlin*,          (90)31401  3 .05796302                  .07200001 2.90                       3.60     3.60                                        1.00000011.0000002
+    1 82204   3  16      1.44E7 200000.02.0470004.07300001                                       Lu Hanlin*,          (90)31401  3 .05938453                  .07300001 2.90                       3.57     3.57                                        1.00000011.0000001
+    1 82204   3  16      1.48E7 200000.02.0080004    0.072                                       Lu Hanlin*,          (90)31401  3 .05825313                      0.072 2.90                       3.59     3.59                                        1.00000011.0000001
+#/C5DATA        0
+#/DATASET       31401003 
+#/C5.2.3        1               2               2               0               12              

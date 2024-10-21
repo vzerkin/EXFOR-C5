@@ -1,0 +1,80 @@
+#C5.2.3
+#DATASET        21187002   20060809
+#SUBENT         21187002   20060809
+#ENTRY          21187      20060809
+#TITLE          -CROSS-SECTION FOR THE REACTION U-238(N,G)U-239 IN
+#+               THE ENERGY RANGE 0.12-7.6 MEV-
+#AUTHORS        J.F.BARRY,J.BUNCE,P.H.WHITE
+#AUTHOR1        J.F.Barry+
+#YEAR           1964
+#X4REF1         J,JNE/AB,18,481,196409
+#REFERENCE1     Jour: J.Nuclear Energy A&B (Reactor Sci. and Technol.), Vol.18, p.481 (1964)
+#DATE           20060809
+#INSTITUTE      2UK ALD
+#METHOD         ACTIV
+#REACTION       92-U-238(N,G)92-U-239,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           92238            
+#TARGET         92238           [ ]             92-U-238        [ ] 
+#REAC1          N,G
+#PRODUCT        92-U-239
+#C4ReaCode      (N,G),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9956309(1.3e5) Data[5]*0.99478644(5.1e5)
+#CompNotes      WARNING! UNCHANGED+CHANGED POINTS: 7+6=13; EN(eV):[1.3e5,7.6e6]
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92238   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$h1nel}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 92-U-238(N,G)92-U-239,,SIG
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$h1nel;              #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        21187002    0.995020    0.995020    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          21187002    CS          6/13        0.988992    0.999197    0.995020    -0.498%     1.01113     [EN,MONIT]::h1nel
+#C5DATA         13
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92238   3 102    127000.0  20000.00.2170475    0.011                                       J.F.BARRY*,          (64)21187  2                                0.011                            5.07     5.07    11.73             11.67875 .057556050.9956309
+    1 92238   3 102    160000.0  24000.00.1993383    0.008                                       J.F.BARRY*,          (64)21187  2                                0.008                            4.01     4.01    10.67             10.6347  0.04912320.9966916
+    1 92238   3 102    207000.0  23000.00.1571818    0.006                                       J.F.BARRY*,          (64)21187  2                                0.006                            3.82     3.82    9.55              9.500545 .040890820.9948214
+    1 92238   3 102    312000.0  22000.00.1394479    0.006                                       J.F.BARRY*,          (64)21187  2                                0.006                            4.30     4.30    7.89              7.80315  0.030624 0.9889925
+    1 92238   3 102    404000.0  22000.00.1258988    0.005                                       J.F.BARRY*,          (64)21187  2                                0.005                            3.97     3.97    6.85              6.844498 .025754560.9991968
+    1 92238   3 102    505000.0  22000.00.1273327    0.005                                       J.F.BARRY*,          (64)21187  2                                0.005                            3.93     3.93    6.13              6.098041 0.02232530.9947864
+    1 92238   3 102    810000.0 110000.0    0.147    0.008                                       J.F.BARRY,           (64)21187  2                                0.008                            5.44     5.44                      4.7543044.01687548
+    1 92238   3 102   1060000.0 105000.0    0.149    0.007                                       J.F.BARRY,           (64)21187  2                                0.007                            4.70     4.70                      4.122872 .01456468
+    1 92238   3 102   1300000.0 105000.0     0.13    0.007                                       J.F.BARRY,           (64)21187  2                                0.007                            5.38     5.38                      3.69127  0.0130567
+    1 92238   3 102   1750000.0 105000.0.06900001    0.004                                       J.F.BARRY,           (64)21187  2                                0.004                            5.80     5.80                      3.13675  0.0112005
+    1 92238   3 102   3000000.0 115000.0    0.027    0.002                                       J.F.BARRY,           (64)21187  2                                0.002                            7.41     7.41                      2.28686  .00855457
+    1 92238   3 102   5000000.0 200000.0    0.011   0.0015                                       J.F.BARRY,           (64)21187  2                               0.0015                            13.6     13.6                      1.62755  .00657333
+    1 92238   3 102   7600000.0 200000.0   0.0064    0.002                                       J.F.BARRY,           (64)21187  2                                0.002                            31.3     31.3                      1.182404 5.0797-3
+#/C5DATA        0
+#/DATASET       21187002 
+#/C5.2.3        1               1               1               0               13              

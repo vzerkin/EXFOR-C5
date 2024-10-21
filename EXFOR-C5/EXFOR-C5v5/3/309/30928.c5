@@ -1,0 +1,96 @@
+#C5M.2.3
+#DATASET        30928002   20180523
+#SUBENT         30928002   20180523
+#ENTRY          30928      20180523
+#TITLE          Radiative capture of fast neutrons in 160Gd
+#AUTHORS        R.K.Y.Singh, M.Afzal Ansari, R.P.Gautam, I.A.Rizvi,
+#+               S.Kailas
+#AUTHOR1        R.K.Y.Singh+
+#YEAR           1988
+#X4REF1         J,CJP,66,330,1988
+#REFERENCE1     Jour: Canadian Journal of Physics, Vol.66, p.330 (1988)
+#DATE           20180523
+#INSTITUTE      3INDMUA,3INDTRM
+#METHOD         ACTIV
+#REACTION       64-GD-160(N,G)64-GD-161,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           64160            
+#TARGET         64160           [ ]             64-GD-160       [ ] 
+#REAC1          N,G
+#PRODUCT        64-GD-161
+#C4ReaCode      (N,G),SIG
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-21.2%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 64160   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 64-GD-160(N,G)64-GD-161,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (53-I-127(N,G)53-I-128,,SIG)
+#+               #[2]#DECAY-MON  (53-I-128,,DG,443.,0.16) #Im_old=0.16
+#+                a2=0.1261/0.16;             #[2]#DECAY-MON: correction to new 442.901 keV gamma-yield per decay I-128 Im_new=0.1261
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.78812504
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30928002    0.788125    -           -           0.788125
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30928002    CS          8           0.788125    0.788125    0.788125    -21.2%      1.26883     m0: {,D.I.Garber+,R,BNL-325,1976} : i127ng;::i127ng
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 64160   3 102    460000.0  80000.0.01867856 2.6008-3                                       R.K.Y.Singh*,        (88)30928  2                             2.6008-3                            13.9     13.9                                        0.788125 0.7881251
+    1 64160   3 102    570000.0  80000.0.02640219 4.4923-3                                       R.K.Y.Singh*,        (88)30928  2                             4.4923-3                            17       17                                          0.788125 0.7881251
+    1 64160   3 102    750000.0  80000.0.02435306 2.0491-3                                       R.K.Y.Singh*,        (88)30928  2                             2.0491-3                            8.41     8.41                                        0.788125 0.788125
+    1 64160   3 102    970000.0 400000.0.02805725 4.3347-3                                       R.K.Y.Singh*,        (88)30928  2                             4.3347-3                            15.4     15.4                                        0.788125 0.788125
+    1 64160   3 102   1220000.0 380000.0.02246156 2.6796-3                                       R.K.Y.Singh*,        (88)30928  2                             2.6796-3                            11.9     11.9                                        0.788125 0.7881251
+    1 64160   3 102   1520000.0 340000.0.02356494.00220675                                       R.K.Y.Singh*,        (88)30928  2                            .00220675                            9.36     9.36                                        0.788125 0.788125
+    1 64160   3 102   2220000.0 340000.0.01253119 1.7339-3                                       R.K.Y.Singh*,        (88)30928  2                             1.7339-3                            13.8     13.8                                        0.788125 0.7881251
+    1 64160   3 102   3050000.0 360000.0 6.3838-3 1.3398-3                                       R.K.Y.Singh*,        (88)30928  2                             1.3398-3                            21       21                                          0.788125 0.788125
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           460000.0    3050000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           8           8
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+460000.     460000.     1.8679-2    13.92        100
+570000.     570000.     2.6402-2    17.01        48 100
+750000.     750000.     2.4353-2    8.41         44 47 100
+970000.     970000.     2.8057-2    15.45        40 42 46 100
+1220000.    1220000.    2.2462-2    11.93        35 37 41 45 100
+1520000.    1520000.    2.3565-2    9.36         30 32 35 39 44 100
+2220000.    2220000.    1.2531-2    13.84        25 25 25 26 31 36 100
+3050000.    3050000.    6.3838-3    20.99        25 25 25 25 25 25 34 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       30928002 
+#/C5M.2.3       1               1               1               0               8               

@@ -1,0 +1,73 @@
+#C5M.2.3
+#DATASET        D6334002   20191114
+#SUBENT         D6334002   20191114
+#ENTRY          D6334      20191114
+#TITLE          Measurements and uncertainty propagation for the
+#+              natNi(p,x)61Cu reaction cross section up to the proton
+#+              energies of 20 MeV
+#AUTHORS        S.Badwar, R.Ghosh, S.S.Yerraguntla, B.M.jyrwa,
+#+              B.M.Lawriniang, H.Naik, Y.Naik, S.V.Suryanarayana,
+#+              S.Ganesan
+#AUTHOR1        S.Badwar+
+#YEAR           2018
+#X4REF1         J,NP/A,977,112,2018
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.977, p.112 (2018)
+#DATE           20191114
+#INSTITUTE      3INDNEH,3INDMNP,3INDTRM,3INDIND
+#METHOD         ACTIV,STTA
+#REACTION       28-NI-0(P,X)29-CU-61,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           28000            
+#TARGET         28000           [ ]             28-NI-0         [ ] 
+#REAC1          P,X
+#PRODUCT        29-CU-61
+#C4ReaCode      (P,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-3.94%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 28000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 28-NI-0(P,X)29-CU-61,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (28-NI-0(P,X)29-CU-61,,SIG)
+#+               #[1]#DECAY-DATA (29-CU-61,3.339HR,DG,282.96,0.122) #Ix_old=0.122
+#+                a1=0.122/0.127;             #[1]#DECAY-DATA: correction to new 282.956 keV gamma-yield per decay Cu-61 Ix_new=0.127
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9606299
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D6334002    0.960630    -           0.960630    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D6334002    CS          4           0.960630    0.960630    0.960630    -3.94%      1.04098     m0: {,F.Tarkanyi+,R,IAEA-TECDOC-1211,2001} : cu0px;::cu0px
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 28000   39000   7450000.01390000.0 3.9482-3 8.5496-4           29061.9                     S.Badwar*,           (18)D6334  2  7.7672-4   8.7E-5 2.5406-4 8.5496-4 19.7     2.20     6.43     21.7     21.7                                        0.96062990.9606299
+ 1001 28000   39000     1.212E71030000.0 1.7483-3 3.8425-4           29061.9                     S.Badwar*,           (18)D6334  2  3.4345-4   6.9E-5 1.1277-4 3.8425-4 19.6     3.95     6.45     22       22                                          0.96062990.9606299
+ 1001 28000   39000     1.582E7 860000.0 5.8022-3 1.2584-3           29061.9                     S.Badwar*,           (18)D6334  2  1.1404-3  1.23E-4 3.7362-4 1.2584-3 19.7     2.12     6.44     21.7     21.7                                        0.96062990.9606298
+ 1001 28000   39000     1.902E7 760000.0.01039402 2.2479-3           29061.9                     S.Badwar*,           (18)D6334  2  2.0427-3   1.6E-4 6.6912-4 2.2479-3 19.7     1.54     6.44     21.6     21.6                                        0.96062990.9606298
+#/C5DATA        0
+#/DATASET       D6334002 
+#/C5M.2.3       1               1               1               0               4               

@@ -1,0 +1,916 @@
+#C5M.2.3
+#DATASET        C2019002   20130801
+#SUBENT         C2019002   20130801
+#ENTRY          C2019      20130801
+#TITLE          Nuclear charge dispersion in the fission of 235U by
+#+              protons of energy 20-85 MeV
+#AUTHORS        G.B.Saha,I.Tomita,L.Yaffe
+#AUTHOR1        G.B.Saha+
+#YEAR           1971
+#X4REF1         J,CJC,49,2205,1971
+#REFERENCE1     Jour: Canadian Journal of Chemistry, Vol.49, p.2205 (1971)
+#DATE           20130801
+#INSTITUTE      1CANMCG
+#METHOD         ACTIV,CHSEP
+#REACTION       92-U-235(P,F)55-CS-129,IND,SIG
+#C4Reaction     (P,F)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1001
+#TARG           92235            
+#TARGET         92235           [ ]             92-U-235        [ ] 
+#REAC1          P,F
+#PRODUCT        55-CS-129
+#C4ReaCode      (P,F)IND,SIG
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-7.37%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [ 1001 92235   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(P,X)29-CU-64,,SIG
+#M0             exfor:[EN,MONIT]
+#C5CORR         #Reaction: 92-U-235(P,F)55-CS-129,IND,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (29-CU-65(P,X)29-CU-64,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-64,12.8HR,AR,511.0,0.19) #Im_old=0.38
+#+                a2=0.352/0.38;              #[2]#DECAY-MON: correction to new 511 keV gamma-yield per decay Cu-64 Im_new=0.352
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.9263158
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        C2019002    0.926316    -           -           0.926316
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          C2019002    CS          3           0.926316    0.926316    0.926316    -7.37%      1.07955     [EN,MONIT]::cu65px
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 92235   3  18       7.0E72000000.0 1.9453-4 3.7053-5     55.0    129.0                     G.B.Saha*,           (71)C2019  2                             3.7053-5                            19       19                                          0.92631580.9263158
+ 1001 92235   3  18       7.7E72000000.0 2.5937-4 3.7053-5     55.0    129.0                     G.B.Saha*,           (71)C2019  2                             3.7053-5                            14.3     14.3                                        0.92631580.9263157
+ 1001 92235   3  18       8.5E72000000.0 3.0568-4 2.7789-5     55.0    129.0                     G.B.Saha*,           (71)C2019  2                             2.7789-5                            9.09     9.09                                        0.92631580.9263158
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           7.0E7       8.5E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+7.0E7       7.0E7       1.9453-4    19.05        100
+7.7E7       7.7E7       2.5937-4    14.29        27 100
+8.5E7       8.5E7       3.0568-4    9.09         25 25 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C2019002 
+#DATASET        C2019003   20130801
+#SUBENT         C2019003   20130801
+#ENTRY          C2019      20130801
+#TITLE          Nuclear charge dispersion in the fission of 235U by
+#+              protons of energy 20-85 MeV
+#AUTHORS        G.B.Saha,I.Tomita,L.Yaffe
+#AUTHOR1        G.B.Saha+
+#YEAR           1971
+#X4REF1         J,CJC,49,2205,1971
+#REFERENCE1     Jour: Canadian Journal of Chemistry, Vol.49, p.2205 (1971)
+#DATE           20130801
+#INSTITUTE      1CANMCG
+#METHOD         ACTIV,CHSEP
+#REACTION       92-U-235(P,F)55-CS-130,,SIG
+#C4Reaction     (P,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1001
+#TARG           92235            
+#TARGET         92235           [ ]             92-U-235        [ ] 
+#REAC1          P,F
+#PRODUCT        55-CS-130
+#C4ReaCode      (P,F),SIG
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-7.37%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 92235   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(P,X)29-CU-64,,SIG
+#M0             exfor:[EN,MONIT]
+#C5CORR         #Reaction: 92-U-235(P,F)55-CS-130,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (29-CU-65(P,X)29-CU-64,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-64,12.8HR,AR,511.0,0.19) #Im_old=0.38
+#+                a2=0.352/0.38;              #[2]#DECAY-MON: correction to new 511 keV gamma-yield per decay Cu-64 Im_new=0.352
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.9263158
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        C2019003    0.926316    -           -           0.926316
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          C2019003    CS          4           0.926316    0.926316    0.926316    -7.37%      1.07955     [EN,MONIT]::cu65px
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 92235   3  18       6.0E72000000.0 1.2042-3 3.7053-4     55.0    130.0                     G.B.Saha*,           (71)C2019  3                             3.7053-4                            30.8     30.8                                        0.92631580.9263158
+ 1001 92235   3  18       7.0E72000000.0 1.2042-3 2.7789-4     55.0    130.0                     G.B.Saha*,           (71)C2019  3                             2.7789-4                            23.1     23.1                                        0.92631580.9263158
+ 1001 92235   3  18       7.7E72000000.0 1.4821-3 2.7789-4     55.0    130.0                     G.B.Saha*,           (71)C2019  3                             2.7789-4                            18.8     18.8                                        0.92631580.9263158
+ 1001 92235   3  18       8.5E72000000.0 1.8526-3 3.7053-4     55.0    130.0                     G.B.Saha*,           (71)C2019  3                             3.7053-4                            20       20                                          0.92631580.9263158
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.0E7       8.5E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.0E7       6.0E7       1.2042-3    30.77        100
+7.0E7       7.0E7       1.2042-3    23.08        30 100
+7.7E7       7.7E7       1.4821-3    18.75        25 36 100
+8.5E7       8.5E7       1.8526-3    20.0         25 25 34 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C2019003 
+#DATASET        C2019004   20130801
+#SUBENT         C2019004   20130801
+#ENTRY          C2019      20130801
+#TITLE          Nuclear charge dispersion in the fission of 235U by
+#+              protons of energy 20-85 MeV
+#AUTHORS        G.B.Saha,I.Tomita,L.Yaffe
+#AUTHOR1        G.B.Saha+
+#YEAR           1971
+#X4REF1         J,CJC,49,2205,1971
+#REFERENCE1     Jour: Canadian Journal of Chemistry, Vol.49, p.2205 (1971)
+#DATE           20130801
+#INSTITUTE      1CANMCG
+#METHOD         ACTIV,CHSEP
+#REACTION       92-U-235(P,F)55-CS-131,IND,SIG
+#C4Reaction     (P,F)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1001
+#TARG           92235            
+#TARGET         92235           [ ]             92-U-235        [ ] 
+#REAC1          P,F
+#PRODUCT        55-CS-131
+#C4ReaCode      (P,F)IND,SIG
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-7.37%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [ 1001 92235   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(P,X)29-CU-64,,SIG
+#M0             exfor:[EN,MONIT]
+#C5CORR         #Reaction: 92-U-235(P,F)55-CS-131,IND,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (29-CU-65(P,X)29-CU-64,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-64,12.8HR,AR,511.0,0.19) #Im_old=0.38
+#+                a2=0.352/0.38;              #[2]#DECAY-MON: correction to new 511 keV gamma-yield per decay Cu-64 Im_new=0.352
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.9263158
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        C2019004    0.926316    -           -           0.926316
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          C2019004    CS          6           0.926316    0.926316    0.926316    -7.37%      1.07955     [EN,MONIT]::cu65px
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 92235   3  18       4.0E72000000.0 5.5579-4 2.7789-4     55.0    131.0                     G.B.Saha*,           (71)C2019  4                             2.7789-4                            50       50                                          0.92631580.9263158
+ 1001 92235   3  18       5.0E72000000.0 1.3895-3 5.5579-4     55.0    131.0                     G.B.Saha*,           (71)C2019  4                             5.5579-4                            40       40                                          0.92631580.9263158
+ 1001 92235   3  18       6.0E72000000.0 7.4105-4 3.7053-4     55.0    131.0                     G.B.Saha*,           (71)C2019  4                             3.7053-4                            50       50                                          0.92631580.9263158
+ 1001 92235   3  18       7.0E72000000.0 4.6316-4 1.8526-4     55.0    131.0                     G.B.Saha*,           (71)C2019  4                             1.8526-4                            40       40                                          0.92631580.9263158
+ 1001 92235   3  18       7.7E72000000.0 9.2632-4 2.7789-4     55.0    131.0                     G.B.Saha*,           (71)C2019  4                             2.7789-4                            30       30                                          0.92631580.9263158
+ 1001 92235   3  18       8.5E72000000.0 1.1116-3 1.8526-4     55.0    131.0                     G.B.Saha*,           (71)C2019  4                             1.8526-4                            16.7     16.7                                        0.92631580.9263158
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.0E7       8.5E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.0E7       4.0E7       5.5579-4    50.0         100
+5.0E7       5.0E7       1.3895-3    40.0         39 100
+6.0E7       6.0E7       7.4105-4    50.0         28 39 100
+7.0E7       7.0E7       4.6316-4    40.0         25 28 39 100
+7.7E7       7.7E7       9.2632-4    30.0         25 25 31 42 100
+8.5E7       8.5E7       1.1116-3    16.67        25 25 25 33 41 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C2019004 
+#DATASET        C2019005   20130801
+#SUBENT         C2019005   20130801
+#ENTRY          C2019      20130801
+#TITLE          Nuclear charge dispersion in the fission of 235U by
+#+              protons of energy 20-85 MeV
+#AUTHORS        G.B.Saha,I.Tomita,L.Yaffe
+#AUTHOR1        G.B.Saha+
+#YEAR           1971
+#X4REF1         J,CJC,49,2205,1971
+#REFERENCE1     Jour: Canadian Journal of Chemistry, Vol.49, p.2205 (1971)
+#DATE           20130801
+#INSTITUTE      1CANMCG
+#METHOD         ACTIV,CHSEP
+#REACTION       92-U-235(P,F)55-CS-132,,SIG
+#C4Reaction     (P,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1001
+#TARG           92235            
+#TARGET         92235           [ ]             92-U-235        [ ] 
+#REAC1          P,F
+#PRODUCT        55-CS-132
+#C4ReaCode      (P,F),SIG
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-7.37%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 92235   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(P,X)29-CU-64,,SIG
+#M0             exfor:[EN,MONIT]
+#C5CORR         #Reaction: 92-U-235(P,F)55-CS-132,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (29-CU-65(P,X)29-CU-64,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-64,12.8HR,AR,511.0,0.19) #Im_old=0.38
+#+                a2=0.352/0.38;              #[2]#DECAY-MON: correction to new 511 keV gamma-yield per decay Cu-64 Im_new=0.352
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.9263158
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        C2019005    0.926316    -           -           0.926316
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          C2019005    CS          7           0.926316    0.926316    0.926316    -7.37%      1.07955     [EN,MONIT]::cu65px
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 92235   3  18       3.0E72000000.0 3.7053-4 9.2632-5     55.0    132.0                     G.B.Saha*,           (71)C2019  5                             9.2632-5                            25       25                                          0.92631580.9263158
+ 1001 92235   3  18       4.0E72000000.0 9.2632-4 1.8526-4     55.0    132.0                     G.B.Saha*,           (71)C2019  5                             1.8526-4                            20       20                                          0.92631580.9263158
+ 1001 92235   3  18       5.0E72000000.0 2.8716-3 3.7053-4     55.0    132.0                     G.B.Saha*,           (71)C2019  5                             3.7053-4                            12.9     12.9                                        0.92631580.9263158
+ 1001 92235   3  18       6.0E72000000.0 4.3537-3 3.7053-4     55.0    132.0                     G.B.Saha*,           (71)C2019  5                             3.7053-4                            8.51     8.51                                        0.92631580.9263157
+ 1001 92235   3  18       7.0E72000000.0 4.6316-3 3.7053-4     55.0    132.0                     G.B.Saha*,           (71)C2019  5                             3.7053-4                            8        8                                           0.92631580.9263158
+ 1001 92235   3  18       7.7E72000000.0 5.0947-3 3.7053-4     55.0    132.0                     G.B.Saha*,           (71)C2019  5                             3.7053-4                            7.27     7.27                                        0.92631580.9263158
+ 1001 92235   3  18       8.5E72000000.0 4.6316-3 3.7053-4     55.0    132.0                     G.B.Saha*,           (71)C2019  5                             3.7053-4                            8        8                                           0.92631580.9263158
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           3.0E7       8.5E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+3.0E7       3.0E7       3.7053-4    25.0         100
+4.0E7       4.0E7       9.2632-4    20.0         41 100
+5.0E7       5.0E7       2.8716-3    12.9         32 41 100
+6.0E7       6.0E7       4.3537-3    8.51         25 32 41 100
+7.0E7       7.0E7       4.6316-3    8.0          25 25 32 41 100
+7.7E7       7.7E7       5.0947-3    7.27         25 25 25 35 44 100
+8.5E7       8.5E7       4.6316-3    8.0          25 25 25 27 36 43 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C2019005 
+#DATASET        C2019006   20130801
+#SUBENT         C2019006   20130801
+#ENTRY          C2019      20130801
+#TITLE          Nuclear charge dispersion in the fission of 235U by
+#+              protons of energy 20-85 MeV
+#AUTHORS        G.B.Saha,I.Tomita,L.Yaffe
+#AUTHOR1        G.B.Saha+
+#YEAR           1971
+#X4REF1         J,CJC,49,2205,1971
+#REFERENCE1     Jour: Canadian Journal of Chemistry, Vol.49, p.2205 (1971)
+#DATE           20130801
+#INSTITUTE      1CANMCG
+#METHOD         ACTIV,CHSEP
+#REACTION       92-U-235(P,F)55-CS-134-M,,SIG
+#C4Reaction     (P,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1001
+#TARG           92235            
+#TARGET         92235           [ ]             92-U-235        [ ] 
+#REAC1          P,F
+#PRODUCT        55-CS-134-M
+#C4ReaCode      (P,F),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+11.1%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-7.37%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 92235   3  18M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(P,X)29-CU-64,,SIG
+#M0             exfor:[EN,MONIT]
+#C5CORR         #Reaction: 92-U-235(P,F)55-CS-134-M,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (92-U-235(P,F)55-CS-134-M,,SIG)
+#+               #[1]#DECAY-DATA (55-CS-134-M,2.9HR,DG,127.0,0.14) #Ix_old=0.14
+#+                a1=0.14/0.126;              #[1]#DECAY-DATA: correction to new 127.502 keV gamma-yield per decay Cs-134-m Ix_new=0.126
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.111111
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (29-CU-65(P,X)29-CU-64,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-64,12.8HR,AR,511.0,0.19) #Im_old=0.38
+#+                a2=0.352/0.38;              #[2]#DECAY-MON: correction to new 511 keV gamma-yield per decay Cu-64 Im_new=0.352
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.9263158
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        C2019006    1.02924     -           1.11111     0.926316
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          C2019006    CS          8           1.02924     1.02924     1.02924     +2.92%      1.02924     [EN,MONIT]::cu65px
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 92235   3  18M      2.0E72000000.0 1.9556-3 2.0585-4     55.0    134.0                     G.B.Saha*,           (71)C2019  6                             2.0585-4                            10.5     10.5                                        1.02923971.0292397
+ 1001 92235   3  18M      3.0E72000000.0 4.3228-3 5.1462-4     55.0    134.0                     G.B.Saha*,           (71)C2019  6                             5.1462-4                            11.9     11.9                                        1.02923971.0292397
+ 1001 92235   3  18M      4.0E72000000.0 7.1018-3 8.2339-4     55.0    134.0                     G.B.Saha*,           (71)C2019  6                             8.2339-4                            11.6     11.6                                        1.02923971.0292397
+ 1001 92235   3  18M      5.0E72000000.0.01132164.00102924     55.0    134.0                     G.B.Saha*,           (71)C2019  6                            .00102924                            9.09     9.09                                        1.02923971.0292395
+ 1001 92235   3  18M      6.0E72000000.0 9.3661-3 1.1322-3     55.0    134.0                     G.B.Saha*,           (71)C2019  6                             1.1322-3                            12.1     12.1                                        1.02923971.0292397
+ 1001 92235   3  18M      7.0E72000000.0 8.7485-3.00102924     55.0    134.0                     G.B.Saha*,           (71)C2019  6                            .00102924                            11.8     11.8                                        1.02923971.0292397
+ 1001 92235   3  18M      7.7E72000000.0 8.4398-3.00102924     55.0    134.0                     G.B.Saha*,           (71)C2019  6                            .00102924                            12.2     12.2                                        1.02923971.0292397
+ 1001 92235   3  18M      8.5E72000000.0 7.9251-3 9.2632-4     55.0    134.0                     G.B.Saha*,           (71)C2019  6                             9.2632-4                            11.7     11.7                                        1.02923971.0292397
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           2.0E7       8.5E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           8           8
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+2.0E7       2.0E7       1.9556-3    10.53        100
+3.0E7       3.0E7       4.3228-3    11.9         42 100
+4.0E7       4.0E7       7.1018-3    11.59        35 42 100
+5.0E7       5.0E7       1.1322-2    9.09         27 35 42 100
+6.0E7       6.0E7       9.3661-3    12.09        25 27 35 42 100
+7.0E7       7.0E7       8.7485-3    11.76        25 25 27 35 42 100
+7.7E7       7.7E7       8.4398-3    12.2         25 25 25 29 37 45 100
+8.5E7       8.5E7       7.9251-3    11.69        25 25 25 25 31 38 44 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C2019006 
+#DATASET        C2019007   20130801
+#SUBENT         C2019007   20130801
+#ENTRY          C2019      20130801
+#TITLE          Nuclear charge dispersion in the fission of 235U by
+#+              protons of energy 20-85 MeV
+#AUTHORS        G.B.Saha,I.Tomita,L.Yaffe
+#AUTHOR1        G.B.Saha+
+#YEAR           1971
+#X4REF1         J,CJC,49,2205,1971
+#REFERENCE1     Jour: Canadian Journal of Chemistry, Vol.49, p.2205 (1971)
+#DATE           20130801
+#INSTITUTE      1CANMCG
+#METHOD         ACTIV,CHSEP
+#REACTION       92-U-235(P,F)55-CS-134,,SIG
+#C4Reaction     (P,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1001
+#TARG           92235            
+#TARGET         92235           [ ]             92-U-235        [ ] 
+#REAC1          P,F
+#PRODUCT        55-CS-134
+#C4ReaCode      (P,F),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+15.8%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-7.37%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 92235   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(P,X)29-CU-64,,SIG
+#M0             exfor:[EN,MONIT]
+#C5CORR         #Reaction: 92-U-235(P,F)55-CS-134,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (92-U-235(P,F)55-CS-134,,SIG)
+#+               #[1]#DECAY-DATA (55-CS-134-G,2.05YR,DG,796.0,0.99) #Ix_old=0.99
+#+                a1=0.99/0.8546;             #[1]#DECAY-DATA: correction to new 795.864 keV gamma-yield per decay Cs-134-g Ix_new=0.8546
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.1584367
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (29-CU-65(P,X)29-CU-64,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-64,12.8HR,AR,511.0,0.19) #Im_old=0.38
+#+                a2=0.352/0.38;              #[2]#DECAY-MON: correction to new 511 keV gamma-yield per decay Cu-64 Im_new=0.352
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.9263158
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        C2019007    1.07308     -           1.15844     0.926316
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          C2019007    CS          8           1.07308     1.07308     1.07308     +7.31%      1.07308     [EN,MONIT]::cu65px
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 92235   3  18       2.0E72000000.0 3.2192-3              55.0    134.0                     G.B.Saha*,           (71)C2019  7                                                                                                                      1.0730782
+ 1001 92235   3  18       3.0E72000000.0 6.5458-3 1.2877-3     55.0    134.0                     G.B.Saha*,           (71)C2019  7                             1.2877-3                            19.7     19.7                                        1.07307821.0730782
+ 1001 92235   3  18       4.0E72000000.0.01051617 2.1462-3     55.0    134.0                     G.B.Saha*,           (71)C2019  7                             2.1462-3                            20.4     20.4                                        1.07307821.073078
+ 1001 92235   3  18       5.0E72000000.0.01716925 3.2192-3     55.0    134.0                     G.B.Saha*,           (71)C2019  7                             3.2192-3                            18.8     18.8                                        1.07307821.0730783
+ 1001 92235   3  18       6.0E72000000.0.01287694 2.1462-3     55.0    134.0                     G.B.Saha*,           (71)C2019  7                             2.1462-3                            16.7     16.7                                        1.07307821.0730782
+ 1001 92235   3  18       7.0E72000000.0.01287694 2.1462-3     55.0    134.0                     G.B.Saha*,           (71)C2019  7                             2.1462-3                            16.7     16.7                                        1.07307821.0730782
+ 1001 92235   3  18       7.7E72000000.0.01180386 2.1462-3     55.0    134.0                     G.B.Saha*,           (71)C2019  7                             2.1462-3                            18.2     18.2                                        1.07307821.0730782
+ 1001 92235   3  18       8.5E72000000.0.01019424 2.0388-3     55.0    134.0                     G.B.Saha*,           (71)C2019  7                             2.0388-3                            20       20                                          1.07307821.073078
+#/C5DATA        0
+#/DATASET       C2019007 
+#DATASET        C2019008   20130801
+#SUBENT         C2019008   20130801
+#ENTRY          C2019      20130801
+#TITLE          Nuclear charge dispersion in the fission of 235U by
+#+              protons of energy 20-85 MeV
+#AUTHORS        G.B.Saha,I.Tomita,L.Yaffe
+#AUTHOR1        G.B.Saha+
+#YEAR           1971
+#X4REF1         J,CJC,49,2205,1971
+#REFERENCE1     Jour: Canadian Journal of Chemistry, Vol.49, p.2205 (1971)
+#DATE           20130801
+#INSTITUTE      1CANMCG
+#METHOD         ACTIV,CHSEP
+#REACTION       92-U-235(P,F)55-CS-136-G,(M),SIG
+#C4Reaction     (P,F)(M),SIG
+#ReactionType   CS+
+#MF             3
+#MT             18
+#PROJ           1001
+#TARG           92235            
+#TARGET         92235           [ ]             92-U-235        [ ] 
+#REAC1          P,F
+#PRODUCT        55-CS-136-G
+#C4ReaCode      (P,F)(M),SIG
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-7.37%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section (uncert.if isomeric trans.incl)
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [ 1001 92235   3  18G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(P,X)29-CU-64,,SIG
+#M0             exfor:[EN,MONIT]
+#C5CORR         #Reaction: 92-U-235(P,F)55-CS-136-G,(M),SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (29-CU-65(P,X)29-CU-64,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-64,12.8HR,AR,511.0,0.19) #Im_old=0.38
+#+                a2=0.352/0.38;              #[2]#DECAY-MON: correction to new 511 keV gamma-yield per decay Cu-64 Im_new=0.352
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.9263158
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        C2019008    0.926316    -           -           0.926316
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          C2019008    CS+         8           0.926316    0.926316    0.926316    -7.37%      1.07955     [EN,MONIT]::cu65px
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 92235   3  18G      2.0E72000000.0.01111579 9.2632-4     55.0    136.0                     G.B.Saha*,           (71)C2019  8                             9.2632-4                            8.33     8.33                                        0.92631580.9263157
+ 1001 92235   3  18G      3.0E72000000.0.02223158 1.8526-3     55.0    136.0                     G.B.Saha*,           (71)C2019  8                             1.8526-3                            8.33     8.33                                        0.92631580.9263157
+ 1001 92235   3  18G      4.0E72000000.0.01482105 1.8526-3     55.0    136.0                     G.B.Saha*,           (71)C2019  8                             1.8526-3                            12.5     12.5                                        0.92631580.9263158
+ 1001 92235   3  18G      5.0E72000000.0.01667368 1.8526-3     55.0    136.0                     G.B.Saha*,           (71)C2019  8                             1.8526-3                            11.1     11.1                                        0.92631580.9263158
+ 1001 92235   3  18G      6.0E72000000.0.01204211 9.2632-4     55.0    136.0                     G.B.Saha*,           (71)C2019  8                             9.2632-4                            7.69     7.69                                        0.92631580.9263158
+ 1001 92235   3  18G      7.0E72000000.0.01018947 9.2632-4     55.0    136.0                     G.B.Saha*,           (71)C2019  8                             9.2632-4                            9.09     9.09                                        0.92631580.9263157
+ 1001 92235   3  18G      7.7E72000000.0.01018947 9.2632-4     55.0    136.0                     G.B.Saha*,           (71)C2019  8                             9.2632-4                            9.09     9.09                                        0.92631580.9263157
+ 1001 92235   3  18G      8.5E72000000.0.01018947 9.2632-4     55.0    136.0                     G.B.Saha*,           (71)C2019  8                             9.2632-4                            9.09     9.09                                        0.92631580.9263157
+#/C5DATA        0
+#/DATASET       C2019008 
+#DATASET        C2019009   20130801
+#SUBENT         C2019009   20130801
+#ENTRY          C2019      20130801
+#TITLE          Nuclear charge dispersion in the fission of 235U by
+#+              protons of energy 20-85 MeV
+#AUTHORS        G.B.Saha,I.Tomita,L.Yaffe
+#AUTHOR1        G.B.Saha+
+#YEAR           1971
+#X4REF1         J,CJC,49,2205,1971
+#REFERENCE1     Jour: Canadian Journal of Chemistry, Vol.49, p.2205 (1971)
+#DATE           20130801
+#INSTITUTE      1CANMCG
+#METHOD         ACTIV,CHSEP
+#REACTION       92-U-235(P,F)58-CE-139,IND,SIG
+#C4Reaction     (P,F)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1001
+#TARG           92235            
+#TARGET         92235           [ ]             92-U-235        [ ] 
+#REAC1          P,F
+#PRODUCT        58-CE-139
+#C4ReaCode      (P,F)IND,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.125%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-7.37%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [ 1001 92235   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(P,X)29-CU-64,,SIG
+#M0             exfor:[EN,MONIT]
+#C5CORR         #Reaction: 92-U-235(P,F)58-CE-139,IND,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (92-U-235(P,F)58-CE-139,IND,SIG)
+#+               #[1]#DECAY-DATA (58-CE-139-G,140.0D,DG,165.0,0.80) #Ix_old=0.8
+#+                a1=0.8/0.799;               #[1]#DECAY-DATA: correction to new 165.8575 keV gamma-yield per decay Ce-139-g Ix_new=0.799
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0012516
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (29-CU-65(P,X)29-CU-64,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-64,12.8HR,AR,511.0,0.19) #Im_old=0.38
+#+                a2=0.352/0.38;              #[2]#DECAY-MON: correction to new 511 keV gamma-yield per decay Cu-64 Im_new=0.352
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.9263158
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        C2019009    0.927475    -           1.00125     0.926316
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          C2019009    CS          6           0.927475    0.927475    0.927475    -7.25%      1.07820     [EN,MONIT]::cu65px
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 92235   3  18       4.0E72000000.0 2.1332-33.7099E-4     58.0    139.0                     G.B.Saha*,           (71)C2019  9                            3.7099E-4                            17.4     17.4                                        0.92747520.9274752
+ 1001 92235   3  18       5.0E72000000.0 3.1534-3 4.6374-4     58.0    139.0                     G.B.Saha*,           (71)C2019  9                             4.6374-4                            14.7     14.7                                        0.92747520.9274752
+ 1001 92235   3  18       6.0E72000000.0 2.6897-3 3.7099-4     58.0    139.0                     G.B.Saha*,           (71)C2019  9                             3.7099-4                            13.8     13.8                                        0.92747520.9274752
+ 1001 92235   3  18       7.0E72000000.0 3.2462-3 4.6374-4     58.0    139.0                     G.B.Saha*,           (71)C2019  9                             4.6374-4                            14.3     14.3                                        0.92747520.9274752
+ 1001 92235   3  18       7.7E72000000.0 3.5244-3 5.5649-4     58.0    139.0                     G.B.Saha*,           (71)C2019  9                             5.5649-4                            15.8     15.8                                        0.92747520.9274752
+ 1001 92235   3  18       8.5E72000000.0 3.1534-3 4.6374-4     58.0    139.0                     G.B.Saha*,           (71)C2019  9                             4.6374-4                            14.7     14.7                                        0.92747520.9274752
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.0E7       8.5E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.0E7       4.0E7       2.1332-3    17.39        100
+5.0E7       5.0E7       3.1534-3    14.71        39 100
+6.0E7       6.0E7       2.6897-3    13.79        28 39 100
+7.0E7       7.0E7       3.2462-3    14.29        25 28 39 100
+7.7E7       7.7E7       3.5244-3    15.79        25 25 31 42 100
+8.5E7       8.5E7       3.1534-3    14.71        25 25 25 33 41 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C2019009 
+#DATASET        C2019010   20130801
+#SUBENT         C2019010   20130801
+#ENTRY          C2019      20130801
+#TITLE          Nuclear charge dispersion in the fission of 235U by
+#+              protons of energy 20-85 MeV
+#AUTHORS        G.B.Saha,I.Tomita,L.Yaffe
+#AUTHOR1        G.B.Saha+
+#YEAR           1971
+#X4REF1         J,CJC,49,2205,1971
+#REFERENCE1     Jour: Canadian Journal of Chemistry, Vol.49, p.2205 (1971)
+#DATE           20130801
+#INSTITUTE      1CANMCG
+#METHOD         ACTIV,CHSEP
+#REACTION       92-U-235(P,F)58-CE-141,CUM,SIG
+#C4Reaction     (P,F)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1001
+#TARG           92235            
+#TARGET         92235           [ ]             92-U-235        [ ] 
+#REAC1          P,F
+#PRODUCT        58-CE-141
+#C4ReaCode      (P,F)CUM,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.826%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-7.37%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [ 1001 92235   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(P,X)29-CU-64,,SIG
+#M0             exfor:[EN,MONIT]
+#C5CORR         #Reaction: 92-U-235(P,F)58-CE-141,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (92-U-235(P,F)58-CE-141,CUM,SIG)
+#+               #[1]#DECAY-DATA (58-CE-141,32.5D,DG,145.0,0.48) #Ix_old=0.48
+#+                a1=0.48/0.484;              #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.484
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9917355
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (29-CU-65(P,X)29-CU-64,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-64,12.8HR,AR,511.0,0.19) #Im_old=0.38
+#+                a2=0.352/0.38;              #[2]#DECAY-MON: correction to new 511 keV gamma-yield per decay Cu-64 Im_new=0.352
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.9263158
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        C2019010    0.918660    -           0.991736    0.926316
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          C2019010    CS          8           0.918660    0.918660    0.918660    -8.13%      1.08854     [EN,MONIT]::cu65px
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 92235   3  18       2.0E72000000.0.03215311 3.6746-3     58.0    141.0                     G.B.Saha*,           (71)C2019 10                             3.6746-3                            11.4     11.4                                        0.91866030.9186603
+ 1001 92235   3  18       3.0E72000000.0.03766507 3.6746-3     58.0    141.0                     G.B.Saha*,           (71)C2019 10                             3.6746-3                            9.76     9.76                                        0.91866030.9186603
+ 1001 92235   3  18       4.0E72000000.0.03307177 3.6746-3     58.0    141.0                     G.B.Saha*,           (71)C2019 10                             3.6746-3                            11.1     11.1                                        0.91866030.9186602
+ 1001 92235   3  18       5.0E72000000.0.04133971 3.6746-3     58.0    141.0                     G.B.Saha*,           (71)C2019 10                             3.6746-3                            8.89     8.89                                        0.91866030.9186603
+ 1001 92235   3  18       6.0E72000000.0.03123445 2.7560-3     58.0    141.0                     G.B.Saha*,           (71)C2019 10                             2.7560-3                            8.82     8.82                                        0.91866030.9186602
+ 1001 92235   3  18       7.0E72000000.0.03031579 2.7560-3     58.0    141.0                     G.B.Saha*,           (71)C2019 10                             2.7560-3                            9.09     9.09                                        0.91866030.9186603
+ 1001 92235   3  18       7.7E72000000.0.02847847 2.7560-3     58.0    141.0                     G.B.Saha*,           (71)C2019 10                             2.7560-3                            9.68     9.68                                        0.91866030.9186603
+ 1001 92235   3  18       8.5E72000000.0.02388517 2.7560-3     58.0    141.0                     G.B.Saha*,           (71)C2019 10                             2.7560-3                            11.5     11.5                                        0.91866030.9186603
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           2.0E7       8.5E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           8           8
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+2.0E7       2.0E7       3.2153-2    11.43        100
+3.0E7       3.0E7       3.7665-2    9.76         42 100
+4.0E7       4.0E7       3.3072-2    11.11        35 42 100
+5.0E7       5.0E7       4.1340-2    8.89         27 35 42 100
+6.0E7       6.0E7       3.1234-2    8.82         25 27 35 42 100
+7.0E7       7.0E7       3.0316-2    9.09         25 25 27 35 42 100
+7.7E7       7.7E7       2.8478-2    9.68         25 25 25 29 37 45 100
+8.5E7       8.5E7       2.3885-2    11.54        25 25 25 25 31 38 44 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C2019010 
+#DATASET        C2019011   20130801
+#SUBENT         C2019011   20130801
+#ENTRY          C2019      20130801
+#TITLE          Nuclear charge dispersion in the fission of 235U by
+#+              protons of energy 20-85 MeV
+#AUTHORS        G.B.Saha,I.Tomita,L.Yaffe
+#AUTHOR1        G.B.Saha+
+#YEAR           1971
+#X4REF1         J,CJC,49,2205,1971
+#REFERENCE1     Jour: Canadian Journal of Chemistry, Vol.49, p.2205 (1971)
+#DATE           20130801
+#INSTITUTE      1CANMCG
+#METHOD         ACTIV,CHSEP
+#REACTION       92-U-235(P,F)58-CE-143,CUM,SIG
+#C4Reaction     (P,F)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1001
+#TARG           92235            
+#TARGET         92235           [ ]             92-U-235        [ ] 
+#REAC1          P,F
+#PRODUCT        58-CE-143
+#C4ReaCode      (P,F)CUM,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+7.48%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-7.37%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [ 1001 92235   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(P,X)29-CU-64,,SIG
+#M0             exfor:[EN,MONIT]
+#C5CORR         #Reaction: 92-U-235(P,F)58-CE-143,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (92-U-235(P,F)58-CE-143,CUM,SIG)
+#+               #[1]#DECAY-DATA (58-CE-143,33.0HR,DG,293.0,0.46) #Ix_old=0.46
+#+                a1=0.46/0.428;              #[1]#DECAY-DATA: correction to new 293.266 keV gamma-yield per decay Ce-143 Ix_new=0.428
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0747664
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (29-CU-65(P,X)29-CU-64,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-64,12.8HR,AR,511.0,0.19) #Im_old=0.38
+#+                a2=0.352/0.38;              #[2]#DECAY-MON: correction to new 511 keV gamma-yield per decay Cu-64 Im_new=0.352
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.9263158
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        C2019011    0.995573    -           1.07477     0.926316
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          C2019011    CS          7           0.995573    0.995573    0.995573    -0.443%     1.00445     [EN,MONIT]::cu65px
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 92235   3  18       3.0E72000000.0.02389375 1.9911-3     58.0    143.0                     G.B.Saha*,           (71)C2019 11                             1.9911-3                            8.33     8.33                                        0.99557310.9955731
+ 1001 92235   3  18       4.0E72000000.00.0258849.00298672     58.0    143.0                     G.B.Saha*,           (71)C2019 11                            .00298672                            11.5     11.5                                        0.99557310.9955732
+ 1001 92235   3  18       5.0E72000000.0.03086277 2.9867-3     58.0    143.0                     G.B.Saha*,           (71)C2019 11                             2.9867-3                            9.68     9.68                                        0.99557310.9955731
+ 1001 92235   3  18       6.0E72000000.0.02190261 1.9911-3     58.0    143.0                     G.B.Saha*,           (71)C2019 11                             1.9911-3                            9.09     9.09                                        0.99557310.9955731
+ 1001 92235   3  18       7.0E72000000.0.02090704 1.9911-3     58.0    143.0                     G.B.Saha*,           (71)C2019 11                             1.9911-3                            9.52     9.52                                        0.99557310.9955732
+ 1001 92235   3  18       7.7E72000000.0.01991146 1.9911-3     58.0    143.0                     G.B.Saha*,           (71)C2019 11                             1.9911-3                            10       10                                          0.99557310.9955732
+ 1001 92235   3  18       8.5E72000000.0.01592917 1.9911-3     58.0    143.0                     G.B.Saha*,           (71)C2019 11                             1.9911-3                            12.5     12.5                                        0.99557310.9955731
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           3.0E7       8.5E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+3.0E7       3.0E7       2.3894-2    8.33         100
+4.0E7       4.0E7       2.5885-2    11.54        41 100
+5.0E7       5.0E7       3.0863-2    9.68         32 41 100
+6.0E7       6.0E7       2.1903-2    9.09         25 32 41 100
+7.0E7       7.0E7       0.020907    9.52         25 25 32 41 100
+7.7E7       7.7E7       1.9911-2    10.0         25 25 25 35 44 100
+8.5E7       8.5E7       1.5929-2    12.5         25 25 25 27 36 43 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       C2019011 
+#/C5M.2.3       1               10              10              0               65              

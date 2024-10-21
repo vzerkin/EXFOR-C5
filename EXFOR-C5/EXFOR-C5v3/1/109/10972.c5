@@ -1,0 +1,67 @@
+#C5.2.3
+#DATASET        10972002   19870505
+#SUBENT         10972002   19870505
+#ENTRY          10972      19870505
+#TITLE          THE 24.3 KEV NEUTRON BEAM FACILITY AT THE HFBR
+#AUTHORS        O.A.WASSON,R.E.CHRIEN,R.C.GREENWOOD
+#AUTHOR1        O.A.Wasson+
+#YEAR           1973
+#X4REF1         P,USNDC-7,36,7306
+#REFERENCE1     Prog: Report to the U.S. Nuclear Data Comm., No.7, p.36 (1973)
+#DATE           19870505
+#INSTITUTE      1USABNL
+#METHOD         ACTIV
+#REACTION       82-PB-207(N,G)82-PB-208,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           82207            
+#TARGET         82207           [ ]             82-PB-207       [ ] 
+#REAC1          N,G
+#PRODUCT        82-PB-208
+#C4ReaCode      (N,G),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.96183324(2.4e4)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 82207   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             Point: XS(b)=0.66  EN-NRM(eV):24300.0
+#M1             Point: XS(b)=0.63481(1.79%)  EN-NRM(eV):24300.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 82-PB-207(N,G)82-PB-208,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              #[0]#En=24300.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.66
+#+              a1=recom$au197ng[EN];         #[0]#new monitor point [0.0243MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10972002    0.961833    0.961833    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10972002    CS          1           0.961833    0.961833    0.961833    -3.82%      1.03968     [MONIT]::au197ng
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 82207   3 102     24300.0          1.0580-3   3.0E-4                                       O.A.WASSON*,         (73)10972  2                               3.0E-4                            28.4     28.4    0.66              0.63481  .011331750.9618332
+#/C5DATA        0
+#/DATASET       10972002 
+#/C5.2.3        1               1               1               0               1               

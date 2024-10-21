@@ -1,0 +1,72 @@
+#C5.2.3
+#DATASET        12990002   19861219
+#SUBENT         12990002   19861219
+#ENTRY          12990      19861219
+#TITLE          MEASUREMENT OF THE CR(N,X)52V NEUTRON CROSS SECTION AT
+#+              14.6 MEV
+#AUTHORS        Y-C.LAI,K.ZASADNY,G.F.KNOLL
+#AUTHOR1        Y-C.Lai+
+#YEAR           1986
+#X4REF1         J,ANS,53,466,8611
+#REFERENCE1     Jour: Transactions of the American Nuclear Society, Vol.53, p.466 (1986)
+#DATE           19861219
+#INSTITUTE      1USAMHG
+#METHOD         ACTIV
+#REACTION       24-CR-0(N,X)23-V-52,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           24000            
+#TARGET         24000           [ ]             24-CR-0         [ ] 
+#REAC1          N,X
+#PRODUCT        23-V-52
+#C4ReaCode      (N,X),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.9%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9757041(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 24000   39000 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             Point: XS(b)=0.1112(0.90%)  EN-NRM(eV):1.459E7
+#M1             Point: XS(b)=0.1084983(1.11%)  EN-NRM(eV):1.459E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 24-CR-0(N,X)23-V-52,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              #[0]#En=1.459E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1112
+#+              a1=recom$fe56np[EN];          #[0]#new monitor point [14.59MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12990002    0.975704    0.975704    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12990002    CS          1           0.975704    0.975704    0.975704    -2.43%      1.02490     [MONIT]::fe56np
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 24000   39000 A   1.459E7  20000.0.06971406 1.7327-3           23052.9                     Y-C.LAI*,            (86)12990  2  7.7227-4                   1.7327-3 1.11                       2.49     2.49    0.1112   0.001    0.10849831.2013-3 0.97570411.0104191
+#/C5DATA        0
+#/DATASET       12990002 
+#/C5.2.3        1               1               1               0               1               

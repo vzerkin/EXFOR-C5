@@ -1,0 +1,302 @@
+#C5M.2.3
+#DATASET        D7025002   20190910
+#SUBENT         D7025002   20190910
+#ENTRY          D7025      20190910
+#TITLE          Measurement of natW(p,xn)177,178,179Re excitation
+#+              function of natural tungsten by using a 100-MeV proton
+#+              beam
+#AUTHORS        J.R.Yoon, J.E.Lee, S.Y.Lee
+#AUTHOR1        J.R.Yoon+
+#YEAR           2017
+#X4REF1         J,KPS,70,47,2017
+#REFERENCE1     Jour: Journal of the Korean Physical Society, Vol.70, p.47 (2017)
+#DATE           20190910
+#INSTITUTE      3KORDAU,3KORKOR
+#METHOD         ACTIV,STTA,GSPEC
+#REACTION       74-W-0(P,X)75-RE-177,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           74000            
+#TARGET         74000           [ ]             74-W-0          [ ] 
+#REAC1          P,X
+#PRODUCT        75-RE-177
+#C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.3,0.8)    ADDED AS COMMON:ERR-S,PER-CENT=0.3%
+#CompNotes      ERR-ANALYS:(ERR-SYS,14.,20.)  ADDED AS COMMON:ERR-SYS,PER-CENT=14.0%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0145454(7.8e7) Data[3]*1.0145454(9.3e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-20.0%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 74000   39000 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             Point: XS(b)=0.011  EN-NRM(eV):9.32E7
+#M1             Point: XS(b)=0.01116(3.05%)  EN-NRM(eV):9.32E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 74-W-0(P,X)75-RE-177,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              #[0]#En=9.32E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.011
+#+              a1=recom$al27px[EN-NRM-MIN!EN-NRM-MAX];#[0]#new monitor point [93.2MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (74-W-0(P,X)75-RE-177,,SIG)
+#+               #[1]#DECAY-DATA (75-RE-177,14.MIN,DG,196.85,0.08) #Ix_old=0.08
+#+                a1=0.08/0.1;                #[1]#DECAY-DATA: correction to new 197.2 keV gamma-yield per decay Re-177 Ix_new=0.1
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.79999995
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D7025002    0.811636    1.01455     0.800000    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D7025002    CS          4           0.811636    0.811636    0.811636    -18.8%      1.23208     [MONIT]::al27px
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 74000   39000 A    7.79E7         0.1098956.01128174           75177.9                     J.R.Yoon*,           (17)D7025  2 .01538538 4.062E-4         .01128174 14       0.37              10.3     10.3    0.011             0.01116  3.4E-4   0.81163630.8116363
+ 1001 74000   39000 A    8.32E7         .09520494.01217454           75177.9                     J.R.Yoon*,           (17)D7025  2 .01332869 3.519E-4         .01217454 14       0.37              12.8     12.8    0.011             0.01116  3.4E-4   0.81163630.8116363
+ 1001 74000   39000 A    8.83E7         .09471796 9.9020-3           75177.9                     J.R.Yoon*,           (17)D7025  2 .01326051 3.501E-4          9.9020-3 14       0.37              10.5     10.5    0.011             0.01116  3.4E-4   0.81163630.8116363
+ 1001 74000   39000 A    9.32E7         .08895534.01063244           75177.9                     J.R.Yoon*,           (17)D7025  2 .01245375 3.288E-4         .01063244 14       0.37              12       12      0.011             0.01116  3.4E-4   0.81163630.8116364
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           7.79E7      9.32E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+7.79E7      7.79E7      0.109896    14.0         100
+8.32E7      8.32E7      9.5205-2    14.0         65 100
+8.83E7      8.83E7      0.094718    14.0         50 67 100
+9.32E7      9.32E7      8.8955-2    14.0         50 50 68 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D7025002 
+#DATASET        D7025003   20190910
+#SUBENT         D7025003   20190910
+#ENTRY          D7025      20190910
+#TITLE          Measurement of natW(p,xn)177,178,179Re excitation
+#+              function of natural tungsten by using a 100-MeV proton
+#+              beam
+#AUTHORS        J.R.Yoon, J.E.Lee, S.Y.Lee
+#AUTHOR1        J.R.Yoon+
+#YEAR           2017
+#X4REF1         J,KPS,70,47,2017
+#REFERENCE1     Jour: Journal of the Korean Physical Society, Vol.70, p.47 (2017)
+#DATE           20190910
+#INSTITUTE      3KORDAU,3KORKOR
+#METHOD         ACTIV,STTA,GSPEC
+#REACTION       74-W-0(P,X)75-RE-178,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           74000            
+#TARGET         74000           [ ]             74-W-0          [ ] 
+#REAC1          P,X
+#PRODUCT        75-RE-178
+#C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.3,0.8)    ADDED AS COMMON:ERR-S,PER-CENT=0.3%
+#CompNotes      ERR-ANALYS:(ERR-SYS,14.,20.)  ADDED AS COMMON:ERR-SYS,PER-CENT=14.0%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0145454(7.8e7) Data[3]*1.0145454(9.3e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.71%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 74000   39000 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             Point: XS(b)=0.011  EN-NRM(eV):9.32E7
+#M1             Point: XS(b)=0.01116(3.05%)  EN-NRM(eV):9.32E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 74-W-0(P,X)75-RE-178,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              #[0]#En=9.32E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.011
+#+              a1=recom$al27px[EN-NRM-MIN!EN-NRM-MAX];#[0]#new monitor point [93.2MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (74-W-0(P,X)75-RE-178,,SIG)
+#+               #[1]#DECAY-DATA (75-RE-178,13.2MIN,DG,105.9,0.23) #Ix_old=0.23
+#+                a1=0.23/0.234;              #[1]#DECAY-DATA: correction to new 106 keV gamma-yield per decay Re-178 Ix_new=0.234
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.982906
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D7025003    0.997203    1.01455     0.982906    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D7025003    CS          4           0.997203    0.997203    0.997203    -0.280%     1.00280     [MONIT]::al27px
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 74000   39000 A    7.79E7         0.1189663.01216587           75178.9                     J.R.Yoon*,           (17)D7025  3 .01665528 3.579E-4         .01216587 14       0.30              10.2     10.2    0.011             0.01116  3.4E-4   0.99720280.9972028
+ 1001 74000   39000 A    8.32E7         0.1031108.01366168           75178.9                     J.R.Yoon*,           (17)D7025  3 .01443551 3.102E-4         .01366168 14       0.30              13.2     13.2    0.011             0.01116  3.4E-4   0.99720280.9972028
+ 1001 74000   39000 A    8.83E7         0.1117864.01116867           75178.9                     J.R.Yoon*,           (17)D7025  3 0.0156501 3.363E-4         .01116867 14       0.30              9.99     9.99    0.011             0.01116  3.4E-4   0.99720280.9972029
+ 1001 74000   39000 A    9.32E7         0.1039085.01406056           75178.9                     J.R.Yoon*,           (17)D7025  3 .01454719 3.126E-4         .01406056 14       0.30              13.5     13.5    0.011             0.01116  3.4E-4   0.99720280.9972028
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           7.79E7      9.32E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+7.79E7      7.79E7      0.118966    14.0         100
+8.32E7      8.32E7      0.103111    14.0         65 100
+8.83E7      8.83E7      0.111786    14.0         50 67 100
+9.32E7      9.32E7      0.103909    14.0         50 50 68 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D7025003 
+#DATASET        D7025004   20190910
+#SUBENT         D7025004   20190910
+#ENTRY          D7025      20190910
+#TITLE          Measurement of natW(p,xn)177,178,179Re excitation
+#+              function of natural tungsten by using a 100-MeV proton
+#+              beam
+#AUTHORS        J.R.Yoon, J.E.Lee, S.Y.Lee
+#AUTHOR1        J.R.Yoon+
+#YEAR           2017
+#X4REF1         J,KPS,70,47,2017
+#REFERENCE1     Jour: Journal of the Korean Physical Society, Vol.70, p.47 (2017)
+#DATE           20190910
+#INSTITUTE      3KORDAU,3KORKOR
+#METHOD         ACTIV,STTA,GSPEC
+#REACTION       74-W-0(P,X)75-RE-179,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           74000            
+#TARGET         74000           [ ]             74-W-0          [ ] 
+#REAC1          P,X
+#PRODUCT        75-RE-179
+#C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.3,0.8)    ADDED AS COMMON:ERR-S,PER-CENT=0.3%
+#CompNotes      ERR-ANALYS:(ERR-SYS,14.,20.)  ADDED AS COMMON:ERR-SYS,PER-CENT=14.0%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0145454(7.8e7) Data[3]*1.0145454(9.3e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.356%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 74000   39000 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             Point: XS(b)=0.011  EN-NRM(eV):9.32E7
+#M1             Point: XS(b)=0.01116(3.05%)  EN-NRM(eV):9.32E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 74-W-0(P,X)75-RE-179,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              #[0]#En=9.32E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.011
+#+              a1=recom$al27px[EN-NRM-MIN!EN-NRM-MAX];#[0]#new monitor point [93.2MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (74-W-0(P,X)75-RE-179,,SIG)
+#+               #[1]#DECAY-DATA (75-RE-179,19.5MIN,DG,430.78,0.28) #Ix_old=0.28
+#+                a1=0.28/0.281;              #[1]#DECAY-DATA: correction to new 430.24 keV gamma-yield per decay Re-179 Ix_new=0.281
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9964413
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D7025004    1.01093     1.01455     0.996441    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D7025004    CS          4           1.01093     1.01093     1.01093     +1.09%      1.01093     [MONIT]::al27px
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 74000   39000 A    7.79E7         0.1183805.01344543           75179.9                     J.R.Yoon*,           (17)D7025  4 .01657327 3.513E-4         .01344543 14       0.30              11.4     11.4    0.011             0.01116  3.4E-4   1.010935 1.010935
+ 1001 74000   39000 A    8.32E7         0.1075635.01455746           75179.9                     J.R.Yoon*,           (17)D7025  4 .01505889 3.192E-4         .01455746 14       0.30              13.5     13.5    0.011             0.01116  3.4E-4   1.010935 1.010935
+ 1001 74000   39000 A    8.83E7         .09836397.01061482           75179.9                     J.R.Yoon*,           (17)D7025  4 .01377096 2.919E-4         .01061482 14       0.30              10.8     10.8    0.011             0.01116  3.4E-4   1.010935 1.010935
+ 1001 74000   39000 A    9.32E7         .09411804.01122138           75179.9                     J.R.Yoon*,           (17)D7025  4 .01317653 2.793E-4         .01122138 14       0.30              11.9     11.9    0.011             0.01116  3.4E-4   1.010935 1.010935
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           7.79E7      9.32E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+7.79E7      7.79E7      0.118381    14.0         100
+8.32E7      8.32E7      0.107564    14.0         65 100
+8.83E7      8.83E7      0.098364    14.0         50 67 100
+9.32E7      9.32E7      0.094118    14.0         50 50 68 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D7025004 
+#/C5M.2.3       1               3               3               0               12              

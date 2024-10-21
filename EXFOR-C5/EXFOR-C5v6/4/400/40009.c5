@@ -1,0 +1,3012 @@
+#C5.2.3
+#DATASET        400090021  20221012
+#SUBENT         40009002   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       29-CU-65(N,P)28-NI-65,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           29065            
+#TARGET         29065           [ ]             29-CU-65        [ ] 
+#REAC1          N,P
+#PRODUCT        28-NI-65
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.96543187(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 29065   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(N,2N)29-CU-64,,SIG
+#M0             Point: XS(b)=1.0000001  EN-NRM(eV):1.48E7
+#M1             Point: XS(b)=0.965432(1.54%)  EN-NRM(eV):1.48E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 29-CU-65(N,P)28-NI-65,,SIG
+#+              #[0]#Monitor:  29-CU-65(N,2N)29-CU-64,,SIG
+#+              #[0]#En=1.48E7
+#+              a0=[MONIT];                   #[0]#old monitor point 1.0
+#+              a1=recom$cu65n2n[EN];         #[0]#new monitor point [14.8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        400090021   0.965432    0.965432    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090021   CS          1           0.965432    0.965432    0.965432    -3.46%      1.03581     [MONIT]::cu65n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 29065   3 103      1.48E7         .01930864    0.002                                       G.P.Vinitskaya*,     (68)40009  21                               0.002                            10.4     10.4    1.0000001         0.965432 0.01490910.9654319
+#/C5DATA        0
+#/DATASET       400090021
+#DATASET        400090022  20221012
+#SUBENT         40009002   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION_X4    (29-CU-65(N,P)28-NI-65,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#REACTION       29-CU-65(N,P)28-NI-65,,SIG
+#C4Reaction     ((N,P),SIG)/((N,2N),SIG)
+#ReactionTyp_X4 Ratio
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           29065            
+#TARGET         29065           [ ]             29-CU-65        [ ] 
+#REAC1          N,P
+#PRODUCT        28-NI-65
+#C4ReaCode      ((N,P),SIG)/((N,2N),SIG)
+#CompNotes      CALCULATE(MF203:RATIO->MF3:SIG): Data[0]*0.965432(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#Quantity_X4    Ratio of [Cross section]
+#Quantity       Cross section
+#DataUnits_X4   NO-DIM
+#DataUnits      B
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 29065   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (29-CU-65(N,P)28-NI-65,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#Ratio2CS       1
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090022   Ratio       1           0.965432    0.965432    0.965432    -3.46%      1.03581                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV        B        B   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 29065   3 103      1.48E7         .01612271 1.5646-3     16.9  29065.9                     G.P.Vinitskaya*,     (68)40009  22            0.0016                            9.92                       9.70                      0.965432 0.01490910.965432 1.0129071
+#/C5DATA        0
+#/DATASET       400090022
+#DATASET        400090031  20221012
+#SUBENT         40009003   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       30-ZN-64(N,P)29-CU-64,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           30064            
+#TARGET         30064           [ ]             30-ZN-64        [ ] 
+#REAC1          N,P
+#PRODUCT        29-CU-64
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.96543187(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 30064   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(N,2N)29-CU-64,,SIG
+#M0             Point: XS(b)=1.0000001  EN-NRM(eV):1.48E7
+#M1             Point: XS(b)=0.965432(1.54%)  EN-NRM(eV):1.48E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 30-ZN-64(N,P)29-CU-64,,SIG
+#+              #[0]#Monitor:  29-CU-65(N,2N)29-CU-64,,SIG
+#+              #[0]#En=1.48E7
+#+              a0=[MONIT];                   #[0]#old monitor point 1.0
+#+              a1=recom$cu65n2n[EN];         #[0]#new monitor point [14.8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        400090031   0.965432    0.965432    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090031   CS          1           0.965432    0.965432    0.965432    -3.46%      1.03581     [MONIT]::cu65n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30064   3 103      1.48E7         0.1486765     0.01                                       G.P.Vinitskaya*,     (68)40009  31                                0.01                            6.73     6.73    1.0000001         0.965432 0.01490910.9654319
+#/C5DATA        0
+#/DATASET       400090031
+#DATASET        400090032  20221012
+#SUBENT         40009003   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION_X4    (30-ZN-64(N,P)29-CU-64,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#REACTION       30-ZN-64(N,P)29-CU-64,,SIG
+#C4Reaction     ((N,P),SIG)/((N,2N),SIG)
+#ReactionTyp_X4 Ratio
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           30064            
+#TARGET         30064           [ ]             30-ZN-64        [ ] 
+#REAC1          N,P
+#PRODUCT        29-CU-64
+#C4ReaCode      ((N,P),SIG)/((N,2N),SIG)
+#CompNotes      CALCULATE(MF203:RATIO->MF3:SIG): Data[0]*0.965432(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#Quantity_X4    Ratio of [Cross section]
+#Quantity       Cross section
+#DataUnits_X4   NO-DIM
+#DataUnits      B
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 30064   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (30-ZN-64(N,P)29-CU-64,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#Ratio2CS       1
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090032   Ratio       1           0.965432    0.965432    0.965432    -3.46%      1.03581                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV        B        B   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30064   3 103      1.48E7         0.1486765 9.9236-3     16.9  29065.9                     G.P.Vinitskaya*,     (68)40009  32              0.01                            6.73                       6.67                      0.965432 0.01490910.965432 1.0278906
+#/C5DATA        0
+#/DATASET       400090032
+#DATASET        400090041  20221012
+#SUBENT         40009004   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       30-ZN-66(N,P)29-CU-66,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           30066            
+#TARGET         30066           [ ]             30-ZN-66        [ ] 
+#REAC1          N,P
+#PRODUCT        29-CU-66
+#C4ReaCode      (N,P),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 30066   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30066   3 103      1.48E7             0.067     0.01                                       G.P.Vinitskaya,      (68)40009  41                                0.01                            14.9     14.9
+#/C5DATA        0
+#/DATASET       400090041
+#DATASET        400090042  20221012
+#SUBENT         40009004   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       (30-ZN-66(N,P)29-CU-66,,SIG)/(30-ZN-64(N,P)29-CU-64,,SIG)
+#C4Reaction     ((N,P),SIG)/((N,P),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             103
+#PROJ           1
+#TARG           30066            
+#TARGET         30066           [ ]             30-ZN-66        [ ] 
+#REAC1          N,P
+#PRODUCT        29-CU-66
+#C4ReaCode      ((N,P),SIG)/((N,P),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 30066 203 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30066 203 103      1.48E7             0.433    0.014    103.9  30064.9                     G.P.Vinitskaya,      (68)40009  42             0.014                            3.23                       3.23
+#/C5DATA        0
+#/DATASET       400090042
+#DATASET        400090051  20221012
+#SUBENT         40009005   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       30-ZN-67(N,P)29-CU-67,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           30067            
+#TARGET         30067           [ ]             30-ZN-67        [ ] 
+#REAC1          N,P
+#PRODUCT        29-CU-67
+#C4ReaCode      (N,P),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 30067   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30067   3 103      1.48E7             0.043     0.01                                       G.P.Vinitskaya,      (68)40009  51                                0.01                            23.3     23.3
+#/C5DATA        0
+#/DATASET       400090051
+#DATASET        400090052  20221012
+#SUBENT         40009005   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       (30-ZN-67(N,P)29-CU-67,,SIG)/(30-ZN-64(N,P)29-CU-64,,SIG)
+#C4Reaction     ((N,P),SIG)/((N,P),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             103
+#PROJ           1
+#TARG           30067            
+#TARGET         30067           [ ]             30-ZN-67        [ ] 
+#REAC1          N,P
+#PRODUCT        29-CU-67
+#C4ReaCode      ((N,P),SIG)/((N,P),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 30067 203 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30067 203 103      1.48E7              0.28    0.006    103.9  30064.9                     G.P.Vinitskaya,      (68)40009  52             0.006                            2.14                       2.14
+#/C5DATA        0
+#/DATASET       400090052
+#DATASET        400090061  20221012
+#SUBENT         40009006   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       30-ZN-68(N,A)28-NI-65,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           30068            
+#TARGET         30068           [ ]             30-ZN-68        [ ] 
+#REAC1          N,A
+#PRODUCT        28-NI-65
+#C4ReaCode      (N,A),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 30068   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30068   3 107      1.48E7              0.01    0.001                                       G.P.Vinitskaya,      (68)40009  61                               0.001                            10       10
+#/C5DATA        0
+#/DATASET       400090061
+#DATASET        400090062  20221012
+#SUBENT         40009006   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       (30-ZN-68(N,A)28-NI-65,,SIG)/(30-ZN-64(N,P)29-CU-64,,SIG)
+#C4Reaction     ((N,A),SIG)/((N,P),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             107
+#PROJ           1
+#TARG           30068            
+#TARGET         30068           [ ]             30-ZN-68        [ ] 
+#REAC1          N,A
+#PRODUCT        28-NI-65
+#C4ReaCode      ((N,A),SIG)/((N,P),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 30068 203 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30068 203 107      1.48E7            0.0651   0.0019    103.9  30064.9                     G.P.Vinitskaya,      (68)40009  62            0.0019                            2.92                       2.92
+#/C5DATA        0
+#/DATASET       400090062
+#DATASET        400090071  20221012
+#SUBENT         40009007   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       31-GA-69(N,P)30-ZN-69-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           31069            
+#TARGET         31069           [ ]             31-GA-69        [ ] 
+#REAC1          N,P
+#PRODUCT        30-ZN-69-M
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.96543187(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 31069   3 103M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(N,2N)29-CU-64,,SIG
+#M0             Point: XS(b)=1.0000001  EN-NRM(eV):1.48E7
+#M1             Point: XS(b)=0.965432(1.54%)  EN-NRM(eV):1.48E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 31-GA-69(N,P)30-ZN-69-M,,SIG
+#+              #[0]#Monitor:  29-CU-65(N,2N)29-CU-64,,SIG
+#+              #[0]#En=1.48E7
+#+              a0=[MONIT];                   #[0]#old monitor point 1.0
+#+              a1=recom$cu65n2n[EN];         #[0]#new monitor point [14.8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        400090071   0.965432    0.965432    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090071   CS          1           0.965432    0.965432    0.965432    -3.46%      1.03581     [MONIT]::cu65n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 31069   3 103M     1.48E7         .02278419    0.003                                       G.P.Vinitskaya*,     (68)40009  71                               0.003                            13.2     13.2    1.0000001         0.965432 0.01490910.9654319
+#/C5DATA        0
+#/DATASET       400090071
+#DATASET        400090072  20221012
+#SUBENT         40009007   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION_X4    (31-GA-69(N,P)30-ZN-69-M,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#REACTION       31-GA-69(N,P)30-ZN-69-M,,SIG
+#C4Reaction     ((N,P),SIG)/((N,2N),SIG)
+#ReactionTyp_X4 Ratio
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           31069            
+#TARGET         31069           [ ]             31-GA-69        [ ] 
+#REAC1          N,P
+#PRODUCT        30-ZN-69-M
+#C4ReaCode      ((N,P),SIG)/((N,2N),SIG)
+#CompNotes      CALCULATE(MF203:RATIO->MF3:SIG): Data[0]*0.965432(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#Quantity_X4    Ratio of [Cross section]
+#Quantity       Cross section
+#DataUnits_X4   NO-DIM
+#DataUnits      B
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 31069   3 103M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (31-GA-69(N,P)30-ZN-69-M,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#Ratio2CS       1
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090072   Ratio       1           0.965432    0.965432    0.965432    -3.46%      1.03581                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV        B        B   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 31069   3 103M     1.48E7         0.0227842 1.6785-3     16.9  29065.9                     G.P.Vinitskaya*,     (68)40009  72            0.0017                            7.46                       7.37                      0.965432 0.01490910.965432 1.0227222
+#/C5DATA        0
+#/DATASET       400090072
+#DATASET        400090081  20221012
+#SUBENT         40009008   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       31-GA-69(N,P)30-ZN-69-G,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           31069            
+#TARGET         31069           [ ]             31-GA-69        [ ] 
+#REAC1          N,P
+#PRODUCT        30-ZN-69-G
+#C4ReaCode      (N,P),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 31069   3 103G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 31069   3 103G     1.48E7              0.01   0.0015                                       G.P.Vinitskaya,      (68)40009  81                              0.0015                            15       15
+#/C5DATA        0
+#/DATASET       400090081
+#DATASET        400090082  20221012
+#SUBENT         40009008   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       31-GA-69(N,P)30-ZN-69-G/M,,SIG/RAT
+#C4Reaction     (N,P),SIG/RAT
+#ReactionType   CS
+#MF             203
+#MT             103
+#PROJ           1
+#TARG           31069            
+#TARGET         31069           [ ]             31-GA-69        [ ] 
+#REAC1          N,P
+#PRODUCT        30-ZN-69-G/M
+#C4ReaCode      (N,P),SIG/RAT
+#Quantity       Cross section ratio
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 31069 203 103/  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV   NO-DIM   NO-DIM                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 31069 203 103/     1.48E7             0.422    0.013           30069.9                     G.P.Vinitskaya,      (68)40009  82             0.013                            3.08                       3.08
+#/C5DATA        0
+#/DATASET       400090082
+#DATASET        400090091  20221012
+#SUBENT         40009009   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       31-GA-69(N,A)29-CU-66,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           31069            
+#TARGET         31069           [ ]             31-GA-69        [ ] 
+#REAC1          N,A
+#PRODUCT        29-CU-66
+#C4ReaCode      (N,A),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 31069   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 31069   3 107      1.48E7             0.018    0.002                                       G.P.Vinitskaya,      (68)40009  91                               0.002                            11.1     11.1
+#/C5DATA        0
+#/DATASET       400090091
+#DATASET        400090092  20221012
+#SUBENT         40009009   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       (31-GA-69(N,A)29-CU-66,,SIG)/(31-GA-69(N,P)30-ZN-69-M,,SIG)
+#C4Reaction     ((N,A),SIG)/((N,P),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             107
+#PROJ           1
+#TARG           31069            
+#TARGET         31069           [ ]             31-GA-69        [ ] 
+#REAC1          N,A
+#PRODUCT        29-CU-66
+#C4ReaCode      ((N,A),SIG)/((N,P),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 31069 203 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 31069 203 107      1.48E7             0.766    0.026    103.9  31069.9                     G.P.Vinitskaya,      (68)40009  92             0.026                            3.39                       3.39
+#/C5DATA        0
+#/DATASET       400090092
+#DATASET        400090101  20221012
+#SUBENT         40009010   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       31-GA-71(N,P)30-ZN-71-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           31071            
+#TARGET         31071           [ ]             31-GA-71        [ ] 
+#REAC1          N,P
+#PRODUCT        30-ZN-71-M
+#C4ReaCode      (N,P),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 31071   3 103M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 31071   3 103M     1.48E7             0.011   0.0015                                       G.P.Vinitskaya,      (68)40009 101                              0.0015                            13.6     13.6
+#/C5DATA        0
+#/DATASET       400090101
+#DATASET        400090102  20221012
+#SUBENT         40009010   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       (31-GA-71(N,P)30-ZN-71-M,,SIG)/(31-GA-69(N,P)30-ZN-69-M,,SIG)
+#C4Reaction     ((N,P),SIG)/((N,P),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             103
+#PROJ           1
+#TARG           31071            
+#TARGET         31071           [ ]             31-GA-71        [ ] 
+#REAC1          N,P
+#PRODUCT        30-ZN-71-M
+#C4ReaCode      ((N,P),SIG)/((N,P),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 31071 203 103M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 31071 203 103M     1.48E7             0.465     0.01    103.9  31069.9                     G.P.Vinitskaya,      (68)40009 102              0.01                            2.15                       2.15
+#/C5DATA        0
+#/DATASET       400090102
+#DATASET        400090111  20221012
+#SUBENT         40009011   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       31-GA-71(N,P)30-ZN-71-G,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           31071            
+#TARGET         31071           [ ]             31-GA-71        [ ] 
+#REAC1          N,P
+#PRODUCT        30-ZN-71-G
+#C4ReaCode      (N,P),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 31071   3 103G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 31071   3 103G     1.48E7            0.0054   0.0012                                       G.P.Vinitskaya,      (68)40009 111                              0.0012                            22.2     22.2
+#/C5DATA        0
+#/DATASET       400090111
+#DATASET        400090112  20221012
+#SUBENT         40009011   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       (31-GA-71(N,P)30-ZN-71-G,,SIG)/(31-GA-69(N,P)30-ZN-69-M,,SIG)
+#C4Reaction     ((N,P),SIG)/((N,P),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             103
+#PROJ           1
+#TARG           31071            
+#TARGET         31071           [ ]             31-GA-71        [ ] 
+#REAC1          N,P
+#PRODUCT        30-ZN-71-G
+#C4ReaCode      ((N,P),SIG)/((N,P),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 31071 203 103G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 31071 203 103G     1.48E7              0.23     0.01    103.9  31069.9                     G.P.Vinitskaya,      (68)40009 112              0.01                            4.35                       4.35
+#/C5DATA        0
+#/DATASET       400090112
+#DATASET        400090121  20221012
+#SUBENT         40009012   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       32-GE-72(N,A)30-ZN-69-M,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           32072            
+#TARGET         32072           [ ]             32-GE-72        [ ] 
+#REAC1          N,A
+#PRODUCT        30-ZN-69-M
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.96543187(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 32072   3 107M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(N,2N)29-CU-64,,SIG
+#M0             Point: XS(b)=1.0000001  EN-NRM(eV):1.48E7
+#M1             Point: XS(b)=0.965432(1.54%)  EN-NRM(eV):1.48E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 32-GE-72(N,A)30-ZN-69-M,,SIG
+#+              #[0]#Monitor:  29-CU-65(N,2N)29-CU-64,,SIG
+#+              #[0]#En=1.48E7
+#+              a0=[MONIT];                   #[0]#old monitor point 1.0
+#+              a1=recom$cu65n2n[EN];         #[0]#new monitor point [14.8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        400090121   0.965432    0.965432    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090121   CS          1           0.965432    0.965432    0.965432    -3.46%      1.03581     [MONIT]::cu65n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 32072   3 107M     1.48E7          7.9165-3    0.001                                       G.P.Vinitskaya*,     (68)40009 121                               0.001                            12.6     12.6    1.0000001         0.965432 0.01490910.9654319
+#/C5DATA        0
+#/DATASET       400090121
+#DATASET        400090122  20221012
+#SUBENT         40009012   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION_X4    (32-GE-72(N,A)30-ZN-69-M,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#REACTION       32-GE-72(N,A)30-ZN-69-M,,SIG
+#C4Reaction     ((N,A),SIG)/((N,2N),SIG)
+#ReactionTyp_X4 Ratio
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           32072            
+#TARGET         32072           [ ]             32-GE-72        [ ] 
+#REAC1          N,A
+#PRODUCT        30-ZN-69-M
+#C4ReaCode      ((N,A),SIG)/((N,2N),SIG)
+#CompNotes      CALCULATE(MF203:RATIO->MF3:SIG): Data[0]*0.965432(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#Quantity_X4    Ratio of [Cross section]
+#Quantity       Cross section
+#DataUnits_X4   NO-DIM
+#DataUnits      B
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 32072   3 107M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (32-GE-72(N,A)30-ZN-69-M,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#Ratio2CS       1
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090122   Ratio       1           0.965432    0.965432    0.965432    -3.46%      1.03581                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV        B        B   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 32072   3 107M     1.48E7          7.9165-3 1.5578-4     16.9  29065.9                     G.P.Vinitskaya*,     (68)40009 122            1.0E-4                            1.26                       1.97                      0.965432 0.01490910.965432 1.6135575
+#/C5DATA        0
+#/DATASET       400090122
+#DATASET        400090131  20221012
+#SUBENT         40009013   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       32-GE-72(N,P)31-GA-72,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           32072            
+#TARGET         32072           [ ]             32-GE-72        [ ] 
+#REAC1          N,P
+#PRODUCT        31-GA-72
+#C4ReaCode      (N,P),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 32072   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 32072   3 103      1.48E7             0.031    0.004                                       G.P.Vinitskaya,      (68)40009 131                               0.004                            12.9     12.9
+#/C5DATA        0
+#/DATASET       400090131
+#DATASET        400090132  20221012
+#SUBENT         40009013   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       (32-GE-72(N,P)31-GA-72,,SIG)/(32-GE-72(N,A)30-ZN-69-M,,SIG)
+#C4Reaction     ((N,P),SIG)/((N,A),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             103
+#PROJ           1
+#TARG           32072            
+#TARGET         32072           [ ]             32-GE-72        [ ] 
+#REAC1          N,P
+#PRODUCT        31-GA-72
+#C4ReaCode      ((N,P),SIG)/((N,A),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 32072 203 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 32072 203 103      1.48E7              3.78     0.04    107.9  32072.9                     G.P.Vinitskaya,      (68)40009 132              0.04                            1.06                       1.06
+#/C5DATA        0
+#/DATASET       400090132
+#DATASET        400090141  20221012
+#SUBENT         40009014   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       32-GE-70(N,P)31-GA-70,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           32070            
+#TARGET         32070           [ ]             32-GE-70        [ ] 
+#REAC1          N,P
+#PRODUCT        31-GA-70
+#C4ReaCode      (N,P),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 32070   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 32070   3 103      1.48E7         .07700001     0.01                                       G.P.Vinitskaya,      (68)40009 141                                0.01                            13       13
+#/C5DATA        0
+#/DATASET       400090141
+#DATASET        400090142  20221012
+#SUBENT         40009014   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       (32-GE-70(N,P)31-GA-70,,SIG)/(32-GE-72(N,P)31-GA-72,,SIG)
+#C4Reaction     ((N,P),SIG)/((N,P),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             103
+#PROJ           1
+#TARG           32070            
+#TARGET         32070           [ ]             32-GE-70        [ ] 
+#REAC1          N,P
+#PRODUCT        31-GA-70
+#C4ReaCode      ((N,P),SIG)/((N,P),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 32070 203 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 32070 203 103      1.48E7              2.47      0.1    103.9  32072.9                     G.P.Vinitskaya,      (68)40009 142               0.1                            4.05                       4.05
+#/C5DATA        0
+#/DATASET       400090142
+#DATASET        400090151  20221012
+#SUBENT         40009015   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       32-GE-73(N,P)31-GA-73,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           32073            
+#TARGET         32073           [ ]             32-GE-73        [ ] 
+#REAC1          N,P
+#PRODUCT        31-GA-73
+#C4ReaCode      (N,P),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 32073   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 32073   3 103      1.48E7              0.02    0.004                                       G.P.Vinitskaya,      (68)40009 151                               0.004                            20       20
+#/C5DATA        0
+#/DATASET       400090151
+#DATASET        400090152  20221012
+#SUBENT         40009015   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       (32-GE-73(N,P)31-GA-73,,SIG)/(32-GE-72(N,P)31-GA-72,,SIG)
+#C4Reaction     ((N,P),SIG)/((N,P),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             103
+#PROJ           1
+#TARG           32073            
+#TARGET         32073           [ ]             32-GE-73        [ ] 
+#REAC1          N,P
+#PRODUCT        31-GA-73
+#C4ReaCode      ((N,P),SIG)/((N,P),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 32073 203 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 32073 203 103      1.48E7             0.652     0.05    103.9  32072.9                     G.P.Vinitskaya,      (68)40009 152              0.05                            7.67                       7.67
+#/C5DATA        0
+#/DATASET       400090152
+#DATASET        400090171  20221012
+#SUBENT         40009017   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       32-GE-72(N,A)30-ZN-69-G,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           32072            
+#TARGET         32072           [ ]             32-GE-72        [ ] 
+#REAC1          N,A
+#PRODUCT        30-ZN-69-G
+#C4ReaCode      (N,A),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 32072   3 107G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 32072   3 107G     1.48E7            0.0063    0.001                                       G.P.Vinitskaya,      (68)40009 171                               0.001                            15.9     15.9
+#/C5DATA        0
+#/DATASET       400090171
+#DATASET        400090172  20221012
+#SUBENT         40009017   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       32-GE-72(N,A)30-ZN-69-G/M,,SIG/RAT
+#C4Reaction     (N,A),SIG/RAT
+#ReactionType   CS
+#MF             203
+#MT             107
+#PROJ           1
+#TARG           32072            
+#TARGET         32072           [ ]             32-GE-72        [ ] 
+#REAC1          N,A
+#PRODUCT        30-ZN-69-G/M
+#C4ReaCode      (N,A),SIG/RAT
+#Quantity       Cross section ratio
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        3 
+#C4BEGIN        [    1 32072 203 107/  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV   NO-DIM   NO-DIM                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 32072 203 107/     1.48E7             0.767    0.011           30069.9                     G.P.Vinitskaya,      (68)40009 172             0.011                            1.43                       1.43
+#/C5DATA        0
+#/DATASET       400090172
+#DATASET        400090181  20221012
+#SUBENT         40009018   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       32-GE-74(N,A)30-ZN-71-M,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           32074            
+#TARGET         32074           [ ]             32-GE-74        [ ] 
+#REAC1          N,A
+#PRODUCT        30-ZN-71-M
+#C4ReaCode      (N,A),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 32074   3 107M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 32074   3 107M     1.48E7            0.0033   5.0E-4                                       G.P.Vinitskaya,      (68)40009 181                              5.0E-4                            15.2     15.2
+#/C5DATA        0
+#/DATASET       400090181
+#DATASET        400090182  20221012
+#SUBENT         40009018   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       (32-GE-74(N,A)30-ZN-71-M,,SIG)/(32-GE-72(N,A)30-ZN-69-M,,SIG)
+#C4Reaction     ((N,A),SIG)/((N,A),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             107
+#PROJ           1
+#TARG           32074            
+#TARGET         32074           [ ]             32-GE-74        [ ] 
+#REAC1          N,A
+#PRODUCT        30-ZN-71-M
+#C4ReaCode      ((N,A),SIG)/((N,A),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 32074 203 107M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 32074 203 107M     1.48E7             0.398     0.02    107.9  32072.9                     G.P.Vinitskaya,      (68)40009 182              0.02                            5.03                       5.03
+#/C5DATA        0
+#/DATASET       400090182
+#DATASET        400090191  20221012
+#SUBENT         40009019   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       32-GE-74(N,A)30-ZN-71-G,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           32074            
+#TARGET         32074           [ ]             32-GE-74        [ ] 
+#REAC1          N,A
+#PRODUCT        30-ZN-71-G
+#C4ReaCode      (N,A),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 32074   3 107G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 32074   3 107G     1.48E7            0.0028   6.0E-4                                       G.P.Vinitskaya,      (68)40009 191                              6.0E-4                            21.4     21.4
+#/C5DATA        0
+#/DATASET       400090191
+#DATASET        400090192  20221012
+#SUBENT         40009019   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       (32-GE-74(N,A)30-ZN-71-G,,SIG)/(32-GE-72(N,A)30-ZN-69-M,,SIG)
+#C4Reaction     ((N,A),SIG)/((N,A),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             107
+#PROJ           1
+#TARG           32074            
+#TARGET         32074           [ ]             32-GE-74        [ ] 
+#REAC1          N,A
+#PRODUCT        30-ZN-71-G
+#C4ReaCode      ((N,A),SIG)/((N,A),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 32074 203 107G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 32074 203 107G     1.48E7             0.348     0.01    107.9  32072.9                     G.P.Vinitskaya,      (68)40009 192              0.01                            2.87                       2.87
+#/C5DATA        0
+#/DATASET       400090192
+#DATASET        400090201  20221012
+#SUBENT         40009020   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       33-AS-75(N,P)32-GE-75,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           33075            
+#TARGET         33075           [ ]             33-AS-75        [ ] 
+#REAC1          N,P
+#PRODUCT        32-GE-75
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.96543187(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 33075   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(N,2N)29-CU-64,,SIG
+#M0             Point: XS(b)=1.0000001  EN-NRM(eV):1.48E7
+#M1             Point: XS(b)=0.965432(1.54%)  EN-NRM(eV):1.48E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 33-AS-75(N,P)32-GE-75,,SIG
+#+              #[0]#Monitor:  29-CU-65(N,2N)29-CU-64,,SIG
+#+              #[0]#En=1.48E7
+#+              a0=[MONIT];                   #[0]#old monitor point 1.0
+#+              a1=recom$cu65n2n[EN];         #[0]#new monitor point [14.8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        400090201   0.965432    0.965432    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090201   CS          1           0.965432    0.965432    0.965432    -3.46%      1.03581     [MONIT]::cu65n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 33075   3 103      1.48E7         .01641234    0.003                                       G.P.Vinitskaya*,     (68)40009 201                               0.003                            18.3     18.3    1.0000001         0.965432 0.01490910.9654319
+#/C5DATA        0
+#/DATASET       400090201
+#DATASET        400090202  20221012
+#SUBENT         40009020   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION_X4    (33-AS-75(N,P)32-GE-75,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#REACTION       33-AS-75(N,P)32-GE-75,,SIG
+#C4Reaction     ((N,P),SIG)/((N,2N),SIG)
+#ReactionTyp_X4 Ratio
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           33075            
+#TARGET         33075           [ ]             33-AS-75        [ ] 
+#REAC1          N,P
+#PRODUCT        32-GE-75
+#C4ReaCode      ((N,P),SIG)/((N,2N),SIG)
+#CompNotes      CALCULATE(MF203:RATIO->MF3:SIG): Data[0]*0.965432(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#Quantity_X4    Ratio of [Cross section]
+#Quantity       Cross section
+#DataUnits_X4   NO-DIM
+#DataUnits      B
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 33075   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (33-AS-75(N,P)32-GE-75,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#Ratio2CS       1
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090202   Ratio       1           0.965432    0.965432    0.965432    -3.46%      1.03581                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV        B        B   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 33075   3 103      1.48E7         .01612271 1.5646-3     16.9  29065.9                     G.P.Vinitskaya*,     (68)40009 202            0.0016                            9.92                       9.70                      0.965432 0.01490910.965432 1.0129071
+#/C5DATA        0
+#/DATASET       400090202
+#DATASET        400090211  20221012
+#SUBENT         40009021   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       33-AS-75(N,A)31-GA-72,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           33075            
+#TARGET         33075           [ ]             33-AS-75        [ ] 
+#REAC1          N,A
+#PRODUCT        31-GA-72
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.96543187(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 33075   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(N,2N)29-CU-64,,SIG
+#M0             Point: XS(b)=1.0000001  EN-NRM(eV):1.48E7
+#M1             Point: XS(b)=0.965432(1.54%)  EN-NRM(eV):1.48E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 33-AS-75(N,A)31-GA-72,,SIG
+#+              #[0]#Monitor:  29-CU-65(N,2N)29-CU-64,,SIG
+#+              #[0]#En=1.48E7
+#+              a0=[MONIT];                   #[0]#old monitor point 1.0
+#+              a1=recom$cu65n2n[EN];         #[0]#new monitor point [14.8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        400090211   0.965432    0.965432    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090211   CS          1           0.965432    0.965432    0.965432    -3.46%      1.03581     [MONIT]::cu65n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 33075   3 107      1.48E7          8.6889-3    0.002                                       G.P.Vinitskaya*,     (68)40009 211                               0.002                            23       23      1.0000001         0.965432 0.01490910.9654319
+#/C5DATA        0
+#/DATASET       400090211
+#DATASET        400090212  20221012
+#SUBENT         40009021   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION_X4    (33-AS-75(N,A)31-GA-72,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#REACTION       33-AS-75(N,A)31-GA-72,,SIG
+#C4Reaction     ((N,A),SIG)/((N,2N),SIG)
+#ReactionTyp_X4 Ratio
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           33075            
+#TARGET         33075           [ ]             33-AS-75        [ ] 
+#REAC1          N,A
+#PRODUCT        31-GA-72
+#C4ReaCode      ((N,A),SIG)/((N,2N),SIG)
+#CompNotes      CALCULATE(MF203:RATIO->MF3:SIG): Data[0]*0.965432(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#Quantity_X4    Ratio of [Cross section]
+#Quantity       Cross section
+#DataUnits_X4   NO-DIM
+#DataUnits      B
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 33075   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (33-AS-75(N,A)31-GA-72,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#Ratio2CS       1
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090212   Ratio       1           0.965432    0.965432    0.965432    -3.46%      1.03581                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV        B        B   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 33075   3 107      1.48E7          8.5923-3 7.8366-4     16.9  29065.9                     G.P.Vinitskaya*,     (68)40009 212            8.0E-4                            9.31                       9.12                      0.965432 0.01490910.965432 1.0146508
+#/C5DATA        0
+#/DATASET       400090212
+#DATASET        400090221  20221012
+#SUBENT         40009022   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       34-SE-76(N,P)33-AS-76,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           34076            
+#TARGET         34076           [ ]             34-SE-76        [ ] 
+#REAC1          N,P
+#PRODUCT        33-AS-76
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.96543187(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 34076   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(N,2N)29-CU-64,,SIG
+#M0             Point: XS(b)=1.0000001  EN-NRM(eV):1.48E7
+#M1             Point: XS(b)=0.965432(1.54%)  EN-NRM(eV):1.48E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 34-SE-76(N,P)33-AS-76,,SIG
+#+              #[0]#Monitor:  29-CU-65(N,2N)29-CU-64,,SIG
+#+              #[0]#En=1.48E7
+#+              a0=[MONIT];                   #[0]#old monitor point 1.0
+#+              a1=recom$cu65n2n[EN];         #[0]#new monitor point [14.8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        400090221   0.965432    0.965432    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090221   CS          1           0.965432    0.965432    0.965432    -3.46%      1.03581     [MONIT]::cu65n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 34076   3 103      1.48E7         .05213333    0.008                                       G.P.Vinitskaya*,     (68)40009 221                               0.008                            15.3     15.3    1.0000001         0.965432 0.01490910.9654319
+#/C5DATA        0
+#/DATASET       400090221
+#DATASET        400090222  20221012
+#SUBENT         40009022   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION_X4    (34-SE-76(N,P)33-AS-76,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#REACTION       34-SE-76(N,P)33-AS-76,,SIG
+#C4Reaction     ((N,P),SIG)/((N,2N),SIG)
+#ReactionTyp_X4 Ratio
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           34076            
+#TARGET         34076           [ ]             34-SE-76        [ ] 
+#REAC1          N,P
+#PRODUCT        33-AS-76
+#C4ReaCode      ((N,P),SIG)/((N,2N),SIG)
+#CompNotes      CALCULATE(MF203:RATIO->MF3:SIG): Data[0]*0.965432(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#Quantity_X4    Ratio of [Cross section]
+#Quantity       Cross section
+#DataUnits_X4   NO-DIM
+#DataUnits      B
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 34076   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (34-SE-76(N,P)33-AS-76,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#Ratio2CS       1
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090222   Ratio       1           0.965432    0.965432    0.965432    -3.46%      1.03581                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV        B        B   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 34076   3 103      1.48E7         .05213333 1.2571-3     16.9  29065.9                     G.P.Vinitskaya*,     (68)40009 222             0.001                            1.92                       2.41                      0.965432 0.01490910.965432 1.3020828
+#/C5DATA        0
+#/DATASET       400090222
+#DATASET        400090231  20221012
+#SUBENT         40009023   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       34-SE-74(N,P)33-AS-74,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           34074            
+#TARGET         34074           [ ]             34-SE-74        [ ] 
+#REAC1          N,P
+#PRODUCT        33-AS-74
+#C4ReaCode      (N,P),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 34074   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 34074   3 103      1.48E7               0.2     0.04                                       G.P.Vinitskaya,      (68)40009 231                                0.04                            20       20
+#/C5DATA        0
+#/DATASET       400090231
+#DATASET        400090232  20221012
+#SUBENT         40009023   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       (34-SE-74(N,P)33-AS-74,,SIG)/(34-SE-76(N,P)33-AS-76,,SIG)
+#C4Reaction     ((N,P),SIG)/((N,P),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             103
+#PROJ           1
+#TARG           34074            
+#TARGET         34074           [ ]             34-SE-74        [ ] 
+#REAC1          N,P
+#PRODUCT        33-AS-74
+#C4ReaCode      ((N,P),SIG)/((N,P),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 34074 203 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 34074 203 103      1.48E7               3.7      0.1    103.9  34076.9                     G.P.Vinitskaya,      (68)40009 232               0.1                            2.70                       2.70
+#/C5DATA        0
+#/DATASET       400090232
+#DATASET        400090241  20221012
+#SUBENT         40009024   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       34-SE-77(N,P)33-AS-77,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           34077            
+#TARGET         34077           [ ]             34-SE-77        [ ] 
+#REAC1          N,P
+#PRODUCT        33-AS-77
+#C4ReaCode      (N,P),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 34077   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 34077   3 103      1.48E7             0.036     0.01                                       G.P.Vinitskaya,      (68)40009 241                                0.01                            27.8     27.8
+#/C5DATA        0
+#/DATASET       400090241
+#DATASET        400090242  20221012
+#SUBENT         40009024   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       (34-SE-77(N,P)33-AS-77,,SIG)/(34-SE-76(N,P)33-AS-76,,SIG)
+#C4Reaction     ((N,P),SIG)/((N,P),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             103
+#PROJ           1
+#TARG           34077            
+#TARGET         34077           [ ]             34-SE-77        [ ] 
+#REAC1          N,P
+#PRODUCT        33-AS-77
+#C4ReaCode      ((N,P),SIG)/((N,P),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 34077 203 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 34077 203 103      1.48E7              0.67     0.09    103.9  34076.9                     G.P.Vinitskaya,      (68)40009 242              0.09                            13.4                       13.4
+#/C5DATA        0
+#/DATASET       400090242
+#DATASET        400090251  20221012
+#SUBENT         40009025   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       34-SE-78(N,P)33-AS-78,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           34078            
+#TARGET         34078           [ ]             34-SE-78        [ ] 
+#REAC1          N,P
+#PRODUCT        33-AS-78
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.96543187(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 34078   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(N,2N)29-CU-64,,SIG
+#M0             Point: XS(b)=1.0000001  EN-NRM(eV):1.48E7
+#M1             Point: XS(b)=0.965432(1.54%)  EN-NRM(eV):1.48E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 34-SE-78(N,P)33-AS-78,,SIG
+#+              #[0]#Monitor:  29-CU-65(N,2N)29-CU-64,,SIG
+#+              #[0]#En=1.48E7
+#+              a0=[MONIT];                   #[0]#old monitor point 1.0
+#+              a1=recom$cu65n2n[EN];         #[0]#new monitor point [14.8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        400090251   0.965432    0.965432    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090251   CS          1           0.965432    0.965432    0.965432    -3.46%      1.03581     [MONIT]::cu65n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 34078   3 103      1.48E7         .01351605    0.002                                       G.P.Vinitskaya*,     (68)40009 251                               0.002                            14.8     14.8    1.0000001         0.965432 0.01490910.9654319
+#/C5DATA        0
+#/DATASET       400090251
+#DATASET        400090252  20221012
+#SUBENT         40009025   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION_X4    (34-SE-78(N,P)33-AS-78,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#REACTION       34-SE-78(N,P)33-AS-78,,SIG
+#C4Reaction     ((N,P),SIG)/((N,2N),SIG)
+#ReactionTyp_X4 Ratio
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           34078            
+#TARGET         34078           [ ]             34-SE-78        [ ] 
+#REAC1          N,P
+#PRODUCT        33-AS-78
+#C4ReaCode      ((N,P),SIG)/((N,2N),SIG)
+#CompNotes      CALCULATE(MF203:RATIO->MF3:SIG): Data[0]*0.965432(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#Quantity_X4    Ratio of [Cross section]
+#Quantity       Cross section
+#DataUnits_X4   NO-DIM
+#DataUnits      B
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 34078   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (34-SE-78(N,P)33-AS-78,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#Ratio2CS       1
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090252   Ratio       1           0.965432    0.965432    0.965432    -3.46%      1.03581                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV        B        B   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 34078   3 103      1.48E7         .01370913 2.3268-4     16.9  29065.9                     G.P.Vinitskaya*,     (68)40009 252            1.0E-4                            0.73                       1.70                      0.965432 0.01490910.965432 2.410144
+#/C5DATA        0
+#/DATASET       400090252
+#DATASET        400090261  20221012
+#SUBENT         40009026   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       34-SE-78(N,A)32-GE-75,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           34078            
+#TARGET         34078           [ ]             34-SE-78        [ ] 
+#REAC1          N,A
+#PRODUCT        32-GE-75
+#C4ReaCode      (N,A),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 34078   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 34078   3 107      1.48E7             0.007    0.001                                       G.P.Vinitskaya,      (68)40009 261                               0.001                            14.3     14.3
+#/C5DATA        0
+#/DATASET       400090261
+#DATASET        400090262  20221012
+#SUBENT         40009026   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       (34-SE-78(N,A)32-GE-75,,SIG)/(34-SE-78(N,P)33-AS-78,,SIG)
+#C4Reaction     ((N,A),SIG)/((N,P),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             107
+#PROJ           1
+#TARG           34078            
+#TARGET         34078           [ ]             34-SE-78        [ ] 
+#REAC1          N,A
+#PRODUCT        32-GE-75
+#C4ReaCode      ((N,A),SIG)/((N,P),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 34078 203 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 34078 203 107      1.48E7              0.51     0.01    103.9  34078.9                     G.P.Vinitskaya,      (68)40009 262              0.01                            1.96                       1.96
+#/C5DATA        0
+#/DATASET       400090262
+#DATASET        400090281  20221012
+#SUBENT         40009028   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       35-BR-81(N,P)34-SE-81-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           35081            
+#TARGET         35081           [ ]             35-BR-81        [ ] 
+#REAC1          N,P
+#PRODUCT        34-SE-81-M
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.96543187(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 35081   3 103M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(N,2N)29-CU-64,,SIG
+#M0             Point: XS(b)=1.0000001  EN-NRM(eV):1.48E7
+#M1             Point: XS(b)=0.965432(1.54%)  EN-NRM(eV):1.48E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 35-BR-81(N,P)34-SE-81-M,,SIG
+#+              #[0]#Monitor:  29-CU-65(N,2N)29-CU-64,,SIG
+#+              #[0]#En=1.48E7
+#+              a0=[MONIT];                   #[0]#old monitor point 1.0
+#+              a1=recom$cu65n2n[EN];         #[0]#new monitor point [14.8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        400090281   0.965432    0.965432    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090281   CS          1           0.965432    0.965432    0.965432    -3.46%      1.03581     [MONIT]::cu65n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 35081   3 103M     1.48E7         .01399876    0.002                                       G.P.Vinitskaya*,     (68)40009 281                               0.002                            14.3     14.3    1.0000001         0.965432 0.01490910.9654319
+#/C5DATA        0
+#/DATASET       400090281
+#DATASET        400090282  20221012
+#SUBENT         40009028   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION_X4    (35-BR-81(N,P)34-SE-81-M,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#REACTION       35-BR-81(N,P)34-SE-81-M,,SIG
+#C4Reaction     ((N,P),SIG)/((N,2N),SIG)
+#ReactionTyp_X4 Ratio
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           35081            
+#TARGET         35081           [ ]             35-BR-81        [ ] 
+#REAC1          N,P
+#PRODUCT        34-SE-81-M
+#C4ReaCode      ((N,P),SIG)/((N,2N),SIG)
+#CompNotes      CALCULATE(MF203:RATIO->MF3:SIG): Data[0]*0.965432(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#Quantity_X4    Ratio of [Cross section]
+#Quantity       Cross section
+#DataUnits_X4   NO-DIM
+#DataUnits      B
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 35081   3 103M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (35-BR-81(N,P)34-SE-81-M,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#Ratio2CS       1
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090282   Ratio       1           0.965432    0.965432    0.965432    -3.46%      1.03581                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV        B        B   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 35081   3 103M     1.48E7         .01399876 5.2891-4     16.9  29065.9                     G.P.Vinitskaya*,     (68)40009 282            5.0E-4                            3.57                       3.78                      0.965432 0.01490910.965432 1.095703
+#/C5DATA        0
+#/DATASET       400090282
+#DATASET        40009029   20221012
+#SUBENT         40009029   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       35-BR-81(N,P)34-SE-81-G,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           35081            
+#TARGET         35081           [ ]             35-BR-81        [ ] 
+#REAC1          N,P
+#PRODUCT        34-SE-81-G
+#C4ReaCode      (N,P),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 35081   3 103G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 35081   3 103G     1.48E7            0.0065   0.0015                                       G.P.Vinitskaya,      (68)40009 29                               0.0015                            23.1     23.1
+#/C5DATA        0
+#/DATASET       40009029 
+#DATASET        400090301  20221012
+#SUBENT         40009030   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       35-BR-79(N,A)33-AS-76,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           35079            
+#TARGET         35079           [ ]             35-BR-79        [ ] 
+#REAC1          N,A
+#PRODUCT        33-AS-76
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.96543187(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 35079   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(N,2N)29-CU-64,,SIG
+#M0             Point: XS(b)=1.0000001  EN-NRM(eV):1.48E7
+#M1             Point: XS(b)=0.965432(1.54%)  EN-NRM(eV):1.48E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 35-BR-79(N,A)33-AS-76,,SIG
+#+              #[0]#Monitor:  29-CU-65(N,2N)29-CU-64,,SIG
+#+              #[0]#En=1.48E7
+#+              a0=[MONIT];                   #[0]#old monitor point 1.0
+#+              a1=recom$cu65n2n[EN];         #[0]#new monitor point [14.8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        400090301   0.965432    0.965432    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090301   CS          1           0.965432    0.965432    0.965432    -3.46%      1.03581     [MONIT]::cu65n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 35079   3 107      1.48E7         .01641234    0.002                                       G.P.Vinitskaya*,     (68)40009 301                               0.002                            12.2     12.2    1.0000001         0.965432 0.01490910.9654319
+#/C5DATA        0
+#/DATASET       400090301
+#DATASET        400090302  20221012
+#SUBENT         40009030   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION_X4    (35-BR-79(N,A)33-AS-76,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#REACTION       35-BR-79(N,A)33-AS-76,,SIG
+#C4Reaction     ((N,A),SIG)/((N,2N),SIG)
+#ReactionTyp_X4 Ratio
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           35079            
+#TARGET         35079           [ ]             35-BR-79        [ ] 
+#REAC1          N,A
+#PRODUCT        33-AS-76
+#C4ReaCode      ((N,A),SIG)/((N,2N),SIG)
+#CompNotes      CALCULATE(MF203:RATIO->MF3:SIG): Data[0]*0.965432(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#Quantity_X4    Ratio of [Cross section]
+#Quantity       Cross section
+#DataUnits_X4   NO-DIM
+#DataUnits      B
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 35079   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (35-BR-79(N,A)33-AS-76,,SIG)/(29-CU-65(N,2N)29-CU-64,,SIG)
+#Ratio2CS       1
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          400090302   Ratio       1           0.965432    0.965432    0.965432    -3.46%      1.03581                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV        B        B   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 35079   3 107      1.48E7         .01660543.00118656     16.9  29065.9                     G.P.Vinitskaya*,     (68)40009 302            0.0012                            7.23                       7.15                      0.965432 0.01490910.965432 1.0242046
+#/C5DATA        0
+#/DATASET       400090302
+#DATASET        400090311  20221012
+#SUBENT         40009031   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       35-BR-81(N,A)33-AS-78,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           35081            
+#TARGET         35081           [ ]             35-BR-81        [ ] 
+#REAC1          N,A
+#PRODUCT        33-AS-78
+#C4ReaCode      (N,A),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 35081   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 35081   3 107      1.48E7            0.0065   0.0012                                       G.P.Vinitskaya,      (68)40009 311                              0.0012                            18.5     18.5
+#/C5DATA        0
+#/DATASET       400090311
+#DATASET        400090312  20221012
+#SUBENT         40009031   20221012
+#ENTRY          40009      20221012
+#TITLE          Cross sections of the reactions (n,p) and (n,alpha)
+#+               at 14.8 MeV neutron energy
+#AUTHORS        G.P.Vinitskaya,V.N.Levkovskii,V.V.Sokolskii,
+#+              I.V.Kazachevskii
+#AUTHOR1        G.P.Vinitskaya+
+#YEAR           1968
+#X4REF1         J,SNP,6,174,1968
+#REFERENCE1     Jour: Soviet Journal of Nuclear Physics, Vol.6, p.174 (1968)
+#DATE           20221012
+#INSTITUTE      4KASKAZ
+#METHOD         ACTIV,CHSEP
+#REACTION       (35-BR-81(N,A)33-AS-78,,SIG)/(35-BR-79(N,A)33-AS-76,,SIG)
+#C4Reaction     ((N,A),SIG)/((N,A),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             107
+#PROJ           1
+#TARG           35081            
+#TARGET         35081           [ ]             35-BR-81        [ ] 
+#REAC1          N,A
+#PRODUCT        33-AS-78
+#C4ReaCode      ((N,A),SIG)/((N,A),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 35081 203 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 35081 203 107      1.48E7             0.386    0.008    107.9  35079.9                     G.P.Vinitskaya,      (68)40009 312             0.008                            2.07                       2.07
+#/C5DATA        0
+#/DATASET       400090312
+#/C5.2.3        1               55              59              0               55              

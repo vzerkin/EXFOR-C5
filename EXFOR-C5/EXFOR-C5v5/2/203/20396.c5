@@ -1,0 +1,313 @@
+#C5M.2.3
+#DATASET        20396002   19861022
+#SUBENT         20396002   19861022
+#ENTRY          20396      19810310
+#TITLE          -NI-58(N,P)CO-58 AND FE-54(N,P)MN-54 CROSS-SECTION
+#+               MEASUREMENTS FOR USE AS THRESHOLD DETECTORS.-
+#AUTHORS        A.PAULSEN, R.WIDERA
+#AUTHOR1        A.Paulsen+
+#YEAR           1971
+#X4REF1         C,71CANT,129,7109
+#REFERENCE1     Conf: Chemical Nucl. Data Conf.,Canterbury 1971, p.129 (1971)
+#DATE           19861022
+#INSTITUTE      2ZZZGEL
+#METHOD         ACTIV
+#REACTION       26-FE-54(N,P)25-MN-54,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           26054            
+#TARGET         26054           [ ]             26-FE-54        [ ] 
+#REAC1          N,P
+#PRODUCT        25-MN-54
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0945568(1.7e6) Data[4]*1.0544363(6.3e6)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 26054   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      28-NI-58(N,P)27-CO-58,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$ni58np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-54(N,P)25-MN-54,,SIG
+#+              #[0]#Monitor:  28-NI-58(N,P)27-CO-58,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$ni58np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20396002    1.04178     1.04178     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20396002    CS          5           0.872716    1.12800     1.04178     +4.18%      1.14585     [EN,MONIT]::ni58np
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26054   3 103   1710000.0 120000.0 6.4579-3   6.0E-4                                       A.PAULSEN*,          (71)20396  2                               6.0E-4                            9.29     9.29    0.019             .020796585.7020-4 1.0945568
+    1 26054   3 103   2210000.0 110000.0.03246504   0.0028                                       A.PAULSEN*,          (71)20396  2                               0.0028                            8.62     8.62    0.0751            .065540981.4197-3 0.8727161
+    1 26054   3 103   4140000.0 170000.00.2955352    0.017                                       A.PAULSEN*,          (71)20396  2                                0.017                            5.75     5.75    0.338             0.381263 9.3361-3 1.1279969
+    1 26054   3 103   5240000.0 230000.00.4141507    0.025                                       A.PAULSEN*,          (71)20396  2                                0.025                            6.04     6.04    0.492             0.5211308.012183161.0592089
+    1 26054   3 103   6270000.0 170000.00.4650064    0.029                                       A.PAULSEN*,          (71)20396  2                                0.029                            6.24     6.24    0.573             0.604192 .013865171.0544363
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1710000.0   6270000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           5           5
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1710000.    1710000.    6.4579-3    9.29         100
+2210000.    2210000.    0.032465    8.62         45 100
+4140000.    4140000.    0.295535    5.75         25 29 100
+5240000.    5240000.    0.414151    6.04         25 25 38 100
+6270000.    6270000.    0.465006    6.24         25 25 27 39 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       20396002 
+#DATASET        20396003   19860822
+#SUBENT         20396003   19860822
+#ENTRY          20396      19810310
+#TITLE          -NI-58(N,P)CO-58 AND FE-54(N,P)MN-54 CROSS-SECTION
+#+               MEASUREMENTS FOR USE AS THRESHOLD DETECTORS.-
+#AUTHORS        A.PAULSEN, R.WIDERA
+#AUTHOR1        A.Paulsen+
+#YEAR           1971
+#X4REF1         C,71CANT,129,7109
+#REFERENCE1     Conf: Chemical Nucl. Data Conf.,Canterbury 1971, p.129 (1971)
+#DATE           19860822
+#INSTITUTE      2ZZZGEL
+#METHOD         ACTIV
+#REACTION       26-FE-54(N,P)25-MN-54,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           26054            
+#TARGET         26054           [ ]             26-FE-54        [ ] 
+#REAC1          N,P
+#PRODUCT        25-MN-54
+#C4ReaCode      (N,P),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 26054   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         9
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26054   3 103      1.28E7 200000.0    0.452    0.023                                       A.PAULSEN,           (71)20396  3                                0.023                            5.09     5.09
+    1 26054   3 103      1.32E7 210000.0    0.417    0.021                                       A.PAULSEN,           (71)20396  3                                0.021                            5.04     5.04
+    1 26054   3 103      1.36E7 230000.0    0.375    0.019                                       A.PAULSEN,           (71)20396  3                                0.019                            5.07     5.07
+    1 26054   3 103       1.4E7259999.98    0.326    0.016                                       A.PAULSEN,           (71)20396  3                                0.016                            4.91     4.91
+    1 26054   3 103      1.48E7 340000.0    0.249    0.013                                       A.PAULSEN,           (71)20396  3                                0.013                            5.22     5.22
+    1 26054   3 103      1.52E7 390000.0     0.23    0.012                                       A.PAULSEN,           (71)20396  3                                0.012                            5.22     5.22
+    1 26054   3 103      1.56E7 440000.0    0.218    0.011                                       A.PAULSEN,           (71)20396  3                                0.011                            5.05     5.05
+    1 26054   3 103       1.6E7 500000.0    0.186   0.0093                                       A.PAULSEN,           (71)20396  3                               0.0093                            5        5
+    1 26054   3 103      1.64E7 550000.0     0.17   0.0085                                       A.PAULSEN,           (71)20396  3                               0.0085                            5        5
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.28E7      1.64E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           9           9
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.28E7      1.28E7      0.452       5.09         100
+1.32E7      1.32E7      0.417       5.04         44 100
+1.36E7      1.36E7      0.375       5.07         39 44 100
+1.4E7       1.4E7       0.326       4.91         33 39 44 100
+1.48E7      1.48E7      0.249       5.22         25 28 33 39 100
+1.52E7      1.52E7      0.23        5.22         25 25 28 33 44 100
+1.56E7      1.56E7      0.218       5.05         25 25 25 28 39 44 100
+1.6E7       1.6E7       0.186       5.0          25 25 25 25 33 39 44 100
+1.64E7      1.64E7      0.17        5.0          25 25 25 25 28 33 39 44 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       20396003 
+#DATASET        20396004   19860609
+#SUBENT         20396004   19860609
+#ENTRY          20396      19810310
+#TITLE          -NI-58(N,P)CO-58 AND FE-54(N,P)MN-54 CROSS-SECTION
+#+               MEASUREMENTS FOR USE AS THRESHOLD DETECTORS.-
+#AUTHORS        A.PAULSEN, R.WIDERA
+#AUTHOR1        A.Paulsen+
+#YEAR           1971
+#X4REF1         C,71CANT,129,7109
+#REFERENCE1     Conf: Chemical Nucl. Data Conf.,Canterbury 1971, p.129 (1971)
+#DATE           19860609
+#INSTITUTE      2ZZZGEL
+#METHOD         ACTIV
+#REACTION       28-NI-58(N,P)27-CO-58,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           28058            
+#TARGET         28058           [ ]             28-NI-58        [ ] 
+#REAC1          N,P
+#PRODUCT        27-CO-58
+#C4ReaCode      (N,P),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 28058   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         39
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 28058   3 103    990000.0  61000.0  0.00118   2.5E-4                                       A.PAULSEN,           (71)20396  4                               2.5E-4                            21.2     21.2
+    1 28058   3 103   1050000.0  62000.0  0.00126   2.5E-4                                       A.PAULSEN,           (71)20396  4                               2.5E-4                            19.8     19.8
+    1 28058   3 103   1110000.0  63000.0  0.00306   3.5E-4                                       A.PAULSEN,           (71)20396  4                               3.5E-4                            11.4     11.4
+    1 28058   3 103   1170000.064000.004   0.0037   4.0E-4                                       A.PAULSEN,           (71)20396  4                               4.0E-4                            10.8     10.8
+    1 28058   3 103   1230000.064999.996  0.00433   4.2E-4                                       A.PAULSEN,           (71)20396  4                               4.2E-4                            9.70     9.70
+    1 28058   3 103   1290000.0  66000.0  0.00488   4.5E-4                                       A.PAULSEN,           (71)20396  4                               4.5E-4                            9.22     9.22
+    1 28058   3 103   1360000.0  67000.0  0.00833   6.0E-4                                       A.PAULSEN,           (71)20396  4                               6.0E-4                            7.20     7.20
+    1 28058   3 103   1430000.0  68000.0   0.0105   7.4E-4                                       A.PAULSEN,           (71)20396  4                               7.4E-4                            7.05     7.05
+    1 28058   3 103   1490000.0  70000.0   0.0109   7.6E-4                                       A.PAULSEN,           (71)20396  4                               7.6E-4                            6.97     6.97
+    1 28058   3 103   1560000.0  72000.0   0.0125   8.8E-4                                       A.PAULSEN,           (71)20396  4                               8.8E-4                            7.04     7.04
+    1 28058   3 103   1630000.0  74000.0   0.0156   0.0011                                       A.PAULSEN,           (71)20396  4                               0.0011                            7.05     7.05
+    1 28058   3 103   1690000.0  76000.0    0.018  0.00126                                       A.PAULSEN,           (71)20396  4                              0.00126                            7        7
+    1 28058   3 103   1760000.0  78000.0   0.0216  0.00151                                       A.PAULSEN,           (71)20396  4                              0.00151                            6.99     6.99
+    1 28058   3 103   1790000.0  93000.0   0.0331   0.0016                                       A.PAULSEN,           (71)20396  4                               0.0016                            4.83     4.83
+    1 28058   3 103   1820000.0  79000.0   0.0247  0.00173                                       A.PAULSEN,           (71)20396  4                              0.00173                            7        7
+    1 28058   3 103   1860000.0  54000.0   0.0308   0.0015                                       A.PAULSEN,           (71)20396  4                               0.0015                            4.87     4.87
+    1 28058   3 103   1880000.0  81000.0   0.0298  0.00208                                       A.PAULSEN,           (71)20396  4                              0.00208                            6.98     6.98
+    1 28058   3 103   1940000.0  82000.0   0.0318  0.00223                                       A.PAULSEN,           (71)20396  4                              0.00223                            7.01     7.01
+    1 28058   3 103   1990000.0  83000.0   0.0394  0.00276                                       A.PAULSEN,           (71)20396  4                              0.00276                            7.01     7.01
+    1 28058   3 103   2040000.0  84000.0   0.0396  0.00277                                       A.PAULSEN,           (71)20396  4                              0.00277                            6.99     6.99
+    1 28058   3 103   2080000.0  85000.0   0.0466  0.00326                                       A.PAULSEN,           (71)20396  4                              0.00326                            7        7
+    1 28058   3 103   2120000.0  87000.0    0.046  0.00322                                       A.PAULSEN,           (71)20396  4                              0.00322                            7        7
+    1 28058   3 103   2150000.0  88000.0   0.0495  0.00347                                       A.PAULSEN,           (71)20396  4                              0.00347                            7.01     7.01
+    1 28058   3 103   2180000.0 100000.0   0.0508  0.00344                                       A.PAULSEN,           (71)20396  4                              0.00344                            6.77     6.77
+    1 28058   3 103   2200000.0129999.99    0.067   0.0047                                       A.PAULSEN,           (71)20396  4                               0.0047                            7.01     7.01
+    1 28058   3 103   3350000.0 190000.0    0.202    0.008                                       A.PAULSEN,           (71)20396  4                                0.008                            3.96     3.96
+    1 28058   3 103   3940000.0 270000.0    0.367    0.015                                       A.PAULSEN,           (71)20396  4                                0.015                            4.09     4.09
+    1 28058   3 103   4140000.0 170000.0    0.338    0.014                                       A.PAULSEN,           (71)20396  4                                0.014                            4.14     4.14
+    1 28058   3 103   5240000.0 230000.0    0.492     0.02                                       A.PAULSEN,           (71)20396  4                                 0.02                            4.07     4.07
+    1 28058   3 103   6270000.0 170000.0    0.573    0.023                                       A.PAULSEN,           (71)20396  4                                0.023                            4.01     4.01
+    1 28058   3 103      1.28E7 200000.0    0.466    0.019                                       A.PAULSEN,           (71)20396  4                                0.019                            4.08     4.08
+    1 28058   3 103      1.32E7 210000.0    0.433    0.018                                       A.PAULSEN,           (71)20396  4                                0.018                            4.16     4.16
+    1 28058   3 103      1.36E7 230000.0    0.377    0.015                                       A.PAULSEN,           (71)20396  4                                0.015                            3.98     3.98
+    1 28058   3 103       1.4E7259999.98    0.337    0.014                                       A.PAULSEN,           (71)20396  4                                0.014                            4.15     4.15
+    1 28058   3 103      1.48E7 340000.0    0.353    0.011                                       A.PAULSEN,           (71)20396  4                                0.011                            3.12     3.12
+    1 28058   3 103      1.52E7 390000.0    0.234     0.01                                       A.PAULSEN,           (71)20396  4                                 0.01                            4.27     4.27
+    1 28058   3 103      1.56E7 440000.0    0.211    0.009                                       A.PAULSEN,           (71)20396  4                                0.009                            4.27     4.27
+    1 28058   3 103       1.6E7 500000.0    0.187    0.008                                       A.PAULSEN,           (71)20396  4                                0.008                            4.28     4.28
+    1 28058   3 103      1.64E7 550000.0    0.178    0.007                                       A.PAULSEN,           (71)20396  4                                0.007                            3.93     3.93
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           990000.0    1.64E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           39          39
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+990000.     990000.     0.00118     21.19        100
+1050000.    1050000.    0.00126     19.84        50 100
+1110000.    1110000.    0.00306     11.44        50 50 100
+1170000.    1170000.    0.0037      10.81        49 50 50 100
+1230000.    1230000.    0.00433     9.7          49 49 50 50 100
+1290000.    1290000.    0.00488     9.22         49 49 49 50 50 100
+1360000.    1360000.    0.00833     7.2          49 49 49 49 50 50 100
+1430000.    1430000.    0.0105      7.05         49 49 49 49 49 50 50 100
+1490000.    1490000.    0.0109      6.97         48 49 49 49 49 49 50 50 100
+1560000.    1560000.    0.0125      7.04         48 48 49 49 49 49 49 50 50 100
+1630000.    1630000.    0.0156      7.05         48 48 48 49 49 49 49 49 50 50 100
+1690000.    1690000.    0.018       7.0          48 48 48 48 49 49 49 49 49 50 50 100
+1760000.    1760000.    0.0216      6.99         48 48 48 48 48 48 49 49 49 49 50 50 100
+1790000.    1790000.    0.0331      4.83         47 48 48 48 48 48 49 49 49 49 49 50 50 100
+1820000.    1820000.    0.0247      7.0          47 48 48 48 48 48 49 49 49 49 49 50 50 50 100
+1860000.    1860000.    0.0308      4.87         47 47 48 48 48 48 48 49 49 49 49 49 50 50 50 100
+1880000.    1880000.    0.0298      6.98         47 47 48 48 48 48 48 49 49 49 49 49 50 50 50 50 100
+1940000.    1940000.    0.0318      7.01         47 47 47 48 48 48 48 48 49 49 49 49 49 50 50 50 50 100
+1990000.    1990000.    0.0394      7.01         47 47 47 47 48 48 48 48 48 49 49 49 49 49 49 50 50 50 100
+2040000.    2040000.    0.0396      6.99         47 47 47 47 47 48 48 48 48 48 49 49 49 49 49 49 49 50 50 100
+2080000.    2080000.    0.0466      7.0          46 47 47 47 47 47 48 48 48 48 49 49 49 49 49 49 49 50 50 50 100
+2120000.    2120000.    0.046       7.0          46 47 47 47 47 47 48 48 48 48 48 49 49 49 49 49 49 49 50 50 50 100
+2150000.    2150000.    0.0495      7.01         46 46 47 47 47 47 47 48 48 48 48 49 49 49 49 49 49 49 49 50 50 50 100
+2180000.    2180000.    0.0508      6.77         46 46 47 47 47 47 47 48 48 48 48 48 49 49 49 49 49 49 49 50 50 50 50 100
+2.2e+06     2.2e+06     0.067       7.01         46 46 46 47 47 47 47 48 48 48 48 48 49 49 49 49 49 49 49 49 50 50 50 50 100
+3350000.    3350000.    0.202       3.96         42 43 43 43 43 43 44 44 44 44 44 45 45 45 45 45 45 45 46 46 46 46 46 46 46 100
+3940000.    3940000.    0.367       4.09         40 41 41 41 41 41 42 42 42 42 43 43 43 43 43 43 43 44 44 44 44 44 44 44 44 48 100
+4140000.    4140000.    0.338       4.14         40 40 40 40 41 41 41 41 41 42 42 42 42 42 42 43 43 43 43 43 43 43 44 44 44 47 49 100
+5240000.    5240000.    0.492       4.07         36 36 37 37 37 37 37 38 38 38 38 38 39 39 39 39 39 39 39 40 40 40 40 40 40 44 46 46 100
+6270000.    6270000.    0.573       4.01         33 33 33 33 34 34 34 34 34 35 35 35 35 35 36 36 36 36 36 36 36 37 37 37 37 41 42 43 47 100
+1.28E7      1.28E7      0.466       4.08         25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 29 100
+1.32E7      1.32E7      0.433       4.16         25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 28 49 100
+1.36E7      1.36E7      0.377       3.98         25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 26 47 49 100
+1.4E7       1.4E7       0.337       4.15         25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 46 47 49 100
+1.48E7      1.48E7      0.353       3.12         25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 44 45 46 47 100
+1.52E7      1.52E7      0.234       4.27         25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 42 44 45 46 49 100
+1.56E7      1.56E7      0.211       4.27         25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 41 42 44 45 47 49 100
+1.6E7       1.6E7       0.187       4.28         25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 40 41 42 44 46 47 49 100
+1.64E7      1.64E7      0.178       3.93         25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 38 40 41 42 45 46 47 49 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       20396004 
+#/C5M.2.3       1               3               3               0               53              

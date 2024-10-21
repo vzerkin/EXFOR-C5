@@ -1,0 +1,107 @@
+#C5M.2.3
+#DATASET        23765002   20210302
+#SUBENT         23765002   20210302
+#ENTRY          23765      20210302
+#TITLE          Measurement of the 236U(n,f) cross section at fast
+#+              neutron energies with Micromegas Detectors
+#AUTHORS        M.Diakaki,V.Michalopoulou,A.Tsinganis,A.Axiotis,
+#+              A.Kalamara,M.Kokkoris,A.Lagoyiannis,N.Patronis,
+#+              A.Stamatopoulos,R.Vlastou
+#AUTHOR1        M.Diakaki+
+#YEAR           2020
+#X4REF1         J,EPJ/CS,239,05001,2020
+#REFERENCE1     Jour: EPJ Web of Conferences, Vol.239, p.05001 (2020)
+#DATE           20210302
+#INSTITUTE      2FR CAD,2GRCTUA,2ZZZCER,2GRCATH,2GRCIOA
+#REACTION       92-U-236(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           92236            
+#TARGET         92236           [ ]             92-U-236        [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#CompNotes      ERR-ANALYS:(ERR-2,,0.5)       ADDED AS COMMON:ERR-2,PER-CENT=0.25%
+#CompNotes      ERR-ANALYS:(ERR-3,2.,3.)      ADDED AS COMMON:ERR-3,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-4,1.,2.)      ADDED AS COMMON:ERR-4,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-5,0.7,0.95)   ADDED AS COMMON:ERR-5,PER-CENT=0.7%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0059208(4.5e6) Data[8]*1.0089525(1.0e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92236   3  18 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-238(N,F),,SIG
+#M0             Monitor:{endfb7$u238nf}
+#M1             Monitor:{recom$u238nf}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 92-U-236(N,F),,SIG
+#+              #[0]#Monitor:  92-U-238(N,F),,SIG
+#+              #m0: {,M.B.Chadwick+,3,ENDF/B-VII.1,,2011} $ u238nf;#[0]#old monit-ref
+#+              m0: endfb7$u238nf;            #[0]#old monitor(energy) in ENDF
+#+              m1: recom$u238nf;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        23765002    1.00527     1.00527     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23765002    CS          9           1.00026     1.00895     1.00527     +0.527%     1.00895     endfb7::u238nf
+#C5DATA         9
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92236   3  18 A 4500000.0 400000.00.8158017.03309162                                       M.Diakaki*,          (20)23765  2 .02460299    0.022                   3.02     2.70                       4.06    0.55933830.004167 0.56265  .007647871.00592081.0479239
+    1 92236   3  18 A 5000000.0 200000.00.7903087.03925065                                       M.Diakaki*,          (20)23765  2 .02390641    0.031                   3.02     3.92                       4.97    0.54671150.00399120.54901  .007529141.00420421.0328178
+    1 92236   3  18 A 5500000.0 200000.00.78485180.0310241                                       M.Diakaki*,          (20)23765  2  0.023677     0.02                   3.02     2.55                       3.95    0.54633790.00436010.54763  0.00761811.002365 1.0467964
+    1 92236   3  18 A 6000000.0 200000.00.8872322.02936802                                       M.Diakaki*,          (20)23765  2 .02680308    0.012                   3.02     1.35                       3.31    0.61079010.00531970.61095  .008816251.00026181.0667814
+    1 92236   3  18 A 7000000.0 200000.01.4295256.04805496                                       M.Diakaki*,          (20)23765  2 .04317668    0.021                   3.02     1.47                       3.36    0.93955130.00788280.94386  0.01342781.00458591.0689572
+    1 92236   3  18 A 7500000.0 200000.0 1.520178.05112812                                       M.Diakaki*,          (20)23765  2 .04608891    0.022                   3.03     1.45                       3.36    0.98746210.00881540.99346  0.01468961.00607411.0742044
+    1 92236   3  18 A 8500000.0 200000.01.6494417.05967965                                       M.Diakaki*,          (20)23765  2 0.0495721    0.033                   3.01     2                          3.62    1.00766130.00895081.0147   0.01441761.00698521.0579027
+    1 92236   3  18 A 9500000.0 200000.01.5706202.05144641                                       M.Diakaki*,          (20)23765  2 .04733104     0.02                   3.01     1.27                       3.28    1.00535639.1514-3 1.0135   .014712951.00810031.0741454
+    1 92236   3  18 A     1.0E7 200000.01.4710526.04752835                                       M.Diakaki*,          (20)23765  2 .04432545    0.017                   3.01     1.16                       3.23    1.00133560.00943761.0103   0.01486571.00895251.0769606
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4500000.0   1.0E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           9           9
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.5e+06     4.5e+06     0.815802    4.05         100
+5.e+06      5.e+06      0.790309    4.95         41 100
+5.5e+06     5.5e+06     0.784852    3.95         47 42 100
+6.e+06      6.e+06      0.887232    3.31         49 46 63 100
+7.e+06      7.e+06      1.42953     3.36         37 35 50 67 100
+7.5e+06     7.5e+06     1.52018     3.36         34 30 44 60 74 100
+8.5e+06     8.5e+06     1.64944     3.61         31 25 32 41 54 61 100
+9.5e+06     9.5e+06     1.57062     3.27         34 28 35 42 45 53 63 100
+1.0E7       1.0E7       1.47105     3.23         35 29 36 43 42 46 57 78 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       23765002 
+#/C5M.2.3       1               1               1               0               9               

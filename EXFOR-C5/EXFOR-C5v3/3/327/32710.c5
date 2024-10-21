@@ -1,0 +1,385 @@
+#C5.2.3
+#DATASET        32710002   20130416
+#SUBENT         32710002   20130416
+#ENTRY          32710      20130416
+#TITLE          Cross-sections for (n,2n) and (n,p) reactions on
+#+              neodymium isotopes and 160Gd(n,a)157Sm at neutron
+#+              energy between 13.5 and 14.7 MeV
+#AUTHORS        Yanbin Zhang,Liangyong Zhao,Xiangzhong Kong,Rong Liu,
+#+              Li Jiang
+#AUTHOR1        Yanbin Zhang+
+#YEAR           2013
+#X4REF1         J,ANE,53,99,2013
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.53, p.99 (2013)
+#DATE           20130416
+#INSTITUTE      3CPRLNZ,3CPRNPC
+#METHOD         ACTIV
+#REACTION       60-ND-146(N,P)59-PR-146,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           60146            
+#TARGET         60146           [ ]             60-ND-146       [ ] 
+#REAC1          N,P
+#PRODUCT        59-PR-146
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,1.,5.)      ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-2,,3.)        ADDED AS COMMON:ERR-2,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-3,,0.5)       ADDED AS COMMON:ERR-3,PER-CENT=0.25%
+#CompNotes      ERR-ANALYS:(ERR-4,,0.5)       ADDED AS COMMON:ERR-4,PER-CENT=0.25%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9983289(1.4e7) Data[2]*0.99999005(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 60146   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{wagner90$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 60-ND-146(N,P)59-PR-146,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,M.Wagner+,B,PH-DAT,13-5,1990} $ al27na;#[0]#old monit-ref
+#+              m0: wagner90$al27na;          #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        32710002    0.997877    0.997877    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32710002    CS          3           0.995311    0.999990    0.997877    -0.212%     1.00471     wagner90::al27na
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 60146   3 103      1.35E7 200000.0 3.0549-3 3.5972-4                                       Yanbin Zhang*,       (13)32710  2  8.4341-5  3.06E-5          3.5972-4 2.76     1                 11.8     11.8    0.12567  7.8E-4   0.12546  9.9784E-40.99832890.9992206
+    1 60146   3 103      1.41E7 200000.0.00390162 3.6825-4                                       Yanbin Zhang*,       (13)32710  2  1.0592-4  3.92E-5          3.6825-4 2.71     1                 9.44     9.44    0.12157  5.7E-4   0.121    5.5949E-40.99531130.9952775
+    1 60146   3 103      1.47E7 200000.0 4.9300-3 4.7000-4                                       Yanbin Zhang*,       (13)32710  2  1.3389-4  4.93E-5          4.7000-4 2.72     1                 9.53     9.53    0.11249  4.6E-4   0.11248894.6096-4 0.99999  0.999994
+#/C5DATA        0
+#/DATASET       32710002 
+#DATASET        32710003   20130416
+#SUBENT         32710003   20130416
+#ENTRY          32710      20130416
+#TITLE          Cross-sections for (n,2n) and (n,p) reactions on
+#+              neodymium isotopes and 160Gd(n,a)157Sm at neutron
+#+              energy between 13.5 and 14.7 MeV
+#AUTHORS        Yanbin Zhang,Liangyong Zhao,Xiangzhong Kong,Rong Liu,
+#+              Li Jiang
+#AUTHOR1        Yanbin Zhang+
+#YEAR           2013
+#X4REF1         J,ANE,53,99,2013
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.53, p.99 (2013)
+#DATE           20130416
+#INSTITUTE      3CPRLNZ,3CPRNPC
+#METHOD         ACTIV
+#REACTION       60-ND-142(N,P)59-PR-142,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           60142            
+#TARGET         60142           [ ]             60-ND-142       [ ] 
+#REAC1          N,P
+#PRODUCT        59-PR-142
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,1.,5.)      ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-2,,3.)        ADDED AS COMMON:ERR-2,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-3,,0.5)       ADDED AS COMMON:ERR-3,PER-CENT=0.25%
+#CompNotes      ERR-ANALYS:(ERR-4,,0.5)       ADDED AS COMMON:ERR-4,PER-CENT=0.25%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99999005(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 60142   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{wagner90$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 60-ND-142(N,P)59-PR-142,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,M.Wagner+,B,PH-DAT,13-5,1990} $ al27na;#[0]#old monit-ref
+#+              m0: wagner90$al27na;          #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        32710003    0.999990    0.999990    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32710003    CS          1           0.999990    0.999990    0.999990    -0.000992%  1.00001     wagner90::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 60142   3 103      1.47E7 200000.0.01380986 1.5000-3                                       Yanbin Zhang*,       (13)32710  3  3.7505-4 1.381E-4          1.5000-3 2.72     1                 10.9     10.9    0.11249  4.6E-4   0.11248894.6096-4 0.99999  0.999993
+#/C5DATA        0
+#/DATASET       32710003 
+#DATASET        32710004   20130416
+#SUBENT         32710004   20130416
+#ENTRY          32710      20130416
+#TITLE          Cross-sections for (n,2n) and (n,p) reactions on
+#+              neodymium isotopes and 160Gd(n,a)157Sm at neutron
+#+              energy between 13.5 and 14.7 MeV
+#AUTHORS        Yanbin Zhang,Liangyong Zhao,Xiangzhong Kong,Rong Liu,
+#+              Li Jiang
+#AUTHOR1        Yanbin Zhang+
+#YEAR           2013
+#X4REF1         J,ANE,53,99,2013
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.53, p.99 (2013)
+#DATE           20130416
+#INSTITUTE      3CPRLNZ,3CPRNPC
+#METHOD         ACTIV
+#REACTION       60-ND-142(N,2N)60-ND-141-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           60142            
+#TARGET         60142           [ ]             60-ND-142       [ ] 
+#REAC1          N,2N
+#PRODUCT        60-ND-141-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,1.,5.)      ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-2,,3.)        ADDED AS COMMON:ERR-2,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-3,,0.5)       ADDED AS COMMON:ERR-3,PER-CENT=0.25%
+#CompNotes      ERR-ANALYS:(ERR-4,,0.5)       ADDED AS COMMON:ERR-4,PER-CENT=0.25%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9983289(1.4e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 60142   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{wagner90$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 60-ND-142(N,2N)60-ND-141-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,M.Wagner+,B,PH-DAT,13-5,1990} $ al27na;#[0]#old monit-ref
+#+              m0: wagner90$al27na;          #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        32710004    0.998329    0.998329    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32710004    CS          1           0.998329    0.998329    0.998329    -0.167%     1.00167     wagner90::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 60142   3  16M     1.35E7 200000.00.5790308.05897176                                       Yanbin Zhang*,       (13)32710  4 .01598622   0.0058         .05897176 2.76     1                 10.2     10.2    0.12567  7.8E-4   0.12546  9.9784E-40.99832890.9995213
+#/C5DATA        0
+#/DATASET       32710004 
+#DATASET        32710005   20130416
+#SUBENT         32710005   20130416
+#ENTRY          32710      20130416
+#TITLE          Cross-sections for (n,2n) and (n,p) reactions on
+#+              neodymium isotopes and 160Gd(n,a)157Sm at neutron
+#+              energy between 13.5 and 14.7 MeV
+#AUTHORS        Yanbin Zhang,Liangyong Zhao,Xiangzhong Kong,Rong Liu,
+#+              Li Jiang
+#AUTHOR1        Yanbin Zhang+
+#YEAR           2013
+#X4REF1         J,ANE,53,99,2013
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.53, p.99 (2013)
+#DATE           20130416
+#INSTITUTE      3CPRLNZ,3CPRNPC
+#METHOD         ACTIV
+#REACTION       60-ND-142(N,2N)60-ND-141-G,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           60142            
+#TARGET         60142           [ ]             60-ND-142       [ ] 
+#REAC1          N,2N
+#PRODUCT        60-ND-141-G
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,1.,5.)      ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-2,,3.)        ADDED AS COMMON:ERR-2,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-3,,0.5)       ADDED AS COMMON:ERR-3,PER-CENT=0.25%
+#CompNotes      ERR-ANALYS:(ERR-4,,0.5)       ADDED AS COMMON:ERR-4,PER-CENT=0.25%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9983289(1.4e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 60142   3  16G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{wagner90$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 60-ND-142(N,2N)60-ND-141-G,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,M.Wagner+,B,PH-DAT,13-5,1990} $ al27na;#[0]#old monit-ref
+#+              m0: wagner90$al27na;          #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        32710005    0.998329    0.998329    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32710005    CS          1           0.998329    0.998329    0.998329    -0.167%     1.00167     wagner90::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 60142   3  16G     1.35E7 200000.0 0.8645530.0879581                                       Yanbin Zhang*,       (13)32710  5 .02386908  0.00866         0.0879581 2.76     1                 10.2     10.2    0.12567  7.8E-4   0.12546  9.9784E-40.99832890.9995238
+#/C5DATA        0
+#/DATASET       32710005 
+#DATASET        32710006   20130416
+#SUBENT         32710006   20130416
+#ENTRY          32710      20130416
+#TITLE          Cross-sections for (n,2n) and (n,p) reactions on
+#+              neodymium isotopes and 160Gd(n,a)157Sm at neutron
+#+              energy between 13.5 and 14.7 MeV
+#AUTHORS        Yanbin Zhang,Liangyong Zhao,Xiangzhong Kong,Rong Liu,
+#+              Li Jiang
+#AUTHOR1        Yanbin Zhang+
+#YEAR           2013
+#X4REF1         J,ANE,53,99,2013
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.53, p.99 (2013)
+#DATE           20130416
+#INSTITUTE      3CPRLNZ,3CPRNPC
+#METHOD         ACTIV
+#REACTION       64-GD-160(N,A)62-SM-157,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           64160            
+#TARGET         64160           [ ]             64-GD-160       [ ] 
+#REAC1          N,A
+#PRODUCT        62-SM-157
+#C4ReaCode      (N,A),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,1.,5.)      ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-2,,3.)        ADDED AS COMMON:ERR-2,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-3,,0.5)       ADDED AS COMMON:ERR-3,PER-CENT=0.25%
+#CompNotes      ERR-ANALYS:(ERR-4,,0.5)       ADDED AS COMMON:ERR-4,PER-CENT=0.25%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99531126(1.4e7) Data[1]*0.99999005(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 64160   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{wagner90$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 64-GD-160(N,A)62-SM-157,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,M.Wagner+,B,PH-DAT,13-5,1990} $ al27na;#[0]#old monit-ref
+#+              m0: wagner90$al27na;          #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        32710006    0.997651    0.997651    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32710006    CS          2           0.995311    0.999990    0.997651    -0.235%     1.00471     wagner90::al27na
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 64160   3 107      1.41E7 200000.0 5.1756-4 8.9577-5                                       Yanbin Zhang*,       (13)32710  6  1.4050-5   5.2E-6          8.9577-5 2.71     1                 17.3     17.3    0.12157  5.7E-4   0.121    5.5949E-40.99531130.9953012
+    1 64160   3 107      1.47E7 200000.0 5.8999-4 8.9999-5                                       Yanbin Zhang*,       (13)32710  6  1.6024-5   5.9E-6          8.9999-5 2.72     1                 15.3     15.3    0.11249  4.6E-4   0.11248894.6096-4 0.99999  0.9999916
+#/C5DATA        0
+#/DATASET       32710006 
+#/C5.2.3        1               5               5               0               8               

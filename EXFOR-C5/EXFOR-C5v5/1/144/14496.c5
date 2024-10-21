@@ -1,0 +1,125 @@
+#C5M.2.3
+#DATASET        14496002   20180509
+#SUBENT         14496002   20180509
+#ENTRY          14496      20180509
+#TITLE          Measurements of the 169Tm(n,2n)168Tm cross section
+#+              from threshold to 15 MeV
+#AUTHORS        J.Soter,M.Bhike,S.W.Finch,Krishichayan,W.Tornow
+#AUTHOR1        J.Soter+
+#YEAR           2017
+#X4REF1         J,PR/C,96,064619,2017
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.96, p.064619 (2017)
+#DATE           20180509
+#INSTITUTE      1USADKE,1USATNL
+#METHOD         ACTIV
+#REACTION       69-TM-169(N,2N)69-TM-168,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           69169            
+#TARGET         69169           [ ]             69-TM-169       [ ] 
+#REAC1          N,2N
+#PRODUCT        69-TM-168
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.104,1.708) ADDED AS COMMON:ERR-S,PER-CENT=0.104%
+#CompNotes      ERR-ANALYS:(ERR-1,0.81,7.77)  ADDED AS COMMON:ERR-1,PER-CENT=0.81%
+#CompNotes      ERR-ANALYS:(ERR-2,2.4,4.8)    ADDED AS COMMON:ERR-2,PER-CENT=2.4%
+#CompNotes      ERR-ANALYS:(ERR-6,3.,5.)      ADDED AS COMMON:ERR-6,PER-CENT=3.0%
+#CompNotes      ERR-ANALYS:(ERR-7,1.,3.)      ADDED AS COMMON:ERR-7,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-8,,0.5)       ADDED AS COMMON:ERR-8,PER-CENT=0.25%
+#CompNotes      ERR-ANALYS:(ERR-9,,0.5)       ADDED AS COMMON:ERR-9,PER-CENT=0.25%
+#CompNotes      ERR-ANALYS:(ERR-10,,0.707)    ADDED AS COMMON:ERR-10,PER-CENT=0.3535%
+#CompNotes      ERR-ANALYS:(ERR-11,,0.5)      ADDED AS COMMON:ERR-11,PER-CENT=0.25%
+#CompNotes      ERR-ANALYS:(ERR-12,,0.5)      ADDED AS COMMON:ERR-12,PER-CENT=0.25%
+#CompNotes      ERR-ANALYS:(ERR-13,,0.5)      ADDED AS COMMON:ERR-13,PER-CENT=0.25%
+#CompNotes      ERR-ANALYS:(ERR-14,,0.5)      ADDED AS COMMON:ERR-14,PER-CENT=0.25%
+#CompNotes      ERR-ANALYS:(ERR-15,,0.707)    ADDED AS COMMON:ERR-15,PER-CENT=0.3535%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=13
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.8030593(8.4e6) Data[12]*1.0001525(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 69169   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,2N)79-AU-196-G,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$au197n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 69-TM-169(N,2N)69-TM-168,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,2N)79-AU-196-G,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$au197n2n;           #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        14496002    0.979302    0.979302    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          14496002    CS          13          0.803059    1.03148     0.979302    -2.07%      1.24524     [EN,MONIT,MONIT-ERR]::au197n2n
+#C5DATA         13
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 69169   3  16   8430000.0 120000.00.1071281 8.0524-3                                       J.Soter*,            (17)14496  2  7.8376-31.3874E-4          8.0524-3 7.32     0.13              7.52     7.52    .077850010.00634  .062518173.7728-3 0.80305930.6493886
+    1 69169   3  16   8930000.0 120000.00.3476814.02035246                                       J.Soter*,            (17)14496  2 .019340314.1735E-4         .02035246 5.56     0.12              5.85     5.85    0.3049   0.0118   0.26416169.8042-3 0.86638770.8515674
+    1 69169   3  16   9430000.0 120000.00.8509676.05754425                                       J.Soter*,            (17)14496  2 .04425968  8.58E-4         .05754425 5.20     0.10              6.76     6.76    0.6515   0.0218   0.6720066.021097331.03147591.0166829
+    1 69169   3  16   9930000.0 110000.01.1604944.07504144                                       J.Soter*,            (17)14496  2 .059466030.0011953         .07504144 5.12     0.10              6.47     6.47    0.97880010.0297   0.9883336.029837731.00974011.0086213
+    1 69169   3  16     1.042E7 100000.01.3309557.07843643                                       J.Soter*,            (17)14496  2 .066839520.0013748         .07843643 5.02     0.10              5.89     5.89    1.2221   0.0358   1.230472 0.03490451.00685050.9991901
+    1 69169   3  16     1.092E7 120000.01.4730042.05324013                                       J.Soter*,            (17)14496  2 .072914350.0015258         .05324013 4.95     0.10              3.61     3.61    1.42080010.0392   1.426518 0.03861661.00402440.993286
+    1 69169   3  16     1.141E7 110000.01.5877374.06563549                                       J.Soter*,            (17)14496  2 .077749760.0016477         .06563549 4.90     0.10              4.13     4.13    1.5776001.041900011.581023 .041193411.00216960.9944771
+    1 69169   3  16     1.191E7 110000.01.6993536.06862832                                       J.Soter*,            (17)14496  2 .081960660.0017653         .06862832 4.82     0.10              4.04     4.04    1.71330010.0436   1.715272 .042422641.00115080.9903075
+    1 69169   3  16     1.241E7 110000.01.8088051.06879111                                       J.Soter*,            (17)14496  2 .085755110.0018799         .06879111 4.74     0.10              3.80     3.80    1.8346001.043900011.835823 .042349081.00066660.9869599
+    1 69169   3  16      1.29E7 100000.01.92504450.0661641                                       J.Soter*,            (17)14496  2 .088044350.0020005         0.0661641 4.57     0.10              3.44     3.44    1.94410010.0417   1.94556  0.03777571.00075090.9673113
+    1 69169   3  16      1.34E7 100000.01.9865324.06604548                                       J.Soter*,            (17)14496  2 .086674920.0020617         .06604548 4.36     0.10              3.32     3.32    2.0437   0.0342   2.04796  0.028073 1.00208450.9627621
+    1 69169   3  16      1.39E7  90000.02.0633616.06693263                                       J.Soter*,            (17)14496  2 0.08870460.0021407         .06693263 4.30     0.10              3.24     3.24    2.1199   0.0253   2.12501  0.02442  1.00241050.9975057
+    1 69169   3  16      1.48E7  60000.02.0685155.07108884                                       J.Soter*,            (17)14496  2 .088562670.0021509         .07108884 4.28     0.10              3.44     3.44    2.1642   0.0228   2.16453  0.02340251.00015251.0026633
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           8430000.0   1.48E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           13          13
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+8430000.    8430000.    0.107128    7.32         100
+8930000.    8930000.    0.347681    5.56         92 100
+9430000.    9430000.    0.850968    5.2          84 92 100
+9930000.    9930000.    1.16049     5.13         76 84 92 100
+1.042E7     1.042E7     1.33096     5.02         69 77 84 92 100
+1.092E7     1.092E7     1.473       4.95         61 69 77 84 92 100
+1.141E7     1.141E7     1.58774     4.9          53 61 69 77 84 92 100
+1.191E7     1.191E7     1.69935     4.82         50 53 61 69 77 84 92 100
+1.241E7     1.241E7     1.8088      4.74         50 50 53 61 69 77 84 92 100
+1.29E7      1.29E7      1.92505     4.57         50 50 50 53 61 69 77 84 92 100
+1.34E7      1.34E7      1.98653     4.36         50 50 50 50 53 61 69 77 84 92 100
+1.39E7      1.39E7      2.06336     4.3          50 50 50 50 50 53 61 69 77 84 92 100
+1.48E7      1.48E7      2.06852     4.28         50 50 50 50 50 50 50 55 62 70 78 86 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       14496002 
+#/C5M.2.3       1               1               1               0               13              

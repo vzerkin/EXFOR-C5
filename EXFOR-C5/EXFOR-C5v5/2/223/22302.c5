@@ -1,0 +1,70 @@
+#C5M.2.3
+#DATASET        22302002   19961220
+#SUBENT         22302002   19961220
+#ENTRY          22302      19970206
+#TITLE          -CHARACTERISTICS OF THE V-50(N,P)TI-50 REACTION.
+#AUTHORS        C.WAGEMANS,S.DRUYTS,P.GELTENBORT
+#AUTHOR1        C.Wagemans+
+#YEAR           1994
+#X4REF1         J,PR/C,50,487,94
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.50, p.487 (1994)
+#DATE           19961220
+#INSTITUTE      2BLGGHT,2FR ILL
+#REACTION       23-V-50(N,P)22-TI-50,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           23050            
+#TARGET         23050           [ ]             23-V-50         [ ] 
+#REAC1          N,P
+#PRODUCT        22-TI-50
+#C4ReaCode      (N,P),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.19%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0052203(2.5e-2)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 23050   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-235(N,F),TER,SIG
+#M0             Point: XS(b)=584.25(0.19%)  EN-NRM(eV):0.0253
+#M1             Point: XS(b)=587.3(0.24%)  EN-NRM(eV):0.0253
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 23-V-50(N,P)22-TI-50,,SIG
+#+              #[0]#Monitor:  92-U-235(N,F),TER,SIG
+#+              #[0]#En=0.0253
+#+              a0=[MONIT];                   #[0]#old monitor point 584.25
+#+              a1=therm$u235nf[0.0253];      #[0]#new monitor point [2.53E-8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22302002    1.00522     1.00522     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22302002    CS          1           1.00522     1.00522     1.00522     +0.522%     1.00522     [MONIT]::u235nf
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 23050   3 103      0.0253          7.1371-4 4.0222-5                                       C.WAGEMANS*,         (94)22302  2  1.7111-6                   4.0222-5 0.24                       5.64     5.64    584.25   1.1      587.3    1.4      1.00522031.0055587
+#/C5DATA        0
+#/DATASET       22302002 
+#/C5M.2.3       1               1               1               0               1               

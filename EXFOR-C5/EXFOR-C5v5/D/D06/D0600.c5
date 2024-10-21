@@ -1,0 +1,965 @@
+#C5M.2.3
+#DATASET        D0600002   20101026
+#SUBENT         D0600002   20101026
+#ENTRY          D0600      20101026
+#TITLE          Experimental study and analysis of 165Ho(alpha,xn)
+#+              and 169Tm(alpha,xn)  excitation functions
+#AUTHORS        J.Sau,A.Demeyer,R.Chery
+#AUTHOR1        J.Sau+
+#YEAR           1968
+#X4REF1         J,NP/A,121,131,1968
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.121, p.131 (1968)
+#DATE           20101026
+#INSTITUTE      2FR LYO
+#METHOD         STTA,GSPEC
+#REACTION       67-HO-165(A,N)69-TM-168,,SIG
+#C4Reaction     (A,N),SIG
+#ReactionType   CS
+#MF             3
+#MT             4
+#PROJ           2004
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          A,N
+#PRODUCT        69-TM-168
+#C4ReaCode      (A,N),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+23.7%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 2004 67165   3   4   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 67-HO-165(A,N)69-TM-168,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (67-HO-165(A,N)69-TM-168,,SIG)
+#+               #[1]#DECAY-DATA (69-TM-168,86.D,DG,817./822./831.,0.63) #Ix_old=0.63
+#+                a1=0.63/0.5095;             #[1]#DECAY-DATA: correction to new 815.989 keV gamma-yield per decay Tm-168 Ix_new=0.5095
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.2365063
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D0600002    1.23651     -           1.23651     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D0600002    CS          5           1.23651     1.23651     1.23651     +23.7%      1.23651                
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 2004 67165   3   4     1.735E71500000.0 7.4190-4 1.2365-4                                       J.Sau*,              (68)D0600  2                             1.2365-4                            16.7     16.7                                        1.23650631.2365063
+ 2004 67165   3   4      2.29E71500000.0.03289107.00395682                                       J.Sau*,              (68)D0600  2                            .00395682                            12       12                                          1.23650631.2365063
+ 2004 67165   3   4      2.78E71500000.0.01088126 1.3602-3                                       J.Sau*,              (68)D0600  2                             1.3602-3                            12.5     12.5                                        1.23650631.2365063
+ 2004 67165   3   4      3.21E71500000.0 7.0481-3 8.6555-4                                       J.Sau*,              (68)D0600  2                             8.6555-4                            12.3     12.3                                        1.23650631.2365063
+ 2004 67165   3   4      3.61E71500000.0 6.8008-3 8.6555-4                                       J.Sau*,              (68)D0600  2                             8.6555-4                            12.7     12.7                                        1.23650631.2365063
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.735E7     3.61E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           5           5
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.735E7     1.735E7     7.4190-4    16.67        100
+2.29E7      2.29E7      3.2891-2    12.03        35 100
+2.78E7      2.78E7      1.0881-2    12.5         25 37 100
+3.21E7      3.21E7      7.0481-3    12.28        25 25 39 100
+3.61E7      3.61E7      6.8008-3    12.73        25 25 28 39 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D0600002 
+#DATASET        D0600003   20101026
+#SUBENT         D0600003   20101026
+#ENTRY          D0600      20101026
+#TITLE          Experimental study and analysis of 165Ho(alpha,xn)
+#+              and 169Tm(alpha,xn)  excitation functions
+#AUTHORS        J.Sau,A.Demeyer,R.Chery
+#AUTHOR1        J.Sau+
+#YEAR           1968
+#X4REF1         J,NP/A,121,131,1968
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.121, p.131 (1968)
+#DATE           20101026
+#INSTITUTE      2FR LYO
+#METHOD         STTA,GSPEC
+#REACTION       67-HO-165(A,2N)69-TM-167,,SIG
+#C4Reaction     (A,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           2004
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          A,2N
+#PRODUCT        69-TM-167
+#C4ReaCode      (A,2N),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+24.2%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 2004 67165   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 67-HO-165(A,2N)69-TM-167,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (67-HO-165(A,2N)69-TM-167,,SIG)
+#+               #[1]#DECAY-DATA (69-TM-167,9.6D,DG,532.,0.02) #Ix_old=0.02
+#+                a1=0.02/0.0161;             #[1]#DECAY-DATA: correction to new 531.54 keV gamma-yield per decay Tm-167 Ix_new=0.0161
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.2422359
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D0600003    1.24224     -           1.24224     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D0600003    CS          15          1.24224     1.24224     1.24224     +24.2%      1.24224                
+#C5DATA         15
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 2004 67165   3  16     2.185E71500000.00.3354037.04347826                                       J.Sau*,              (68)D0600  3                            .04347826                            13       13                                          1.24223591.2422359
+ 2004 67165   3  16      2.29E71500000.0 0.310559.03726708                                       J.Sau*,              (68)D0600  3                            .03726708                            12       12                                          1.24223591.2422359
+ 2004 67165   3  16      2.69E71500000.00.6211181.07453415                                       J.Sau*,              (68)D0600  3                            .07453415                            12       12                                          1.24223591.2422358
+ 2004 67165   3  16      2.78E71500000.0 0.658385.08074535                                       J.Sau*,              (68)D0600  3                            .08074535                            12.3     12.3                                        1.24223591.2422359
+ 2004 67165   3  16      3.21E71500000.00.3850931.04347825                                       J.Sau*,              (68)D0600  3                            .04347825                            11.3     11.3                                        1.24223591.2422358
+ 2004 67165   3  16      3.42E71500000.00.4037267.04968943                                       J.Sau*,              (68)D0600  3                            .04968943                            12.3     12.3                                        1.24223591.2422359
+ 2004 67165   3  16      3.61E71500000.00.2173913.02484472                                       J.Sau*,              (68)D0600  3                            .02484472                            11.4     11.4                                        1.24223591.2422359
+ 2004 67165   3  16      3.81E71500000.00.1801242.02236024                                       J.Sau*,              (68)D0600  3                            .02236024                            12.4     12.4                                        1.24223591.2422359
+ 2004 67165   3  16     3.985E71500000.0 0.173913.01863354                                       J.Sau*,              (68)D0600  3                            .01863354                            10.7     10.7                                        1.24223591.2422359
+ 2004 67165   3  16     4.175E71500000.00.1391304.01863354                                       J.Sau*,              (68)D0600  3                            .01863354                            13.4     13.4                                        1.24223591.2422359
+ 2004 67165   3  16     4.335E71500000.00.1490683.01863354                                       J.Sau*,              (68)D0600  3                            .01863354                            12.5     12.5                                        1.24223591.2422359
+ 2004 67165   3  16      4.52E71500000.00.1366459.01614907                                       J.Sau*,              (68)D0600  3                            .01614907                            11.8     11.8                                        1.24223591.2422359
+ 2004 67165   3  16     4.665E71500000.00.1341615.01614907                                       J.Sau*,              (68)D0600  3                            .01614907                            12       12                                          1.24223591.242236
+ 2004 67165   3  16      4.84E71500000.00.1031056.01242236                                       J.Sau*,              (68)D0600  3                            .01242236                            12       12                                          1.24223591.2422359
+ 2004 67165   3  16      5.14E71500000.0.09689441.01242236                                       J.Sau*,              (68)D0600  3                            .01242236                            12.8     12.8                                        1.24223591.2422359
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           2.185E7     5.14E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           15          15
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+2.185E7     2.185E7     0.335404    12.96        100
+2.29E7      2.29E7      0.310559    12.0         48 100
+2.69E7      2.69E7      0.621118    12.0         41 43 100
+2.78E7      2.78E7      0.658385    12.26        40 42 48 100
+3.21E7      3.21E7      0.385093    11.29        33 34 41 43 100
+3.42E7      3.42E7      0.403727    12.31        29 31 38 39 46 100
+3.61E7      3.61E7      0.217391    11.43        26 28 34 36 43 47 100
+3.81E7      3.81E7      0.180124    12.41        25 25 31 33 40 43 47 100
+3.985E7     3.985E7     0.173913    10.71        25 25 28 30 37 40 44 47 100
+4.175E7     4.175E7     0.13913     13.39        25 25 25 26 34 37 40 44 47 100
+4.335E7     4.335E7     0.149068    12.5         25 25 25 25 31 35 38 41 44 47 100
+4.52E7      4.52E7      0.136646    11.82        25 25 25 25 28 31 35 38 41 44 47 100
+4.665E7     4.665E7     0.134162    12.04        25 25 25 25 25 29 32 36 38 42 44 48 100
+4.84E7      4.84E7      0.103106    12.05        25 25 25 25 25 26 29 33 36 39 41 45 47 100
+5.14E7      5.14E7      9.6894-2    12.82        25 25 25 25 25 25 25 27 30 34 36 40 42 45 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D0600003 
+#DATASET        D0600004   20101026
+#SUBENT         D0600004   20101026
+#ENTRY          D0600      20101026
+#TITLE          Experimental study and analysis of 165Ho(alpha,xn)
+#+              and 169Tm(alpha,xn)  excitation functions
+#AUTHORS        J.Sau,A.Demeyer,R.Chery
+#AUTHOR1        J.Sau+
+#YEAR           1968
+#X4REF1         J,NP/A,121,131,1968
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.121, p.131 (1968)
+#DATE           20101026
+#INSTITUTE      2FR LYO
+#METHOD         STTA,GSPEC
+#REACTION       67-HO-165(A,3N)69-TM-166,,SIG
+#C4Reaction     (A,3N),SIG
+#ReactionType   CS
+#MF             3
+#MT             17
+#PROJ           2004
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          A,3N
+#PRODUCT        69-TM-166
+#C4ReaCode      (A,3N),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 2004 67165   3  17   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         16
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 2004 67165   3  17      2.69E71500000.0   0.0125   0.0015                                       J.Sau,               (68)D0600  4                               0.0015                            12       12
+ 2004 67165   3  17      2.78E71500000.0    0.061    0.007                                       J.Sau,               (68)D0600  4                                0.007                            11.5     11.5
+ 2004 67165   3  17      3.01E71500000.0     0.19    0.025                                       J.Sau,               (68)D0600  4                                0.025                            13.2     13.2
+ 2004 67165   3  17      3.21E71500000.0    0.375    0.045                                       J.Sau,               (68)D0600  4                                0.045                            12       12
+ 2004 67165   3  17      3.42E71500000.0    0.455    0.055                                       J.Sau,               (68)D0600  4                                0.055                            12.1     12.1
+ 2004 67165   3  17      3.61E71500000.0    0.535.06500001                                       J.Sau,               (68)D0600  4                            .06500001                            12.1     12.1
+ 2004 67165   3  17      3.81E71500000.0     0.65.08000001                                       J.Sau,               (68)D0600  4                            .08000001                            12.3     12.3
+ 2004 67165   3  17     3.985E71500000.0    0.645    0.075                                       J.Sau,               (68)D0600  4                                0.075                            11.6     11.6
+ 2004 67165   3  17     4.175E71500000.0     0.53.06500001                                       J.Sau,               (68)D0600  4                            .06500001                            12.3     12.3
+ 2004 67165   3  17     4.335E71500000.00.5000001     0.06                                       J.Sau,               (68)D0600  4                                 0.06                            12       12
+ 2004 67165   3  17      4.52E71500000.0      0.3    0.035                                       J.Sau,               (68)D0600  4                                0.035                            11.7     11.7
+ 2004 67165   3  17     4.665E71500000.0    0.345     0.04                                       J.Sau,               (68)D0600  4                                 0.04                            11.6     11.6
+ 2004 67165   3  17     4.835E71500000.0    0.175     0.02                                       J.Sau,               (68)D0600  4                                 0.02                            11.4     11.4
+ 2004 67165   3  17      4.98E71500000.0    0.265     0.03                                       J.Sau,               (68)D0600  4                                 0.03                            11.3     11.3
+ 2004 67165   3  17      5.14E71500000.0    0.115    0.015                                       J.Sau,               (68)D0600  4                                0.015                            13       13
+ 2004 67165   3  17     5.285E71500000.0     0.13    0.015                                       J.Sau,               (68)D0600  4                                0.015                            11.5     11.5
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           2.69E7      5.285E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           16          16
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+2.69E7      2.69E7      0.0125      12.0         100
+2.78E7      2.78E7      0.061       11.48        48 100
+3.01E7      3.01E7      0.19        13.16        44 46 100
+3.21E7      3.21E7      0.375       12.0         40 42 46 100
+3.42E7      3.42E7      0.455       12.09        36 38 42 46 100
+3.61E7      3.61E7      0.535       12.15        32 34 38 42 46 100
+3.81E7      3.81E7      0.65        12.31        28 30 35 38 42 46 100
+3.985E7     3.985E7     0.645       11.63        25 27 31 35 39 43 47 100
+4.175E7     4.175E7     0.53        12.26        25 25 28 31 35 39 43 46 100
+4.335E7     4.335E7     0.5         12.0         25 25 25 28 32 36 40 43 47 100
+4.52E7      4.52E7      0.3         11.67        25 25 25 25 29 32 36 40 43 46 100
+4.665E7     4.665E7     0.345       11.59        25 25 25 25 26 30 34 37 41 44 47 100
+4.835E7     4.835E7     0.175       11.43        25 25 25 25 25 26 30 34 37 40 44 47 100
+4.98E7      4.98E7      0.265       11.32        25 25 25 25 25 25 27 31 34 38 41 44 47 100
+5.14E7      5.14E7      0.115       13.04        25 25 25 25 25 25 25 28 31 34 38 41 44 47 100
+5.285E7     5.285E7     0.13        11.54        25 25 25 25 25 25 25 25 29 32 35 38 41 44 47 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D0600004 
+#DATASET        D0600005   20101026
+#SUBENT         D0600005   20101026
+#ENTRY          D0600      20101026
+#TITLE          Experimental study and analysis of 165Ho(alpha,xn)
+#+              and 169Tm(alpha,xn)  excitation functions
+#AUTHORS        J.Sau,A.Demeyer,R.Chery
+#AUTHOR1        J.Sau+
+#YEAR           1968
+#X4REF1         J,NP/A,121,131,1968
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.121, p.131 (1968)
+#DATE           20101026
+#INSTITUTE      2FR LYO
+#METHOD         STTA,GSPEC
+#REACTION       67-HO-165(A,4N)69-TM-165,,SIG
+#C4Reaction     (A,4N),SIG
+#ReactionType   CS
+#MF             3
+#MT             37
+#PROJ           2004
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          A,4N
+#PRODUCT        69-TM-165
+#C4ReaCode      (A,4N),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+34.7%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 2004 67165   3  37   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 67-HO-165(A,4N)69-TM-165,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (67-HO-165(A,4N)69-TM-165,,SIG)
+#+               #[1]#DECAY-DATA (69-TM-165,30.HR,DG,806.,0.128) #Ix_old=0.128
+#+                a1=0.128/0.095;             #[1]#DECAY-DATA: correction to new 806.372 keV gamma-yield per decay Tm-165 Ix_new=0.095
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.3473685
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D0600005    1.34737     -           1.34737     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D0600005    CS          12          1.34737     1.34737     1.34737     +34.7%      1.34737                
+#C5DATA         12
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 2004 67165   3  37      3.42E71500000.0.04042105 5.3895-3                                       J.Sau*,              (68)D0600  5                             5.3895-3                            13.3     13.3                                        1.34736851.3473685
+ 2004 67165   3  37      3.61E71500000.0.04176842 5.3895-3                                       J.Sau*,              (68)D0600  5                             5.3895-3                            12.9     12.9                                        1.34736851.3473684
+ 2004 67165   3  37      3.81E71500000.00.1347369.01616842                                       J.Sau*,              (68)D0600  5                            .01616842                            12       12                                          1.34736851.3473684
+ 2004 67165   3  37     3.985E71500000.00.3233684.04042105                                       J.Sau*,              (68)D0600  5                            .04042105                            12.5     12.5                                        1.34736851.3473685
+ 2004 67165   3  37     4.175E71500000.00.4176842.04715789                                       J.Sau*,              (68)D0600  5                            .04715789                            11.3     11.3                                        1.34736851.3473684
+ 2004 67165   3  37     4.335E71500000.00.5928421.06736843                                       J.Sau*,              (68)D0600  5                            .06736843                            11.4     11.4                                        1.34736851.3473685
+ 2004 67165   3  37      4.52E71500000.00.83536860.1010526                                       J.Sau*,              (68)D0600  5                            0.1010526                            12.1     12.1                                        1.34736851.3473685
+ 2004 67165   3  37     4.665E71500000.00.91621070.1077895                                       J.Sau*,              (68)D0600  5                            0.1077895                            11.8     11.8                                        1.34736851.3473685
+ 2004 67165   3  37     4.835E71500000.00.87578950.1077895                                       J.Sau*,              (68)D0600  5                            0.1077895                            12.3     12.3                                        1.34736851.3473685
+ 2004 67165   3  37      4.98E71500000.00.81515790.1010526                                       J.Sau*,              (68)D0600  5                            0.1010526                            12.4     12.4                                        1.34736851.3473684
+ 2004 67165   3  37      5.14E71500000.0 0.727579.08757897                                       J.Sau*,              (68)D0600  5                            .08757897                            12       12                                          1.34736851.3473685
+ 2004 67165   3  37     5.275E71500000.00.76800020.0943158                                       J.Sau*,              (68)D0600  5                            0.0943158                            12.3     12.3                                        1.34736851.3473685
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           3.42E7      5.275E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           12          12
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+3.42E7      3.42E7      4.0421-2    13.33        100
+3.61E7      3.61E7      4.1768-2    12.9         45 100
+3.81E7      3.81E7      0.134737    12.0         39 45 100
+3.985E7     3.985E7     0.323368    12.5         35 40 45 100
+4.175E7     4.175E7     0.417684    11.29        30 35 40 45 100
+4.335E7     4.335E7     0.592842    11.36        25 30 36 41 46 100
+4.52E7      4.52E7      0.835369    12.1         25 25 31 36 41 45 100
+4.665E7     4.665E7     0.916211    11.76        25 25 27 32 37 41 46 100
+4.835E7     4.835E7     0.87579     12.31        25 25 25 27 32 37 42 45 100
+4.98E7      4.98E7      0.815158    12.4         25 25 25 25 28 33 38 42 46 100
+5.14E7      5.14E7      0.727579    12.04        25 25 25 25 25 28 33 37 42 46 100
+5.275E7     5.275E7     0.768       12.28        25 25 25 25 25 25 30 34 38 42 46 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D0600005 
+#DATASET        D0600006   20101026
+#SUBENT         D0600006   20101026
+#ENTRY          D0600      20101026
+#TITLE          Experimental study and analysis of 165Ho(alpha,xn)
+#+              and 169Tm(alpha,xn)  excitation functions
+#AUTHORS        J.Sau,A.Demeyer,R.Chery
+#AUTHOR1        J.Sau+
+#YEAR           1968
+#X4REF1         J,NP/A,121,131,1968
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.121, p.131 (1968)
+#DATE           20101026
+#INSTITUTE      2FR LYO
+#METHOD         STTA,GSPEC
+#REACTION       69-TM-169(A,N)71-LU-172,,SIG
+#C4Reaction     (A,N),SIG
+#ReactionType   CS
+#MF             3
+#MT             4
+#PROJ           2004
+#TARG           69169            
+#TARGET         69169           [ ]             69-TM-169       [ ] 
+#REAC1          A,N
+#PRODUCT        71-LU-172
+#C4ReaCode      (A,N),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+6.35%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 2004 69169   3   4   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 69-TM-169(A,N)71-LU-172,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (69-TM-169(A,N)71-LU-172,,SIG)
+#+               #[1]#DECAY-DATA (71-LU-172-G,6.7D,DG,1093.,0.67) #Ix_old=0.67
+#+                a1=0.67/0.63;               #[1]#DECAY-DATA: correction to new 1093.63 keV gamma-yield per decay Lu-172-g Ix_new=0.63
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0634921
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D0600006    1.06349     -           1.06349     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D0600006    CS          9           1.06349     1.06349     1.06349     +6.35%      1.06349                
+#C5DATA         9
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 2004 69169   3   4     1.755E71500000.0.03509524 4.2540-3                                       J.Sau*,              (68)D0600  6                             4.2540-3                            12.1     12.1                                        1.06349211.063492
+ 2004 69169   3   4      2.06E71500000.0.06061905 6.3810-3                                       J.Sau*,              (68)D0600  6                             6.3810-3                            10.5     10.5                                        1.06349211.0634921
+ 2004 69169   3   4     2.165E71500000.0.04573016.00531746                                       J.Sau*,              (68)D0600  6                            .00531746                            11.6     11.6                                        1.06349211.0634921
+ 2004 69169   3   4     2.345E71500000.0.03296825 3.1905-3                                       J.Sau*,              (68)D0600  6                             3.1905-3                            9.68     9.68                                        1.06349211.0634921
+ 2004 69169   3   4      2.44E71500000.0.02446032.00265873                                       J.Sau*,              (68)D0600  6                            .00265873                            10.9     10.9                                        1.06349211.0634921
+ 2004 69169   3   4      2.69E71500000.0.01329365 1.5952-3                                       J.Sau*,              (68)D0600  6                             1.5952-3                            12       12                                          1.06349211.0634921
+ 2004 69169   3   4      2.92E71500000.0.01169841 1.2762-3                                       J.Sau*,              (68)D0600  6                             1.2762-3                            10.9     10.9                                        1.06349211.0634922
+ 2004 69169   3   4      3.22E71500000.0.00531746 5.3175-4                                       J.Sau*,              (68)D0600  6                             5.3175-4                            10       10                                          1.06349211.0634921
+ 2004 69169   3   4     3.355E71500000.0.00797619 8.5079-4                                       J.Sau*,              (68)D0600  6                             8.5079-4                            10.7     10.7                                        1.06349211.0634921
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.755E7     3.355E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           9           9
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.755E7     1.755E7     3.5095-2    12.12        100
+2.06E7      2.06E7      0.060619    10.53        40 100
+2.165E7     2.165E7     4.5730-2    11.63        37 47 100
+2.345E7     2.345E7     3.2968-2    9.68         32 41 44 100
+2.44E7      2.44E7      2.4460-2    10.87        29 38 41 47 100
+2.69E7      2.69E7      1.3294-2    12.0         25 30 34 39 42 100
+2.92E7      2.92E7      1.1698-2    10.91        25 25 26 32 35 43 100
+3.22E7      3.22E7      5.3175-3    10.0         25 25 25 25 26 33 41 100
+3.355E7     3.355E7     7.9762-3    10.67        25 25 25 25 25 29 36 46 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D0600006 
+#DATASET        D0600007   20101026
+#SUBENT         D0600007   20101026
+#ENTRY          D0600      20101026
+#TITLE          Experimental study and analysis of 165Ho(alpha,xn)
+#+              and 169Tm(alpha,xn)  excitation functions
+#AUTHORS        J.Sau,A.Demeyer,R.Chery
+#AUTHOR1        J.Sau+
+#YEAR           1968
+#X4REF1         J,NP/A,121,131,1968
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.121, p.131 (1968)
+#DATE           20101026
+#INSTITUTE      2FR LYO
+#METHOD         STTA,GSPEC
+#REACTION       69-TM-169(A,2N)71-LU-171,,SIG
+#C4Reaction     (A,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           2004
+#TARG           69169            
+#TARGET         69169           [ ]             69-TM-169       [ ] 
+#REAC1          A,2N
+#PRODUCT        71-LU-171
+#C4ReaCode      (A,2N),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 2004 69169   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         22
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 2004 69169   3  16     1.755E71500000.0   0.0175    0.002                                       J.Sau,               (68)D0600  7                                0.002                            11.4     11.4
+ 2004 69169   3  16      2.06E71500000.0    0.115    0.012                                       J.Sau,               (68)D0600  7                                0.012                            10.4     10.4
+ 2004 69169   3  16     2.165E71500000.0     0.22    0.022                                       J.Sau,               (68)D0600  7                                0.022                            10       10
+ 2004 69169   3  16     2.345E71500000.0    0.265    0.027                                       J.Sau,               (68)D0600  7                                0.027                            10.2     10.2
+ 2004 69169   3  16      2.44E71500000.0    0.355    0.035                                       J.Sau,               (68)D0600  7                                0.035                            9.86     9.86
+ 2004 69169   3  16      2.69E71500000.0    0.415     0.04                                       J.Sau,               (68)D0600  7                                 0.04                            9.64     9.64
+ 2004 69169   3  16      2.92E71500000.0     0.43    0.045                                       J.Sau,               (68)D0600  7                                0.045                            10.5     10.5
+ 2004 69169   3  16     3.155E71500000.0      0.2     0.02                                       J.Sau,               (68)D0600  7                                 0.02                            10       10
+ 2004 69169   3  16      3.22E71500000.0    0.215     0.02                                       J.Sau,               (68)D0600  7                                 0.02                            9.30     9.30
+ 2004 69169   3  16     3.325E71500000.0      0.2     0.02                                       J.Sau,               (68)D0600  7                                 0.02                            10       10
+ 2004 69169   3  16      3.56E71500000.0    0.135    0.013                                       J.Sau,               (68)D0600  7                                0.013                            9.63     9.63
+ 2004 69169   3  16     3.725E71500000.0.09200001     0.01                                       J.Sau,               (68)D0600  7                                 0.01                            10.9     10.9
+ 2004 69169   3  16     3.935E71500000.0    0.105     0.01                                       J.Sau,               (68)D0600  7                                 0.01                            9.52     9.52
+ 2004 69169   3  16       4.1E71500000.0.08000001     0.01                                       J.Sau,               (68)D0600  7                                 0.01                            12.5     12.5
+ 2004 69169   3  16      4.28E71500000.0     0.04    0.005                                       J.Sau,               (68)D0600  7                                0.005                            12.5     12.5
+ 2004 69169   3  16      4.42E71500000.0     0.06    0.006                                       J.Sau,               (68)D0600  7                                0.006                            10       10
+ 2004 69169   3  16     4.615E71500000.0    0.036    0.005                                       J.Sau,               (68)D0600  7                                0.005                            13.9     13.9
+ 2004 69169   3  16     4.745E71500000.0    0.055    0.006                                       J.Sau,               (68)D0600  7                                0.006                            10.9     10.9
+ 2004 69169   3  16      4.92E71500000.0    0.034    0.005                                       J.Sau,               (68)D0600  7                                0.005                            14.7     14.7
+ 2004 69169   3  16      5.05E71500000.0    0.045    0.005                                       J.Sau,               (68)D0600  7                                0.005                            11.1     11.1
+ 2004 69169   3  16     5.235E71500000.0     0.03    0.003                                       J.Sau,               (68)D0600  7                                0.003                            10       10
+ 2004 69169   3  16     5.345E71500000.0    0.045    0.005                                       J.Sau,               (68)D0600  7                                0.005                            11.1     11.1
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.755E7     5.345E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           22          22
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.755E7     1.755E7     0.0175      11.43        100
+2.06E7      2.06E7      0.115       10.43        46 100
+2.165E7     2.165E7     0.22        10.0         44 49 100
+2.345E7     2.345E7     0.265       10.19        42 46 47 100
+2.44E7      2.44E7      0.355       9.86         40 45 46 49 100
+2.69E7      2.69E7      0.415       9.64         37 41 43 45 47 100
+2.92E7      2.92E7      0.43        10.47        34 38 39 42 43 47 100
+3.155E7     3.155E7     0.2         10.0         31 35 36 39 40 44 47 100
+3.22E7      3.22E7      0.215       9.3          30 34 35 38 39 43 46 49 100
+3.325E7     3.325E7     0.2         10.0         28 32 34 36 38 41 44 48 49 100
+3.56E7      3.56E7      0.135       9.63         25 29 31 33 34 38 41 44 45 47 100
+3.725E7     3.725E7     0.092       10.87        25 27 28 31 32 36 39 42 43 44 48 100
+3.935E7     3.935E7     0.105       9.52         25 25 25 28 29 33 36 39 40 42 45 47 100
+4.1E7       4.1E7       0.08        12.5         25 25 25 26 27 30 34 37 38 39 42 45 48 100
+4.28E7      4.28E7      0.04        12.5         25 25 25 25 25 28 31 34 35 37 40 42 45 47 100
+4.42E7      4.42E7      0.06        10.0         25 25 25 25 25 26 29 32 33 35 38 40 43 46 48 100
+4.615E7     4.615E7     0.036       13.89        25 25 25 25 25 25 26 30 31 32 35 38 41 43 45 47 100
+4.745E7     4.745E7     0.055       10.91        25 25 25 25 25 25 25 28 29 30 33 36 39 41 44 45 48 100
+4.92E7      4.92E7      0.034       14.71        25 25 25 25 25 25 25 25 26 28 31 33 36 39 41 43 46 48 100
+5.05E7      5.05E7      0.045       11.11        25 25 25 25 25 25 25 25 25 26 29 32 34 37 39 41 44 46 48 100
+5.235E7     5.235E7     0.03        10.0         25 25 25 25 25 25 25 25 25 25 27 29 32 34 37 39 41 43 46 47 100
+5.345E7     5.345E7     0.045       11.11        25 25 25 25 25 25 25 25 25 25 25 27 30 33 35 37 40 42 44 46 48 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D0600007 
+#DATASET        D0600008   20101026
+#SUBENT         D0600008   20101026
+#ENTRY          D0600      20101026
+#TITLE          Experimental study and analysis of 165Ho(alpha,xn)
+#+              and 169Tm(alpha,xn)  excitation functions
+#AUTHORS        J.Sau,A.Demeyer,R.Chery
+#AUTHOR1        J.Sau+
+#YEAR           1968
+#X4REF1         J,NP/A,121,131,1968
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.121, p.131 (1968)
+#DATE           20101026
+#INSTITUTE      2FR LYO
+#METHOD         STTA,GSPEC
+#REACTION       69-TM-169(A,3N)71-LU-170,,SIG
+#C4Reaction     (A,3N),SIG
+#ReactionType   CS
+#MF             3
+#MT             17
+#PROJ           2004
+#TARG           69169            
+#TARGET         69169           [ ]             69-TM-169       [ ] 
+#REAC1          A,3N
+#PRODUCT        71-LU-170
+#C4ReaCode      (A,3N),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 2004 69169   3  17   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         20
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 2004 69169   3  17      2.69E71500000.0   0.0087    0.001                                       J.Sau,               (68)D0600  8                                0.001                            11.5     11.5
+ 2004 69169   3  17      2.92E71500000.0    0.087     0.01                                       J.Sau,               (68)D0600  8                                 0.01                            11.5     11.5
+ 2004 69169   3  17     3.155E71500000.0     0.36    0.035                                       J.Sau,               (68)D0600  8                                0.035                            9.72     9.72
+ 2004 69169   3  17      3.22E71500000.0    0.225    0.025                                       J.Sau,               (68)D0600  8                                0.025                            11.1     11.1
+ 2004 69169   3  17       3.3E71500000.0     0.42     0.04                                       J.Sau,               (68)D0600  8                                 0.04                            9.52     9.52
+ 2004 69169   3  17      3.35E71500000.0    0.385     0.04                                       J.Sau,               (68)D0600  8                                 0.04                            10.4     10.4
+ 2004 69169   3  17      3.56E71500000.0    0.495     0.05                                       J.Sau,               (68)D0600  8                                 0.05                            10.1     10.1
+ 2004 69169   3  17       3.7E71500000.0     0.55    0.055                                       J.Sau,               (68)D0600  8                                0.055                            10       10
+ 2004 69169   3  17      3.75E71500000.0    0.545    0.055                                       J.Sau,               (68)D0600  8                                0.055                            10.1     10.1
+ 2004 69169   3  17     3.935E71500000.0    0.445    0.045                                       J.Sau,               (68)D0600  8                                0.045                            10.1     10.1
+ 2004 69169   3  17     4.075E71500000.0    0.515     0.05                                       J.Sau,               (68)D0600  8                                 0.05                            9.71     9.71
+ 2004 69169   3  17      4.12E71500000.0     0.53    0.055                                       J.Sau,               (68)D0600  8                                0.055                            10.4     10.4
+ 2004 69169   3  17      4.28E71500000.0    0.295     0.03                                       J.Sau,               (68)D0600  8                                 0.03                            10.2     10.2
+ 2004 69169   3  17      4.42E71500000.0    0.325    0.033                                       J.Sau,               (68)D0600  8                                0.033                            10.2     10.2
+ 2004 69169   3  17     4.615E71500000.0    0.255    0.025                                       J.Sau,               (68)D0600  8                                0.025                            9.80     9.80
+ 2004 69169   3  17     4.745E71500000.0     0.27     0.03                                       J.Sau,               (68)D0600  8                                 0.03                            11.1     11.1
+ 2004 69169   3  17      4.92E71500000.0    0.215     0.02                                       J.Sau,               (68)D0600  8                                 0.02                            9.30     9.30
+ 2004 69169   3  17     5.065E71500000.0      0.2     0.02                                       J.Sau,               (68)D0600  8                                 0.02                            10       10
+ 2004 69169   3  17     5.235E71500000.0     0.17     0.02                                       J.Sau,               (68)D0600  8                                 0.02                            11.8     11.8
+ 2004 69169   3  17     5.345E71500000.0     0.21     0.02                                       J.Sau,               (68)D0600  8                                 0.02                            9.52     9.52
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           2.69E7      5.345E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           20          20
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+2.69E7      2.69E7      0.0087      11.49        100
+2.92E7      2.92E7      0.087       11.49        46 100
+3.155E7     3.155E7     0.36        9.72         41 46 100
+3.22E7      3.22E7      0.225       11.11        40 44 49 100
+3.3E7       3.3E7       0.42        9.52         39 43 47 48 100
+3.35E7      3.35E7      0.385       10.39        38 42 46 48 49 100
+3.56E7      3.56E7      0.495       10.1         34 38 42 44 45 46 100
+3.7E7       3.7E7       0.55        10.0         31 35 40 41 42 43 47 100
+3.75E7      3.75E7      0.545       10.09        30 34 39 40 42 42 46 49 100
+3.935E7     3.935E7     0.445       10.11        27 31 35 37 38 39 43 46 47 100
+4.075E7     4.075E7     0.515       9.71         25 28 33 34 35 36 40 43 44 47 100
+4.12E7      4.12E7      0.53        10.38        25 27 32 33 35 35 39 42 43 47 49 100
+4.28E7      4.28E7      0.295       10.17        25 25 29 30 32 32 36 39 40 44 46 47 100
+4.42E7      4.42E7      0.325       10.15        25 25 26 27 29 30 34 36 37 41 44 44 47 100
+4.615E7     4.615E7     0.255       9.8          25 25 25 25 25 26 30 33 34 37 40 41 44 46 100
+4.745E7     4.745E7     0.27        11.11        25 25 25 25 25 25 28 30 31 35 37 38 41 44 48 100
+4.92E7      4.92E7      0.215       9.3          25 25 25 25 25 25 25 27 28 31 34 35 38 41 44 47 100
+5.065E7     5.065E7     0.2         10.0         25 25 25 25 25 25 25 25 25 29 31 32 35 38 42 44 47 100
+5.235E7     5.235E7     0.17        11.76        25 25 25 25 25 25 25 25 25 26 28 29 32 35 38 41 44 47 100
+5.345E7     5.345E7     0.21        9.52         25 25 25 25 25 25 25 25 25 25 26 27 30 33 36 39 42 45 48 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D0600008 
+#DATASET        D06000091  20101026
+#SUBENT         D0600009   20101026
+#ENTRY          D0600      20101026
+#TITLE          Experimental study and analysis of 165Ho(alpha,xn)
+#+              and 169Tm(alpha,xn)  excitation functions
+#AUTHORS        J.Sau,A.Demeyer,R.Chery
+#AUTHOR1        J.Sau+
+#YEAR           1968
+#X4REF1         J,NP/A,121,131,1968
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.121, p.131 (1968)
+#DATE           20101026
+#INSTITUTE      2FR LYO
+#METHOD         STTA,GSPEC,ACTIV
+#REACTION       69-TM-169(A,4N)71-LU-169,,SIG
+#C4Reaction     (A,4N),SIG
+#ReactionType   CS
+#MF             3
+#MT             37
+#PROJ           2004
+#TARG           69169            
+#TARGET         69169           [ ]             69-TM-169       [ ] 
+#REAC1          A,4N
+#PRODUCT        71-LU-169
+#C4ReaCode      (A,4N),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 2004 69169   3  37   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         13
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 2004 69169   3  37       3.7E71500000.0   0.0405    0.005                                       J.Sau,               (68)D0600  91                               0.005                            12.3     12.3
+ 2004 69169   3  37      3.75E71500000.0      0.1    0.012                                       J.Sau,               (68)D0600  91                               0.012                            12       12
+ 2004 69169   3  37     3.935E71500000.0    0.225    0.028                                       J.Sau,               (68)D0600  91                               0.028                            12.4     12.4
+ 2004 69169   3  37     4.075E71500000.0     0.23     0.03                                       J.Sau,               (68)D0600  91                                0.03                            13       13
+ 2004 69169   3  37      4.12E71500000.0     0.24     0.03                                       J.Sau,               (68)D0600  91                                0.03                            12.5     12.5
+ 2004 69169   3  37      4.28E71500000.0     0.43     0.05                                       J.Sau,               (68)D0600  91                                0.05                            11.6     11.6
+ 2004 69169   3  37      4.42E71500000.0     0.48     0.06                                       J.Sau,               (68)D0600  91                                0.06                            12.5     12.5
+ 2004 69169   3  37     4.615E71500000.00.6350001    0.075                                       J.Sau,               (68)D0600  91                               0.075                            11.8     11.8
+ 2004 69169   3  37     4.745E71500000.00.6200001    0.075                                       J.Sau,               (68)D0600  91                               0.075                            12.1     12.1
+ 2004 69169   3  37      4.92E71500000.0      0.7.08500001                                       J.Sau,               (68)D0600  91                           .08500001                            12.1     12.1
+ 2004 69169   3  37      5.07E71500000.0     0.67.08000001                                       J.Sau,               (68)D0600  91                           .08000001                            11.9     11.9
+ 2004 69169   3  37     5.235E71500000.0     0.61    0.075                                       J.Sau,               (68)D0600  91                               0.075                            12.3     12.3
+ 2004 69169   3  37     5.345E71500000.0    0.545.06500001                                       J.Sau,               (68)D0600  91                           .06500001                            11.9     11.9
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           3.7E7       5.345E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           13          13
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+3.7E7       3.7E7       0.0405      12.35        100
+3.75E7      3.75E7      0.1         12.0         48 100
+3.935E7     3.935E7     0.225       12.44        43 44 100
+4.075E7     4.075E7     0.23        13.04        39 40 46 100
+4.12E7      4.12E7      0.24        12.5         37 39 44 49 100
+4.28E7      4.28E7      0.43        11.63        32 34 40 44 45 100
+4.42E7      4.42E7      0.48        12.5         28 30 35 40 41 46 100
+4.615E7     4.615E7     0.635       11.81        25 25 29 34 35 40 44 100
+4.745E7     4.745E7     0.62        12.1         25 25 25 30 31 36 40 46 100
+4.92E7      4.92E7      0.7         12.14        25 25 25 25 26 31 35 41 45 100
+5.07E7      5.07E7      0.67        11.94        25 25 25 25 25 26 30 36 40 45 100
+5.235E7     5.235E7     0.61        12.3         25 25 25 25 25 25 25 31 35 40 45 100
+5.345E7     5.345E7     0.545       11.93        25 25 25 25 25 25 25 28 32 37 42 47 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D06000091
+#DATASET        D06000092  20101026
+#SUBENT         D0600009   20101026
+#ENTRY          D0600      20101026
+#TITLE          Experimental study and analysis of 165Ho(alpha,xn)
+#+              and 169Tm(alpha,xn)  excitation functions
+#AUTHORS        J.Sau,A.Demeyer,R.Chery
+#AUTHOR1        J.Sau+
+#YEAR           1968
+#X4REF1         J,NP/A,121,131,1968
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.121, p.131 (1968)
+#DATE           20101026
+#INSTITUTE      2FR LYO
+#METHOD         STTA,GSPEC,ACTIV
+#REACTION       69-TM-169(A,4N)71-LU-169,,SIG
+#C4Reaction     (A,4N),SIG
+#ReactionType   CS
+#MF             3
+#MT             37
+#PROJ           2004
+#TARG           69169            
+#TARGET         69169           [ ]             69-TM-169       [ ] 
+#REAC1          A,4N
+#PRODUCT        71-LU-169
+#C4ReaCode      (A,4N),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 2004 69169   3  37   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         13
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 2004 69169   3  37       3.7E71500000.0    0.041    0.005                                       J.Sau,               (68)D0600  92                               0.005                            12.2     12.2
+ 2004 69169   3  37      3.75E71500000.0    0.022   0.0025                                       J.Sau,               (68)D0600  92                              0.0025                            11.4     11.4
+ 2004 69169   3  37     3.935E71500000.0     0.22    0.025                                       J.Sau,               (68)D0600  92                               0.025                            11.4     11.4
+ 2004 69169   3  37     4.075E71500000.0     0.21    0.025                                       J.Sau,               (68)D0600  92                               0.025                            11.9     11.9
+ 2004 69169   3  37      4.12E71500000.0     0.19    0.023                                       J.Sau,               (68)D0600  92                               0.023                            12.1     12.1
+ 2004 69169   3  37      4.28E71500000.0    0.375    0.045                                       J.Sau,               (68)D0600  92                               0.045                            12       12
+ 2004 69169   3  37      4.42E71500000.0    0.475     0.06                                       J.Sau,               (68)D0600  92                                0.06                            12.6     12.6
+ 2004 69169   3  37     4.615E71500000.0     0.53.06500001                                       J.Sau,               (68)D0600  92                           .06500001                            12.3     12.3
+ 2004 69169   3  37     4.745E71500000.00.6250001    0.075                                       J.Sau,               (68)D0600  92                               0.075                            12       12
+ 2004 69169   3  37      4.92E71500000.0    0.585.07000001                                       J.Sau,               (68)D0600  92                           .07000001                            12       12
+ 2004 69169   3  37      5.07E71500000.00.6200001    0.075                                       J.Sau,               (68)D0600  92                               0.075                            12.1     12.1
+ 2004 69169   3  37     5.235E71500000.0     0.53.06500001                                       J.Sau,               (68)D0600  92                           .06500001                            12.3     12.3
+ 2004 69169   3  37     5.345E71500000.0    0.605    0.075                                       J.Sau,               (68)D0600  92                               0.075                            12.4     12.4
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           3.7E7       5.345E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           13          13
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+3.7E7       3.7E7       0.041       12.2         100
+3.75E7      3.75E7      0.022       11.36        48 100
+3.935E7     3.935E7     0.22        11.36        43 44 100
+4.075E7     4.075E7     0.21        11.9         39 40 46 100
+4.12E7      4.12E7      0.19        12.11        37 39 44 49 100
+4.28E7      4.28E7      0.375       12.0         32 34 40 44 45 100
+4.42E7      4.42E7      0.475       12.63        28 30 35 40 41 46 100
+4.615E7     4.615E7     0.53        12.26        25 25 29 34 35 40 44 100
+4.745E7     4.745E7     0.625       12.0         25 25 25 30 31 36 40 46 100
+4.92E7      4.92E7      0.585       11.97        25 25 25 25 26 31 35 41 45 100
+5.07E7      5.07E7      0.62        12.1         25 25 25 25 25 26 30 36 40 45 100
+5.235E7     5.235E7     0.53        12.26        25 25 25 25 25 25 25 31 35 40 45 100
+5.345E7     5.345E7     0.605       12.4         25 25 25 25 25 25 25 28 32 37 42 47 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D06000092
+#DATASET        D0600010   20101026
+#SUBENT         D0600010   20101026
+#ENTRY          D0600      20101026
+#TITLE          Experimental study and analysis of 165Ho(alpha,xn)
+#+              and 169Tm(alpha,xn)  excitation functions
+#AUTHORS        J.Sau,A.Demeyer,R.Chery
+#AUTHOR1        J.Sau+
+#YEAR           1968
+#X4REF1         J,NP/A,121,131,1968
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.121, p.131 (1968)
+#DATE           20101026
+#INSTITUTE      2FR LYO
+#METHOD         STTA,GSPEC
+#REACTION       69-TM-169(A,5N)71-LU-168-M,,SIG
+#C4Reaction     (A,5N),SIG
+#ReactionType   CS
+#MF             3
+#MT             152
+#PROJ           2004
+#TARG           69169            
+#TARGET         69169           [ ]             69-TM-169       [ ] 
+#REAC1          A,5N
+#PRODUCT        71-LU-168-M
+#C4ReaCode      (A,5N),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-28.6%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 2004 69169   3 152M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 69-TM-169(A,5N)71-LU-168-M,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (69-TM-169(A,5N)71-LU-168-M,,SIG)
+#+               #[1]#DECAY-DATA (71-LU-168-M,7.MIN,DG,885./897.,0.10) #Ix_old=0.1
+#+                a1=0.1/0.14;                #[1]#DECAY-DATA: correction to new 884.807 keV gamma-yield per decay Lu-168-m Ix_new=0.14
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.71428573
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D0600010    0.714286    -           0.714286    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D0600010    CS          4           0.714286    0.714286    0.714286    -28.6%      1.40000                
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 2004 69169   3 152M     4.42E71500000.0.01428571 1.4286-3                                       J.Sau*,              (68)D0600 10                             1.4286-3                            10       10                                          0.71428570.7142857
+ 2004 69169   3 152M    4.745E71500000.0.04071429 4.2857-3                                       J.Sau*,              (68)D0600 10                             4.2857-3                            10.5     10.5                                        0.71428570.7142857
+ 2004 69169   3 152M     5.05E71500000.0.08785715 9.2857-3                                       J.Sau*,              (68)D0600 10                             9.2857-3                            10.6     10.6                                        0.71428570.7142857
+ 2004 69169   3 152M    5.345E71500000.00.1414286.01428571                                       J.Sau*,              (68)D0600 10                            .01428571                            10.1     10.1                                        0.71428570.7142857
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.42E7      5.345E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.42E7      4.42E7      1.4286-2    10.0         100
+4.745E7     4.745E7     4.0714-2    10.53        32 100
+5.05E7      5.05E7      8.7857-2    10.57        25 34 100
+5.345E7     5.345E7     0.141429    10.1         25 25 34 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D0600010 
+#/C5M.2.3       1               10              10              0               129             

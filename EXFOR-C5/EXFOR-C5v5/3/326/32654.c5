@@ -1,0 +1,588 @@
+#C5M.2.3
+#DATASET        32654002   20060618
+#SUBENT         32654002   20060618
+#ENTRY          32654      20081128
+#TITLE          Cross-section measurements for (n,2n),(n,p) and (n,a)
+#+              reactions on strontium at the neutron energy about
+#+              14MeV
+#AUTHORS        Guozhu He, Junhua Luo, Zhongjie Liu, Xiangzhong Kong
+#AUTHOR1        Guozhu He+
+#YEAR           2006
+#X4REF1         J,ANE,33,37,2006
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.33, p.37 (2006)
+#DATE           20060618
+#INSTITUTE      3CPRLNZ
+#METHOD         ACTIV
+#REACTION       38-SR-84(N,2N)38-SR-83,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           38084            
+#TARGET         38084           [ ]             38-SR-84        [ ] 
+#REAC1          N,2N
+#PRODUCT        38-SR-83
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+12.4%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 38084   3  16 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 38-SR-84(N,2N)38-SR-83,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (38-SR-84(N,2N)38-SR-83,,SIG)
+#+               #[1]#DECAY-DATA (38-SR-83,32.41HR,DG,762.60,0.30) #Ix_old=0.3
+#+                a1=0.3/0.267;               #[1]#DECAY-DATA: correction to new 762.65 keV gamma-yield per decay Sr-83 Ix_new=0.267
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.1235956
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32654002    1.12360     -           1.12360     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32654002    CS          3           1.12360     1.12360     1.12360     +12.4%      1.12360                
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 38084   3  16 A    1.35E7 300000.00.3494382.01460674                                       Guozhu He*,          (06)32654  2                            .01460674                            4.18     4.18                                        1.12359561.1235956
+    1 38084   3  16 A    1.41E7 200000.00.4932585.01910113                                       Guozhu He*,          (06)32654  2                            .01910113                            3.87     3.87                                        1.12359561.1235956
+    1 38084   3  16 A    1.46E7 300000.00.6842697.02808989                                       Guozhu He*,          (06)32654  2                            .02808989                            4.11     4.11                                        1.12359561.1235956
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.35E7      1.46E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.35E7      1.35E7      0.349438    4.18         100
+1.41E7      1.41E7      0.493259    3.87         25 100
+1.46E7      1.46E7      0.68427     4.11         25 27 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       32654002 
+#DATASET        32654003   20060618
+#SUBENT         32654003   20060618
+#ENTRY          32654      20081128
+#TITLE          Cross-section measurements for (n,2n),(n,p) and (n,a)
+#+              reactions on strontium at the neutron energy about
+#+              14MeV
+#AUTHORS        Guozhu He, Junhua Luo, Zhongjie Liu, Xiangzhong Kong
+#AUTHOR1        Guozhu He+
+#YEAR           2006
+#X4REF1         J,ANE,33,37,2006
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.33, p.37 (2006)
+#DATE           20060618
+#INSTITUTE      3CPRLNZ
+#METHOD         ACTIV
+#REACTION       38-SR-86(N,2N)38-SR-85-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           38086            
+#TARGET         38086           [ ]             38-SR-86        [ ] 
+#REAC1          N,2N
+#PRODUCT        38-SR-85-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.596%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 38086   3  16MA ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 38-SR-86(N,2N)38-SR-85-M,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (38-SR-86(N,2N)38-SR-85-M,,SIG)
+#+               #[1]#DECAY-DATA (38-SR-85-M,67.63MIN,DG,231.9,0.844) #Ix_old=0.844
+#+                a1=0.844/0.839;             #[1]#DECAY-DATA: correction to new 231.86 keV gamma-yield per decay Sr-85-m Ix_new=0.839
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0059595
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32654003    1.00596     -           1.00596     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32654003    CS          3           1.00596     1.00596     1.00596     +0.596%     1.00596                
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 38086   3  16MA    1.35E7 300000.00.15692970.0100596                                       Guozhu He*,          (06)32654  3                            0.0100596                            6.41     6.41                                        1.00595951.0059595
+    1 38086   3  16MA    1.41E7 200000.00.2283528 8.0477-3                                       Guozhu He*,          (06)32654  3                             8.0477-3                            3.52     3.52                                        1.00595951.0059595
+    1 38086   3  16MA    1.46E7 300000.00.2545078 8.0477-3                                       Guozhu He*,          (06)32654  3                             8.0477-3                            3.16     3.16                                        1.00595951.0059595
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.35E7      1.46E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.35E7      1.35E7      0.15693     6.41         100
+1.41E7      1.41E7      0.228353    3.52         25 100
+1.46E7      1.46E7      0.254508    3.16         25 27 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       32654003 
+#DATASET        32654004   20080808
+#SUBENT         32654004   20080808
+#ENTRY          32654      20081128
+#TITLE          Cross-section measurements for (n,2n),(n,p) and (n,a)
+#+              reactions on strontium at the neutron energy about
+#+              14MeV
+#AUTHORS        Guozhu He, Junhua Luo, Zhongjie Liu, Xiangzhong Kong
+#AUTHOR1        Guozhu He+
+#YEAR           2006
+#X4REF1         J,ANE,33,37,2006
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.33, p.37 (2006)
+#DATE           20080808
+#INSTITUTE      3CPRLNZ
+#METHOD         ACTIV
+#REACTION       38-SR-86(N,2N)38-SR-85,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           38086            
+#TARGET         38086           [ ]             38-SR-86        [ ] 
+#REAC1          N,2N
+#PRODUCT        38-SR-85
+#C4ReaCode      (N,2N),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 38086   3  16 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 38086   3  16 A    1.41E7 200000.00.8920001    0.053                                       Guozhu He,           (06)32654  4                                0.053                            5.94     5.94
+    1 38086   3  16 A    1.46E7 300000.0    0.955    0.057                                       Guozhu He,           (06)32654  4                                0.057                            5.97     5.97
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.41E7      1.46E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.41E7      1.41E7      0.892       5.94         100
+1.46E7      1.46E7      0.955       5.97         25 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       32654004 
+#DATASET        32654005   20060618
+#SUBENT         32654005   20060618
+#ENTRY          32654      20081128
+#TITLE          Cross-section measurements for (n,2n),(n,p) and (n,a)
+#+              reactions on strontium at the neutron energy about
+#+              14MeV
+#AUTHORS        Guozhu He, Junhua Luo, Zhongjie Liu, Xiangzhong Kong
+#AUTHOR1        Guozhu He+
+#YEAR           2006
+#X4REF1         J,ANE,33,37,2006
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.33, p.37 (2006)
+#DATE           20060618
+#INSTITUTE      3CPRLNZ
+#METHOD         ACTIV
+#REACTION       38-SR-88(N,2N)38-SR-87-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           38088            
+#TARGET         38088           [ ]             38-SR-88        [ ] 
+#REAC1          N,2N
+#PRODUCT        38-SR-87-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.110%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 38088   3  16MA ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 38-SR-88(N,2N)38-SR-87-M,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (38-SR-88(N,2N)38-SR-87-M,,SIG)
+#+               #[1]#DECAY-DATA (38-SR-87-M,2.803HR,DG,388.5,0.821) #Ix_old=0.821
+#+                a1=0.821/0.8219;            #[1]#DECAY-DATA: correction to new 388.531 keV gamma-yield per decay Sr-87-m Ix_new=0.8219
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99890494
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32654005    0.998905    -           0.998905    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32654005    CS          3           0.998905    0.998905    0.998905    -0.110%     1.00110                
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 38088   3  16MA    1.35E7 300000.00.2017788.01298576                                       Guozhu He*,          (06)32654  5                            .01298576                            6.44     6.44                                        0.99890490.9989048
+    1 38088   3  16MA    1.41E7 200000.0 0.241735.01298577                                       Guozhu He*,          (06)32654  5                            .01298577                            5.37     5.37                                        0.99890490.998905
+    1 38088   3  16MA    1.46E7 300000.00.2647098.01598248                                       Guozhu He*,          (06)32654  5                            .01598248                            6.04     6.04                                        0.99890490.9989049
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.35E7      1.46E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.35E7      1.35E7      0.201779    6.44         100
+1.41E7      1.41E7      0.241735    5.37         25 100
+1.46E7      1.46E7      0.26471     6.04         25 27 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       32654005 
+#DATASET        32654006   20060618
+#SUBENT         32654006   20060618
+#ENTRY          32654      20081128
+#TITLE          Cross-section measurements for (n,2n),(n,p) and (n,a)
+#+              reactions on strontium at the neutron energy about
+#+              14MeV
+#AUTHORS        Guozhu He, Junhua Luo, Zhongjie Liu, Xiangzhong Kong
+#AUTHOR1        Guozhu He+
+#YEAR           2006
+#X4REF1         J,ANE,33,37,2006
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.33, p.37 (2006)
+#DATE           20060618
+#INSTITUTE      3CPRLNZ
+#METHOD         ACTIV
+#REACTION       38-SR-84(N,P)37-RB-84,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           38084            
+#TARGET         38084           [ ]             38-SR-84        [ ] 
+#REAC1          N,P
+#PRODUCT        37-RB-84
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.145%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 38084   3 103 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 38-SR-84(N,P)37-RB-84,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (38-SR-84(N,P)37-RB-84,,SIG)
+#+               #[1]#DECAY-DATA (37-RB-84,32.77D,DG,881.6,0.69) #Ix_old=0.69
+#+                a1=0.69/0.689;              #[1]#DECAY-DATA: correction to new 881.6041 keV gamma-yield per decay Rb-84 Ix_new=0.689
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0014514
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32654006    1.00145     -           1.00145     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32654006    CS          1           1.00145     1.00145     1.00145     +0.145%     1.00145                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 38084   3 103 A    1.46E7 300000.0.09503774 9.5138-3                                       Guozhu He*,          (06)32654  6                             9.5138-3                            10       10                                          1.00145141.0014514
+#/C5DATA        0
+#/DATASET       32654006 
+#DATASET        32654007   20060618
+#SUBENT         32654007   20060618
+#ENTRY          32654      20081128
+#TITLE          Cross-section measurements for (n,2n),(n,p) and (n,a)
+#+              reactions on strontium at the neutron energy about
+#+              14MeV
+#AUTHORS        Guozhu He, Junhua Luo, Zhongjie Liu, Xiangzhong Kong
+#AUTHOR1        Guozhu He+
+#YEAR           2006
+#X4REF1         J,ANE,33,37,2006
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.33, p.37 (2006)
+#DATE           20060618
+#INSTITUTE      3CPRLNZ
+#METHOD         ACTIV
+#REACTION       38-SR-86(N,P)37-RB-86,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           38086            
+#TARGET         38086           [ ]             38-SR-86        [ ] 
+#REAC1          N,P
+#PRODUCT        37-RB-86
+#C4ReaCode      (N,P),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 38086   3 103 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 38086   3 103 A    1.41E7 200000.0   0.0446    0.004                                       Guozhu He,           (06)32654  7                                0.004                            8.97     8.97
+#/C5DATA        0
+#/DATASET       32654007 
+#DATASET        32654008   20060618
+#SUBENT         32654008   20060618
+#ENTRY          32654      20081128
+#TITLE          Cross-section measurements for (n,2n),(n,p) and (n,a)
+#+              reactions on strontium at the neutron energy about
+#+              14MeV
+#AUTHORS        Guozhu He, Junhua Luo, Zhongjie Liu, Xiangzhong Kong
+#AUTHOR1        Guozhu He+
+#YEAR           2006
+#X4REF1         J,ANE,33,37,2006
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.33, p.37 (2006)
+#DATE           20060618
+#INSTITUTE      3CPRLNZ
+#METHOD         ACTIV
+#REACTION       38-SR-88(N,P)37-RB-88,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           38088            
+#TARGET         38088           [ ]             38-SR-88        [ ] 
+#REAC1          N,P
+#PRODUCT        37-RB-88
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.78%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 38088   3 103 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 38-SR-88(N,P)37-RB-88,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (38-SR-88(N,P)37-RB-88,,SIG)
+#+               #[1]#DECAY-DATA (37-RB-88,17.78MIN,DG,898.,0.14) #Ix_old=0.14
+#+                a1=0.14/0.144;              #[1]#DECAY-DATA: correction to new 898.03 keV gamma-yield per decay Rb-88 Ix_new=0.144
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.97222227
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32654008    0.972222    -           0.972222    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32654008    CS          1           0.972222    0.972222    0.972222    -2.78%      1.02857                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 38088   3 103 A    1.46E7 300000.0.01886111 1.1667-3                                       Guozhu He*,          (06)32654  8                             1.1667-3                            6.19     6.19                                        0.97222230.9722222
+#/C5DATA        0
+#/DATASET       32654008 
+#DATASET        32654009   20060618
+#SUBENT         32654009   20060618
+#ENTRY          32654      20081128
+#TITLE          Cross-section measurements for (n,2n),(n,p) and (n,a)
+#+              reactions on strontium at the neutron energy about
+#+              14MeV
+#AUTHORS        Guozhu He, Junhua Luo, Zhongjie Liu, Xiangzhong Kong
+#AUTHOR1        Guozhu He+
+#YEAR           2006
+#X4REF1         J,ANE,33,37,2006
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.33, p.37 (2006)
+#DATE           20060618
+#INSTITUTE      3CPRLNZ
+#METHOD         ACTIV
+#REACTION       38-SR-88(N,A)36-KR-85-M,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           38088            
+#TARGET         38088           [ ]             38-SR-88        [ ] 
+#REAC1          N,A
+#PRODUCT        36-KR-85-M
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.399%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 38088   3 107MA ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 38-SR-88(N,A)36-KR-85-M,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (38-SR-88(N,A)36-KR-85-M,,SIG)
+#+               #[1]#DECAY-DATA (36-KR-85-M,4.480HR,DG,151.2,0.755) #Ix_old=0.755
+#+                a1=0.755/0.752;             #[1]#DECAY-DATA: correction to new 151.195 keV gamma-yield per decay Kr-85-m Ix_new=0.752
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0039893
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32654009    1.00399     -           1.00399     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32654009    CS          2           1.00399     1.00399     1.00399     +0.399%     1.00399                
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 38088   3 107MA    1.41E7 200000.0 1.1044-3 1.0040-4                                       Guozhu He*,          (06)32654  9                             1.0040-4                            9.09     9.09                                        1.00398931.0039893
+    1 38088   3 107MA    1.46E7 300000.0 1.3052-3 1.0040-4                                       Guozhu He*,          (06)32654  9                             1.0040-4                            7.69     7.69                                        1.00398931.0039893
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.41E7      1.46E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.41E7      1.41E7      1.1044-3    9.09         100
+1.46E7      1.46E7      1.3052-3    7.69         25 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       32654009 
+#/C5M.2.3       1               8               8               0               16              

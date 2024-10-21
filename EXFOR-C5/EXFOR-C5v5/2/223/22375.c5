@@ -1,0 +1,1163 @@
+#C5M.2.3
+#DATASET        22375002   20121217
+#SUBENT         22375002   20121217
+#ENTRY          22375      20121217
+#TITLE          Experimental determination of the stellar neutron
+#+               capture cross sections of 148-Sm and 150-Sm and
+#+               the consequences for the S-process
+#AUTHORS        K.Guber
+#AUTHOR1        K.Guber
+#YEAR           1993
+#X4REF1         R,KFK-5170,199305
+#REFERENCE1     Rept: Kernforschungszentrum Karlsruhe Reports, No.5170 (1993)
+#DATE           20121217
+#INSTITUTE      2GERKFK
+#METHOD         TOF
+#STATUS         SPSDD
+#REACTION       62-SM-147(N,G)62-SM-148,,SIG,,AV
+#C4Reaction     (N,G),SIG,,AV
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           62147            
+#TARGET         62147           [ ]             62-SM-147       [ ] 
+#REAC1          N,G
+#PRODUCT        62-SM-148
+#C4ReaCode      (N,G),SIG,,AV
+#CompNotes      OPERATION...  Value=(Min+Max)/2  Min:EN-MIN, Max:EN-MAX
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0587859(4.0e3) Data[17]*1.0118107(2.1e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 62147   3 102 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN-MIN!EN-MAX,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 62-SM-147(N,G)62-SM-148,,SIG,,AV
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN-MIN!EN-MAX,MONIT,MONIT-ERR];#[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22375002    1.06395     1.06395     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22375002    CS          18          1.01181     1.10642     1.06395     +6.39%      1.10642     [EN-MIN!EN-MAX,MONIT,MONIT-ERR]::au197ng
+#C5DATA         18
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 62147   3 102 S    4000.0   1000.03.54407430.3086241                                       K.Guber*             (93)22375  2 .07195654                  0.3086241 2.03                       8.71     8.71    2.2667   0.03400052.39995  0.048727 1.05878591.0721034
+    1 62147   3 102 S    6250.0   1250.02.54039670.1170422                                       K.Guber*             (93)22375  2 .04563293                  0.1170422 1.80                       4.61     4.61    1.72670010.02590051.7818999.032008121.03196841.0565615
+    1 62147   3 102 S    8750.0   1250.0 2.330966.07597322                                       K.Guber*             (93)22375  2 .04210636                  .07597322 1.81                       3.26     3.26    1.2157   0.01823551.28655  .023240121.05827921.1126617
+    1 62147   3 102 S   11250.0   1250.0 1.717895.04464623                                       K.Guber*             (93)22375  2 .03094233                  .04464623 1.80                       2.60     2.60    1.0667   0.01600051.0866214.019571971.01867581.103095
+    1 62147   3 102 S   13750.0   1250.01.7931019.04159686                                       K.Guber*             (93)22375  2 .03218405                  .04159686 1.79                       2.32     2.32    0.87800010.01317  0.9700804.017411791.10487511.220533
+    1 62147   3 102 S   17500.0   2500.01.4051402.02400254                                       K.Guber*             (93)22375  2 .02516704                  .02400254 1.79                       1.71     1.71    0.7388   0.011082 0.81008  0.01450911.09648071.3378596
+    1 62147   3 102 S   22500.0   2500.0 1.240625.01916041                                       K.Guber*             (93)22375  2 .02217639                  .01916041 1.79                       1.54     1.54    0.6      0.009    0.66385  .011866441.10641661.4239727
+    1 62147   3 102 S   27500.0   2500.01.0587972.01549233                                       K.Guber*             (93)22375  2 0.0188839                  .01549233 1.78                       1.46     1.46    0.5708   0.008562 0.60985  .010876821.06841281.4211838
+    1 62147   3 102 S   35000.0   5000.00.92123270.0127897                                       K.Guber*             (93)22375  2 .01642133                  0.0127897 1.78                       1.39     1.39    0.5004   0.007506 0.54690339.7488-3 1.09293221.5173445
+    1 62147   3 102 S   45000.0   5000.00.7799893.01083669                                       K.Guber*             (93)22375  2 .01390977                  .01083669 1.78                       1.39     1.39    0.4333   0.00649950.46001  .008203491.06164311.4749815
+    1 62147   3 102 S   55000.0   5000.00.72876790.0101074                                       K.Guber*             (93)22375  2 .01298258                  0.0101074 1.78                       1.39     1.39    0.3896   0.005844 0.42447  .007561691.089502 1.5110487
+    1 62147   3 102 S   70000.0  10000.00.6412995 8.4392-3                                       K.Guber*             (93)22375  2 .01142115                   8.4392-3 1.78                       1.32     1.32    0.3494   0.005241 0.38036  6.7740-3 1.088609 1.5917348
+    1 62147   3 102 S   90000.0  10000.00.5502983 8.0029-3                                       K.Guber*             (93)22375  2 0.0103756                   8.0029-3 1.89                       1.45     1.45    0.2983   0.00447450.327    .006165421.09621181.7713277
+    1 62147   3 102 S  110000.0  10000.00.5052063 7.5032-3                                       K.Guber*             (93)22375  2  9.6464-3                   7.5032-3 1.91                       1.49     1.49    0.2901   0.00435150.30674  .005856861.05735931.7448573
+    1 62147   3 102 S  135000.0  15000.00.4455941 6.6519-3                                       K.Guber*             (93)22375  2 .00853459                   6.6519-3 1.92                       1.49     1.49    0.2741   0.00411150.28617  5.4811-3 1.044035 1.731718
+    1 62147   3 102 S  162500.0  12500.00.4087605 8.2607-3                                       K.Guber*             (93)22375  2  9.4406-3                   8.2607-3 2.31                       2.02     2.02    0.2637   3.9555-3 0.27206  .006283421.03170252.0849886
+    1 62147   3 102 S  187500.0  12500.00.3777939 7.0868-3                                       K.Guber*             (93)22375  2  8.0664-3                   7.0868-3 2.14                       1.88     1.88    0.2526   0.003789 0.261025 5.5732-3 1.03335311.7621809
+    1 62147   3 102 S  212500.0  12500.00.3624306 7.1627-3                                       K.Guber*             (93)22375  2  7.4238-3                   7.1627-3 2.05                       1.98     1.98    0.2485   0.00372750.251435 5.1503-3 1.01181071.4283091
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         1           1.0E-5      2.0E7       0.05        
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           18          18
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4000.       4000.       3.54407     8.71         100
+6250.       6250.       2.5404      4.61          8 100
+8750.       8750.       2.33097     3.26          9 19 100
+11250.      11250.      1.7179      2.6          10 21 35 100
+13750.      13750.      1.7931      2.32         10 22 36 50 100
+17500.      17500.      1.40514     1.79         12 25 42 58 71 100
+22500.      22500.      1.24063     1.79         12 21 37 52 64 91 100
+27500.      27500.      1.0588      1.78         12 19 33 47 58 84 93 100
+35000.      35000.      0.921233    1.78         12 19 28 42 52 76 84 91 100
+45000.      45000.      0.779989    1.78         12 19 28 35 45 67 76 83 91 100
+55000.      55000.      0.728768    1.78         12 19 28 35 40 60 68 76 84 93 100
+70000.      70000.      0.641299    1.78         12 19 28 35 39 51 60 67 76 84 91 100
+90000.      90000.      0.550298    1.89         12 19 28 35 39 50 51 58 67 76 83 91 100
+110000.     110000.     0.505206    1.91         12 19 28 35 39 50 50 51 60 68 76 84 93 100
+135000.     135000.     0.445594    1.92         12 19 28 35 39 50 50 50 52 61 68 77 86 93 100
+162500.     162500.     0.40876     2.31         12 19 28 35 39 50 50 50 50 55 62 70 79 86 93 100
+187500.     187500.     0.377794    2.14         12 19 28 35 39 50 50 50 50 50 57 65 74 81 88 95 100
+212500.     212500.     0.362431    2.05         12 19 28 35 39 50 50 50 50 50 52 61 70 77 84 91 96 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22375002 
+#DATASET        22375003   20121217
+#SUBENT         22375003   20121217
+#ENTRY          22375      20121217
+#TITLE          Experimental determination of the stellar neutron
+#+               capture cross sections of 148-Sm and 150-Sm and
+#+               the consequences for the S-process
+#AUTHORS        K.Guber
+#AUTHOR1        K.Guber
+#YEAR           1993
+#X4REF1         R,KFK-5170,199305
+#REFERENCE1     Rept: Kernforschungszentrum Karlsruhe Reports, No.5170 (1993)
+#DATE           20121217
+#INSTITUTE      2GERKFK
+#METHOD         TOF
+#STATUS         SPSDD
+#REACTION       62-SM-148(N,G)62-SM-149,,SIG,,AV
+#C4Reaction     (N,G),SIG,,AV
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           62148            
+#TARGET         62148           [ ]             62-SM-148       [ ] 
+#REAC1          N,G
+#PRODUCT        62-SM-149
+#C4ReaCode      (N,G),SIG,,AV
+#CompNotes      OPERATION...  Value=(Min+Max)/2  Min:EN-MIN, Max:EN-MAX
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0587859(4.0e3) Data[17]*1.0118107(2.1e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 62148   3 102 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN-MIN!EN-MAX,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 62-SM-148(N,G)62-SM-149,,SIG,,AV
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN-MIN!EN-MAX,MONIT,MONIT-ERR];#[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22375003    1.06395     1.06395     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22375003    CS          18          1.01181     1.10642     1.06395     +6.39%      1.10642     [EN-MIN!EN-MAX,MONIT,MONIT-ERR]::au197ng
+#C5DATA         18
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 62148   3 102 S    4000.0   1000.00.7774665.07693081                                       K.Guber*             (93)22375  3 .01578517                  .07693081 2.03                       9.90     9.90    2.2667   0.03400052.39995  0.048727 1.05878591.0690565
+    1 62148   3 102 S    6250.0   1250.0 0.606075.02910843                                       K.Guber*             (93)22375  3 .01088687                  .02910843 1.80                       4.80     4.80    1.72670010.02590051.7818999.032008121.03196841.0545348
+    1 62148   3 102 S    8750.0   1250.00.4424665.01611395                                       K.Guber*             (93)22375  3  7.9927-3                  .01611395 1.81                       3.64     3.64    1.2157   0.01823551.28655  .023240121.05827921.1011688
+    1 62148   3 102 S   11250.0   1250.00.3587776.01032646                                       K.Guber*             (93)22375  3 .00646222                  .01032646 1.80                       2.88     2.88    1.0667   0.01600051.0866214.019571971.01867581.0859216
+    1 62148   3 102 S   13750.0   1250.00.3650507 9.8100-3                                       K.Guber*             (93)22375  3  6.5522-3                   9.8100-3 1.79                       2.69     2.69    0.87800010.01317  0.9700804.017411791.10487511.1876537
+    1 62148   3 102 S   17500.0   2500.00.3075628 5.5087-3                                       K.Guber*             (93)22375  3  5.5087-3                   5.5087-3 1.79                       1.79     1.79    0.7388   0.011082 0.81008  0.01450911.09648071.3092492
+    1 62148   3 102 S   22500.0   2500.00.2898811.00447697                                       K.Guber*             (93)22375  3  5.1817-3                  .00447697 1.79                       1.54     1.54    0.6      0.009    0.66385  .011866441.10641661.4239725
+    1 62148   3 102 S   27500.0   2500.00.2410339.00352681                                       K.Guber*             (93)22375  3  4.2989-3                  .00352681 1.78                       1.46     1.46    0.5708   0.008562 0.60985  .010876821.06841281.4211837
+    1 62148   3 102 S   35000.0   5000.00.2301715.00303394                                       K.Guber*             (93)22375  3  4.1029-3                  .00303394 1.78                       1.32     1.32    0.5004   0.007506 0.54690339.7488-3 1.09293221.6006861
+    1 62148   3 102 S   45000.0   5000.00.2094622 2.7632-3                                       K.Guber*             (93)22375  3  3.7354-3                   2.7632-3 1.78                       1.32     1.32    0.4333   0.00649950.46001  .008203491.06164311.5561203
+    1 62148   3 102 S   55000.0   5000.00.1839079 2.4214-3                                       K.Guber*             (93)22375  3  3.2762-3                   2.4214-3 1.78                       1.32     1.32    0.3896   0.005844 0.42447  .007561691.089502 1.5938674
+    1 62148   3 102 S   70000.0  10000.00.1795116 2.3623-3                                       K.Guber*             (93)22375  3 .00319699                   2.3623-3 1.78                       1.32     1.32    0.3494   0.005241 0.38036  6.7740-3 1.088609 1.5917346
+    1 62148   3 102 S   90000.0  10000.0 0.171009 2.4869-3                                       K.Guber*             (93)22375  3  3.2243-3                   2.4869-3 1.89                       1.45     1.45    0.2983   0.00447450.327    .006165421.09621181.771328
+    1 62148   3 102 S  110000.0  10000.00.1624104 2.4121-3                                       K.Guber*             (93)22375  3  3.1010-3                   2.4121-3 1.91                       1.49     1.49    0.2901   0.00435150.30674  .005856861.05735931.7448573
+    1 62148   3 102 S  135000.0  15000.00.1559788 2.3285-3                                       K.Guber*             (93)22375  3  2.9875-3                   2.3285-3 1.92                       1.49     1.49    0.2741   0.00411150.28617  5.4811-3 1.044035 1.7317178
+    1 62148   3 102 S  162500.0  12500.00.1510413 2.9806-3                                       K.Guber*             (93)22375  3  3.4884-3                   2.9806-3 2.31                       1.97     1.97    0.2637   3.9555-3 0.27206  .006283421.03170252.2621253
+    1 62148   3 102 S  187500.0  12500.00.1486995 2.6260-3                                       K.Guber*             (93)22375  3  3.1749-3                   2.6260-3 2.14                       1.77     1.77    0.2526   0.003789 0.261025 5.5732-3 1.03335312.0276678
+    1 62148   3 102 S  212500.0  12500.0 0.145296 2.6735-3                                       K.Guber*             (93)22375  3  2.9762-3                   2.6735-3 2.05                       1.84     1.84    0.2485   0.00372750.251435 5.1503-3 1.01181071.5514722
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         1           1.0E-5      2.0E7       0.05        
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           18          18
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4000.       4000.       0.777466    9.9          100
+6250.       6250.       0.606075    4.8           6 100
+8750.       8750.       0.442466    3.64          7 16 100
+11250.      11250.      0.358778    2.88          8 19 28 100
+13750.      13750.      0.365051    2.69          8 18 28 39 100
+17500.      17500.      0.307563    1.79         10 24 37 53 61 100
+22500.      22500.      0.289881    1.79         10 20 33 47 55 91 100
+27500.      27500.      0.241034    1.78         10 19 30 43 50 84 93 100
+35000.      35000.      0.230172    1.78         10 19 25 38 45 76 84 91 100
+45000.      45000.      0.209462    1.78         10 19 25 32 39 67 76 83 91 100
+55000.      55000.      0.183908    1.78         10 19 25 31 34 60 68 76 84 93 100
+70000.      70000.      0.179512    1.78         10 19 25 31 33 51 60 67 76 84 91 100
+90000.      90000.      0.171009    1.89         10 19 25 31 33 50 51 58 67 76 83 91 100
+110000.     110000.     0.16241     1.91         10 19 25 31 33 50 50 51 60 68 76 84 93 100
+135000.     135000.     0.155979    1.92         10 19 25 31 33 50 50 50 52 61 68 77 86 93 100
+162500.     162500.     0.151041    2.31         10 19 25 31 33 50 50 50 50 55 62 70 79 86 93 100
+187500.     187500.     0.1487      2.14         10 19 25 31 33 50 50 50 50 50 57 65 74 81 88 95 100
+212500.     212500.     0.145296    2.05         10 19 25 31 33 50 50 50 50 50 52 61 70 77 84 91 96 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22375003 
+#DATASET        22375004   20121217
+#SUBENT         22375004   20121217
+#ENTRY          22375      20121217
+#TITLE          Experimental determination of the stellar neutron
+#+               capture cross sections of 148-Sm and 150-Sm and
+#+               the consequences for the S-process
+#AUTHORS        K.Guber
+#AUTHOR1        K.Guber
+#YEAR           1993
+#X4REF1         R,KFK-5170,199305
+#REFERENCE1     Rept: Kernforschungszentrum Karlsruhe Reports, No.5170 (1993)
+#DATE           20121217
+#INSTITUTE      2GERKFK
+#METHOD         TOF
+#STATUS         SPSDD
+#REACTION       62-SM-149(N,G)62-SM-150,,SIG,,AV
+#C4Reaction     (N,G),SIG,,AV
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           62149            
+#TARGET         62149           [ ]             62-SM-149       [ ] 
+#REAC1          N,G
+#PRODUCT        62-SM-150
+#C4ReaCode      (N,G),SIG,,AV
+#CompNotes      OPERATION...  Value=(Min+Max)/2  Min:EN-MIN, Max:EN-MAX
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0587859(4.0e3) Data[17]*1.0118107(2.1e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 62149   3 102 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN-MIN!EN-MAX,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 62-SM-149(N,G)62-SM-150,,SIG,,AV
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN-MIN!EN-MAX,MONIT,MONIT-ERR];#[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22375004    1.06395     1.06395     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22375004    CS          18          1.01181     1.10642     1.06395     +6.39%      1.10642     [EN-MIN!EN-MAX,MONIT,MONIT-ERR]::au197ng
+#C5DATA         18
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 62149   3 102 S    4000.0   1000.0 8.0307860.4942181                                       K.Guber*             (93)22375  4 0.1630518                  0.4942181 2.03                       6.15     6.15    2.2667   0.03400052.39995  0.048727 1.05878591.0859692
+    1 62149   3 102 S    6250.0   1250.0 5.7857310.1882512                                       K.Guber*             (93)22375  4 0.1039286                  0.1882512 1.80                       3.25     3.25    1.72670010.02590051.7818999.032008121.03196841.0831393
+    1 62149   3 102 S    8750.0   1250.04.6066895  0.11145                                       K.Guber*             (93)22375  4 .08321483                    0.11145 1.81                       2.42     2.42    1.2157   0.01823551.28655  .023240121.05827921.163774
+    1 62149   3 102 S   11250.0   1250.0 3.685875.07264297                                       K.Guber*             (93)22375  4 .06638912                  .07264297 1.80                       1.97     1.97    1.0667   0.01600051.0866214.019571971.01867581.180973
+    1 62149   3 102 S   13750.0   1250.0  3.54002 0.066526                                       K.Guber*             (93)22375  4 .06353915                   0.066526 1.79                       1.88     1.88    0.87800010.01317  0.9700804.017411791.10487511.2977138
+    1 62149   3 102 S   17500.0   2500.02.8612666 0.042129                                       K.Guber*             (93)22375  4 .05124729                   0.042129 1.79                       1.47     1.47    0.7388   0.011082 0.81008  0.01450911.09648071.4676791
+    1 62149   3 102 S   22500.0   2500.02.4035795 0.033523                                       K.Guber*             (93)22375  4 .04296441                   0.033523 1.79                       1.39     1.39    0.6      0.009    0.66385  .011866441.10641661.5431318
+    1 62149   3 102 S   27500.0   2500.01.9457934.02567383                                       K.Guber*             (93)22375  4 .03470368                  .02567383 1.78                       1.32     1.32    0.5708   0.008562 0.60985  .010876821.06841281.566356
+    1 62149   3 102 S   35000.0   5000.01.6502185.02175188                                       K.Guber*             (93)22375  4 .02941578                  .02175188 1.78                       1.32     1.32    0.5004   0.007506 0.54690339.7488-3 1.09293221.6006862
+    1 62149   3 102 S   45000.0   5000.01.3819408.01823042                                       K.Guber*             (93)22375  4 .02464454                  .01823042 1.78                       1.32     1.32    0.4333   0.00649950.46001  .008203491.06164311.5561203
+    1 62149   3 102 S   55000.0   5000.01.2418144.01635021                                       K.Guber*             (93)22375  4 .02212221                  .01635021 1.78                       1.32     1.32    0.3896   0.005844 0.42447  .007561691.089502 1.5938675
+    1 62149   3 102 S   70000.0  10000.01.0855609.01356621                                       K.Guber*             (93)22375  4 .01933317                  .01356621 1.78                       1.25     1.25    0.3494   0.005241 0.38036  6.7740-3 1.088609 1.7005376
+    1 62149   3 102 S   90000.0  10000.00.9394536.01310166                                       K.Guber*             (93)22375  4 .01771292                  .01310166 1.89                       1.39     1.39    0.2983   0.00447450.327    .006165421.09621181.9109768
+    1 62149   3 102 S  110000.0  10000.00.8555094.01220644                                       K.Guber*             (93)22375  4  0.016335                  .01220644 1.91                       1.43     1.43    0.2901   0.00435150.30674  .005856861.05735931.8858045
+    1 62149   3 102 S  135000.0  15000.00.7888728.01131828                                       K.Guber*             (93)22375  4 0.0151095                  .01131828 1.92                       1.43     1.43    0.2741   0.00411150.28617  5.4811-3 1.044035 1.8723998
+    1 62149   3 102 S  162500.0  12500.00.7499446.01479905                                       K.Guber*             (93)22375  4 0.0173205                  .01479905 2.31                       1.97     1.97    0.2637   3.9555-3 0.27206  .006283421.03170252.2621253
+    1 62149   3 102 S  187500.0  12500.00.7222105.01275423                                       K.Guber*             (93)22375  4 .01542009                  .01275423 2.14                       1.77     1.77    0.2526   0.003789 0.261025 5.5732-3 1.03335312.0276678
+    1 62149   3 102 S  212500.0  12500.00.6998694.01243274                                       K.Guber*             (93)22375  4 .01433576                  .01243274 2.05                       1.78     1.78    0.2485   0.00372750.251435 5.1503-3 1.01181071.6340159
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         1           1.0E-5      2.0E7       0.05        
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           18          18
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4000.       4000.       8.03079     6.15         100
+6250.       6250.       5.78573     3.25         15 100
+8750.       8750.       4.60669     2.42         18 36 100
+11250.      11250.      3.68587     1.97         19 40 62 100
+13750.      13750.      3.54002     1.88         18 38 60 81 100
+17500.      17500.      2.86127     1.79         16 35 56 77 87 100
+22500.      22500.      2.40358     1.79         16 30 50 69 79 91 100
+27500.      27500.      1.94579     1.78         16 28 44 63 72 84 93 100
+35000.      35000.      1.65022     1.78         16 28 38 55 64 76 84 91 100
+45000.      45000.      1.38194     1.78         16 28 37 47 56 67 76 83 91 100
+55000.      55000.      1.24181     1.78         16 28 37 46 49 60 68 76 84 93 100
+70000.      70000.      1.08556     1.78         16 28 37 46 48 51 60 67 76 84 91 100
+90000.      90000.      0.939454    1.89         16 28 37 46 48 50 51 58 67 76 83 91 100
+110000.     110000.     0.855509    1.91         16 28 37 46 48 50 50 51 60 68 76 84 93 100
+135000.     135000.     0.788873    1.92         16 28 37 46 48 50 50 50 52 61 68 77 86 93 100
+162500.     162500.     0.749945    2.31         16 28 37 46 48 50 50 50 50 55 62 70 79 86 93 100
+187500.     187500.     0.722211    2.14         16 28 37 46 48 50 50 50 50 50 57 65 74 81 88 95 100
+212500.     212500.     0.699869    2.05         16 28 37 46 48 50 50 50 50 50 52 61 70 77 84 91 96 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22375004 
+#DATASET        22375005   20121217
+#SUBENT         22375005   20121217
+#ENTRY          22375      20121217
+#TITLE          Experimental determination of the stellar neutron
+#+               capture cross sections of 148-Sm and 150-Sm and
+#+               the consequences for the S-process
+#AUTHORS        K.Guber
+#AUTHOR1        K.Guber
+#YEAR           1993
+#X4REF1         R,KFK-5170,199305
+#REFERENCE1     Rept: Kernforschungszentrum Karlsruhe Reports, No.5170 (1993)
+#DATE           20121217
+#INSTITUTE      2GERKFK
+#METHOD         TOF
+#STATUS         SPSDD
+#REACTION       62-SM-150(N,G)62-SM-151,,SIG,,AV
+#C4Reaction     (N,G),SIG,,AV
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           62150            
+#TARGET         62150           [ ]             62-SM-150       [ ] 
+#REAC1          N,G
+#PRODUCT        62-SM-151
+#C4ReaCode      (N,G),SIG,,AV
+#CompNotes      OPERATION...  Value=(Min+Max)/2  Min:EN-MIN, Max:EN-MAX
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0587859(4.0e3) Data[17]*1.0118107(2.1e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 62150   3 102 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN-MIN!EN-MAX,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 62-SM-150(N,G)62-SM-151,,SIG,,AV
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN-MIN!EN-MAX,MONIT,MONIT-ERR];#[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22375005    1.06395     1.06395     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22375005    CS          18          1.01181     1.10642     1.06395     +6.39%      1.10642     [EN-MIN!EN-MAX,MONIT,MONIT-ERR]::au197ng
+#C5DATA         18
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 62150   3 102 S    4000.0   1000.01.28483680.1233191                                       K.Guber*             (93)22375  5 .02608648                  0.1233191 2.03                       9.60     9.60    2.2667   0.03400052.39995  0.048727 1.05878591.0697119
+    1 62150   3 102 S    6250.0   1250.00.9907929.04564821                                       K.Guber*             (93)22375  5 .01779753                  .04564821 1.80                       4.61     4.61    1.72670010.02590051.7818999.032008121.03196841.0565615
+    1 62150   3 102 S    8750.0   1250.00.7820683.02548997                                       K.Guber*             (93)22375  5 .01412721                  .02548997 1.81                       3.26     3.26    1.2157   0.01823551.28655  .023240121.05827921.1126617
+    1 62150   3 102 S   11250.0   1250.00.6424789.01610591                                       K.Guber*             (93)22375  5 .01157218                  .01610591 1.80                       2.51     2.51    1.0667   0.01600051.0866214.019571971.01867581.1102852
+    1 62150   3 102 S   13750.0   1250.00.6579533.01467044                                       K.Guber*             (93)22375  5 .01180948                  .01467044 1.79                       2.23     2.23    0.87800010.01317  0.9700804.017411791.10487511.2317746
+    1 62150   3 102 S   17500.0   2500.00.5401264 8.7892-3                                       K.Guber*             (93)22375  5  9.6740-3                   8.7892-3 1.79                       1.63     1.63    0.7388   0.011082 0.81008  0.01450911.09648071.3724958
+    1 62150   3 102 S   22500.0   2500.00.5111645 7.5042-3                                       K.Guber*             (93)22375  5  9.1372-3                   7.5042-3 1.79                       1.47     1.47    0.6      0.009    0.66385  .011866441.10641661.4766303
+    1 62150   3 102 S   27500.0   2500.00.4031121 5.8983-3                                       K.Guber*             (93)22375  5 0.0071896                   5.8983-3 1.78                       1.46     1.46    0.5708   0.008562 0.60985  .010876821.06841281.4211838
+    1 62150   3 102 S   35000.0   5000.00.3876631.00510987                                       K.Guber*             (93)22375  5  6.9102-3                  .00510987 1.78                       1.32     1.32    0.5004   0.007506 0.54690339.7488-3 1.09293221.6006862
+    1 62150   3 102 S   45000.0   5000.0 0.357986 4.7225-3                                       K.Guber*             (93)22375  5  6.3841-3                   4.7225-3 1.78                       1.32     1.32    0.4333   0.00649950.46001  .008203491.06164311.5561202
+    1 62150   3 102 S   55000.0   5000.00.3328429 4.3823-3                                       K.Guber*             (93)22375  5  5.9294-3                   4.3823-3 1.78                       1.32     1.32    0.3896   0.005844 0.42447  .007561691.089502 1.5938675
+    1 62150   3 102 S   70000.0  10000.00.3093827 3.8663-3                                       K.Guber*             (93)22375  5  5.5099-3                   3.8663-3 1.78                       1.25     1.25    0.3494   0.005241 0.38036  6.7740-3 1.088609 1.7005376
+    1 62150   3 102 S   90000.0  10000.00.2925789 4.0803-3                                       K.Guber*             (93)22375  5  5.5164-3                   4.0803-3 1.89                       1.39     1.39    0.2983   0.00447450.327    .006165421.09621181.9109768
+    1 62150   3 102 S  110000.0  10000.00.2775568 4.1222-3                                       K.Guber*             (93)22375  5  5.2996-3                   4.1222-3 1.91                       1.49     1.49    0.2901   0.00435150.30674  .005856861.05735931.7448572
+    1 62150   3 102 S  135000.0  15000.00.2755208 0.004113                                       K.Guber*             (93)22375  5  5.2771-3                   0.004113 1.92                       1.49     1.49    0.2741   0.00411150.28617  5.4811-3 1.044035 1.7317178
+    1 62150   3 102 S  162500.0  12500.00.2667983.00526487                                       K.Guber*             (93)22375  5  6.1619-3                  .00526487 2.31                       1.97     1.97    0.2637   3.9555-3 0.27206  .006283421.03170252.262125
+    1 62150   3 102 S  187500.0  12500.00.2636084 4.6553-3                                       K.Guber*             (93)22375  5  5.6284-3                   4.6553-3 2.14                       1.77     1.77    0.2526   0.003789 0.261025 5.5732-3 1.03335312.027668
+    1 62150   3 102 S  212500.0  12500.00.2584164 4.5906-3                                       K.Guber*             (93)22375  5  5.2933-3                   4.5906-3 2.05                       1.78     1.78    0.2485   0.00372750.251435 5.1503-3 1.01181071.634016
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         1           1.0E-5      2.0E7       0.05        
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           18          18
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4000.       4000.       1.28484     9.6          100
+6250.       6250.       0.990793    4.61          7 100
+8750.       8750.       0.782068    3.26          8 19 100
+11250.      11250.      0.642479    2.51         10 22 36 100
+13750.      13750.      0.657953    2.23         10 23 37 54 100
+17500.      17500.      0.540126    1.79         11 25 42 61 74 100
+22500.      22500.      0.511164    1.79         11 21 37 54 67 91 100
+27500.      27500.      0.403112    1.78         11 19 33 49 61 84 93 100
+35000.      35000.      0.387663    1.78         11 19 28 43 54 76 84 91 100
+45000.      45000.      0.357986    1.78         11 19 28 37 47 67 76 83 91 100
+55000.      55000.      0.332843    1.78         11 19 28 36 41 60 68 76 84 93 100
+70000.      70000.      0.309383    1.78         11 19 28 36 40 51 60 67 76 84 91 100
+90000.      90000.      0.292579    1.89         11 19 28 36 40 50 51 58 67 76 83 91 100
+110000.     110000.     0.277557    1.91         11 19 28 36 40 50 50 51 60 68 76 84 93 100
+135000.     135000.     0.275521    1.92         11 19 28 36 40 50 50 50 52 61 68 77 86 93 100
+162500.     162500.     0.266798    2.31         11 19 28 36 40 50 50 50 50 55 62 70 79 86 93 100
+187500.     187500.     0.263608    2.14         11 19 28 36 40 50 50 50 50 50 57 65 74 81 88 95 100
+212500.     212500.     0.258416    2.05         11 19 28 36 40 50 50 50 50 50 52 61 70 77 84 91 96 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22375005 
+#DATASET        22375006   20121217
+#SUBENT         22375006   20121217
+#ENTRY          22375      20121217
+#TITLE          Experimental determination of the stellar neutron
+#+               capture cross sections of 148-Sm and 150-Sm and
+#+               the consequences for the S-process
+#AUTHORS        K.Guber
+#AUTHOR1        K.Guber
+#YEAR           1993
+#X4REF1         R,KFK-5170,199305
+#REFERENCE1     Rept: Kernforschungszentrum Karlsruhe Reports, No.5170 (1993)
+#DATE           20121217
+#INSTITUTE      2GERKFK
+#METHOD         TOF
+#STATUS         SPSDD
+#REACTION       62-SM-152(N,G)62-SM-153,,SIG,,AV
+#C4Reaction     (N,G),SIG,,AV
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           62152            
+#TARGET         62152           [ ]             62-SM-152       [ ] 
+#REAC1          N,G
+#PRODUCT        62-SM-153
+#C4ReaCode      (N,G),SIG,,AV
+#CompNotes      OPERATION...  Value=(Min+Max)/2  Min:EN-MIN, Max:EN-MAX
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0587859(4.0e3) Data[17]*1.0118107(2.1e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 62152   3 102 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN-MIN!EN-MAX,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 62-SM-152(N,G)62-SM-153,,SIG,,AV
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN-MIN!EN-MAX,MONIT,MONIT-ERR];#[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22375006    1.06395     1.06395     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22375006    CS          18          1.01181     1.10642     1.06395     +6.39%      1.10642     [EN-MIN!EN-MAX,MONIT,MONIT-ERR]::au197ng
+#C5DATA         18
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 62152   3 102 S    4000.0   1000.01.56901490.1180753                                       K.Guber*             (93)22375  6 .03185624                  0.1180753 2.03                       7.53     7.53    2.2667   0.03400052.39995  0.048727 1.05878591.076734
+    1 62152   3 102 S    6250.0   1250.01.0551877 0.042453                                       K.Guber*             (93)22375  6 .01895425                   0.042453 1.80                       4.02     4.02    1.72670010.02590051.7818999.032008121.03196841.0645852
+    1 62152   3 102 S    8750.0   1250.00.9052521.02608485                                       K.Guber*             (93)22375  6 .01635239                  .02608485 1.81                       2.88     2.88    1.2157   0.01823551.28655  .023240121.05827921.1294196
+    1 62152   3 102 S   11250.0   1250.00.7452632.01665499                                       K.Guber*             (93)22375  6 .01342351                  .01665499 1.80                       2.23     2.23    1.0667   0.01600051.0866214.019571971.01867581.1382579
+    1 62152   3 102 S   13750.0   1250.00.7113186.01459781                                       K.Guber*             (93)22375  6 .01276732                  .01459781 1.79                       2.05     2.05    0.87800010.01317  0.9700804.017411791.10487511.2596914
+    1 62152   3 102 S   17500.0   2500.00.6342045 9.8208-3                                       K.Guber*             (93)22375  6 .01135905                   9.8208-3 1.79                       1.55     1.55    0.7388   0.011082 0.81008  0.01450911.09648071.4149405
+    1 62152   3 102 S   22500.0   2500.0 0.595584 8.7436-3                                       K.Guber*             (93)22375  6 .01064617                   8.7436-3 1.79                       1.47     1.47    0.6      0.009    0.66385  .011866441.10641661.4766303
+    1 62152   3 102 S   27500.0   2500.00.5180734 7.1991-3                                       K.Guber*             (93)22375  6 .00923996                   7.1991-3 1.78                       1.39     1.39    0.5708   0.008562 0.60985  .010876821.06841281.4846541
+    1 62152   3 102 S   35000.0   5000.00.4828575 6.3646-3                                       K.Guber*             (93)22375  6  8.6071-3                   6.3646-3 1.78                       1.32     1.32    0.5004   0.007506 0.54690339.7488-3 1.09293221.6006862
+    1 62152   3 102 S   45000.0   5000.00.4080956 5.3836-3                                       K.Guber*             (93)22375  6  7.2777-3                   5.3836-3 1.78                       1.32     1.32    0.4333   0.00649950.46001  .008203491.06164311.5561203
+    1 62152   3 102 S   55000.0   5000.00.3983219 5.2445-3                                       K.Guber*             (93)22375  6  7.0959-3                   5.2445-3 1.78                       1.32     1.32    0.3896   0.005844 0.42447  .007561691.089502 1.5938677
+    1 62152   3 102 S   70000.0  10000.00.3523827 4.6372-3                                       K.Guber*             (93)22375  6  6.2757-3                   4.6372-3 1.78                       1.32     1.32    0.3494   0.005241 0.38036  6.7740-3 1.088609 1.5917348
+    1 62152   3 102 S   90000.0  10000.00.3227248.00469331                                       K.Guber*             (93)22375  6  6.0848-3                  .00469331 1.89                       1.45     1.45    0.2983   0.00447450.327    .006165421.09621181.7713279
+    1 62152   3 102 S  110000.0  10000.00.3026162 4.4944-3                                       K.Guber*             (93)22375  6  5.7781-3                   4.4944-3 1.91                       1.49     1.49    0.2901   0.00435150.30674  .005856861.05735931.7448573
+    1 62152   3 102 S  135000.0  15000.00.2335506 3.4865-3                                       K.Guber*             (93)22375  6  4.4733-3                   3.4865-3 1.92                       1.49     1.49    0.2741   0.00411150.28617  5.4811-3 1.044035 1.7317178
+    1 62152   3 102 S  162500.0  12500.00.1882857 3.7155-3                                       K.Guber*             (93)22375  6  4.3486-3                   3.7155-3 2.31                       1.97     1.97    0.2637   3.9555-3 0.27206  .006283421.03170252.262125
+    1 62152   3 102 S  187500.0  12500.00.1679199 3.0545-3                                       K.Guber*             (93)22375  6  3.5853-3                   3.0545-3 2.14                       1.82     1.82    0.2526   0.003789 0.261025 5.5732-3 1.03335311.8796673
+    1 62152   3 102 S  212500.0  12500.00.1533905 2.8224-3                                       K.Guber*             (93)22375  6 .00314197                   2.8224-3 2.05                       1.84     1.84    0.2485   0.00372750.251435 5.1503-3 1.01181071.5514722
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         1           1.0E-5      2.0E7       0.05        
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           18          18
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4000.       4000.       1.56902     7.53         100
+6250.       6250.       1.05519     4.02         10 100
+8750.       8750.       0.905252    2.88         12 25 100
+11250.      11250.      0.745263    2.23         14 29 46 100
+13750.      13750.      0.711319    2.05         13 28 46 65 100
+17500.      17500.      0.634205    1.79         13 28 47 68 80 100
+22500.      22500.      0.595584    1.79         13 24 42 61 72 91 100
+27500.      27500.      0.518073    1.78         13 22 37 55 66 84 93 100
+35000.      35000.      0.482857    1.78         13 22 32 48 59 76 84 91 100
+45000.      45000.      0.408096    1.78         13 22 31 41 51 67 76 83 91 100
+55000.      55000.      0.398322    1.78         13 22 31 40 45 60 68 76 84 93 100
+70000.      70000.      0.352383    1.78         13 22 31 40 44 51 60 67 76 84 91 100
+90000.      90000.      0.322725    1.89         13 22 31 40 44 50 51 58 67 76 83 91 100
+110000.     110000.     0.302616    1.91         13 22 31 40 44 50 50 51 60 68 76 84 93 100
+135000.     135000.     0.233551    1.92         13 22 31 40 44 50 50 50 52 61 68 77 86 93 100
+162500.     162500.     0.188286    2.31         13 22 31 40 44 50 50 50 50 55 62 70 79 86 93 100
+187500.     187500.     0.16792     2.14         13 22 31 40 44 50 50 50 50 50 57 65 74 81 88 95 100
+212500.     212500.     0.15339     2.05         13 22 31 40 44 50 50 50 50 50 52 61 70 77 84 91 96 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22375006 
+#DATASET        22375007   20121217
+#SUBENT         22375007   20121217
+#ENTRY          22375      20121217
+#TITLE          Experimental determination of the stellar neutron
+#+               capture cross sections of 148-Sm and 150-Sm and
+#+               the consequences for the S-process
+#AUTHORS        K.Guber
+#AUTHOR1        K.Guber
+#YEAR           1993
+#X4REF1         R,KFK-5170,199305
+#REFERENCE1     Rept: Kernforschungszentrum Karlsruhe Reports, No.5170 (1993)
+#DATE           20121217
+#INSTITUTE      2GERKFK
+#METHOD         TOF
+#STATUS         SPSDD
+#DERIVED        3  Derived data in EXFOR
+#REACTION       62-SM-147(N,G)62-SM-148,,SIG,,MXW,DERIV
+#C4Reaction     (N,G),SIG,,MXW
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           62147            
+#TARGET         62147           [ ]             62-SM-147       [ ] 
+#REAC1          N,G
+#PRODUCT        62-SM-148
+#C4ReaCode      (N,G),SIG,,MXW
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 62147   3 102 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         13
+#C.M.Flag       0000                                                                            
+#Headers                    SpT     dSpT     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 62147   3 102 S   10000.0         1.9670001    0.043                                       K.Guber              (93)22375  7                                0.043                            2.19     2.19
+    1 62147   3 102 S   12000.0         1.7400001    0.032                                       K.Guber              (93)22375  7                                0.032                            1.84     1.84
+    1 62147   3 102 S   20000.0         1.2490001    0.015                                       K.Guber              (93)22375  7                                0.015                            1.20     1.20
+    1 62147   3 102 S   25000.0             1.088    0.012                                       K.Guber              (93)22375  7                                0.012                            1.10     1.10
+    1 62147   3 102 S   30000.0         0.9750001     0.01                                       K.Guber              (93)22375  7                                 0.01                            1.03     1.03
+    1 62147   3 102 S   40000.0             0.826    0.007                                       K.Guber              (93)22375  7                                0.007                            0.85     0.85
+    1 62147   3 102 S   50000.0              0.73    0.006                                       K.Guber              (93)22375  7                                0.006                            0.82     0.82
+    1 62147   3 102 S   52000.0             0.715    0.006                                       K.Guber              (93)22375  7                                0.006                            0.84     0.84
+    1 62147   3 102 S   60000.0             0.663    0.005                                       K.Guber              (93)22375  7                                0.005                            0.75     0.75
+    1 62147   3 102 S   70000.0             0.613    0.005                                       K.Guber              (93)22375  7                                0.005                            0.82     0.82
+    1 62147   3 102 S   80000.0         0.5740001    0.005                                       K.Guber              (93)22375  7                                0.005                            0.87     0.87
+    1 62147   3 102 S   90000.0         0.5420001    0.005                                       K.Guber              (93)22375  7                                0.005                            0.92     0.92
+    1 62147   3 102 S  100000.0             0.515    0.006                                       K.Guber              (93)22375  7                                0.006                            1.17     1.17
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         1           1.0E-5      2.0E7       0.05        
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           13          13
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+10000.      10000.      1.967       2.19         100
+12000.      12000.      1.74        1.84         47 100
+20000.      20000.      1.249       1.2          38 41 100
+25000.      25000.      1.088       1.1          34 37 46 100
+30000.      30000.      0.975       1.03         31 34 43 47 100
+40000.      40000.      0.826       0.85         26 29 38 42 45 100
+50000.      50000.      0.73        0.82         25 25 34 38 41 46 100
+52000.      52000.      0.715       0.84         25 25 33 37 40 45 49 100
+60000.      60000.      0.663       0.75         25 25 31 35 38 43 47 47 100
+70000.      70000.      0.613       0.82         25 25 28 32 35 40 44 45 47 100
+80000.      80000.      0.574       0.87         25 25 26 29 33 38 42 42 45 48 100
+90000.      90000.      0.542       0.92         25 25 25 27 31 36 40 40 43 46 48 100
+100000.     100000.     0.515       1.17         25 25 25 26 29 34 38 38 41 44 46 48 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22375007 
+#DATASET        22375008   20121217
+#SUBENT         22375008   20121217
+#ENTRY          22375      20121217
+#TITLE          Experimental determination of the stellar neutron
+#+               capture cross sections of 148-Sm and 150-Sm and
+#+               the consequences for the S-process
+#AUTHORS        K.Guber
+#AUTHOR1        K.Guber
+#YEAR           1993
+#X4REF1         R,KFK-5170,199305
+#REFERENCE1     Rept: Kernforschungszentrum Karlsruhe Reports, No.5170 (1993)
+#DATE           20121217
+#INSTITUTE      2GERKFK
+#METHOD         TOF
+#STATUS         SPSDD
+#DERIVED        3  Derived data in EXFOR
+#REACTION       62-SM-148(N,G)62-SM-149,,SIG,,MXW,DERIV
+#C4Reaction     (N,G),SIG,,MXW
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           62148            
+#TARGET         62148           [ ]             62-SM-148       [ ] 
+#REAC1          N,G
+#PRODUCT        62-SM-149
+#C4ReaCode      (N,G),SIG,,MXW
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 62148   3 102 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         13
+#C.M.Flag       0000                                                                            
+#Headers                    SpT     dSpT     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 62148   3 102 S   10000.0              0.42    0.008                                       K.Guber              (93)22375  8                                0.008                            1.90     1.90
+    1 62148   3 102 S   12000.0             0.378    0.006                                       K.Guber              (93)22375  8                                0.006                            1.59     1.59
+    1 62148   3 102 S   20000.0              0.29    0.003                                       K.Guber              (93)22375  8                                0.003                            1.03     1.03
+    1 62148   3 102 S   25000.0             0.263    0.002                                       K.Guber              (93)22375  8                                0.002                            0.76     0.76
+    1 62148   3 102 S   30000.0             0.244    0.002                                       K.Guber              (93)22375  8                                0.002                            0.82     0.82
+    1 62148   3 102 S   40000.0              0.22    0.002                                       K.Guber              (93)22375  8                                0.002                            0.91     0.91
+    1 62148   3 102 S   50000.0             0.206    0.002                                       K.Guber              (93)22375  8                                0.002                            0.97     0.97
+    1 62148   3 102 S   52000.0             0.204    0.002                                       K.Guber              (93)22375  8                                0.002                            0.98     0.98
+    1 62148   3 102 S   60000.0             0.196    0.002                                       K.Guber              (93)22375  8                                0.002                            1.02     1.02
+    1 62148   3 102 S   70000.0              0.19    0.002                                       K.Guber              (93)22375  8                                0.002                            1.05     1.05
+    1 62148   3 102 S   80000.0             0.185    0.002                                       K.Guber              (93)22375  8                                0.002                            1.08     1.08
+    1 62148   3 102 S   90000.0             0.181    0.002                                       K.Guber              (93)22375  8                                0.002                            1.10     1.10
+    1 62148   3 102 S  100000.0             0.177    0.002                                       K.Guber              (93)22375  8                                0.002                            1.13     1.13
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         1           1.0E-5      2.0E7       0.05        
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           13          13
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+10000.      10000.      0.42        1.9          100
+12000.      12000.      0.378       1.59         47 100
+20000.      20000.      0.29        1.03         38 41 100
+25000.      25000.      0.263       0.76         34 37 46 100
+30000.      30000.      0.244       0.82         31 34 43 47 100
+40000.      40000.      0.22        0.91         26 29 38 42 45 100
+50000.      50000.      0.206       0.97         25 25 34 38 41 46 100
+52000.      52000.      0.204       0.98         25 25 33 37 40 45 49 100
+60000.      60000.      0.196       1.02         25 25 31 35 38 43 47 47 100
+70000.      70000.      0.19        1.05         25 25 28 32 35 40 44 45 47 100
+80000.      80000.      0.185       1.08         25 25 26 29 33 38 42 42 45 48 100
+90000.      90000.      0.181       1.1          25 25 25 27 31 36 40 40 43 46 48 100
+100000.     100000.     0.177       1.13         25 25 25 26 29 34 38 38 41 44 46 48 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22375008 
+#DATASET        22375009   20121217
+#SUBENT         22375009   20121217
+#ENTRY          22375      20121217
+#TITLE          Experimental determination of the stellar neutron
+#+               capture cross sections of 148-Sm and 150-Sm and
+#+               the consequences for the S-process
+#AUTHORS        K.Guber
+#AUTHOR1        K.Guber
+#YEAR           1993
+#X4REF1         R,KFK-5170,199305
+#REFERENCE1     Rept: Kernforschungszentrum Karlsruhe Reports, No.5170 (1993)
+#DATE           20121217
+#INSTITUTE      2GERKFK
+#METHOD         TOF
+#STATUS         SPSDD
+#DERIVED        3  Derived data in EXFOR
+#REACTION       62-SM-149(N,G)62-SM-150,,SIG,,MXW,DERIV
+#C4Reaction     (N,G),SIG,,MXW
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           62149            
+#TARGET         62149           [ ]             62-SM-149       [ ] 
+#REAC1          N,G
+#PRODUCT        62-SM-150
+#C4ReaCode      (N,G),SIG,,MXW
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 62149   3 102 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         13
+#C.M.Flag       0000                                                                            
+#Headers                    SpT     dSpT     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 62149   3 102 S   10000.0         4.0350003    0.083                                       K.Guber              (93)22375  9                                0.083                            2.06     2.06
+    1 62149   3 102 S   12000.0         3.5200002    0.061                                       K.Guber              (93)22375  9                                0.061                            1.73     1.73
+    1 62149   3 102 S   20000.0              2.42    0.028                                       K.Guber              (93)22375  9                                0.028                            1.16     1.16
+    1 62149   3 102 S   25000.0             2.068    0.021                                       K.Guber              (93)22375  9                                0.021                            1.02     1.02
+    1 62149   3 102 S   30000.0         1.8280001    0.017                                       K.Guber              (93)22375  9                                0.017                            0.93     0.93
+    1 62149   3 102 S   40000.0         1.5220001    0.013                                       K.Guber              (93)22375  9                                0.013                            0.85     0.85
+    1 62149   3 102 S   50000.0             1.335     0.01                                       K.Guber              (93)22375  9                                 0.01                            0.75     0.75
+    1 62149   3 102 S   52000.0         1.3060001     0.01                                       K.Guber              (93)22375  9                                 0.01                            0.77     0.77
+    1 62149   3 102 S   60000.0         1.2080001    0.009                                       K.Guber              (93)22375  9                                0.009                            0.75     0.75
+    1 62149   3 102 S   70000.0             1.116    0.009                                       K.Guber              (93)22375  9                                0.009                            0.81     0.81
+    1 62149   3 102 S   80000.0         1.0450001    0.009                                       K.Guber              (93)22375  9                                0.009                            0.86     0.86
+    1 62149   3 102 S   90000.0             0.987     0.01                                       K.Guber              (93)22375  9                                 0.01                            1.01     1.01
+    1 62149   3 102 S  100000.0         0.9390001    0.011                                       K.Guber              (93)22375  9                                0.011                            1.17     1.17
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         1           1.0E-5      2.0E7       0.05        
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           13          13
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+10000.      10000.      4.035       2.06         100
+12000.      12000.      3.52        1.73         47 100
+20000.      20000.      2.42        1.16         38 41 100
+25000.      25000.      2.068       1.02         34 37 46 100
+30000.      30000.      1.828       0.93         31 34 43 47 100
+40000.      40000.      1.522       0.85         26 29 38 42 45 100
+50000.      50000.      1.335       0.75         25 25 34 38 41 46 100
+52000.      52000.      1.306       0.77         25 25 33 37 40 45 49 100
+60000.      60000.      1.208       0.75         25 25 31 35 38 43 47 47 100
+70000.      70000.      1.116       0.81         25 25 28 32 35 40 44 45 47 100
+80000.      80000.      1.045       0.86         25 25 26 29 33 38 42 42 45 48 100
+90000.      90000.      0.987       1.01         25 25 25 27 31 36 40 40 43 46 48 100
+100000.     100000.     0.939       1.17         25 25 25 26 29 34 38 38 41 44 46 48 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22375009 
+#DATASET        22375010   20121217
+#SUBENT         22375010   20121217
+#ENTRY          22375      20121217
+#TITLE          Experimental determination of the stellar neutron
+#+               capture cross sections of 148-Sm and 150-Sm and
+#+               the consequences for the S-process
+#AUTHORS        K.Guber
+#AUTHOR1        K.Guber
+#YEAR           1993
+#X4REF1         R,KFK-5170,199305
+#REFERENCE1     Rept: Kernforschungszentrum Karlsruhe Reports, No.5170 (1993)
+#DATE           20121217
+#INSTITUTE      2GERKFK
+#METHOD         TOF
+#STATUS         SPSDD
+#DERIVED        3  Derived data in EXFOR
+#REACTION       62-SM-150(N,G)62-SM-151,,SIG,,MXW,DERIV
+#C4Reaction     (N,G),SIG,,MXW
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           62150            
+#TARGET         62150           [ ]             62-SM-150       [ ] 
+#REAC1          N,G
+#PRODUCT        62-SM-151
+#C4ReaCode      (N,G),SIG,,MXW
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 62150   3 102 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         13
+#C.M.Flag       0000                                                                            
+#Headers                    SpT     dSpT     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 62150   3 102 S   10000.0             0.742    0.016                                       K.Guber              (93)22375 10                                0.016                            2.16     2.16
+    1 62150   3 102 S   12000.0             0.665    0.012                                       K.Guber              (93)22375 10                                0.012                            1.80     1.80
+    1 62150   3 102 S   20000.0         0.5050001    0.006                                       K.Guber              (93)22375 10                                0.006                            1.19     1.19
+    1 62150   3 102 S   25000.0             0.455    0.004                                       K.Guber              (93)22375 10                                0.004                            0.88     0.88
+    1 62150   3 102 S   30000.0             0.422    0.004                                       K.Guber              (93)22375 10                                0.004                            0.95     0.95
+    1 62150   3 102 S   40000.0              0.38    0.003                                       K.Guber              (93)22375 10                                0.003                            0.79     0.79
+    1 62150   3 102 S   50000.0             0.354    0.002                                       K.Guber              (93)22375 10                                0.002                            0.56     0.56
+    1 62150   3 102 S   52000.0              0.35    0.002                                       K.Guber              (93)22375 10                                0.002                            0.57     0.57
+    1 62150   3 102 S   60000.0             0.336    0.002                                       K.Guber              (93)22375 10                                0.002                            0.60     0.60
+    1 62150   3 102 S   70000.0             0.323    0.002                                       K.Guber              (93)22375 10                                0.002                            0.62     0.62
+    1 62150   3 102 S   80000.0             0.312    0.003                                       K.Guber              (93)22375 10                                0.003                            0.96     0.96
+    1 62150   3 102 S   90000.0             0.302    0.003                                       K.Guber              (93)22375 10                                0.003                            0.99     0.99
+    1 62150   3 102 S  100000.0             0.293    0.004                                       K.Guber              (93)22375 10                                0.004                            1.37     1.37
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         1           1.0E-5      2.0E7       0.05        
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           13          13
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+10000.      10000.      0.742       2.16         100
+12000.      12000.      0.665       1.8          47 100
+20000.      20000.      0.505       1.19         38 41 100
+25000.      25000.      0.455       0.88         34 37 46 100
+30000.      30000.      0.422       0.95         31 34 43 47 100
+40000.      40000.      0.38        0.79         26 29 38 42 45 100
+50000.      50000.      0.354       0.56         25 25 34 38 41 46 100
+52000.      52000.      0.35        0.57         25 25 33 37 40 45 49 100
+60000.      60000.      0.336       0.6          25 25 31 35 38 43 47 47 100
+70000.      70000.      0.323       0.62         25 25 28 32 35 40 44 45 47 100
+80000.      80000.      0.312       0.96         25 25 26 29 33 38 42 42 45 48 100
+90000.      90000.      0.302       0.99         25 25 25 27 31 36 40 40 43 46 48 100
+100000.     100000.     0.293       1.37         25 25 25 26 29 34 38 38 41 44 46 48 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22375010 
+#DATASET        22375011   20121217
+#SUBENT         22375011   20121217
+#ENTRY          22375      20121217
+#TITLE          Experimental determination of the stellar neutron
+#+               capture cross sections of 148-Sm and 150-Sm and
+#+               the consequences for the S-process
+#AUTHORS        K.Guber
+#AUTHOR1        K.Guber
+#YEAR           1993
+#X4REF1         R,KFK-5170,199305
+#REFERENCE1     Rept: Kernforschungszentrum Karlsruhe Reports, No.5170 (1993)
+#DATE           20121217
+#INSTITUTE      2GERKFK
+#METHOD         TOF
+#STATUS         SPSDD
+#DERIVED        3  Derived data in EXFOR
+#REACTION       62-SM-152(N,G)62-SM-153,,SIG,,MXW,DERIV
+#C4Reaction     (N,G),SIG,,MXW
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           62152            
+#TARGET         62152           [ ]             62-SM-152       [ ] 
+#REAC1          N,G
+#PRODUCT        62-SM-153
+#C4ReaCode      (N,G),SIG,,MXW
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 62152   3 102 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         13
+#C.M.Flag       0000                                                                            
+#Headers                    SpT     dSpT     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 62152   3 102 S   10000.0             0.882    0.019                                       K.Guber              (93)22375 11                                0.019                            2.15     2.15
+    1 62152   3 102 S   12000.0             0.789    0.014                                       K.Guber              (93)22375 11                                0.014                            1.77     1.77
+    1 62152   3 102 S   20000.0             0.594    0.007                                       K.Guber              (93)22375 11                                0.007                            1.18     1.18
+    1 62152   3 102 S   25000.0              0.53    0.005                                       K.Guber              (93)22375 11                                0.005                            0.94     0.94
+    1 62152   3 102 S   30000.0             0.483    0.004                                       K.Guber              (93)22375 11                                0.004                            0.83     0.83
+    1 62152   3 102 S   40000.0             0.418    0.003                                       K.Guber              (93)22375 11                                0.003                            0.72     0.72
+    1 62152   3 102 S   50000.0             0.372    0.003                                       K.Guber              (93)22375 11                                0.003                            0.81     0.81
+    1 62152   3 102 S   52000.0             0.365    0.003                                       K.Guber              (93)22375 11                                0.003                            0.82     0.82
+    1 62152   3 102 S   60000.0             0.338    0.003                                       K.Guber              (93)22375 11                                0.003                            0.89     0.89
+    1 62152   3 102 S   70000.0             0.311    0.002                                       K.Guber              (93)22375 11                                0.002                            0.64     0.64
+    1 62152   3 102 S   80000.0             0.289    0.002                                       K.Guber              (93)22375 11                                0.002                            0.69     0.69
+    1 62152   3 102 S   90000.0             0.271    0.002                                       K.Guber              (93)22375 11                                0.002                            0.74     0.74
+    1 62152   3 102 S  100000.0             0.255    0.003                                       K.Guber              (93)22375 11                                0.003                            1.18     1.18
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         1           1.0E-5      2.0E7       0.05        
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           13          13
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+10000.      10000.      0.882       2.15         100
+12000.      12000.      0.789       1.77         47 100
+20000.      20000.      0.594       1.18         38 41 100
+25000.      25000.      0.53        0.94         34 37 46 100
+30000.      30000.      0.483       0.83         31 34 43 47 100
+40000.      40000.      0.418       0.72         26 29 38 42 45 100
+50000.      50000.      0.372       0.81         25 25 34 38 41 46 100
+52000.      52000.      0.365       0.82         25 25 33 37 40 45 49 100
+60000.      60000.      0.338       0.89         25 25 31 35 38 43 47 47 100
+70000.      70000.      0.311       0.64         25 25 28 32 35 40 44 45 47 100
+80000.      80000.      0.289       0.69         25 25 26 29 33 38 42 42 45 48 100
+90000.      90000.      0.271       0.74         25 25 25 27 31 36 40 40 43 46 48 100
+100000.     100000.     0.255       1.18         25 25 25 26 29 34 38 38 41 44 46 48 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22375011 
+#DATASET        22375012   20121217
+#SUBENT         22375012   20121217
+#ENTRY          22375      20121217
+#TITLE          Experimental determination of the stellar neutron
+#+               capture cross sections of 148-Sm and 150-Sm and
+#+               the consequences for the S-process
+#AUTHORS        K.Guber
+#AUTHOR1        K.Guber
+#YEAR           1993
+#X4REF1         R,KFK-5170,199305
+#REFERENCE1     Rept: Kernforschungszentrum Karlsruhe Reports, No.5170 (1993)
+#DATE           20121217
+#INSTITUTE      2GERKFK
+#METHOD         TOF
+#STATUS         SPSDD
+#REACTION       (62-SM-148(N,G)62-SM-149,,SIG,,MXW)/(62-SM-150(N,G)62-SM-151,,SIG,,MXW)
+#C4Reaction     ((N,G),SIG,,MXW)/((N,G),SIG,,MXW)
+#ReactionType   Ratio
+#MF             203
+#MT             102
+#PROJ           1
+#TARG           62148            
+#TARGET         62148           [ ]             62-SM-148       [ ] 
+#REAC1          N,G
+#PRODUCT        62-SM-149
+#C4ReaCode      ((N,G),SIG,,MXW)/((N,G),SIG,,MXW)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 62148 203 102 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         13
+#C.M.Flag       0000                                                                            
+#Headers                    SpT     dSpT     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 62148 203 102 S   10000.0             0.567    0.016    102.9  62150.9                     K.Guber              (93)22375 12                                0.016                            2.82     2.82
+    1 62148 203 102 S   12000.0              0.57    0.013    102.9  62150.9                     K.Guber              (93)22375 12                                0.013                            2.28     2.28
+    1 62148 203 102 S   20000.0             0.576    0.008    102.9  62150.9                     K.Guber              (93)22375 12                                0.008                            1.39     1.39
+    1 62148 203 102 S   25000.0             0.578    0.006    102.9  62150.9                     K.Guber              (93)22375 12                                0.006                            1.04     1.04
+    1 62148 203 102 S   30000.0             0.579    0.006    102.9  62150.9                     K.Guber              (93)22375 12                                0.006                            1.04     1.04
+    1 62148 203 102 S   40000.0             0.579    0.005    102.9  62150.9                     K.Guber              (93)22375 12                                0.005                            0.86     0.86
+    1 62148 203 102 S   50000.0             0.581    0.005    102.9  62150.9                     K.Guber              (93)22375 12                                0.005                            0.86     0.86
+    1 62148 203 102 S   52000.0             0.582    0.005    102.9  62150.9                     K.Guber              (93)22375 12                                0.005                            0.86     0.86
+    1 62148 203 102 S   60000.0             0.585    0.005    102.9  62150.9                     K.Guber              (93)22375 12                                0.005                            0.85     0.85
+    1 62148 203 102 S   70000.0             0.589    0.005    102.9  62150.9                     K.Guber              (93)22375 12                                0.005                            0.85     0.85
+    1 62148 203 102 S   80000.0             0.595    0.007    102.9  62150.9                     K.Guber              (93)22375 12                                0.007                            1.18     1.18
+    1 62148 203 102 S   90000.0             0.601    0.008    102.9  62150.9                     K.Guber              (93)22375 12                                0.008                            1.33     1.33
+    1 62148 203 102 S  100000.0             0.606     0.01    102.9  62150.9                     K.Guber              (93)22375 12                                 0.01                            1.65     1.65
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         1           1.0E-5      2.0E7       0.05        
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           13          13
+#EnMin(eV)  EnMax(eV)   Data(no-dim)Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+10000.      10000.      0.567       2.82         100
+12000.      12000.      0.57        2.28         47 100
+20000.      20000.      0.576       1.39         38 41 100
+25000.      25000.      0.578       1.04         34 37 46 100
+30000.      30000.      0.579       1.04         31 34 43 47 100
+40000.      40000.      0.579       0.86         26 29 38 42 45 100
+50000.      50000.      0.581       0.86         25 25 34 38 41 46 100
+52000.      52000.      0.582       0.86         25 25 33 37 40 45 49 100
+60000.      60000.      0.585       0.85         25 25 31 35 38 43 47 47 100
+70000.      70000.      0.589       0.85         25 25 28 32 35 40 44 45 47 100
+80000.      80000.      0.595       1.18         25 25 26 29 33 38 42 42 45 48 100
+90000.      90000.      0.601       1.33         25 25 25 27 31 36 40 40 43 46 48 100
+100000.     100000.     0.606       1.65         25 25 25 26 29 34 38 38 41 44 46 48 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22375012 
+#/C5M.2.3       1               11              11              0               168             

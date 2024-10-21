@@ -1,0 +1,70 @@
+#C5.2.3
+#DATASET        22416002   20211228
+#SUBENT         22416002   20211228
+#ENTRY          22416      20211228
+#TITLE          Direct neutron capture of 48Ca at kT=52 keV
+#AUTHORS        P.Mohr,H.Oberhummer,H.Beer,W.Rochow,V.Koelle,
+#+               G.Staudt,P.V.Sedyshev,Yu.P.Popov
+#AUTHOR1        P.Mohr+
+#YEAR           1997
+#X4REF1         J,PR/C,56,1154,1997
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.56, p.1154 (1997)
+#DATE           20211228
+#INSTITUTE      2AUSTHV,2GERKFK,2GERTUE,4ZZZDUB
+#METHOD         ACTIV
+#REACTION       20-CA-48(N,G)20-CA-49,,SIG,,MXW
+#C4Reaction     (N,G),SIG,,MXW
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           20048            
+#TARGET         20048           [ ]             20-CA-48        [ ] 
+#REAC1          N,G
+#PRODUCT        20-CA-49
+#C4ReaCode      (N,G),SIG,,MXW
+#CompNotes      ERR-ANALYS:(ERR-1,,5.)        ADDED AS COMMON:ERR-1,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-3,1.,10.)     ADDED AS COMMON:ERR-3,PER-CENT=1.0%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=3.48%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.126%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 20048   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 20-CA-48(N,G)20-CA-49,,SIG,,MXW
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
+#+               #[2]#DECAY-MON  (79-AU-198-G,2.69D,DG,411.8,0.9550) #Im_old=0.955
+#+                a2=0.9562/0.955;            #[2]#DECAY-MON: correction to new 411.80205 keV gamma-yield per decay Au-198-g Im_new=0.9562
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0012566
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22416002    1.00126     -           -           1.00126
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22416002    CS          1           1.00126     1.00126     1.00126     +0.126%     1.00126                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                    SpE     dSpE     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 20048   3 102     78000.0          6.2378-4 4.7059-5                                       P.Mohr*,             (97)22416  2  3.9015-5 9.345E-6          4.7059-5 6.25     1.50              7.54     7.54                                        1.00125661.0012566
+#/C5DATA        0
+#/DATASET       22416002 
+#/C5.2.3        1               1               1               0               1               

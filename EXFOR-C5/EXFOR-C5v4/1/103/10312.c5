@@ -1,0 +1,554 @@
+#C5.2.3
+#DATASET        10312002   20020823
+#SUBENT         10312002   20020823
+#ENTRY          10312      20140624
+#TITLE          Cross Sections for Several (n,2n) Reactions at 14 MeV
+#AUTHORS        D.R.Nethaway
+#AUTHOR1        D.R.Nethaway
+#YEAR           1972
+#X4REF1         J,NP/A,190,635,1972
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.190, p.635 (1972)
+#DATE           20020823
+#INSTITUTE      1USALRL
+#METHOD         ACTIV
+#REACTION       21-SC-45(N,2N)21-SC-44-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           21045            
+#TARGET         21045           [ ]             21-SC-45        [ ] 
+#REAC1          N,2N
+#PRODUCT        21-SC-44-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.68%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9952649(1.4e7) Data[3]*0.9952649(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.865%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 21045   3  16MA ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.117(0.68%)  EN-NRM(eV):1.443E7
+#M1             Point: XS(b)=0.116446(0.39%)  EN-NRM(eV):1.443E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 21-SC-45(N,2N)21-SC-44-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.117
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.43MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (21-SC-45(N,2N)21-SC-44-M,,SIG)
+#+               #[1]#DECAY-DATA (21-SC-44-M,2.44D,DG,271.2,0.860) #Ix_old=0.86
+#+                a1=0.86/0.8675;             #[1]#DECAY-DATA: correction to new 271.241 keV gamma-yield per decay Sc-44-m Ix_new=0.8675
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99135447
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10312002    0.986660    0.995265    0.991354    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10312002    CS          4           0.986660    0.986660    0.986660    -1.33%      1.01352     [MONIT]::al27na
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 21045   3  16MA   1.391E7         .09846871 4.8923-3                                       D.R.Nethaway*        (72)10312  2  4.8923-3                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.98666030.9804279
+    1 21045   3  16MA    1.41E7         0.1101113 5.4708-3                                       D.R.Nethaway*        (72)10312  2  5.4708-3                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.98666030.9804279
+    1 21045   3  16MA   1.439E7         0.1243192 6.1767-3                                       D.R.Nethaway*        (72)10312  2  6.1767-3                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.98666030.980428
+    1 21045   3  16MA    1.49E7         0.1382311 6.8679-3                                       D.R.Nethaway*        (72)10312  2  6.8679-3                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.98666030.9804279
+#/C5DATA        0
+#/DATASET       10312002 
+#DATASET        10312003   20020823
+#SUBENT         10312003   20020823
+#ENTRY          10312      20140624
+#TITLE          Cross Sections for Several (n,2n) Reactions at 14 MeV
+#AUTHORS        D.R.Nethaway
+#AUTHOR1        D.R.Nethaway
+#YEAR           1972
+#X4REF1         J,NP/A,190,635,1972
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.190, p.635 (1972)
+#DATE           20020823
+#INSTITUTE      1USALRL
+#METHOD         ACTIV
+#REACTION       39-Y-89(N,2N)39-Y-88,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           39089            
+#TARGET         39089           [ ]             39-Y-89         [ ] 
+#REAC1          N,2N
+#PRODUCT        39-Y-88
+#C4ReaCode      (N,2N),SIG
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.68%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9952649(1.4e7) Data[15]*0.9952649(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 39089   3  16 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.117(0.68%)  EN-NRM(eV):1.443E7
+#M1             Point: XS(b)=0.116446(0.39%)  EN-NRM(eV):1.443E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 39-Y-89(N,2N)39-Y-88,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.117
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.43MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10312003    0.995265    0.995265    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10312003    CS          16          0.995265    0.995265    0.995265    -0.474%     1.00476     [MONIT]::al27na
+#C5DATA         16
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 39089   3  16 A   1.374E7         0.8091504.04020196                                       D.R.Nethaway*        (72)10312  3 .04020196                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.9889782
+    1 39089   3  16 A   1.374E7         0.8101457.04025141                                       D.R.Nethaway*        (72)10312  3 .04025141                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.9889781
+    1 39089   3  16 A   1.377E7          0.7733210.0384218                                       D.R.Nethaway*        (72)10312  3 0.0384218                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.9889781
+    1 39089   3  16 A     1.4E7         0.8529421.04237771                                       D.R.Nethaway*        (72)10312  3 .04237771                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.9889781
+    1 39089   3  16 A   1.413E7          0.886781.04405897                                       D.R.Nethaway*        (72)10312  3 .04405897                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.9889781
+    1 39089   3  16 A   1.413E7         0.8957384.04450401                                       D.R.Nethaway*        (72)10312  3 .04450401                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.988978
+    1 39089   3  16 A   1.415E7         0.9037006.04489961                                       D.R.Nethaway*        (72)10312  3 .04489961                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.9889781
+    1 39089   3  16 A   1.442E7         0.9922791.04930056                                       D.R.Nethaway*        (72)10312  3 .04930056                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.9889781
+    1 39089   3  16 A   1.452E7         1.0141749.05038843                                       D.R.Nethaway*        (72)10312  3 .05038843                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.9889781
+    1 39089   3  16 A   1.452E7         1.0151703.05043788                                       D.R.Nethaway*        (72)10312  3 .05043788                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.9889781
+    1 39089   3  16 A   1.464E7         1.0330851.05132797                                       D.R.Nethaway*        (72)10312  3 .05132797                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.9889781
+    1 39089   3  16 A   1.481E7         1.0460235.05197081                                       D.R.Nethaway*        (72)10312  3 .05197081                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.988978
+    1 39089   3  16 A   1.483E7         1.0639381.05286088                                       D.R.Nethaway*        (72)10312  3 .05286088                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.9889781
+    1 39089   3  16 A   1.489E7         1.0470188.05202025                                       D.R.Nethaway*        (72)10312  3 .05202025                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.9889781
+    1 39089   3  16 A   1.492E7         1.0539855.05236639                                       D.R.Nethaway*        (72)10312  3 .05236639                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.9889781
+    1 39089   3  16 A   1.496E7         1.0639381.05286088                                       D.R.Nethaway*        (72)10312  3 .05286088                            4.97                                4.97    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.9889781
+#/C5DATA        0
+#/DATASET       10312003 
+#DATASET        10312006   20131029
+#SUBENT         10312006   20131029
+#ENTRY          10312      20140624
+#TITLE          Cross Sections for Several (n,2n) Reactions at 14 MeV
+#AUTHORS        D.R.Nethaway
+#AUTHOR1        D.R.Nethaway
+#YEAR           1972
+#X4REF1         J,NP/A,190,635,1972
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.190, p.635 (1972)
+#DATE           20131029
+#INSTITUTE      1USALRL
+#METHOD         ACTIV
+#REACTION       63-EU-151(N,2N)63-EU-150-G,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           63151            
+#TARGET         63151           [ ]             63-EU-151       [ ] 
+#REAC1          N,2N
+#PRODUCT        63-EU-150-G
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.68%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9952649(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 63151   3  16GA ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.117(0.68%)  EN-NRM(eV):1.443E7
+#M1             Point: XS(b)=0.116446(0.39%)  EN-NRM(eV):1.443E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 63-EU-151(N,2N)63-EU-150-G,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.117
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.43MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10312006    0.995265    0.995265    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10312006    CS          1           0.995265    0.995265    0.995265    -0.474%     1.00476     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 63151   3  16GA    1.48E7         1.17441260.1491442                                       D.R.Nethaway*        (72)10312  6  4.5114-3                  0.1491442 0.38                       12.7     12.7    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.9942949
+#/C5DATA        0
+#/DATASET       10312006 
+#DATASET        10312007   20020823
+#SUBENT         10312007   20020823
+#ENTRY          10312      20140624
+#TITLE          Cross Sections for Several (n,2n) Reactions at 14 MeV
+#AUTHORS        D.R.Nethaway
+#AUTHOR1        D.R.Nethaway
+#YEAR           1972
+#X4REF1         J,NP/A,190,635,1972
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.190, p.635 (1972)
+#DATE           20020823
+#INSTITUTE      1USALRL
+#METHOD         ACTIV
+#REACTION       69-TM-169(N,2N)69-TM-168,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           69169            
+#TARGET         69169           [ ]             69-TM-169       [ ] 
+#REAC1          N,2N
+#PRODUCT        69-TM-168
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.68%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9952649(1.4e7) Data[8]*0.9952649(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 69169   3  16 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.117(0.68%)  EN-NRM(eV):1.443E7
+#M1             Point: XS(b)=0.116446(0.39%)  EN-NRM(eV):1.443E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 69-TM-169(N,2N)69-TM-168,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.117
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.43MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10312007    0.995265    0.995265    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10312007    CS          9           0.995265    0.995265    0.995265    -0.474%     1.00476     [MONIT]::al27na
+#C5DATA         9
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 69169   3  16 A   1.384E7         1.9228519 7.3864-3                                       D.R.Nethaway*        (72)10312  7  7.3864-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.5622337
+    1 69169   3  16 A   1.387E7         2.0034683 7.6961-3                                       D.R.Nethaway*        (72)10312  7  7.6961-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.5622337
+    1 69169   3  16 A   1.399E7         1.9855536 7.6273-3                                       D.R.Nethaway*        (72)10312  7  7.6273-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.5622337
+    1 69169   3  16 A   1.407E7         1.8929939 7.2717-3                                       D.R.Nethaway*        (72)10312  7  7.2717-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.5622337
+    1 69169   3  16 A   1.412E7         1.9696293 7.5661-3                                       D.R.Nethaway*        (72)10312  7  7.5661-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.5622337
+    1 69169   3  16 A   1.429E7         1.9825678 7.6158-3                                       D.R.Nethaway*        (72)10312  7  7.6158-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.5622337
+    1 69169   3  16 A   1.449E7         1.9109087 7.3405-3                                       D.R.Nethaway*        (72)10312  7  7.3405-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.5622336
+    1 69169   3  16 A   1.478E7         1.8860271 7.2449-3                                       D.R.Nethaway*        (72)10312  7  7.2449-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.5622337
+    1 69169   3  16 A   1.494E7         1.8810507 7.2258-3                                       D.R.Nethaway*        (72)10312  7  7.2258-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.5622336
+#/C5DATA        0
+#/DATASET       10312007 
+#DATASET        10312008   20020823
+#SUBENT         10312008   20020823
+#ENTRY          10312      20140624
+#TITLE          Cross Sections for Several (n,2n) Reactions at 14 MeV
+#AUTHORS        D.R.Nethaway
+#AUTHOR1        D.R.Nethaway
+#YEAR           1972
+#X4REF1         J,NP/A,190,635,1972
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.190, p.635 (1972)
+#DATE           20020823
+#INSTITUTE      1USALRL
+#METHOD         ACTIV
+#REACTION       71-LU-175(N,2N)71-LU-174,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           71175            
+#TARGET         71175           [ ]             71-LU-175       [ ] 
+#REAC1          N,2N
+#PRODUCT        71-LU-174
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.68%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9952649(1.4e7) Data[7]*0.9952649(1.4e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(MON): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 71175   3  16 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.117(0.68%)  EN-NRM(eV):1.443E7
+#M1             Point: XS(b)=0.116446(0.39%)  EN-NRM(eV):1.443E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 71-LU-175(N,2N)71-LU-174,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.117
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.43MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10312008    0.995265    0.995265    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10312008    CS          8           0.995265    0.995265    0.995265    -0.474%     1.00476     [MONIT]::al27na
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 71175   3  16 A    1.38E7          1.649154 6.3350-3                                       D.R.Nethaway*        (72)10312  8  6.3350-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.5622337
+    1 71175   3  16 A   1.384E7         1.8183491 6.9850-3                                       D.R.Nethaway*        (72)10312  8  6.9850-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.5622337
+    1 71175   3  16 A   1.401E7         1.78550540.0068588                                       D.R.Nethaway*        (72)10312  8 0.0068588                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.5622336
+    1 71175   3  16 A   1.404E7         1.7397232 6.6829-3                                       D.R.Nethaway*        (72)10312  8  6.6829-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.5622337
+    1 71175   3  16 A    1.41E7         1.6680641 0.168936                                       D.R.Nethaway*        (72)10312  8  6.4077-3                   0.168936 0.38                       10.1     10.1    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.9937409
+    1 71175   3  16 A   1.421E7         1.8034202 6.9276-3                                       D.R.Nethaway*        (72)10312  8  6.9276-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.5622336
+    1 71175   3  16 A   1.439E7         1.6690593 6.4115-3                                       D.R.Nethaway*        (72)10312  8  6.4115-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.5622337
+    1 71175   3  16 A   1.442E7           1.78451 6.8550-3                                       D.R.Nethaway*        (72)10312  8  6.8550-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 0.99526490.5622336
+#/C5DATA        0
+#/DATASET       10312008 
+#DATASET        10312009   20020823
+#SUBENT         10312009   20020823
+#ENTRY          10312      20140624
+#TITLE          Cross Sections for Several (n,2n) Reactions at 14 MeV
+#AUTHORS        D.R.Nethaway
+#AUTHOR1        D.R.Nethaway
+#YEAR           1972
+#X4REF1         J,NP/A,190,635,1972
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.190, p.635 (1972)
+#DATE           20020823
+#INSTITUTE      1USALRL
+#METHOD         ACTIV
+#REACTION       79-AU-197(N,2N)79-AU-196,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           79197            
+#TARGET         79197           [ ]             79-AU-197       [ ] 
+#REAC1          N,2N
+#PRODUCT        79-AU-196
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.68%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9952649(1.4e7) Data[9]*0.9952649(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.15%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 79197   3  16 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.117(0.68%)  EN-NRM(eV):1.443E7
+#M1             Point: XS(b)=0.116446(0.39%)  EN-NRM(eV):1.443E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 79-AU-197(N,2N)79-AU-196,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.117
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.43MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (79-AU-197(N,2N)79-AU-196,,SIG)
+#+               #[1]#DECAY-DATA (79-AU-196-G,6.17D,DG,355.7,0.880) #Ix_old=0.88
+#+                a1=0.88/0.87;               #[1]#DECAY-DATA: correction to new 355.73 keV gamma-yield per decay Au-196-g Ix_new=0.87
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0114943
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10312009    1.00670     0.995265    1.01149     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10312009    CS          10          1.00670     1.00670     1.00670     +0.670%     1.00670     [MONIT]::al27na
+#C5DATA         10
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 79197   3  16 A    1.38E7          2.168442 8.3298-3                                       D.R.Nethaway*        (72)10312  9  8.3298-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 1.00670470.5686961
+    1 79197   3  16 A   1.391E7         2.1352208 8.2022-3                                       D.R.Nethaway*        (72)10312  9  8.2022-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 1.00670470.5686963
+    1 79197   3  16 A    1.41E7         2.1291807.09995906                                       D.R.Nethaway*        (72)10312  9  8.1790-3                  .09995906 0.38                       4.69     4.69    0.117    8.0E-4   0.116446 4.5502-4 1.00670470.9995906
+    1 79197   3  16 A   1.413E7         2.1342142 8.1983-3                                       D.R.Nethaway*        (72)10312  9  8.1983-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 1.00670470.5686961
+    1 79197   3  16 A   1.442E7          2.182536 8.3839-3                                       D.R.Nethaway*        (72)10312  9  8.3839-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 1.00670470.568696
+    1 79197   3  16 A   1.457E7         2.1462946 8.2447-3                                       D.R.Nethaway*        (72)10312  9  8.2447-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 1.00670470.568696
+    1 79197   3  16 A   1.472E7         2.1634085.00831047                                       D.R.Nethaway*        (72)10312  9 .00831047                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 1.00670470.5686961
+    1 79197   3  16 A   1.475E7         2.1704555.00833754                                       D.R.Nethaway*        (72)10312  9 .00833754                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 1.00670470.5686961
+    1 79197   3  16 A    1.49E7         2.1352208 8.2022-3                                       D.R.Nethaway*        (72)10312  9  8.2022-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 1.00670470.5686963
+    1 79197   3  16 A   1.495E7         2.1311939 8.1867-3                                       D.R.Nethaway*        (72)10312  9  8.1867-3                            0.38                                0.38    0.117    8.0E-4   0.116446 4.5502-4 1.00670470.5686961
+#/C5DATA        0
+#/DATASET       10312009 
+#DATASET        10312010   20081216
+#SUBENT         10312010   20081216
+#ENTRY          10312      20140624
+#TITLE          Cross Sections for Several (n,2n) Reactions at 14 MeV
+#AUTHORS        D.R.Nethaway
+#AUTHOR1        D.R.Nethaway
+#YEAR           1972
+#X4REF1         J,NP/A,190,635,1972
+#REFERENCE1     Jour: Nuclear Physics, Section A, Vol.190, p.635 (1972)
+#DATE           20081216
+#INSTITUTE      1USALRL
+#METHOD         ACTIV
+#REACTION       41-NB-93(N,2N)41-NB-92-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           41093            
+#TARGET         41093           [ ]             41-NB-93        [ ] 
+#REAC1          N,2N
+#PRODUCT        41-NB-92-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0083332(1.4e7) Data[10]*0.9899959(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.151%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 41093   3  16MA ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (41-NB-93(N,2N)41-NB-92-M,,SIG)
+#+               #[1]#DECAY-DATA (41-NB-92-M,10.16D,DG,934.5,0.990) #Ix_old=0.99
+#+                a1=0.99/0.9915;             #[1]#DECAY-DATA: correction to new 934.44 keV gamma-yield per decay Nb-92-m Ix_new=0.9915
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9984871
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10312010    0.998231    0.999744    0.998487    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10312010    CS          11          0.987665    1.01252     0.998231    -0.177%     1.01252     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         11
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 41093   3  16MA    1.38E7  30000.00.4792405.02396202                                       D.R.Nethaway*        (72)10312 10 .02396202                            5                                   5       0.123    0.117    0.124025 6.3015-4 1.00680771.0068077
+    1 41093   3  16MA   1.384E7  30000.00.4809485.02404743                                       D.R.Nethaway*        (72)10312 10 .02404743                            5                                   5       0.122    0.117    0.123715 6.2029-4 1.01252321.0125232
+    1 41093   3  16MA   1.399E7  30000.00.4680362.02340181                                       D.R.Nethaway*        (72)10312 10 .02340181                            5                                   5       0.121    0.117    0.12223755.8480-4 1.00869881.0086988
+    1 41093   3  16MA   1.413E7  30000.00.4605436.02302718                                       D.R.Nethaway*        (72)10312 10 .02302718                            5                                   5       0.12     0.117    0.120586 5.4999-4 1.003363 1.003363
+    1 41093   3  16MA   1.415E7  30000.00.4735044.02367522                                       D.R.Nethaway*        (72)10312 10 .02367522                            5                                   5       0.12     0.117    0.12031  5.4366-4 1.00106641.0010664
+    1 41093   3  16MA   1.438E7  30000.00.4588383.02294192                                       D.R.Nethaway*        (72)10312 10 .02294192                            5                                   5       0.117    0.117    0.117136 4.7085-4 0.99964770.9996477
+    1 41093   3  16MA   1.452E7  30000.00.4709323.02354662                                       D.R.Nethaway*        (72)10312 10 .02354662                            5                                   5       0.116    0.117    0.11518094.3567-4 0.99143640.9914365
+    1 41093   3  16MA   1.472E7  30000.00.4540282.02270141                                       D.R.Nethaway*        (72)10312 10 .02270141                            5                                   5       0.113    0.117    0.11218984.6377-4 0.99132780.9913279
+    1 41093   3  16MA    1.48E7  30000.00.46704990.0233525                                       D.R.Nethaway*        (72)10312 10 0.0233525                            5                                   5       0.112    0.117    0.11099334.7501-4 0.98951260.9895125
+    1 41093   3  16MA   1.488E7  30000.00.4493874.02246937                                       D.R.Nethaway*        (72)10312 10 .02246937                            5                                   5       0.111    0.117    0.10979694.8625-4 0.98766460.9876645
+    1 41093   3  16MA   1.494E7  30000.00.4606401.02303201                                       D.R.Nethaway*        (72)10312 10 .02303201                            5                                   5       0.11     0.117    0.10889964.9468-4 0.98849820.9884982
+#/C5DATA        0
+#/DATASET       10312010 
+#/C5.2.3        1               7               8               0               59              

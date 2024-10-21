@@ -1,0 +1,79 @@
+#C5M.2.3
+#DATASET        31585002   20150413
+#SUBENT         31585002   20150413
+#ENTRY          31585      20150413
+#TITLE          Experimental cross section of the 71Ga(n,g)72Ga
+#+               reaction at 0.0334 eV energy
+#AUTHORS        N.Afroze, M.S.Uddin, S.M.Hossain, M.A.Islam,
+#+               M.A.Shariff, A.K.M.Zakaria, T.K.Datta,
+#+               S.M.Azharul Islam
+#AUTHOR1        N.Afroze+
+#YEAR           2014
+#X4REF1         J,NIM/B,336,1,2014
+#REFERENCE1     Jour: Nucl. Instrum. Methods in Physics Res., Sect.B, Vol.336, p.1 (2014)
+#DATE           20150413
+#INSTITUTE      3BANSAV,3BANBAN
+#METHOD         FNB,DIFFR,ACTIV,GSPEC
+#REACTION       31-GA-71(N,G)31-GA-72,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           31071            
+#TARGET         31071           [ ]             31-GA-71        [ ] 
+#REAC1          N,G
+#PRODUCT        31-GA-72
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,1.,4.)      ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.126%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 31071   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             Point: XS(b)=86.26  EN-NRM(eV):0.0334
+#M1             Point: XS(b)=  EN-NRM(eV):0.0334
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 31-GA-71(N,G)31-GA-72,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              #[0]#En=0.0334
+#+              a0=[MONIT];                   #[0]#old monitor point 86.26
+#+              a1=recom$au197ng[EN];         #[0]#new monitor point [3.34E-8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
+#+               #[2]#DECAY-MON  (79-AU-198-G,2.695D,DG,411.8,0.955) #Im_old=0.955
+#+                a2=0.9562/0.955;            #[2]#DECAY-MON: correction to new 411.80205 keV gamma-yield per decay Au-198-g Im_new=0.9562
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0012566
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31585002    1.00126     1.00000     -           1.00126
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31585002    CS          1           1.00126     1.00126     1.00126     +0.126%     1.00126     [MONIT]::au197ng
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 31071   3 102      0.0334         3.42429760.2703393                                       N.Afroze*,           (14)31585  2 0.2562523   0.0342         0.2703393 7.48     1                 7.89     7.89    86.26                               1.00125661.0012567
+#/C5DATA        0
+#/DATASET       31585002 
+#/C5M.2.3       1               1               1               0               1               

@@ -1,0 +1,96 @@
+#C5M.2.3
+#DATASET        31456002   20180525
+#SUBENT         31456002   20180525
+#ENTRY          31456      20180525
+#TITLE          Measurement of 64Zn(n,g)65Zn cross section
+#AUTHORS        Chen Jinxiang, Shi Zhaomin, Tang Guoyou,
+#+               Zhang Guohui, Lu Hanlin, Zhao Wenrong, Yu Weixian
+#AUTHOR1        Chen Jinxiang+
+#YEAR           1995
+#X4REF1         J,CNP,17,342,1995
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.17, p.342 (1995)
+#DATE           20180525
+#INSTITUTE      3CPRBJG,3CPRAEP
+#METHOD         ACTIV
+#REACTION       30-ZN-64(N,G)30-ZN-65,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           30064            
+#TARGET         30064           [ ]             30-ZN-64        [ ] 
+#REAC1          N,G
+#PRODUCT        30-ZN-65
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-1,1.0,8.0,U)  ADDED AS COMMON:ERR-1,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-2,0.6,1.0,U)  ADDED AS COMMON:ERR-2,PER-CENT=0.6%
+#CompNotes      ERR-ANALYS:(MONIT-ERR,3.0,4.5) ADDED AS COMMON:MONIT-ERR,PER-CENT=3.0%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.12%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 30064   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 30-ZN-64(N,G)30-ZN-65,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (30-ZN-64(N,G)30-ZN-65,,SIG)
+#+               #[1]#DECAY-DATA (30-ZN-65,5858.4HR,DG,1115.,.5060) #Ix_old=0.506
+#+                a1=0.506/0.5004;            #[1]#DECAY-DATA: correction to new 1115.539 keV gamma-yield per decay Zn-65 Ix_new=0.5004
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.011191
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31456002    1.01119     -           1.01119     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31456002    CS          6           1.01119     1.01119     1.01119     +1.12%      1.01119     endfb5::au197ng
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30064   3 102    156000.0  10000.0.02507754 1.3145-3                                       Chen Jinxiang*,      (95)31456  2  8.7950-42.8922E-4          1.3145-3 3.51     1.15              5.24     5.24                      0.274556 5.7994-3 1.011191 1.011191
+    1 30064   3 102    330000.0  20000.0.02133613 1.7190-3                                       Chen Jinxiang*,      (95)31456  2  7.4829-42.4607E-4          1.7190-3 3.51     1.15              8.06     8.06                      0.189208 3.7201-3 1.011191 1.0111909
+    1 30064   3 102    540000.0  40000.0.02052718 9.1007-4                                       Chen Jinxiang*,      (95)31456  2  7.1992-42.3674E-4          9.1007-4 3.51     1.15              4.43     4.43                      0.12499  .002673791.011191 1.011191
+    1 30064   3 102    735000.0  54000.0.01971822 8.0895-4                                       Chen Jinxiang*,      (95)31456  2  6.9154-42.2741E-4          8.0895-4 3.51     1.15              4.10     4.10                      0.095054 1.9620-3 1.011191 1.0111909
+    1 30064   3 102    930000.0  62000.0.01961711 8.0895-4                                       Chen Jinxiang*,      (95)31456  2  6.8799-42.2624E-4          8.0895-4 3.51     1.15              4.12     4.12                      .085457753.0925-3 1.011191 1.0111911
+    1 30064   3 102   1150000.0  70000.0.01860592 9.1007-4                                       Chen Jinxiang*,      (95)31456  2  6.5253-42.1458E-4          9.1007-4 3.51     1.15              4.89     4.89                      .077219331.6886-3 1.011191 1.011191
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           156000.0    1150000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+156000.     156000.     2.5078-2    3.69         100
+330000.     330000.     2.1336-2    3.69         74 100
+540000.     540000.     2.0527-2    3.69         55 71 100
+735000.     735000.     1.9718-2    3.69         45 53 73 100
+930000.     930000.     1.9617-2    3.69         45 45 55 73 100
+1150000.    1150000.    1.8606-2    3.69         45 45 45 53 70 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       31456002 
+#/C5M.2.3       1               1               1               0               6               

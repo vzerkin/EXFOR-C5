@@ -1,0 +1,135 @@
+#C5.2.3
+#DATASET        11543002   20200419
+#SUBENT         11543002   20200419
+#ENTRY          11543      20200419
+#TITLE          The S32(n,p)P32 reaction as a fast-neutron flux
+#+              monitor.
+#AUTHORS        D.C.Santry,J.P.Butler
+#AUTHOR1        D.C.Santry+
+#YEAR           1963
+#X4REF1         J,CJC,41,123,1963
+#REFERENCE1     Jour: Canadian Journal of Chemistry, Vol.41, p.123 (1963)
+#DATE           20200419
+#INSTITUTE      1CANCRC
+#METHOD         ACTIV
+#REACTION       16-S-32(N,P)15-P-32,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           16032            
+#TARGET         16032           [ ]             16-S-32         [ ] 
+#REAC1          N,P
+#PRODUCT        15-P-32
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,1.,3.)      ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-1,,5.)        ADDED AS COMMON:ERR-1,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-4,3.5,5.)     ADDED AS COMMON:ERR-4,PER-CENT=3.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9976415(1.3e7) Data[12]*0.9976415(2.0e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 16032   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      16-S-32(N,P)15-P-32,,SIG
+#M0             Point: XS(b)=0.226  EN-NRM(eV):1.45E7
+#M1             Point: XS(b)=0.225467(1.31%)  EN-NRM(eV):1.45E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 16-S-32(N,P)15-P-32,,SIG
+#+              #[0]#Monitor:  16-S-32(N,P)15-P-32,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.226
+#+              a1=recom$s32np[EN-NRM];       #[0]#new monitor point [14.5MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11543002    0.997642    0.997642    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11543002    CS          13          0.997642    0.997642    0.997642    -0.236%     1.00236     [MONIT]::s32np
+#C5DATA         13
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 16032   3 103     1.253E7259999.980.3232358    0.015                                       D.C.Santry*,         (63)11543  2 .01602408  0.00324             0.015 4.96     1                 4.64     4.64    0.226             0.225467 .002963360.9976415
+    1 16032   3 103      1.26E7 500000.00.3202429    0.015                                       D.C.Santry*,         (63)11543  2 .01587571  0.00321             0.015 4.96     1                 4.68     4.68    0.226             0.225467 .002963360.9976415
+    1 16032   3 103     1.358E7  60000.00.2763467    0.006                                       D.C.Santry*,         (63)11543  2 0.0136996  0.00277             0.006 4.96     1                 2.17     2.17    0.226             0.225467 .002963360.9976415
+    1 16032   3 103     1.389E7  80000.00.2623797    0.006                                       D.C.Santry*,         (63)11543  2 0.0130072  0.00263             0.006 4.96     1                 2.29     2.29    0.226             0.225467 .002963360.9976415
+    1 16032   3 103     1.424E7  80000.00.2344458    0.005                                       D.C.Santry*,         (63)11543  2 .01162241  0.00235             0.005 4.96     1                 2.13     2.13    0.226             0.225467 .002963360.9976415
+    1 16032   3 103     1.468E7  60000.00.2184835    0.005                                       D.C.Santry*,         (63)11543  2 .01083109  0.00219             0.005 4.96     1                 2.29     2.29    0.226             0.225467 .002963360.9976415
+    1 16032   3 103     1.476E7  60000.00.2154906    0.005                                       D.C.Santry*,         (63)11543  2 .01068272  0.00216             0.005 4.96     1                 2.32     2.32    0.226             0.225467 .002963360.9976415
+    1 16032   3 103      1.66E7 600000.00.1296934    0.006                                       D.C.Santry*,         (63)11543  2 0.0064294   0.0013             0.006 4.96     1                 4.63     4.63    0.226             0.225467 .002963360.9976415
+    1 16032   3 103      1.75E71000000.00.1227099    0.006                                       D.C.Santry*,         (63)11543  2 0.0060832  0.00123             0.006 4.96     1                 4.89     4.89    0.226             0.225467 .002963360.9976415
+    1 16032   3 103      1.85E7 500000.0.09477594    0.004                                       D.C.Santry*,         (63)11543  2 .00469842   9.5E-4             0.004 4.96     1                 4.22     4.22    0.226             0.225467 .002963360.9976415
+    1 16032   3 103      1.92E7 800000.0.08779245    0.007                                       D.C.Santry*,         (63)11543  2 0.0043522   8.8E-4             0.007 4.96     1                 7.97     7.97    0.226             0.225467 .002963360.9976415
+    1 16032   3 103      1.98E7 300000.0.08679481    0.005                                       D.C.Santry*,         (63)11543  2 0.0043028   8.7E-4             0.005 4.96     1                 5.76     5.76    0.226             0.225467 .002963360.9976415
+    1 16032   3 103      2.03E7 300000.0.06783962    0.005                                       D.C.Santry*,         (63)11543  2 .00336308   6.8E-4             0.005 4.96     1                 7.37     7.37    0.226             0.225467 .002963360.9976415
+#/C5DATA        0
+#/DATASET       11543002 
+#DATASET        11543003   20200419
+#SUBENT         11543003   20200419
+#ENTRY          11543      20200419
+#TITLE          The S32(n,p)P32 reaction as a fast-neutron flux
+#+              monitor.
+#AUTHORS        D.C.Santry,J.P.Butler
+#AUTHOR1        D.C.Santry+
+#YEAR           1963
+#X4REF1         J,CJC,41,123,1963
+#REFERENCE1     Jour: Canadian Journal of Chemistry, Vol.41, p.123 (1963)
+#DATE           20200419
+#INSTITUTE      1CANCRC
+#METHOD         ACTIV
+#REACTION       16-S-32(N,P)15-P-32,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           16032            
+#TARGET         16032           [ ]             16-S-32         [ ] 
+#REAC1          N,P
+#PRODUCT        15-P-32
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,1.,3.)      ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-1,,5.)        ADDED AS COMMON:ERR-1,PER-CENT=2.5%
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 16032   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 16032   3 103      1.04E7  50000.0    0.422    0.025                                       D.C.Santry,          (63)11543  3 .01533783  0.00422             0.025 3.63     1                 5.92     5.92                      0.390063 0.011109
+    1 16032   3 103       1.1E7  40000.0    0.371    0.022                                       D.C.Santry,          (63)11543  3 .01348421  0.00371             0.022 3.63     1                 5.93     5.93                      0.396421 0.010198
+    1 16032   3 103      1.16E7  40000.0    0.422    0.024                                       D.C.Santry,          (63)11543  3 .01533783  0.00422             0.024 3.63     1                 5.69     5.69                      0.38448  .00872453
+#/C5DATA        0
+#/DATASET       11543003 
+#/C5.2.3        1               2               2               0               16              

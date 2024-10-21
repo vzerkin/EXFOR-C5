@@ -1,0 +1,898 @@
+#C5.2.3
+#DATASET        22144002   19910124
+#SUBENT         22144002   19910124
+#ENTRY          22144      19910617
+#TITLE          -ACTIVATION CROSS SECTIONS OF NEUTRON THRESHOLD
+#+               REACTIONS ON SOME ZIRCONIUM ISOTOPES IN THE 5.4- TO
+#+               10.6-MEV ENERGY RANGE.
+#AUTHORS        M.IBN MAJAH,S.M.QAIM
+#AUTHOR1        M.Ibn majah+
+#YEAR           1990
+#X4REF1         J,NSE,104,271,9003
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.104, p.271 (1990)
+#DATE           19910124
+#INSTITUTE      2GERJUL
+#METHOD         ACTIV
+#REACTION       40-ZR-90(N,P)39-Y-90-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           40090            
+#TARGET         40090           [ ]             40-ZR-90        [ ] 
+#REAC1          N,P
+#PRODUCT        39-Y-90-M
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.6863611(5.4e6) Data[5]*1.0568342(7.7e6)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.552%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40090   3 103M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$fe56np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-90(N,P)39-Y-90-M,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$fe56np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (40-ZR-90(N,P)39-Y-90-M,,SIG)
+#+               #[1]#DECAY-DATA (39-Y-90-M,3.19HR,DG,480.,0.910) #Ix_old=0.91
+#+                a1=0.91/0.905;              #[1]#DECAY-DATA: correction to new 479.51 keV gamma-yield per decay Y-90-m Ix_new=0.905
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0055249
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22144002    0.923711    0.918636    1.00552     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22144002    CS          6           0.690153    1.06267     0.923711    -7.63%      1.44895     [EN,MONIT,MONIT-ERR]::fe56np
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40090   3 103M  5409000.0 300000.0 3.4508-5 6.5390-6                                       M.IBN MAJAH*,        (90)22144  2  1.6580-6                   6.5390-6 4.80                       18.9     18.9    0.0052   4.16E-4  3.5691-3 1.7149-4 0.69015310.6539049
+    1 40090   3 103M  5524000.0 262000.0 8.4924-5 5.4566-6                                       M.IBN MAJAH*,        (90)22144  2  4.0408-6                   5.4566-6 4.76                       6.43     6.43    0.0064   5.12E-4  4.9139-3 2.3381-4 0.77203390.5456627
+    1 40090   3 103M  6102000.0 250000.0 1.9224-4 1.7507-5                                       M.IBN MAJAH*,        (90)22144  2  8.8375-6                   1.7507-5 4.60                       9.11     9.11    0.015    0.00105  .015093476.9387-4 1.01179080.8753631
+    1 40090   3 103M  6480000.0 378000.0 5.5975-4 5.8565-5                                       M.IBN MAJAH*,        (90)22144  2  2.6263-5                   5.8565-5 4.69                       10.5     10.5    0.0216   0.001296 .022266941.0447-3 1.03657220.9760906
+    1 40090   3 103M  7180000.0 254000.0 9.4966-4 9.2608-5                                       M.IBN MAJAH*,        (90)22144  2  4.3747-5                   9.2608-5 4.61                       9.75     9.75    0.0341   0.0018755.03286284.001513870.96904410.9260767
+    1 40090   3 103M  7704000.0 260000.0 0.001509 1.5274-4                                       M.IBN MAJAH*,        (90)22144  2  6.0116-5                   1.5274-4 3.98                       10.1     10.1    0.039    0.00195  .041216541.6420-3 1.06267311.0182769
+#/C5DATA        0
+#/DATASET       22144002 
+#DATASET        22144003   19910124
+#SUBENT         22144003   19910124
+#ENTRY          22144      19910617
+#TITLE          -ACTIVATION CROSS SECTIONS OF NEUTRON THRESHOLD
+#+               REACTIONS ON SOME ZIRCONIUM ISOTOPES IN THE 5.4- TO
+#+               10.6-MEV ENERGY RANGE.
+#AUTHORS        M.IBN MAJAH,S.M.QAIM
+#AUTHOR1        M.Ibn majah+
+#YEAR           1990
+#X4REF1         J,NSE,104,271,9003
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.104, p.271 (1990)
+#DATE           19910124
+#INSTITUTE      2GERJUL
+#METHOD         ACTIV
+#REACTION       40-ZR-90(N,A)38-SR-87-M,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           40090            
+#TARGET         40090           [ ]             40-ZR-90        [ ] 
+#REAC1          N,A
+#PRODUCT        38-SR-87-M
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0308768(6.5e6) Data[2]*1.0568342(7.7e6)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.231%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40090   3 107M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$fe56np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-90(N,A)38-SR-87-M,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$fe56np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (40-ZR-90(N,A)38-SR-87-M,,SIG)
+#+               #[1]#DECAY-DATA (38-SR-87-M,2.80HR,DG,388.,0.820) #Ix_old=0.82
+#+                a1=0.82/0.8219;             #[1]#DECAY-DATA: correction to new 388.531 keV gamma-yield per decay Sr-87-m Ix_new=0.8219
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99768823
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22144003    1.01479     1.01714     0.997688    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22144003    CS          3           0.961492    1.05439     1.01479     +1.48%      1.05439     [EN,MONIT,MONIT-ERR]::fe56np
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40090   3 107M  6480000.0 378000.0 2.2627-5 2.9672-6                                       M.IBN MAJAH*,        (90)22144  3  1.0616-6                   2.9672-6 4.69                       13.1     13.1    0.0216   0.001296 .022266941.0447-3 1.02849360.9890577
+    1 40090   3 107M  7180000.0 254000.0 4.9998-55.5699E-6                                       M.IBN MAJAH*,        (90)22144  3  2.3032-6                  5.5699E-6 4.61                       11.1     11.1    0.0341   0.0018755.03286284.001513870.96149180.9283166
+    1 40090   3 107M  7704000.0 260000.0 1.1598-4 1.3252-5                                       M.IBN MAJAH*,        (90)22144  3  4.6206-6                   1.3252-5 3.98                       11.4     11.4    0.039    0.00195  .041216541.6420-3 1.054391 1.0193514
+#/C5DATA        0
+#/DATASET       22144003 
+#DATASET        22144004   19910124
+#SUBENT         22144004   19910124
+#ENTRY          22144      19910617
+#TITLE          -ACTIVATION CROSS SECTIONS OF NEUTRON THRESHOLD
+#+               REACTIONS ON SOME ZIRCONIUM ISOTOPES IN THE 5.4- TO
+#+               10.6-MEV ENERGY RANGE.
+#AUTHORS        M.IBN MAJAH,S.M.QAIM
+#AUTHOR1        M.Ibn majah+
+#YEAR           1990
+#X4REF1         J,NSE,104,271,9003
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.104, p.271 (1990)
+#DATE           19910124
+#INSTITUTE      2GERJUL
+#METHOD         ACTIV
+#REACTION       40-ZR-91(N,P)39-Y-91-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           40091            
+#TARGET         40091           [ ]             40-ZR-91        [ ] 
+#REAC1          N,P
+#PRODUCT        39-Y-91-M
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0062314(6.1e6) Data[3]*1.0568342(7.7e6)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.105%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40091   3 103M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$fe56np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-91(N,P)39-Y-91-M,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$fe56np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (40-ZR-91(N,P)39-Y-91-M,,SIG)
+#+               #[1]#DECAY-DATA (39-Y-91-M,49.7MIN,DG,556.,0.949) #Ix_old=0.949
+#+                a1=0.949/0.95;              #[1]#DECAY-DATA: correction to new 555.57 keV gamma-yield per decay Y-91-m Ix_new=0.95
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9989474
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22144004    1.01335     1.01442     0.998947    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22144004    CS          4           0.962705    1.05572     1.01335     +1.33%      1.05572     [EN,MONIT,MONIT-ERR]::fe56np
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40091   3 103M  6102000.0 250000.0 6.8352-4 6.0406-5                                       M.IBN MAJAH*,        (90)22144  4  3.1422-5                   6.0406-5 4.60                       8.84     8.84    0.015    0.00105  .015093476.9387-4 1.00517230.8629461
+    1 40091   3 103M  6480000.0 378000.0 9.7830-4 9.6261-5                                       M.IBN MAJAH*,        (90)22144  4  4.5900-5                   9.6261-5 4.69                       9.84     9.84    0.0216   0.001296 .022266941.0447-3 1.02979160.9626054
+    1 40091   3 103M  7180000.0 254000.0 1.6366-3 1.6616-4                                       M.IBN MAJAH*,        (90)22144  4  7.5392-5                   1.6616-4 4.61                       10.2     10.2    0.0341   0.0018755.03286284.001513870.96270530.9231254
+    1 40091   3 103M  7704000.0 260000.0 2.5232-3 2.4163-4                                       M.IBN MAJAH*,        (90)22144  4 1.0052E-4                   2.4163-4 3.98                       9.58     9.58    0.039    0.00195  .041216541.6420-3 1.05572181.0068017
+#/C5DATA        0
+#/DATASET       22144004 
+#DATASET        22144005   19910124
+#SUBENT         22144005   19910124
+#ENTRY          22144      19910617
+#TITLE          -ACTIVATION CROSS SECTIONS OF NEUTRON THRESHOLD
+#+               REACTIONS ON SOME ZIRCONIUM ISOTOPES IN THE 5.4- TO
+#+               10.6-MEV ENERGY RANGE.
+#AUTHORS        M.IBN MAJAH,S.M.QAIM
+#AUTHOR1        M.Ibn majah+
+#YEAR           1990
+#X4REF1         J,NSE,104,271,9003
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.104, p.271 (1990)
+#DATE           19910124
+#INSTITUTE      2GERJUL
+#METHOD         ACTIV
+#REACTION       40-ZR-92(N,P)39-Y-92,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           40092            
+#TARGET         40092           [ ]             40-ZR-92        [ ] 
+#REAC1          N,P
+#PRODUCT        39-Y-92
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0062314(6.1e6) Data[3]*1.0568342(7.7e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40092   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$fe56np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-92(N,P)39-Y-92,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$fe56np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22144005    1.01442     1.01442     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22144005    CS          4           0.963720    1.05683     1.01442     +1.44%      1.05683     [EN,MONIT,MONIT-ERR]::fe56np
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40092   3 103   6102000.0 250000.0 1.8112-4 3.9097-5                                       M.IBN MAJAH*,        (90)22144  5  8.3264-6                   3.9097-5 4.60                       21.6     21.6    0.015    0.00105  .015093476.9387-4 1.00623140.9774286
+    1 40092   3 103   6480000.0 378000.0 2.2679-4 2.9740-5                                       M.IBN MAJAH*,        (90)22144  5  1.0641-5                   2.9740-5 4.69                       13.1     13.1    0.0216   0.001296 .022266941.0447-3 1.03087680.9913495
+    1 40092   3 103   7180000.0 254000.0 3.3730-4 4.7108-5                                       M.IBN MAJAH*,        (90)22144  5  1.5538-5                   4.7108-5 4.61                       14       14      0.0341   0.0018755.03286284.001513870.96371970.9421602
+    1 40092   3 103   7704000.0 260000.0 5.8126-4 7.1864-5                                       M.IBN MAJAH*,        (90)22144  5  2.3157-5                   7.1864-5 3.98                       12.4     12.4    0.039    0.00195  .041216541.6420-3 1.05683421.0266228
+#/C5DATA        0
+#/DATASET       22144005 
+#DATASET        22144006   19910124
+#SUBENT         22144006   19910124
+#ENTRY          22144      19910617
+#TITLE          -ACTIVATION CROSS SECTIONS OF NEUTRON THRESHOLD
+#+               REACTIONS ON SOME ZIRCONIUM ISOTOPES IN THE 5.4- TO
+#+               10.6-MEV ENERGY RANGE.
+#AUTHORS        M.IBN MAJAH,S.M.QAIM
+#AUTHOR1        M.Ibn majah+
+#YEAR           1990
+#X4REF1         J,NSE,104,271,9003
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.104, p.271 (1990)
+#DATE           19910124
+#INSTITUTE      2GERJUL
+#METHOD         ACTIV
+#REACTION       40-ZR-94(N,A)38-SR-91,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           40094            
+#TARGET         40094           [ ]             40-ZR-94        [ ] 
+#REAC1          N,A
+#PRODUCT        38-SR-91
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0308768(6.5e6) Data[2]*1.0568342(7.7e6)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.49%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40094   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$fe56np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-94(N,A)38-SR-91,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$fe56np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (40-ZR-94(N,A)38-SR-91,,SIG)
+#+               #[1]#DECAY-DATA (38-SR-91,9.48HR,DG,1024.,0.330) #Ix_old=0.33
+#+                a1=0.33/0.335;              #[1]#DECAY-DATA: correction to new 1024.3 keV gamma-yield per decay Sr-91 Ix_new=0.335
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.98507464
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22144006    1.00196     1.01714     0.985075    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22144006    CS          3           0.949336    1.04106     1.00196     +0.196%     1.05337     [EN,MONIT,MONIT-ERR]::fe56np
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40094   3 107   6480000.0 378000.0 7.1084-5 2.0135-5                                       M.IBN MAJAH*,        (90)22144  6  3.3352-6                   2.0135-5 4.69                       28.3     28.3    0.0216   0.001296 .022266941.0447-3 1.01549051.0067534
+    1 40094   3 107   7180000.0 254000.0 1.8037-4 3.7585-5                                       M.IBN MAJAH*,        (90)22144  6  8.3092-6                   3.7585-5 4.61                       20.8     20.8    0.0341   0.0018755.03286284.001513870.94933590.9396164
+    1 40094   3 107   7704000.0 260000.0 2.3944-4 4.1009-5                                       M.IBN MAJAH*,        (90)22144  6  9.5391-6                   4.1009-5 3.98                       17.1     17.1    0.039    0.00195  .041216541.6420-3 1.04106061.0252295
+#/C5DATA        0
+#/DATASET       22144006 
+#DATASET        22144007   19910124
+#SUBENT         22144007   19910124
+#ENTRY          22144      19910617
+#TITLE          -ACTIVATION CROSS SECTIONS OF NEUTRON THRESHOLD
+#+               REACTIONS ON SOME ZIRCONIUM ISOTOPES IN THE 5.4- TO
+#+               10.6-MEV ENERGY RANGE.
+#AUTHORS        M.IBN MAJAH,S.M.QAIM
+#AUTHOR1        M.Ibn majah+
+#YEAR           1990
+#X4REF1         J,NSE,104,271,9003
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.104, p.271 (1990)
+#DATE           19910124
+#INSTITUTE      2GERJUL
+#METHOD         ACTIV
+#REACTION       40-ZR-96(N,2N)40-ZR-95,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           40096            
+#TARGET         40096           [ ]             40-ZR-96        [ ] 
+#REAC1          N,2N
+#PRODUCT        40-ZR-95
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9988883(8.2e6) Data[5]*1.0088369(1.1e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.158%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40096   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-96(N,2N)40-ZR-95,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (40-ZR-96(N,2N)40-ZR-95,,SIG)
+#+               #[1]#DECAY-DATA (40-ZR-95,64.0D,DG,724.,0.442) #Ix_old=0.442
+#+                a1=0.442/0.4427;            #[1]#DECAY-DATA: correction to new 724.192 keV gamma-yield per decay Zr-95 Ix_new=0.4427
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9984188
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22144007    1.00918     1.01078     0.998419    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22144007    CS          6           0.997309    1.03392     1.00918     +0.918%     1.03392     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40096   3  16   8215000.0 256000.00.1545829.02548997                                       M.IBN MAJAH*,        (90)22144  7  0.001357                  .02548997 0.88                       16.5     16.5    0.0462   0.0014784.046148644.0511-4 0.99730890.9803835
+    1 40096   3  16   8716000.0 280000.00.4390306.03220033                                       M.IBN MAJAH*,        (90)22144  7  3.8029-3                  .03220033 0.87                       7.33     7.33    0.0601   0.0045676.060474895.2384-4 1.00464680.7000071
+    1 40096   3  16   9187000.0 376000.0 0.821967.05795752                                       M.IBN MAJAH*,        (90)22144  7  7.2041-3                  .05795752 0.88                       7.05     7.05    0.0706   0.00628340.07311046.4079-4 1.03392060.6439724
+    1 40096   3  16   9643000.0 428000.01.1324031.06830159                                       M.IBN MAJAH*,        (90)22144  7 .01008938                  .06830159 0.89                       6.03     6.03    0.0826   0.0073514.083646987.4527-4 1.01107410.5691799
+    1 40096   3  16    1.0127E7 452000.01.32821080.1162296                                       M.IBN MAJAH*,        (90)22144  7 .01228276                  0.1162296 0.92                       8.75     8.75    0.0927   0.0041715.092931528.5939-4 1.00091240.8940742
+    1 40096   3  16    1.0614E7 442000.01.62971720.1443558                                       M.IBN MAJAH*,        (90)22144  7 .01564699                  0.1443558 0.96                       8.86     8.86    0.0997   0.00448650.100581 9.6568-4 1.00724170.9022236
+#/C5DATA        0
+#/DATASET       22144007 
+#DATASET        22144008   19910205
+#SUBENT         22144008   19910205
+#ENTRY          22144      19910617
+#TITLE          -ACTIVATION CROSS SECTIONS OF NEUTRON THRESHOLD
+#+               REACTIONS ON SOME ZIRCONIUM ISOTOPES IN THE 5.4- TO
+#+               10.6-MEV ENERGY RANGE.
+#AUTHORS        M.IBN MAJAH,S.M.QAIM
+#AUTHOR1        M.Ibn majah+
+#YEAR           1990
+#X4REF1         J,NSE,104,271,9003
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.104, p.271 (1990)
+#DATE           19910205
+#INSTITUTE      2GERJUL
+#METHOD         ACTIV
+#REACTION       40-ZR-90(N,P)39-Y-90-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           40090            
+#TARGET         40090           [ ]             40-ZR-90        [ ] 
+#REAC1          N,P
+#PRODUCT        39-Y-90-M
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9988883(8.2e6) Data[5]*1.0088369(1.1e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.552%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40090   3 103M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-90(N,P)39-Y-90-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (40-ZR-90(N,P)39-Y-90-M,,SIG)
+#+               #[1]#DECAY-DATA (39-Y-90-M,3.19HR,DG,480.,0.910) #Ix_old=0.91
+#+                a1=0.91/0.905;              #[1]#DECAY-DATA: correction to new 479.51 keV gamma-yield per decay Y-90-m Ix_new=0.905
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0055249
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22144008    1.01637     1.01078     1.00552     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22144008    CS          6           1.00441     1.04128     1.01637     +1.64%      1.04128     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40090   3 103M  8215000.0 256000.0 1.8582-3 1.9257-4                                       M.IBN MAJAH*,        (90)22144  8  1.6312-5                   1.9257-4 0.88                       10.4     10.4    0.0462   0.0014784.046148644.0511-4 1.004407 0.9628578
+    1 40090   3 103M  8716000.0 280000.0.00299492 2.0249-4                                       M.IBN MAJAH*,        (90)22144  8  2.5942-5                   2.0249-4 0.87                       6.76     6.76    0.0601   0.0045676.060474895.2384-4 1.01179720.6749563
+    1 40090   3 103M  9187000.0 376000.0 3.5091-3 2.0959-4                                       M.IBN MAJAH*,        (90)22144  8  3.0756-5                   2.0959-4 0.88                       5.97     5.97    0.0706   0.00628340.07311046.4079-4 1.04127940.5821966
+    1 40090   3 103M  9643000.0 428000.0 3.5130-3 1.9391-4                                       M.IBN MAJAH*,        (90)22144  8  3.1300-5                   1.9391-4 0.89                       5.52     5.52    0.0826   0.0073514.083646987.4527-4 1.01827010.5386484
+    1 40090   3 103M   1.0127E7 452000.0 4.4958-3 4.0812-4                                       M.IBN MAJAH*,        (90)22144  8  4.1576-5                   4.0812-4 0.92                       9.08     9.08    0.0927   0.0041715.092931528.5939-4 1.00803630.9069438
+    1 40090   3 103M   1.0614E7 442000.0 5.5488-3 5.0177-4                                       M.IBN MAJAH*,        (90)22144  8  5.3275-5                   5.0177-4 0.96                       9.04     9.04    0.0997   0.00448650.100581 9.6568-4 1.01441060.9123048
+#/C5DATA        0
+#/DATASET       22144008 
+#DATASET        22144009   19910205
+#SUBENT         22144009   19910205
+#ENTRY          22144      19910617
+#TITLE          -ACTIVATION CROSS SECTIONS OF NEUTRON THRESHOLD
+#+               REACTIONS ON SOME ZIRCONIUM ISOTOPES IN THE 5.4- TO
+#+               10.6-MEV ENERGY RANGE.
+#AUTHORS        M.IBN MAJAH,S.M.QAIM
+#AUTHOR1        M.Ibn majah+
+#YEAR           1990
+#X4REF1         J,NSE,104,271,9003
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.104, p.271 (1990)
+#DATE           19910205
+#INSTITUTE      2GERJUL
+#METHOD         ACTIV
+#REACTION       40-ZR-90(N,A)38-SR-87-M,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           40090            
+#TARGET         40090           [ ]             40-ZR-90        [ ] 
+#REAC1          N,A
+#PRODUCT        38-SR-87-M
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9988883(8.2e6) Data[5]*1.0088369(1.1e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.231%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40090   3 107M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-90(N,A)38-SR-87-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (40-ZR-90(N,A)38-SR-87-M,,SIG)
+#+               #[1]#DECAY-DATA (38-SR-87-M,2.80HR,DG,388.,0.820) #Ix_old=0.82
+#+                a1=0.82/0.8219;             #[1]#DECAY-DATA: correction to new 388.531 keV gamma-yield per decay Sr-87-m Ix_new=0.8219
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99768823
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22144009    1.00845     1.01078     0.997688    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22144009    CS          6           0.996579    1.03316     1.00845     +0.845%     1.03316     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40090   3 107M  8215000.0 256000.0 2.2921-4 2.4933-5                                       M.IBN MAJAH*,        (90)22144  9  2.0121-6                   2.4933-5 0.88                       10.9     10.9    0.0462   0.0014784.046148644.0511-4 0.99657910.9589441
+    1 40090   3 107M  8716000.0 280000.0 4.4172-4 3.7513-5                                       M.IBN MAJAH*,        (90)22144  9  3.8262-6                   3.7513-5 0.87                       8.49     8.49    0.0601   0.0045676.060474895.2384-4 1.00391170.7502633
+    1 40090   3 107M  9187000.0 376000.0 6.3023-42.6965E-5                                       M.IBN MAJAH*,        (90)22144  9  5.5238-6                  2.6965E-5 0.88                       4.28     4.28    0.0706   0.00628340.07311046.4079-4 1.03316410.4494168
+    1 40090   3 107M  9643000.0 428000.0 8.5878-4 4.9850-5                                       M.IBN MAJAH*,        (90)22144  9  7.6516-6                   4.9850-5 0.89                       5.80     5.80    0.0826   0.0073514.083646987.4527-4 1.01033430.5538874
+    1 40090   3 107M   1.0127E7 452000.0.00100018 8.9797-5                                       M.IBN MAJAH*,        (90)22144  9  9.2493-6                   8.9797-5 0.92                       8.98     8.98    0.0927   0.0041715.092931528.5939-4 1.00018  0.8979654
+    1 40090   3 107M   1.0614E7 442000.0 1.5299-3 1.3517-4                                       M.IBN MAJAH*,        (90)22144  9  1.4689-5                   1.3517-4 0.96                       8.84     8.84    0.0997   0.00448650.100581 9.6568-4 1.00650470.9011053
+#/C5DATA        0
+#/DATASET       22144009 
+#DATASET        22144010   19910205
+#SUBENT         22144010   19910205
+#ENTRY          22144      19910617
+#TITLE          -ACTIVATION CROSS SECTIONS OF NEUTRON THRESHOLD
+#+               REACTIONS ON SOME ZIRCONIUM ISOTOPES IN THE 5.4- TO
+#+               10.6-MEV ENERGY RANGE.
+#AUTHORS        M.IBN MAJAH,S.M.QAIM
+#AUTHOR1        M.Ibn majah+
+#YEAR           1990
+#X4REF1         J,NSE,104,271,9003
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.104, p.271 (1990)
+#DATE           19910205
+#INSTITUTE      2GERJUL
+#METHOD         ACTIV
+#REACTION       40-ZR-91(N,P)39-Y-91-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           40091            
+#TARGET         40091           [ ]             40-ZR-91        [ ] 
+#REAC1          N,P
+#PRODUCT        39-Y-91-M
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9988883(8.2e6) Data[5]*1.0088369(1.1e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.105%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40091   3 103M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-91(N,P)39-Y-91-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (40-ZR-91(N,P)39-Y-91-M,,SIG)
+#+               #[1]#DECAY-DATA (39-Y-91-M,49.7MIN,DG,556.,0.949) #Ix_old=0.949
+#+                a1=0.949/0.95;              #[1]#DECAY-DATA: correction to new 555.57 keV gamma-yield per decay Y-91-m Ix_new=0.95
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9989474
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22144010    1.00972     1.01078     0.998947    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22144010    CS          6           0.997837    1.03447     1.00972     +0.972%     1.03447     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40091   3 103M  8215000.0 256000.0 3.6221-3 3.8326-4                                       M.IBN MAJAH*,        (90)22144 10  3.1797-5                   3.8326-4 0.88                       10.6     10.6    0.0462   0.0014784.046148644.0511-4 0.99783690.9581386
+    1 40091   3 103M  8716000.0 280000.0.00461377 3.6227-4                                       M.IBN MAJAH*,        (90)22144 10  3.9965-5                   3.6227-4 0.87                       7.85     7.85    0.0601   0.0045676.060474895.2384-4 1.00517870.7245419
+    1 40091   3 103M  9187000.0 376000.0 5.4516-3 2.8092-4                                       M.IBN MAJAH*,        (90)22144 10  4.7782-5                   2.8092-4 0.88                       5.15     5.15    0.0706   0.00628340.07311046.4079-4 1.034468 0.5202206
+    1 40091   3 103M  9643000.0 428000.0 6.7778-3 3.7578-4                                       M.IBN MAJAH*,        (90)22144 10  6.0388-5                   3.7578-4 0.89                       5.54     5.54    0.0826   0.0073514.083646987.4527-4 1.01160930.536832
+    1 40091   3 103M   1.0127E7 452000.0 7.1002-3 6.4971-4                                       M.IBN MAJAH*,        (90)22144 10  6.5660-5                   6.4971-4 0.92                       9.15     9.15    0.0927   0.0041715.092931528.5939-4 1.00144230.9023727
+    1 40091   3 103M   1.0614E7 442000.0 9.7250-3 9.1259-4                                       M.IBN MAJAH*,        (90)22144 10  9.3370-5                   9.1259-4 0.96                       9.38     9.38    0.0997   0.00448650.100581 9.6568-4 1.007775 0.9125851
+#/C5DATA        0
+#/DATASET       22144010 
+#DATASET        22144011   19910205
+#SUBENT         22144011   19910205
+#ENTRY          22144      19910617
+#TITLE          -ACTIVATION CROSS SECTIONS OF NEUTRON THRESHOLD
+#+               REACTIONS ON SOME ZIRCONIUM ISOTOPES IN THE 5.4- TO
+#+               10.6-MEV ENERGY RANGE.
+#AUTHORS        M.IBN MAJAH,S.M.QAIM
+#AUTHOR1        M.Ibn majah+
+#YEAR           1990
+#X4REF1         J,NSE,104,271,9003
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.104, p.271 (1990)
+#DATE           19910205
+#INSTITUTE      2GERJUL
+#METHOD         ACTIV
+#REACTION       40-ZR-92(N,P)39-Y-92,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           40092            
+#TARGET         40092           [ ]             40-ZR-92        [ ] 
+#REAC1          N,P
+#PRODUCT        39-Y-92
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9988883(8.2e6) Data[5]*1.0088369(1.1e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40092   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-92(N,P)39-Y-92,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22144011    1.01078     1.01078     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22144011    CS          6           0.998888    1.03556     1.01078     +1.08%      1.03556     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40092   3 103   8215000.0 256000.0 8.8901-4 8.5636-5                                       M.IBN MAJAH*,        (90)22144 11  7.8041-6                   8.5636-5 0.88                       9.63     9.63    0.0462   0.0014784.046148644.0511-4 0.99888830.9515159
+    1 40092   3 103   8716000.0 280000.0 1.4691-3 1.0236-4                                       M.IBN MAJAH*,        (90)22144 11  1.2725-5                   1.0236-4 0.87                       6.97     6.97    0.0601   0.0045676.060474895.2384-4 1.00623790.6823917
+    1 40092   3 103   9187000.0 376000.0 2.1747-3 2.0268-4                                       M.IBN MAJAH*,        (90)22144 11  1.9060-5                   2.0268-4 0.88                       9.32     9.32    0.0706   0.00628340.07311046.4079-4 1.03555810.7506728
+    1 40092   3 103   9643000.0 428000.0 3.7773-3 2.9437-4                                       M.IBN MAJAH*,        (90)22144 11  3.3654-5                   2.9437-4 0.89                       7.79     7.79    0.0826   0.0073514.083646987.4527-4 1.01267530.6690319
+    1 40092   3 103    1.0127E7 452000.0.00421049 3.8915-4                                       M.IBN MAJAH*,        (90)22144 11  3.8937-5                   3.8915-4 0.92                       9.24     9.24    0.0927   0.0041715.092931528.5939-4 1.00249760.9050104
+    1 40092   3 103    1.0614E7 442000.0 4.8929-3 4.5625-4                                       M.IBN MAJAH*,        (90)22144 11  4.6977-5                   4.5625-4 0.96                       9.32     9.32    0.0997   0.00448650.100581 9.6568-4 1.00883690.9125045
+#/C5DATA        0
+#/DATASET       22144011 
+#DATASET        22144012   19910205
+#SUBENT         22144012   19910205
+#ENTRY          22144      19910617
+#TITLE          -ACTIVATION CROSS SECTIONS OF NEUTRON THRESHOLD
+#+               REACTIONS ON SOME ZIRCONIUM ISOTOPES IN THE 5.4- TO
+#+               10.6-MEV ENERGY RANGE.
+#AUTHORS        M.IBN MAJAH,S.M.QAIM
+#AUTHOR1        M.Ibn majah+
+#YEAR           1990
+#X4REF1         J,NSE,104,271,9003
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.104, p.271 (1990)
+#DATE           19910205
+#INSTITUTE      2GERJUL
+#METHOD         ACTIV
+#REACTION       40-ZR-94(N,A)38-SR-91,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           40094            
+#TARGET         40094           [ ]             40-ZR-94        [ ] 
+#REAC1          N,A
+#PRODUCT        38-SR-91
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9988883(8.2e6) Data[5]*1.0088369(1.1e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.49%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40094   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-94(N,A)38-SR-91,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (40-ZR-94(N,A)38-SR-91,,SIG)
+#+               #[1]#DECAY-DATA (38-SR-91,9.48HR,DG,1024.,0.330) #Ix_old=0.33
+#+                a1=0.33/0.335;              #[1]#DECAY-DATA: correction to new 1024.3 keV gamma-yield per decay Sr-91 Ix_new=0.335
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.98507464
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22144012    0.995696    1.01078     0.985075    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22144012    CS          6           0.983980    1.02010     0.995696    -0.430%     1.02010     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40094   3 107   8215000.0 256000.0 4.0343-4 4.7607-5                                       M.IBN MAJAH*,        (90)22144 12  3.5415-6                   4.7607-5 0.88                       11.8     11.8    0.0462   0.0014784.046148644.0511-4 0.98397950.9521383
+    1 40094   3 107   8716000.0 280000.0 6.2447-4 5.0904-5                                       M.IBN MAJAH*,        (90)22144 12  5.4092-6                   5.0904-5 0.87                       8.15     8.15    0.0601   0.0045676.060474895.2384-4 0.99121940.7271941
+    1 40094   3 107   9187000.0 376000.0 8.0588-4 8.6585-5                                       M.IBN MAJAH*,        (90)22144 12  7.0633-6                   8.6585-5 0.88                       10.7     10.7    0.0706   0.00628340.07311046.4079-4 1.020102 0.7871387
+    1 40094   3 107   9643000.0 428000.0 8.7785-4 9.1032-5                                       M.IBN MAJAH*,        (90)22144 12  7.8215-6                   9.1032-5 0.89                       10.4     10.4    0.0826   0.0073514.083646987.4527-4 0.99756070.7586023
+    1 40094   3 107    1.0127E7 452000.0 1.4122-3 1.3444-4                                       M.IBN MAJAH*,        (90)22144 12  1.3059-5                   1.3444-4 0.92                       9.52     9.52    0.0927   0.0041715.092931528.5939-4 0.98753490.8962831
+    1 40094   3 107    1.0614E7 442000.0 1.7987-3 1.8235-4                                       M.IBN MAJAH*,        (90)22144 12  1.7270-5                   1.8235-4 0.96                       10.1     10.1    0.0997   0.00448650.100581 9.6568-4 0.99377960.9117337
+#/C5DATA        0
+#/DATASET       22144012 
+#/C5.2.3        1               11              11              0               56              

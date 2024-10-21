@@ -1,0 +1,91 @@
+#C5.2.3
+#DATASET        O2236003   20141222
+#SUBENT         O2236003   20141222
+#ENTRY          O2236      20160720
+#TITLE          The excitation functions of 100Mo(p,x)99Mo and
+#+              100Mo(p,2n)99mTc
+#AUTHORS        S.Manenti, U.Holzwarth, M.Loriggiola, L.Gini,
+#+              J.Esposito, F.Groppi, F.Simonelli
+#AUTHOR1        S.Manenti+
+#YEAR           2014
+#X4REF1         J,ARI,94,344,2014
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.94, p.344 (2014)
+#DATE           20141222
+#INSTITUTE      2ITYMIL,2ITYFRA,2ZZZISP,2ITYLNS
+#METHOD         ACTIV,STTA,BCINT
+#REACTION       42-MO-100(P,X)42-MO-99,CUM,SIG
+#C4Reaction     (P,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           1001
+#TARG           42100            
+#TARGET         42100           [ ]             42-MO-100       [ ] 
+#REAC1          P,X
+#PRODUCT        42-MO-99
+#C4ReaCode      (P,X)CUM,SIG
+#CompNotes      ERR-ANALYS:(ERR-1,,2.)        ADDED AS COMMON:ERR-1,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-2,,2.)        ADDED AS COMMON:ERR-2,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-3,1.5,2.)     ADDED AS COMMON:ERR-3,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-4,,1.)        ADDED AS COMMON:ERR-4,PER-CENT=0.5%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.52%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 42100   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 42-MO-100(P,X)42-MO-99,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (42-MO-100(P,X)42-MO-99,CUM,SIG)
+#+               #[1]#DECAY-DATA (42-MO-99,65.949HR,DG,181.1,0.06142) #Ix_old=0.06142
+#+                a1=0.06142/0.0605;          #[1]#DECAY-DATA: correction to new 181.068 keV gamma-yield per decay Mo-99 Ix_new=0.0605
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0152067
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O2236003    1.01521     -           1.01521     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O2236003    CS          20          1.01521     1.01521     1.01521     +1.52%      1.01521     m0: {,F.Tarkanyi+,R,IAEA-NDS-1211,49,2001} : ti0px;::ti0px
+#C5DATA         20
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 42100   39001     1.058E7 250000.0 3.8578-4 2.0304-5           42099.9                     S.Manenti*,          (14)O2236  3  8.1836-6                   2.0304-5 2.12                       5.26     5.26                                        1.01520671.0152067
+ 1001 42100   39001     1.107E7 370000.0 7.8171-4 4.0608-5           42099.9                     S.Manenti*,          (14)O2236  3  1.6582-5                   4.0608-5 2.12                       5.19     5.19                                        1.01520671.0152067
+ 1001 42100   39001     1.212E7 330000.0 4.9644-3 2.0304-4           42099.9                     S.Manenti*,          (14)O2236  3  1.0531-4                   2.0304-4 2.12                       4.09     4.09                                        1.01520671.0152067
+ 1001 42100   39001     1.269E7 340000.0 8.5277-3 4.2639-4           42099.9                     S.Manenti*,          (14)O2236  3  1.8090-4                   4.2639-4 2.12                       5        5                                           1.01520671.0152067
+ 1001 42100   39001     1.312E7 300000.0.01258856 5.0760-4           42099.9                     S.Manenti*,          (14)O2236  3 2.6704E-4                   5.0760-4 2.12                       4.03     4.03                                        1.01520671.0152067
+ 1001 42100   39001     1.365E7 200000.00.0174311 9.5429-4           42099.9                     S.Manenti*,          (14)O2236  3  3.6977-4                   9.5429-4 2.12                       5.47     5.47                                        1.01520671.0152067
+ 1001 42100   39001     1.403E7 380000.0.02173558 1.0254-3           42099.9                     S.Manenti*,          (14)O2236  3  4.6108-4                   1.0254-3 2.12                       4.72     4.72                                        1.01520671.0152067
+ 1001 42100   39001      1.46E7 360000.0.03028361 1.4213-3           42099.9                     S.Manenti*,          (14)O2236  3  6.4241-4                   1.4213-3 2.12                       4.69     4.69                                        1.01520671.0152067
+ 1001 42100   39001     1.512E7 430000.0.03917683 1.8274-3           42099.9                     S.Manenti*,          (14)O2236  3  8.3107-4                   1.8274-3 2.12                       4.66     4.66                                        1.01520671.0152067
+ 1001 42100   39001     1.516E7 410000.0.04306507 1.9898-3           42099.9                     S.Manenti*,          (14)O2236  3  9.1354-4                   1.9898-3 2.12                       4.62     4.62                                        1.01520671.0152067
+ 1001 42100   39001     1.565E7 410000.0.04664875.00216239           42099.9                     S.Manenti*,          (14)O2236  3  9.8957-4                  .00216239 2.12                       4.64     4.64                                        1.01520671.0152068
+ 1001 42100   39001     1.618E7 380000.0.05612063 2.5888-3           42099.9                     S.Manenti*,          (14)O2236  3  1.1905-3                   2.5888-3 2.12                       4.61     4.61                                        1.01520671.0152068
+ 1001 42100   39001      1.67E7 360000.0.06725744 3.1065-3           42099.9                     S.Manenti*,          (14)O2236  3  1.4268-3                   3.1065-3 2.12                       4.62     4.62                                        1.01520671.0152067
+ 1001 42100   39001     1.684E7 440000.00.0675417.00309638           42099.9                     S.Manenti*,          (14)O2236  3  1.4328-3                  .00309638 2.12                       4.58     4.58                                        1.01520671.0152067
+ 1001 42100   39001     1.759E7 410000.0.08061757 3.6954-3           42099.9                     S.Manenti*,          (14)O2236  3  1.7101-3                   3.6954-3 2.12                       4.58     4.58                                        1.01520671.0152067
+ 1001 42100   39001     1.776E7 440000.0.09154119 4.2131-3           42099.9                     S.Manenti*,          (14)O2236  3  1.9419-3                   4.2131-3 2.12                       4.60     4.60                                        1.01520671.0152067
+ 1001 42100   39001     1.805E7 390000.00.0959878 4.3958-3           42099.9                     S.Manenti*,          (14)O2236  3 0.0020362                   4.3958-3 2.12                       4.58     4.58                                        1.01520671.0152067
+ 1001 42100   39001     1.877E7 420000.00.1057541 4.8527-3           42099.9                     S.Manenti*,          (14)O2236  3  2.2434-3                   4.8527-3 2.12                       4.59     4.59                                        1.01520671.0152067
+ 1001 42100   39001     1.974E7 400000.00.1212766 5.5735-3           42099.9                     S.Manenti*,          (14)O2236  3  2.5726-3                   5.5735-3 2.12                       4.60     4.60                                        1.01520671.0152068
+ 1001 42100   39001     2.085E7 430000.00.1553977 7.1268-3           42099.9                     S.Manenti*,          (14)O2236  3  3.2965-3                   7.1268-3 2.12                       4.59     4.59                                        1.01520671.0152068
+#/C5DATA        0
+#/DATASET       O2236003 
+#/C5.2.3        1               1               2               0               20              

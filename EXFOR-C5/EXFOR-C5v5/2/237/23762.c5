@@ -1,0 +1,338 @@
+#C5M.2.3
+#DATASET        237620021  20210206
+#SUBENT         23762002   20210206
+#ENTRY          23762      20210206
+#TITLE          Experimental study of the 165Ho(n,2n) reaction:
+#+              Cross section measurements for the population of the
+#+              164Ho ground state and isomeric state from the
+#+              threshold up to 20 MeV
+#AUTHORS        E.Georgali, N.Patronis, A.Anastasiadis, X.Aslanoglou,
+#+              M.Axiotis, Z.Eleme, S.Harissopulos, A.Kalamara,
+#+              K.Karfopoulos, M.Kokkoris, A.Lagoyannis, M.Peoviti,
+#+              C.Potiriadis, M.I.Savva, I.E.Stamatelatos, M.E.Stamati,
+#+              A.Stamatopoulos, E.Vagena, T.Vasilopoulou, R.Vlastou
+#AUTHOR1        E.Georgali+
+#YEAR           2020
+#X4REF1         J,PR/C,102,034610,2020
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.102, p.034610 (2020)
+#DATE           20210206
+#INSTITUTE      2GRCIOA,2SWDUPP,2GRCATH,2GRCTUA,2SWDSWD,2GRCGRC
+#METHOD         ACTIV,GSPEC
+#REACTION       67-HO-165(N,2N)67-HO-164-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          N,2N
+#PRODUCT        67-HO-164-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+2.63%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 67165   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 67-HO-165(N,2N)67-HO-164-M,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (67-HO-165(N,2N)67-HO-164-M,,SIG)
+#+               #[1]#DECAY-DATA (67-HO-164-M,36.6MIN,DG,37.3,0.117) #Ix_old=0.117
+#+                a1=0.117/0.114;             #[1]#DECAY-DATA: correction to new 37.34 keV gamma-yield per decay Ho-164-m Ix_new=0.114
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0263158
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        237620021   1.02632     -           1.02632     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          237620021   CS          3           1.02632     1.02632     1.02632     +2.63%      1.02632                
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 67165   3  16M     1.01E7 200000.00.3325263.04310526                                       E.Georgali*,         (20)23762  21.03558031 0.023004         .04310526 10.7     6.92              13       13                                          1.02631581.0263158
+    1 67165   3  16M     1.04E7 200000.00.3356053.04413158                                       E.Georgali*,         (20)23762  21.03590976 0.024852         .04413158 10.7     7.41              13.1     13.1                                        1.02631581.0263159
+    1 67165   3  16M     1.07E7 200000.00.4002632.04926316                                       E.Georgali*,         (20)23762  21.04282816  0.02457         .04926316 10.7     6.14              12.3     12.3                                        1.02631581.0263158
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.01E7      1.07E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.01E7      1.01E7      0.332526    12.74        100
+1.04E7      1.04E7      0.335605    13.01        35 100
+1.07E7      1.07E7      0.400263    12.34        36 36 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       237620021
+#DATASET        237620022  20210206
+#SUBENT         23762002   20210206
+#ENTRY          23762      20210206
+#TITLE          Experimental study of the 165Ho(n,2n) reaction:
+#+              Cross section measurements for the population of the
+#+              164Ho ground state and isomeric state from the
+#+              threshold up to 20 MeV
+#AUTHORS        E.Georgali, N.Patronis, A.Anastasiadis, X.Aslanoglou,
+#+              M.Axiotis, Z.Eleme, S.Harissopulos, A.Kalamara,
+#+              K.Karfopoulos, M.Kokkoris, A.Lagoyannis, M.Peoviti,
+#+              C.Potiriadis, M.I.Savva, I.E.Stamatelatos, M.E.Stamati,
+#+              A.Stamatopoulos, E.Vagena, T.Vasilopoulou, R.Vlastou
+#AUTHOR1        E.Georgali+
+#YEAR           2020
+#X4REF1         J,PR/C,102,034610,2020
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.102, p.034610 (2020)
+#DATE           20210206
+#INSTITUTE      2GRCIOA,2SWDUPP,2GRCATH,2GRCTUA,2SWDSWD,2GRCGRC
+#METHOD         ACTIV,GSPEC
+#REACTION       67-HO-165(N,2N)67-HO-164-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          N,2N
+#PRODUCT        67-HO-164-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+2.63%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 67165   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 67-HO-165(N,2N)67-HO-164-M,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (67-HO-165(N,2N)67-HO-164-M,,SIG)
+#+               #[1]#DECAY-DATA (67-HO-164-M,36.6MIN,DG,37.3,0.117) #Ix_old=0.117
+#+                a1=0.117/0.114;             #[1]#DECAY-DATA: correction to new 37.34 keV gamma-yield per decay Ho-164-m Ix_new=0.114
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0263158
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        237620022   1.02632     -           1.02632     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          237620022   CS          4           1.02632     1.02632     1.02632     +2.63%      1.02632                
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 67165   3  16M     1.71E7 600000.00.6568421.07286843                                       E.Georgali*,         (20)23762  22.07028212  0.01856         .07286843 10.7     2.83              11.1     11.1                                        1.02631581.0263159
+    1 67165   3  16M     1.81E7 400000.0 0.607579.06876316                                       E.Georgali*,         (20)23762  22.06501095  0.02368         .06876316 10.7     3.90              11.3     11.3                                        1.02631581.0263158
+    1 67165   3  16M      1.9E7 400000.00.5049474.05952631                                       E.Georgali*,         (20)23762  22.05402936 0.025584         .05952631 10.7     5.07              11.8     11.8                                        1.02631581.0263157
+    1 67165   3  16M     1.96E7 400000.00.3971842.04721053                                       E.Georgali*,         (20)23762  22.04249871 0.020898         .04721053 10.7     5.26              11.9     11.9                                        1.02631581.0263158
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.71E7      1.96E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.71E7      1.71E7      0.656842    11.07        100
+1.81E7      1.81E7      0.607579    11.39        55 100
+1.9E7       1.9E7       0.504947    11.84        44 54 100
+1.96E7      1.96E7      0.397184    11.92        43 42 62 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       237620022
+#DATASET        237620031  20210207
+#SUBENT         23762003   20210207
+#ENTRY          23762      20210206
+#TITLE          Experimental study of the 165Ho(n,2n) reaction:
+#+              Cross section measurements for the population of the
+#+              164Ho ground state and isomeric state from the
+#+              threshold up to 20 MeV
+#AUTHORS        E.Georgali, N.Patronis, A.Anastasiadis, X.Aslanoglou,
+#+              M.Axiotis, Z.Eleme, S.Harissopulos, A.Kalamara,
+#+              K.Karfopoulos, M.Kokkoris, A.Lagoyannis, M.Peoviti,
+#+              C.Potiriadis, M.I.Savva, I.E.Stamatelatos, M.E.Stamati,
+#+              A.Stamatopoulos, E.Vagena, T.Vasilopoulou, R.Vlastou
+#AUTHOR1        E.Georgali+
+#YEAR           2020
+#X4REF1         J,PR/C,102,034610,2020
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.102, p.034610 (2020)
+#DATE           20210207
+#INSTITUTE      2GRCIOA,2SWDUPP,2GRCATH,2GRCTUA,2SWDSWD,2GRCGRC
+#METHOD         ACTIV,GSPEC
+#REACTION       67-HO-165(N,2N)67-HO-164-G,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          N,2N
+#PRODUCT        67-HO-164-G
+#C4ReaCode      (N,2N),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 67165   3  16GD ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 67165   3  16GD    1.01E7 200000.0    0.434    0.104                                       E.Georgali,          (20)23762  31 0.076818.06596801             0.104 17.7     15.2              24       24
+    1 67165   3  16GD    1.04E7 200000.0    0.529    0.106                                       E.Georgali,          (20)23762  31.07776301 0.067183             0.106 14.7     12.7              20       20
+    1 67165   3  16GD    1.07E7 200000.0    0.661    0.114                                       E.Georgali,          (20)23762  31 0.091879 0.062795             0.114 13.9     9.50              17.2     17.2
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.01E7      1.07E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.01E7      1.01E7      0.434       23.33        100
+1.04E7      1.04E7      0.529       19.43        29 100
+1.07E7      1.07E7      0.661       16.84        31 31 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       237620031
+#DATASET        237620032  20210207
+#SUBENT         23762003   20210207
+#ENTRY          23762      20210206
+#TITLE          Experimental study of the 165Ho(n,2n) reaction:
+#+              Cross section measurements for the population of the
+#+              164Ho ground state and isomeric state from the
+#+              threshold up to 20 MeV
+#AUTHORS        E.Georgali, N.Patronis, A.Anastasiadis, X.Aslanoglou,
+#+              M.Axiotis, Z.Eleme, S.Harissopulos, A.Kalamara,
+#+              K.Karfopoulos, M.Kokkoris, A.Lagoyannis, M.Peoviti,
+#+              C.Potiriadis, M.I.Savva, I.E.Stamatelatos, M.E.Stamati,
+#+              A.Stamatopoulos, E.Vagena, T.Vasilopoulou, R.Vlastou
+#AUTHOR1        E.Georgali+
+#YEAR           2020
+#X4REF1         J,PR/C,102,034610,2020
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.102, p.034610 (2020)
+#DATE           20210207
+#INSTITUTE      2GRCIOA,2SWDUPP,2GRCATH,2GRCTUA,2SWDSWD,2GRCGRC
+#METHOD         ACTIV,GSPEC
+#REACTION       67-HO-165(N,2N)67-HO-164-G,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          N,2N
+#PRODUCT        67-HO-164-G
+#C4ReaCode      (N,2N),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 67165   3  16GD ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 67165   3  16GD    1.71E7 600000.0    0.642    0.148                                       E.Georgali,          (20)23762  32  0.13803 0.050718             0.148 21.5     7.90              23.1     23.1
+    1 67165   3  16GD    1.81E7 400000.0    0.576    0.139                                       E.Georgali,          (20)23762  32 0.122112 0.065088             0.139 21.2     11.3              24.1     24.1
+    1 67165   3  16GD     1.9E7 400000.0     0.49    0.131                                       E.Georgali,          (20)23762  32   0.1078.07399001             0.131 22       15.1              26.7     26.7
+    1 67165   3  16GD    1.96E7 400000.0    0.318     0.09                                       E.Georgali,          (20)23762  32 0.070914 0.051834              0.09 22.3     16.3              28.3     28.3
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.71E7      1.96E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.71E7      1.71E7      0.642       22.91        100
+1.81E7      1.81E7      0.576       24.02        50 100
+1.9E7       1.9E7       0.49        26.68        39 47 100
+1.96E7      1.96E7      0.318       27.62        38 36 51 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       237620032
+#/C5M.2.3       1               4               4               0               14              

@@ -1,0 +1,254 @@
+#C5.2.3
+#DATASET        30599002   20090506
+#SUBENT         30599002   20090506
+#ENTRY          30599      20090506
+#TITLE          -Measurement of cross-section for reaction
+#+              Sc-45(n,2n)Sc-44m and isomeric cross section ratio.-
+#AUTHORS        Ma Hong-Chang,Li Ji-Zhou,Huang Jian-Zhou,Fan Pei-Guo,
+#+              Lu Han-Lin
+#AUTHOR1        Ma Hong-Chang+
+#YEAR           1980
+#X4REF1         J,CNP,2,(1),47,198002
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.2, Issue.1, p.47 (1980)
+#DATE           20090506
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       21-SC-45(N,2N)21-SC-44-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           21045            
+#TARGET         21045           [ ]             21-SC-45        [ ] 
+#REAC1          N,2N
+#PRODUCT        21-SC-44-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.173%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#CompNotes      RENORMALIZE(SIG-MON): Data[5]*0.98690456(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 21045   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 21-SC-45(N,2N)21-SC-44-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (21-SC-45(N,2N)21-SC-44-M,,SIG)
+#+               #[1]#DECAY-DATA (21-SC-44-M,2.44D,DG,271.,0.866) #Ix_old=0.866
+#+                a1=0.866/0.8675;            #[1]#DECAY-DATA: correction to new 271.241 keV gamma-yield per decay Sc-44-m Ix_new=0.8675
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99827087
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30599002    0.997181    0.998909    0.998271    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30599002    CS          12          0.985198    0.998271    0.997181    -0.282%     1.01502     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         12
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 21045   3  16M    1.315E7 180000.00.0427859 2.6354-3                                       Ma Hong-Chang*,      (80)30599  2  1.3864-3 4.286E-4          2.6354-3 3.24     1                 6.16     6.16                      0.12464331.0416-3 0.99827090.9982709
+    1 21045   3  16M    1.355E7 180000.0.05374691 3.3043-3                                       Ma Hong-Chang*,      (80)30599  2  1.7416-3 5.384E-4          3.3043-3 3.24     1                 6.15     6.15                      0.125295 9.1208-4 0.99827090.9982709
+    1 21045   3  16M    1.379E7 180000.0.09114214 4.8316-3                                       Ma Hong-Chang*,      (80)30599  2  2.9534-3  9.13E-4          4.8316-3 3.24     1                 5.30     5.30                      0.12410256.3262-4 0.99827090.9982709
+    1 21045   3  16M    1.407E7 140000.00.1078133 5.2908-3                                       Ma Hong-Chang*,      (80)30599  2  3.4935-3  0.00108          5.2908-3 3.24     1                 4.91     4.91                      0.12133755.6639-4 0.99827090.9982709
+    1 21045   3  16M    1.436E7 220000.00.1241849 6.0895-3                                       Ma Hong-Chang*,      (80)30599  2 .00402403 0.001244          6.0895-3 3.24     1                 4.90     4.90                      0.117412 4.7718-4 0.99827090.9982709
+    1 21045   3  16M    1.458E7 280000.00.1273861.00479072                                       Ma Hong-Chang*,      (80)30599  2  4.1573-3 0.001293         .00479072 3.26     1.02              3.76     3.76    0.1158   0.003474 0.11428364.4410-4 0.98519810.7726967
+    1 21045   3  16M    1.484E7 380000.0 0.133369 6.5886-3                                       Ma Hong-Chang*,      (80)30599  2  4.3216-3 0.001336          6.5886-3 3.24     1                 4.94     4.94                      0.11039514.8063-4 0.99827090.9982709
+    1 21045   3  16M    1.564E7 250000.00.1496408 9.1841-3                                       Ma Hong-Chang*,      (80)30599  2  4.8489-3 0.001499          9.1841-3 3.24     1                 6.14     6.14                      0.09819025.8703-4 0.99827090.998271
+    1 21045   3  16M    1.676E7 320000.00.1597233 9.5834-3                                       Ma Hong-Chang*,      (80)30599  2  5.1756-3   0.0016          9.5834-3 3.24     1                 6        6                         .080208766.3060-4 0.99827090.9982709
+    1 21045   3  16M    1.695E7 190000.00.1611209 9.8829-3                                       Ma Hong-Chang*,      (80)30599  2  5.2210-3 0.001614          9.8829-3 3.24     1                 6.13     6.13                      .077139836.2344-4 0.99827090.9982709
+    1 21045   3  16M    1.791E7 180000.00.1662121.01018236                                       Ma Hong-Chang*,      (80)30599  2  5.3859-3 0.001665         .01018236 3.24     1                 6.13     6.13                      .062554635.6245-4 0.99827090.9982709
+    1 21045   3  16M    1.826E7 150000.00.1575271.01028219                                       Ma Hong-Chang*,      (80)30599  2  5.1045-3 0.001578         .01028219 3.24     1                 6.53     6.53                      0.05773785.5024-4 0.99827090.9982709
+#/C5DATA        0
+#/DATASET       30599002 
+#DATASET        30599003   20090506
+#SUBENT         30599003   20090506
+#ENTRY          30599      20090506
+#TITLE          -Measurement of cross-section for reaction
+#+              Sc-45(n,2n)Sc-44m and isomeric cross section ratio.-
+#AUTHORS        Ma Hong-Chang,Li Ji-Zhou,Huang Jian-Zhou,Fan Pei-Guo,
+#+              Lu Han-Lin
+#AUTHOR1        Ma Hong-Chang+
+#YEAR           1980
+#X4REF1         J,CNP,2,(1),47,198002
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.2, Issue.1, p.47 (1980)
+#DATE           20090506
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       21-SC-45(N,2N)21-SC-44-M/G,,SIG/RAT
+#C4Reaction     (N,2N),SIG/RAT
+#ReactionType   CS
+#MF             203
+#MT             16
+#PROJ           1
+#TARG           21045            
+#TARGET         21045           [ ]             21-SC-45        [ ] 
+#REAC1          N,2N
+#PRODUCT        21-SC-44-M/G
+#C4ReaCode      (N,2N),SIG/RAT
+#Quantity       Cross section ratio
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 21045 203  16/  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV   NO-DIM   NO-DIM                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 21045 203  16/    1.461E7 280000.0    0.698    0.011           21044.9                     Ma Hong-Chang,       (80)30599  3                                0.011                            1.58     1.58
+    1 21045 203  16/    1.603E7 380000.0    0.654    0.011           21044.9                     Ma Hong-Chang,       (80)30599  3                                0.011                            1.68     1.68
+    1 21045 203  16/    1.676E7 320000.0    0.637     0.01           21044.9                     Ma Hong-Chang,       (80)30599  3                                 0.01                            1.57     1.57
+    1 21045 203  16/    1.754E7 160000.0    0.589     0.01           21044.9                     Ma Hong-Chang,       (80)30599  3                                 0.01                            1.70     1.70
+    1 21045 203  16/    1.826E7 150000.0    0.547    0.009           21044.9                     Ma Hong-Chang,       (80)30599  3                                0.009                            1.65     1.65
+#/C5DATA        0
+#/DATASET       30599003 
+#DATASET        30599004G  20090506
+#SUBENT         30599004   20090506
+#ENTRY          30599      20090506
+#TITLE          -Measurement of cross-section for reaction
+#+              Sc-45(n,2n)Sc-44m and isomeric cross section ratio.-
+#AUTHORS        Ma Hong-Chang,Li Ji-Zhou,Huang Jian-Zhou,Fan Pei-Guo,
+#+              Lu Han-Lin
+#AUTHOR1        Ma Hong-Chang+
+#YEAR           1980
+#X4REF1         J,CNP,2,(1),47,198002
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.2, Issue.1, p.47 (1980)
+#DATE           20090506
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       21-SC-45(N,2N)21-SC-44-G,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           21045            
+#TARGET         21045           [ ]             21-SC-45        [ ] 
+#REAC1          N,2N
+#PRODUCT        21-SC-44-G
+#C4ReaCode      (N,2N),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 21045   3  16G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 21045   3  16G    1.458E7 280000.0   0.1852   0.0094                                       Ma Hong-Chang,       (80)30599  4G                              0.0094                            5.08     5.08
+    1 21045   3  16G    1.603E7 380000.0   0.2347   0.0148                                       Ma Hong-Chang,       (80)30599  4G                              0.0148                            6.31     6.31
+    1 21045   3  16G    1.676E7 320000.0   0.2513   0.0157                                       Ma Hong-Chang,       (80)30599  4G                              0.0157                            6.25     6.25
+    1 21045   3  16G    1.754E7 160000.0   0.2795   0.0178                                       Ma Hong-Chang,       (80)30599  4G                              0.0178                            6.37     6.37
+    1 21045   3  16G    1.826E7 150000.0   0.2885   0.0195                                       Ma Hong-Chang,       (80)30599  4G                              0.0195                            6.76     6.76
+#/C5DATA        0
+#/DATASET       30599004G
+#DATASET        30599004S  20090506
+#SUBENT         30599004   20090506
+#ENTRY          30599      20090506
+#TITLE          -Measurement of cross-section for reaction
+#+              Sc-45(n,2n)Sc-44m and isomeric cross section ratio.-
+#AUTHORS        Ma Hong-Chang,Li Ji-Zhou,Huang Jian-Zhou,Fan Pei-Guo,
+#+              Lu Han-Lin
+#AUTHOR1        Ma Hong-Chang+
+#YEAR           1980
+#X4REF1         J,CNP,2,(1),47,198002
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.2, Issue.1, p.47 (1980)
+#DATE           20090506
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       21-SC-45(N,2N)21-SC-44,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           21045            
+#TARGET         21045           [ ]             21-SC-45        [ ] 
+#REAC1          N,2N
+#PRODUCT        21-SC-44
+#C4ReaCode      (N,2N),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 21045   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 21045   3  16     1.458E7 280000.0   0.3145   0.0113                                       Ma Hong-Chang,       (80)30599  4S                              0.0113                            3.59     3.59
+    1 21045   3  16     1.603E7 380000.0   0.3882   0.0176                                       Ma Hong-Chang,       (80)30599  4S                              0.0176                            4.53     4.53
+    1 21045   3  16     1.676E7 320000.0   0.4114   0.0185                                       Ma Hong-Chang,       (80)30599  4S                              0.0185                            4.50     4.50
+    1 21045   3  16     1.754E7 160000.0   0.4441   0.0205                                       Ma Hong-Chang,       (80)30599  4S                              0.0205                            4.62     4.62
+    1 21045   3  16     1.826E7 150000.0   0.4462   0.0221                                       Ma Hong-Chang,       (80)30599  4S                              0.0221                            4.95     4.95
+#/C5DATA        0
+#/DATASET       30599004S
+#/C5.2.3        1               4               4               0               27              

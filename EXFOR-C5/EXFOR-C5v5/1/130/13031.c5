@@ -1,0 +1,81 @@
+#C5M.2.3
+#DATASET        13031002   19860623
+#SUBENT         13031002   19860623
+#ENTRY          13031      19860623
+#TITLE          ACTIVATION CROSS SECTIONS FOR REACTIONS OF PD
+#+               AND CD ISOTOPES WITH 14.4 MEV NEUTRONS
+#AUTHORS        W.D.LU,R.W.FINK
+#AUTHOR1        W.D.Lu+
+#YEAR           1968
+#X4REF1         J,BAP,13,1422(DB15),6811
+#REFERENCE1     Jour: Bulletin of the American Physical Society Ser.II, Vol.13, p.1422(DB15) (1968)
+#DATE           19860623
+#INSTITUTE      1USAGIT
+#METHOD         ACTIV
+#REACTION       46-PD-108(N,2N)46-PD-107-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           46108            
+#TARGET         46108           [ ]             46-PD-108       [ ] 
+#REAC1          N,2N
+#PRODUCT        46-PD-107-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=6.0%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1066699(1.4e7)
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.182%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 46108   3  16MC ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             Point: XS(b)=0.1(6%)  EN-NRM(eV):1.44E7
+#M1             Point: XS(b)=0.110667(1.08%)  EN-NRM(eV):1.44E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 46-PD-108(N,2N)46-PD-107-M,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              #[0]#En=1.44E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1
+#+              a1=recom$fe56np[EN];          #[0]#new monitor point [14.4MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (26-FE-56(N,P)25-MN-56,,SIG)
+#+               #[2]#DECAY-MON  (25-MN-56,2.576HR,DG,847.,0.9867) #Im_old=0.9867
+#+                a2=0.9885/0.9867;           #[2]#DECAY-MON: correction to new 846.7638 keV gamma-yield per decay Mn-56 Im_new=0.9885
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0018243
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        13031002    1.10869     1.10667     -           1.00182
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          13031002    CS          1           1.10869     1.10869     1.10869     +10.9%      1.10869     [MONIT]::fe56np
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 46108   3  16MC    1.44E7 300000.00.4966926.01998358                                       W.D.LU*,             (68)13031  2  5.3651-3                  .01998358 1.08                       4.02     4.02    0.1      0.006    0.110667 .001195391.10868870.6244867
+#/C5DATA        0
+#/DATASET       13031002 
+#/C5M.2.3       1               1               1               0               1               

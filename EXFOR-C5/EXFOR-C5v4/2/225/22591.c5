@@ -1,0 +1,72 @@
+#C5.2.3
+#DATASET        22591002   20170204
+#SUBENT         22591002   20170204
+#ENTRY          22591      20170204
+#TITLE          .Excitation function of La-139(N,He3)Cs-137 reaction
+#+               near its threshold.
+#AUTHORS        S.M.Qaim, R.Woelfle
+#AUTHOR1        S.M.Qaim+
+#YEAR           1991
+#X4REF1         J,AHP,69,137,1991
+#REFERENCE1     Jour: Acta Physica Hungarica, Vol.69, p.137 (1991)
+#DATE           20170204
+#INSTITUTE      2GERJUL,2ZZZGEL
+#METHOD         ACTIV,CHSEP
+#REACTION       57-LA-139(N,X)55-CS-137,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           57139            
+#TARGET         57139           [ ]             57-LA-139       [ ] 
+#REAC1          N,X
+#PRODUCT        55-CS-137
+#C4ReaCode      (N,X),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=3
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+9.87%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 57139   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      57-LA-139(N,A)55-CS-136,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#C5CORR         #Reaction: 57-LA-139(N,X)55-CS-137,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (57-LA-139(N,X)55-CS-137,,SIG)
+#+               #[1]#DECAY-DATA (55-CS-137,30.17YR,DG,662.,0.935) #Ix_old=0.935
+#+                a1=0.935/0.851;             #[1]#DECAY-DATA: correction to new 661.657 keV gamma-yield per decay Cs-137 Ix_new=0.851
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0987074
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22591002    1.09871     -           1.09871     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22591002    CS          3           1.09871     1.09871     1.09871     +9.87%      1.09871     [EN,MONIT,MONIT-ERR]::la139na
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 57139   39000     1.632E7 580000.0 7.6910-6 6.0429-6           55137.9                     S.M.Qaim*,           (91)22591  2  6.0528-7                   6.0429-6 7.87                       78.6     78.6                                        1.09870741.0987073
+    1 57139   39000     1.768E7 770000.0 6.5922-5 2.9665-5           55137.9                     S.M.Qaim*,           (91)22591  2  5.2079-6                   2.9665-5 7.90                       45       45                                          1.09870741.0987074
+    1 57139   39000     1.902E7 560000.0 5.2738-5 3.0764-5           55137.9                     S.M.Qaim*,           (91)22591  2  4.2507-6                   3.0764-5 8.06                       58.3     58.3                                        1.09870741.0987074
+#/C5DATA        0
+#/DATASET       22591002 
+#/C5.2.3        1               1               1               0               3               

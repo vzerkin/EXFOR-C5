@@ -1,0 +1,488 @@
+#C5.2.3
+#DATASET        32108002   20101206
+#SUBENT         32108002   20101206
+#ENTRY          32108      20101206
+#TITLE          Cross sections of fast neutron induced reaction on
+#+              selenium isotopes
+#AUTHORS        H.M.Hoang,U.Garuska,A.Marcinkowski,B.Zwieglinski
+#AUTHOR1        H.M.Hoang+
+#YEAR           1989
+#X4REF1         J,ZP/A,334,(3),285,198911
+#REFERENCE1     Jour: Zeitschrift fuer Physik A, Hadrons and Nuclei, Vol.334, Issue.3, p.285 (1989)
+#DATE           20101206
+#INSTITUTE      3POLIPJ
+#METHOD         ACTIV
+#REACTION       34-SE-74(N,P)33-AS-74,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           34074            
+#TARGET         34074           [ ]             34-SE-74        [ ] 
+#REAC1          N,P
+#PRODUCT        33-AS-74
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-1,3.5,15.)    ADDED AS COMMON:ERR-1,PER-CENT=3.5%
+#CompNotes      ERR-ANALYS:(ERR-2,0.04,6.)    ADDED AS COMMON:ERR-2,PER-CENT=0.04%
+#CompNotes      ERR-ANALYS:(ERR-5,,1.)        ADDED AS COMMON:ERR-5,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-6,2.,9.)      ADDED AS COMMON:ERR-6,PER-CENT=2.0%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=8
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0239108(1.3e7) Data[7]*1.0550482(1.7e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 34074   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$fe56np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 34-SE-74(N,P)33-AS-74,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$fe56np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32108002    1.03253     1.03253     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32108002    CS          8           1.01747     1.05505     1.03253     +3.25%      1.05505     [EN,MONIT,MONIT-ERR]::fe56np
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 34074   3 103       1.3E7 400000.00.2314038.03473482                                       H.M.Hoang*,          (89)32108  2 .01000421                  .03473482 4.32                       15       15      0.112    0.002    0.114678 .001690761.02391081.0216122
+    1 34074   3 103      1.34E7 400000.00.1861977.02942014                                       H.M.Hoang*,          (89)32108  2 .00791987                  .02942014 4.25                       15.8     15.8    0.114    0.002    0.115992 .001469931.01747361.0144875
+    1 34074   3 103      1.39E7 200000.0 0.167027.02653815                                       H.M.Hoang*,          (89)32108  2  7.0309-3                  .02653815 4.21                       15.9     15.9    0.112    0.002    0.114767 .001258611.02470531.020698
+    1 34074   3 103      1.45E7 300000.00.1392576.02242689                                       H.M.Hoang*,          (89)32108  2  5.8553-3                  .02242689 4.20                       16.1     16.1    0.107    0.002    0.109563 .001187091.02395321.0194043
+    1 34074   3 103       1.5E7 300000.00.1212574.01959514                                       H.M.Hoang*,          (89)32108  2  5.1403-3                  .01959514 4.24                       16.2     16.2    .099400010.002    0.103017 .001252051.03638831.0313233
+    1 34074   3 103      1.54E7 200000.00.1079948.01772938                                       H.M.Hoang*,          (89)32108  2  4.6162-3                  .01772938 4.27                       16.4     16.4    .092500010.002    0.0969856.001293611.04849291.042905
+    1 34074   3 103      1.59E7 500000.0.09272632.01831452                                       H.M.Hoang*,          (89)32108  2  4.0045-3                  .01831452 4.32                       19.8     19.8    0.0865   0.003    0.0891203.001302661.03029241.0174732
+    1 34074   3 103      1.66E7 100000.0.08651396.01677905                                       H.M.Hoang*,          (89)32108  2  3.7873-3                  .01677905 4.38                       19.4     19.4    .074400010.002    0.0784956.001278191.05504821.0486904
+#/C5DATA        0
+#/DATASET       32108002 
+#DATASET        32108003   20101206
+#SUBENT         32108003   20101206
+#ENTRY          32108      20101206
+#TITLE          Cross sections of fast neutron induced reaction on
+#+              selenium isotopes
+#AUTHORS        H.M.Hoang,U.Garuska,A.Marcinkowski,B.Zwieglinski
+#AUTHOR1        H.M.Hoang+
+#YEAR           1989
+#X4REF1         J,ZP/A,334,(3),285,198911
+#REFERENCE1     Jour: Zeitschrift fuer Physik A, Hadrons and Nuclei, Vol.334, Issue.3, p.285 (1989)
+#DATE           20101206
+#INSTITUTE      3POLIPJ
+#METHOD         ACTIV
+#REACTION       34-SE-76(N,P)33-AS-76,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           34076            
+#TARGET         34076           [ ]             34-SE-76        [ ] 
+#REAC1          N,P
+#PRODUCT        33-AS-76
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-1,3.5,15.)    ADDED AS COMMON:ERR-1,PER-CENT=3.5%
+#CompNotes      ERR-ANALYS:(ERR-2,0.04,6.)    ADDED AS COMMON:ERR-2,PER-CENT=0.04%
+#CompNotes      ERR-ANALYS:(ERR-5,,1.)        ADDED AS COMMON:ERR-5,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-6,2.,9.)      ADDED AS COMMON:ERR-6,PER-CENT=2.0%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=8
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0239108(1.3e7) Data[7]*1.0550482(1.7e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 34076   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$fe56np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 34-SE-76(N,P)33-AS-76,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$fe56np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32108003    1.03253     1.03253     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32108003    CS          8           1.01747     1.05505     1.03253     +3.25%      1.05505     [EN,MONIT,MONIT-ERR]::fe56np
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 34076   3 103       1.3E7 400000.0.06041073 6.1132-3                                       H.M.Hoang*,          (89)32108  3  2.6117-3                   6.1132-3 4.32                       10.1     10.1    0.112    0.002    0.114678 .001690761.02391081.0188736
+    1 34076   3 103      1.34E7 400000.0.05799599 6.0642-3                                       H.M.Hoang*,          (89)32108  3  2.4669-3                   6.0642-3 4.25                       10.5     10.5    0.114    0.002    0.115992 .001469931.01747361.010693
+    1 34076   3 103      1.39E7 200000.0.05533409 5.0638-3                                       H.M.Hoang*,          (89)32108  3 .00232927                   5.0638-3 4.21                       9.15     9.15    0.112    0.002    0.114767 .001258611.02470531.0127667
+    1 34076   3 103      1.45E7 300000.0.05017371 5.0624-3                                       H.M.Hoang*,          (89)32108  3  2.1096-3                   5.0624-3 4.20                       10.1     10.1    0.107    0.002    0.109563 .001187091.02395321.0124823
+    1 34076   3 103       1.5E7 300000.0.04663748 5.1277-3                                       H.M.Hoang*,          (89)32108  3  0.001977                   5.1277-3 4.24                       11       11      .099400010.002    0.103017 .001252051.03638831.0255388
+    1 34076   3 103      1.54E7 200000.00.0450852 0.006244                                       H.M.Hoang*,          (89)32108  3  1.9271-3                   0.006244 4.27                       13.8     13.8    .092500010.002    0.0969856.001293611.04849291.0406662
+    1 34076   3 103      1.59E7 500000.0.042241990.0060373                                       H.M.Hoang*,          (89)32108  3  1.8242-3                  0.0060373 4.32                       14.3     14.3    0.0865   0.003    0.0891203.001302661.03029241.0062165
+    1 34076   3 103      1.66E7 100000.0.03798173 5.2123-3                                       H.M.Hoang*,          (89)32108  3  1.6627-3                   5.2123-3 4.38                       13.7     13.7    .074400010.002    0.0784956.001278191.05504821.0424627
+#/C5DATA        0
+#/DATASET       32108003 
+#DATASET        32108004   20101206
+#SUBENT         32108004   20101206
+#ENTRY          32108      20101206
+#TITLE          Cross sections of fast neutron induced reaction on
+#+              selenium isotopes
+#AUTHORS        H.M.Hoang,U.Garuska,A.Marcinkowski,B.Zwieglinski
+#AUTHOR1        H.M.Hoang+
+#YEAR           1989
+#X4REF1         J,ZP/A,334,(3),285,198911
+#REFERENCE1     Jour: Zeitschrift fuer Physik A, Hadrons and Nuclei, Vol.334, Issue.3, p.285 (1989)
+#DATE           20101206
+#INSTITUTE      3POLIPJ
+#METHOD         ACTIV
+#REACTION       34-SE-77(N,P)33-AS-77,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           34077            
+#TARGET         34077           [ ]             34-SE-77        [ ] 
+#REAC1          N,P
+#PRODUCT        33-AS-77
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-1,3.5,15.)    ADDED AS COMMON:ERR-1,PER-CENT=3.5%
+#CompNotes      ERR-ANALYS:(ERR-2,0.04,6.)    ADDED AS COMMON:ERR-2,PER-CENT=0.04%
+#CompNotes      ERR-ANALYS:(ERR-5,,1.)        ADDED AS COMMON:ERR-5,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-6,2.,9.)      ADDED AS COMMON:ERR-6,PER-CENT=2.0%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=8
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0239108(1.3e7) Data[7]*1.0550482(1.7e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 34077   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$fe56np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 34-SE-77(N,P)33-AS-77,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$fe56np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32108004    1.03253     1.03253     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32108004    CS          8           1.01747     1.05505     1.03253     +3.25%      1.05505     [EN,MONIT,MONIT-ERR]::fe56np
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 34077   3 103       1.3E7 400000.0.04300425.01022994                                       H.M.Hoang*,          (89)32108  4  1.8592-3                  .01022994 4.32                       23.8     23.8    0.112    0.002    0.114678 .001690761.02391081.0229937
+    1 34077   3 103      1.34E7 400000.0.04069894 7.1052-3                                       H.M.Hoang*,          (89)32108  4  1.7312-3                   7.1052-3 4.25                       17.5     17.5    0.114    0.002    0.115992 .001469931.01747361.0150256
+    1 34077   3 103      1.39E7 200000.0.04098821.00714964                                       H.M.Hoang*,          (89)32108  4  1.7253-3                  .00714964 4.21                       17.4     17.4    0.112    0.002    0.114767 .001258611.02470531.0213772
+    1 34077   3 103      1.45E7 300000.0.03788627.00611656                                       H.M.Hoang*,          (89)32108  4  1.5929-3                  .00611656 4.20                       16.1     16.1    0.107    0.002    0.109563 .001187091.02395321.0194266
+    1 34077   3 103       1.5E7 300000.0.04145553 7.2242-3                                       H.M.Hoang*,          (89)32108  4  1.7573-3                   7.2242-3 4.24                       17.4     17.4    .099400010.002    0.103017 .001252051.03638831.0320283
+    1 34077   3 103      1.54E7 200000.0.03984273 7.3081-3                                       H.M.Hoang*,          (89)32108  4  1.7031-3                   7.3081-3 4.27                       18.3     18.3    .092500010.002    0.0969856.001293611.04849291.0440094
+    1 34077   3 103      1.59E7 500000.0.03193906 8.1809-3                                       H.M.Hoang*,          (89)32108  4  1.3794-3                   8.1809-3 4.32                       25.6     25.6    0.0865   0.003    0.0891203.001302661.03029241.0226121
+    1 34077   3 103      1.66E7 100000.0.03165144 8.4132-3                                       H.M.Hoang*,          (89)32108  4  1.3855-3                   8.4132-3 4.38                       26.6     26.6    .074400010.002    0.0784956.001278191.05504821.0516491
+#/C5DATA        0
+#/DATASET       32108004 
+#DATASET        32108005   20101206
+#SUBENT         32108005   20101206
+#ENTRY          32108      20101206
+#TITLE          Cross sections of fast neutron induced reaction on
+#+              selenium isotopes
+#AUTHORS        H.M.Hoang,U.Garuska,A.Marcinkowski,B.Zwieglinski
+#AUTHOR1        H.M.Hoang+
+#YEAR           1989
+#X4REF1         J,ZP/A,334,(3),285,198911
+#REFERENCE1     Jour: Zeitschrift fuer Physik A, Hadrons and Nuclei, Vol.334, Issue.3, p.285 (1989)
+#DATE           20101206
+#INSTITUTE      3POLIPJ
+#METHOD         ACTIV
+#REACTION       34-SE-78(N,P)33-AS-78,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           34078            
+#TARGET         34078           [ ]             34-SE-78        [ ] 
+#REAC1          N,P
+#PRODUCT        33-AS-78
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-1,3.5,15.)    ADDED AS COMMON:ERR-1,PER-CENT=3.5%
+#CompNotes      ERR-ANALYS:(ERR-2,0.04,6.)    ADDED AS COMMON:ERR-2,PER-CENT=0.04%
+#CompNotes      ERR-ANALYS:(ERR-5,,1.)        ADDED AS COMMON:ERR-5,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-6,2.,9.)      ADDED AS COMMON:ERR-6,PER-CENT=2.0%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=8
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0239108(1.3e7) Data[7]*1.0550482(1.7e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 34078   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$fe56np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 34-SE-78(N,P)33-AS-78,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$fe56np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32108005    1.03253     1.03253     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32108005    CS          8           1.01747     1.05505     1.03253     +3.25%      1.05505     [EN,MONIT,MONIT-ERR]::fe56np
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 34078   3 103       1.3E7 400000.0.01740648 2.0403-3                                       H.M.Hoang*,          (89)32108  5  7.5253-4                   2.0403-3 4.32                       11.7     11.7    0.112    0.002    0.114678 .001690761.02391081.0201492
+    1 34078   3 103      1.34E7 400000.0 0.019332 3.0434-3                                       H.M.Hoang*,          (89)32108  5  8.2229-4                   3.0434-3 4.25                       15.7     15.7    0.114    0.002    0.115992 .001469931.01747361.0144656
+    1 34078   3 103      1.39E7 200000.00.0194694 3.0618-3                                       H.M.Hoang*,          (89)32108  5  8.1956-4                   3.0618-3 4.21                       15.7     15.7    0.112    0.002    0.114767 .001258611.02470531.0206155
+    1 34078   3 103      1.45E7 300000.0.02047906 3.0560-3                                       H.M.Hoang*,          (89)32108  5  8.6106-4                   3.0560-3 4.20                       14.9     14.9    0.107    0.002    0.109563 .001187091.02395321.0186609
+    1 34078   3 103       1.5E7 300000.0.01969138.00309309                                       H.M.Hoang*,          (89)32108  5  8.3475-4                  .00309309 4.24                       15.7     15.7    .099400010.002    0.103017 .001252051.03638831.0310299
+    1 34078   3 103      1.54E7 200000.0.02096986 3.1252-3                                       H.M.Hoang*,          (89)32108  5  8.9636-4                   3.1252-3 4.27                       14.9     14.9    .092500010.002    0.0969856.001293611.04849291.0417237
+    1 34078   3 103      1.59E7 500000.0.02163614 3.0150-3                                       H.M.Hoang*,          (89)32108  5  9.3435-4                   3.0150-3 4.32                       13.9     13.9    0.0865   0.003    0.0891203.001302661.03029241.0050129
+    1 34078   3 103      1.66E7 100000.0.02110096 3.1328-3                                       H.M.Hoang*,          (89)32108  5  9.2371-4                   3.1328-3 4.38                       14.8     14.8    .074400010.002    0.0784956.001278191.05504821.0442675
+#/C5DATA        0
+#/DATASET       32108005 
+#DATASET        32108006   20101206
+#SUBENT         32108006   20101206
+#ENTRY          32108      20101206
+#TITLE          Cross sections of fast neutron induced reaction on
+#+              selenium isotopes
+#AUTHORS        H.M.Hoang,U.Garuska,A.Marcinkowski,B.Zwieglinski
+#AUTHOR1        H.M.Hoang+
+#YEAR           1989
+#X4REF1         J,ZP/A,334,(3),285,198911
+#REFERENCE1     Jour: Zeitschrift fuer Physik A, Hadrons and Nuclei, Vol.334, Issue.3, p.285 (1989)
+#DATE           20101206
+#INSTITUTE      3POLIPJ
+#METHOD         ACTIV
+#REACTION       34-SE-76(N,2N)34-SE-75,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           34076            
+#TARGET         34076           [ ]             34-SE-76        [ ] 
+#REAC1          N,2N
+#PRODUCT        34-SE-75
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-1,3.5,15.)    ADDED AS COMMON:ERR-1,PER-CENT=3.5%
+#CompNotes      ERR-ANALYS:(ERR-2,0.04,6.)    ADDED AS COMMON:ERR-2,PER-CENT=0.04%
+#CompNotes      ERR-ANALYS:(ERR-5,,1.)        ADDED AS COMMON:ERR-5,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-6,2.,9.)      ADDED AS COMMON:ERR-6,PER-CENT=2.0%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=8
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0239108(1.3e7) Data[7]*1.0550482(1.7e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 34076   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$fe56np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 34-SE-76(N,2N)34-SE-75,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$fe56np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32108006    1.03253     1.03253     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32108006    CS          8           1.01747     1.05505     1.03253     +3.25%      1.05505     [EN,MONIT,MONIT-ERR]::fe56np
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 34076   3  16       1.3E7 400000.00.4730468.04479928                                       H.M.Hoang*,          (89)32108  6 .02045108                  .04479928 4.32                       9.47     9.47    0.112    0.002    0.114678 .001690761.02391081.0181653
+    1 34076   3  16      1.34E7 400000.00.7000219.06661406                                       H.M.Hoang*,          (89)32108  6 .02977538                  .06661406 4.25                       9.52     9.52    0.114    0.002    0.115992 .001469931.01747361.0093038
+    1 34076   3  16      1.39E7 200000.00.8095172.07703745                                       H.M.Hoang*,          (89)32108  6 .03407634                  .07703745 4.21                       9.52     9.52    0.112    0.002    0.114767 .001258611.02470531.0136505
+    1 34076   3  16      1.45E7 300000.00.8529531.07776674                                       H.M.Hoang*,          (89)32108  6 .03586327                  .07776674 4.20                       9.12     9.12    0.107    0.002    0.109563 .001187091.02395321.0099576
+    1 34076   3  16       1.5E7 300000.00.8798936.09848777                                       H.M.Hoang*,          (89)32108  6 .03730004                  .09848777 4.24                       11.2     11.2    .099400010.002    0.103017 .001252051.03638831.0259142
+    1 34076   3  16      1.54E7 200000.0 0.884928.09209276                                       H.M.Hoang*,          (89)32108  6 .03782623                  .09209276 4.27                       10.4     10.4    .092500010.002    0.0969856.001293611.04849291.03475
+    1 34076   3  16      1.59E7 500000.01.0086563.08713081                                       H.M.Hoang*,          (89)32108  6 .04356013                  .08713081 4.32                       8.64     8.64    0.0865   0.003    0.0891203.001302661.03029240.96812
+    1 34076   3  16      1.66E7 100000.00.9695894.08724833                                       H.M.Hoang*,          (89)32108  6 0.0424443                  .08724833 4.38                       9        9       .074400010.002    0.0784956.001278191.05504821.0264509
+#/C5DATA        0
+#/DATASET       32108006 
+#DATASET        32108007   20101206
+#SUBENT         32108007   20101206
+#ENTRY          32108      20101206
+#TITLE          Cross sections of fast neutron induced reaction on
+#+              selenium isotopes
+#AUTHORS        H.M.Hoang,U.Garuska,A.Marcinkowski,B.Zwieglinski
+#AUTHOR1        H.M.Hoang+
+#YEAR           1989
+#X4REF1         J,ZP/A,334,(3),285,198911
+#REFERENCE1     Jour: Zeitschrift fuer Physik A, Hadrons and Nuclei, Vol.334, Issue.3, p.285 (1989)
+#DATE           20101206
+#INSTITUTE      3POLIPJ
+#METHOD         ACTIV
+#REACTION       34-SE-80(N,A)32-GE-77,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           34080            
+#TARGET         34080           [ ]             34-SE-80        [ ] 
+#REAC1          N,A
+#PRODUCT        32-GE-77
+#C4ReaCode      (N,A),SIG
+#CompNotes      ERR-ANALYS:(ERR-1,3.5,15.)    ADDED AS COMMON:ERR-1,PER-CENT=3.5%
+#CompNotes      ERR-ANALYS:(ERR-2,0.04,6.)    ADDED AS COMMON:ERR-2,PER-CENT=0.04%
+#CompNotes      ERR-ANALYS:(ERR-5,,1.)        ADDED AS COMMON:ERR-5,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-6,2.,9.)      ADDED AS COMMON:ERR-6,PER-CENT=2.0%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=8
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0239108(1.3e7) Data[7]*1.0550482(1.7e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 34080   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$fe56np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 34-SE-80(N,A)32-GE-77,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$fe56np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32108007    1.03253     1.03253     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32108007    CS          8           1.01747     1.05505     1.03253     +3.25%      1.05505     [EN,MONIT,MONIT-ERR]::fe56np
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 34080   3 107       1.3E7 400000.0 2.4574-3 3.0617-4                                       H.M.Hoang*,          (89)32108  7  1.0624-4                   3.0617-4 4.32                       12.5     12.5    0.112    0.002    0.114678 .001690761.02391081.0205795
+    1 34080   3 107      1.34E7 400000.0 2.2384-3 3.0403-4                                       H.M.Hoang*,          (89)32108  7  9.5212-5                   3.0403-4 4.25                       13.6     13.6    0.114    0.002    0.115992 .001469931.01747361.0134386
+    1 34080   3 107      1.39E7 200000.0 3.1766-34.0743E-4                                       H.M.Hoang*,          (89)32108  7  1.3371-4                  4.0743E-4 4.21                       12.8     12.8    0.112    0.002    0.114767 .001258611.02470531.0185751
+    1 34080   3 107      1.45E7 300000.0 2.6623-3 3.0450-4                                       H.M.Hoang*,          (89)32108  7  1.1194-4                   3.0450-4 4.20                       11.4     11.4    0.107    0.002    0.109563 .001187091.02395321.0149931
+    1 34080   3 107       1.5E7 300000.0 2.9019-3 4.1194-4                                       H.M.Hoang*,          (89)32108  7  1.2301-4                   4.1194-4 4.24                       14.2     14.2    .099400010.002    0.103017 .001252051.03638831.0298387
+    1 34080   3 107      1.54E7 200000.0.00293578 4.1641-4                                       H.M.Hoang*,          (89)32108  7  1.2549-4                   4.1641-4 4.27                       14.2     14.2    .092500010.002    0.0969856.001293611.04849291.0410274
+    1 34080   3 107      1.59E7 500000.0 3.4000-3 3.9800-4                                       H.M.Hoang*,          (89)32108  7  1.4683-4                   3.9800-4 4.32                       11.7     11.7    0.0865   0.003    0.0891203.001302661.03029240.9950048
+    1 34080   3 107      1.66E7 100000.0 3.4817-3 4.1540-4                                       H.M.Hoang*,          (89)32108  7  1.5241-4                   4.1540-4 4.38                       11.9     11.9    .074400010.002    0.0784956.001278191.05504821.038493
+#/C5DATA        0
+#/DATASET       32108007 
+#/C5.2.3        1               6               6               0               48              

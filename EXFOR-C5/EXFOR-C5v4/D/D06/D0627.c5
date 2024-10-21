@@ -1,0 +1,74 @@
+#C5.2.3
+#DATASET        D0627002   20211202
+#SUBENT         D0627002   20211202
+#ENTRY          D0627      20211202
+#TITLE          Tritium production in iron by protons at energies
+#+               between 50 and 177 MeV
+#AUTHORS        K.Goebel
+#AUTHOR1        K.Goebel
+#YEAR           1958
+#X4REF1         R,CERN-58-2,1958
+#REFERENCE1     Rept: CERN Europ. Org. for Nuclear Res. Reports, No.58-2 (1958)
+#DATE           20211202
+#INSTITUTE      2ZZZCER
+#METHOD         INTB,ACTIV,BSPEC
+#REACTION       26-FE-0(P,X)1-H-3,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           26000            
+#TARGET         26000           [ ]             26-FE-0         [ ] 
+#REAC1          P,X
+#PRODUCT        1-H-3
+#C4ReaCode      (P,X),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[3]*1.0471698(1.0e8) Data[5]*1.4073172(7.5e7)
+#CompNotes      WARNING! UNCHANGED+CHANGED POINTS: 4+3=7; EN(eV):[5.0e7,1.8e8]
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 26000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27px}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-0(P,X)1-H-3,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D0627002    1.16583     1.16583     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D0627002    CS          3/7         1.04299     1.40732     1.16583     +16.6%      1.40732     [EN,MONIT]::al27px
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 26000   39000       5.0E7            0.0042                     1003.9                     K.Goebel             (58)D0627  2                                                                                                    0.00589  4.2E-4
+ 1001 26000   39000       7.5E7          6.0515-3   8.0E-4            1003.9                     K.Goebel*            (58)D0627  2                               8.0E-4                            13.2     13.2    0.0082            0.01154  3.9E-4   1.4073172
+ 1001 26000   39000       9.3E7          5.2150-3    0.001            1003.9                     K.Goebel*            (58)D0627  2                                0.001                            19.2     19.2    0.0107            0.01116  3.4E-4   1.0429907
+ 1001 26000   39000       1.0E8          5.0264-3   9.0E-4            1003.9                     K.Goebel*            (58)D0627  2                               9.0E-4                            17.9     17.9    0.0106            0.0111   3.6E-4   1.0471698
+ 1001 26000   39000      1.35E8            0.0064   0.0012            1003.9                     K.Goebel             (58)D0627  2                               0.0012                            18.8     18.8    0.0097
+ 1001 26000   39000       1.5E8            0.0061   0.0011            1003.9                     K.Goebel             (58)D0627  2                               0.0011                            18       18      0.0092
+ 1001 26000   39000      1.77E8            0.0066   0.0012            1003.9                     K.Goebel             (58)D0627  2                               0.0012                            18.2     18.2    0.0089
+#/C5DATA        0
+#/DATASET       D0627002 
+#/C5.2.3        1               1               1               0               7               

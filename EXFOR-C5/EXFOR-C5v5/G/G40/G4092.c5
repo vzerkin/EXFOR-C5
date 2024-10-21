@@ -1,0 +1,130 @@
+#C5M.2.3
+#DATASET        G4092002   20211213
+#SUBENT         G4092002   20211213
+#ENTRY          G4092      20211213
+#TITLE          Cross-sections of photonuclear reactions on natMo
+#+              targets at end-point bremsstrahlung energy up to
+#+              Egmax=100 MeV
+#AUTHORS        A.N.Vodin,O.S.Deiev,I.S.Timchenko,S.M.Olejnik,
+#+              V.A.Kushnir,V.V.Mytrochenko,S.O.Perezhogin,
+#+              V.O.Bocharov
+#AUTHOR1        A.N.Vodin+
+#YEAR           2021
+#X4REF1         J,VAT/I,,(3/133),98,2021
+#REFERENCE1     Jour: Vopr.Atomn.Nauki i Tekhn.,Ser.Yad..Fiz..Issledo., Issue.3/133, p.98 (2021)
+#DATE           20211213
+#INSTITUTE      4UKRKFT
+#METHOD         ACTIV
+#REACTION       42-MO-92(G,2N)42-MO-90,,SIG,,BRA
+#C4Reaction     (G,2N),SIG,,BRA
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           0
+#TARG           42092            
+#TARGET         42092           [ ]             42-MO-92        [ ] 
+#REAC1          G,2N
+#PRODUCT        42-MO-90
+#C4ReaCode      (G,2N),SIG,,BRA
+#CompNotes      OPERATION...  Value=Max  Max:EN-MAX
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.313%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.577%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [    0 42092   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 42-MO-92(G,2N)42-MO-90,,SIG,,BRA
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (42-MO-92(G,2N)42-MO-90,,SIG,,BRA)
+#+               #[1]#DECAY-DATA ((1.)42-MO-90,5.56HR,DG,122.37,0.642) #Ix_old=0.642
+#+                a1=0.642/0.64;              #[1]#DECAY-DATA: correction to new 122.37 keV gamma-yield per decay Mo-90 Ix_new=0.64
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0031251
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (42-MO-100(G,N)42-MO-99,,SIG,,BRA)
+#+               #[2]#DECAY-MON  (42-MO-99,65.94HR,DG,739.5,0.1213) #Im_old=0.1213
+#+                a2=0.122/0.1213;            #[2]#DECAY-MON: correction to new 739.5 keV gamma-yield per decay Mo-99 Im_new=0.122
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0057708
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        G4092002    1.00891     -           1.00313     1.00577
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          G4092002    CS          20          1.00891     1.00891     1.00891     +0.891%     1.00891                
+#C5DATA         20
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    0 42092   3  16     3.505E7          5.2050-3 3.5716-4                                       A.N.Vodin*,          (21)G4092  2                             3.5716-4                            6.86     6.86                                        1.00891391.0089139
+    0 42092   3  16     3.505E7         .00510914 3.5816-4                                       A.N.Vodin*,          (21)G4092  2                             3.5816-4                            7.01     7.01                                        1.00891391.0089138
+    0 42092   3  16      3.99E7          5.3846-3 3.6825-4                                       A.N.Vodin*,          (21)G4092  2                             3.6825-4                            6.84     6.84                                        1.00891391.0089139
+    0 42092   3  16      3.99E7         .00525745 3.6825-4                                       A.N.Vodin*,          (21)G4092  2                             3.6825-4                            7        7                                           1.00891391.0089139
+    0 42092   3  16      4.51E7          4.4019-3 3.1276-4                                       A.N.Vodin*,          (21)G4092  2                             3.1276-4                            7.11     7.11                                        1.00891391.0089139
+    0 42092   3  16      4.51E7          4.4614-3 3.1276-4                                       A.N.Vodin*,          (21)G4092  2                             3.1276-4                            7.01     7.01                                        1.00891391.008914
+    0 42092   3  16     4.995E7          4.0790-3 2.8754-4                                       A.N.Vodin*,          (21)G4092  2                             2.8754-4                            7.05     7.05                                        1.00891391.008914
+    0 42092   3  16     4.995E7          4.1073-3 2.8754-4                                       A.N.Vodin*,          (21)G4092  2                             2.8754-4                            7        7                                           1.00891391.008914
+    0 42092   3  16     5.515E7         .00381773 2.7442-4                                       A.N.Vodin*,          (21)G4092  2                             2.7442-4                            7.19     7.19                                        1.00891391.0089139
+    0 42092   3  16     5.515E7         .00391963 2.7442-4                                       A.N.Vodin*,          (21)G4092  2                             2.7442-4                            7        7                                           1.00891391.0089138
+    0 42092   3  16      6.01E7          3.7239-3 2.5828-4                                       A.N.Vodin*,          (21)G4092  2                             2.5828-4                            6.94     6.94                                        1.00891391.008914
+    0 42092   3  16      6.01E7          3.6846-3 2.5828-4                                       A.N.Vodin*,          (21)G4092  2                             2.5828-4                            7.01     7.01                                        1.00891391.0089139
+    0 42092   3  16      6.46E7          3.4192-3 2.3609-4                                       A.N.Vodin*,          (21)G4092  2                             2.3609-4                            6.90     6.90                                        1.00891391.0089139
+    0 42092   3  16      6.46E7          3.3758-3 2.3609-4                                       A.N.Vodin*,          (21)G4092  2                             2.3609-4                            6.99     6.99                                        1.00891391.0089139
+    0 42092   3  16      7.03E7          3.0429-3 2.1187-4                                       A.N.Vodin*,          (21)G4092  2                             2.1187-4                            6.96     6.96                                        1.00891391.0089139
+    0 42092   3  16      7.03E7          3.0217-3 2.1187-4                                       A.N.Vodin*,          (21)G4092  2                             2.1187-4                            7.01     7.01                                        1.00891391.0089139
+    0 42092   3  16      7.52E7         .00277754 1.9573-4                                       A.N.Vodin*,          (21)G4092  2                             1.9573-4                            7.05     7.05                                        1.00891391.0089139
+    0 42092   3  16      7.52E7          2.7907-3 1.9573-4                                       A.N.Vodin*,          (21)G4092  2                             1.9573-4                            7.01     7.01                                        1.00891391.0089139
+    0 42092   3  16      8.07E7          2.8290-3 1.9472-4                                       A.N.Vodin*,          (21)G4092  2                             1.9472-4                            6.88     6.88                                        1.00891391.0089139
+    0 42092   3  16      8.07E7          2.7796-3 1.9472-4                                       A.N.Vodin*,          (21)G4092  2                             1.9472-4                            7.01     7.01                                        1.00891391.008914
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           3.505E7     8.07E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           20          20
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+3.505E7     3.505E7     5.2050-3    6.86         100
+3.505E7     3.505E7     5.1091-3    7.01         50 100
+3.99E7      3.99E7      5.3846-3    6.84         45 45 100
+3.99E7      3.99E7      5.2575-3    7.0          45 45 50 100
+4.51E7      4.51E7      4.4019-3    7.11         39 39 44 44 100
+4.51E7      4.51E7      4.4614-3    7.01         39 39 44 44 50 100
+4.995E7     4.995E7     4.0790-3    7.05         34 34 39 39 45 45 100
+4.995E7     4.995E7     4.1073-3    7.0          34 34 39 39 45 45 50 100
+5.515E7     5.515E7     3.8177-3    7.19         28 28 33 33 39 39 44 44 100
+5.515E7     5.515E7     3.9196-3    7.0          28 28 33 33 39 39 44 44 50 100
+6.01E7      6.01E7      3.7239-3    6.94         25 25 28 28 34 34 39 39 45 45 100
+6.01E7      6.01E7      3.6846-3    7.01         25 25 28 28 34 34 39 39 45 45 50 100
+6.46E7      6.46E7      3.4192-3    6.9          25 25 25 25 29 29 34 34 40 40 45 45 100
+6.46E7      6.46E7      3.3758-3    6.99         25 25 25 25 29 29 34 34 40 40 45 45 50 100
+7.03E7      7.03E7      3.0429-3    6.96         25 25 25 25 25 25 28 28 33 33 39 39 44 44 100
+7.03E7      7.03E7      3.0217-3    7.01         25 25 25 25 25 25 28 28 33 33 39 39 44 44 50 100
+7.52E7      7.52E7      2.7775-3    7.05         25 25 25 25 25 25 25 25 28 28 33 33 38 38 45 45 100
+7.52E7      7.52E7      2.7907-3    7.01         25 25 25 25 25 25 25 25 28 28 33 33 38 38 45 45 50 100
+8.07E7      8.07E7      2.8290-3    6.88         25 25 25 25 25 25 25 25 25 25 27 27 32 32 39 39 44 44 100
+8.07E7      8.07E7      2.7796-3    7.01         25 25 25 25 25 25 25 25 25 25 27 27 32 32 39 39 44 44 50 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       G4092002 
+#/C5M.2.3       1               1               2               0               20              

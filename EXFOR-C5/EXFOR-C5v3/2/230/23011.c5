@@ -1,0 +1,375 @@
+#C5.2.3
+#DATASET        23011002   20071203
+#SUBENT         23011002   20071203
+#ENTRY          23011      20071203
+#TITLE          Measurement of activation cross sections on tantalum
+#+              and tungsten with 14 MeV neutrons
+#AUTHORS        Y.Kasugai, M.Asai, A.Tanaka, H.Yamamoto, I.Jun,
+#+              T.Iida, K.Kawade
+#AUTHOR1        Y.Kasugai+
+#YEAR           1994
+#X4REF1         J,NST,31,(12),1248,199412
+#REFERENCE1     Jour: Jour. of Nuclear Science and Technology, Vol.31, Issue.12, p.1248 (1994)
+#DATE           20071203
+#INSTITUTE      2JPNNAG,1USACLA,2JPNOSA
+#METHOD         ACTIV,GSPEC
+#REACTION       73-TA-181(N,P)72-HF-181,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           73181            
+#TARGET         73181           [ ]             73-TA-181       [ ] 
+#REAC1          N,P
+#PRODUCT        72-HF-181
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99999106(1.3e7) Data[5]*0.99405825(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 73181   3 103 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 73-TA-181(N,P)72-HF-181,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23011002    0.993555    0.993555    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23011002    CS          6           0.991565    0.999991    0.993555    -0.644%     1.00851     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 73181   3 103 A    1.34E7  50000.0 2.1700-3 1.2582-4                                       Y.Kasugai*,          (94)23011  2  1.3763-4                   1.2582-4 6.34                       5.80     5.80    0.451    0.01353  0.450996 .002742310.99999110.8920309
+    1 73181   3 103 A   1.365E7  50000.0.00232194 1.2932-4                                       Y.Kasugai*,          (94)23011  2  1.4720-4                   1.2932-4 6.34                       5.57     5.57    0.459    0.01377  0.4554575.002612340.99228210.8772196
+    1 73181   3 103 A   1.388E7  50000.0 2.7868-3 1.5515-4                                       Y.Kasugai*,          (94)23011  2  1.8148-4                   1.5515-4 6.51                       5.57     5.57    0.462    0.01386  0.45818482.5362-3 0.99174190.8764228
+    1 73181   3 103 A   1.428E7  50000.0 3.1631-3 1.8321-4                                       Y.Kasugai*,          (94)23011  2  2.0595-4                   1.8321-4 6.51                       5.79     5.79    0.464    0.01392  0.46008642.5088-3 0.99156550.883562
+    1 73181   3 103 A   1.458E7  50000.0.00388744 2.1647-4                                       Y.Kasugai*,          (94)23011  2  2.4641-4                   2.1647-4 6.34                       5.57     5.57    0.464    0.01392  0.460146 2.5906-3 0.991694 0.8765299
+    1 73181   3 103 A   1.487E7  50000.0 4.1353-3 2.2106-4                                       Y.Kasugai*,          (94)23011  2  2.5514-4                   2.2106-4 6.17                       5.35     5.35    0.463    0.01389  0.460249 2.7892-3 0.99405830.8711488
+#/C5DATA        0
+#/DATASET       23011002 
+#DATASET        23011003   20071203
+#SUBENT         23011003   20071203
+#ENTRY          23011      20071203
+#TITLE          Measurement of activation cross sections on tantalum
+#+              and tungsten with 14 MeV neutrons
+#AUTHORS        Y.Kasugai, M.Asai, A.Tanaka, H.Yamamoto, I.Jun,
+#+              T.Iida, K.Kawade
+#AUTHOR1        Y.Kasugai+
+#YEAR           1994
+#X4REF1         J,NST,31,(12),1248,199412
+#REFERENCE1     Jour: Jour. of Nuclear Science and Technology, Vol.31, Issue.12, p.1248 (1994)
+#DATE           20071203
+#INSTITUTE      2JPNNAG,1USACLA,2JPNOSA
+#METHOD         ACTIV,GSPEC
+#REACTION       73-TA-181(N,X)72-HF-180-M,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           73181            
+#TARGET         73181           [ ]             73-TA-181       [ ] 
+#REAC1          N,X
+#PRODUCT        72-HF-180-M
+#C4ReaCode      (N,X),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99999106(1.3e7) Data[5]*0.99405825(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 73181   39000MA ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 73-TA-181(N,X)72-HF-180-M,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23011003    0.993555    0.993555    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23011003    CS          6           0.991565    0.999991    0.993555    -0.644%     1.00851     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 73181   39000MA    1.34E7  50000.0 5.1000-5 6.4584-6           72180.9                     Y.Kasugai*,          (94)23011  3  6.4425-6                   6.4584-6 12.6                       12.7     12.7    0.451    0.01353  0.450996 .002742310.99999110.9741234
+    1 73181   39000MA   1.365E7  50000.0 5.2591-5 6.6591-6           72180.9                     Y.Kasugai*,          (94)23011  3  6.6427-6                   6.6591-6 12.6                       12.7     12.7    0.459    0.01377  0.4554575.002612340.99228210.966491
+    1 73181   39000MA   1.388E7  50000.0 7.8348-5 6.9104-6           72180.9                     Y.Kasugai*,          (94)23011  3  7.2688-6                   6.9104-6 9.28                       8.82     8.82    0.462    0.01386  0.45818482.5362-3 0.99174190.9405792
+    1 73181   39000MA   1.428E7  50000.0 1.1205-4 1.1874-5           72180.9                     Y.Kasugai*,          (94)23011  3  1.2042-5                   1.1874-5 10.7                       10.6     10.6    0.464    0.01392  0.46008642.5088-3 0.99156550.955242
+    1 73181   39000MA   1.458E7  50000.0 1.8545-4 1.6553-5           72180.9                     Y.Kasugai*,          (94)23011  3  1.7374-5                   1.6553-5 9.37                       8.93     8.93    0.464    0.01392  0.460146 2.5906-3 0.991694 0.941708
+    1 73181   39000MA   1.487E7  50000.0 2.3062-4 1.7655-5           72180.9                     Y.Kasugai*,          (94)23011  3  1.8936-5                   1.7655-5 8.21                       7.66     7.66    0.463    0.01389  0.460249 2.7892-3 0.99405830.928055
+#/C5DATA        0
+#/DATASET       23011003 
+#DATASET        23011004   20071203
+#SUBENT         23011004   20071203
+#ENTRY          23011      20071203
+#TITLE          Measurement of activation cross sections on tantalum
+#+              and tungsten with 14 MeV neutrons
+#AUTHORS        Y.Kasugai, M.Asai, A.Tanaka, H.Yamamoto, I.Jun,
+#+              T.Iida, K.Kawade
+#AUTHOR1        Y.Kasugai+
+#YEAR           1994
+#X4REF1         J,NST,31,(12),1248,199412
+#REFERENCE1     Jour: Jour. of Nuclear Science and Technology, Vol.31, Issue.12, p.1248 (1994)
+#DATE           20071203
+#INSTITUTE      2JPNNAG,1USACLA,2JPNOSA
+#METHOD         ACTIV,GSPEC
+#REACTION       74-W-184(N,A)72-HF-181,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           74184            
+#TARGET         74184           [ ]             74-W-184        [ ] 
+#REAC1          N,A
+#PRODUCT        72-HF-181
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99999106(1.3e7) Data[5]*0.99405825(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 74184   3 107 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 74-W-184(N,A)72-HF-181,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23011004    0.993555    0.993555    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23011004    CS          6           0.991565    0.999991    0.993555    -0.644%     1.00851     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 74184   3 107 A    1.34E7  50000.0 5.6000-4 8.8076-5                                       Y.Kasugai*,          (94)23011  4  8.5842-5                   8.8076-5 15.3                       15.7     15.7    0.451    0.01353  0.450996 .002742310.99999110.9829907
+    1 74184   3 107 A   1.365E7  50000.0 5.5568-4 8.7390-5                                       Y.Kasugai*,          (94)23011  4  8.5173-5                   8.7390-5 15.3                       15.7     15.7    0.459    0.01377  0.4554575.002612340.99228210.9753325
+    1 74184   3 107 A   1.388E7  50000.0 6.6447-4 9.7726-5                                       Y.Kasugai*,          (94)23011  4  9.5349-5                   9.7726-5 14.3                       14.7     14.7    0.462    0.01386  0.45818482.5362-3 0.99174190.9723935
+    1 74184   3 107 A   1.428E7  50000.0 7.8334-4 1.1521-4                                       Y.Kasugai*,          (94)23011  4  1.1240-4                   1.1521-4 14.3                       14.7     14.7    0.464    0.01392  0.46008642.5088-3 0.99156550.9722002
+    1 74184   3 107 A   1.458E7  50000.0 8.6277-4 1.1808-4                                       Y.Kasugai*,          (94)23011  4  1.1540-4                   1.1808-4 13.4                       13.7     13.7    0.464    0.01392  0.460146 2.5906-3 0.991694 0.9694784
+    1 74184   3 107 A   1.487E7  50000.0 9.0459-4 1.2382-4                                       Y.Kasugai*,          (94)23011  4  1.2102-4                   1.2382-4 13.4                       13.7     13.7    0.463    0.01389  0.460249 2.7892-3 0.99405830.9719204
+#/C5DATA        0
+#/DATASET       23011004 
+#DATASET        23011005   20071203
+#SUBENT         23011005   20071203
+#ENTRY          23011      20071203
+#TITLE          Measurement of activation cross sections on tantalum
+#+              and tungsten with 14 MeV neutrons
+#AUTHORS        Y.Kasugai, M.Asai, A.Tanaka, H.Yamamoto, I.Jun,
+#+              T.Iida, K.Kawade
+#AUTHOR1        Y.Kasugai+
+#YEAR           1994
+#X4REF1         J,NST,31,(12),1248,199412
+#REFERENCE1     Jour: Jour. of Nuclear Science and Technology, Vol.31, Issue.12, p.1248 (1994)
+#DATE           20071203
+#INSTITUTE      2JPNNAG,1USACLA,2JPNOSA
+#METHOD         ACTIV,GSPEC
+#REACTION       74-W-186(N,X)73-TA-185,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           74186            
+#TARGET         74186           [ ]             74-W-186        [ ] 
+#REAC1          N,X
+#PRODUCT        73-TA-185
+#C4ReaCode      (N,X),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9917419(1.4e7) Data[3]*0.99405825(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 74186   39000 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 74-W-186(N,X)73-TA-185,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23011005    0.992265    0.992265    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23011005    CS          4           0.991565    0.994058    0.992265    -0.774%     1.00851     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 74186   39000 A   1.388E7  50000.0 7.9339-5 4.6752-5           73185.9                     Y.Kasugai*,          (94)23011  5  4.6839-5                   4.6752-5 59                         58.9     58.9    0.462    0.01386  0.45818482.5362-3 0.99174190.9905028
+    1 74186   39000 A   1.428E7  50000.0 1.4873-4 5.0379-5           73185.9                     Y.Kasugai*,          (94)23011  5  5.0335-5                   5.0379-5 33.8                       33.9     33.9    0.464    0.01392  0.46008642.5088-3 0.99156550.987826
+    1 74186   39000 A   1.458E7  50000.0 2.1817-4 5.4163-5           73185.9                     Y.Kasugai*,          (94)23011  5  5.3678-5                   5.4163-5 24.6                       24.8     24.8    0.464    0.01392  0.460146 2.5906-3 0.991694 0.9847811
+    1 74186   39000 A   1.487E7  50000.0 3.3798-4 1.0091-4           73185.9                     Y.Kasugai*,          (94)23011  5  1.0170-4                   1.0091-4 30.1                       29.9     29.9    0.463    0.01389  0.460249 2.7892-3 0.99405830.9892793
+#/C5DATA        0
+#/DATASET       23011005 
+#DATASET        23011006   20071203
+#SUBENT         23011006   20071203
+#ENTRY          23011      20071203
+#TITLE          Measurement of activation cross sections on tantalum
+#+              and tungsten with 14 MeV neutrons
+#AUTHORS        Y.Kasugai, M.Asai, A.Tanaka, H.Yamamoto, I.Jun,
+#+              T.Iida, K.Kawade
+#AUTHOR1        Y.Kasugai+
+#YEAR           1994
+#X4REF1         J,NST,31,(12),1248,199412
+#REFERENCE1     Jour: Jour. of Nuclear Science and Technology, Vol.31, Issue.12, p.1248 (1994)
+#DATE           20071203
+#INSTITUTE      2JPNNAG,1USACLA,2JPNOSA
+#METHOD         ACTIV,GSPEC
+#REACTION       74-W-186(N,A)72-HF-183,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           74186            
+#TARGET         74186           [ ]             74-W-186        [ ] 
+#REAC1          N,A
+#PRODUCT        72-HF-183
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99999106(1.3e7) Data[5]*0.99405825(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 74186   3 107 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 74-W-186(N,A)72-HF-183,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23011006    0.993555    0.993555    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23011006    CS          6           0.991565    0.999991    0.993555    -0.644%     1.00851     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 74186   3 107 A    1.34E7  50000.0 2.5000-4 4.1860-5                                       Y.Kasugai*,          (94)23011  6  4.2600-5                   4.1860-5 17                         16.7     16.7    0.451    0.01353  0.450996 .002742310.99999110.9849467
+    1 74186   3 107 A   1.365E7  50000.0 3.9691-4 6.2421-5                                       Y.Kasugai*,          (94)23011  6  6.4653-5                   6.2421-5 16.3                       15.7     15.7    0.459    0.01377  0.4554575.002612340.99228210.9753324
+    1 74186   3 107 A   1.388E7  50000.0 4.7604-4 6.5150-5                                       Y.Kasugai*,          (94)23011  6  6.7110-5                   6.5150-5 14.1                       13.7     13.7    0.462    0.01386  0.45818482.5362-3 0.99174190.969498
+    1 74186   3 107 A   1.428E7  50000.0 5.6519-4 7.7350-5                                       Y.Kasugai*,          (94)23011  6  7.9678-5                   7.7350-5 14.1                       13.7     13.7    0.464    0.01392  0.46008642.5088-3 0.99156550.9693021
+    1 74186   3 107 A   1.458E7  50000.0 6.4460-4 8.8223-5                                       Y.Kasugai*,          (94)23011  6  8.5534-5                   8.8223-5 13.3                       13.7     13.7    0.464    0.01392  0.460146 2.5906-3 0.991694 0.9694785
+    1 74186   3 107 A   1.487E7  50000.0 8.2507-4 1.0448-4                                       Y.Kasugai*,          (94)23011  6  1.0813-4                   1.0448-4 13.1                       12.7     12.7    0.463    0.01389  0.460249 2.7892-3 0.99405830.9683366
+#/C5DATA        0
+#/DATASET       23011006 
+#/C5.2.3        1               5               5               0               28              

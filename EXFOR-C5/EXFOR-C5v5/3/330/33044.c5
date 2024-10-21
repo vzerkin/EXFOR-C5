@@ -1,0 +1,148 @@
+#C5M.2.3
+#DATASET        33044002   20130301
+#SUBENT         33044002   20130301
+#ENTRY          33044      20180524
+#TITLE          Measurement of 232Th(n,g) and 232Th(n,2n)
+#+               cross-sections at neutron energies of 13.5, 15.5 and
+#+               17.28 MeV using neutron activation techniques
+#AUTHORS        S.Mukerji, H.Naik, S.V.Suryanarayana, S.Chachara,
+#+               B.S.Shivashankar, V.Mulik, R.Crasta, S.Samanta,
+#+               B.K.Nayak, A.Saxena, S.C.Sharma, P.V.Bhagwat,
+#+               K.K.Rasheed, R.N.Jindal, S.Ganesan, A.K.Mohanty,
+#+               A.Goswami, P.D.Krishnani
+#AUTHOR1        S.Mukerji+
+#YEAR           2012
+#X4REF1         J,PRM,79,249,2012
+#REFERENCE1     Jour: Pramana, Vol.79, p.249 (2012)
+#DATE           20130301
+#INSTITUTE      3INDTRM,3INDMNP,3INDPOO,3INDMNG
+#METHOD         ACTIV,GSPEC
+#REACTION       90-TH-232(N,G)90-TH-233,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          N,G
+#PRODUCT        90-TH-233
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,5.,10.)     ADDED AS COMMON:ERR-S,PER-CENT=5.0%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+46.5%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 90232   3 102 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 90-TH-232(N,G)90-TH-233,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (90-TH-232(N,G)90-TH-233,,SIG)
+#+               #[1]#DECAY-DATA (90-TH-233,21.83MIN,DG,86.5,0.027) #Ix_old=0.027
+#+                a1=0.027/0.01843;           #[1]#DECAY-DATA: correction to new 86.5 keV gamma-yield per decay Th-233 Ix_new=0.01843
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.4650028
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        33044002    1.46500     -           1.46500     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          33044002    CS          3           1.46500     1.46500     1.46500     +46.5%      1.46500                
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 90232   3 102 A    1.35E7 350000.0 1.5412-3 2.4319-4                                       S.Mukerji*,          (12)33044  2  6.4010-5  5.26E-5          2.4319-4 4.15     3.41              15.8     15.8                                        1.46500281.4650028
+    1 90232   3 102 A    1.55E7 500000.0 1.0270-3 2.5052-4                                       S.Mukerji*,          (12)33044  2  4.2654-5 3.505E-5          2.5052-4 4.15     3.41              24.4     24.4                                        1.46500281.4650029
+    1 90232   3 102 A   1.728E7 350000.0 7.3690-4 2.0657-4                                       S.Mukerji*,          (12)33044  2  3.0605-5 2.515E-5          2.0657-4 4.15     3.41              28       28                                          1.46500281.4650027
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.35E7      1.728E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.35E7      1.35E7      1.5412-3    5.38         100
+1.55E7      1.55E7      1.0270-3    5.38         30 100
+1.728E7     1.728E7     7.3690-4    5.38         30 32 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       33044002 
+#DATASET        33044003   20130301
+#SUBENT         33044003   20130301
+#ENTRY          33044      20180524
+#TITLE          Measurement of 232Th(n,g) and 232Th(n,2n)
+#+               cross-sections at neutron energies of 13.5, 15.5 and
+#+               17.28 MeV using neutron activation techniques
+#AUTHORS        S.Mukerji, H.Naik, S.V.Suryanarayana, S.Chachara,
+#+               B.S.Shivashankar, V.Mulik, R.Crasta, S.Samanta,
+#+               B.K.Nayak, A.Saxena, S.C.Sharma, P.V.Bhagwat,
+#+               K.K.Rasheed, R.N.Jindal, S.Ganesan, A.K.Mohanty,
+#+               A.Goswami, P.D.Krishnani
+#AUTHOR1        S.Mukerji+
+#YEAR           2012
+#X4REF1         J,PRM,79,249,2012
+#REFERENCE1     Jour: Pramana, Vol.79, p.249 (2012)
+#DATE           20130301
+#INSTITUTE      3INDTRM,3INDMNP,3INDPOO,3INDMNG
+#METHOD         ACTIV,GSPEC
+#REACTION       90-TH-232(N,2N)90-TH-231,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          N,2N
+#PRODUCT        90-TH-231
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,5.,10.)     ADDED AS COMMON:ERR-S,PER-CENT=5.0%
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 90232   3  16 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 90232   3  16 A   1.728E7 350000.0    0.656.09900001                                       S.Mukerji,           (12)33044  3 .02724573   0.0328         .09900001 4.15     5                 15.1     15.1
+#/C5DATA        0
+#/DATASET       33044003 
+#/C5M.2.3       1               2               2               0               4               

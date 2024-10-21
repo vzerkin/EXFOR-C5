@@ -1,0 +1,236 @@
+#C5M.2.3
+#DATASET        31625002   20080721
+#SUBENT         31625002   20080721
+#ENTRY          31625      20180524
+#TITLE          Measurement of cross sections for 185Re(n,2n)184g,mRe
+#+               and 191Ir(n,2n)190Ir reactions by 14 MeV neutrons
+#AUTHORS        Zhang Feng, Kong Xiang-Zhong, Pu Zhong-Sheng,
+#+               Zhu Xue-Bin
+#AUTHOR1        Zhang Feng+
+#YEAR           2002
+#X4REF1         J,PHE,26,678,2002
+#REFERENCE1     Jour: High Energy Physics and Nucl.Physics,Chinese ed., Vol.26, p.678 (2002)
+#DATE           20080721
+#INSTITUTE      3CPRUPD,3CPRLNZ
+#METHOD         ACTIV
+#REACTION       75-RE-185(N,2N)75-RE-184-G,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           75185            
+#TARGET         75185           [ ]             75-RE-185       [ ] 
+#REAC1          N,2N
+#PRODUCT        75-RE-184-G
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-1,,1.5)       ADDED AS COMMON:ERR-1,PER-CENT=0.75%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=2.01%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0042994(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.577%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 75185   3  16G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             Point: XS(b)=0.4582(2.01%)  EN-NRM(eV):1.47E7
+#M1             Point: XS(b)=0.46017(0.58%)  EN-NRM(eV):1.47E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 75-RE-185(N,2N)75-RE-184-G,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              #[0]#En=1.47E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.4582
+#+              a1=recom$nb93n2n[EN];         #[0]#new monitor point [14.7MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (75-RE-185(N,2N)75-RE-184-G,,SIG)
+#+               #[1]#DECAY-DATA (75-RE-184-G,38.0D,DG,903.282,0.3788) #Ix_old=0.3788
+#+                a1=0.3788/0.381;            #[1]#DECAY-DATA: correction to new 903.282 keV gamma-yield per decay Re-184-g Ix_new=0.381
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9942257
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31625002    0.998500    1.00430     0.994226    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31625002    CS          1           0.998500    0.998500    0.998500    -0.150%     1.00150     [MONIT]::nb93n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 75185   3  16G     1.47E7 200000.0 1.814275.07736649                                       Zhang Feng*,         (02)31625  2 .01723997                  .07736649 0.95                       4.26     4.26    0.4582   0.0092   0.46017  .002650860.99850020.9101939
+#/C5DATA        0
+#/DATASET       31625002 
+#DATASET        31625003   20080721
+#SUBENT         31625003   20080721
+#ENTRY          31625      20180524
+#TITLE          Measurement of cross sections for 185Re(n,2n)184g,mRe
+#+               and 191Ir(n,2n)190Ir reactions by 14 MeV neutrons
+#AUTHORS        Zhang Feng, Kong Xiang-Zhong, Pu Zhong-Sheng,
+#+               Zhu Xue-Bin
+#AUTHOR1        Zhang Feng+
+#YEAR           2002
+#X4REF1         J,PHE,26,678,2002
+#REFERENCE1     Jour: High Energy Physics and Nucl.Physics,Chinese ed., Vol.26, p.678 (2002)
+#DATE           20080721
+#INSTITUTE      3CPRUPD,3CPRLNZ
+#METHOD         ACTIV
+#REACTION       75-RE-185(N,2N)75-RE-184-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           75185            
+#TARGET         75185           [ ]             75-RE-185       [ ] 
+#REAC1          N,2N
+#PRODUCT        75-RE-184-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-1,,1.5)       ADDED AS COMMON:ERR-1,PER-CENT=0.75%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=2.01%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0042994(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.817%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 75185   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             Point: XS(b)=0.4582(2.01%)  EN-NRM(eV):1.47E7
+#M1             Point: XS(b)=0.46017(0.58%)  EN-NRM(eV):1.47E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 75-RE-185(N,2N)75-RE-184-M,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              #[0]#En=1.47E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.4582
+#+              a1=recom$nb93n2n[EN];         #[0]#new monitor point [14.7MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (75-RE-185(N,2N)75-RE-184-M,,SIG)
+#+               #[1]#DECAY-DATA (75-RE-184-M,169.D,DG,920.933,0.08133) #Ix_old=0.08133
+#+                a1=0.08133/0.082;           #[1]#DECAY-DATA: correction to new 920.933 keV gamma-yield per decay Re-184-m Ix_new=0.082
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9918293
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31625003    0.996094    1.00430     0.991829    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31625003    CS          1           0.996094    0.996094    0.996094    -0.391%     1.00392     [MONIT]::nb93n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 75185   3  16M     1.47E7 200000.00.3884765.01629849                                       Zhang Feng*,         (02)31625  3  3.6914-3                  .01629849 0.95                       4.20     4.20    0.4582   0.0092   0.46017  .002650860.99609360.9054718
+#/C5DATA        0
+#/DATASET       31625003 
+#DATASET        31625004   20080721
+#SUBENT         31625004   20080721
+#ENTRY          31625      20180524
+#TITLE          Measurement of cross sections for 185Re(n,2n)184g,mRe
+#+               and 191Ir(n,2n)190Ir reactions by 14 MeV neutrons
+#AUTHORS        Zhang Feng, Kong Xiang-Zhong, Pu Zhong-Sheng,
+#+               Zhu Xue-Bin
+#AUTHOR1        Zhang Feng+
+#YEAR           2002
+#X4REF1         J,PHE,26,678,2002
+#REFERENCE1     Jour: High Energy Physics and Nucl.Physics,Chinese ed., Vol.26, p.678 (2002)
+#DATE           20080721
+#INSTITUTE      3CPRUPD,3CPRLNZ
+#METHOD         ACTIV
+#REACTION       77-IR-191(N,2N)77-IR-190-G+M1,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           77191            
+#TARGET         77191           [ ]             77-IR-191       [ ] 
+#REAC1          N,2N
+#PRODUCT        77-IR-190-G+M1
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-1,,1.5)       ADDED AS COMMON:ERR-1,PER-CENT=0.75%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=2.01%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0042994(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 77191   3  16+  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             Point: XS(b)=0.4582(2.01%)  EN-NRM(eV):1.47E7
+#M1             Point: XS(b)=0.46017(0.58%)  EN-NRM(eV):1.47E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 77-IR-191(N,2N)77-IR-190-G+M1,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              #[0]#En=1.47E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.4582
+#+              a1=recom$nb93n2n[EN];         #[0]#new monitor point [14.7MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31625004    1.00430     1.00430     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31625004    CS          1           1.00430     1.00430     1.00430     +0.430%     1.00430     [MONIT]::nb93n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 77191   3  16+     1.47E7 200000.02.0467622.07233308                                       Zhang Feng*,         (02)31625  4 .01944916                  .07233308 0.95                       3.53     3.53    0.4582   0.0092   0.46017  .002650861.00429940.8821107
+#/C5DATA        0
+#/DATASET       31625004 
+#/C5M.2.3       1               3               3               0               3               

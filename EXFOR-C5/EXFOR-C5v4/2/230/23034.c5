@@ -1,0 +1,86 @@
+#C5.2.3
+#DATASET        23034002   20081106
+#SUBENT         23034002   20081106
+#ENTRY          23034      20130203
+#TITLE          .Measurements and statistical model calculations of
+#+               activation cross-sections for 26Mg(n,a)23Ne reaction
+#+               between 13.6 and 14.9 MeV neutron energies
+#AUTHORS        A.Elmali, I.A.Reyhancan
+#AUTHOR1        A.Elmali+
+#YEAR           2008
+#X4REF1         J,ANE,35,1068,2008
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.35, p.1068 (2008)
+#DATE           20081106
+#INSTITUTE      2TUKCNA
+#METHOD         ACTIV,SITA
+#REACTION       12-MG-26(N,A)10-NE-23,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           12026            
+#TARGET         12026           [ ]             12-MG-26        [ ] 
+#REAC1          N,A
+#PRODUCT        10-NE-23
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0727884(1.4e7) Data[5]*1.0541165(1.5e7)
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-1.64%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 12026   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,P)12-MG-27,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 12-MG-26(N,A)10-NE-23,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,P)12-MG-27,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (13-AL-27(N,P)12-MG-27,,SIG)
+#+               #[2]#DECAY-MON  (12-MG-27,9.458MIN,DG,843.8,0.73) #Im_old=0.73
+#+                a2=0.718/0.73;              #[2]#DECAY-MON: correction to new 843.76 keV gamma-yield per decay Mg-27 Im_new=0.718
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.98356164
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23034002    1.04028     1.05767     -           0.983562
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23034002    CS          6           1.01609     1.07296     1.04028     +4.03%      1.07296     [EN,MONIT,MONIT-ERR]::al27np
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 12026   3 107      1.36E7  80000.0.07226746 3.9371-3                                       A.Elmali*,           (08)23034  2  3.6671-30.0013698          3.9371-3 5.07     1.90              5.45     5.45    .076100010.002283 0.0816392.001333911.05515350.957931
+    1 12026   3 107     1.368E7  80000.00.0704933 3.8328-3                                       A.Elmali*,           (08)23034  2 .00357224 0.001314          3.8328-3 5.07     1.86              5.44     5.44    .073830010.00221490.08054041.2985-3 1.07295740.9728027
+    1 12026   3 107      1.41E7 100000.0.05831591 3.1550-3                                       A.Elmali*,           (08)23034  2  2.9347-30.0011196          3.1550-3 5.03     1.92              5.41     5.41    0.07067  0.00212010.07484930.00112151.04172770.9389983
+    1 12026   3 107     1.446E7 110000.0.06402404 3.4533-3                                       A.Elmali*,           (08)23034  2  3.2129-30.0012602          3.4533-3 5.02     1.97              5.39     5.39    0.06792  0.0020376.070166481.0177-3 1.01609330.9135677
+    1 12026   3 107     1.472E7 110000.0.05419972.00292729                                       A.Elmali*,           (08)23034  2  2.7252-30.0010638         .00292729 5.03     1.96              5.40     5.40    0.06461  0.0019383.066936849.9320-4 1.01898320.9176456
+    1 12026   3 107     1.486E7 120000.0.05094779 2.7633-3                                       A.Elmali*,           (08)23034  2  2.5707-3 9.828E-4          2.7633-3 5.05     1.93              5.42     5.42    0.06191  0.0018573.065260361.0066-3 1.03678860.9367247
+#/C5DATA        0
+#/DATASET       23034002 
+#/C5.2.3        1               1               1               0               6               

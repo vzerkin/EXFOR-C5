@@ -1,0 +1,74 @@
+#C5.2.3
+#DATASET        32652002   20060701
+#SUBENT         32652002   20060701
+#ENTRY          32652      20060701
+#TITLE          Cross-section measurements for the Te-128(n,2n)Te-127m
+#+              reactions induced by neutrons  around 14MeV
+#AUTHORS        Fenqun Zhou, Yimin Zhang, Fei Tuo, Yanling Yi,
+#+              Xiangzhong Kong
+#AUTHOR1        Fenqun Zhou+
+#YEAR           2006
+#X4REF1         J,ARI,64,815,2006
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.64, p.815 (2006)
+#DATE           20060701
+#INSTITUTE      3CPRLNZ
+#METHOD         ACTIV
+#REACTION       52-TE-128(N,2N)52-TE-127-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           52128            
+#TARGET         52128           [ ]             52-TE-128       [ ] 
+#REAC1          N,2N
+#PRODUCT        52-TE-127-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=2
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0007817(1.4e7) Data[1]*1.0009788(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 52128   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 52-TE-128(N,2N)52-TE-127-M,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32652002    1.00088     1.00088     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32652002    CS          2           1.00078     1.00098     1.00088     +0.0880%    1.00098     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 52128   3  16M     1.41E7 200000.00.7375761.06757442                                       Fenqun Zhou*,        (06)32652  2  3.9321-3                  .06757442 0.53                       9.16     9.16    0.4593   0.0092   0.459659 .002502551.00078170.9793392
+    1 52128   3  16M     1.46E7 300000.00.8538349.07812437                                       Fenqun Zhou*,        (06)32652  2  4.7305-3                  .07812437 0.55                       9.15     9.15    0.4597   0.0138   0.46015  .002597721.00097880.9527361
+#/C5DATA        0
+#/DATASET       32652002 
+#/C5.2.3        1               1               1               0               2               

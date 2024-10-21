@@ -1,0 +1,82 @@
+#C5.2.3
+#DATASET        33092002   20220830
+#SUBENT         33092002   20220830
+#ENTRY          33092      20220830
+#TITLE          Measurement of the 115In(n,g)116mIn reaction cross-
+#+              section at the neutron energies of 1.12, 2.12, 3.12
+#+              and 4.12 MeV
+#AUTHORS        B.M.Lawriniang, S.Badwar, R.Ghosh, B.Jyrwa, V.Vansola,
+#+               H.Naik, A.Goswami, Y.Naik, C.S.Datrik, A.K.Gupta,
+#+               V.P.Singh, S.S.Pol, N.B.Subramanyam, A.Agarwal,
+#+               P.Singh
+#AUTHOR1        B.M.Lawriniang+
+#YEAR           2015
+#X4REF1         J,KPS,67,441,2015
+#REFERENCE1     Jour: Journal of the Korean Physical Society, Vol.67, p.441 (2015)
+#DATE           20220830
+#INSTITUTE      3INDBDA,3INDTRM,3INDIND
+#METHOD         GSPEC,ACTIV
+#REACTION       49-IN-115(N,G)49-IN-116-M1+M2,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           49115            
+#TARGET         49115           [ ]             49-IN-115       [ ] 
+#REAC1          N,G
+#PRODUCT        49-IN-116-M1+M2
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,2.1,6.7)    ADDED AS COMMON:ERR-S,PER-CENT=2.1%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.8598541(1.1e6) Data[5]*0.93983275(2.1e6)
+#CompNotes      WARNING! UNCHANGED+CHANGED POINTS: 4+6=10; EN(eV):[1.1e6,4.1e6]
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 49115   3 102+  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 49-IN-115(N,G)49-IN-116-M1+M2,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        33092002    0.962327    0.962327    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          33092002    CS          6/10        0.859854    1.00874     0.962327    -3.77%      1.16299     [EN,MONIT]::au197ng
+#C5DATA         10
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 49115   3 102+  1120000.0 120000.00.2333051 0.003374                                       B.M.Lawriniang*,     (15)33092  2 0.0097867 0.005698          0.003374 4.19     2.44              1.45     1.45    .09098001         .078229531.6946-3 0.8598541
+    1 49115   3 102+  1120000.0 120000.00.2333056 0.002876                                       B.M.Lawriniang*,     (15)33092  2 0.0083423 0.004857          0.002876 3.58     2.08              1.23     1.23    .07755201         .078229531.6946-3 1.0087364
+    1 49115   3 102+  1120000.0 120000.00.2333046 0.002901                                       B.M.Lawriniang*,     (15)33092  2 0.00841560.0048997          0.002901 3.61     2.10              1.24     1.24    .07823401         .078229531.6946-3 0.9999428
+    1 49115   3 102+  2120000.0 150000.00.1154715 0.001631                                       B.M.Lawriniang*,     (15)33092  2 0.00434320.0025287          0.001631 3.76     2.19              1.41     1.41    0.0497            0.0476608.001216540.9589698
+    1 49115   3 102+  2120000.0 150000.00.1154713 0.001554                                       B.M.Lawriniang*,     (15)33092  2 0.00413760.0024089          0.001554 3.58     2.09              1.35     1.35    0.047347          0.0476608.001216541.0066277
+    1 49115   3 102+  2120000.0 150000.00.1154716 0.001664                                       B.M.Lawriniang*,     (15)33092  2 0.00443160.0025801          0.001664 3.84     2.23              1.44     1.44    0.050712          0.0476608.001216540.9398327
+    1 49115   3 102+  3120000.0 210000.0 0.041348  5.38E-4                                       B.M.Lawriniang,      (15)33092  2 0.00149148.6831E-4           5.38E-4 3.61     2.10              1.30     1.30    0.022712
+    1 49115   3 102+  3120000.0 210000.0 0.049247  6.41E-4                                       B.M.Lawriniang,      (15)33092  2 0.00177630.0010342           6.41E-4 3.61     2.10              1.30     1.30    0.018558
+    1 49115   3 102+  4120000.0 220000.0 0.017839 0.002469                                       B.M.Lawriniang,      (15)33092  2 6.4344E-43.7462E-4          0.002469 3.61     2.10              13.8     13.8    0.01149
+    1 49115   3 102+  4120000.0 220000.0  0.01828 0.002511                                       B.M.Lawriniang,      (15)33092  2 6.5935E-43.8388E-4          0.002511 3.61     2.10              13.7     13.7    0.011637
+#/C5DATA        0
+#/DATASET       33092002 
+#/C5.2.3        1               1               1               0               10              

@@ -1,0 +1,70 @@
+#C5.2.3
+#DATASET        40852002   20180202
+#SUBENT         40852002   20180202
+#ENTRY          40852      20180202
+#TITLE          Radiative capture cross section of 58Fe at a neutron
+#+               energy of 0.5 - 2.0 MeV
+#AUTHORS        Yu.N.Trofimov
+#AUTHOR1        Yu.N.Trofimov
+#YEAR           1985
+#X4REF1         J,AE,58,278,1985
+#REFERENCE1     Jour: Atomnaya Energiya, Vol.58, p.278 (1985)
+#DATE           20180202
+#INSTITUTE      4RUSRI
+#METHOD         ACTIV
+#REACTION       26-FE-58(N,G)26-FE-59,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           26058            
+#TARGET         26058           [ ]             26-FE-58        [ ] 
+#REAC1          N,G
+#PRODUCT        26-FE-59
+#C4ReaCode      (N,G),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.77%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 26058   3 102 C ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 26-FE-58(N,G)26-FE-59,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (26-FE-58(N,G)26-FE-59,,SIG)
+#+               #[1]#DECAY-DATA (26-FE-59,45.54D,DG,1099.25,.555) #Ix_old=0.555
+#+                a1=0.555/0.565;             #[1]#DECAY-DATA: correction to new 1099.245 keV gamma-yield per decay Fe-59 Ix_new=0.565
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9823009
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        40852002    0.982301    -           0.982301    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          40852002    CS          5           0.982301    0.982301    0.982301    -1.77%      1.01802                
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26058   3 102 C  500000.0129999.99 2.9469-3 2.9469-4                                       Yu.N.Trofimov*       (85)40852  2                             2.9469-4                            10       10                                          0.98230090.9823009
+    1 26058   3 102 C 1000000.0 120000.0 2.6522-3 2.9469-4                                       Yu.N.Trofimov*       (85)40852  2                             2.9469-4                            11.1     11.1                                        0.98230090.9823009
+    1 26058   3 102 C 1500000.0 100000.0 2.4558-3 2.9469-4                                       Yu.N.Trofimov*       (85)40852  2                             2.9469-4                            12       12                                          0.98230090.9823008
+    1 26058   3 102 C 2000000.0  80000.0 2.5540-3 2.9469-4                                       Yu.N.Trofimov*       (85)40852  2                             2.9469-4                            11.5     11.5                                        0.98230090.9823009
+    1 26058   3 102 C 2000000.0  80000.0 2.4558-3 2.9469-4                                       Yu.N.Trofimov*       (85)40852  2                             2.9469-4                            12       12                                          0.98230090.9823008
+#/C5DATA        0
+#/DATASET       40852002 
+#/C5.2.3        1               1               1               0               5               

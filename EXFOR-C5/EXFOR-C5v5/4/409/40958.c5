@@ -1,0 +1,119 @@
+#C5M.2.3
+#DATASET        40958002   20110630
+#SUBENT         40958002   20110630
+#ENTRY          40958      20130219
+#TITLE          U-236 neutron radiation capture cross-section
+#+               for En=0.3-2.2 MeV
+#AUTHORS        Yu.N.Trofimov
+#AUTHOR1        Yu.N.Trofimov
+#YEAR           1988
+#X4REF1         J,AE,64,(2),150,198802
+#REFERENCE1     Jour: Atomnaya Energiya, Vol.64, Issue.2, p.150 (1988)
+#DATE           20110630
+#INSTITUTE      4RUSRI
+#METHOD         ACTIV
+#REACTION       92-U-236(N,G)92-U-237,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           92236            
+#TARGET         92236           [ ]             92-U-236        [ ] 
+#REAC1          N,G
+#PRODUCT        92-U-237
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-4,1.,3.)      ADDED AS COMMON:ERR-4,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-5,3.,4.)      ADDED AS COMMON:ERR-5,PER-CENT=3.0%
+#CompNotes      ERR-ANALYS:(MONIT-ERR,6.,10.) ADDED AS COMMON:MONIT-ERR,PER-CENT=6.0%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9251331(3.0e5) Data[10]*0.9581738(2.2e6)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.66%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92236   3 102 C ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 92-U-236(N,G)92-U-237,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (92-U-236(N,G)92-U-237,,SIG)
+#+               #[1]#DECAY-DATA (92-U-237,6.752D,DG,208.,0.224) #Ix_old=0.224
+#+                a1=0.224/0.212;             #[1]#DECAY-DATA: correction to new 208.005 keV gamma-yield per decay U-237 Ix_new=0.212
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0566038
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        40958002    1.02841     0.973312    1.05660     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          40958002    CS          11          0.977499    1.07544     1.02841     +2.84%      1.07544     [EN,MONIT,MONIT-ERR]::au197ng
+#C5DATA         11
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92236   3 102 C  300000.0 140000.00.1241424.00342624                                       Yu.N.Trofimov*       (88)40958  2  5.8856-3                  .00342624 4.74                       2.76     2.76    0.2065   0.01239  0.19104  .003790650.97749910.42828
+    1 92236   3 102 C  500000.0129999.990.1269023 4.7424-3                                       Yu.N.Trofimov*       (88)40958  2  6.0250-3                   4.7424-3 4.75                       3.74     3.74    0.1346   0.008076 0.137    .002740571.07544350.5927989
+    1 92236   3 102 C  600000.0129999.990.1050334 3.7283-3                                       Yu.N.Trofimov*       (88)40958  2  5.0038-3                   3.7283-3 4.76                       3.55     3.55    0.1162   0.006972 0.11001  .002242511.00031820.5326117
+    1 92236   3 102 C  800000.0129999.990.1294354 4.4936-4                                       Yu.N.Trofimov*       (88)40958  2  6.2479-3                   4.4936-4 4.83                       0.35     0.35    .090800010.005448 0.088985 .001941531.0354832.06419367
+    1 92236   3 102 C 1000000.0 120000.00.1132182 3.0407-3                                       Yu.N.Trofimov*       (88)40958  2  5.3931-3                   3.0407-3 4.76                       2.69     2.69    0.083    0.00498  0.079408 .001617781.01087690.4343893
+    1 92236   3 102 C 1200000.0 110000.00.1008142 4.7402-3                                       Yu.N.Trofimov*       (88)40958  2  0.004885                   4.7402-3 4.85                       4.70     4.70    .076000010.00456  .075535671.6788-3 1.05014820.6771705
+    1 92236   3 102 C 1300000.0 110000.00.0901484 8.0002-3                                       Yu.N.Trofimov*       (88)40958  2  4.3959-3                   8.0002-3 4.88                       8.87     8.87    .073500010.00441  .07291801.001668831.04823720.888912
+    1 92236   3 102 C 1500000.0 100000.0.06375764 7.4424-3                                       Yu.N.Trofimov*       (88)40958  2  3.1433-3                   7.4424-3 4.93                       11.7     11.7    0.0715   0.00429  .069588011.6708-3 1.02834890.9303001
+    1 92236   3 102 C 1850000.0  90000.0 0.069406 7.3701-3                                       Yu.N.Trofimov*       (88)40958  2  3.4513-3                   7.3701-3 4.97                       10.6     10.6    0.0596   0.003576 .05843275.001453511.03591050.9212583
+    1 92236   3 102 C 2000000.0  80000.0.05915349 6.4993-3                                       Yu.N.Trofimov*       (88)40958  2  2.9244-3                   6.4993-3 4.94                       11       11      .054000010.00324  0.053038 .001288391.03778050.9284654
+    1 92236   3 102 C 2200000.0  80000.0.06276942 7.3610-3                                       Yu.N.Trofimov*       (88)40958  2  3.1741-3                   7.3610-3 5.06                       11.7     11.7    0.046    0.00276  0.044076 .001168641.01241  0.9201238
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           300000.0    2200000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           11          11
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+300000.     300000.     0.124142    4.74         100
+500000.     500000.     0.126902    4.75         89 100
+600000.     600000.     0.105033    4.76         84 95 100
+800000.     800000.     0.129435    4.83         74 84 89 100
+1.e+06      1.e+06      0.113218    4.76         63 74 79 89 100
+1.2e+06     1.2e+06     0.100814    4.85         53 63 68 79 89 100
+1.3e+06     1.3e+06     9.0148-2    8.87         27 32 35 40 46 52 100
+1.5e+06     1.5e+06     6.3758-2    11.67        21 21 22 27 31 36 21 100
+1850000.    1850000.    0.069406    10.62        23 23 23 23 26 31 18 16 100
+2.e+06      2.e+06      5.9153-2    10.99        22 22 22 22 22 26 16 14 19 100
+2.2e+06     2.2e+06     6.2769-2    11.73        22 22 22 22 22 22 12 12 16 17 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       40958002 
+#/C5M.2.3       1               1               1               0               11              

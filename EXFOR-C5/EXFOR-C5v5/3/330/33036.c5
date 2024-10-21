@@ -1,0 +1,75 @@
+#C5M.2.3
+#DATASET        33036002   20110807
+#SUBENT         33036002   20110807
+#ENTRY          33036      20110807
+#TITLE          233Pa(2nth f) cross-section determination using a
+#+               fission track technique
+#AUTHORS        H.Naik, P.M.Prajapati, S.V.Suryanarayana, P.N.Pathak,
+#+               D.R.Prabhu, V.Chavan, D.Raj, P.C.Kalsi, A.Goswami
+#AUTHOR1        H.Naik+
+#YEAR           2011
+#X4REF1         J,EPJ/A,47,100,2011
+#REFERENCE1     Jour: European Physical Journal A: Hadrons and Nuclei, Vol.47, p.100 (2011)
+#DATE           20110807
+#INSTITUTE      3INDTRM
+#METHOD         ACTIV,RCHEM,GSPEC
+#REACTION       91-PA-234(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           91234            
+#TARGET         91234           [ ]             91-PA-234       [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-1.39%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 91234   3  18 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             Point: XS(b)=98.65  EN-NRM(eV):0.0253
+#M1             Point: XS(b)=  EN-NRM(eV):0.0253
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 91-PA-234(N,F),,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              #[0]#En=0.0253
+#+              a0=[MONIT];                   #[0]#old monitor point 98.65
+#+              a1=therm$au197ng[0.0253];     #[0]#new monitor point [2.53E-8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
+#+               #[2]#DECAY-MON  (79-AU-198,2.69517D,DG,411.80205,0.96963) #Im_old=0.96963
+#+                a2=0.9562/0.96963;          #[2]#DECAY-MON: correction to new 411.80205 keV gamma-yield per decay Au-198 Im_new=0.9562
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.9861494
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        33036002    0.986149    1.00000     -           0.986149
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          33036002    CS          1           0.986149    0.986149    0.986149    -1.39%      1.01405     [MONIT]::au197ng
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 91234   3  18 A    0.0253          4767.046 85.80683                                       H.Naik*,             (11)33036  2  85.80683                            1.80                                1.80    98.65                               0.98614940.9861494
+#/C5DATA        0
+#/DATASET       33036002 
+#/C5M.2.3       1               1               1               0               1               

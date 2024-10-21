@@ -1,0 +1,67 @@
+#C5M.2.3
+#DATASET        22843002   20161111
+#SUBENT         22843002   20161111
+#ENTRY          22843      20161111
+#TITLE          Measurement of the effective capture cross section
+#+               of 238Np for thermal neutrons
+#AUTHORS        H.Harada, S.Nakamura, T.Fujii, H.Yamana
+#AUTHOR1        H.Harada+
+#YEAR           2004
+#X4REF1         J,NST,41,(1),1,200401
+#REFERENCE1     Jour: Jour. of Nuclear Science and Technology, Vol.41, Issue.1, p.1 (2004)
+#DATE           20161111
+#INSTITUTE      2JPNJAE,2JPNKTO
+#METHOD         ACTIV,GSPEC,SITA
+#REACTION       93-NP-238(N,G)93-NP-239,,SIG,,MXW
+#C4Reaction     (N,G),SIG,,MXW
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           93238            
+#TARGET         93238           [ ]             93-NP-238       [ ] 
+#REAC1          N,G
+#PRODUCT        93-NP-239
+#C4ReaCode      (N,G),SIG,,MXW
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.448%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 93238   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 93-NP-238(N,G)93-NP-239,,SIG,,MXW
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (93-NP-238(N,G)93-NP-239,,SIG,,MXW)
+#+               #[1]#DECAY-DATA (93-NP-239,2.3565D,DG,277.6,0.1444) #Ix_old=0.1444
+#+                a1=0.1444/0.14505;          #[1]#DECAY-DATA: correction to new 277.599 keV gamma-yield per decay Np-239 Ix_new=0.14505
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99551874
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22843002    0.995519    -           0.995519    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22843002    CS          1           0.995519    0.995519    0.995519    -0.448%     1.00450                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                    SpE     dSpE     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 93238   3 102      0.0253          476.8535 23.89245                                       H.Harada*,           (04)22843  2  15.79386   18.202          23.89245 3.31     3.82              5.01     5.01                                        0.99551870.9955187
+#/C5DATA        0
+#/DATASET       22843002 
+#/C5M.2.3       1               1               1               0               1               

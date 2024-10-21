@@ -1,0 +1,92 @@
+#C5.2.3
+#DATASET        30614002   20090805
+#SUBENT         30614002   20090805
+#ENTRY          30614      20090805
+#TITLE          Excitation curve measurement for the reaction
+#+               Y-89(n,2n)Y-88.
+#AUTHORS        Huang Jianzhou,Lu HanlLin,Li Jizhou,Fan Peiguo
+#AUTHOR1        Huang Jianzhou+
+#YEAR           1980
+#X4REF1         J,CNP,2,(3),213,1980
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.2, Issue.3, p.213 (1980)
+#DATE           20090805
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       39-Y-89(N,2N)39-Y-88,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           39089            
+#TARGET         39089           [ ]             39-Y-89         [ ] 
+#REAC1          N,2N
+#PRODUCT        39-Y-88
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=2.59%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.98690456(1.3e7) Data[12]*0.98690456(1.8e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.07%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 39089   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1158(2.59%)  EN-NRM(eV):1.458E7
+#M1             Point: XS(b)=0.1142836(0.39%)  EN-NRM(eV):1.458E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 39-Y-89(N,2N)39-Y-88,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1158
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.58MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (39-Y-89(N,2N)39-Y-88,,SIG)
+#+               #[1]#DECAY-DATA (39-Y-88-G,106.6D,DG,898.,0.927) #Ix_old=0.927
+#+                a1=0.927/0.937;             #[1]#DECAY-DATA: correction to new 898.042 keV gamma-yield per decay Y-88-g Ix_new=0.937
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.98932767
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30614002    0.976372    0.986905    0.989328    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30614002    CS          13          0.976372    0.976372    0.976372    -2.36%      1.02420     [MONIT]::al27na
+#C5DATA         13
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 39089   3  16     1.281E7129999.990.3719977.01925127                                       Huang Jianzhou*,     (80)30614  2  1.4288-3                  .01925127 0.38                       5.18     5.18    0.1158   0.003    0.11428364.4410-4 0.976372 0.8750578
+    1 39089   3  16     1.351E7 160000.00.6854132.02344699                                       Huang Jianzhou*,     (80)30614  2  2.6325-3                  .02344699 0.38                       3.42     3.42    0.1158   0.003    0.11428364.4410-4 0.976372 0.7815665
+    1 39089   3  16     1.365E7 200000.00.7283736.03431073                                       Huang Jianzhou*,     (80)30614  2  2.7975-3                  .03431073 0.38                       4.71     4.71    0.1158   0.003    0.11428364.4410-4 0.976372 0.8577683
+    1 39089   3  16     1.369E7 220000.0 0.737161.03529866                                       Huang Jianzhou*,     (80)30614  2  2.8313-3                  .03529866 0.38                       4.79     4.79    0.1158   0.003    0.11428364.4410-4 0.976372 0.8609428
+    1 39089   3  16     1.409E7  70000.00.8777584.03073282                                       Huang Jianzhou*,     (80)30614  2  3.3713-3                  .03073282 0.38                       3.50     3.50    0.1158   0.003    0.11428364.4410-4 0.976372 0.7880211
+    1 39089   3  16     1.461E7 210000.00.9939467.02130441                                       Huang Jianzhou*,     (80)30614  2  3.8176-3                  .02130441 0.38                       2.14     2.14    0.1158   0.003    0.11428364.4410-4 0.976372 0.6266002
+    1 39089   3  16      1.47E7 230000.0 1.023238.04348363                                       Huang Jianzhou*,     (80)30614  2  3.9300-3                  .04348363 0.38                       4.25     4.25    0.1158   0.003    0.11428364.4410-4 0.976372 0.8362237
+    1 39089   3  16     1.496E7  60000.01.0505763.03837069                                       Huang Jianzhou*,     (80)30614  2  4.0350-3                  .03837069 0.38                       3.65     3.65    0.1158   0.003    0.11428364.4410-4 0.976372 0.7993893
+    1 39089   3  16     1.568E7 310000.01.1286861.05095208                                       Huang Jianzhou*,     (80)30614  2 .00433506                  .05095208 0.38                       4.51     4.51    0.1158   0.003    0.11428364.4410-4 0.976372 0.8492014
+    1 39089   3  16     1.608E7 330000.0 1.175552.05251545                                       Huang Jianzhou*,     (80)30614  2  4.5150-3                  .05251545 0.38                       4.47     4.47    0.1158   0.003    0.11428364.4410-4 0.976372 0.8470234
+    1 39089   3  16     1.663E7 300000.01.22729970.0540049                                       Huang Jianzhou*,     (80)30614  2  4.7138-3                  0.0540049 0.38                       4.40     4.40    0.1158   0.003    0.11428364.4410-4 0.976372 0.8438265
+    1 39089   3  16      1.72E7 280000.01.2399925.05830375                                       Huang Jianzhou*,     (80)30614  2  4.7625-3                  .05830375 0.38                       4.70     4.70    0.1158   0.003    0.11428364.4410-4 0.976372 0.857408
+    1 39089   3  16       1.8E7 300000.01.2565908.05582702                                       Huang Jianzhou*,     (80)30614  2  4.8263-3                  .05582702 0.38                       4.44     4.44    0.1158   0.003    0.11428364.4410-4 0.976372 0.8458639
+#/C5DATA        0
+#/DATASET       30614002 
+#/C5.2.3        1               1               1               0               13              

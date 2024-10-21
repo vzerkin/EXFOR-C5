@@ -1,0 +1,340 @@
+#C5.2.3
+#DATASET        20091002   20230319
+#SUBENT         20091002   20230319
+#ENTRY          20091      20230319
+#TITLE          (n,2n) cross-section measurements on Mn-55, Co-59,
+#+               Cr-52, Fe-56 and Zn-68 for 14 MeV neutrons
+#AUTHORS        R.Wenusch,H.Vonach
+#AUTHOR1        R.Wenusch+
+#YEAR           1962
+#X4REF1         J,OSA,99,1,1962
+#REFERENCE1     Jour: Oesterr.Akad.Wiss.,Math-Naturw.Kl.,Anzeiger, Vol.99, p.1 (1962)
+#DATE           20230319
+#INSTITUTE      2AUSIRK
+#METHOD         ACTIV
+#REACTION       24-CR-52(N,2N)24-CR-51,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           24052            
+#TARGET         24052           [ ]             24-CR-52        [ ] 
+#REAC1          N,2N
+#PRODUCT        24-CR-51
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0528017(1.4e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-9.18%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 24052   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.116  EN-NRM(eV):1.4E7
+#M1             Point: XS(b)=0.122125(0.48%)  EN-NRM(eV):1.4E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 24-CR-52(N,2N)24-CR-51,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.4E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.116
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (24-CR-52(N,2N)24-CR-51,,SIG)
+#+               #[1]#DECAY-DATA (24-CR-51,,DG,320.,0.09) #Ix_old=0.09
+#+                a1=0.09/0.0991;             #[1]#DECAY-DATA: correction to new 320.0824 keV gamma-yield per decay Cr-51 Ix_new=0.0991
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.90817356
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20091002    0.956127    1.05280     0.908174    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20091002    CS          1           0.956127    0.956127    0.956127    -4.39%      1.04589     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 24052   3  16       1.4E7         0.26771550.0573676                                       R.Wenusch*,          (62)20091  2                            0.0573676                            21.4     21.4    0.116             0.122125 5.8250-4 0.95612670.9561267
+#/C5DATA        0
+#/DATASET       20091002 
+#DATASET        20091003   20230319
+#SUBENT         20091003   20230319
+#ENTRY          20091      20230319
+#TITLE          (n,2n) cross-section measurements on Mn-55, Co-59,
+#+               Cr-52, Fe-56 and Zn-68 for 14 MeV neutrons
+#AUTHORS        R.Wenusch,H.Vonach
+#AUTHOR1        R.Wenusch+
+#YEAR           1962
+#X4REF1         J,OSA,99,1,1962
+#REFERENCE1     Jour: Oesterr.Akad.Wiss.,Math-Naturw.Kl.,Anzeiger, Vol.99, p.1 (1962)
+#DATE           20230319
+#INSTITUTE      2AUSIRK
+#METHOD         ACTIV
+#REACTION       25-MN-55(N,2N)25-MN-54,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           25055            
+#TARGET         25055           [ ]             25-MN-55        [ ] 
+#REAC1          N,2N
+#PRODUCT        25-MN-54
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0528017(1.4e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 25055   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.116  EN-NRM(eV):1.4E7
+#M1             Point: XS(b)=0.122125(0.48%)  EN-NRM(eV):1.4E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 25-MN-55(N,2N)25-MN-54,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.4E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.116
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20091003    1.05280     1.05280     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20091003    CS          1           1.05280     1.05280     1.05280     +5.28%      1.05280     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 25055   3  16       1.4E7         0.6316811     0.12                                       R.Wenusch*,          (62)20091  3                                 0.12                            19       19      0.116             0.122125 5.8250-4 1.0528017
+#/C5DATA        0
+#/DATASET       20091003 
+#DATASET        20091004   20230319
+#SUBENT         20091004   20230319
+#ENTRY          20091      20230319
+#TITLE          (n,2n) cross-section measurements on Mn-55, Co-59,
+#+               Cr-52, Fe-56 and Zn-68 for 14 MeV neutrons
+#AUTHORS        R.Wenusch,H.Vonach
+#AUTHOR1        R.Wenusch+
+#YEAR           1962
+#X4REF1         J,OSA,99,1,1962
+#REFERENCE1     Jour: Oesterr.Akad.Wiss.,Math-Naturw.Kl.,Anzeiger, Vol.99, p.1 (1962)
+#DATE           20230319
+#INSTITUTE      2AUSIRK
+#METHOD         ACTIV
+#REACTION       26-FE-56(N,2N)26-FE-55,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           26056            
+#TARGET         26056           [ ]             26-FE-56        [ ] 
+#REAC1          N,2N
+#PRODUCT        26-FE-55
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0528017(1.4e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 26056   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.116  EN-NRM(eV):1.4E7
+#M1             Point: XS(b)=0.122125(0.48%)  EN-NRM(eV):1.4E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-56(N,2N)26-FE-55,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.4E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.116
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20091004    1.05280     1.05280     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20091004    CS          1           1.05280     1.05280     1.05280     +5.28%      1.05280     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26056   3  16       1.4E7         0.4632328     0.09                                       R.Wenusch*,          (62)20091  4                                 0.09                            19.4     19.4    0.116             0.122125 5.8250-4 1.0528017
+#/C5DATA        0
+#/DATASET       20091004 
+#DATASET        20091005   20230319
+#SUBENT         20091005   20230319
+#ENTRY          20091      20230319
+#TITLE          (n,2n) cross-section measurements on Mn-55, Co-59,
+#+               Cr-52, Fe-56 and Zn-68 for 14 MeV neutrons
+#AUTHORS        R.Wenusch,H.Vonach
+#AUTHOR1        R.Wenusch+
+#YEAR           1962
+#X4REF1         J,OSA,99,1,1962
+#REFERENCE1     Jour: Oesterr.Akad.Wiss.,Math-Naturw.Kl.,Anzeiger, Vol.99, p.1 (1962)
+#DATE           20230319
+#INSTITUTE      2AUSIRK
+#METHOD         ACTIV
+#REACTION       27-CO-59(N,2N)27-CO-58,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          N,2N
+#PRODUCT        27-CO-58
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0528017(1.4e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 27059   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.116  EN-NRM(eV):1.4E7
+#M1             Point: XS(b)=0.122125(0.48%)  EN-NRM(eV):1.4E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 27-CO-59(N,2N)27-CO-58,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.4E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.116
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20091005    1.05280     1.05280     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20091005    CS          1           1.05280     1.05280     1.05280     +5.28%      1.05280     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 27059   3  16       1.4E7         0.6632651     0.12                                       R.Wenusch*,          (62)20091  5                                 0.12                            18.1     18.1    0.116             0.122125 5.8250-4 1.0528017
+#/C5DATA        0
+#/DATASET       20091005 
+#DATASET        20091006   20230319
+#SUBENT         20091006   20230319
+#ENTRY          20091      20230319
+#TITLE          (n,2n) cross-section measurements on Mn-55, Co-59,
+#+               Cr-52, Fe-56 and Zn-68 for 14 MeV neutrons
+#AUTHORS        R.Wenusch,H.Vonach
+#AUTHOR1        R.Wenusch+
+#YEAR           1962
+#X4REF1         J,OSA,99,1,1962
+#REFERENCE1     Jour: Oesterr.Akad.Wiss.,Math-Naturw.Kl.,Anzeiger, Vol.99, p.1 (1962)
+#DATE           20230319
+#INSTITUTE      2AUSIRK
+#METHOD         ACTIV
+#REACTION       30-ZN-68(N,2N)30-ZN-67,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           30068            
+#TARGET         30068           [ ]             30-ZN-68        [ ] 
+#REAC1          N,2N
+#PRODUCT        30-ZN-67
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0528017(1.4e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 30068   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.116  EN-NRM(eV):1.4E7
+#M1             Point: XS(b)=0.122125(0.48%)  EN-NRM(eV):1.4E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 30-ZN-68(N,2N)30-ZN-67,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.4E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.116
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20091006    1.05280     1.05280     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20091006    CS          1           1.05280     1.05280     1.05280     +5.28%      1.05280     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30068   3  16       1.4E7         0.5579849      0.1                                       R.Wenusch*,          (62)20091  6                                  0.1                            17.9     17.9    0.116             0.122125 5.8250-4 1.0528017
+#/C5DATA        0
+#/DATASET       20091006 
+#/C5.2.3        1               5               5               0               5               

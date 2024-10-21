@@ -1,0 +1,385 @@
+#C5M.2.3
+#DATASET        22751003   20080621
+#SUBENT         22751003   20080621
+#ENTRY          22751      20200805
+#TITLE          Cross section measurement for the neutron induced
+#+              reactions on Ni and Au above 17 MeV by activation
+#+              technique.
+#AUTHORS        S.Iwasaki, M.Sakuma, K.Sugiyama, N.Odano
+#AUTHOR1        S.Iwasaki+
+#YEAR           1993
+#X4REF1         S,JAERI-M-93-046,257,1993
+#REFERENCE1     Conf: JAERI-M Reports, No.93-046, p.257 (1993)
+#DATE           20080621
+#INSTITUTE      2JPNTOH,2JPNSHR
+#METHOD         ACTIV
+#REACTION       79-AU-197(N,3N)79-AU-195,,SIG
+#C4Reaction     (N,3N),SIG
+#ReactionType   CS
+#MF             3
+#MT             17
+#PROJ           1
+#TARG           79197            
+#TARGET         79197           [ ]             79-AU-197       [ ] 
+#REAC1          N,3N
+#PRODUCT        79-AU-195
+#C4ReaCode      (N,3N),SIG
+#CompNotes      Ignored column:ERR-DIG,B (digitizing error)
+#CompNotes      Ignored column:EN-ERR-DIG,EV (digitizing error)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.77%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 79197   3  17   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 79-AU-197(N,3N)79-AU-195,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (79-AU-197(N,3N)79-AU-195,,SIG)
+#+               #[1]#DECAY-DATA (79-AU-195,183.D,DG,98.9,0.109) #Ix_old=0.109
+#+                a1=0.109/0.1121;            #[1]#DECAY-DATA: correction to new 98.857 keV gamma-yield per decay Au-195 Ix_new=0.1121
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9723461
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22751003    0.972346    -           0.972346    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22751003    CS          7           0.972346    0.972346    0.972346    -2.77%      1.02844                
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 79197   3  17    1.7539E7         0.3055209 0.091208                                       S.Iwasaki*,          (93)22751  3                             0.091208                            29.9     29.9                                        0.97234610.9723461
+    1 79197   3  17    1.8317E7         0.40228880.1140076                                       S.Iwasaki*,          (93)22751  3                            0.1140076                            28.3     28.3                                        0.97234610.9723462
+    1 79197   3  17    1.8509E7         0.50286820.1049161                                       S.Iwasaki*,          (93)22751  3                            0.1049161                            20.9     20.9                                        0.97234610.9723461
+    1 79197   3  17    1.9354E7         0.74110280.1413402                                       S.Iwasaki*,          (93)22751  3                            0.1413402                            19.1     19.1                                        0.97234610.9723461
+    1 79197   3  17    1.9356E7         0.69549970.1459297                                       S.Iwasaki*,          (93)22751  3                            0.1459297                            21       21                                          0.97234610.9723461
+    1 79197   3  17    1.9547E7         0.82800130.1915327                                       S.Iwasaki*,          (93)22751  3                            0.1915327                            23.1     23.1                                        0.97234610.9723462
+    1 79197   3  17    1.9568E7         0.91467620.1961319                                       S.Iwasaki*,          (93)22751  3                            0.1961319                            21.4     21.4                                        0.97234610.9723461
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.7539E7    1.9568E7    0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.7539E7    1.7539E7    0.305521    29.85        100
+1.8317E7    1.8317E7    0.402289    28.34        31 100
+1.8509E7    1.8509E7    0.502868    20.86        26 45 100
+1.9354E7    1.9354E7    0.741103    19.07        25 25 29 100
+1.9356E7    1.9356E7    0.6955      20.98        25 25 29 50 100
+1.9547E7    1.9547E7    0.828001    23.13        25 25 25 45 45 100
+1.9568E7    1.9568E7    0.914676    21.44        25 25 25 45 45 49 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22751003 
+#DATASET        22751004   20151215
+#SUBENT         22751004   20151215
+#ENTRY          22751      20200805
+#TITLE          Cross section measurement for the neutron induced
+#+              reactions on Ni and Au above 17 MeV by activation
+#+              technique.
+#AUTHORS        S.Iwasaki, M.Sakuma, K.Sugiyama, N.Odano
+#AUTHOR1        S.Iwasaki+
+#YEAR           1993
+#X4REF1         S,JAERI-M-93-046,257,1993
+#REFERENCE1     Conf: JAERI-M Reports, No.93-046, p.257 (1993)
+#DATE           20151215
+#INSTITUTE      2JPNTOH,2JPNSHR
+#METHOD         ACTIV
+#REACTION       28-NI-58(N,X)27-CO-57,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           28058            
+#TARGET         28058           [ ]             28-NI-58        [ ] 
+#REAC1          N,X
+#PRODUCT        27-CO-57
+#C4ReaCode      (N,X),SIG
+#CompNotes      Ignored column:ERR-DIG,B (digitizing error)
+#CompNotes      Ignored column:EN-ERR-DIG,EV (digitizing error)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 28058   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 28058   39000     1.726E7 230000.0   0.8258   0.0274           27057.9                     S.Iwasaki,           (93)22751  4                               0.0274                            3.32     3.32
+    1 28058   39000    1.8369E7 207000.0   0.8669   0.0288           27057.9                     S.Iwasaki,           (93)22751  4                               0.0288                            3.32     3.32
+    1 28058   39000    1.9123E7 276000.0   0.8361   0.0288           27057.9                     S.Iwasaki,           (93)22751  4                               0.0288                            3.44     3.44
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.726E7     1.9123E7    0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.726E7     1.726E7     0.8258      3.32         100
+1.8369E7    1.8369E7    0.8669      3.32         25 100
+1.9123E7    1.9123E7    0.8361      3.44         25 30 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22751004 
+#DATASET        22751005   20080621
+#SUBENT         22751005   20080621
+#ENTRY          22751      20200805
+#TITLE          Cross section measurement for the neutron induced
+#+              reactions on Ni and Au above 17 MeV by activation
+#+              technique.
+#AUTHORS        S.Iwasaki, M.Sakuma, K.Sugiyama, N.Odano
+#AUTHOR1        S.Iwasaki+
+#YEAR           1993
+#X4REF1         S,JAERI-M-93-046,257,1993
+#REFERENCE1     Conf: JAERI-M Reports, No.93-046, p.257 (1993)
+#DATE           20080621
+#INSTITUTE      2JPNTOH,2JPNSHR
+#METHOD         ACTIV
+#REACTION       28-NI-58(N,P)27-CO-58,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           28058            
+#TARGET         28058           [ ]             28-NI-58        [ ] 
+#REAC1          N,P
+#PRODUCT        27-CO-58
+#C4ReaCode      (N,P),SIG
+#CompNotes      Ignored column:ERR-DIG,B (digitizing error)
+#CompNotes      Ignored column:EN-ERR-DIG,EV (digitizing error)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 28058   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 28058   3 103    1.7221E7 223890.0  0.15259   0.0125                                       S.Iwasaki,           (93)22751  5                               0.0125                            8.19     8.19
+    1 28058   3 103    1.8317E7 268670.0   0.1396 0.014052                                       S.Iwasaki,           (93)22751  5                             0.014052                            10.1     10.1
+    1 28058   3 103    1.9127E7 290910.0  0.17674 0.017187                                       S.Iwasaki,           (93)22751  5                             0.017187                            9.72     9.72
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.7221E7    1.9127E7    0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.7221E7    1.7221E7    0.15259     8.19         100
+1.8317E7    1.8317E7    0.1396      10.07        25 100
+1.9127E7    1.9127E7    0.17674     9.72         25 29 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22751005 
+#DATASET        22751006   20080621
+#SUBENT         22751006   20080621
+#ENTRY          22751      20200805
+#TITLE          Cross section measurement for the neutron induced
+#+              reactions on Ni and Au above 17 MeV by activation
+#+              technique.
+#AUTHORS        S.Iwasaki, M.Sakuma, K.Sugiyama, N.Odano
+#AUTHOR1        S.Iwasaki+
+#YEAR           1993
+#X4REF1         S,JAERI-M-93-046,257,1993
+#REFERENCE1     Conf: JAERI-M Reports, No.93-046, p.257 (1993)
+#DATE           20080621
+#INSTITUTE      2JPNTOH,2JPNSHR
+#METHOD         ACTIV
+#REACTION       28-NI-60(N,P)27-CO-60,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           28060            
+#TARGET         28060           [ ]             28-NI-60        [ ] 
+#REAC1          N,P
+#PRODUCT        27-CO-60
+#C4ReaCode      (N,P),SIG
+#CompNotes      Ignored column:ERR-DIG,B (digitizing error)
+#CompNotes      Ignored column:EN-ERR-DIG,EV (digitizing error)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 28060   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 28060   3 103    1.7222E7 249570.0  0.103480.0060644                                       S.Iwasaki,           (93)22751  6                            0.0060644                            5.86     5.86
+    1 28060   3 103    1.8319E7 232870.0 0.092627 0.005133                                       S.Iwasaki,           (93)22751  6                             0.005133                            5.54     5.54
+    1 28060   3 103    1.9115E7 299490.0 0.0766720.0055978                                       S.Iwasaki,           (93)22751  6                            0.0055978                            7.30     7.30
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.7222E7    1.9115E7    0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.7222E7    1.7222E7    0.10348     5.86         100
+1.8319E7    1.8319E7    0.092627    5.54         25 100
+1.9115E7    1.9115E7    0.076672    7.3          25 29 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22751006 
+#DATASET        22751007   20151215
+#SUBENT         22751007   20151215
+#ENTRY          22751      20200805
+#TITLE          Cross section measurement for the neutron induced
+#+              reactions on Ni and Au above 17 MeV by activation
+#+              technique.
+#AUTHORS        S.Iwasaki, M.Sakuma, K.Sugiyama, N.Odano
+#AUTHOR1        S.Iwasaki+
+#YEAR           1993
+#X4REF1         S,JAERI-M-93-046,257,1993
+#REFERENCE1     Conf: JAERI-M Reports, No.93-046, p.257 (1993)
+#DATE           20151215
+#INSTITUTE      2JPNTOH,2JPNSHR
+#METHOD         ACTIV
+#REACTION       28-NI-58(N,P+A)25-MN-54,,SIG
+#C4Reaction     (N,P+A),SIG
+#ReactionType   CS
+#MF             3
+#MT             112
+#PROJ           1
+#TARG           28058            
+#TARGET         28058           [ ]             28-NI-58        [ ] 
+#REAC1          N,P+A
+#PRODUCT        25-MN-54
+#C4ReaCode      (N,P+A),SIG
+#CompNotes      Ignored column:ERR-DIG,B (digitizing error)
+#CompNotes      Ignored column:EN-ERR-DIG,EV (digitizing error)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 28058   3 112   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 28058   3 112      1.72E7 250000.0  0.01021   0.0029                                       S.Iwasaki,           (93)22751  7                               0.0029                            28.4     28.4
+    1 28058   3 112      1.83E7 250000.0  0.02556  0.00281                                       S.Iwasaki,           (93)22751  7                              0.00281                            11       11
+    1 28058   3 112     1.911E7 280000.0  0.02408   0.0029                                       S.Iwasaki,           (93)22751  7                               0.0029                            12       12
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.72E7      1.911E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.72E7      1.72E7      0.01021     28.4         100
+1.83E7      1.83E7      0.02556     10.99        25 100
+1.911E7     1.911E7     0.02408     12.04        25 29 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22751007 
+#/C5M.2.3       1               5               5               0               19              

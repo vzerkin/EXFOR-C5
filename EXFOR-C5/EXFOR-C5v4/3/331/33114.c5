@@ -1,0 +1,76 @@
+#C5.2.3
+#DATASET        33114002   20211202
+#SUBENT         33114002   20211202
+#ENTRY          33114      20211202
+#TITLE          Measurement of 96Zr(n,g)97Zr reaction cross section at
+#+              the neutron energies of 0.61 and 1.05 MeV and
+#+              covariance analysis for the uncertainty
+#AUTHORS        S.Badwar, R.Ghosh, B.M.Lawriniang, Y.S.Sheela,
+#+              H.Naik, B.M.Jyrwa, Y.P.Naik, S.V.Suryanarayana,
+#+              S.Ganesan
+#AUTHOR1        S.Badwar+
+#YEAR           2018
+#X4REF1         J,EPJ/A,54,168,2018
+#REFERENCE1     Jour: European Physical Journal A: Hadrons and Nuclei, Vol.54, p.168 (2018)
+#DATE           20211202
+#INSTITUTE      3INDNEH,3INDMNP,3INDTRM
+#METHOD         ACTIV
+#REACTION       40-ZR-96(N,G)40-ZR-97,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           40096            
+#TARGET         40096           [ ]             40-ZR-96        [ ] 
+#REAC1          N,G
+#PRODUCT        40-ZR-97
+#C4ReaCode      (N,G),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=2
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.7256178(6.1e5) Data[1]*0.7022311(1.1e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dOther
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40096   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-96(N,G)40-ZR-97,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        33114002    0.713924    0.713924    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          33114002    CS          2           0.702231    0.725618    0.713924    -28.6%      1.42403     [EN,MONIT,MONIT-ERR]::au197ng
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40096   3 102    610000.0          4.8762-3 7.9669-4                                       S.Badwar*,           (18)33114  2 2.3689E-4.00105497 1.0326-4 7.9669-4 4.86     21.6     2.12     16.3     16.3    0.14888  0.00085  0.10803  2.2079-3 0.72561780.7309093
+    1 40096   3 102   1050000.0         .00558976 5.5919-4                                       S.Badwar*,           (18)33114  2 2.8051E-47.0923E-4 1.5455-4 5.5919-4 5.02     12.7     2.76     10       10      0.11272  6.5E-4   0.0791555.001658140.70223110.7169079
+#/C5DATA        0
+#/DATASET       33114002 
+#/C5.2.3        1               1               1               0               2               

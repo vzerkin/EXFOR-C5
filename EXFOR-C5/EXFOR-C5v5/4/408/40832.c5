@@ -1,0 +1,71 @@
+#C5M.2.3
+#DATASET        40832002   20090407
+#SUBENT         40832002   20090407
+#ENTRY          40832      20090407
+#TITLE          U-236-to-U-235 cross-section ratio measurement
+#+               for neutron energies 4.24 - 10.7 MeV
+#AUTHORS        A.A.Goverdovskij, A.K.Gordjushin, B.D.Kuz'minov,
+#+              V.F.Mitrofanov, A.I.Sergachev
+#AUTHOR1        A.A.Goverdovskij+
+#YEAR           1985
+#X4REF1         S,IAEA-336,198505
+#REFERENCE1     Conf: I.A.E.A. technical report, Vienna, No.336 (1985)
+#DATE           20090407
+#INSTITUTE      4RUSFEI
+#REACTION       (92-U-236(N,F),,SIG)/(92-U-235(N,F),,SIG)
+#C4Reaction     ((N,F),SIG)/((N,F),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             18
+#PROJ           1
+#TARG           92236            
+#TARGET         92236           [ ]             92-U-236        [ ] 
+#REAC1          N,F
+#C4ReaCode      ((N,F),SIG)/((N,F),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 92236 203  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (92-U-236(N,F),,SIG)/(92-U-235(N,F),,SIG)
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92236 203  18   7340000.0  78000.0    0.921  0.00921     18.9  92235.9                     A.A.Goverdovskij,    (85)40832  2          0.0060786           0.00921          0.66              1        1                         1.6508081.02329096
+    1 92236 203  18   8100001.0  68000.0    0.832 0.009984     18.9  92235.9                     A.A.Goverdovskij,    (85)40832  2          0.0074048          0.009984          0.89              1.20     1.20                      1.78668  0.0246512
+    1 92236 203  18   8910000.0  61000.0    0.8340.0092574     18.9  92235.9                     A.A.Goverdovskij,    (85)40832  2          0.0065052         0.0092574          0.78              1.11     1.11                      1.7816119.02483209
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           7340000.0   8910000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(no-dim)Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+7340000.    7340000.    0.921       1.0          100
+8.1e+06     8.1e+06     0.832       1.2          26 100
+8910000.    8910000.    0.834       1.11         27 24 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       40832002 
+#/C5M.2.3       1               1               1               0               3               

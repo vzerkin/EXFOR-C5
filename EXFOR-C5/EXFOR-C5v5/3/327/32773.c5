@@ -1,0 +1,441 @@
+#C5M.2.3
+#DATASET        327730021  20191217
+#SUBENT         32773002   20191217
+#ENTRY          32773      20211103
+#TITLE          Measurement of cross-sections for 14 MeV neutron
+#+               interaction with 175Lu
+#AUTHORS        Zhengwei Zhang, Qian Zhang, Shihong Chen,
+#+               Bingjun Chen, Qiang Wang, Caifeng Lai, Kaihong Fang
+#AUTHOR1        Zhengwei Zhang+
+#YEAR           2018
+#X4REF1         J,ARI,132,61,2018
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.132, p.61 (2018)
+#DATE           20191217
+#INSTITUTE      3CPRLNZ,3CPRNPC
+#METHOD         ACTIV,GSPEC
+#REACTION       71-LU-175(N,2N)71-LU-174-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           71175            
+#TARGET         71175           [ ]             71-LU-175       [ ] 
+#REAC1          N,2N
+#PRODUCT        71-LU-174-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9983498(1.4e7) Data[2]*0.9919655(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 71175   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 71-LU-175(N,2N)71-LU-174-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        327730021   0.995277    0.995277    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          327730021   CS          3           0.991965    0.998350    0.995277    -0.472%     1.00810     [EN,MONIT]::al27na
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 71175   3  16M     1.41E7 300000.00.5690595    0.039                                       Zhengwei Zhang*,     (18)32773  21   0.0114                      0.039 2                          6.85     6.85    0.1212            0.121    5.5949E-40.9983498
+    1 71175   3  16M     1.45E7 300000.00.5783955    0.044                                       Zhengwei Zhang*,     (18)32773  21  0.01162                      0.044 2.01                       7.61     7.61    0.116             0.11548  4.3286E-40.9955172
+    1 71175   3  16M     1.47E7 300000.00.5614524    0.042                                       Zhengwei Zhang*,     (18)32773  21  0.01132                      0.042 2.02                       7.48     7.48    0.1134            0.11248894.6096-4 0.9919655
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.41E7      1.47E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.41E7      1.41E7      0.569059    6.85         100
+1.45E7      1.45E7      0.578395    7.61          4 100
+1.47E7      1.47E7      0.561452    7.48          4  5 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       327730021
+#DATASET        327730022  20191217
+#SUBENT         32773002   20191217
+#ENTRY          32773      20211103
+#TITLE          Measurement of cross-sections for 14 MeV neutron
+#+               interaction with 175Lu
+#AUTHORS        Zhengwei Zhang, Qian Zhang, Shihong Chen,
+#+               Bingjun Chen, Qiang Wang, Caifeng Lai, Kaihong Fang
+#AUTHOR1        Zhengwei Zhang+
+#YEAR           2018
+#X4REF1         J,ARI,132,61,2018
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.132, p.61 (2018)
+#DATE           20191217
+#INSTITUTE      3CPRLNZ,3CPRNPC
+#METHOD         ACTIV,GSPEC
+#REACTION       71-LU-175(N,2N)71-LU-174-G,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           71175            
+#TARGET         71175           [ ]             71-LU-175       [ ] 
+#REAC1          N,2N
+#PRODUCT        71-LU-174-G
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9983498(1.4e7) Data[2]*0.9919655(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+6.23%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 71175   3  16G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 71-LU-175(N,2N)71-LU-174-G,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (71-LU-175(N,2N)71-LU-174-G,,SIG)
+#+               #[1]#DECAY-DATA (71-LU-174-G,3.31YR,DG,1241.8,0.0546) #Ix_old=0.0546
+#+                a1=0.0546/0.0514;           #[1]#DECAY-DATA: correction to new 1241.847 keV gamma-yield per decay Lu-174-g Ix_new=0.0514
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0622568
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        327730022   1.05724     0.995277    1.06226     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          327730022   CS          3           1.05372     1.06050     1.05724     +5.72%      1.06050     [EN,MONIT]::al27na
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 71175   3  16G     1.41E7 300000.01.5197021.09544535                                       Zhengwei Zhang*,     (18)32773  22.03039404                  .09544535 2                          6.28     6.28    0.1212            0.121    5.5949E-41.06050381.0605038
+    1 71175   3  16G     1.45E7 300000.01.57672490.1036345                                       Zhengwei Zhang*,     (18)32773  220.0315345                  0.1036345 2                          6.57     6.57    0.116             0.11548  4.3286E-41.05749491.0574949
+    1 71175   3  16G     1.47E7 300000.01.4868019.09904987                                       Zhengwei Zhang*,     (18)32773  22.02973603                  .09904987 2                          6.66     6.66    0.1134            0.11248894.6096-4 1.053722 1.053722
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.41E7      1.47E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.41E7      1.41E7      1.5197      6.28         100
+1.45E7      1.45E7      1.57673     6.57          5 100
+1.47E7      1.47E7      1.4868      6.66          5  6 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       327730022
+#DATASET        327730023  20191217
+#SUBENT         32773002   20191217
+#ENTRY          32773      20211103
+#TITLE          Measurement of cross-sections for 14 MeV neutron
+#+               interaction with 175Lu
+#AUTHORS        Zhengwei Zhang, Qian Zhang, Shihong Chen,
+#+               Bingjun Chen, Qiang Wang, Caifeng Lai, Kaihong Fang
+#AUTHOR1        Zhengwei Zhang+
+#YEAR           2018
+#X4REF1         J,ARI,132,61,2018
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.132, p.61 (2018)
+#DATE           20191217
+#INSTITUTE      3CPRLNZ,3CPRNPC
+#METHOD         ACTIV,GSPEC
+#REACTION       71-LU-175(N,2N)71-LU-174,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           71175            
+#TARGET         71175           [ ]             71-LU-175       [ ] 
+#REAC1          N,2N
+#PRODUCT        71-LU-174
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9983498(1.4e7) Data[2]*0.9919655(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 71175   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 71-LU-175(N,2N)71-LU-174,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        327730023   0.995277    0.995277    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          327730023   CS          3           0.991965    0.998350    0.995277    -0.472%     1.00810     [EN,MONIT]::al27na
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 71175   3  16      1.41E7 300000.0 2.000693.06500001                                       Zhengwei Zhang*,     (18)32773  23  0.04008                  .06500001 2                          3.25     3.25    0.1212            0.121    5.5949E-40.9983498
+    1 71175   3  16      1.45E7 300000.02.0637074    0.071                                       Zhengwei Zhang*,     (18)32773  23  0.04146                      0.071 2.01                       3.44     3.44    0.116             0.11548  4.3286E-40.9955172
+    1 71175   3  16      1.47E7 300000.01.9611158    0.068                                       Zhengwei Zhang*,     (18)32773  23  0.03954                      0.068 2.02                       3.47     3.47    0.1134            0.11248894.6096-4 0.9919655
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.41E7      1.47E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.41E7      1.41E7      2.00069     3.25         100
+1.45E7      1.45E7      2.06371     3.44         18 100
+1.47E7      1.47E7      1.96112     3.47         18 23 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       327730023
+#DATASET        32773003   20191217
+#SUBENT         32773003   20191217
+#ENTRY          32773      20211103
+#TITLE          Measurement of cross-sections for 14 MeV neutron
+#+               interaction with 175Lu
+#AUTHORS        Zhengwei Zhang, Qian Zhang, Shihong Chen,
+#+               Bingjun Chen, Qiang Wang, Caifeng Lai, Kaihong Fang
+#AUTHOR1        Zhengwei Zhang+
+#YEAR           2018
+#X4REF1         J,ARI,132,61,2018
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.132, p.61 (2018)
+#DATE           20191217
+#INSTITUTE      3CPRLNZ,3CPRNPC
+#METHOD         ACTIV,GSPEC
+#REACTION       71-LU-175(N,P)70-YB-175,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           71175            
+#TARGET         71175           [ ]             71-LU-175       [ ] 
+#REAC1          N,P
+#PRODUCT        70-YB-175
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9983498(1.4e7) Data[2]*0.9919655(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 71175   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 71-LU-175(N,P)70-YB-175,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32773003    0.995277    0.995277    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32773003    CS          3           0.991965    0.998350    0.995277    -0.472%     1.00810     [EN,MONIT]::al27na
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 71175   3 103      1.41E7 300000.0 3.2946-3   2.0E-4                                       Zhengwei Zhang*,     (18)32773  3    6.6E-5                     2.0E-4 2                          6.07     6.07    0.1212            0.121    5.5949E-40.9983498
+    1 71175   3 103      1.45E7 300000.0.00408162   3.0E-4                                       Zhengwei Zhang*,     (18)32773  3    8.2E-5                     3.0E-4 2.01                       7.35     7.35    0.116             0.11548  4.3286E-40.9955172
+    1 71175   3 103      1.47E7 300000.0 3.7695-3   3.0E-4                                       Zhengwei Zhang*,     (18)32773  3    7.6E-5                     3.0E-4 2.02                       7.96     7.96    0.1134            0.11248894.6096-4 0.9919655
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.41E7      1.47E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.41E7      1.41E7      3.2946-3    6.07         100
+1.45E7      1.45E7      4.0816-3    7.35          5 100
+1.47E7      1.47E7      3.7695-3    7.96          4  5 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       32773003 
+#DATASET        32773004   20191217
+#SUBENT         32773004   20191217
+#ENTRY          32773      20211103
+#TITLE          Measurement of cross-sections for 14 MeV neutron
+#+               interaction with 175Lu
+#AUTHORS        Zhengwei Zhang, Qian Zhang, Shihong Chen,
+#+               Bingjun Chen, Qiang Wang, Caifeng Lai, Kaihong Fang
+#AUTHOR1        Zhengwei Zhang+
+#YEAR           2018
+#X4REF1         J,ARI,132,61,2018
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.132, p.61 (2018)
+#DATE           20191217
+#INSTITUTE      3CPRLNZ,3CPRNPC
+#METHOD         ACTIV,GSPEC
+#REACTION       71-LU-175(N,A)69-TM-172,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           71175            
+#TARGET         71175           [ ]             71-LU-175       [ ] 
+#REAC1          N,A
+#PRODUCT        69-TM-172
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9983498(1.4e7) Data[2]*0.9919655(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 71175   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 71-LU-175(N,A)69-TM-172,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32773004    0.995277    0.995277    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32773004    CS          3           0.991965    0.998350    0.995277    -0.472%     1.00810     [EN,MONIT]::al27na
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 71175   3 107      1.41E7 300000.0 1.2979-3   1.0E-4                                       Zhengwei Zhang*,     (18)32773  4    2.6E-5                     1.0E-4 2                          7.71     7.71    0.1212            0.121    5.5949E-40.9983498
+    1 71175   3 107      1.45E7 300000.0 1.3937-3   1.0E-4                                       Zhengwei Zhang*,     (18)32773  4    2.8E-5                     1.0E-4 2.01                       7.18     7.18    0.116             0.11548  4.3286E-40.9955172
+    1 71175   3 107      1.47E7 300000.0 1.4879-3   2.0E-4                                       Zhengwei Zhang*,     (18)32773  4    3.0E-5                     2.0E-4 2.02                       13.4     13.4    0.1134            0.11248894.6096-4 0.9919655
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.41E7      1.47E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.41E7      1.41E7      1.2979-3    7.71         100
+1.45E7      1.45E7      1.3937-3    7.18          4 100
+1.47E7      1.47E7      1.4879-3    13.44         2  3 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       32773004 
+#/C5M.2.3       1               5               5               0               15              

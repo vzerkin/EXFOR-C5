@@ -1,0 +1,71 @@
+#C5M.2.3
+#DATASET        21407002   19801105
+#SUBENT         21407002   19801105
+#ENTRY          21407      19800303
+#TITLE          -YTTRIUM-96 AND STRONTIUM-93, NEW NUCLEAR DATA -.
+#AUTHORS        D.G.VALLIS,J.L.PERKIN
+#AUTHOR1        D.G.Vallis+
+#YEAR           1961
+#X4REF1         J,JIN,22,1,6112
+#REFERENCE1     Jour: Journal of Inorganic and Nuclear Chemistry, Vol.22, p.1 (1961)
+#DATE           19801105
+#INSTITUTE      2UK ALD
+#METHOD         ACTIV
+#REACTION       40-ZR-96(N,P)39-Y-96,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           40096            
+#TARGET         40096           [ ]             40-ZR-96        [ ] 
+#REAC1          N,P
+#PRODUCT        39-Y-96
+#C4ReaCode      (N,P),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=14.29%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0692756(1.4e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40096   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,P)12-MG-27,,SIG
+#M0             Point: XS(b)=.07000001(14.3%)  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.0748493(1.50%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-96(N,P)39-Y-96,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,P)12-MG-27,,SIG
+#+              #[0]#En=1.41E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.07000001
+#+              a1=recom$al27np[EN];          #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        21407002    1.06928     1.06928     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          21407002    CS          1           1.06928     1.06928     1.06928     +6.93%      1.06928     [MONIT]::al27np
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40096   3 103      1.41E7 150000.0.01390058.00379389                                       D.G.VALLIS*,         (61)21407  2  2.1388-4                  .00379389 1.54                       27.3     27.3    .070000010.01     0.07484930.00112151.06927560.9484724
+#/C5DATA        0
+#/DATASET       21407002 
+#/C5M.2.3       1               1               1               0               1               

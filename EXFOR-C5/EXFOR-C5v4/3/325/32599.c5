@@ -1,0 +1,79 @@
+#C5.2.3
+#DATASET        32599002   20100329
+#SUBENT         32599002   20100329
+#ENTRY          32599      20100329
+#TITLE          Activation cross section measurement and evaluation for
+#+              Na-23(n,2n)Na-22 reaction
+#AUTHORS        Lu Hanlin,Zhao Wenrong,Yu Weixiang
+#AUTHOR1        Lu Hanlin+
+#YEAR           1992
+#X4REF1         J,CNP,14,(1),83,199203
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.14, Issue.1, p.83 (1992)
+#DATE           20100329
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       11-NA-23(N,2N)11-NA-22,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           11023            
+#TARGET         11023           [ ]             11-NA-23        [ ] 
+#REAC1          N,2N
+#PRODUCT        11-NA-22
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.8,1.5)    ADDED AS COMMON:ERR-S,PER-CENT=0.8%
+#CompNotes      ERR-ANALYS:(ERR-1,1.2,1.5)    ADDED AS COMMON:ERR-1,PER-CENT=1.2%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=6
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0091289(1.4e7) Data[5]*1.0686426(1.8e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 11023   3  16 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 11-NA-23(N,2N)11-NA-22,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32599002    1.02533     1.02533     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32599002    CS          6           1.00252     1.06864     1.02533     +2.53%      1.06864     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 11023   3  16 A    1.35E7 150000.0 5.8832-3 1.3370-4                                       Lu Hanlin*,          (92)32599  2  8.7370-5 4.664E-5          1.3370-4 1.49     0.79              2.27     2.27    0.4489   0.0074   0.452998 .002680131.00912890.8356166
+    1 11023   3  16 A    1.41E7 150000.0.02023023 4.7121-4                                       Lu Hanlin*,          (92)32599  2  2.9651-4 1.608E-4          4.7121-4 1.47     0.79              2.33     2.33    0.4567   0.0047   0.459659 .002502551.006479 0.9424148
+    1 11023   3  16 A   1.464E7 210000.0.03959965 7.1271-4                                       Lu Hanlin*,          (92)32599  2  5.8406-4  3.16E-4          7.1271-4 1.47     0.80              1.80     1.80    0.459    0.005    0.460158 2.6190-3 1.00252280.8908831
+    1 11023   3  16 A   1.487E7 210000.0.04190477 7.6230-4                                       Lu Hanlin*,          (92)32599  2  6.2397-4 3.336E-4          7.6230-4 1.49     0.80              1.82     1.82    0.458    0.006    0.460249 2.7892-3 1.00491050.8469979
+    1 11023   3  16 A   1.695E7 330000.0.09447275 2.1887-3                                       Lu Hanlin*,          (92)32599  2  1.6242-3 7.128E-4          2.1887-3 1.72     0.75              2.32     2.32    0.413    0.011    0.437904 4.6435-3 1.06030020.7295583
+    1 11023   3  16 A   1.798E7 210000.00.1057956 2.4525-3                                       Lu Hanlin*,          (92)32599  2  1.9321-3  7.92E-4          2.4525-3 1.83     0.75              2.32     2.32    0.388    0.015    0.41463334.9998-3 1.06864260.57034
+#/C5DATA        0
+#/DATASET       32599002 
+#/C5.2.3        1               1               1               0               6               

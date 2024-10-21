@@ -1,0 +1,227 @@
+#C5.2.3
+#DATASET        12509002   19830809
+#SUBENT         12509002   19830809
+#ENTRY          12509      19830809
+#TITLE          THERMAL-NEUTRON FISSION CROSS SECTION OF PU239 AND
+#+              PU240.
+#AUTHORS        W.W.PRATT,F.J.MUCKENTHALER,E.G.SLIVER
+#AUTHOR1        W.W.Pratt+
+#YEAR           1956
+#X4REF1         P,ORNL-2081,102,5611
+#REFERENCE1     Prog: Oak Ridge National Lab. Reports, No.2081, p.102 (1956)
+#DATE           19830809
+#INSTITUTE      1USAORL
+#REACTION       94-PU-239(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           94239            
+#TARGET         94239           [ ]             94-PU-239       [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0125862(2.5e-2)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 94239   3  18 D ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-235(N,F),,SIG
+#M0             Point: XS(b)=580.0  EN-NRM(eV):0.0253
+#M1             Point: XS(b)=587.3(0.24%)  EN-NRM(eV):0.0253
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 94-PU-239(N,F),,SIG
+#+              #[0]#Monitor:  92-U-235(N,F),,SIG
+#+              #[0]#En=0.0253
+#+              a0=[MONIT];                   #[0]#old monitor point 580.0
+#+              a1=therm$u235nf[0.0253];      #[0]#new monitor point [2.53E-8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12509002    1.01259     1.01259     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12509002    CS          1           1.01259     1.01259     1.01259     +1.26%      1.01259     [MONIT]::u235nf
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 94239   3  18 D    0.0253         723.99915     15.0                                       W.W.PRATT*,          (56)12509  2                                 15.0                            2.07     2.07    580.0             587.3    1.4      1.0125862
+#/C5DATA        0
+#/DATASET       12509002 
+#DATASET        12509003   19830809
+#SUBENT         12509003   19830809
+#ENTRY          12509      19830809
+#TITLE          THERMAL-NEUTRON FISSION CROSS SECTION OF PU239 AND
+#+              PU240.
+#AUTHORS        W.W.PRATT,F.J.MUCKENTHALER,E.G.SLIVER
+#AUTHOR1        W.W.Pratt+
+#YEAR           1956
+#X4REF1         P,ORNL-2081,102,5611
+#REFERENCE1     Prog: Oak Ridge National Lab. Reports, No.2081, p.102 (1956)
+#DATE           19830809
+#INSTITUTE      1USAORL
+#REACTION_X4    (94-PU-239(N,F),,SIG,,MXW)/(92-U-235(N,F),,SIG,,MXW)
+#REACTION       94-PU-239(N,F),,SIG,,MXW
+#C4Reaction     ((N,F),SIG,,MXW)/((N,F),SIG,,MXW)
+#ReactionTyp_X4 Ratio
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           94239            
+#TARGET         94239           [ ]             94-PU-239       [ ] 
+#REAC1          N,F
+#C4ReaCode      ((N,F),SIG,,MXW)/((N,F),SIG,,MXW)
+#CompNotes      CALCULATE(MF203:RATIO->MF3:SIG): Data[0]*587.3(2.5e-2)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#Quantity_X4    Ratio of [Cross section]
+#Quantity       Cross section
+#DataUnits_X4   NO-DIM
+#DataUnits      B
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 94239   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (94-PU-239(N,F),,SIG,,MXW)/(92-U-235(N,F),,SIG,,MXW)
+#Ratio2CS       1
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12509003    Ratio       1           587.300     587.300     587.300     +5.86e+04%  587.300                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                    SpE     dSpE     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV        B        B   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 94239   3  18      0.0253          1013.09216.039946     18.9  92235.9                     W.W.PRATT*,          (56)12509  3                            16.039946                            1.58     1.58                      587.3    1.4      587.3    1.0115308
+#/C5DATA        0
+#/DATASET       12509003 
+#DATASET        12509004   19830809
+#SUBENT         12509004   19830809
+#ENTRY          12509      19830809
+#TITLE          THERMAL-NEUTRON FISSION CROSS SECTION OF PU239 AND
+#+              PU240.
+#AUTHORS        W.W.PRATT,F.J.MUCKENTHALER,E.G.SLIVER
+#AUTHOR1        W.W.Pratt+
+#YEAR           1956
+#X4REF1         P,ORNL-2081,102,5611
+#REFERENCE1     Prog: Oak Ridge National Lab. Reports, No.2081, p.102 (1956)
+#DATE           19830809
+#INSTITUTE      1USAORL
+#REACTION       94-PU-240(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           94240            
+#TARGET         94240           [ ]             94-PU-240       [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 94240   3  18 D ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 94240   3  18 D    0.0253               3.7      8.0                                       W.W.PRATT,           (56)12509  4                                  8.0                            216.2    216.2
+#/C5DATA        0
+#/DATASET       12509004 
+#DATASET        12509005   19830809
+#SUBENT         12509005   19830809
+#ENTRY          12509      19830809
+#TITLE          THERMAL-NEUTRON FISSION CROSS SECTION OF PU239 AND
+#+              PU240.
+#AUTHORS        W.W.PRATT,F.J.MUCKENTHALER,E.G.SLIVER
+#AUTHOR1        W.W.Pratt+
+#YEAR           1956
+#X4REF1         P,ORNL-2081,102,5611
+#REFERENCE1     Prog: Oak Ridge National Lab. Reports, No.2081, p.102 (1956)
+#DATE           19830809
+#INSTITUTE      1USAORL
+#REACTION_X4    (94-PU-240(N,F),,SIG,,MXW)/(92-U-235(N,F),,SIG,,MXW)
+#REACTION       94-PU-240(N,F),,SIG,,MXW
+#C4Reaction     ((N,F),SIG,,MXW)/((N,F),SIG,,MXW)
+#ReactionTyp_X4 Ratio
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           94240            
+#TARGET         94240           [ ]             94-PU-240       [ ] 
+#REAC1          N,F
+#C4ReaCode      ((N,F),SIG,,MXW)/((N,F),SIG,,MXW)
+#CompNotes      CALCULATE(MF203:RATIO->MF3:SIG): Data[0]*587.3(2.5e-2)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#Quantity_X4    Ratio of [Cross section]
+#Quantity       Cross section
+#DataUnits_X4   NO-DIM
+#DataUnits      B
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 94240   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (94-PU-240(N,F),,SIG,,MXW)/(92-U-235(N,F),,SIG,,MXW)
+#Ratio2CS       1
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12509005    Ratio       1           587.300     587.300     587.300     +5.86e+04%  587.300                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                    SpE     dSpE     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV        B        B   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 94240   3  18      0.0253            4.1111 9.044425     18.9  92235.9                     W.W.PRATT*,          (56)12509  5                             9.044425                            220      220                       587.3    1.4      587.3    1.0000006
+#/C5DATA        0
+#/DATASET       12509005 
+#/C5.2.3        1               4               4               0               4               

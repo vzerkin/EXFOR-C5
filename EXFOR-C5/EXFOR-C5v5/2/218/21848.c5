@@ -1,0 +1,129 @@
+#C5M.2.3
+#DATASET        21848002   19830429
+#SUBENT         21848002   19830429
+#ENTRY          21848      19830429
+#TITLE          -THE NEUTRON CAPTURE CROSS SECTION OF GOLD IN THE
+#+               KEV ENERGY REGION-.
+#AUTHORS        W.P.POENITZ,D.KOMPE,H.O.MENLOVE
+#AUTHOR1        W.P.Poenitz+
+#YEAR           1968
+#X4REF1         J,JNE,22,505,6808
+#REFERENCE1     Jour: Journal of Nuclear Energy, Vol.22, p.505 (1968)
+#DATE           19830429
+#INSTITUTE      2GERKFK
+#METHOD         TOF  
+#REACTION       79-AU-197(N,G)79-AU-198,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           79197            
+#TARGET         79197           [ ]             79-AU-197       [ ] 
+#REAC1          N,G
+#PRODUCT        79-AU-198
+#C4ReaCode      (N,G),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=2.01%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99052006(2.5e4) Data[21]*0.99052006(4.7e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 79197   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             Point: XS(b)=0.596(2.01%)  EN-NRM(eV):30000.0
+#M1             Point: XS(b)=0.59035(1.78%)  EN-NRM(eV):30000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 79-AU-197(N,G)79-AU-198,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.596
+#+              a1=recom$au197ng[EN-NRM];     #[0]#new monitor point [0.03MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        21848002    0.990520    0.990520    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          21848002    CS          22          0.990520    0.990520    0.990520    -0.948%     1.00957     [MONIT]::au197ng
+#C5DATA         22
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 79197   3 102     24700.0   1300.00.6695917.03106981                                       W.P.POENITZ*,        (68)21848  2 .01190777                  .03106981 1.78                       4.64     4.64    0.596    0.012    0.59035  0.01052140.99052010.9709315
+    1 79197   3 102     25000.0    900.00.6329424.03012824                                       W.P.POENITZ*,        (68)21848  2 .01125601                  .03012824 1.78                       4.76     4.76    0.596    0.012    0.59035  0.01052140.99052010.9718788
+    1 79197   3 102     30800.0   1300.00.5853974.02920522                                       W.P.POENITZ*,        (68)21848  2 .01041049                  .02920522 1.78                       4.99     4.99    0.596    0.012    0.59035  0.01052140.99052010.9735075
+    1 79197   3 102     36000.0   1600.00.48337380.0213158                                       W.P.POENITZ*,        (68)21848  2  8.5961-3                  0.0213158 1.78                       4.41     4.41    0.596    0.012    0.59035  0.01052140.99052010.9689002
+    1 79197   3 102     44600.0   2300.00.4546487.01934717                                       W.P.POENITZ*,        (68)21848  2  8.0853-3                  .01934717 1.78                       4.26     4.26    0.596    0.012    0.59035  0.01052140.99052010.9673586
+    1 79197   3 102     47400.0   1700.00.4526677.01833594                                       W.P.POENITZ*,        (68)21848  2  8.0501-3                  .01833594 1.78                       4.05     4.05    0.596    0.012    0.59035  0.01052140.99052010.9650495
+    1 79197   3 102     50900.0   1800.00.4427625.01734022                                       W.P.POENITZ*,        (68)21848  2  7.8739-3                  .01734022 1.78                       3.92     3.92    0.596    0.012    0.59035  0.01052140.99052010.9633456
+    1 79197   3 102     58300.0   2600.00.4179994.01840803                                       W.P.POENITZ*,        (68)21848  2  7.4335-3                  .01840803 1.78                       4.40     4.40    0.596    0.012    0.59035  0.01052140.99052010.9688435
+    1 79197   3 102     61900.0   2700.00.3932365.01541427                                       W.P.POENITZ*,        (68)21848  2  6.9932-3                  .01541427 1.78                       3.92     3.92    0.596    0.012    0.59035  0.01052140.99052010.9633919
+    1 79197   3 102     82300.0   3000.00.3367768.01553115                                       W.P.POENITZ*,        (68)21848  2  5.9891-3                  .01553115 1.78                       4.61     4.61    0.596    0.012    0.59035  0.01052140.99052010.9706966
+    1 79197   3 102     88800.0   3000.00.3149854.01253414                                       W.P.POENITZ*,        (68)21848  2  5.6016-3                  .01253414 1.78                       3.98     3.98    0.596    0.012    0.59035  0.01052140.99052010.9641642
+    1 79197   3 102    103300.0   3000.00.3248906.01352919                                       W.P.POENITZ*,        (68)21848  2  5.7777-3                  .01352919 1.78                       4.16     4.16    0.596    0.012    0.59035  0.01052140.99052010.9663704
+    1 79197   3 102    134000.0   3000.00.2912129.01258448                                       W.P.POENITZ*,        (68)21848  2  5.1788-3                  .01258448 1.78                       4.32     4.32    0.596    0.012    0.59035  0.01052140.99052010.9680369
+    1 79197   3 102    153000.0   5000.0 0.2723930.0136305                                       W.P.POENITZ*,        (68)21848  2  4.8441-3                  0.0136305 1.78                       5        5       0.596    0.012    0.59035  0.01052140.99052010.9736068
+    1 79197   3 102    171000.0   4000.0 0.270412.01564457                                       W.P.POENITZ*,        (68)21848  2  4.8089-3                  .01564457 1.78                       5.79     5.79    0.596    0.012    0.59035  0.01052140.99052010.9777856
+    1 79197   3 102    179000.0   4000.00.2654594.01263436                                       W.P.POENITZ*,        (68)21848  2  4.7208-3                  .01263436 1.78                       4.76     4.76    0.596    0.012    0.59035  0.01052140.99052010.9718742
+    1 79197   3 102    184000.0   4000.00.2624878.01465292                                       W.P.POENITZ*,        (68)21848  2  4.6680-3                  .01465292 1.78                       5.58     5.58    0.596    0.012    0.59035  0.01052140.99052010.9768615
+    1 79197   3 102    191000.0   3000.00.2605068.01465602                                       W.P.POENITZ*,        (68)21848  2  4.6328-3                  .01465602 1.78                       5.63     5.63    0.596    0.012    0.59035  0.01052140.99052010.9770682
+    1 79197   3 102    227000.0   4000.0  0.247630.0146756                                       W.P.POENITZ*,        (68)21848  2  4.4038-3                  0.0146756 1.78                       5.93     5.93    0.596    0.012    0.59035  0.01052140.99052010.9783733
+    1 79197   3 102    280000.0   7000.00.2070187.01373101                                       W.P.POENITZ*,        (68)21848  2  3.6815-3                  .01373101 1.78                       6.63     6.63    0.596    0.012    0.59035  0.01052140.99052010.9807866
+    1 79197   3 102    342000.0   8000.00.1832462.01075965                                       W.P.POENITZ*,        (68)21848  2  3.2588-3                  .01075965 1.78                       5.87     5.87    0.596    0.012    0.59035  0.01052140.99052010.97815
+    1 79197   3 102    473000.0  10000.00.1406538 8.8168-3                                       W.P.POENITZ*,        (68)21848  2  2.5013-3                   8.8168-3 1.78                       6.27     6.27    0.596    0.012    0.59035  0.01052140.99052010.9796414
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         1           1.0E-5      2.0E7       0.05        
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           22          22
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+24700.      24700.      0.669592    4.64         100
+25000.      25000.      0.632942    4.76         14 100
+30800.      30800.      0.585397    4.99         13 12 100
+36000.      36000.      0.483374    4.41         13 13 14 100
+44600.      44600.      0.454649    4.26         13 12 13 16 100
+47400.      47400.      0.452668    4.05         13 13 13 16 18 100
+50900.      50900.      0.442762    3.92         13 13 13 16 18 19 100
+58300.      58300.      0.417999    4.4          11 11 11 14 15 16 17 100
+61900.      61900.      0.393236    3.92         12 12 12 15 17 18 19 18 100
+82300.      82300.      0.336777    4.61          8  8  9 11 13 14 15 14 16 100
+88800.      88800.      0.314985    3.98          9  9 10 12 14 15 16 15 18 17 100
+103300.     103300.     0.324891    4.16          8  8  9 11 13 14 15 14 16 15 18 100
+134000.     134000.     0.291213    4.32          8  8  7  9 11 11 12 12 14 13 16 16 100
+153000.     153000.     0.272393    5.0           7  7  6  7  8  9 10  9 11 11 13 13 14 100
+171000.     171000.     0.270412    5.79          6  6  5  6  7  7  8  8  9  9 11 11 12 10 100
+179000.     179000.     0.265459    4.76          7  7  7  8  8  9  9  9 11 10 13 13 14 13 11 100
+184000.     184000.     0.262488    5.58          6  6  6  6  7  7  8  8  9  9 11 11 12 11 10 12 100
+191000.     191000.     0.260507    5.63          6  6  6  6  7  7  8  7  9  9 10 11 11 10  9 12 10 100
+227000.     227000.     0.24763     5.93          6  6  5  6  6  7  7  6  7  7  9  9 10  9  8 10  9  9 100
+280000.     280000.     0.207019    6.63          5  5  5  5  6  6  6  5  6  6  7  7  8  7  7  8  7  7  7 100
+342000.     342000.     0.183246    5.87          6  6  5  6  6  7  7  6  7  6  7  7  8  8  7  9  8  8  8  8 100
+473000.     473000.     0.140654    6.27          5  5  5  6  6  6  6  6  6  5  6  6  6  6  6  7  6  6  6  6  8 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       21848002 
+#/C5M.2.3       1               1               1               0               22              

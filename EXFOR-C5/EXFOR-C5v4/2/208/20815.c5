@@ -1,0 +1,1533 @@
+#C5.2.3
+#DATASET        20815002   20131211
+#SUBENT         20815002   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       9-F-19(N,2N)9-F-18,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           9019             
+#TARGET         9019            [ ]             9-F-19          [ ] 
+#REAC1          N,2N
+#PRODUCT        9-F-18
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.79%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0088688(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1  9019   3  16 D ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1115(1.79%)  EN-NRM(eV):1.47E7
+#M1             Point: XS(b)=0.1124889(0.41%)  EN-NRM(eV):1.47E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 9-F-19(N,2N)9-F-18,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1115
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.7MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20815002    1.00887     1.00887     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20815002    CS          1           1.00887     1.00887     1.00887     +0.887%     1.00887     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1  9019   3  16 D    1.47E7  75000.0.04580265 1.8524-3                                       H.K.Vonach*,         (68)20815  2  3.6270-4                   1.8524-3 0.79                       4.04     4.04    0.1115   0.002    0.11248894.6096-4 1.00886880.9262171
+#/C5DATA        0
+#/DATASET       20815002 
+#DATASET        20815003   20131211
+#SUBENT         20815003   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       (9-F-19(N,2N)9-F-18,,SIG)/(13-AL-27(N,A)11-NA-24,,SIG)
+#C4Reaction     ((N,2N),SIG)/((N,A),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             16
+#PROJ           1
+#TARG           9019             
+#TARGET         9019            [ ]             9-F-19          [ ] 
+#REAC1          N,2N
+#PRODUCT        9-F-18
+#C4ReaCode      ((N,2N),SIG)/((N,A),SIG)
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1  9019 203  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (9-F-19(N,2N)9-F-18,,SIG)/(13-AL-27(N,A)11-NA-24,,SIG)
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1  9019 203  16      1.47E7  75000.0    0.407  0.00122    107.9  13027.9                     H.K.Vonach,          (68)20815  3 0.0027977                    0.00122 0.69                       0.30     0.30                      0.11248894.6096-4
+#/C5DATA        0
+#/DATASET       20815003 
+#DATASET        20815004   20131211
+#SUBENT         20815004   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       (9-F-19(N,2N)9-F-18,,SIG)//(9-F-19(N,2N)9-F-18,,SIG)
+#C4Reaction     ((N,2N),SIG)//((N,2N),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             16
+#PROJ           1
+#TARG           9019             
+#TARGET         9019            [ ]             9-F-19          [ ] 
+#REAC1          N,2N
+#PRODUCT        9-F-18
+#C4ReaCode      ((N,2N),SIG)//((N,2N),SIG)
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)//(R1#)
+#ReaCombi       a//a
+#C4FOUND        30 
+#C4BEGIN        [    1  9019 203  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         11
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1  9019 203  16      1.47E7  75000.0    0.613   0.0061     16.9   9019.9                     H.K.Vonach,          (68)20815  4 0.0042137                     0.0061 0.69                       1        1
+    1  9019 203  16      1.47E7  75000.0    0.648   0.0065     16.9   9019.9                     H.K.Vonach,          (68)20815  4 0.0044543                     0.0065 0.69                       1        1
+    1  9019 203  16      1.47E7  75000.0    0.683   0.0068     16.9   9019.9                     H.K.Vonach,          (68)20815  4 0.0046948                     0.0068 0.69                       1        1
+    1  9019 203  16      1.47E7  75000.0    0.718   0.0072     16.9   9019.9                     H.K.Vonach,          (68)20815  4 0.0049354                     0.0072 0.69                       1        1
+    1  9019 203  16      1.47E7  75000.0    0.754   0.0075     16.9   9019.9                     H.K.Vonach,          (68)20815  4 0.0051829                     0.0075 0.69                       0.99     0.99
+    1  9019 203  16      1.47E7  75000.0    0.779   0.0078     16.9   9019.9                     H.K.Vonach,          (68)20815  4 .00535474                     0.0078 0.69                       1        1
+    1  9019 203  16      1.47E7  75000.0    0.824   0.0082     16.9   9019.9                     H.K.Vonach,          (68)20815  4 0.0056641                     0.0082 0.69                       1        1
+    1  9019 203  16      1.47E7  75000.0    0.859   0.0086     16.9   9019.9                     H.K.Vonach,          (68)20815  4 0.0059046                     0.0086 0.69                       1        1
+    1  9019 203  16      1.47E7  75000.0    0.894    0.009     16.9   9019.9                     H.K.Vonach,          (68)20815  4 0.0061452                      0.009 0.69                       1.01     1.01
+    1  9019 203  16      1.47E7  75000.0     0.93   0.0093     16.9   9019.9                     H.K.Vonach,          (68)20815  4 0.0063927                     0.0093 0.69                       1        1
+    1  9019 203  16      1.47E7  75000.0    0.965   0.0096     16.9   9019.9                     H.K.Vonach,          (68)20815  4 0.0066333                     0.0096 0.69                       0.99     0.99
+#/C5DATA        0
+#/DATASET       20815004 
+#DATASET        20815005   20131211
+#SUBENT         20815005   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       12-MG-24(N,P)11-NA-24,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           12024            
+#TARGET         12024           [ ]             12-MG-24        [ ] 
+#REAC1          N,P
+#PRODUCT        11-NA-24
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.79%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0088688(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 12024   3 103 D ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1115(1.79%)  EN-NRM(eV):1.47E7
+#M1             Point: XS(b)=0.1124889(0.41%)  EN-NRM(eV):1.47E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 12-MG-24(N,P)11-NA-24,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1115
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.7MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20815005    1.00887     1.00887     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20815005    CS          1           1.00887     1.00887     1.00887     +0.887%     1.00887     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 12024   3 103 D    1.47E7  75000.00.1812937 2.5024-3                                       H.K.Vonach*,         (68)20815  5  1.4358-3                   2.5024-3 0.79                       1.38     1.38    0.1115   0.002    0.11248894.6096-4 1.00886880.6256043
+#/C5DATA        0
+#/DATASET       20815005 
+#DATASET        20815006   20131211
+#SUBENT         20815006   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       (12-MG-24(N,P)11-NA-24,,SIG)/(13-AL-27(N,A)11-NA-24,,SIG)
+#C4Reaction     ((N,P),SIG)/((N,A),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             103
+#PROJ           1
+#TARG           12024            
+#TARGET         12024           [ ]             12-MG-24        [ ] 
+#REAC1          N,P
+#PRODUCT        11-NA-24
+#C4ReaCode      ((N,P),SIG)/((N,A),SIG)
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 12024 203 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (12-MG-24(N,P)11-NA-24,,SIG)/(13-AL-27(N,A)11-NA-24,,SIG)
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 12024 203 103      1.47E7  75000.0     1.61    0.016    107.9  13027.9                     H.K.Vonach,          (68)20815  6 .01106692                      0.016 0.69                       0.99     0.99                      0.11248894.6096-4
+#/C5DATA        0
+#/DATASET       20815006 
+#DATASET        20815007   20131211
+#SUBENT         20815007   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       (12-MG-24(N,P)11-NA-24,,SIG)//(12-MG-24(N,P)11-NA-24,,SIG)
+#C4Reaction     ((N,P),SIG)//((N,P),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             103
+#PROJ           1
+#TARG           12024            
+#TARGET         12024           [ ]             12-MG-24        [ ] 
+#REAC1          N,P
+#PRODUCT        11-NA-24
+#C4ReaCode      ((N,P),SIG)//((N,P),SIG)
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)//(R1#)
+#ReaCombi       a//a
+#C4FOUND        30 
+#C4BEGIN        [    1 12024 203 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         11
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 12024 203 103      1.47E7  75000.0    1.177    0.012    103.9  12024.9                     H.K.Vonach,          (68)20815  7 0.0080905                      0.012 0.69                       1.02     1.02
+    1 12024 203 103      1.47E7  75000.0    1.135    0.011    103.9  12024.9                     H.K.Vonach,          (68)20815  7 0.0078018                      0.011 0.69                       0.97     0.97
+    1 12024 203 103      1.47E7  75000.0    1.082    0.011    103.9  12024.9                     H.K.Vonach,          (68)20815  7 0.0074375                      0.011 0.69                       1.02     1.02
+    1 12024 203 103      1.47E7  75000.0    1.065    0.011    103.9  12024.9                     H.K.Vonach,          (68)20815  7 0.0073207                      0.011 0.69                       1.03     1.03
+    1 12024 203 103      1.47E7  75000.0    1.095    0.011    103.9  12024.9                     H.K.Vonach,          (68)20815  7 0.0075269                      0.011 0.69                       1        1
+    1 12024 203 103      1.47E7  75000.0     1.11    0.011    103.9  12024.9                     H.K.Vonach,          (68)20815  7   0.00763                      0.011 0.69                       0.99     0.99
+    1 12024 203 103      1.47E7  75000.0    1.115    0.011    103.9  12024.9                     H.K.Vonach,          (68)20815  7 0.0076644                      0.011 0.69                       0.99     0.99
+    1 12024 203 103      1.47E7  75000.0     1.11    0.011    103.9  12024.9                     H.K.Vonach,          (68)20815  7   0.00763                      0.011 0.69                       0.99     0.99
+    1 12024 203 103      1.47E7  75000.0    1.095    0.011    103.9  12024.9                     H.K.Vonach,          (68)20815  7 0.0075269                      0.011 0.69                       1        1
+    1 12024 203 103      1.47E7  75000.0    1.075    0.011    103.9  12024.9                     H.K.Vonach,          (68)20815  7 0.0073894                      0.011 0.69                       1.02     1.02
+    1 12024 203 103      1.47E7  75000.0    1.045    0.011    103.9  12024.9                     H.K.Vonach,          (68)20815  7 0.0071832                      0.011 0.69                       1.05     1.05
+#/C5DATA        0
+#/DATASET       20815007 
+#DATASET        20815008   20131211
+#SUBENT         20815008   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       22-TI-48(N,P)21-SC-48,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           22048            
+#TARGET         22048           [ ]             22-TI-48        [ ] 
+#REAC1          N,P
+#PRODUCT        21-SC-48
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.79%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0088688(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 22048   3 103 D ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1115(1.79%)  EN-NRM(eV):1.47E7
+#M1             Point: XS(b)=0.1124889(0.41%)  EN-NRM(eV):1.47E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 22-TI-48(N,P)21-SC-48,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1115
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.7MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20815008    1.00887     1.00887     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20815008    CS          1           1.00887     1.00887     1.00887     +0.887%     1.00887     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 22048   3 103 D    1.47E7  75000.0.06708977 2.2336-3                                       H.K.Vonach*,         (68)20815  8  5.3127-4                   2.2336-3 0.79                       3.33     3.33    0.1115   0.002    0.11248894.6096-4 1.00886880.8934206
+#/C5DATA        0
+#/DATASET       20815008 
+#DATASET        20815009   20131211
+#SUBENT         20815009   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       (22-TI-48(N,P)21-SC-48,,SIG)/(13-AL-27(N,A)11-NA-24,,SIG)
+#C4Reaction     ((N,P),SIG)/((N,A),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             103
+#PROJ           1
+#TARG           22048            
+#TARGET         22048           [ ]             22-TI-48        [ ] 
+#REAC1          N,P
+#PRODUCT        21-SC-48
+#C4ReaCode      ((N,P),SIG)/((N,A),SIG)
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 22048 203 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (22-TI-48(N,P)21-SC-48,,SIG)/(13-AL-27(N,A)11-NA-24,,SIG)
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 22048 203 103      1.47E7  75000.0    0.596    0.012    107.9  13027.9                     H.K.Vonach,          (68)20815  9 0.0040968                      0.012 0.69                       2.01     2.01                      0.11248894.6096-4
+#/C5DATA        0
+#/DATASET       20815009 
+#DATASET        20815010   20131211
+#SUBENT         20815010   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       (22-TI-48(N,P)21-SC-48,,SIG)//(22-TI-48(N,P)21-SC-48,,SIG)
+#C4Reaction     ((N,P),SIG)//((N,P),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             103
+#PROJ           1
+#TARG           22048            
+#TARGET         22048           [ ]             22-TI-48        [ ] 
+#REAC1          N,P
+#PRODUCT        21-SC-48
+#C4ReaCode      ((N,P),SIG)//((N,P),SIG)
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)//(R1#)
+#ReaCombi       a//a
+#C4FOUND        30 
+#C4BEGIN        [    1 22048 203 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         11
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 22048 203 103      1.47E7  75000.0    0.937     0.01    103.9  22048.9                     H.K.Vonach,          (68)20815 10 .00644081                       0.01 0.69                       1.07     1.07
+    1 22048 203 103      1.47E7  75000.0    0.952     0.01    103.9  22048.9                     H.K.Vonach,          (68)20815 10 0.0065439                       0.01 0.69                       1.05     1.05
+    1 22048 203 103      1.47E7  75000.0    0.965     0.01    103.9  22048.9                     H.K.Vonach,          (68)20815 10 0.0066333                       0.01 0.69                       1.04     1.04
+    1 22048 203 103      1.47E7  75000.0    0.976     0.01    103.9  22048.9                     H.K.Vonach,          (68)20815 10 0.0067089                       0.01 0.69                       1.02     1.02
+    1 22048 203 103      1.47E7  75000.0    0.985     0.01    103.9  22048.9                     H.K.Vonach,          (68)20815 10 0.0067708                       0.01 0.69                       1.02     1.02
+    1 22048 203 103      1.47E7  75000.0    0.992     0.01    103.9  22048.9                     H.K.Vonach,          (68)20815 10 0.0068189                       0.01 0.69                       1.01     1.01
+    1 22048 203 103      1.47E7  75000.0    0.998     0.01    103.9  22048.9                     H.K.Vonach,          (68)20815 10 0.0068601                       0.01 0.69                       1        1
+    1 22048 203 103      1.47E7  75000.0    1.002     0.01    103.9  22048.9                     H.K.Vonach,          (68)20815 10 0.0068876                       0.01 0.69                       1        1
+    1 22048 203 103      1.47E7  75000.0    1.004     0.01    103.9  22048.9                     H.K.Vonach,          (68)20815 10 0.0069014                       0.01 0.69                       1        1
+    1 22048 203 103      1.47E7  75000.0    1.004     0.01    103.9  22048.9                     H.K.Vonach,          (68)20815 10 0.0069014                       0.01 0.69                       1        1
+    1 22048 203 103      1.47E7  75000.0    1.003     0.01    103.9  22048.9                     H.K.Vonach,          (68)20815 10 0.0068945                       0.01 0.69                       1        1
+#/C5DATA        0
+#/DATASET       20815010 
+#DATASET        20815011   20131211
+#SUBENT         20815011   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       23-V-51(N,A)21-SC-48,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           23051            
+#TARGET         23051           [ ]             23-V-51         [ ] 
+#REAC1          N,A
+#PRODUCT        21-SC-48
+#C4ReaCode      (N,A),SIG
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.79%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0088688(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 23051   3 107 D ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1115(1.79%)  EN-NRM(eV):1.47E7
+#M1             Point: XS(b)=0.1124889(0.41%)  EN-NRM(eV):1.47E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 23-V-51(N,A)21-SC-48,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1115
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.7MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20815011    1.00887     1.00887     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20815011    CS          1           1.00887     1.00887     1.00887     +0.887%     1.00887     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 23051   3 107 D    1.47E7  75000.0.01654545 5.3191-4                                       H.K.Vonach*,         (68)20815 11  1.3102-4                   5.3191-4 0.79                       3.21     3.21    0.1115   0.002    0.11248894.6096-4 1.00886880.8865239
+#/C5DATA        0
+#/DATASET       20815011 
+#DATASET        20815012   20131211
+#SUBENT         20815012   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       (23-V-51(N,A)21-SC-48,,SIG)/(13-AL-27(N,A)11-NA-24,,SIG)
+#C4Reaction     ((N,A),SIG)/((N,A),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             107
+#PROJ           1
+#TARG           23051            
+#TARGET         23051           [ ]             23-V-51         [ ] 
+#REAC1          N,A
+#PRODUCT        21-SC-48
+#C4ReaCode      ((N,A),SIG)/((N,A),SIG)
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 23051 203 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (23-V-51(N,A)21-SC-48,,SIG)/(13-AL-27(N,A)11-NA-24,,SIG)
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 23051 203 107      1.47E7  75000.0    0.147    0.003    107.9  13027.9                     H.K.Vonach,          (68)20815 12 0.0010105                      0.003 0.69                       2.04     2.04                      0.11248894.6096-4
+#/C5DATA        0
+#/DATASET       20815012 
+#DATASET        20815013   20131211
+#SUBENT         20815013   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       (23-V-51(N,A)21-SC-48,,SIG)//(23-V-51(N,A)21-SC-48,,SIG)
+#C4Reaction     ((N,A),SIG)//((N,A),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             107
+#PROJ           1
+#TARG           23051            
+#TARGET         23051           [ ]             23-V-51         [ ] 
+#REAC1          N,A
+#PRODUCT        21-SC-48
+#C4ReaCode      ((N,A),SIG)//((N,A),SIG)
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)//(R1#)
+#ReaCombi       a//a
+#C4FOUND        30 
+#C4BEGIN        [    1 23051 203 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         11
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 23051 203 107      1.47E7  75000.0     0.82    0.008    107.9  23051.9                     H.K.Vonach,          (68)20815 13 0.0056366                      0.008 0.69                       0.98     0.98
+    1 23051 203 107      1.47E7  75000.0    0.836    0.008    107.9  23051.9                     H.K.Vonach,          (68)20815 13 .00574655                      0.008 0.69                       0.96     0.96
+    1 23051 203 107      1.47E7  75000.0    0.852    0.008    107.9  23051.9                     H.K.Vonach,          (68)20815 13 0.0058565                      0.008 0.69                       0.94     0.94
+    1 23051 203 107      1.47E7  75000.0    0.867    0.009    107.9  23051.9                     H.K.Vonach,          (68)20815 13 .00595964                      0.009 0.69                       1.04     1.04
+    1 23051 203 107      1.47E7  75000.0    0.885    0.009    107.9  23051.9                     H.K.Vonach,          (68)20815 13 .00608337                      0.009 0.69                       1.02     1.02
+    1 23051 203 107      1.47E7  75000.0    0.902    0.009    107.9  23051.9                     H.K.Vonach,          (68)20815 13 0.0062002                      0.009 0.69                       1        1
+    1 23051 203 107      1.47E7  75000.0    0.918    0.009    107.9  23051.9                     H.K.Vonach,          (68)20815 13 0.0063102                      0.009 0.69                       0.98     0.98
+    1 23051 203 107      1.47E7  75000.0    0.934    0.009    107.9  23051.9                     H.K.Vonach,          (68)20815 13 0.0064202                      0.009 0.69                       0.96     0.96
+    1 23051 203 107      1.47E7  75000.0    0.951     0.01    107.9  23051.9                     H.K.Vonach,          (68)20815 13  0.006537                       0.01 0.69                       1.05     1.05
+    1 23051 203 107      1.47E7  75000.0    0.967     0.01    107.9  23051.9                     H.K.Vonach,          (68)20815 13  0.006647                       0.01 0.69                       1.03     1.03
+    1 23051 203 107      1.47E7  75000.0    0.984     0.01    107.9  23051.9                     H.K.Vonach,          (68)20815 13 0.0067639                       0.01 0.69                       1.02     1.02
+#/C5DATA        0
+#/DATASET       20815013 
+#DATASET        20815014   20131211
+#SUBENT         20815014   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       26-FE-56(N,P)25-MN-56,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           26056            
+#TARGET         26056           [ ]             26-FE-56        [ ] 
+#REAC1          N,P
+#PRODUCT        25-MN-56
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.79%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0088688(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 26056   3 103 D ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1115(1.79%)  EN-NRM(eV):1.47E7
+#M1             Point: XS(b)=0.1124889(0.41%)  EN-NRM(eV):1.47E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-56(N,P)25-MN-56,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1115
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.7MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20815014    1.00887     1.00887     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20815014    CS          1           1.00887     1.00887     1.00887     +0.887%     1.00887     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26056   3 103 D    1.47E7  75000.00.1008869 3.6306-3                                       H.K.Vonach*,         (68)20815 14  7.9880-4                   3.6306-3 0.79                       3.60     3.60    0.1115   0.002    0.11248894.6096-4 1.00886880.9076486
+#/C5DATA        0
+#/DATASET       20815014 
+#DATASET        20815015   20131211
+#SUBENT         20815015   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       (26-FE-56(N,P)25-MN-56,,SIG)/(13-AL-27(N,A)11-NA-24,,SIG)
+#C4Reaction     ((N,P),SIG)/((N,A),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             103
+#PROJ           1
+#TARG           26056            
+#TARGET         26056           [ ]             26-FE-56        [ ] 
+#REAC1          N,P
+#PRODUCT        25-MN-56
+#C4ReaCode      ((N,P),SIG)/((N,A),SIG)
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 26056 203 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (26-FE-56(N,P)25-MN-56,,SIG)/(13-AL-27(N,A)11-NA-24,,SIG)
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26056 203 103      1.47E7  75000.0    0.896    0.027    107.9  13027.9                     H.K.Vonach,          (68)20815 15  0.006159                      0.027 0.69                       3.01     3.01                      0.11248894.6096-4
+#/C5DATA        0
+#/DATASET       20815015 
+#DATASET        20815016   20131211
+#SUBENT         20815016   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       (26-FE-56(N,P)25-MN-56,,SIG)//(26-FE-56(N,P)25-MN-56,,SIG)
+#C4Reaction     ((N,P),SIG)//((N,P),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             103
+#PROJ           1
+#TARG           26056            
+#TARGET         26056           [ ]             26-FE-56        [ ] 
+#REAC1          N,P
+#PRODUCT        25-MN-56
+#C4ReaCode      ((N,P),SIG)//((N,P),SIG)
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)//(R1#)
+#ReaCombi       a//a
+#C4FOUND        30 
+#C4BEGIN        [    1 26056 203 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         11
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26056 203 103      1.47E7  75000.0    1.074    0.011    103.9  26056.9                     H.K.Vonach,          (68)20815 16 .00738253                      0.011 0.69                       1.02     1.02
+    1 26056 203 103      1.47E7  75000.0    1.072    0.011    103.9  26056.9                     H.K.Vonach,          (68)20815 16 0.0073688                      0.011 0.69                       1.03     1.03
+    1 26056 203 103      1.47E7  75000.0     1.07    0.011    103.9  26056.9                     H.K.Vonach,          (68)20815 16  0.007355                      0.011 0.69                       1.03     1.03
+    1 26056 203 103      1.47E7  75000.0    1.066    0.011    103.9  26056.9                     H.K.Vonach,          (68)20815 16 0.0073275                      0.011 0.69                       1.03     1.03
+    1 26056 203 103      1.47E7  75000.0    1.062    0.011    103.9  26056.9                     H.K.Vonach,          (68)20815 16    0.0073                      0.011 0.69                       1.04     1.04
+    1 26056 203 103      1.47E7  75000.0    1.056    0.011    103.9  26056.9                     H.K.Vonach,          (68)20815 16 0.0072588                      0.011 0.69                       1.04     1.04
+    1 26056 203 103      1.47E7  75000.0    1.049     0.01    103.9  26056.9                     H.K.Vonach,          (68)20815 16 0.0072107                       0.01 0.69                       0.95     0.95
+    1 26056 203 103      1.47E7  75000.0    1.042     0.01    103.9  26056.9                     H.K.Vonach,          (68)20815 16 0.0071626                       0.01 0.69                       0.96     0.96
+    1 26056 203 103      1.47E7  75000.0    1.033     0.01    103.9  26056.9                     H.K.Vonach,          (68)20815 16 0.0071007                       0.01 0.69                       0.97     0.97
+    1 26056 203 103      1.47E7  75000.0    1.023     0.01    103.9  26056.9                     H.K.Vonach,          (68)20815 16  0.007032                       0.01 0.69                       0.98     0.98
+    1 26056 203 103      1.47E7  75000.0    1.012     0.01    103.9  26056.9                     H.K.Vonach,          (68)20815 16 0.0069564                       0.01 0.69                       0.99     0.99
+#/C5DATA        0
+#/DATASET       20815016 
+#DATASET        20815017   20131211
+#SUBENT         20815017   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       29-CU-65(N,2N)29-CU-64,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           29065            
+#TARGET         29065           [ ]             29-CU-65        [ ] 
+#REAC1          N,2N
+#PRODUCT        29-CU-64
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.79%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0088688(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 29065   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1115(1.79%)  EN-NRM(eV):1.47E7
+#M1             Point: XS(b)=0.1124889(0.41%)  EN-NRM(eV):1.47E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 29-CU-65(N,2N)29-CU-64,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1115
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.7MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20815017    1.00887     1.00887     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20815017    CS          1           1.00887     1.00887     1.00887     +0.887%     1.00887     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 29065   3  16      1.47E7  75000.00.8736805.03184416                                       H.K.Vonach*,         (68)20815 17  6.9185-3                  .03184416 0.79                       3.64     3.64    0.1115   0.002    0.11248894.6096-4 1.00886880.9098331
+#/C5DATA        0
+#/DATASET       20815017 
+#DATASET        20815018   20131211
+#SUBENT         20815018   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       (29-CU-65(N,2N)29-CU-64,,SIG)//(29-CU-65(N,2N)29-CU-64,,SIG)
+#C4Reaction     ((N,2N),SIG)//((N,2N),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             16
+#PROJ           1
+#TARG           29065            
+#TARGET         29065           [ ]             29-CU-65        [ ] 
+#REAC1          N,2N
+#PRODUCT        29-CU-64
+#C4ReaCode      ((N,2N),SIG)//((N,2N),SIG)
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)//(R1#)
+#ReaCombi       a//a
+#C4FOUND        30 
+#C4BEGIN        [    1 29065 203  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         11
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 29065 203  16      1.47E7  75000.0    0.856    0.009     16.9  29065.9                     H.K.Vonach,          (68)20815 18  0.005884                      0.009 0.69                       1.05     1.05
+    1 29065 203  16      1.47E7  75000.0    0.871    0.009     16.9  29065.9                     H.K.Vonach,          (68)20815 18 0.0059871                      0.009 0.69                       1.03     1.03
+    1 29065 203  16      1.47E7  75000.0    0.887    0.009     16.9  29065.9                     H.K.Vonach,          (68)20815 18 0.0060971                      0.009 0.69                       1.01     1.01
+    1 29065 203  16      1.47E7  75000.0    0.903    0.009     16.9  29065.9                     H.K.Vonach,          (68)20815 18 0.0062071                      0.009 0.69                       1        1
+    1 29065 203  16      1.47E7  75000.0    0.918    0.009     16.9  29065.9                     H.K.Vonach,          (68)20815 18 0.0063102                      0.009 0.69                       0.98     0.98
+    1 29065 203  16      1.47E7  75000.0    0.932    0.009     16.9  29065.9                     H.K.Vonach,          (68)20815 18 0.0064064                      0.009 0.69                       0.97     0.97
+    1 29065 203  16      1.47E7  75000.0    0.945    0.009     16.9  29065.9                     H.K.Vonach,          (68)20815 18 0.0064958                      0.009 0.69                       0.95     0.95
+    1 29065 203  16      1.47E7  75000.0    0.958     0.01     16.9  29065.9                     H.K.Vonach,          (68)20815 18 0.0065852                       0.01 0.69                       1.04     1.04
+    1 29065 203  16      1.47E7  75000.0    0.969     0.01     16.9  29065.9                     H.K.Vonach,          (68)20815 18 0.0066608                       0.01 0.69                       1.03     1.03
+    1 29065 203  16      1.47E7  75000.0     0.98     0.01     16.9  29065.9                     H.K.Vonach,          (68)20815 18 0.0067364                       0.01 0.69                       1.02     1.02
+    1 29065 203  16      1.47E7  75000.0     0.99     0.01     16.9  29065.9                     H.K.Vonach,          (68)20815 18 0.0068051                       0.01 0.69                       1.01     1.01
+#/C5DATA        0
+#/DATASET       20815018 
+#DATASET        20815019   20131211
+#SUBENT         20815019   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       47-AG-107(N,2N)47-AG-106-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           47107            
+#TARGET         47107           [ ]             47-AG-107       [ ] 
+#REAC1          N,2N
+#PRODUCT        47-AG-106-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.79%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0088688(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 47107   3  16MD ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1115(1.79%)  EN-NRM(eV):1.47E7
+#M1             Point: XS(b)=0.1124889(0.41%)  EN-NRM(eV):1.47E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 47-AG-107(N,2N)47-AG-106-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1115
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.7MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        20815019    1.00887     1.00887     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          20815019    CS          1           1.00887     1.00887     1.00887     +0.887%     1.00887     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 47107   3  16MD    1.47E7  75000.00.6093568.01714331                                       H.K.Vonach*,         (68)20815 19  4.8254-3                  .01714331 0.79                       2.81     2.81    0.1115   0.002    0.11248894.6096-4 1.00886880.8571656
+#/C5DATA        0
+#/DATASET       20815019 
+#DATASET        20815020   20131211
+#SUBENT         20815020   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       (47-AG-107(N,2N)47-AG-106-M,,SIG)/(13-AL-27(N,A)11-NA-24,,SIG)
+#C4Reaction     ((N,2N),SIG)/((N,A),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             16
+#PROJ           1
+#TARG           47107            
+#TARGET         47107           [ ]             47-AG-107       [ ] 
+#REAC1          N,2N
+#PRODUCT        47-AG-106-M
+#C4ReaCode      ((N,2N),SIG)/((N,A),SIG)
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 47107 203  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (47-AG-107(N,2N)47-AG-106-M,,SIG)/(13-AL-27(N,A)11-NA-24,,SIG)
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 47107 203  16M     1.47E7  75000.0     5.42     0.11    107.9  13027.9                     H.K.Vonach,          (68)20815 20 .03725634                       0.11 0.69                       2.03     2.03                      0.11248894.6096-4
+#/C5DATA        0
+#/DATASET       20815020 
+#DATASET        20815021   20131211
+#SUBENT         20815021   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       (47-AG-107(N,2N)47-AG-106-M,,SIG)//(47-AG-107(N,2N)47-AG-106-M,,SIG)
+#C4Reaction     ((N,2N),SIG)//((N,2N),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             16
+#PROJ           1
+#TARG           47107            
+#TARGET         47107           [ ]             47-AG-107       [ ] 
+#REAC1          N,2N
+#PRODUCT        47-AG-106-M
+#C4ReaCode      ((N,2N),SIG)//((N,2N),SIG)
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)//(R1#)
+#ReaCombi       a//a
+#C4FOUND        30 
+#C4BEGIN        [    1 47107 203  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         11
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 47107 203  16M     1.47E7  75000.0    0.879    0.009     16.9  47107.9                     H.K.Vonach,          (68)20815 21 0.0060421                      0.009 0.69                       1.02     1.02
+    1 47107 203  16M     1.47E7  75000.0    0.893    0.009     16.9  47107.9                     H.K.Vonach,          (68)20815 21 .00613836                      0.009 0.69                       1.01     1.01
+    1 47107 203  16M     1.47E7  75000.0    0.906    0.009     16.9  47107.9                     H.K.Vonach,          (68)20815 21 0.0062277                      0.009 0.69                       0.99     0.99
+    1 47107 203  16M     1.47E7  75000.0    0.919    0.009     16.9  47107.9                     H.K.Vonach,          (68)20815 21 0.0063171                      0.009 0.69                       0.98     0.98
+    1 47107 203  16M     1.47E7  75000.0    0.931    0.009     16.9  47107.9                     H.K.Vonach,          (68)20815 21 0.0063996                      0.009 0.69                       0.97     0.97
+    1 47107 203  16M     1.47E7  75000.0    0.943    0.009     16.9  47107.9                     H.K.Vonach,          (68)20815 21 0.0064821                      0.009 0.69                       0.95     0.95
+    1 47107 203  16M     1.47E7  75000.0    0.954     0.01     16.9  47107.9                     H.K.Vonach,          (68)20815 21 0.0065577                       0.01 0.69                       1.05     1.05
+    1 47107 203  16M     1.47E7  75000.0    0.964     0.01     16.9  47107.9                     H.K.Vonach,          (68)20815 21 0.0066264                       0.01 0.69                       1.04     1.04
+    1 47107 203  16M     1.47E7  75000.0    0.974     0.01     16.9  47107.9                     H.K.Vonach,          (68)20815 21 0.0066951                       0.01 0.69                       1.03     1.03
+    1 47107 203  16M     1.47E7  75000.0    0.983     0.01     16.9  47107.9                     H.K.Vonach,          (68)20815 21  0.006757                       0.01 0.69                       1.02     1.02
+    1 47107 203  16M     1.47E7  75000.0    0.992     0.01     16.9  47107.9                     H.K.Vonach,          (68)20815 21 0.0068189                       0.01 0.69                       1.01     1.01
+#/C5DATA        0
+#/DATASET       20815021 
+#DATASET        20815022   20131211
+#SUBENT         20815022   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       (49-IN-115(N,2N)49-IN-114-M,,SIG)//(49-IN-115(N,2N)49-IN-114-M,,SIG)
+#C4Reaction     ((N,2N),SIG)//((N,2N),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             16
+#PROJ           1
+#TARG           49115            
+#TARGET         49115           [ ]             49-IN-115       [ ] 
+#REAC1          N,2N
+#PRODUCT        49-IN-114-M
+#C4ReaCode      ((N,2N),SIG)//((N,2N),SIG)
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)//(R1#)
+#ReaCombi       a//a
+#C4FOUND        30 
+#C4BEGIN        [    1 49115 203  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         11
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 49115 203  16M     1.47E7  75000.0    0.932     0.01     16.9  49115.9                     H.K.Vonach,          (68)20815 22 0.0064064                       0.01 0.69                       1.07     1.07
+    1 49115 203  16M     1.47E7  75000.0    0.938     0.01     16.9  49115.9                     H.K.Vonach,          (68)20815 22 0.0064477                       0.01 0.69                       1.07     1.07
+    1 49115 203  16M     1.47E7  75000.0    0.944     0.01     16.9  49115.9                     H.K.Vonach,          (68)20815 22 0.0064889                       0.01 0.69                       1.06     1.06
+    1 49115 203  16M     1.47E7  75000.0     0.95     0.01     16.9  49115.9                     H.K.Vonach,          (68)20815 22 .00653017                       0.01 0.69                       1.05     1.05
+    1 49115 203  16M     1.47E7  75000.0    0.957     0.01     16.9  49115.9                     H.K.Vonach,          (68)20815 22 0.0065783                       0.01 0.69                       1.04     1.04
+    1 49115 203  16M     1.47E7  75000.0    0.963     0.01     16.9  49115.9                     H.K.Vonach,          (68)20815 22 0.0066195                       0.01 0.69                       1.04     1.04
+    1 49115 203  16M     1.47E7  75000.0    0.969     0.01     16.9  49115.9                     H.K.Vonach,          (68)20815 22 0.0066608                       0.01 0.69                       1.03     1.03
+    1 49115 203  16M     1.47E7  75000.0    0.975     0.01     16.9  49115.9                     H.K.Vonach,          (68)20815 22  0.006702                       0.01 0.69                       1.03     1.03
+    1 49115 203  16M     1.47E7  75000.0    0.981     0.01     16.9  49115.9                     H.K.Vonach,          (68)20815 22 0.0067433                       0.01 0.69                       1.02     1.02
+    1 49115 203  16M     1.47E7  75000.0    0.987     0.01     16.9  49115.9                     H.K.Vonach,          (68)20815 22 0.0067845                       0.01 0.69                       1.01     1.01
+    1 49115 203  16M     1.47E7  75000.0    0.993     0.01     16.9  49115.9                     H.K.Vonach,          (68)20815 22 0.0068257                       0.01 0.69                       1.01     1.01
+#/C5DATA        0
+#/DATASET       20815022 
+#DATASET        20815023   20131211
+#SUBENT         20815023   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#REACTION       (73-TA-181(N,2N)73-TA-180-G,,SIG)//(73-TA-181(N,2N)73-TA-180-G,,SIG)
+#C4Reaction     ((N,2N),SIG)//((N,2N),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             16
+#PROJ           1
+#TARG           73181            
+#TARGET         73181           [ ]             73-TA-181       [ ] 
+#REAC1          N,2N
+#PRODUCT        73-TA-180-G
+#C4ReaCode      ((N,2N),SIG)//((N,2N),SIG)
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)//(R1#)
+#ReaCombi       a//a
+#C4FOUND        30 
+#C4BEGIN        [    1 73181 203  16G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         11
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 73181 203  16G     1.47E7  75000.0    1.014     0.01     16.9  73181.9                     H.K.Vonach,          (68)20815 23 0.0069701                       0.01 0.69                       0.99     0.99
+    1 73181 203  16G     1.47E7  75000.0    1.013     0.01     16.9  73181.9                     H.K.Vonach,          (68)20815 23 0.0069632                       0.01 0.69                       0.99     0.99
+    1 73181 203  16G     1.47E7  75000.0    1.011     0.01     16.9  73181.9                     H.K.Vonach,          (68)20815 23 0.0069495                       0.01 0.69                       0.99     0.99
+    1 73181 203  16G     1.47E7  75000.0     1.01     0.01     16.9  73181.9                     H.K.Vonach,          (68)20815 23 0.0069426                       0.01 0.69                       0.99     0.99
+    1 73181 203  16G     1.47E7  75000.0    1.009     0.01     16.9  73181.9                     H.K.Vonach,          (68)20815 23 0.0069357                       0.01 0.69                       0.99     0.99
+    1 73181 203  16G     1.47E7  75000.0    1.008     0.01     16.9  73181.9                     H.K.Vonach,          (68)20815 23 0.0069289                       0.01 0.69                       0.99     0.99
+    1 73181 203  16G     1.47E7  75000.0    1.006     0.01     16.9  73181.9                     H.K.Vonach,          (68)20815 23 0.0069151                       0.01 0.69                       0.99     0.99
+    1 73181 203  16G     1.47E7  75000.0    1.005     0.01     16.9  73181.9                     H.K.Vonach,          (68)20815 23 0.0069082                       0.01 0.69                       1        1
+    1 73181 203  16G     1.47E7  75000.0    1.004     0.01     16.9  73181.9                     H.K.Vonach,          (68)20815 23 0.0069014                       0.01 0.69                       1        1
+    1 73181 203  16G     1.47E7  75000.0    1.003     0.01     16.9  73181.9                     H.K.Vonach,          (68)20815 23 0.0068945                       0.01 0.69                       1        1
+    1 73181 203  16G     1.47E7  75000.0    1.001     0.01     16.9  73181.9                     H.K.Vonach,          (68)20815 23 0.0068807                       0.01 0.69                       1        1
+#/C5DATA        0
+#/DATASET       20815023 
+#DATASET        20815024   20131211
+#SUBENT         20815024   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       (79-AU-197(N,2N)79-AU-196,,SIG)/(13-AL-27(N,A)11-NA-24,,SIG)
+#C4Reaction     ((N,2N),SIG)/((N,A),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             16
+#PROJ           1
+#TARG           79197            
+#TARGET         79197           [ ]             79-AU-197       [ ] 
+#REAC1          N,2N
+#PRODUCT        79-AU-196
+#C4ReaCode      ((N,2N),SIG)/((N,A),SIG)
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 79197 203  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (79-AU-197(N,2N)79-AU-196,,SIG)/(13-AL-27(N,A)11-NA-24,,SIG)
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 79197 203  16      1.47E7  75000.0     19.3      0.6    107.9  13027.9                     H.K.Vonach,          (68)20815 24 0.1326656                        0.6 0.69                       3.11     3.11                      0.11248894.6096-4
+#/C5DATA        0
+#/DATASET       20815024 
+#DATASET        20815025   20131211
+#SUBENT         20815025   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       (79-AU-197(N,2N)79-AU-196,,SIG)//(79-AU-197(N,2N)79-AU-196,,SIG)
+#C4Reaction     ((N,2N),SIG)//((N,2N),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             16
+#PROJ           1
+#TARG           79197            
+#TARGET         79197           [ ]             79-AU-197       [ ] 
+#REAC1          N,2N
+#PRODUCT        79-AU-196
+#C4ReaCode      ((N,2N),SIG)//((N,2N),SIG)
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)//(R1#)
+#ReaCombi       a//a
+#C4FOUND        30 
+#C4BEGIN        [    1 79197 203  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         11
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 79197 203  16      1.47E7  75000.0     0.99     0.01     16.9  79197.9                     H.K.Vonach,          (68)20815 25 0.0068051                       0.01 0.69                       1.01     1.01
+    1 79197 203  16      1.47E7  75000.0    0.991     0.01     16.9  79197.9                     H.K.Vonach,          (68)20815 25  0.006812                       0.01 0.69                       1.01     1.01
+    1 79197 203  16      1.47E7  75000.0    0.992     0.01     16.9  79197.9                     H.K.Vonach,          (68)20815 25 0.0068189                       0.01 0.69                       1.01     1.01
+    1 79197 203  16      1.47E7  75000.0    0.993     0.01     16.9  79197.9                     H.K.Vonach,          (68)20815 25 0.0068257                       0.01 0.69                       1.01     1.01
+    1 79197 203  16      1.47E7  75000.0    0.994     0.01     16.9  79197.9                     H.K.Vonach,          (68)20815 25 0.0068326                       0.01 0.69                       1.01     1.01
+    1 79197 203  16      1.47E7  75000.0    0.995     0.01     16.9  79197.9                     H.K.Vonach,          (68)20815 25 0.0068395                       0.01 0.69                       1.01     1.01
+    1 79197 203  16      1.47E7  75000.0    0.995     0.01     16.9  79197.9                     H.K.Vonach,          (68)20815 25 0.0068395                       0.01 0.69                       1.01     1.01
+    1 79197 203  16      1.47E7  75000.0    0.996     0.01     16.9  79197.9                     H.K.Vonach,          (68)20815 25 0.0068464                       0.01 0.69                       1        1
+    1 79197 203  16      1.47E7  75000.0    0.997     0.01     16.9  79197.9                     H.K.Vonach,          (68)20815 25 0.0068532                       0.01 0.69                       1        1
+    1 79197 203  16      1.47E7  75000.0    0.998     0.01     16.9  79197.9                     H.K.Vonach,          (68)20815 25 0.0068601                       0.01 0.69                       1        1
+    1 79197 203  16      1.47E7  75000.0    0.999     0.01     16.9  79197.9                     H.K.Vonach,          (68)20815 25 .00686699                       0.01 0.69                       1        1
+#/C5DATA        0
+#/DATASET       20815025 
+#DATASET        20815026   20131211
+#SUBENT         20815026   20131211
+#ENTRY          20815      20180125
+#TITLE          Precision measurements of excitation functions
+#+               of (n,p),(n,alpha) and (n,2n) reactions induced by
+#+               13.5 - 14.7 MeV neutrons
+#AUTHORS        H.K.Vonach,W.G.Vonach,H.Muenzer,P.Schramel
+#AUTHOR1        H.K.Vonach+
+#YEAR           1968
+#X4REF1         C,68WASH,2,885,1968
+#REFERENCE1     Conf: Nuclear Cross-Sections Techn. Conf., Washington 1968, Vol.2, p.885 (1968)
+#DATE           20131211
+#INSTITUTE      2GERMUN,2GERSFN
+#METHOD         ACTIV
+#REACTION       (13-AL-27(N,A)11-NA-24,,SIG)//(13-AL-27(N,A)11-NA-24,,SIG)
+#C4Reaction     ((N,A),SIG)//((N,A),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             107
+#PROJ           1
+#TARG           13027            
+#TARGET         13027           [ ]             13-AL-27        [ ] 
+#REAC1          N,A
+#PRODUCT        11-NA-24
+#C4ReaCode      ((N,A),SIG)//((N,A),SIG)
+#CompNotes      ERR-ANALYS:(ERR-SYS,,0.9)     ADDED AS COMMON:ERR-SYS,PER-CENT=0.45%
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)//(R1#)
+#ReaCombi       a//a
+#C4FOUND        30 
+#C4BEGIN        [    1 13027 203 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         11
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 13027 203 107      1.47E7  75000.0    1.112    0.011    107.9  13027.9                     H.K.Vonach,          (68)20815 26 0.0076437                      0.011 0.69                       0.99     0.99
+    1 13027 203 107      1.47E7  75000.0    1.105    0.011    107.9  13027.9                     H.K.Vonach,          (68)20815 26 .00759562                      0.011 0.69                       1        1
+    1 13027 203 107      1.47E7  75000.0    1.092    0.011    107.9  13027.9                     H.K.Vonach,          (68)20815 26 0.0075063                      0.011 0.69                       1.01     1.01
+    1 13027 203 107      1.47E7  75000.0    1.077    0.011    107.9  13027.9                     H.K.Vonach,          (68)20815 26 0.0074032                      0.011 0.69                       1.02     1.02
+    1 13027 203 107      1.47E7  75000.0    1.077    0.011    107.9  13027.9                     H.K.Vonach,          (68)20815 26 0.0074032                      0.011 0.69                       1.02     1.02
+    1 13027 203 107      1.47E7  75000.0     1.08    0.011    107.9  13027.9                     H.K.Vonach,          (68)20815 26 0.0074238                      0.011 0.69                       1.02     1.02
+    1 13027 203 107      1.47E7  75000.0     1.08    0.011    107.9  13027.9                     H.K.Vonach,          (68)20815 26 0.0074238                      0.011 0.69                       1.02     1.02
+    1 13027 203 107      1.47E7  75000.0    1.072    0.011    107.9  13027.9                     H.K.Vonach,          (68)20815 26 0.0073688                      0.011 0.69                       1.03     1.03
+    1 13027 203 107      1.47E7  75000.0    1.045     0.01    107.9  13027.9                     H.K.Vonach,          (68)20815 26 0.0071832                       0.01 0.69                       0.96     0.96
+    1 13027 203 107      1.47E7  75000.0    1.025     0.01    107.9  13027.9                     H.K.Vonach,          (68)20815 26 0.0070457                       0.01 0.69                       0.98     0.98
+    1 13027 203 107      1.47E7  75000.0    1.012     0.01    107.9  13027.9                     H.K.Vonach,          (68)20815 26 0.0069564                       0.01 0.69                       0.99     0.99
+#/C5DATA        0
+#/DATASET       20815026 
+#/C5.2.3        1               25              25              0               135             

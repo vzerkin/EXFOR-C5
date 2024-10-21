@@ -1,0 +1,1736 @@
+#C5.2.3
+#DATASET        10022002   19990719
+#SUBENT         10022002   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       9-F-19(N,2N)9-F-18,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           9019             
+#TARGET         9019            [ ]             9-F-19          [ ] 
+#REAC1          N,2N
+#PRODUCT        9-F-18
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.279%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1  9019   3  16 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 9-F-19(N,2N)9-F-18,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (9-F-19(N,2N)9-F-18,,SIG)
+#+               #[1]#DECAY-DATA (9-F-18,,AR,511.,1.94) #Ix_old=1.94
+#+                a1=1.94/1.9346001;          #[1]#DECAY-DATA: correction to new 511 keV gamma-yield per decay F-18 Ix_new=1.9346001
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0027913
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022002    0.946998    0.944362    1.00279     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022002    CS          1           0.946998    0.946998    0.946998    -5.30%      1.05597     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1  9019   3  16 A    1.46E7 200000.0.044508880.0378799                                       R.C.Barrall*,        (69)10022  2                            0.0378799                            85.1     85.1    0.1207            0.11398444.4691-4 0.94699750.9469975
+#/C5DATA        0
+#/DATASET       10022002 
+#DATASET        10022003   19990719
+#SUBENT         10022003   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       11-NA-23(N,2N)11-NA-22,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           11023            
+#TARGET         11023           [ ]             11-NA-23        [ ] 
+#REAC1          N,2N
+#PRODUCT        11-NA-22
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.586%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 11023   3  16 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 11-NA-23(N,2N)11-NA-22,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (11-NA-23(N,2N)11-NA-22,,SIG)
+#+               #[1]#DECAY-DATA (11-NA-22,941.7D,AR,511.,1.797) #Ix_old=1.797
+#+                a1=1.797/1.8075999;         #[1]#DECAY-DATA: correction to new 511 keV gamma-yield per decay Na-22 Ix_new=1.8075999
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.994136
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022003    0.938824    0.944362    0.994136    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022003    CS          1           0.938824    0.938824    0.938824    -6.12%      1.06516     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 11023   3  16 A    1.46E7 200000.0.04647178 9.3882-3                                       R.C.Barrall*,        (69)10022  3                             9.3882-3                            20.2     20.2    0.1207            0.11398444.4691-4 0.93882380.9388238
+#/C5DATA        0
+#/DATASET       10022003 
+#DATASET        10022004   19990719
+#SUBENT         10022004   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       12-MG-24(N,P)11-NA-24,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           12024            
+#TARGET         12024           [ ]             12-MG-24        [ ] 
+#REAC1          N,P
+#PRODUCT        11-NA-24
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 12024   3 103 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 12-MG-24(N,P)11-NA-24,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022004    0.944362    0.944362    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022004    CS          1           0.944362    0.944362    0.944362    -5.56%      1.05892     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 12024   3 103 A    1.46E7 200000.00.1832062    0.014                                       R.C.Barrall*,        (69)10022  4                                0.014                            7.64     7.64    0.1207            0.11398444.4691-4 0.9443616
+#/C5DATA        0
+#/DATASET       10022004 
+#DATASET        10022005   19990719
+#SUBENT         10022005   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       16-S-34(N,A)14-SI-31,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           16034            
+#TARGET         16034           [ ]             16-S-34         [ ] 
+#REAC1          N,A
+#PRODUCT        14-SI-31
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 16034   3 107 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 16-S-34(N,A)14-SI-31,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022005    0.944362    0.944362    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022005    CS          1           0.944362    0.944362    0.944362    -5.56%      1.05892     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 16034   3 107 A    1.46E7 200000.00.1293775     0.01                                       R.C.Barrall*,        (69)10022  5                                 0.01                            7.73     7.73    0.1207            0.11398444.4691-4 0.9443616
+#/C5DATA        0
+#/DATASET       10022005 
+#DATASET        10022006   19990719
+#SUBENT         10022006   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       16-S-32(N,P)15-P-32,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           16032            
+#TARGET         16032           [ ]             16-S-32         [ ] 
+#REAC1          N,P
+#PRODUCT        15-P-32
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 16032   3 103 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 16-S-32(N,P)15-P-32,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022006    0.944362    0.944362    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022006    CS          1           0.944362    0.944362    0.944362    -5.56%      1.05892     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 16032   3 103 A    1.46E7 200000.00.2020934    0.016                                       R.C.Barrall*,        (69)10022  6                                0.016                            7.92     7.92    0.1207            0.11398444.4691-4 0.9443616
+#/C5DATA        0
+#/DATASET       10022006 
+#DATASET        10022007   19990719
+#SUBENT         10022007   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       17-CL-35(N,A)15-P-32,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           17035            
+#TARGET         17035           [ ]             17-CL-35        [ ] 
+#REAC1          N,A
+#PRODUCT        15-P-32
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 17035   3 107 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 17-CL-35(N,A)15-P-32,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022007    0.944362    0.944362    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022007    CS          1           0.944362    0.944362    0.944362    -5.56%      1.05892     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 17035   3 107 A    1.46E7 200000.0 0.101991     0.09                                       R.C.Barrall*,        (69)10022  7                                 0.09                            88.2     88.2    0.1207            0.11398444.4691-4 0.9443616
+#/C5DATA        0
+#/DATASET       10022007 
+#DATASET        10022008   19990719
+#SUBENT         10022008   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       25-MN-55(N,2N)25-MN-54,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           25055            
+#TARGET         25055           [ ]             25-MN-55        [ ] 
+#REAC1          N,2N
+#PRODUCT        25-MN-54
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 25055   3  16 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 25-MN-55(N,2N)25-MN-54,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022008    0.944362    0.944362    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022008    CS          1           0.944362    0.944362    0.944362    -5.56%      1.05892     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 25055   3  16 A    1.46E7 200000.00.7413238     0.08                                       R.C.Barrall*,        (69)10022  8                                 0.08                            10.8     10.8    0.1207            0.11398444.4691-4 0.9443616
+#/C5DATA        0
+#/DATASET       10022008 
+#DATASET        10022009   19990719
+#SUBENT         10022009   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       26-FE-54(N,P)25-MN-54,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           26054            
+#TARGET         26054           [ ]             26-FE-54        [ ] 
+#REAC1          N,P
+#PRODUCT        25-MN-54
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 26054   3 103 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-54(N,P)25-MN-54,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022009    0.944362    0.944362    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022009    CS          1           0.944362    0.944362    0.944362    -5.56%      1.05892     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26054   3 103 A    1.46E7 200000.00.3267491     0.03                                       R.C.Barrall*,        (69)10022  9                                 0.03                            9.18     9.18    0.1207            0.11398444.4691-4 0.9443616
+#/C5DATA        0
+#/DATASET       10022009 
+#DATASET        10022010   19990719
+#SUBENT         10022010   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       26-FE-56(N,P)25-MN-56,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           26056            
+#TARGET         26056           [ ]             26-FE-56        [ ] 
+#REAC1          N,P
+#PRODUCT        25-MN-56
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.152%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 26056   3 103 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-56(N,P)25-MN-56,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (26-FE-56(N,P)25-MN-56,,SIG)
+#+               #[1]#DECAY-DATA (25-MN-56,.1075D,DG,845.,0.99) #Ix_old=0.99
+#+                a1=0.99/0.9885;             #[1]#DECAY-DATA: correction to new 846.7638 keV gamma-yield per decay Mn-56 Ix_new=0.9885
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0015174
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022010    0.945795    0.944362    1.00152     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022010    CS          1           0.945795    0.945795    0.945795    -5.42%      1.05731     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26056   3 103 A    1.46E7 200000.00.1068748.07566357                                       R.C.Barrall*,        (69)10022 10                            .07566357                            70.8     70.8    0.1207            0.11398444.4691-4 0.94579460.9457946
+#/C5DATA        0
+#/DATASET       10022010 
+#DATASET        10022011   19990719
+#SUBENT         10022011   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       27-CO-59(N,2N)27-CO-58,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          N,2N
+#PRODUCT        27-CO-58
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 27059   3  16 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 27-CO-59(N,2N)27-CO-58,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022011    0.944362    0.944362    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022011    CS          1           0.944362    0.944362    0.944362    -5.56%      1.05892     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 27059   3  16 A    1.46E7 200000.00.7177148     0.06                                       R.C.Barrall*,        (69)10022 11                                 0.06                            8.36     8.36    0.1207            0.11398444.4691-4 0.9443616
+#/C5DATA        0
+#/DATASET       10022011 
+#DATASET        10022012   20230912
+#SUBENT         10022012   20230912
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           20230912
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       28-NI-58(N,X)27-CO-57,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           28058            
+#TARGET         28058           [ ]             28-NI-58        [ ] 
+#REAC1          N,X
+#PRODUCT        27-CO-57
+#C4ReaCode      (N,X),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.64%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 28058   39000 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 28-NI-58(N,X)27-CO-57,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (28-NI-58(N,X)27-CO-57,,SIG)
+#+               #[1]#DECAY-DATA (27-CO-57,267.D,DG,122.,0.87) #Ix_old=0.87
+#+                a1=0.87/0.856;              #[1]#DECAY-DATA: correction to new 122.06065 keV gamma-yield per decay Co-57 Ix_new=0.856
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0163552
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022012    0.959807    0.944362    1.01636     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022012    CS          1           0.959807    0.959807    0.959807    -4.02%      1.04188     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 28058   39000 A    1.46E7 200000.00.70065890.0575884           27057.9                     R.C.Barrall*,        (69)10022 12                            0.0575884                            8.22     8.22    0.1207            0.11398444.4691-4 0.95980670.9598067
+#/C5DATA        0
+#/DATASET       10022012 
+#DATASET        10022013   19990719
+#SUBENT         10022013   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       28-NI-58(N,P)27-CO-58,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           28058            
+#TARGET         28058           [ ]             28-NI-58        [ ] 
+#REAC1          N,P
+#PRODUCT        27-CO-58
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.452%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 28058   3 103 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 28-NI-58(N,P)27-CO-58,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (28-NI-58(N,P)27-CO-58,,SIG)
+#+               #[1]#DECAY-DATA (27-CO-58-G,71.3D,DG,810.,0.99) #Ix_old=0.99
+#+                a1=0.99/0.9945;             #[1]#DECAY-DATA: correction to new 810.7593 keV gamma-yield per decay Co-58-g Ix_new=0.9945
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9954751
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022013    0.940088    0.944362    0.995475    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022013    CS          1           0.940088    0.940088    0.940088    -5.99%      1.06373     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 28058   3 103 A    1.46E7 200000.00.3205701.02820265                                       R.C.Barrall*,        (69)10022 13                            .02820265                            8.80     8.80    0.1207            0.11398444.4691-4 0.94008850.9400884
+#/C5DATA        0
+#/DATASET       10022013 
+#DATASET        10022014   19990719
+#SUBENT         10022014   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       28-NI-58(N,2N)28-NI-57,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           28058            
+#TARGET         28058           [ ]             28-NI-58        [ ] 
+#REAC1          N,2N
+#PRODUCT        28-NI-57
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 28058   3  16 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 28-NI-58(N,2N)28-NI-57,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022014    0.944362    0.944362    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022014    CS          1           0.944362    0.944362    0.944362    -5.56%      1.05892     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 28058   3  16 A    1.46E7 200000.0.03154168    0.002                                       R.C.Barrall*,        (69)10022 14                                0.002                            6.34     6.34    0.1207            0.11398444.4691-4 0.9443616
+#/C5DATA        0
+#/DATASET       10022014 
+#DATASET        10022015   19990719
+#SUBENT         10022015   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       29-CU-65(N,2N)29-CU-64,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           29065            
+#TARGET         29065           [ ]             29-CU-65        [ ] 
+#REAC1          N,2N
+#PRODUCT        29-CU-64
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+7.95%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 29065   3  16 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 29-CU-65(N,2N)29-CU-64,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (29-CU-65(N,2N)29-CU-64,,SIG)
+#+               #[1]#DECAY-DATA (29-CU-64,.5333D,DG,511.,0.38) #Ix_old=0.38
+#+                a1=0.38/0.352;              #[1]#DECAY-DATA: correction to new 511 keV gamma-yield per decay Cu-64 Ix_new=0.352
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0795455
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022015    1.01948     0.944362    1.07955     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022015    CS          1           1.01948     1.01948     1.01948     +1.95%      1.01948     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 29065   3  16 A    1.46E7 200000.00.91447470.1019481                                       R.C.Barrall*,        (69)10022 15                            0.1019481                            11.1     11.1    0.1207            0.11398444.4691-4 1.01948131.0194813
+#/C5DATA        0
+#/DATASET       10022015 
+#DATASET        10022016   19990719
+#SUBENT         10022016   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       29-CU-63(N,A)27-CO-60,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           29063            
+#TARGET         29063           [ ]             29-CU-63        [ ] 
+#REAC1          N,A
+#PRODUCT        27-CO-60
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 29063   3 107 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 29-CU-63(N,A)27-CO-60,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022016    0.944362    0.944362    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022016    CS          1           0.944362    0.944362    0.944362    -5.56%      1.05892     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 29063   3 107 A    1.46E7 200000.00.0467459     0.01                                       R.C.Barrall*,        (69)10022 16                                 0.01                            21.4     21.4    0.1207            0.11398444.4691-4 0.9443616
+#/C5DATA        0
+#/DATASET       10022016 
+#DATASET        10022017   19990719
+#SUBENT         10022017   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       30-ZN-64(N,P)29-CU-64,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           30064            
+#TARGET         30064           [ ]             30-ZN-64        [ ] 
+#REAC1          N,P
+#PRODUCT        29-CU-64
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+7.95%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 30064   3 103 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 30-ZN-64(N,P)29-CU-64,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (30-ZN-64(N,P)29-CU-64,,SIG)
+#+               #[1]#DECAY-DATA (29-CU-64,.5333D,DG,511.,0.38) #Ix_old=0.38
+#+                a1=0.38/0.352;              #[1]#DECAY-DATA: correction to new 511 keV gamma-yield per decay Cu-64 Ix_new=0.352
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0795455
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022017    1.01948     0.944362    1.07955     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022017    CS          1           1.01948     1.01948     1.01948     +1.95%      1.01948     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30064   3 103 A    1.46E7 200000.00.1498637.01019481                                       R.C.Barrall*,        (69)10022 17                            .01019481                            6.80     6.80    0.1207            0.11398444.4691-4 1.01948131.0194812
+#/C5DATA        0
+#/DATASET       10022017 
+#DATASET        10022018   19990719
+#SUBENT         10022018   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       40-ZR-90(N,2N)40-ZR-89,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           40090            
+#TARGET         40090           [ ]             40-ZR-90        [ ] 
+#REAC1          N,2N
+#PRODUCT        40-ZR-89
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40090   3  16 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-90(N,2N)40-ZR-89,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022018    0.944362    0.944362    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022018    CS          1           0.944362    0.944362    0.944362    -5.56%      1.05892     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40090   3  16 A    1.46E7 200000.00.7488787     0.06                                       R.C.Barrall*,        (69)10022 18                                 0.06                            8.01     8.01    0.1207            0.11398444.4691-4 0.9443616
+#/C5DATA        0
+#/DATASET       10022018 
+#DATASET        10022019   19990719
+#SUBENT         10022019   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       53-I-127(N,2N)53-I-126,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           53127            
+#TARGET         53127           [ ]             53-I-127        [ ] 
+#REAC1          N,2N
+#PRODUCT        53-I-126
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-4.49%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 53127   3  16 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 53-I-127(N,2N)53-I-126,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (53-I-127(N,2N)53-I-126,,SIG)
+#+               #[1]#DECAY-DATA (53-I-126,12.8D,DG,390.,0.34) #Ix_old=0.34
+#+                a1=0.34/0.356;              #[1]#DECAY-DATA: correction to new 388.633 keV gamma-yield per decay I-126 Ix_new=0.356
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9550562
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022019    0.901918    0.944362    0.955056    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022019    CS          1           0.901918    0.901918    0.901918    -9.81%      1.10875     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 53127   3  16 A    1.46E7 200000.01.5062037.08117265                                       R.C.Barrall*,        (69)10022 19                            .08117265                            5.39     5.39    0.1207            0.11398444.4691-4 0.90191840.9019184
+#/C5DATA        0
+#/DATASET       10022019 
+#DATASET        10022020   19990719
+#SUBENT         10022020   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       49-IN-115(N,2N)49-IN-114-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           49115            
+#TARGET         49115           [ ]             49-IN-115       [ ] 
+#REAC1          N,2N
+#PRODUCT        49-IN-114-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+9.25%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 49115   3  16MA ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 49-IN-115(N,2N)49-IN-114-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (49-IN-115(N,2N)49-IN-114-M,,SIG)
+#+               #[1]#DECAY-DATA (49-IN-114-M,,DG,192.,0.17) #Ix_old=0.17
+#+                a1=0.17/0.1556;             #[1]#DECAY-DATA: correction to new 190.27 keV gamma-yield per decay In-114-m Ix_new=0.1556
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.092545
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022020    1.03176     0.944362    1.09255     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022020    CS          1           1.03176     1.03176     1.03176     +3.18%      1.03176     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 49115   3  16MA    1.46E7 200000.01.37223770.1238109                                       R.C.Barrall*,        (69)10022 20                            0.1238109                            9.02     9.02    0.1207            0.11398444.4691-4 1.03175761.0317577
+#/C5DATA        0
+#/DATASET       10022020 
+#DATASET        10022021   19990719
+#SUBENT         10022021   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       49-IN-115(N,INL)49-IN-115-M,,SIG
+#C4Reaction     (N,INL),SIG
+#ReactionType   CS
+#MF             3
+#MT             4
+#PROJ           1
+#TARG           49115            
+#TARGET         49115           [ ]             49-IN-115       [ ] 
+#REAC1          N,INL
+#PRODUCT        49-IN-115-M
+#C4ReaCode      (N,INL),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+8.93%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 49115   3   4MA ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 49-IN-115(N,INL)49-IN-115-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (49-IN-115(N,INL)49-IN-115-M,,SIG)
+#+               #[1]#DECAY-DATA (49-IN-115-M,.1863D,DG,335.,0.50) #Ix_old=0.5
+#+                a1=0.5/0.459;               #[1]#DECAY-DATA: correction to new 336.241 keV gamma-yield per decay In-115-m Ix_new=0.459
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0893246
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022021    1.02872     0.944362    1.08932     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022021    CS          1           1.02872     1.02872     1.02872     +2.87%      1.02872     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 49115   3   4MA    1.46E7 200000.0.06892399 7.2010-3                                       R.C.Barrall*,        (69)10022 21                             7.2010-3                            10.4     10.4    0.1207            0.11398444.4691-4 1.02871631.0287163
+#/C5DATA        0
+#/DATASET       10022021 
+#DATASET        10022022   19990719
+#SUBENT         10022022   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       79-AU-197(N,2N)79-AU-196-G,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           79197            
+#TARGET         79197           [ ]             79-AU-197       [ ] 
+#REAC1          N,2N
+#PRODUCT        79-AU-196-G
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+35.6%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 79197   3  16GA ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 79-AU-197(N,2N)79-AU-196-G,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (79-AU-197(N,2N)79-AU-196-G,,SIG)
+#+               #[1]#DECAY-DATA (79-AU-196-G,6.3D,DG,356.,1.18) #Ix_old=1.18
+#+                a1=1.18/0.87;               #[1]#DECAY-DATA: correction to new 355.73 keV gamma-yield per decay Au-196-g Ix_new=0.87
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.3563218
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022022    1.28086     0.944362    1.35632     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022022    CS          1           1.28086     1.28086     1.28086     +28.1%      1.28086     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 79197   3  16GA    1.46E7 200000.02.65137620.2561716                                       R.C.Barrall*,        (69)10022 22                            0.2561716                            9.66     9.66    0.1207            0.11398444.4691-4 1.28085821.2808582
+#/C5DATA        0
+#/DATASET       10022022 
+#DATASET        10022023   19990719
+#SUBENT         10022023   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       90-TH-232(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 90232   3  18 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 90-TH-232(N,F),,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022023    0.944362    0.944362    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022023    CS          1           0.944362    0.944362    0.944362    -5.56%      1.05892     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 90232   3  18 A    1.46E7 200000.00.4249627     0.04                                       R.C.Barrall*,        (69)10022 23                                 0.04                            9.41     9.41    0.1207            0.11398444.4691-4 0.9443616
+#/C5DATA        0
+#/DATASET       10022023 
+#DATASET        10022024   19990719
+#SUBENT         10022024   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       90-TH-232(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 90232   3  18 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 90-TH-232(N,F),,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022024    0.944362    0.944362    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022024    CS          1           0.944362    0.944362    0.944362    -5.56%      1.05892     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 90232   3  18 A    1.46E7 200000.00.5288425     0.14                                       R.C.Barrall*,        (69)10022 24                                 0.14                            26.5     26.5    0.1207            0.11398444.4691-4 0.9443616
+#/C5DATA        0
+#/DATASET       10022024 
+#DATASET        10022025   19990719
+#SUBENT         10022025   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       92-U-238(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           92238            
+#TARGET         92238           [ ]             92-U-238        [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92238   3  18 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 92-U-238(N,F),,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022025    0.944362    0.944362    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022025    CS          1           0.944362    0.944362    0.944362    -5.56%      1.05892     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92238   3  18 A    1.46E7 200000.01.1710083     0.06                                       R.C.Barrall*,        (69)10022 25                                 0.06                            5.12     5.12    0.1207            0.11398444.4691-4 0.9443616
+#/C5DATA        0
+#/DATASET       10022025 
+#DATASET        10022026   19990719
+#SUBENT         10022026   19990719
+#ENTRY          10022      20230912
+#TITLE          High energy neutron cross section validation and
+#+               neutron flux spectrum using the HENRE source.
+#AUTHORS        R.C.Barrall,J.A.Holmes,M.Silbergeld
+#AUTHOR1        R.C.Barrall+
+#YEAR           1969
+#X4REF1         R,AFWL-TR-68-134,1969
+#REFERENCE1     Rept: Air Force Spec.Weap.Center Kirtland A.F.B.Repts., No.68-134 (1969)
+#DATE           19990719
+#INSTITUTE      1USASTF
+#METHOD         ACTIV
+#REACTION       92-U-238(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           92238            
+#TARGET         92238           [ ]             92-U-238        [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94436157(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92238   3  18 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1207  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.1139844(0.39%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 92-U-238(N,F),,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1207
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10022026    0.944362    0.944362    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10022026    CS          1           0.944362    0.944362    0.944362    -5.56%      1.05892     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92238   3  18 A    1.46E7 200000.01.0954593     0.23                                       R.C.Barrall*,        (69)10022 26                                 0.23                            21       21      0.1207            0.11398444.4691-4 0.9443616
+#/C5DATA        0
+#/DATASET       10022026 
+#/C5.2.3        1               25              25              0               25              

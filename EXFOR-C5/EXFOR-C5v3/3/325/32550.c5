@@ -1,0 +1,76 @@
+#C5.2.3
+#DATASET        32550002   20191003
+#SUBENT         32550002   20191003
+#ENTRY          32550      20191003
+#TITLE          Interference of the low-energy neutrons on activation
+#+               cross-section measurement of the 186W(n,g)187W
+#+               reaction
+#AUTHORS        Guohui Zhang, Zhaomin Shi, Guoyou Tang, Jinxiang Chen,
+#+               Guangzhi Liu, Hanlin Lu
+#AUTHOR1        Guohui Zhang+
+#YEAR           2001
+#X4REF1         J,NSE,137,107,2001
+#REFERENCE1     Jour: Nuclear Science and Engineering, Vol.137, p.107 (2001)
+#DATE           20191003
+#INSTITUTE      3CPRBJG
+#METHOD         ACTIV
+#REACTION       74-W-186(N,G)74-W-187,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           74186            
+#TARGET         74186           [ ]             74-W-186        [ ] 
+#REAC1          N,G
+#PRODUCT        74-W-187
+#C4ReaCode      (N,G),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=3
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0347431(5.0e5) Data[2]*1.0294083(1.5e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 74186   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 74-W-186(N,G)74-W-187,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32550002    1.02943     1.02943     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32550002    CS          3           1.02413     1.03474     1.02943     +2.94%      1.03474     [EN,MONIT,MONIT-ERR]::au197ng
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 74186   3 102    500000.0 160000.0.04604607 1.8631-3                                       Guohui Zhang*,       (01)32550  2  1.7106-36.2933E-4          1.8631-3 3.72     1.37              4.05     4.05    0.1324   0.0046   0.137    .002740571.03474310.8468809
+    1 74186   3 102   1150000.0 160000.00.0405555 0.001587                                       Guohui Zhang*,       (01)32550  2  1.5506-35.6003E-4          0.001587 3.82     1.38              3.91     3.91    .075400010.0034   .077219331.6886-3 1.02412890.7213619
+    1 74186   3 102   1500000.0 160000.0.03438224 1.4761-3                                       Guohui Zhang*,       (01)32550  2  1.3585-34.7235E-4          1.4761-3 3.95     1.37              4.29     4.29    0.0676   0.003    .069588011.6708-3 1.02940830.7768689
+#/C5DATA        0
+#/DATASET       32550002 
+#/C5.2.3        1               1               1               0               3               

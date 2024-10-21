@@ -1,0 +1,75 @@
+#C5.2.3
+#DATASET        33117002   20211202
+#SUBENT         33117002   20211202
+#ENTRY          33117      20211202
+#TITLE          Measurement and covariance analysis of 59Co(n,2n)58Co
+#+              reaction cross sections at the effective neutron
+#+              energies of 11.98 and 15.75 MeV
+#AUTHORS        S.S.Yerraguntla, H.Naik, M.Karantha, S.Ganesan,
+#+              S.V.Saraswatula, S.N.P.Nair
+#AUTHOR1        S.S.Yerraguntla+
+#YEAR           2018
+#X4REF1         J,RCA,106,877,2018
+#REFERENCE1     Jour: Radiochimica Acta, Vol.106, p.877 (2018)
+#DATE           20211202
+#INSTITUTE      3INDTRM,3INDMNP,3INDIND
+#METHOD         ACTIV,STTA
+#REACTION       27-CO-59(N,2N)27-CO-58,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          N,2N
+#PRODUCT        27-CO-58
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=2
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0002184(1.2e7) Data[1]*0.99939734(1.6e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dOther
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 27059   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,INL)49-IN-115-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$in115ninl}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 27-CO-59(N,2N)27-CO-58,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,INL)49-IN-115-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$in115ninl;          #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        33117002    0.999808    0.999808    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          33117002    CS          2           0.999397    1.00022     0.999808    -0.0192%    1.00060     [EN,MONIT,MONIT-ERR]::in115ninl
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 27059   3  16     1.198E7 290000.00.2358515.03576595                                       S.S.Yerraguntla*,    (18)33117  2 0.0074963.02893016.01666472.03576595 3.18     12.3     7.07     15.2     15.2    0.153    0.0122   0.1530334.010819641.00021840.9719009
+    1 27059   3  16     1.575E7 310000.0  0.72966.07329074                                       S.S.Yerraguntla*,    (18)33117  2 .02324949.05505375.03639666.07329074 3.19     7.55     4.99     10       10      0.0565   0.002    .056465952.8165-3 0.99939731.066823
+#/C5DATA        0
+#/DATASET       33117002 
+#/C5.2.3        1               1               1               0               2               

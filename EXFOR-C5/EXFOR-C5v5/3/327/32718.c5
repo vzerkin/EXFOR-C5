@@ -1,0 +1,70 @@
+#C5M.2.3
+#DATASET        32718002   20221116
+#SUBENT         32718002   20221116
+#ENTRY          32718      20221116
+#TITLE          Absolute measurement of 99Mo fission yields of 235U
+#+              induced by 0.57, 1.0 and 1.5 MeV neutrons
+#AUTHORS        Feng Jing,Bao Jie,Yang Yi,Liu Shi-long,Zhang Chun-li,
+#+              Yang Yang,Liu Yong-hui
+#AUTHOR1        Feng Jing+
+#YEAR           2013
+#X4REF1         J,CST,47,1473,2013
+#REFERENCE1     Jour: Atomic Energy Science and Technology, Vol.47, p.1473 (2013)
+#DATE           20221116
+#INSTITUTE      3CPRAEP
+#METHOD         ABSFY,GSPEC
+#REACTION       92-U-235(N,F)42-MO-99,CUM,FY
+#C4Reaction     (N,F)CUM,FY
+#ReactionType   FY
+#MF             8
+#MT             459
+#PROJ           1
+#TARG           92235            
+#TARGET         92235           [ ]             92-U-235        [ ] 
+#REAC1          N,F
+#PRODUCT        42-MO-99
+#C4ReaCode      (N,F)CUM,FY
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.820%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cumulative fission-product yield
+#DataUnits0     PART/FIS
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [    1 92235   8 459   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2    7   ]
+#xVariables     2
+#+              Y = Y(X1,X2)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 92-U-235(N,F)42-MO-99,CUM,FY
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (92-U-235(N,F)42-MO-99,CUM,FY)
+#+               #[1]#DECAY-DATA (42-MO-99,65.94HR,DG,739.5,0.121) #Ix_old=0.121
+#+                a1=0.121/0.122;             #[1]#DECAY-DATA: correction to new 739.5 keV gamma-yield per decay Mo-99 Ix_new=0.122
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9918033
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32718002    0.991803    -           0.991803    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32718002    FY          3           0.991803    0.991803    0.991803    -0.820%     1.00826                
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData            ZAProd                  
+#Units                       EV       EV PART/FIS PART/FIS            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92235   8 459    570000.0         0.0655582 2.0979-3     42.0     99.0                     Feng Jing*,          (13)32718  2  1.8580-3 9.254E-4          2.0979-3 2.83     1.41              3.20     3.20                                        0.99180330.9918033
+    1 92235   8 459   1000000.0         .06565738 2.0354-3     42.0     99.0                     Feng Jing*,          (13)32718  2  1.8608-3 8.606E-4          2.0354-3 2.83     1.31              3.10     3.10                                        0.99180330.9918033
+    1 92235   8 459   1500000.0         .06228526 1.7440-3     42.0     99.0                     Feng Jing*,          (13)32718  2  1.7652-3 1.256E-4          1.7440-3 2.83     0.20              2.80     2.80                                        0.99180330.9918033
+#/C5DATA        0
+#/DATASET       32718002 
+#/C5M.2.3       1               1               1               0               3               

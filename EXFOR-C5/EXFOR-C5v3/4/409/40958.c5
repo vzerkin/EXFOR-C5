@@ -1,0 +1,84 @@
+#C5.2.3
+#DATASET        40958002   20110630
+#SUBENT         40958002   20110630
+#ENTRY          40958      20130219
+#TITLE          U-236 neutron radiation capture cross-section
+#+               for En=0.3-2.2 MeV
+#AUTHORS        Yu.N.Trofimov
+#AUTHOR1        Yu.N.Trofimov
+#YEAR           1988
+#X4REF1         J,AE,64,(2),150,198802
+#REFERENCE1     Jour: Atomnaya Energiya, Vol.64, Issue.2, p.150 (1988)
+#DATE           20110630
+#INSTITUTE      4RUSRI
+#METHOD         ACTIV
+#REACTION       92-U-236(N,G)92-U-237,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           92236            
+#TARGET         92236           [ ]             92-U-236        [ ] 
+#REAC1          N,G
+#PRODUCT        92-U-237
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-4,1.,3.)      ADDED AS COMMON:ERR-4,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-5,3.,4.)      ADDED AS COMMON:ERR-5,PER-CENT=3.0%
+#CompNotes      ERR-ANALYS:(MONIT-ERR,6.,10.) ADDED AS COMMON:MONIT-ERR,PER-CENT=6.0%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9251331(3.0e5) Data[10]*0.9581738(2.2e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92236   3 102 C ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 92-U-236(N,G)92-U-237,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        40958002    0.973312    0.973312    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          40958002    CS          11          0.925133    1.01783     0.973312    -2.67%      1.08093     [EN,MONIT,MONIT-ERR]::au197ng
+#C5DATA         11
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92236   3 102 C  300000.0 140000.00.1174919 3.2427-3                                       Yu.N.Trofimov*       (88)40958  2  5.5703-3                   3.2427-3 4.74                       2.76     2.76    0.2065   0.01239  0.19104  .003790650.92513310.4053364
+    1 92236   3 102 C  500000.0129999.99 0.120104 4.4883-3                                       Yu.N.Trofimov*       (88)40958  2  5.7022-3                   4.4883-3 4.75                       3.74     3.74    0.1346   0.008076 0.137    .002740571.01783050.5610418
+    1 92236   3 102 C  600000.0129999.99.09940661 3.5286-3                                       Yu.N.Trofimov*       (88)40958  2  4.7357-3                   3.5286-3 4.76                       3.55     3.55    0.1162   0.006972 0.11001  .002242510.94672970.504079
+    1 92236   3 102 C  800000.0129999.990.1225014 4.2528-4                                       Yu.N.Trofimov*       (88)40958  2  5.9132-3                   4.2528-4 4.83                       0.35     0.35    .090800010.005448 0.088985 .001941530.9800109.06075472
+    1 92236   3 102 C 1000000.0 120000.0 0.107153 2.8778-3                                       Yu.N.Trofimov*       (88)40958  2  5.1041-3                   2.8778-3 4.76                       2.69     2.69    0.083    0.00498  0.079408 .001617780.95672280.4111184
+    1 92236   3 102 C 1200000.0 110000.0.09541348 4.4863-3                                       Yu.N.Trofimov*       (88)40958  2  4.6233-3                   4.4863-3 4.85                       4.70     4.70    .076000010.00456  .075535671.6788-3 0.99389030.6408935
+    1 92236   3 102 C 1300000.0 110000.0.08531902 7.5716-3                                       Yu.N.Trofimov*       (88)40958  2  4.1604-3                   7.5716-3 4.88                       8.87     8.87    .073500010.00441  .07291801.001668830.99208160.8412917
+    1 92236   3 102 C 1500000.0 100000.0.06034204 7.0437-3                                       Yu.N.Trofimov*       (88)40958  2  2.9749-3                   7.0437-3 4.93                       11.7     11.7    0.0715   0.00429  .069588011.6708-3 0.97325880.8804625
+    1 92236   3 102 C 1850000.0  90000.0.06568782 6.9752-3                                       Yu.N.Trofimov*       (88)40958  2  3.2664-3                   6.9752-3 4.97                       10.6     10.6    0.0596   0.003576 .05843275.001453510.98041520.8719051
+    1 92236   3 102 C 2000000.0  80000.0.05598455 6.1511-3                                       Yu.N.Trofimov*       (88)40958  2  2.7677-3                   6.1511-3 4.94                       11       11      .054000010.00324  0.053038 .001288390.98218510.8787262
+    1 92236   3 102 C 2200000.0  80000.0.05940678 6.9667-3                                       Yu.N.Trofimov*       (88)40958  2  3.0040-3                   6.9667-3 5.06                       11.7     11.7    0.046    0.00276  0.044076 .001168640.95817380.8708314
+#/C5DATA        0
+#/DATASET       40958002 
+#/C5.2.3        1               1               1               0               11              

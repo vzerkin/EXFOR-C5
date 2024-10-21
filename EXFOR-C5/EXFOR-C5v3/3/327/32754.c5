@@ -1,0 +1,77 @@
+#C5.2.3
+#DATASET        32754002   20170820
+#SUBENT         32754002   20170820
+#ENTRY          32754      20170820
+#TITLE          The measurement of cross sections for 90Zr(n,2n)89Zr
+#+              reaction
+#AUTHORS        Qiu Jiuzi, Yuan Junqian, Yang Jingkang
+#AUTHOR1        Qiu Jiuzi+
+#YEAR           1996
+#X4REF1         J,JLNZ,32,57,1996
+#REFERENCE1     Jour: Journal of Lanzhou Univ., Natural Science Ed., Vol.32, p.57 (1996)
+#DATE           20170820
+#INSTITUTE      3CPRLNZ
+#METHOD         ACTIV
+#REACTION       40-ZR-90(N,2N)40-ZR-89,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           40090            
+#TARGET         40090           [ ]             40-ZR-90        [ ] 
+#REAC1          N,2N
+#PRODUCT        40-ZR-89
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=6
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0086641(1.4e7) Data[5]*1.0034888(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40090   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-90(N,2N)40-ZR-89,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32754002    1.00578     1.00578     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32754002    CS          6           1.00295     1.00866     1.00578     +0.578%     1.00866     [EN,MONIT,MONIT-ERR]::nb93n2n
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40090   3  16     1.364E7  20000.00.4871848 7.6400-3                                       Qiu Jiuzi*,          (96)32754  2  7.0305-3  0.00483          7.6400-3 1.44     0.99              1.57     1.57    0.4514   0.0074   0.455311 2.6170-3 1.00866410.720758
+    1 40090   3  16      1.38E7  20000.0 0.544346.01007133                                       Qiu Jiuzi*,          (96)32754  2  7.8011-3 0.005397         .01007133 1.43     0.99              1.85     1.85    0.4535   0.006    0.457404 .002554371.00860850.8463306
+    1 40090   3  16     1.401E7  20000.00.6106635.01207091                                       Qiu Jiuzi*,          (96)32754  2  8.7546-3 0.006063         .01207091 1.43     0.99              1.98     1.98    0.4559   0.005    0.45918112.5070-3 1.00719690.9075875
+    1 40090   3  16     1.435E7  20000.00.7132601.01453994                                       Qiu Jiuzi*,          (96)32754  2 0.0102036 0.007106         .01453994 1.43     1                 2.04     2.04    0.4584   0.0045   0.460116 .002519241.00374340.9320475
+    1 40090   3  16     1.462E7  20000.00.7776883.01554804                                       Qiu Jiuzi*,          (96)32754  2 .01119372 0.007754         .01554804 1.44     1                 2        2       0.4588   0.005    0.460154 2.6083-3 1.00295110.9092421
+    1 40090   3  16      1.48E7  20000.0  0.82838.01596639                                       Qiu Jiuzi*,          (96)32754  2 .01198305 0.008255         .01596639 1.45     1                 1.93     1.93    0.4586   0.0056   0.4602   .002704061.00348880.8772741
+#/C5DATA        0
+#/DATASET       32754002 
+#/C5.2.3        1               1               1               0               6               

@@ -1,0 +1,77 @@
+#C5.2.3
+#DATASET        23034002   20081106
+#SUBENT         23034002   20081106
+#ENTRY          23034      20130203
+#TITLE          .Measurements and statistical model calculations of
+#+               activation cross-sections for 26Mg(n,a)23Ne reaction
+#+               between 13.6 and 14.9 MeV neutron energies
+#AUTHORS        A.Elmali, I.A.Reyhancan
+#AUTHOR1        A.Elmali+
+#YEAR           2008
+#X4REF1         J,ANE,35,1068,2008
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.35, p.1068 (2008)
+#DATE           20081106
+#INSTITUTE      2TUKCNA
+#METHOD         ACTIV,SITA
+#REACTION       12-MG-26(N,A)10-NE-23,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           12026            
+#TARGET         12026           [ ]             12-MG-26        [ ] 
+#REAC1          N,A
+#PRODUCT        10-NE-23
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0727884(1.4e7) Data[5]*1.0541165(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 12026   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,P)12-MG-27,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 12-MG-26(N,A)10-NE-23,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,P)12-MG-27,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23034002    1.05767     1.05767     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23034002    CS          6           1.03308     1.09089     1.05767     +5.77%      1.09089     [EN,MONIT,MONIT-ERR]::al27np
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 12026   3 107      1.36E7  80000.0.07347527 4.0029-3                                       A.Elmali*,           (08)23034  2  3.7284-30.0013698          4.0029-3 5.07     1.86              5.45     5.45    .076100010.002283 0.0816392.001333911.07278840.973941
+    1 12026   3 107     1.368E7  80000.0.07167146 3.8969-3                                       A.Elmali*,           (08)23034  2  3.6319-3 0.001314          3.8969-3 5.07     1.83              5.44     5.44    .073830010.00221490.08054041.2985-3 1.09088980.9890612
+    1 12026   3 107      1.41E7 100000.0.05929055 3.2078-3                                       A.Elmali*,           (08)23034  2  2.9838-30.0011196          3.2078-3 5.03     1.89              5.41     5.41    0.07067  0.00212010.07484930.00112151.05913820.9546919
+    1 12026   3 107     1.446E7 110000.0.06509408 0.003511                                       A.Elmali*,           (08)23034  2  3.2666-30.0012602          0.003511 5.02     1.94              5.39     5.39    0.06792  0.0020376.070166481.0177-3 1.03307530.9288362
+    1 12026   3 107     1.472E7 110000.0.05510556 2.9762-3                                       A.Elmali*,           (08)23034  2  2.7707-30.0010638          2.9762-3 5.03     1.93              5.40     5.40    0.06461  0.0019383.066936849.9320-4 1.03601360.9329824
+    1 12026   3 107     1.486E7 120000.0.05179928 2.8095-3                                       A.Elmali*,           (08)23034  2 0.0026137 9.828E-4          2.8095-3 5.05     1.90              5.42     5.42    0.06191  0.0018573.065260361.0066-3 1.05411650.9523802
+#/C5DATA        0
+#/DATASET       23034002 
+#/C5.2.3        1               1               1               0               6               

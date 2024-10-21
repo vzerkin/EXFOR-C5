@@ -1,0 +1,81 @@
+#C5.2.3
+#DATASET        23239002   20140810
+#SUBENT         23239002   20140810
+#ENTRY          23239      20140810
+#TITLE          Measurements of isomeric cross sections for the
+#+               (n,alpha) reaction on the 142Nd isotope at
+#+               approximately 14 MeV neutrons.
+#AUTHORS        I.A.Reyhancan
+#AUTHOR1        I.A.Reyhancan
+#YEAR           2014
+#X4REF1         J,ARI,91,44,2014
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.91, p.44 (2014)
+#DATE           20140810
+#INSTITUTE      2TUKSTU
+#METHOD         ACTIV
+#REACTION       60-ND-142(N,A)58-CE-139-M,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           60142            
+#TARGET         60142           [ ]             60-ND-142       [ ] 
+#REAC1          N,A
+#PRODUCT        58-CE-139-M
+#C4ReaCode      (N,A),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,37.2,38.3)  ADDED AS COMMON:ERR-S,PER-CENT=37.2%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0134255(1.4e7) Data[3]*0.98983395(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.648%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 60142   3 107M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 60-ND-142(N,A)58-CE-139-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (60-ND-142(N,A)58-CE-139-M,,SIG)
+#+               #[1]#DECAY-DATA (58-CE-139-M,54.8SEC,DG,754.24,0.92) #Ix_old=0.92
+#+                a1=0.92/0.926;              #[1]#DECAY-DATA: correction to new 754.24 keV gamma-yield per decay Ce-139-m Ix_new=0.926
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99352056
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23239002    0.991657    0.998124    0.993521    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23239002    CS          4           0.983420    1.00686     0.991657    -0.834%     1.01686     [EN,MONIT]::al27na
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 60142   3 107M    1.357E7  40000.0 1.9030-3 7.1487-4                                       I.A.Reyhancan*       (14)23239  2  8.9823-57.0308E-4          7.1487-4 4.72     36.9              37.6     37.6    0.12357           0.125229 8.7778-4 1.00685911.0068591
+    1 60142   3 107M    1.415E7  70000.0 1.5666-3 6.0484-4                                       I.A.Reyhancan*       (14)23239  2  7.3948-55.8776E-4          6.0484-4 4.72     37.5              38.6     38.6    0.12055           0.12031  5.4366-4 0.99154250.9915424
+    1 60142   3 107M    1.475E7  90000.0 3.1514-3 1.1818-3                                       I.A.Reyhancan*       (14)23239  2  1.4875-40.0011904          1.1818-3 4.72     37.8              37.5     37.5    0.11273           0.11174114.6799-4 0.98480510.9848051
+    1 60142   3 107M    1.483E7 100000.0 2.8323-3 1.0719-3                                       I.A.Reyhancan*       (14)23239  2  1.3369-4.00107136          1.0719-3 4.72     37.8              37.8     37.8    0.11168           0.11054474.7923-4 0.98342040.9834204
+#/C5DATA        0
+#/DATASET       23239002 
+#/C5.2.3        1               1               1               0               4               

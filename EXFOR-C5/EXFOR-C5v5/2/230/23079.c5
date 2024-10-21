@@ -1,0 +1,96 @@
+#C5M.2.3
+#DATASET        23079002   20090804
+#SUBENT         23079002   20090804
+#ENTRY          23079      20090804
+#TITLE          .Measurement of Capture Cross-Sections for the
+#+               165Ho (n,gamma)166Ho Reaction in the Neutron Energy
+#+               Region from 10 to 90 keV
+#AUTHORS        T.-I.Ro, Y.-R.Kang, H.Kim, W.-C.Chung, G.Kim, S.Lee,
+#+              M.Igashira, T.Ohsaki
+#AUTHOR1        T.-I.Ro+
+#YEAR           2007
+#X4REF1         J,KPS,50,(5),1494,2007
+#REFERENCE1     Jour: Journal of the Korean Physical Society, Vol.50, Issue.5, p.1494 (2007)
+#DATE           20090804
+#INSTITUTE      2JPNTIT,3KORKNU,3KORDAU,3KORKOR
+#METHOD         TOF,PHD,SITA
+#REACTION       67-HO-165(N,G)67-HO-166,,SIG,,AV
+#C4Reaction     (N,G),SIG,,AV
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          N,G
+#PRODUCT        67-HO-166
+#C4ReaCode      (N,G),SIG,,AV
+#CompNotes      OPERATION...  Value=(Min+Max)/2  Min:EN-MIN, Max:EN-MAX
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9883494(2.0e4) Data[5]*0.97229993(8.2e4)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 67165   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN-MIN!EN-MAX,MONIT]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 67-HO-165(N,G)67-HO-166,,SIG,,AV
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN-MIN!EN-MAX,MONIT];    #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23079002    1.00906     1.00906     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23079002    CS          6           0.972300    1.04026     1.00906     +0.906%     1.04026     [EN-MIN!EN-MAX,MONIT]::au197ng
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 67165   3 102     20000.0   5000.01.5991493    0.065                                       T.-I.Ro*,            (07)23079  2                                0.065                            4.06     4.06    0.7167            0.70835  0.01268650.9883494
+    1 67165   3 102     30000.0   5000.01.3762696    0.053                                       T.-I.Ro*,            (07)23079  2                                0.053                            3.85     3.85    0.5675            0.59035  0.01052141.0402642
+    1 67165   3 102     40000.0   5000.01.2009432    0.047                                       T.-I.Ro*,            (07)23079  2                                0.047                            3.91     3.91    0.493             0.50345678.9761-3 1.0212102
+    1 67165   3 102     50000.0   5000.01.0549676    0.042                                       T.-I.Ro*,            (07)23079  2                                0.042                            3.98     3.98    0.4389            0.44224  7.8826-3 1.00761
+    1 67165   3 102     60000.0   5000.00.9990262    0.039                                       T.-I.Ro*,            (07)23079  2                                0.039                            3.90     3.90    0.3983            0.408115 0.00726281.0246422
+    1 67165   3 102     81500.0  16500.00.9382694    0.039                                       T.-I.Ro*,            (07)23079  2                                0.039                            4.16     4.16    0.3561            0.346236 6.3239-3 0.9722999
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         1           1.0E-5      2.0E7       0.05        
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+20000.      20000.      1.59915     4.06         100
+30000.      30000.      1.37627     3.85         43 100
+40000.      40000.      1.20094     3.91         38 45 100
+50000.      50000.      1.05497     3.98         34 41 46 100
+60000.      60000.      0.999026    3.9          31 38 43 47 100
+81500.      81500.      0.938269    4.16         25 32 37 41 45 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       23079002 
+#/C5M.2.3       1               1               1               0               6               

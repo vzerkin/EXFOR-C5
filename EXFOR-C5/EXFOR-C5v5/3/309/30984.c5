@@ -1,0 +1,97 @@
+#C5M.2.3
+#DATASET        30984002   20090919
+#SUBENT         30984002   20090919
+#ENTRY          30984      20090919
+#TITLE          Report on the In-115(n,n')In-115-m cross section
+#+              measurements.
+#AUTHORS        N.I.Molla,M.M.Rahman,R.Miach,J.Csikai
+#AUTHOR1        N.I.Molla+
+#YEAR           1992
+#X4REF1         W,CSIKAI,199205
+#REFERENCE1     Priv.Comm: Csikai (1992)
+#DATE           20090919
+#INSTITUTE      3BANRAM
+#METHOD         ACTIV
+#REACTION       49-IN-115(N,INL)49-IN-115-M,,SIG
+#C4Reaction     (N,INL),SIG
+#ReactionType   CS
+#MF             3
+#MT             4
+#PROJ           1
+#TARG           49115            
+#TARGET         49115           [ ]             49-IN-115       [ ] 
+#REAC1          N,INL
+#PRODUCT        49-IN-115-M
+#C4ReaCode      (N,INL),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.94%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0525855(2.1e6) Data[5]*1.0525855(2.8e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 49115   3   4M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,INL)49-IN-115-M,,SIG
+#M0             Point: XS(b)=0.319(0.94%)  EN-NRM(eV):2414000.0
+#M1             Point: XS(b)=0.3357748(2.61%)  EN-NRM(eV):2414000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 49-IN-115(N,INL)49-IN-115-M,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,INL)49-IN-115-M,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.319
+#+              a1=recom$in115ninl[EN-NRM];   #[0]#new monitor point [2.414MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30984002    1.05259     1.05259     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30984002    CS          6           1.05259     1.05259     1.05259     +5.26%      1.05259     [MONIT]::in115ninl
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 49115   3   4M  2140000.0         0.3267225.02112614                                       N.I.Molla*,          (92)30984  2  8.5114-3                  .02112614 2.61                       6.47     6.47    0.319    0.003    0.33577488.7478-3 1.05258551.1358142
+    1 49115   3   4M  2350000.0         0.3334591.01709384                                       N.I.Molla*,          (92)30984  2  8.6869-3                  .01709384 2.61                       5.13     5.13    0.319    0.003    0.33577488.7478-3 1.05258551.1953737
+    1 49115   3   4M  2430000.0         0.3368273.01300299                                       N.I.Molla*,          (92)30984  2  8.7747-3                  .01300299 2.61                       3.86     3.86    0.319    0.003    0.33577488.7478-3 1.05258551.3544779
+    1 49115   3   4M  2580000.0         0.3401956.01763516                                       N.I.Molla*,          (92)30984  2  8.8624-3                  .01763516 2.61                       5.18     5.18    0.319    0.003    0.33577488.7478-3 1.05258551.1915647
+    1 49115   3   4M  2710000.0         0.3469322.01771246                                       N.I.Molla*,          (92)30984  2  9.0379-3                  .01771246 2.61                       5.11     5.11    0.319    0.003    0.33577488.7478-3 1.05258551.1967876
+    1 49115   3   4M  2810000.0         0.3435639.01326959                                       N.I.Molla*,          (92)30984  2  8.9502-3                  .01326959 2.61                       3.86     3.86    0.319    0.003    0.33577488.7478-3 1.05258551.35404
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           2140000.0   2810000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+2140000.    2140000.    0.326723    6.47         100
+2350000.    2350000.    0.333459    5.13         14 100
+2430000.    2430000.    0.336827    3.86         15 30 100
+2580000.    2580000.    0.340196    5.18         10 17 26 100
+2710000.    2710000.    0.346932    5.11         10 13 20 21 100
+2810000.    2810000.    0.343564    3.86         14 17 23 22 29 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       30984002 
+#/C5M.2.3       1               1               1               0               6               

@@ -1,0 +1,189 @@
+#C5.2.3
+#DATASET        21847002   20230130
+#SUBENT         21847002   20230130
+#ENTRY          21847      20230130
+#TITLE          The Au(n,2n) and Au(n,gamma) cross sections at 14 MeV
+#AUTHORS        T.B.Ryves,P.Kolkowski
+#AUTHOR1        T.B.Ryves+
+#YEAR           1981
+#X4REF1         J,JP/G,7,115,1981
+#REFERENCE1     Jour: Jour. of Physics, Part G (Nucl.and Part.Phys.), Vol.7, p.115 (1981)
+#DATE           20230130
+#INSTITUTE      2UK NPL
+#METHOD         ACTIV
+#REACTION       79-AU-197(N,2N)79-AU-196,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           79197            
+#TARGET         79197           [ ]             79-AU-197       [ ] 
+#REAC1          N,2N
+#PRODUCT        79-AU-196
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.91%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9770482(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 79197   3  16 D ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             Point: XS(b)=0.1099(0.91%)  EN-NRM(eV):1.468E7
+#M1             Point: XS(b)=0.1073776(1.13%)  EN-NRM(eV):1.468E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 79-AU-197(N,2N)79-AU-196,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              #[0]#En=1.468E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1099
+#+              a1=recom$fe56np[EN];          #[0]#new monitor point [14.68MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        21847002    0.977048    0.977048    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          21847002    CS          1           0.977048    0.977048    0.977048    -2.30%      1.02349     [MONIT]::fe56np
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 79197   3  16 D   1.468E7  30000.02.1201947.06699287                                       T.B.Ryves*,          (81)21847  2 .06657247  0.01953         .06699287 3.14     0.92              3.16     3.16    0.1099   0.001    0.10737761.2143-3 0.97704820.9998936
+#/C5DATA        0
+#/DATASET       21847002 
+#DATASET        21847003   20230130
+#SUBENT         21847003   20230130
+#ENTRY          21847      20230130
+#TITLE          The Au(n,2n) and Au(n,gamma) cross sections at 14 MeV
+#AUTHORS        T.B.Ryves,P.Kolkowski
+#AUTHOR1        T.B.Ryves+
+#YEAR           1981
+#X4REF1         J,JP/G,7,115,1981
+#REFERENCE1     Jour: Jour. of Physics, Part G (Nucl.and Part.Phys.), Vol.7, p.115 (1981)
+#DATE           20230130
+#INSTITUTE      2UK NPL
+#METHOD         ACTIV
+#REACTION       79-AU-197(N,2N)79-AU-196-M2/G+M1,,SIG/RAT
+#C4Reaction     (N,2N),SIG/RAT
+#ReactionType   CS
+#MF             203
+#MT             16
+#PROJ           1
+#TARG           79197            
+#TARGET         79197           [ ]             79-AU-197       [ ] 
+#REAC1          N,2N
+#PRODUCT        79-AU-196-M2/G+M1
+#C4ReaCode      (N,2N),SIG/RAT
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.91%
+#Quantity       Cross section ratio
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 79197 203  16+  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV   NO-DIM   NO-DIM                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 79197 203  16+     1.43E7 100000.0    0.068    0.003           79196.9                     T.B.Ryves,           (81)21847  3 6.2253E-4 0.002924             0.003 0.92     4.30              4.41     4.41
+#/C5DATA        0
+#/DATASET       21847003 
+#DATASET        21847004   20230130
+#SUBENT         21847004   20230130
+#ENTRY          21847      20230130
+#TITLE          The Au(n,2n) and Au(n,gamma) cross sections at 14 MeV
+#AUTHORS        T.B.Ryves,P.Kolkowski
+#AUTHOR1        T.B.Ryves+
+#YEAR           1981
+#X4REF1         J,JP/G,7,115,1981
+#REFERENCE1     Jour: Jour. of Physics, Part G (Nucl.and Part.Phys.), Vol.7, p.115 (1981)
+#DATE           20230130
+#INSTITUTE      2UK NPL
+#METHOD         ACTIV
+#REACTION       79-AU-197(N,G)79-AU-198,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           79197            
+#TARGET         79197           [ ]             79-AU-197       [ ] 
+#REAC1          N,G
+#PRODUCT        79-AU-198
+#C4ReaCode      (N,G),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.91%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.016242(1.4e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 79197   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             Point: XS(b)=0.1099(0.91%)  EN-NRM(eV):1.43E7
+#M1             Point: XS(b)=0.111685(1.08%)  EN-NRM(eV):1.43E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 79-AU-197(N,G)79-AU-198,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              #[0]#En=1.43E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1099
+#+              a1=recom$fe56np[EN];          #[0]#new monitor point [14.3MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        21847004    1.01624     1.01624     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          21847004    CS          1           1.01624     1.01624     1.01624     +1.62%      1.01624     [MONIT]::fe56np
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 79197   3 102      1.43E7 100000.0 1.1077-3 1.0182-4                                       T.B.Ryves*,          (81)21847  4  5.0942-5 9.265E-5          1.0182-4 4.60     8.36              9.19     9.19    0.1099   0.001    0.111685 0.00120271.016242 1.0182425
+#/C5DATA        0
+#/DATASET       21847004 
+#/C5.2.3        1               3               3               0               3               

@@ -1,0 +1,883 @@
+#C5M.2.3
+#DATASET        A0297002   20020604
+#SUBENT         A0297002   20020604
+#ENTRY          A0297      20170201
+#TITLE          Complete and incomplete fusion of 12-C with 165-Ho
+#+              below 7 MeV/nucleon:  Measurements and analysis of
+#+              excitation functions
+#AUTHORS        Sunita Gupta,B.P.Singh,M.M.Musthafa,H.D.Bhardwaj,
+#+              R.Prasad
+#AUTHOR1        Sunita Gupta+
+#YEAR           2000
+#X4REF1         J,PR/C,61,064613,2000
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.61, p.064613 (2000)
+#DATE           20020604
+#INSTITUTE      3INDMUA,3INDNSD
+#METHOD         EXTB,ACTIV,BCINT,GSPEC,SITA
+#REACTION       67-HO-165(6-C-12,3N)73-TA-174,,SIG
+#C4Reaction     (6-C-12,3N),SIG
+#ReactionType   CS
+#MF             3
+#MT             17
+#PROJ           6012
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          6-C-12,3N
+#PRODUCT        73-TA-174
+#C4ReaCode      (6-C-12,3N),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,,2.)        ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-3.83%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 6012 67165   3  17   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 67-HO-165(6-C-12,3N)73-TA-174,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (67-HO-165(6-C-12,3N)73-TA-174,,SIG)
+#+               #[1]#DECAY-DATA (73-TA-174,1.18HR,DG,206.38,0.5770) #Ix_old=0.577
+#+                a1=0.577/0.6;               #[1]#DECAY-DATA: correction to new 206.5 keV gamma-yield per decay Ta-174 Ix_new=0.6
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.96166664
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        A0297002    0.961667    -           0.961667    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          A0297002    CS          4           0.961667    0.961667    0.961667    -3.83%      1.03986                
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 6012 67165   3  17       5.5E71100000.0.04423667  0.00577                                       Sunita Gupta*,       (00)A0297  2 6.6355E-4   4.6E-4           0.00577 1.50     1.04              13       13                                          0.96166660.9616667
+ 6012 67165   3  17       6.2E7 900000.0.05962333 7.6933-3                                       Sunita Gupta*,       (00)A0297  2  8.9435-4   6.2E-4          7.6933-3 1.50     1.04              12.9     12.9                                        0.96166660.9616666
+ 6012 67165   3  17       7.1E71000000.0.01057833 1.9233-3                                       Sunita Gupta*,       (00)A0297  2  1.5868-4   1.1E-4          1.9233-3 1.50     1.04              18.2     18.2                                        0.96166660.9616666
+ 6012 67165   3  17       8.0E7 900000.0 1.9233-3 2.885E-4                                       Sunita Gupta*,       (00)A0297  2  2.885E-5   2.0E-5          2.885E-4 1.50     1.04              15       15                                          0.96166660.9616666
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           5.5E7       8.0E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+5.5E7       5.5E7       4.4237-2    1.83         100
+6.2E7       6.2E7       5.9623-2    1.83         49 100
+7.1E7       7.1E7       1.0578-2    1.83         34 43 100
+8.0E7       8.0E7       1.9233-3    1.83         34 34 43 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       A0297002 
+#DATASET        A0297003   20020604
+#SUBENT         A0297003   20020604
+#ENTRY          A0297      20170201
+#TITLE          Complete and incomplete fusion of 12-C with 165-Ho
+#+              below 7 MeV/nucleon:  Measurements and analysis of
+#+              excitation functions
+#AUTHORS        Sunita Gupta,B.P.Singh,M.M.Musthafa,H.D.Bhardwaj,
+#+              R.Prasad
+#AUTHOR1        Sunita Gupta+
+#YEAR           2000
+#X4REF1         J,PR/C,61,064613,2000
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.61, p.064613 (2000)
+#DATE           20020604
+#INSTITUTE      3INDMUA,3INDNSD
+#METHOD         EXTB,ACTIV,BCINT,GSPEC,SITA
+#REACTION       67-HO-165(6-C-12,4N)73-TA-173,,SIG
+#C4Reaction     (6-C-12,4N),SIG
+#ReactionType   CS
+#MF             3
+#MT             37
+#PROJ           6012
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          6-C-12,4N
+#PRODUCT        73-TA-173
+#C4ReaCode      (6-C-12,4N),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,,2.)        ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 6012 67165   3  37   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 6012 67165   3  37       5.5E71100000.0    0.013    0.002                                       Sunita Gupta,        (00)A0297  3   1.95E-4   1.3E-4             0.002 1.50     1                 15.4     15.4
+ 6012 67165   3  37       6.2E7 900000.0      0.2    0.027                                       Sunita Gupta,        (00)A0297  3     0.003    0.002             0.027 1.50     1                 13.5     13.5
+ 6012 67165   3  37       7.1E71000000.0    0.336    0.044                                       Sunita Gupta,        (00)A0297  3   0.00504  0.00336             0.044 1.50     1                 13.1     13.1
+ 6012 67165   3  37       8.0E7 900000.0    0.122    0.016                                       Sunita Gupta,        (00)A0297  3   0.00183  0.00122             0.016 1.50     1                 13.1     13.1
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           5.5E7       8.0E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+5.5E7       5.5E7       0.013       1.8          100
+6.2E7       6.2E7       0.2         1.8          50 100
+7.1E7       7.1E7       0.336       1.8          35 44 100
+8.0E7       8.0E7       0.122       1.8          35 35 44 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       A0297003 
+#DATASET        A0297004   20020604
+#SUBENT         A0297004   20020604
+#ENTRY          A0297      20170201
+#TITLE          Complete and incomplete fusion of 12-C with 165-Ho
+#+              below 7 MeV/nucleon:  Measurements and analysis of
+#+              excitation functions
+#AUTHORS        Sunita Gupta,B.P.Singh,M.M.Musthafa,H.D.Bhardwaj,
+#+              R.Prasad
+#AUTHOR1        Sunita Gupta+
+#YEAR           2000
+#X4REF1         J,PR/C,61,064613,2000
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.61, p.064613 (2000)
+#DATE           20020604
+#INSTITUTE      3INDMUA,3INDNSD
+#METHOD         EXTB,ACTIV,BCINT,GSPEC,SITA
+#REACTION       67-HO-165(6-C-12,5N)73-TA-172,,SIG
+#C4Reaction     (6-C-12,5N),SIG
+#ReactionType   CS
+#MF             3
+#MT             152
+#PROJ           6012
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          6-C-12,5N
+#PRODUCT        73-TA-172
+#C4ReaCode      (6-C-12,5N),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,,2.)        ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 6012 67165   3 152   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 6012 67165   3 152       7.1E71000000.0    0.083    0.011                                       Sunita Gupta,        (00)A0297  4  0.001245   8.3E-4             0.011 1.50     1                 13.3     13.3
+ 6012 67165   3 152       8.0E7 900000.0    0.287    0.038                                       Sunita Gupta,        (00)A0297  4  0.004305  0.00287             0.038 1.50     1                 13.2     13.2
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           7.1E7       8.0E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+7.1E7       7.1E7       0.083       1.8          100
+8.0E7       8.0E7       0.287       1.8          35 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       A0297004 
+#DATASET        A0297005   20020604
+#SUBENT         A0297005   20020604
+#ENTRY          A0297      20170201
+#TITLE          Complete and incomplete fusion of 12-C with 165-Ho
+#+              below 7 MeV/nucleon:  Measurements and analysis of
+#+              excitation functions
+#AUTHORS        Sunita Gupta,B.P.Singh,M.M.Musthafa,H.D.Bhardwaj,
+#+              R.Prasad
+#AUTHOR1        Sunita Gupta+
+#YEAR           2000
+#X4REF1         J,PR/C,61,064613,2000
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.61, p.064613 (2000)
+#DATE           20020604
+#INSTITUTE      3INDMUA,3INDNSD
+#METHOD         EXTB,ACTIV,BCINT,GSPEC,SITA
+#REACTION       67-HO-165(6-C-12,X)72-HF-173,CUM,SIG
+#C4Reaction     (6-C-12,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           6012
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          6-C-12,X
+#PRODUCT        72-HF-173
+#C4ReaCode      (6-C-12,X)CUM,SIG
+#CompNotes      ERR-ANALYS:(ERR-S,,2.)        ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 6012 67165   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 6012 67165   39001       6.2E7 900000.0    0.248    0.033           72173.9                     Sunita Gupta,        (00)A0297  5   0.00372  0.00248             0.033 1.50     1                 13.3     13.3
+ 6012 67165   39001       7.1E71000000.00.8430001    0.112           72173.9                     Sunita Gupta,        (00)A0297  5  0.012645  0.00843             0.112 1.50     1                 13.3     13.3
+ 6012 67165   39001       8.0E7 900000.00.5470001.07300001           72173.9                     Sunita Gupta,        (00)A0297  5  0.008205  0.00547         .07300001 1.50     1                 13.3     13.3
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.2E7       8.0E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.2E7       6.2E7       0.248       1.8          100
+7.1E7       7.1E7       0.843       1.8          35 100
+8.0E7       8.0E7       0.547       1.8          35 35 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       A0297005 
+#DATASET        A0297006   20020604
+#SUBENT         A0297006   20020604
+#ENTRY          A0297      20170201
+#TITLE          Complete and incomplete fusion of 12-C with 165-Ho
+#+              below 7 MeV/nucleon:  Measurements and analysis of
+#+              excitation functions
+#AUTHORS        Sunita Gupta,B.P.Singh,M.M.Musthafa,H.D.Bhardwaj,
+#+              R.Prasad
+#AUTHOR1        Sunita Gupta+
+#YEAR           2000
+#X4REF1         J,PR/C,61,064613,2000
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.61, p.064613 (2000)
+#DATE           20020604
+#INSTITUTE      3INDMUA,3INDNSD
+#METHOD         EXTB,ACTIV,BCINT,GSPEC,SITA
+#REACTION       67-HO-165(6-C-12,X)72-HF-173,IND,SIG
+#C4Reaction     (6-C-12,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           6012
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          6-C-12,X
+#PRODUCT        72-HF-173
+#C4ReaCode      (6-C-12,X)IND,SIG
+#CompNotes      ERR-ANALYS:(ERR-S,,2.)        ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 6012 67165   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 6012 67165   39000       6.2E7 900000.0    0.011    0.002           72173.9                     Sunita Gupta,        (00)A0297  6   1.65E-4   1.1E-4             0.002 1.50     1                 18.2     18.2
+ 6012 67165   39000       7.1E71000000.0    0.446     0.06           72173.9                     Sunita Gupta,        (00)A0297  6   0.00669  0.00446              0.06 1.50     1                 13.5     13.5
+ 6012 67165   39000       8.0E7 900000.0    0.404.05400001           72173.9                     Sunita Gupta,        (00)A0297  6   0.00606  0.00404         .05400001 1.50     1                 13.4     13.4
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.2E7       8.0E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.2E7       6.2E7       0.011       1.8          100
+7.1E7       7.1E7       0.446       1.8          35 100
+8.0E7       8.0E7       0.404       1.8          35 35 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       A0297006 
+#DATASET        A0297007   20020604
+#SUBENT         A0297007   20020604
+#ENTRY          A0297      20170201
+#TITLE          Complete and incomplete fusion of 12-C with 165-Ho
+#+              below 7 MeV/nucleon:  Measurements and analysis of
+#+              excitation functions
+#AUTHORS        Sunita Gupta,B.P.Singh,M.M.Musthafa,H.D.Bhardwaj,
+#+              R.Prasad
+#AUTHOR1        Sunita Gupta+
+#YEAR           2000
+#X4REF1         J,PR/C,61,064613,2000
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.61, p.064613 (2000)
+#DATE           20020604
+#INSTITUTE      3INDMUA,3INDNSD
+#METHOD         EXTB,ACTIV,BCINT,GSPEC,SITA
+#REACTION       67-HO-165(6-C-12,X)72-HF-171,CUM,SIG
+#C4Reaction     (6-C-12,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           6012
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          6-C-12,X
+#PRODUCT        72-HF-171
+#C4ReaCode      (6-C-12,X)CUM,SIG
+#CompNotes      ERR-ANALYS:(ERR-S,,2.)        ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 6012 67165   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 6012 67165   39001       8.0E7 900000.0    0.145    0.022           72171.9                     Sunita Gupta,        (00)A0297  7  0.002175  0.00145             0.022 1.50     1                 15.2     15.2
+#/C5DATA        0
+#/DATASET       A0297007 
+#DATASET        A0297008   20020604
+#SUBENT         A0297008   20020604
+#ENTRY          A0297      20170201
+#TITLE          Complete and incomplete fusion of 12-C with 165-Ho
+#+              below 7 MeV/nucleon:  Measurements and analysis of
+#+              excitation functions
+#AUTHORS        Sunita Gupta,B.P.Singh,M.M.Musthafa,H.D.Bhardwaj,
+#+              R.Prasad
+#AUTHOR1        Sunita Gupta+
+#YEAR           2000
+#X4REF1         J,PR/C,61,064613,2000
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.61, p.064613 (2000)
+#DATE           20020604
+#INSTITUTE      3INDMUA,3INDNSD
+#METHOD         EXTB,ACTIV,BCINT,GSPEC,SITA
+#REACTION       67-HO-165(6-C-12,X)71-LU-171-G,IND,SIG
+#C4Reaction     (6-C-12,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           6012
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          6-C-12,X
+#PRODUCT        71-LU-171-G
+#C4ReaCode      (6-C-12,X)IND,SIG
+#CompNotes      ERR-ANALYS:(ERR-S,,2.)        ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.23%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 6012 67165   39000G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 67-HO-165(6-C-12,X)71-LU-171-G,IND,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (67-HO-165(6-C-12,X)71-LU-171-G,IND,SIG)
+#+               #[1]#DECAY-DATA (71-LU-171-G,8.24D,DG,739.83,0.481) #Ix_old=0.481
+#+                a1=0.481/0.487;             #[1]#DECAY-DATA: correction to new 739.793 keV gamma-yield per decay Lu-171-g Ix_new=0.487
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9876797
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        A0297008    0.987680    -           0.987680    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          A0297008    CS          3           0.987680    0.987680    0.987680    -1.23%      1.01247                
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 6012 67165   39000G      6.2E7 900000.0.01086448 1.9754-3           71171.9                     Sunita Gupta*,       (00)A0297  8  1.6297-4   1.1E-4          1.9754-3 1.50     1.01              18.2     18.2                                        0.98767970.9876797
+ 6012 67165   39000G      7.1E71000000.0.01876591 2.9630-3           71171.9                     Sunita Gupta*,       (00)A0297  8  2.8149-4   1.9E-4          2.9630-3 1.50     1.01              15.8     15.8                                        0.98767970.9876797
+ 6012 67165   39000G      8.0E7 900000.00.1382752.02074127           71171.9                     Sunita Gupta*,       (00)A0297  8  2.0741-3   0.0014         .02074127 1.50     1.01              15       15                                          0.98767970.9876797
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.2E7       8.0E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.2E7       6.2E7       1.0864-2    1.81         100
+7.1E7       7.1E7       1.8766-2    1.81         34 100
+8.0E7       8.0E7       0.138275    1.81         34 34 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       A0297008 
+#DATASET        A0297009   20020604
+#SUBENT         A0297009   20020604
+#ENTRY          A0297      20170201
+#TITLE          Complete and incomplete fusion of 12-C with 165-Ho
+#+              below 7 MeV/nucleon:  Measurements and analysis of
+#+              excitation functions
+#AUTHORS        Sunita Gupta,B.P.Singh,M.M.Musthafa,H.D.Bhardwaj,
+#+              R.Prasad
+#AUTHOR1        Sunita Gupta+
+#YEAR           2000
+#X4REF1         J,PR/C,61,064613,2000
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.61, p.064613 (2000)
+#DATE           20020604
+#INSTITUTE      3INDMUA,3INDNSD
+#METHOD         EXTB,ACTIV,BCINT,GSPEC,SITA
+#REACTION       67-HO-165(6-C-12,X)71-LU-169-G,CUM,SIG
+#C4Reaction     (6-C-12,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           6012
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          6-C-12,X
+#PRODUCT        71-LU-169-G
+#C4ReaCode      (6-C-12,X)CUM,SIG
+#CompNotes      ERR-ANALYS:(ERR-S,,2.)        ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+10.7%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 6012 67165   39001G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 67-HO-165(6-C-12,X)71-LU-169-G,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (67-HO-165(6-C-12,X)71-LU-169-G,CUM,SIG)
+#+               #[1]#DECAY-DATA (71-LU-169-G,1.42D,DG,191.21,0.207) #Ix_old=0.207
+#+                a1=0.207/0.187;             #[1]#DECAY-DATA: correction to new 191.217 keV gamma-yield per decay Lu-169-g Ix_new=0.187
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.1069518
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        A0297009    1.10695     -           1.10695     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          A0297009    CS          3           1.10695     1.10695     1.10695     +10.7%      1.10695                
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 6012 67165   39001G      6.2E7 900000.0.01549733 2.2139-3           71169.9                     Sunita Gupta*,       (00)A0297  9  2.3246-4   1.4E-4          2.2139-3 1.50     0.90              14.3     14.3                                        1.10695181.1069518
+ 6012 67165   39001G      7.1E71000000.0.02103208 3.3209-3           71169.9                     Sunita Gupta*,       (00)A0297  9  3.1548-4   1.9E-4          3.3209-3 1.50     0.90              15.8     15.8                                        1.10695181.1069518
+ 6012 67165   39001G      8.0E7 900000.0.02324599 3.3209-3           71169.9                     Sunita Gupta*,       (00)A0297  9  3.4869-4   2.1E-4          3.3209-3 1.50     0.90              14.3     14.3                                        1.10695181.1069518
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.2E7       8.0E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.2E7       6.2E7       1.5497-2    1.75         100
+7.1E7       7.1E7       2.1032-2    1.75         37 100
+8.0E7       8.0E7       0.023246    1.75         37 37 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       A0297009 
+#DATASET        A0297010   20020604
+#SUBENT         A0297010   20020604
+#ENTRY          A0297      20170201
+#TITLE          Complete and incomplete fusion of 12-C with 165-Ho
+#+              below 7 MeV/nucleon:  Measurements and analysis of
+#+              excitation functions
+#AUTHORS        Sunita Gupta,B.P.Singh,M.M.Musthafa,H.D.Bhardwaj,
+#+              R.Prasad
+#AUTHOR1        Sunita Gupta+
+#YEAR           2000
+#X4REF1         J,PR/C,61,064613,2000
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.61, p.064613 (2000)
+#DATE           20020604
+#INSTITUTE      3INDMUA,3INDNSD
+#METHOD         EXTB,ACTIV,BCINT,GSPEC,SITA
+#REACTION       67-HO-165(6-C-12,X)71-LU-167,CUM,SIG
+#C4Reaction     (6-C-12,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           6012
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          6-C-12,X
+#PRODUCT        71-LU-167
+#C4ReaCode      (6-C-12,X)CUM,SIG
+#CompNotes      ERR-ANALYS:(ERR-S,,2.)        ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+6.49%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 6012 67165   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 67-HO-165(6-C-12,X)71-LU-167,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (67-HO-165(6-C-12,X)71-LU-167,CUM,SIG)
+#+               #[1]#DECAY-DATA (71-LU-167,51.5MIN,DG,239.14,0.082) #Ix_old=0.082
+#+                a1=0.082/0.077;             #[1]#DECAY-DATA: correction to new 239.22 keV gamma-yield per decay Lu-167 Ix_new=0.077
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0649351
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        A0297010    1.06494     -           1.06494     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          A0297010    CS          3           1.06494     1.06494     1.06494     +6.49%      1.06494                
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 6012 67165   39001       6.2E7 900000.0.00638961 1.0649-3           71167.9                     Sunita Gupta*,       (00)A0297 10  9.5844-5   6.0E-5          1.0649-3 1.50     0.94              16.7     16.7                                        1.06493511.0649351
+ 6012 67165   39001       7.1E71000000.0 7.4545-3 1.0649-3           71167.9                     Sunita Gupta*,       (00)A0297 10  1.1182-4   7.0E-5          1.0649-3 1.50     0.94              14.3     14.3                                        1.06493511.0649351
+ 6012 67165   39001       8.0E7 900000.0.03833766 5.3247-3           71167.9                     Sunita Gupta*,       (00)A0297 10  5.7506-4   3.6E-4          5.3247-3 1.50     0.94              13.9     13.9                                        1.06493511.0649352
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.2E7       8.0E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.2E7       6.2E7       6.3896-3    1.77         100
+7.1E7       7.1E7       7.4545-3    1.77         36 100
+8.0E7       8.0E7       3.8338-2    1.77         36 36 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       A0297010 
+#DATASET        A0297011   20020604
+#SUBENT         A0297011   20020604
+#ENTRY          A0297      20170201
+#TITLE          Complete and incomplete fusion of 12-C with 165-Ho
+#+              below 7 MeV/nucleon:  Measurements and analysis of
+#+              excitation functions
+#AUTHORS        Sunita Gupta,B.P.Singh,M.M.Musthafa,H.D.Bhardwaj,
+#+              R.Prasad
+#AUTHOR1        Sunita Gupta+
+#YEAR           2000
+#X4REF1         J,PR/C,61,064613,2000
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.61, p.064613 (2000)
+#DATE           20020604
+#INSTITUTE      3INDMUA,3INDNSD
+#METHOD         EXTB,ACTIV,BCINT,GSPEC,SITA
+#REACTION       67-HO-165(6-C-12,X)69-TM-167,CUM,SIG
+#C4Reaction     (6-C-12,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           6012
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          6-C-12,X
+#PRODUCT        69-TM-167
+#C4ReaCode      (6-C-12,X)CUM,SIG
+#CompNotes      ERR-ANALYS:(ERR-S,,2.)        ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.38%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 6012 67165   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 67-HO-165(6-C-12,X)69-TM-167,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (67-HO-165(6-C-12,X)69-TM-167,CUM,SIG)
+#+               #[1]#DECAY-DATA (69-TM-167,9.24D,DG,207.79,0.41) #Ix_old=0.41
+#+                a1=0.41/0.42;               #[1]#DECAY-DATA: correction to new 207.801 keV gamma-yield per decay Tm-167 Ix_new=0.42
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9761905
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        A0297011    0.976191    -           0.976191    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          A0297011    CS          3           0.976191    0.976191    0.976191    -2.38%      1.02439                
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 6012 67165   39001       6.2E7 900000.0 4.8810-3 9.7619-4           69167.9                     Sunita Gupta*,       (00)A0297 11  7.3214-5   5.0E-5          9.7619-4 1.50     1.02              20       20                                          0.97619050.9761906
+ 6012 67165   39001       7.1E71000000.0.03319048 3.9048-3           69167.9                     Sunita Gupta*,       (00)A0297 11  4.9786-4   3.4E-4          3.9048-3 1.50     1.02              11.8     11.8                                        0.97619050.9761904
+ 6012 67165   39001       8.0E7 900000.00.1064048.01464286           69167.9                     Sunita Gupta*,       (00)A0297 11  1.5961-3  0.00109         .01464286 1.50     1.02              13.8     13.8                                        0.97619050.9761906
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.2E7       8.0E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.2E7       6.2E7       4.8810-3    1.82         100
+7.1E7       7.1E7       3.3190-2    1.82         34 100
+8.0E7       8.0E7       0.106405    1.82         34 34 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       A0297011 
+#DATASET        A0297012   20020604
+#SUBENT         A0297012   20020604
+#ENTRY          A0297      20170201
+#TITLE          Complete and incomplete fusion of 12-C with 165-Ho
+#+              below 7 MeV/nucleon:  Measurements and analysis of
+#+              excitation functions
+#AUTHORS        Sunita Gupta,B.P.Singh,M.M.Musthafa,H.D.Bhardwaj,
+#+              R.Prasad
+#AUTHOR1        Sunita Gupta+
+#YEAR           2000
+#X4REF1         J,PR/C,61,064613,2000
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.61, p.064613 (2000)
+#DATE           20020604
+#INSTITUTE      3INDMUA,3INDNSD
+#METHOD         EXTB,ACTIV,BCINT,GSPEC,SITA
+#REACTION       67-HO-165(6-C-12,X)69-TM-165,CUM,SIG
+#C4Reaction     (6-C-12,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           6012
+#TARG           67165            
+#TARGET         67165           [ ]             67-HO-165       [ ] 
+#REAC1          6-C-12,X
+#PRODUCT        69-TM-165
+#C4ReaCode      (6-C-12,X)CUM,SIG
+#CompNotes      ERR-ANALYS:(ERR-S,,2.)        ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-1,,3.)        ADDED AS COMMON:ERR-1,PER-CENT=1.5%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-28.1%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 6012 67165   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 67-HO-165(6-C-12,X)69-TM-165,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (67-HO-165(6-C-12,X)69-TM-165,CUM,SIG)
+#+               #[1]#DECAY-DATA (69-TM-165,1.25D,DG,218.79,0.024) #Ix_old=0.024
+#+                a1=0.024/0.0334;            #[1]#DECAY-DATA: correction to new 218.859 keV gamma-yield per decay Tm-165 Ix_new=0.0334
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.7185629
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        A0297012    0.718563    -           0.718563    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          A0297012    CS          3           0.718563    0.718563    0.718563    -28.1%      1.39167                
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 6012 67165   39001       6.2E7 900000.0.07113773.01005988           69165.9                     Sunita Gupta*,       (00)A0297 12  1.0671-3   9.9E-4         .01005988 1.50     1.39              14.1     14.1                                        0.71856290.7185629
+ 6012 67165   39001       7.1E71000000.00.2414371.03377246           69165.9                     Sunita Gupta*,       (00)A0297 12  3.6216-3  0.00336         .03377246 1.50     1.39              14       14                                          0.71856290.718563
+ 6012 67165   39001       8.0E7 900000.00.1810779.02658683           69165.9                     Sunita Gupta*,       (00)A0297 12  2.7162-3  0.00252         .02658683 1.50     1.39              14.7     14.7                                        0.71856290.7185629
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.2E7       8.0E7       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.2E7       6.2E7       7.1138-2    2.05         100
+7.1E7       7.1E7       0.241437    2.05         27 100
+8.0E7       8.0E7       0.181078    2.05         27 27 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       A0297012 
+#/C5M.2.3       1               11              11              0               32              

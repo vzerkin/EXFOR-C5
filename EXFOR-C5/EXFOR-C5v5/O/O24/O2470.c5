@@ -1,0 +1,164 @@
+#C5M.2.3
+#DATASET        O2470002   20200823
+#SUBENT         O2470002   20200823
+#ENTRY          O2470      20200823
+#TITLE          Measurement of the 43Sc production cross-section with
+#+              a deuteron beam
+#AUTHORS        T.S.Carzaniga,N.P.Van Der Meulen,R.Hasler,C.Kottler,
+#+              P.Peier,A.Turler,E.Vermeulen,C.Vockenhuber,S.Braccini
+#AUTHOR1        T.S.Carzaniga+
+#YEAR           2019
+#X4REF1         J,ARI,145,205,2019
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.145, p.205 (2019)
+#DATE           20200823
+#INSTITUTE      2SWTUBE,2SWTPSI,2SWTETH,2SWTSWT
+#METHOD         ACTIV,GSPEC,STTA,BCINT
+#REACTION       28-NI-0(D,X)29-CU-61,,SIG
+#C4Reaction     (D,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1002
+#TARG           28000            
+#TARGET         28000           [ ]             28-NI-0         [ ] 
+#REAC1          D,X
+#PRODUCT        29-CU-61
+#C4ReaCode      (D,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-3.94%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+4.10%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1002 28000   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 28-NI-0(D,X)29-CU-61,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (28-NI-0(D,X)29-CU-61,,SIG)
+#+               #[1]#DECAY-DATA (29-CU-61,3.339HR,DG,282.956,0.122) #Ix_old=0.122
+#+                a1=0.122/0.127;             #[1]#DECAY-DATA: correction to new 282.956 keV gamma-yield per decay Cu-61 Ix_new=0.127
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9606299
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (28-NI-0(D,X)29-CU-61,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-61,3.339HR,DG,282.956,0.122) #Im_old=0.122
+#+                a2=0.127/0.122;             #[2]#DECAY-MON: correction to new 282.956 keV gamma-yield per decay Cu-61 Im_new=0.127
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0409837
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O2470002    1.00000     -           0.960630    1.04098
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O2470002    CS          9           1.00000     1.00000     1.00000     +0.00%      1.00000     m0: {,A.Hermanne+,J,NDS,148,338,2018} : ni0dx;::ni0dx
+#C5DATA         9
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1002 28000   39000   3500000.0 320000.0    0.007    0.002           29061.9                     T.S.Carzaniga*,      (19)O2470  2    0.0014                      0.002 20                         28.6     28.6                                        1.0      1.0
+ 1002 28000   39000   4000000.0 280000.0     0.02    0.004           29061.9                     T.S.Carzaniga*,      (19)O2470  2     0.004                      0.004 20                         20       20                                          1.0      1.0
+ 1002 28000   39000   4500000.0259999.98    0.038    0.008           29061.9                     T.S.Carzaniga*,      (19)O2470  2    0.0076                      0.008 20                         21.1     21.1                                        1.0      1.0
+ 1002 28000   39000   5000000.0 240000.0    0.055    0.011           29061.9                     T.S.Carzaniga*,      (19)O2470  2     0.011                      0.011 20                         20       20                                          1.0      1.0
+ 1002 28000   39000   5500000.0 220000.0    0.048     0.01           29061.9                     T.S.Carzaniga*,      (19)O2470  2    0.0096                       0.01 20                         20.8     20.8                                        1.0      1.0
+ 1002 28000   39000   6000000.0 200000.0.06900001    0.014           29061.9                     T.S.Carzaniga*,      (19)O2470  2    0.0138                      0.014 20                         20.3     20.3                                        1.0      1.0
+ 1002 28000   39000   6500000.0 190000.0.07000001    0.014           29061.9                     T.S.Carzaniga*,      (19)O2470  2     0.014                      0.014 20                         20       20                                          1.0      1.0
+ 1002 28000   39000   7000000.0 180000.0.08800001    0.018           29061.9                     T.S.Carzaniga*,      (19)O2470  2    0.0176                      0.018 20                         20.5     20.5                                        1.0      1.0
+ 1002 28000   39000   7500000.0 170000.0    0.086    0.017           29061.9                     T.S.Carzaniga*,      (19)O2470  2    0.0172                      0.017 20                         19.8     19.8                                        1.0      1.0
+#/C5DATA        0
+#/DATASET       O2470002 
+#DATASET        O2470003   20200823
+#SUBENT         O2470003   20200823
+#ENTRY          O2470      20200823
+#TITLE          Measurement of the 43Sc production cross-section with
+#+              a deuteron beam
+#AUTHORS        T.S.Carzaniga,N.P.Van Der Meulen,R.Hasler,C.Kottler,
+#+              P.Peier,A.Turler,E.Vermeulen,C.Vockenhuber,S.Braccini
+#AUTHOR1        T.S.Carzaniga+
+#YEAR           2019
+#X4REF1         J,ARI,145,205,2019
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.145, p.205 (2019)
+#DATE           20200823
+#INSTITUTE      2SWTUBE,2SWTPSI,2SWTETH,2SWTSWT
+#METHOD         ACTIV,GSPEC,STTA,BCINT
+#REACTION       20-CA-42(D,N)21-SC-43,,SIG
+#C4Reaction     (D,N),SIG
+#ReactionType   CS
+#MF             3
+#MT             4
+#PROJ           1002
+#TARG           20042            
+#TARGET         20042           [ ]             20-CA-42        [ ] 
+#REAC1          D,N
+#PRODUCT        21-SC-43
+#C4ReaCode      (D,N),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,,4.)        ADDED AS COMMON:ERR-S,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-1,,7.)        ADDED AS COMMON:ERR-1,PER-CENT=3.5%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-23.6%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+4.10%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1002 20042   3   4   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 20-CA-42(D,N)21-SC-43,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (20-CA-42(D,N)21-SC-43,,SIG)
+#+               #[1]#DECAY-DATA (21-SC-43,3.891HR,DG,372.9,0.172) #Ix_old=0.172
+#+                a1=0.172/0.225;             #[1]#DECAY-DATA: correction to new 372.9 keV gamma-yield per decay Sc-43 Ix_new=0.225
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.7644445
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (28-NI-0(D,X)29-CU-61,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-61,3.339HR,DG,282.956,0.122) #Im_old=0.122
+#+                a2=0.127/0.122;             #[2]#DECAY-MON: correction to new 282.956 keV gamma-yield per decay Cu-61 Im_new=0.127
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0409837
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O2470003    0.795774    -           0.764444    1.04098
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O2470003    CS          9           0.795774    0.795774    0.795774    -20.4%      1.25664     m0: {,A.Hermanne+,J,NDS,148,338,2018} : ni0dx;::ni0dx
+#C5DATA         9
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1002 20042   3   4   2800000.0 300000.0.02705633 3.9789-3                                       T.S.Carzaniga*,      (19)O2470  3  2.1347-3   6.8E-4          3.9789-3 7.89     2.51              14.7     14.7                                        0.79577420.7957743
+ 1002 20042   3   4   3400000.0 300000.0 0.049338.00557042                                       T.S.Carzaniga*,      (19)O2470  3  3.8927-3  0.00124         .00557042 7.89     2.51              11.3     11.3                                        0.79577420.7957742
+ 1002 20042   3   4   3900000.0 300000.0.09788023.01273239                                       T.S.Carzaniga*,      (19)O2470  3  7.7226-3  0.00246         .01273239 7.89     2.51              13       13                                          0.79577420.7957742
+ 1002 20042   3   4   4500000.0 200000.00.1432394.01909858                                       T.S.Carzaniga*,      (19)O2470  3 0.0113014   0.0036         .01909858 7.89     2.51              13.3     13.3                                        0.79577420.7957742
+ 1002 20042   3   4   5000000.0 200000.00.1265281.01591549                                       T.S.Carzaniga*,      (19)O2470  3  9.9829-3  0.00318         .01591549 7.89     2.51              12.6     12.6                                        0.79577420.7957743
+ 1002 20042   3   4   5500000.0 200000.00.1504013.01909858                                       T.S.Carzaniga*,      (19)O2470  3 .01186647  0.00378         .01909858 7.89     2.51              12.7     12.7                                        0.79577420.7957742
+ 1002 20042   3   4   6100000.0 200000.00.1400563.01591549                                       T.S.Carzaniga*,      (19)O2470  3 .01105026  0.00352         .01591549 7.89     2.51              11.4     11.4                                        0.79577420.7957743
+ 1002 20042   3   4   6600000.0 200000.00.16472530.0214859                                       T.S.Carzaniga*,      (19)O2470  3 .01299661  0.00414         0.0214859 7.89     2.51              13       13                                          0.79577420.7957742
+ 1002 20042   3   4   7100000.0 200000.00.1416478.01830281                                       T.S.Carzaniga*,      (19)O2470  3 .01117582  0.00356         .01830281 7.89     2.51              12.9     12.9                                        0.79577420.7957742
+#/C5DATA        0
+#/DATASET       O2470003 
+#/C5M.2.3       1               2               2               0               18              

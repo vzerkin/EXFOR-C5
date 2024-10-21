@@ -1,0 +1,257 @@
+#C5.2.3
+#DATASET        108440021  20240403
+#SUBENT         10844002   20240403
+#ENTRY          10844      20240403
+#TITLE          Activation cross sections for the (n,2n) reactions
+#+               on 121,123-Sb between 12.8 and 18.1 MeV
+#AUTHORS        S.K.Ghorai,J.E.Gaiser,W.L.Alford
+#AUTHOR1        S.K.Ghorai+
+#YEAR           1980
+#X4REF1         J,JP/G,6,393,1980
+#REFERENCE1     Jour: Jour. of Physics, Part G (Nucl.and Part.Phys.), Vol.6, p.393 (1980)
+#DATE           20240403
+#INSTITUTE      1USAAUB,1USAALS
+#METHOD         ACTIV,MOMIX
+#REACTION       51-SB-121(N,2N)51-SB-120-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           51121            
+#TARGET         51121           [ ]             51-SB-121       [ ] 
+#REAC1          N,2N
+#PRODUCT        51-SB-120-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=7
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9211278(1.3e7) Data[6]*1.0327758(1.8e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.402%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 51121   3  16MA ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 51-SB-121(N,2N)51-SB-120-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (51-SB-121(N,2N)51-SB-120-M,,SIG)
+#+               #[1]#DECAY-DATA (51-SB-120-M,5.76D,DG,1023.,.99) #Ix_old=0.99
+#+                a1=0.99/0.994;              #[1]#DECAY-DATA: correction to new 1023.3 keV gamma-yield per decay Sb-120-m Ix_new=0.994
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99597585
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        108440021   0.958904    0.962779    0.995976    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          108440021   CS          7           0.917421    1.02862     0.958904    -4.11%      1.09001     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 51121   3  16MA    1.28E7 200000.00.4495363.03033191                                       S.K.Ghorai*,         (80)10844  21.00478797                  .03033191 1.07                       6.75     6.75    0.133    0.008    0.12251  1.2700-3 0.917421 0.6893616
+    1 51121   3  16MA    1.34E7 200000.00.4882862.03266699                                       S.K.Ghorai*,         (80)10844  21 3.7354-3                  .03266699 0.76                       6.69     6.69    0.13     0.008    0.12546  9.9781E-40.96119330.710152
+    1 51121   3  16MA    1.44E7 200000.00.5065815.03544268                                       S.K.Ghorai*,         (80)10844  21 2.1750-3                  .03544268 0.43                       7        7       0.122    0.007    0.11686  4.6452-4 0.95401420.7383891
+    1 51121   3  16MA    1.53E7 100000.00.5159614.03339735                                       S.K.Ghorai*,         (80)10844  21 2.3988-3                  .03339735 0.46                       6.47     6.47    0.1105   0.007    0.10351565.4527-4 0.93302250.6679469
+    1 51121   3  16MA    1.61E7 100000.00.5516148.03687168                                       S.K.Ghorai*,         (80)10844  21.00391924                  .03687168 0.71                       6.68     6.68    0.0935   0.0056   .090849756.4015-4 0.967745 0.7229742
+    1 51121   3  16MA     1.7E7 200000.00.5730387.03704712                                       S.K.Ghorai*,         (80)10844  21 4.6661-3                  .03704712 0.81                       6.47     6.47    .080000010.005    .076332226.2156-4 0.950313 0.6860577
+    1 51121   3  16MA    1.81E7 200000.00.5636836.03664876                                       S.K.Ghorai*,         (80)10844  21 5.2977-3                  .03664876 0.94                       6.50     6.50    0.058    0.0036   0.059901 5.5056-4 1.02861980.7479339
+#/C5DATA        0
+#/DATASET       108440021
+#DATASET        108440022  20240403
+#SUBENT         10844002   20240403
+#ENTRY          10844      20240403
+#TITLE          Activation cross sections for the (n,2n) reactions
+#+               on 121,123-Sb between 12.8 and 18.1 MeV
+#AUTHORS        S.K.Ghorai,J.E.Gaiser,W.L.Alford
+#AUTHOR1        S.K.Ghorai+
+#YEAR           1980
+#X4REF1         J,JP/G,6,393,1980
+#REFERENCE1     Jour: Jour. of Physics, Part G (Nucl.and Part.Phys.), Vol.6, p.393 (1980)
+#DATE           20240403
+#INSTITUTE      1USAAUB,1USAALS
+#METHOD         ACTIV,MOMIX
+#REACTION       51-SB-121(N,2N)51-SB-120-G,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           51121            
+#TARGET         51121           [ ]             51-SB-121       [ ] 
+#REAC1          N,2N
+#PRODUCT        51-SB-120-G
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=7
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9211278(1.3e7) Data[6]*1.0327758(1.8e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+7.21%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 51121   3  16GA ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 51-SB-121(N,2N)51-SB-120-G,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (51-SB-121(N,2N)51-SB-120-G,,SIG)
+#+               #[1]#DECAY-DATA (51-SB-120-G,15.8MIN,AR,511.,.8791) #Ix_old=0.8791
+#+                a1=0.8791/0.82;             #[1]#DECAY-DATA: correction to new 511 keV gamma-yield per decay Sb-120-g Ix_new=0.82
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0720732
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        108440022   1.03217     0.962779    1.07207     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          108440022   CS          7           0.987516    1.10721     1.03217     +3.22%      1.10721     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 51121   3  16GA    1.28E7 200000.00.8769147.05951162                                       S.K.Ghorai*,         (80)10844  22 9.3399-3                  .05951162 1.07                       6.79     6.79    0.133    0.008    0.12251  1.2700-3 0.98751650.7438951
+    1 51121   3  16GA    1.34E7 200000.00.9487586.06342357                                       S.K.Ghorai*,         (80)10844  22 7.2579-3                  .06342357 0.76                       6.68     6.68    0.13     0.008    0.12546  9.9781E-41.034633 0.7641395
+    1 51121   3  16GA    1.44E7 200000.01.0022599.06982242                                       S.K.Ghorai*,         (80)10844  22 4.3032-3                  .06982242 0.43                       6.97     6.97    0.122    0.007    0.11686  4.6452-4 1.02690550.7934366
+    1 51121   3  16GA    1.53E7 100000.01.0193747.06630174                                       S.K.Ghorai*,         (80)10844  22 4.7392-3                  .06630174 0.46                       6.50     6.50    0.1105   0.007    0.10351565.4527-4 1.00431  0.7206711
+    1 51121   3  16GA    1.61E7 100000.01.0114765 0.067779                                       S.K.Ghorai*,         (80)10844  22 7.1867-3                   0.067779 0.71                       6.70     6.70    0.0935   0.0056   .090849756.4015-4 1.04168530.7790691
+    1 51121   3  16GA     1.7E7 200000.00.9543858.06233421                                       S.K.Ghorai*,         (80)10844  22.00777137                  .06233421 0.81                       6.53     6.53    .080000010.005    .076332226.2156-4 1.02292140.7420739
+    1 51121   3  16GA    1.81E7 200000.00.9012701.05892491                                       S.K.Ghorai*,         (80)10844  22 8.4705-3                  .05892491 0.94                       6.54     6.54    0.058    0.0036   0.059901 5.5056-4 1.10721120.8071905
+#/C5DATA        0
+#/DATASET       108440022
+#DATASET        10844003   20240403
+#SUBENT         10844003   20240403
+#ENTRY          10844      20240403
+#TITLE          Activation cross sections for the (n,2n) reactions
+#+               on 121,123-Sb between 12.8 and 18.1 MeV
+#AUTHORS        S.K.Ghorai,J.E.Gaiser,W.L.Alford
+#AUTHOR1        S.K.Ghorai+
+#YEAR           1980
+#X4REF1         J,JP/G,6,393,1980
+#REFERENCE1     Jour: Jour. of Physics, Part G (Nucl.and Part.Phys.), Vol.6, p.393 (1980)
+#DATE           20240403
+#INSTITUTE      1USAAUB,1USAALS
+#METHOD         ACTIV,MOMIX
+#REACTION       51-SB-123(N,2N)51-SB-122,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           51123            
+#TARGET         51123           [ ]             51-SB-123       [ ] 
+#REAC1          N,2N
+#PRODUCT        51-SB-122
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=7
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9211278(1.3e7) Data[6]*1.0327758(1.8e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.962%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 51123   3  16 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 51-SB-123(N,2N)51-SB-122,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (51-SB-123(N,2N)51-SB-122,,SIG)
+#+               #[1]#DECAY-DATA (51-SB-122-G,2.68D,DG,564.,0.70) #Ix_old=0.7
+#+                a1=0.7/0.7068;              #[1]#DECAY-DATA: correction to new 564.24 keV gamma-yield per decay Sb-122-g Ix_new=0.7068
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99037915
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        10844003    0.953516    0.962778    0.990379    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          10844003    CS          7           0.912266    1.02284     0.953516    -4.65%      1.09617     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 51123   3  16 A    1.28E7 200000.01.5234839 0.122727                                       S.K.Ghorai*,         (80)10844  3 .01622649                   0.122727 1.07                       8.06     8.06    0.133    0.008    0.12251  1.2700-3 0.91226580.7348923
+    1 51123   3  16 A    1.34E7 200000.01.48816820.1182588                                       S.K.Ghorai*,         (80)10844  3 .01138444                  0.1182588 0.76                       7.95     7.95    0.13     0.008    0.12546  9.9781E-40.955792 0.758069
+    1 51123   3  16 A    1.44E7 200000.01.5415617 0.126983                                       S.K.Ghorai*,         (80)10844  3  6.6188-3                   0.126983 0.43                       8.24     8.24    0.122    0.007    0.11686  4.6452-4 0.94865330.7790369
+    1 51123   3  16 A    1.53E7 100000.01.45011950.1121044                                       S.K.Ghorai*,         (80)10844  3  6.7419-3                  0.1121044 0.46                       7.73     7.73    0.1105   0.007    0.10351565.4527-4 0.92777960.7186179
+    1 51123   3  16 A    1.61E7 100000.01.48195280.1191334                                       S.K.Ghorai*,         (80)10844  3 .01052947                  0.1191334 0.71                       8.04     8.04    0.0935   0.0056   .090849756.4015-4 0.96230690.7735938
+    1 51123   3  16 A     1.7E7 200000.01.5299112 0.120197                                       S.K.Ghorai*,         (80)10844  3 .01245771                   0.120197 0.81                       7.86     7.86    .080000010.005    .076332226.2156-4 0.94497290.7419567
+    1 51123   3  16 A    1.81E7 200000.01.55471620.1227332                                       S.K.Ghorai*,         (80)10844  3 .01461178                  0.1227332 0.94                       7.89     7.89    0.058    0.0036   0.059901 5.5056-4 1.02283950.807455
+#/C5DATA        0
+#/DATASET       10844003 
+#/C5.2.3        1               3               3               0               21              

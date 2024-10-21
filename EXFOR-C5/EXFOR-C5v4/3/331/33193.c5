@@ -1,0 +1,74 @@
+#C5.2.3
+#DATASET        33193002   20231116
+#SUBENT         33193002   20231116
+#ENTRY          33193      20231116
+#TITLE          Measurement of neutron capture cross section on 71Ga
+#+              at 2.15 and 3.19 MeV and uncertainty propagation and
+#+              covariance analysis
+#AUTHORS        R.Pachuau, A.Gandhi, N.Singh, A.Kumar, M.Mehta,
+#+              S.V.Suryanarayana, L.S.Danu, B.K.Nayak, B.Lalremruata
+#AUTHOR1        R.Pachuau+
+#YEAR           2023
+#X4REF1         J,CPH/C,47,074001,2023
+#REFERENCE1     Jour: Chinese Physics C, Vol.47, p.074001 (2023)
+#DATE           20231116
+#INSTITUTE      3INDBHU,3INDTRM,3RUMBUC,3INDMNP,3INDIND
+#METHOD         ACTIV
+#REACTION       31-GA-71(N,G)31-GA-72,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           31071            
+#TARGET         31071           [ ]             31-GA-71        [ ] 
+#REAC1          N,G
+#PRODUCT        31-GA-72
+#C4ReaCode      (N,G),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0023088(2.2e6) Data[1]*1.0013539(3.2e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 31071   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,INL)49-IN-115-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$in115ninl}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 31-GA-71(N,G)31-GA-72,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,INL)49-IN-115-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$in115ninl;          #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        33193002    1.00183     1.00183     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          33193002    CS          2           1.00135     1.00231     1.00183     +0.183%     1.00231     [EN,MONIT,MONIT-ERR]::in115ninl
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 31071   3 102   2150000.0 300000.0 9.1611-3 8.1555-4                                       R.Pachuau*,          (23)33193  2  8.1618-4                   8.1555-4 8.91                       8.90     8.90    0.3034   .007979420.30410058.0215-3 1.00230881.0025679
+    1 31071   3 102   3190000.0 240000.0 5.7478-3 5.0351-4                                       R.Pachuau*,          (23)33193  2  5.0302-4                   5.0351-4 8.75                       8.76     8.76    0.33739  8.0299-3 0.33784688.0424-3 1.00135391.0013685
+#/C5DATA        0
+#/DATASET       33193002 
+#/C5.2.3        1               1               1               0               2               

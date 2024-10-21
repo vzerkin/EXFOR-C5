@@ -1,0 +1,508 @@
+#C5.2.3
+#DATASET        O0030002   20200815
+#SUBENT         O0030002   20200815
+#ENTRY          O0030      20200815
+#TITLE          Fissionability of nuclides in the thorium region at
+#+              excitation energies to 100 MeV
+#AUTHORS        J.J.Hogan,E.Gadioli,E.Gadioli-erba,C.Chung
+#AUTHOR1        J.J.Hogan+
+#YEAR           1979
+#X4REF1         J,PR/C,20,1831,1979
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.20, p.1831 (1979)
+#DATE           20200815
+#INSTITUTE      1USABRK,2ITYMIL,1CANMCG
+#METHOD         INTB,BCINT,SITA,CHSEP
+#REACTION       90-TH-232(P,X)90-TH-231,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          P,X
+#PRODUCT        90-TH-231
+#C4ReaCode      (P,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+3.25%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-8.81%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 90232   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 90-TH-232(P,X)90-TH-231,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (90-TH-232(P,X)90-TH-231,,SIG)
+#+               #[1]#DECAY-DATA (90-TH-231,25.52HR,DG,163.1/165.,0.00159) #Ix_old=0.00159
+#+                a1=0.00159/0.00154;         #[1]#DECAY-DATA: correction to new 163.101 keV gamma-yield per decay Th-231 Ix_new=0.00154
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0324676
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (29-CU-65(P,X)29-CU-64,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-64,12.82HR,AR,511.,0.386) #Im_old=0.386
+#+                a2=0.352/0.386;             #[2]#DECAY-MON: correction to new 511 keV gamma-yield per decay Cu-64 Im_new=0.352
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.9119171
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O0030002    0.941525    -           1.03247     0.911917
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O0030002    CS          12          0.941525    0.941525    0.941525    -5.85%      1.06211     exfor::B0023001_cu65px
+#C5DATA         12
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 90232   39000       1.3E72000000.0 2.7304-3.00225966           90231.9                     J.J.Hogan*,          (79)O0030  2                            .00225966                            82.8     82.8                                        0.94152490.9415248
+ 1001 90232   39000       1.8E72000000.0.04312184 5.2725-3           90231.9                     J.J.Hogan*,          (79)O0030  2                             5.2725-3                            12.2     12.2                                        0.94152490.9415249
+ 1001 90232   39000       2.0E72000000.0.09085716.01054508           90231.9                     J.J.Hogan*,          (79)O0030  2                            .01054508                            11.6     11.6                                        0.94152490.9415248
+ 1001 90232   39000       3.0E72000000.00.1057332.01158076           90231.9                     J.J.Hogan*,          (79)O0030  2                            .01158076                            11       11                                          0.94152490.9415248
+ 1001 90232   39000       4.0E72000000.00.0885975.01120415           90231.9                     J.J.Hogan*,          (79)O0030  2                            .01120415                            12.6     12.6                                        0.94152490.9415249
+ 1001 90232   39000       4.5E72000000.00.1031911.01252228           90231.9                     J.J.Hogan*,          (79)O0030  2                            .01252228                            12.1     12.1                                        0.94152490.9415249
+ 1001 90232   39000       4.9E72000000.0.09283436.01054508           90231.9                     J.J.Hogan*,          (79)O0030  2                            .01054508                            11.4     11.4                                        0.94152490.9415248
+ 1001 90232   39000       5.1E72000000.0.08078284.01534685           90231.9                     J.J.Hogan*,          (79)O0030  2                            .01534685                            19       19                                          0.94152490.9415248
+ 1001 90232   39000       5.7E72000000.0.09000978.01158076           90231.9                     J.J.Hogan*,          (79)O0030  2                            .01158076                            12.9     12.9                                        0.94152490.9415248
+ 1001 90232   39000       7.0E72000000.0.09415249.01271059           90231.9                     J.J.Hogan*,          (79)O0030  2                            .01271059                            13.5     13.5                                        0.94152490.9415249
+ 1001 90232   39000       7.5E72000000.0.08332496 9.4152-3           90231.9                     J.J.Hogan*,          (79)O0030  2                             9.4152-3                            11.3     11.3                                        0.94152490.9415249
+ 1001 90232   39000       9.0E72000000.00.0658126 7.5322-3           90231.9                     J.J.Hogan*,          (79)O0030  2                             7.5322-3                            11.4     11.4                                        0.94152490.9415249
+#/C5DATA        0
+#/DATASET       O0030002 
+#DATASET        O0030003   20200815
+#SUBENT         O0030003   20200815
+#ENTRY          O0030      20200815
+#TITLE          Fissionability of nuclides in the thorium region at
+#+              excitation energies to 100 MeV
+#AUTHORS        J.J.Hogan,E.Gadioli,E.Gadioli-erba,C.Chung
+#AUTHOR1        J.J.Hogan+
+#YEAR           1979
+#X4REF1         J,PR/C,20,1831,1979
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.20, p.1831 (1979)
+#DATE           20200815
+#INSTITUTE      1USABRK,2ITYMIL,1CANMCG
+#METHOD         INTB,BCINT,SITA,CHSEP
+#REACTION       90-TH-232(P,X)90-TH-228,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          P,X
+#PRODUCT        90-TH-228
+#C4ReaCode      (P,X),SIG
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-8.81%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 90232   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 90-TH-232(P,X)90-TH-228,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (29-CU-65(P,X)29-CU-64,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-64,12.82HR,AR,511.,0.386) #Im_old=0.386
+#+                a2=0.352/0.386;             #[2]#DECAY-MON: correction to new 511 keV gamma-yield per decay Cu-64 Im_new=0.352
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.9119171
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O0030003    0.911917    -           -           0.911917
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O0030003    CS          8           0.911917    0.911917    0.911917    -8.81%      1.09659     exfor::B0023001_cu65px
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 90232   39000       4.0E72000000.0 6.0187-3 3.8301-3           90228.9                     J.J.Hogan*,          (79)O0030  3                             3.8301-3                            63.6     63.6                                        0.91191710.911917
+ 1001 90232   39000       4.5E72000000.0.03337616 5.9275-3           90228.9                     J.J.Hogan*,          (79)O0030  3                             5.9275-3                            17.8     17.8                                        0.91191710.9119171
+ 1001 90232   39000       4.9E72000000.0.03355855 6.0187-3           90228.9                     J.J.Hogan*,          (79)O0030  3                             6.0187-3                            17.9     17.9                                        0.91191710.9119172
+ 1001 90232   39000       5.1E72000000.0.03273783 5.9275-3           90228.9                     J.J.Hogan*,          (79)O0030  3                             5.9275-3                            18.1     18.1                                        0.91191710.9119171
+ 1001 90232   39000       5.7E72000000.0.05307358 9.3016-3           90228.9                     J.J.Hogan*,          (79)O0030  3                             9.3016-3                            17.5     17.5                                        0.91191710.9119171
+ 1001 90232   39000       7.0E72000000.0.05435026 5.9275-3           90228.9                     J.J.Hogan*,          (79)O0030  3                             5.9275-3                            10.9     10.9                                        0.91191710.9119171
+ 1001 90232   39000       7.5E72000000.0.05754197 8.2073-3           90228.9                     J.J.Hogan*,          (79)O0030  3                             8.2073-3                            14.3     14.3                                        0.91191710.911917
+ 1001 90232   39000       9.0E72000000.0.03903005 6.7482-3           90228.9                     J.J.Hogan*,          (79)O0030  3                             6.7482-3                            17.3     17.3                                        0.91191710.9119171
+#/C5DATA        0
+#/DATASET       O0030003 
+#DATASET        O0030004   20200815
+#SUBENT         O0030004   20200815
+#ENTRY          O0030      20200815
+#TITLE          Fissionability of nuclides in the thorium region at
+#+              excitation energies to 100 MeV
+#AUTHORS        J.J.Hogan,E.Gadioli,E.Gadioli-erba,C.Chung
+#AUTHOR1        J.J.Hogan+
+#YEAR           1979
+#X4REF1         J,PR/C,20,1831,1979
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.20, p.1831 (1979)
+#DATE           20200815
+#INSTITUTE      1USABRK,2ITYMIL,1CANMCG
+#METHOD         INTB,BCINT,SITA,CHSEP
+#REACTION       90-TH-232(P,X)90-TH-227,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          P,X
+#PRODUCT        90-TH-227
+#C4ReaCode      (P,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-10.1%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-8.81%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 90232   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 90-TH-232(P,X)90-TH-227,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (90-TH-232(P,X)90-TH-227,,SIG)
+#+               #[1]#DECAY-DATA (90-TH-227,18.718D,DG,234.9/236.,0.116) #Ix_old=0.116
+#+                a1=0.116/0.129;             #[1]#DECAY-DATA: correction to new 235.96 keV gamma-yield per decay Th-227 Ix_new=0.129
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.8992248
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (29-CU-65(P,X)29-CU-64,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-64,12.82HR,AR,511.,0.386) #Im_old=0.386
+#+                a2=0.352/0.386;             #[2]#DECAY-MON: correction to new 511 keV gamma-yield per decay Cu-64 Im_new=0.352
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.9119171
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O0030004    0.820018    -           0.899225    0.911917
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O0030004    CS          8           0.820018    0.820018    0.820018    -18.0%      1.21948     exfor::B0023001_cu65px
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 90232   39000       4.5E72000000.0 6.5601-4 4.1001-4           90227.9                     J.J.Hogan*,          (79)O0030  4                             4.1001-4                            62.5     62.5                                        0.82001850.8200185
+ 1001 90232   39000       4.9E72000000.0 3.6901-3 9.8402-4           90227.9                     J.J.Hogan*,          (79)O0030  4                             9.8402-4                            26.7     26.7                                        0.82001850.8200184
+ 1001 90232   39000       5.1E72000000.0 6.3961-3 1.0660-3           90227.9                     J.J.Hogan*,          (79)O0030  4                             1.0660-3                            16.7     16.7                                        0.82001850.8200184
+ 1001 90232   39000       5.7E72000000.0.01918843 2.3781-3           90227.9                     J.J.Hogan*,          (79)O0030  4                             2.3781-3                            12.4     12.4                                        0.82001850.8200185
+ 1001 90232   39000       6.4E72000000.0.02271451 2.4601-3           90227.9                     J.J.Hogan*,          (79)O0030  4                             2.4601-3                            10.8     10.8                                        0.82001850.8200184
+ 1001 90232   39000       7.0E72000000.0.03263674 5.3301-3           90227.9                     J.J.Hogan*,          (79)O0030  4                             5.3301-3                            16.3     16.3                                        0.82001850.8200185
+ 1001 90232   39000       7.5E72000000.0.03230873 3.7721-3           90227.9                     J.J.Hogan*,          (79)O0030  4                             3.7721-3                            11.7     11.7                                        0.82001850.8200184
+ 1001 90232   39000       9.0E72000000.00.0264046.00311607           90227.9                     J.J.Hogan*,          (79)O0030  4                            .00311607                            11.8     11.8                                        0.82001850.8200185
+#/C5DATA        0
+#/DATASET       O0030004 
+#DATASET        O0030005   20200815
+#SUBENT         O0030005   20200815
+#ENTRY          O0030      20200815
+#TITLE          Fissionability of nuclides in the thorium region at
+#+              excitation energies to 100 MeV
+#AUTHORS        J.J.Hogan,E.Gadioli,E.Gadioli-erba,C.Chung
+#AUTHOR1        J.J.Hogan+
+#YEAR           1979
+#X4REF1         J,PR/C,20,1831,1979
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.20, p.1831 (1979)
+#DATE           20200815
+#INSTITUTE      1USABRK,2ITYMIL,1CANMCG
+#METHOD         INTB,BCINT,SITA,CHSEP
+#REACTION       90-TH-232(P,X)90-TH-226,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          P,X
+#PRODUCT        90-TH-226
+#C4ReaCode      (P,X),SIG
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-8.81%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 90232   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 90-TH-232(P,X)90-TH-226,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (29-CU-65(P,X)29-CU-64,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-64,12.82HR,AR,511.,0.386) #Im_old=0.386
+#+                a2=0.352/0.386;             #[2]#DECAY-MON: correction to new 511 keV gamma-yield per decay Cu-64 Im_new=0.352
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.9119171
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O0030005    0.911917    -           -           0.911917
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O0030005    CS          5           0.911917    0.911917    0.911917    -8.81%      1.09659     exfor::B0023001_cu65px
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 90232   39000       5.1E72000000.0 1.4591-3 1.0943-3           90226.9                     J.J.Hogan*,          (79)O0030  5                             1.0943-3                            75       75                                          0.91191710.9119171
+ 1001 90232   39000       5.7E72000000.0 3.4653-3 9.1192-4           90226.9                     J.J.Hogan*,          (79)O0030  5                             9.1192-4                            26.3     26.3                                        0.91191710.9119171
+ 1001 90232   39000       7.0E72000000.0.01915026 2.4622-3           90226.9                     J.J.Hogan*,          (79)O0030  5                             2.4622-3                            12.9     12.9                                        0.91191710.9119172
+ 1001 90232   39000       7.5E72000000.0.02453057 2.3710-3           90226.9                     J.J.Hogan*,          (79)O0030  5                             2.3710-3                            9.67     9.67                                        0.91191710.9119172
+ 1001 90232   39000       9.0E72000000.00.0219772 2.1886-3           90226.9                     J.J.Hogan*,          (79)O0030  5                             2.1886-3                            9.96     9.96                                        0.91191710.9119171
+#/C5DATA        0
+#/DATASET       O0030005 
+#DATASET        O0030006   20200815
+#SUBENT         O0030006   20200815
+#ENTRY          O0030      20200815
+#TITLE          Fissionability of nuclides in the thorium region at
+#+              excitation energies to 100 MeV
+#AUTHORS        J.J.Hogan,E.Gadioli,E.Gadioli-erba,C.Chung
+#AUTHOR1        J.J.Hogan+
+#YEAR           1979
+#X4REF1         J,PR/C,20,1831,1979
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.20, p.1831 (1979)
+#DATE           20200815
+#INSTITUTE      1USABRK,2ITYMIL,1CANMCG
+#METHOD         INTB,BCINT,SITA,CHSEP
+#REACTION       90-TH-232(P,X)88-RA-225,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          P,X
+#PRODUCT        88-RA-225
+#C4ReaCode      (P,X),SIG
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-8.81%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 90232   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 90-TH-232(P,X)88-RA-225,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (29-CU-65(P,X)29-CU-64,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-64,12.82HR,AR,511.,0.386) #Im_old=0.386
+#+                a2=0.352/0.386;             #[2]#DECAY-MON: correction to new 511 keV gamma-yield per decay Cu-64 Im_new=0.352
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.9119171
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O0030006    0.911917    -           -           0.911917
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O0030006    CS          7           0.911917    0.911917    0.911917    -8.81%      1.09659     exfor::B0023001_cu65px
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 90232   39000       5.1E72000000.0 1.8238-5 9.1192-6           88225.9                     J.J.Hogan*,          (79)O0030  6                             9.1192-6                            50       50                                          0.91191710.9119171
+ 1001 90232   39000       5.7E72000000.0 4.5596-5 2.7358-5           88225.9                     J.J.Hogan*,          (79)O0030  6                             2.7358-5                            60       60                                          0.91191710.9119172
+ 1001 90232   39000       6.4E72000000.0 1.7326-4 3.6477-5           88225.9                     J.J.Hogan*,          (79)O0030  6                             3.6477-5                            21.1     21.1                                        0.91191710.9119171
+ 1001 90232   39000       7.0E72000000.0 2.0974-4 4.5596-5           88225.9                     J.J.Hogan*,          (79)O0030  6                             4.5596-5                            21.7     21.7                                        0.91191710.9119171
+ 1001 90232   39000       7.5E72000000.0 3.0093-4 4.5596-5           88225.9                     J.J.Hogan*,          (79)O0030  6                             4.5596-5                            15.2     15.2                                        0.91191710.911917
+ 1001 90232   39000       8.5E72000000.0 4.0124-4 7.2953-5           88225.9                     J.J.Hogan*,          (79)O0030  6                             7.2953-5                            18.2     18.2                                        0.91191710.9119171
+ 1001 90232   39000       9.0E72000000.0 4.1036-4 7.2953-5           88225.9                     J.J.Hogan*,          (79)O0030  6                             7.2953-5                            17.8     17.8                                        0.91191710.9119171
+#/C5DATA        0
+#/DATASET       O0030006 
+#DATASET        O0030007   20200815
+#SUBENT         O0030007   20200815
+#ENTRY          O0030      20200815
+#TITLE          Fissionability of nuclides in the thorium region at
+#+              excitation energies to 100 MeV
+#AUTHORS        J.J.Hogan,E.Gadioli,E.Gadioli-erba,C.Chung
+#AUTHOR1        J.J.Hogan+
+#YEAR           1979
+#X4REF1         J,PR/C,20,1831,1979
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.20, p.1831 (1979)
+#DATE           20200815
+#INSTITUTE      1USABRK,2ITYMIL,1CANMCG
+#METHOD         INTB,BCINT,SITA,CHSEP
+#REACTION       90-TH-232(P,X)88-RA-224,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          P,X
+#PRODUCT        88-RA-224
+#C4ReaCode      (P,X),SIG
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-8.81%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 90232   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 90-TH-232(P,X)88-RA-224,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (29-CU-65(P,X)29-CU-64,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-64,12.82HR,AR,511.,0.386) #Im_old=0.386
+#+                a2=0.352/0.386;             #[2]#DECAY-MON: correction to new 511 keV gamma-yield per decay Cu-64 Im_new=0.352
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.9119171
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O0030007    0.911917    -           -           0.911917
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O0030007    CS          3           0.911917    0.911917    0.911917    -8.81%      1.09659     exfor::B0023001_cu65px
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 90232   39000       7.5E72000000.0 1.8238-4 1.5503-4           88224.9                     J.J.Hogan*,          (79)O0030  7                             1.5503-4                            85       85                                          0.91191710.9119171
+ 1001 90232   39000       8.5E72000000.0 4.8332-4 2.2798-4           88224.9                     J.J.Hogan*,          (79)O0030  7                             2.2798-4                            47.2     47.2                                        0.91191710.9119171
+ 1001 90232   39000       9.0E72000000.0 5.6539-4 2.0062-4           88224.9                     J.J.Hogan*,          (79)O0030  7                             2.0062-4                            35.5     35.5                                        0.91191710.911917
+#/C5DATA        0
+#/DATASET       O0030007 
+#DATASET        O0030008   20200815
+#SUBENT         O0030008   20200815
+#ENTRY          O0030      20200815
+#TITLE          Fissionability of nuclides in the thorium region at
+#+              excitation energies to 100 MeV
+#AUTHORS        J.J.Hogan,E.Gadioli,E.Gadioli-erba,C.Chung
+#AUTHOR1        J.J.Hogan+
+#YEAR           1979
+#X4REF1         J,PR/C,20,1831,1979
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.20, p.1831 (1979)
+#DATE           20200815
+#INSTITUTE      1USABRK,2ITYMIL,1CANMCG
+#METHOD         INTB,BCINT,SITA,CHSEP
+#REACTION       90-TH-232(P,X)88-RA-223,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          P,X
+#PRODUCT        88-RA-223
+#C4ReaCode      (P,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-7.14%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]-8.81%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 90232   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 90-TH-232(P,X)88-RA-223,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (90-TH-232(P,X)88-RA-223,,SIG)
+#+               #[1]#DECAY-DATA (88-RA-223,11.434D,DG,154.2,0.0559) #Ix_old=0.0559
+#+                a1=0.0559/0.0602;           #[1]#DECAY-DATA: correction to new 154.208 keV gamma-yield per decay Ra-223 Ix_new=0.0602
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.92857146
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (29-CU-65(P,X)29-CU-64,,SIG)
+#+               #[2]#DECAY-MON  (29-CU-64,12.82HR,AR,511.,0.386) #Im_old=0.386
+#+                a2=0.352/0.386;             #[2]#DECAY-MON: correction to new 511 keV gamma-yield per decay Cu-64 Im_new=0.352
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=0.9119171
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O0030008    0.846780    -           0.928571    0.911917
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O0030008    CS          4           0.846780    0.846780    0.846780    -15.3%      1.18094     exfor::B0023001_cu65px
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 90232   39000       7.0E72000000.0 3.3871-5 2.5403-5           88223.9                     J.J.Hogan*,          (79)O0030  8                             2.5403-5                            75       75                                          0.84678020.8467802
+ 1001 90232   39000       7.5E72000000.0 2.4557-4 6.7742-5           88223.9                     J.J.Hogan*,          (79)O0030  8                             6.7742-5                            27.6     27.6                                        0.84678020.8467802
+ 1001 90232   39000       8.5E72000000.0 4.0645-4 1.0161-4           88223.9                     J.J.Hogan*,          (79)O0030  8                             1.0161-4                            25       25                                          0.84678020.8467802
+ 1001 90232   39000       9.0E72000000.0 4.1492-4 1.0161-4           88223.9                     J.J.Hogan*,          (79)O0030  8                             1.0161-4                            24.5     24.5                                        0.84678020.8467802
+#/C5DATA        0
+#/DATASET       O0030008 
+#/C5.2.3        1               7               7               0               47              

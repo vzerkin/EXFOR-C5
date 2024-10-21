@@ -1,0 +1,92 @@
+#C5M.2.3
+#DATASET        23606002   20230628
+#SUBENT         23606002   20230628
+#ENTRY          23606      20230628
+#TITLE          241Am Neutron Capture Cross Section in the keV region
+#+              using Si and Fe-filtered neutron beams
+#AUTHORS        G.Rovira,A.Kimura,S.Nakamura,S.Endo,O.Iwamoto,
+#+              N.Iwamoto,T.Katabuchi,Y.Kodama,H.Nakano
+#AUTHOR1        G.Rovira+
+#YEAR           2023
+#X4REF1         J,NST,60,489,2023
+#REFERENCE1     Jour: Jour. of Nuclear Science and Technology, Vol.60, p.489 (2023)
+#DATE           20230628
+#INSTITUTE      2JPNJAE,2JPNTIT
+#METHOD         FNB,TOF
+#REACTION       95-AM-241(N,G)95-AM-242,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           95241            
+#TARGET         95241           [ ]             95-AM-241       [ ] 
+#REAC1          N,G
+#PRODUCT        95-AM-242
+#C4ReaCode      (N,G),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0031832(2.4e4) Data[2]*1.0111336(1.3e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 95241   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 95-AM-241(N,G)95-AM-242,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23606002    1.01171     1.01171     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23606002    CS          3           1.00318     1.02082     1.01171     +1.17%      1.02082     [EN,MONIT,MONIT-ERR]::au197ng
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 95241   3 102     23500.0   2100.02.72865840.2898845                                       G.Rovira*,           (23)23606  2 0.2917366                  0.2898845 10.7                       10.6     10.6    0.644    0.01288  0.64605  .011538411.00318320.9996017
+    1 95241   3 102     51500.0   9700.0 2.1845450.2646702                                       G.Rovira*,           (23)23606  2 0.2636394                  0.2646702 12.1                       12.1     12.1    0.428    0.00856  0.436909 .007786321.02081541.0179622
+    1 95241   3 102    127700.0  15700.01.33469630.1007927                                       G.Rovira*,           (23)23606  2 0.1033994                  0.1007927 7.75                       7.55     7.55    0.2875   0.00575  0.29070095.5436-3 1.01113361.0079271
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         1           1.0E-5      2.0E7       0.05        
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+23500.      23500.      2.72866     10.69        100
+51500.      51500.      2.18455     12.12        72 100
+127700.     127700.     1.3347      7.75         50 68 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       23606002 
+#/C5M.2.3       1               1               1               0               3               

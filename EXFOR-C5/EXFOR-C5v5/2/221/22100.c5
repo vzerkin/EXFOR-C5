@@ -1,0 +1,510 @@
+#C5M.2.3
+#DATASET        22100002   19881216
+#SUBENT         22100002   19881216
+#ENTRY          22100      19881216
+#TITLE          -SILVER CROSS SECTIONS FOR 14 MEV NEUTRONS.
+#AUTHORS        T.B.RYVES,P.KOLKOWSKI,V.E.LEWIS
+#AUTHOR1        T.B.Ryves+
+#YEAR           1988
+#X4REF1         J,JP/G,14,77,8801
+#REFERENCE1     Jour: Jour. of Physics, Part G (Nucl.and Part.Phys.), Vol.14, p.77 (1988)
+#DATE           19881216
+#INSTITUTE      2UK NPL
+#METHOD         ACTIV
+#REACTION       47-AG-107(N,2N)47-AG-106-G,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           47107            
+#TARGET         47107           [ ]             47-AG-107       [ ] 
+#REAC1          N,2N
+#PRODUCT        47-AG-106-G
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=2
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9883628(1.4e7) Data[1]*0.9871707(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 47107   3  16G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$fe56np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 47-AG-107(N,2N)47-AG-106-G,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$fe56np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22100002    0.987767    0.987767    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22100002    CS          2           0.987171    0.988363    0.987767    -1.22%      1.01300     [EN,MONIT,MONIT-ERR]::fe56np
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 47107   3  16G     1.43E7          0.8035390.0369003                                       T.B.RYVES*,          (88)22100  2  8.6204-3                  0.0369003 1.07                       4.59     4.59    0.113    0.001    0.111685 0.00120270.98836280.9973055
+    1 47107   3  16G    1.467E7         0.8193517.03537641                                       T.B.RYVES*,          (88)22100  2  9.2314-3                  .03537641 1.13                       4.32     4.32    0.1089   7.0E-4   0.10750291.2129-3 0.98717071.0107547
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.43E7      1.467E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.43E7      1.43E7      0.803539    4.59         100
+1.467E7     1.467E7     0.819352    4.32          3 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22100002 
+#DATASET        22100003   19881216
+#SUBENT         22100003   19881216
+#ENTRY          22100      19881216
+#TITLE          -SILVER CROSS SECTIONS FOR 14 MEV NEUTRONS.
+#AUTHORS        T.B.RYVES,P.KOLKOWSKI,V.E.LEWIS
+#AUTHOR1        T.B.Ryves+
+#YEAR           1988
+#X4REF1         J,JP/G,14,77,8801
+#REFERENCE1     Jour: Jour. of Physics, Part G (Nucl.and Part.Phys.), Vol.14, p.77 (1988)
+#DATE           19881216
+#INSTITUTE      2UK NPL
+#METHOD         ACTIV
+#REACTION       47-AG-107(N,2N)47-AG-106-G,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           47107            
+#TARGET         47107           [ ]             47-AG-107       [ ] 
+#REAC1          N,2N
+#PRODUCT        47-AG-106-G
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.64%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9871707(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 47107   3  16G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             Point: XS(b)=0.1089(0.64%)  EN-NRM(eV):1.467E7
+#M1             Point: XS(b)=0.1075029(1.13%)  EN-NRM(eV):1.467E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 47-AG-107(N,2N)47-AG-106-G,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              #[0]#En=1.467E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1089
+#+              a1=recom$fe56np[EN];          #[0]#new monitor point [14.67MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22100003    0.987171    0.987171    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22100003    CS          1           0.987171    0.987171    0.987171    -1.28%      1.01300     [MONIT]::fe56np
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 47107   3  16G    1.467E7         0.7956597.01923983                                       T.B.RYVES*,          (88)22100  3  8.9645-3                  .01923983 1.13                       2.42     2.42    0.1089   7.0E-4   0.10750291.2129-3 0.98717071.0688794
+#/C5DATA        0
+#/DATASET       22100003 
+#DATASET        22100004   19881216
+#SUBENT         22100004   19881216
+#ENTRY          22100      19881216
+#TITLE          -SILVER CROSS SECTIONS FOR 14 MEV NEUTRONS.
+#AUTHORS        T.B.RYVES,P.KOLKOWSKI,V.E.LEWIS
+#AUTHOR1        T.B.Ryves+
+#YEAR           1988
+#X4REF1         J,JP/G,14,77,8801
+#REFERENCE1     Jour: Jour. of Physics, Part G (Nucl.and Part.Phys.), Vol.14, p.77 (1988)
+#DATE           19881216
+#INSTITUTE      2UK NPL
+#METHOD         ACTIV
+#REACTION       47-AG-107(N,2N)47-AG-106-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           47107            
+#TARGET         47107           [ ]             47-AG-107       [ ] 
+#REAC1          N,2N
+#PRODUCT        47-AG-106-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.88%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9883628(1.4e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.227%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 47107   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             Point: XS(b)=0.113(0.88%)  EN-NRM(eV):1.43E7
+#M1             Point: XS(b)=0.111685(1.08%)  EN-NRM(eV):1.43E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 47-AG-107(N,2N)47-AG-106-M,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              #[0]#En=1.43E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.113
+#+              a1=recom$fe56np[EN];          #[0]#new monitor point [14.3MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (47-AG-107(N,2N)47-AG-106-M,,SIG)
+#+               #[1]#DECAY-DATA (47-AG-106-M,8.28D,DG,512.,.882) #Ix_old=0.882
+#+                a1=0.882/0.88;              #[1]#DECAY-DATA: correction to new 511.85 keV gamma-yield per decay Ag-106-m Ix_new=0.88
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0022727
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22100004    0.990609    0.988363    1.00227     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22100004    CS          1           0.990609    0.990609    0.990609    -0.939%     1.00948     [MONIT]::fe56np
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 47107   3  16M     1.43E7         0.6022903.02210452                                       T.B.RYVES*,          (88)22100  4  6.4614-3                  .02210452 1.07                       3.67     3.67    0.113    0.001    0.111685 0.00120270.990609 1.0047508
+#/C5DATA        0
+#/DATASET       22100004 
+#DATASET        22100005   19881216
+#SUBENT         22100005   19881216
+#ENTRY          22100      19881216
+#TITLE          -SILVER CROSS SECTIONS FOR 14 MEV NEUTRONS.
+#AUTHORS        T.B.RYVES,P.KOLKOWSKI,V.E.LEWIS
+#AUTHOR1        T.B.Ryves+
+#YEAR           1988
+#X4REF1         J,JP/G,14,77,8801
+#REFERENCE1     Jour: Jour. of Physics, Part G (Nucl.and Part.Phys.), Vol.14, p.77 (1988)
+#DATE           19881216
+#INSTITUTE      2UK NPL
+#METHOD         ACTIV
+#REACTION       47-AG-107(N,2N)47-AG-106-M/G,,SIG/RAT
+#C4Reaction     (N,2N),SIG/RAT
+#ReactionType   CS
+#MF             203
+#MT             16
+#PROJ           1
+#TARG           47107            
+#TARGET         47107           [ ]             47-AG-107       [ ] 
+#REAC1          N,2N
+#PRODUCT        47-AG-106-M/G
+#C4ReaCode      (N,2N),SIG/RAT
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.88%
+#Quantity       Cross section ratio
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 47107 203  16/  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV   NO-DIM   NO-DIM                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 47107 203  16/     1.43E7             0.765    0.004           47106.9                     T.B.RYVES,           (88)22100  5  0.006732                      0.004 0.88                       0.52     0.52
+#/C5DATA        0
+#/DATASET       22100005 
+#DATASET        22100006   19881216
+#SUBENT         22100006   19881216
+#ENTRY          22100      19881216
+#TITLE          -SILVER CROSS SECTIONS FOR 14 MEV NEUTRONS.
+#AUTHORS        T.B.RYVES,P.KOLKOWSKI,V.E.LEWIS
+#AUTHOR1        T.B.Ryves+
+#YEAR           1988
+#X4REF1         J,JP/G,14,77,8801
+#REFERENCE1     Jour: Jour. of Physics, Part G (Nucl.and Part.Phys.), Vol.14, p.77 (1988)
+#DATE           19881216
+#INSTITUTE      2UK NPL
+#METHOD         ACTIV
+#REACTION       47-AG-109(N,2N)47-AG-108-G,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           47109            
+#TARGET         47109           [ ]             47-AG-109       [ ] 
+#REAC1          N,2N
+#PRODUCT        47-AG-108-G
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=2
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9883628(1.4e7) Data[1]*0.9871707(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 47109   3  16G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$fe56np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 47-AG-109(N,2N)47-AG-108-G,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$fe56np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22100006    0.987767    0.987767    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22100006    CS          2           0.987171    0.988363    0.987767    -1.22%      1.01300     [EN,MONIT,MONIT-ERR]::fe56np
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 47109   3  16G     1.43E7         0.8381316.03106784                                       T.B.RYVES*,          (88)22100  6  8.9915-3                  .03106784 1.07                       3.71     3.71    0.113    0.001    0.111685 0.00120270.98836281.0021886
+    1 47109   3  16G    1.467E7         0.8311979.03060159                                       T.B.RYVES*,          (88)22100  6 .00936487                  .03060159 1.13                       3.68     3.68    0.1089   7.0E-4   0.10750291.2129-3 0.98717071.020053
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.43E7      1.467E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.43E7      1.43E7      0.838132    3.71         100
+1.467E7     1.467E7     0.831198    3.68          4 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22100006 
+#DATASET        22100007   19881216
+#SUBENT         22100007   19881216
+#ENTRY          22100      19881216
+#TITLE          -SILVER CROSS SECTIONS FOR 14 MEV NEUTRONS.
+#AUTHORS        T.B.RYVES,P.KOLKOWSKI,V.E.LEWIS
+#AUTHOR1        T.B.Ryves+
+#YEAR           1988
+#X4REF1         J,JP/G,14,77,8801
+#REFERENCE1     Jour: Jour. of Physics, Part G (Nucl.and Part.Phys.), Vol.14, p.77 (1988)
+#DATE           19881216
+#INSTITUTE      2UK NPL
+#METHOD         ACTIV
+#REACTION       47-AG-109(N,P)46-PD-109,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           47109            
+#TARGET         47109           [ ]             47-AG-109       [ ] 
+#REAC1          N,P
+#PRODUCT        46-PD-109
+#C4ReaCode      (N,P),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.88%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9883628(1.4e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 47109   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             Point: XS(b)=0.113(0.88%)  EN-NRM(eV):1.43E7
+#M1             Point: XS(b)=0.111685(1.08%)  EN-NRM(eV):1.43E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 47-AG-109(N,P)46-PD-109,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              #[0]#En=1.43E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.113
+#+              a1=recom$fe56np[EN];          #[0]#new monitor point [14.3MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22100007    0.988363    0.988363    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22100007    CS          1           0.988363    0.988363    0.988363    -1.16%      1.01177     [MONIT]::fe56np
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 47109   3 103      1.43E7         .01522079 7.9619-4                                       T.B.RYVES*,          (88)22100  7  1.6329-4                   7.9619-4 1.07                       5.23     5.23    0.113    0.001    0.111685 0.00120270.98836280.9952335
+#/C5DATA        0
+#/DATASET       22100007 
+#DATASET        22100008   19881216
+#SUBENT         22100008   19881216
+#ENTRY          22100      19881216
+#TITLE          -SILVER CROSS SECTIONS FOR 14 MEV NEUTRONS.
+#AUTHORS        T.B.RYVES,P.KOLKOWSKI,V.E.LEWIS
+#AUTHOR1        T.B.Ryves+
+#YEAR           1988
+#X4REF1         J,JP/G,14,77,8801
+#REFERENCE1     Jour: Jour. of Physics, Part G (Nucl.and Part.Phys.), Vol.14, p.77 (1988)
+#DATE           19881216
+#INSTITUTE      2UK NPL
+#METHOD         ACTIV
+#REACTION       47-AG-109(N,A)45-RH-106-M,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           47109            
+#TARGET         47109           [ ]             47-AG-109       [ ] 
+#REAC1          N,A
+#PRODUCT        45-RH-106-M
+#C4ReaCode      (N,A),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.88%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9883628(1.4e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 47109   3 107M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             Point: XS(b)=0.113(0.88%)  EN-NRM(eV):1.43E7
+#M1             Point: XS(b)=0.111685(1.08%)  EN-NRM(eV):1.43E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 47-AG-109(N,A)45-RH-106-M,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              #[0]#En=1.43E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.113
+#+              a1=recom$fe56np[EN];          #[0]#new monitor point [14.3MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22100008    0.988363    0.988363    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22100008    CS          1           0.988363    0.988363    0.988363    -1.16%      1.01177     [MONIT]::fe56np
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 47109   3 107M     1.43E7          2.0756-3 1.9808-4                                       T.B.RYVES*,          (88)22100  8  2.2267-5                   1.9808-4 1.07                       9.54     9.54    0.113    0.001    0.111685 0.00120270.98836280.9904119
+#/C5DATA        0
+#/DATASET       22100008 
+#/C5M.2.3       1               7               7               0               9               

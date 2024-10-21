@@ -1,0 +1,71 @@
+#C5.2.3
+#DATASET        30815002   20090910
+#SUBENT         30815002   20090910
+#ENTRY          30815      20090910
+#TITLE          Applicability of the activation technique for the
+#+              neutron capture cross section measurement in the
+#+              energy range of 5 - 7 MeV
+#AUTHORS        S.Daroczy,G.Peto,N.V.Kornilov,O.A.Salnikov,
+#+               V.Ya.Baryba,A.V.Balicky,A.P.Rudenko
+#AUTHOR1        S.Daroczy+
+#YEAR           1985
+#X4REF1         W,CSIKAI,19850411
+#REFERENCE1     Priv.Comm: Csikai (1985)
+#DATE           20090910
+#INSTITUTE      3HUNKOS,4RUSFEI
+#METHOD         ACTIV
+#REACTION       49-IN-115(N,G)49-IN-116-M1+M2,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           49115            
+#TARGET         49115           [ ]             49-IN-115       [ ] 
+#REAC1          N,G
+#PRODUCT        49-IN-116-M1+M2
+#C4ReaCode      (N,G),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0142417(5.8e6) Data[2]*1.0878422(7.1e6)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 49115   3 102+  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,INL)49-IN-115-M,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$in115ninl}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 49-IN-115(N,G)49-IN-116-M1+M2,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,INL)49-IN-115-M,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$in115ninl;          #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30815002    1.03625     1.03625     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30815002    CS          3           1.00667     1.08784     1.03625     +3.63%      1.08784     [EN,MONIT]::in115ninl
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 49115   3 102+  5750000.0 140000.0 5.0712-3   0.0014                                       S.Daroczy*,          (85)30815  2                               0.0014                            27.6     27.6    0.3363            0.34108950.01091821.0142417
+    1 49115   3 102+  6480000.0129999.990.0043287    0.001                                       S.Daroczy*,          (85)30815  2                                0.001                            23.1     23.1    0.33615           0.3383936.012369861.0066743
+    1 49115   3 102+  7110000.0129999.99.00282839   0.0011                                       S.Daroczy*,          (85)30815  2                               0.0011                            38.9     38.9    0.30245           0.3290179.012648611.0878422
+#/C5DATA        0
+#/DATASET       30815002 
+#/C5.2.3        1               1               1               0               3               

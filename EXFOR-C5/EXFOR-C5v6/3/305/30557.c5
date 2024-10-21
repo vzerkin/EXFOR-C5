@@ -1,0 +1,68 @@
+#C5.2.3
+#DATASET        30557003   20090505
+#SUBENT         30557003   20090505
+#ENTRY          30557      20090505
+#TITLE          Neutron activation cross sections in some barium
+#+               isotopes at 14.2 MeV.
+#AUTHORS        N.Lakshmana Das,C.V.Srinivasa Rao,B.V.Thirumala Rao,
+#+              J.Rama Rao
+#AUTHOR1        N.Lakshmana das+
+#YEAR           1980
+#X4REF1         J,JP/G,6,1045,1980
+#REFERENCE1     Jour: Jour. of Physics, Part G (Nucl.and Part.Phys.), Vol.6, p.1045 (1980)
+#DATE           20090505
+#INSTITUTE      3INDAUW
+#METHOD         ACTIV,MOMIX
+#REACTION       56-BA-138(N,A)54-XE-135-G,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           56138            
+#TARGET         56138           [ ]             56-BA-138       [ ] 
+#REAC1          N,A
+#PRODUCT        54-XE-135-G
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+2.22%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 56138   3 107G  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 56-BA-138(N,A)54-XE-135-G,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (56-BA-138(N,A)54-XE-135-G,,SIG)
+#+               #[1]#DECAY-DATA (54-XE-135-G,9.17HR,DG,250.,0.92) #Ix_old=0.92
+#+                a1=0.92/0.9;                #[1]#DECAY-DATA: correction to new 249.794 keV gamma-yield per decay Xe-135-g Ix_new=0.9
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0222223
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30557003    1.02222     -           1.02222     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30557003    CS          1           1.02222     1.02222     1.02222     +2.22%      1.02222                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56138   3 107G     1.42E7 200000.0 2.4124-3 3.1689-4                                       N.Lakshmana Das*,    (80)30557  3  7.2373-5                   3.1689-4 3                          13.1     13.1                                        1.02222231.0222223
+#/C5DATA        0
+#/DATASET       30557003 
+#/C5.2.3        1               1               2               0               1               

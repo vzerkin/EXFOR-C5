@@ -1,0 +1,68 @@
+#C5.2.3
+#DATASET        33055002   20150112
+#SUBENT         33055002   20150112
+#ENTRY          33055      20150112
+#TITLE          Measurement and estimation of isomeric cross section
+#+              of 137Ba(n,n')137mBa reaction using accelerator based
+#+              neutron source
+#AUTHORS        M.S.Barough,B.J Patil,V.N.Bhoraskar,S.D Dhole
+#AUTHOR1        M.S.Barough+
+#YEAR           2014
+#X4REF1         J,ANE,63,209,2014
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.63, p.209 (2014)
+#DATE           20150112
+#INSTITUTE      3INDPOO,3INDIND
+#METHOD         ACTIV
+#REACTION       56-BA-137(N,INL)56-BA-137-M,,SIG,,SPA
+#C4Reaction     (N,INL),SIG,,SPA
+#ReactionType   CS
+#MF             3
+#MT             4
+#PROJ           1
+#TARG           56137            
+#TARGET         56137           [ ]             56-BA-137       [ ] 
+#REAC1          N,INL
+#PRODUCT        56-BA-137-M
+#C4ReaCode      (N,INL),SIG,,SPA
+#CompNotes      OPERATION...  Value=(Min+Max)/2  Min:EN-MIN, Max:EN-MAX
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.00%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [    1 56137   3   4M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 56-BA-137(N,INL)56-BA-137-M,,SIG,,SPA
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (56-BA-137(N,INL)56-BA-137-M,,SIG,,SPA)
+#+               #[1]#DECAY-DATA (56-BA-137-M,2.25MIN,DG,662.,0.89) #Ix_old=0.89
+#+                a1=0.89/0.899;              #[1]#DECAY-DATA: correction to new 661.657 keV gamma-yield per decay Ba-137-m Ix_new=0.899
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.98998886
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        33055002    0.989989    -           0.989989    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          33055002    CS          1           0.989989    0.989989    0.989989    -1.00%      1.01011                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56137   3   4M  2000500.01999500.08.9099E-4 6.0607-5                                       M.S.Barough*,        (14)33055  2  2.8553-5   5.4E-5                   3.20     6.06                       6.80                                        0.98998890.9899889
+#/C5DATA        0
+#/DATASET       33055002 
+#/C5.2.3        1               1               1               0               1               

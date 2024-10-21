@@ -1,0 +1,570 @@
+#C5M.2.3
+#DATASET        22363002   20120408
+#SUBENT         22363002   20120408
+#ENTRY          22363      20150823
+#TITLE          Measurement of formation cross section producing
+#+               short-lived nuclei - Mg, S, Ga, Y, Mo, Pd, Sn
+#AUTHORS        K.Yamauchi, Y.Kasugai, H.Yamamoto, A.Takahashi,
+#+               T.Iida, K.Kawade
+#AUTHOR1        K.Yamauchi+
+#YEAR           1994
+#X4REF1         S,JAERI-M-94-019,253,1994
+#REFERENCE1     Conf: JAERI-M Reports, No.94-019, p.253 (1994)
+#DATE           20120408
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       12-MG-26(N,X)11-NA-25,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           12026            
+#TARGET         12026           [ ]             12-MG-26        [ ] 
+#REAC1          N,X
+#PRODUCT        11-NA-25
+#C4ReaCode      (N,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.394%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 12026   39000 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 12-MG-26(N,X)11-NA-25,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (12-MG-26(N,X)11-NA-25,,SIG)
+#+               #[1]#DECAY-DATA (11-NA-25,59.6SEC,DG,389.7,0.1265) #Ix_old=0.1265
+#+                a1=0.1265/0.127;            #[1]#DECAY-DATA: correction to new 389.71 keV gamma-yield per decay Na-25 Ix_new=0.127
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99606293
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22363002    0.996063    -           0.996063    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22363002    CS          4           0.996063    0.996063    0.996063    -0.394%     1.00395                
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 12026   39000 S   1.365E7  90000.0 2.0917-4 1.6106-4           11025.9                     K.Yamauchi*,         (94)22363  2  1.6164-4                   1.6106-4 77.3                       77       77                                          0.99606290.996063
+    1 12026   39000 S   1.388E7  90000.0 1.0459-3 2.5101-4           11025.9                     K.Yamauchi*,         (94)22363  2  2.4997-4                   2.5101-4 23.9                       24       24                                          0.99606290.996063
+    1 12026   39000 S   1.458E7  90000.0 2.8189-3 3.1007-4           11025.9                     K.Yamauchi*,         (94)22363  2  2.9940-4                   3.1007-4 10.6                       11       11                                          0.99606290.9960629
+    1 12026   39000 S   1.487E7  90000.0 3.6257-3 3.4806-4           11025.9                     K.Yamauchi*,         (94)22363  2  3.4634-4                   3.4806-4 9.55                       9.60     9.60                                        0.99606290.9960629
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.365E7     1.487E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.365E7     1.365E7     2.0917-4    77.28        100
+1.388E7     1.388E7     1.0459-3    24.0         81 100
+1.458E7     1.458E7     2.8189-3    11.0         48 48 100
+1.487E7     1.487E7     3.6257-3    9.6          50 50 73 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22363002 
+#DATASET        22363003   20120408
+#SUBENT         22363003   20120408
+#ENTRY          22363      20150823
+#TITLE          Measurement of formation cross section producing
+#+               short-lived nuclei - Mg, S, Ga, Y, Mo, Pd, Sn
+#AUTHORS        K.Yamauchi, Y.Kasugai, H.Yamamoto, A.Takahashi,
+#+               T.Iida, K.Kawade
+#AUTHOR1        K.Yamauchi+
+#YEAR           1994
+#X4REF1         S,JAERI-M-94-019,253,1994
+#REFERENCE1     Conf: JAERI-M Reports, No.94-019, p.253 (1994)
+#DATE           20120408
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#REACTION       16-S-32(N,T)15-P-30,,SIG
+#C4Reaction     (N,T),SIG
+#ReactionType   CS
+#MF             3
+#MT             105
+#PROJ           1
+#TARG           16032            
+#TARGET         16032           [ ]             16-S-32         [ ] 
+#REAC1          N,T
+#PRODUCT        15-P-30
+#C4ReaCode      (N,T),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.145%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 16032   3 105   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 16-S-32(N,T)15-P-30,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (16-S-32(N,T)15-P-30,,SIG)
+#+               #[1]#DECAY-DATA (15-P-30,2.498MIN,AR,511.,2.) #Ix_old=2.0
+#+                a1=2.0/1.9971001;           #[1]#DECAY-DATA: correction to new 511 keV gamma-yield per decay P-30 Ix_new=1.9971001
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0014521
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22363003    1.00145     -           1.00145     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22363003    CS          5           1.00145     1.00145     1.00145     +0.145%     1.00145                
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 16032   3 105     1.365E7  90000.0 6.0087-6 1.9829-6                                       K.Yamauchi*,         (94)22363  3  1.9911-6                   1.9829-6 33.1                       33       33                                          1.00145211.0014521
+    1 16032   3 105     1.388E7  90000.0 7.4107-6 3.1125-6                                       K.Yamauchi*,         (94)22363  3  3.1204-6                   3.1125-6 42.1                       42       42                                          1.00145211.0014521
+    1 16032   3 105     1.428E7  90000.0 1.1216-5 3.7014-6                                       K.Yamauchi*,         (94)22363  3  3.7166-6                   3.7014-6 33.1                       33       33                                          1.00145211.0014521
+    1 16032   3 105     1.458E7  90000.0 1.7425-5 3.3108-6                                       K.Yamauchi*,         (94)22363  3  3.3519-6                   3.3108-6 19.2                       19       19                                          1.00145211.0014521
+    1 16032   3 105     1.487E7  90000.0 2.1231-5 2.5477-6                                       K.Yamauchi*,         (94)22363  3  2.6261-6                   2.5477-6 12.4                       12       12                                          1.00145211.0014521
+#/C5DATA        0
+#/DATASET       22363003 
+#DATASET        22363004   20120408
+#SUBENT         22363004   20120408
+#ENTRY          22363      20150823
+#TITLE          Measurement of formation cross section producing
+#+               short-lived nuclei - Mg, S, Ga, Y, Mo, Pd, Sn
+#AUTHORS        K.Yamauchi, Y.Kasugai, H.Yamamoto, A.Takahashi,
+#+               T.Iida, K.Kawade
+#AUTHOR1        K.Yamauchi+
+#YEAR           1994
+#X4REF1         S,JAERI-M-94-019,253,1994
+#REFERENCE1     Conf: JAERI-M Reports, No.94-019, p.253 (1994)
+#DATE           20120408
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#REACTION       31-GA-71(N,A)29-CU-68-M,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           31071            
+#TARGET         31071           [ ]             31-GA-71        [ ] 
+#REAC1          N,A
+#PRODUCT        29-CU-68-M
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.267%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 31071   3 107M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 31-GA-71(N,A)29-CU-68-M,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (31-GA-71(N,A)29-CU-68-M,,SIG)
+#+               #[1]#DECAY-DATA (29-CU-68-M,3.75MIN,DG,525.7,0.75) #Ix_old=0.75
+#+                a1=0.75/0.748;              #[1]#DECAY-DATA: correction to new 526.44 keV gamma-yield per decay Cu-68-m Ix_new=0.748
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0026737
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22363004    1.00267     -           1.00267     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22363004    CS          6           1.00267     1.00267     1.00267     +0.267%     1.00267                
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 31071   3 107M     1.34E7  90000.0 1.2233-3 2.5688-4                                       K.Yamauchi*,         (94)22363  4  2.5614-4                   2.5688-4 20.9                       21       21                                          1.00267371.0026737
+    1 31071   3 107M    1.365E7  90000.0 1.2634-3 2.6531-4                                       K.Yamauchi*,         (94)22363  4  2.5985-4                   2.6531-4 20.6                       21       21                                          1.00267371.0026737
+    1 31071   3 107M    1.388E7  90000.0 1.1430-3 2.4004-4                                       K.Yamauchi*,         (94)22363  4  2.4003-4                   2.4004-4 21                         21       21                                          1.00267371.0026737
+    1 31071   3 107M    1.428E7  90000.0 1.6945-3 3.5585-4                                       K.Yamauchi*,         (94)22363  4  3.5240-4                   3.5585-4 20.8                       21       21                                          1.00267371.0026737
+    1 31071   3 107M    1.458E7  90000.0.00190508 3.8102-4                                       K.Yamauchi*,         (94)22363  4  3.8972-4                   3.8102-4 20.5                       20       20                                          1.00267371.0026737
+    1 31071   3 107M    1.487E7  90000.0 1.7747-3 3.5495-4                                       K.Yamauchi*,         (94)22363  4  3.6269-4                   3.5495-4 20.4                       20       20                                          1.00267371.0026737
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.34E7      1.487E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.34E7      1.34E7      1.2233-3    21.0         100
+1.365E7     1.365E7     1.2634-3    21.0         81 100
+1.388E7     1.388E7     1.1430-3    21.0         67 83 100
+1.428E7     1.428E7     1.6945-3    21.0         49 55 72 100
+1.458E7     1.458E7     1.9051-3    20.46        50 49 52 79 100
+1.487E7     1.487E7     1.7747-3    20.44        50 49 50 59 80 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22363004 
+#DATASET        22363005   20120408
+#SUBENT         22363005   20120408
+#ENTRY          22363      20150823
+#TITLE          Measurement of formation cross section producing
+#+               short-lived nuclei - Mg, S, Ga, Y, Mo, Pd, Sn
+#AUTHORS        K.Yamauchi, Y.Kasugai, H.Yamamoto, A.Takahashi,
+#+               T.Iida, K.Kawade
+#AUTHOR1        K.Yamauchi+
+#YEAR           1994
+#X4REF1         S,JAERI-M-94-019,253,1994
+#REFERENCE1     Conf: JAERI-M Reports, No.94-019, p.253 (1994)
+#DATE           20120408
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#REACTION       39-Y-89(N,A)37-RB-86-M,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           39089            
+#TARGET         39089           [ ]             39-Y-89         [ ] 
+#REAC1          N,A
+#PRODUCT        37-RB-86-M
+#C4ReaCode      (N,A),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 39089   3 107M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 39089   3 107M     1.34E7  90000.0  0.00124 1.984E-4                                       K.Yamauchi,          (94)22363  5 2.0186E-4                   1.984E-4 16.3                       16       16
+    1 39089   3 107M    1.365E7  90000.0  0.00154 1.694E-4                                       K.Yamauchi,          (94)22363  5 1.7559E-4                   1.694E-4 11.4                       11       11
+    1 39089   3 107M    1.388E7  90000.0  0.00129 2.193E-4                                       K.Yamauchi,          (94)22363  5 2.2269E-4                   2.193E-4 17.3                       17       17
+    1 39089   3 107M    1.428E7  90000.0  0.00188 2.068E-4                                       K.Yamauchi,          (94)22363  5 2.1435E-4                   2.068E-4 11.4                       11       11
+    1 39089   3 107M    1.458E7  90000.0  0.002091.7556E-4                                       K.Yamauchi,          (94)22363  5 1.7466E-4                  1.7556E-4 8.36                       8.40     8.40
+    1 39089   3 107M    1.487E7  90000.0  0.002632.2355E-4                                       K.Yamauchi,          (94)22363  5 2.2471E-4                  2.2355E-4 8.54                       8.50     8.50
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.34E7      1.487E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.34E7      1.34E7      0.00124     16.28        100
+1.365E7     1.365E7     0.00154     11.4         83 100
+1.388E7     1.388E7     0.00129     17.26        67 84 100
+1.428E7     1.428E7     0.00188     11.4         50 57 73 100
+1.458E7     1.458E7     0.00209     8.4          50 50 52 79 100
+1.487E7     1.487E7     0.00263     8.54         50 50 50 60 80 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22363005 
+#DATASET        22363006   20120408
+#SUBENT         22363006   20120408
+#ENTRY          22363      20150823
+#TITLE          Measurement of formation cross section producing
+#+               short-lived nuclei - Mg, S, Ga, Y, Mo, Pd, Sn
+#AUTHORS        K.Yamauchi, Y.Kasugai, H.Yamamoto, A.Takahashi,
+#+               T.Iida, K.Kawade
+#AUTHOR1        K.Yamauchi+
+#YEAR           1994
+#X4REF1         S,JAERI-M-94-019,253,1994
+#REFERENCE1     Conf: JAERI-M Reports, No.94-019, p.253 (1994)
+#DATE           20120408
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       42-MO-98(N,X)41-NB-97-M,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           42098            
+#TARGET         42098           [ ]             42-MO-98        [ ] 
+#REAC1          N,X
+#PRODUCT        41-NB-97-M
+#C4ReaCode      (N,X),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 42098   39000MS ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 42098   39000MS   1.365E7  90000.0   1.4E-4   4.2E-5           41097.9                     K.Yamauchi,          (94)22363  6 4.1953E-5                     4.2E-5 30                         30       30
+    1 42098   39000MS   1.388E7  90000.0   2.4E-4   7.2E-5           41097.9                     K.Yamauchi,          (94)22363  6  7.192E-5                     7.2E-5 30                         30       30
+    1 42098   39000MS   1.428E7  90000.0   3.9E-4 1.014E-4           41097.9                     K.Yamauchi,          (94)22363  6 1.0304E-4                   1.014E-4 26.4                       26       26
+    1 42098   39000MS   1.458E7  90000.0   7.9E-4 1.343E-4           41097.9                     K.Yamauchi,          (94)22363  6 1.3453E-4                   1.343E-4 17                         17       17
+    1 42098   39000MS   1.487E7  90000.0  0.00109 1.635E-4           41097.9                     K.Yamauchi,          (94)22363  6 1.6469E-4                   1.635E-4 15.1                       15       15
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.365E7     1.487E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           5           5
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.365E7     1.365E7     1.4E-4      30.0         100
+1.388E7     1.388E7     2.4E-4      30.0         81 100
+1.428E7     1.428E7     3.9E-4      26.42        50 67 100
+1.458E7     1.458E7     7.9E-4      17.03        50 50 75 100
+1.487E7     1.487E7     0.00109     15.11        50 50 52 76 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22363006 
+#DATASET        22363008   20120408
+#SUBENT         22363008   20120408
+#ENTRY          22363      20150823
+#TITLE          Measurement of formation cross section producing
+#+               short-lived nuclei - Mg, S, Ga, Y, Mo, Pd, Sn
+#AUTHORS        K.Yamauchi, Y.Kasugai, H.Yamamoto, A.Takahashi,
+#+               T.Iida, K.Kawade
+#AUTHOR1        K.Yamauchi+
+#YEAR           1994
+#X4REF1         S,JAERI-M-94-019,253,1994
+#REFERENCE1     Conf: JAERI-M Reports, No.94-019, p.253 (1994)
+#DATE           20120408
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       46-PD-106(N,X)45-RH-105-M,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           46106            
+#TARGET         46106           [ ]             46-PD-106       [ ] 
+#REAC1          N,X
+#PRODUCT        45-RH-105-M
+#C4ReaCode      (N,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.19%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 46106   39000MS ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 46-PD-106(N,X)45-RH-105-M,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (46-PD-106(N,X)45-RH-105-M,,SIG)
+#+               #[1]#DECAY-DATA (45-RH-105-M,42.4SEC,DG,129.6,0.200) #Ix_old=0.2
+#+                a1=0.2/0.2024;              #[1]#DECAY-DATA: correction to new 129.782 keV gamma-yield per decay Rh-105-m Ix_new=0.2024
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9881423
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22363008    0.988142    -           0.988142    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22363008    CS          6           0.988142    0.988142    0.988142    -1.19%      1.01200                
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 46106   39000MS    1.34E7  90000.0 5.8300-4 2.6235-4           45105.9                     K.Yamauchi*,         (94)22363  8  2.6328-4                   2.6235-4 45.2                       45       45                                          0.98814230.9881423
+    1 46106   39000MS   1.365E7  90000.0 5.7312-4 1.7194-4           45105.9                     K.Yamauchi*,         (94)22363  8  1.7331-4                   1.7194-4 30.2                       30       30                                          0.98814230.9881423
+    1 46106   39000MS   1.388E7  90000.0 6.3241-4 2.0237-4           45105.9                     K.Yamauchi*,         (94)22363  8  2.0379-4                   2.0237-4 32.2                       32       32                                          0.98814230.9881423
+    1 46106   39000MS   1.428E7  90000.0 1.0375-3 1.7638-4           45105.9                     K.Yamauchi*,         (94)22363  8  1.8074-4                   1.7638-4 17.4                       17       17                                          0.98814230.9881423
+    1 46106   39000MS   1.458E7  90000.0 1.6996-3 2.2095-4           45105.9                     K.Yamauchi*,         (94)22363  8  2.1393-4                   2.2095-4 12.6                       13       13                                          0.98814230.9881423
+    1 46106   39000MS   1.487E7  90000.0 1.4032-3 2.1047-4           45105.9                     K.Yamauchi*,         (94)22363  8  2.1712-4                   2.1047-4 15.5                       15       15                                          0.98814230.9881423
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.34E7      1.487E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.34E7      1.34E7      5.8300-4    45.16        100
+1.365E7     1.365E7     5.7312-4    30.24        83 100
+1.388E7     1.388E7     6.3241-4    32.23        67 84 100
+1.428E7     1.428E7     1.0375-3    17.42        50 57 73 100
+1.458E7     1.458E7     1.6996-3    13.0         48 48 51 77 100
+1.487E7     1.487E7     1.4032-3    15.47        50 50 50 60 78 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22363008 
+#DATASET        22363009   20150823
+#SUBENT         22363009   20150823
+#ENTRY          22363      20150823
+#TITLE          Measurement of formation cross section producing
+#+               short-lived nuclei - Mg, S, Ga, Y, Mo, Pd, Sn
+#AUTHORS        K.Yamauchi, Y.Kasugai, H.Yamamoto, A.Takahashi,
+#+               T.Iida, K.Kawade
+#AUTHOR1        K.Yamauchi+
+#YEAR           1994
+#X4REF1         S,JAERI-M-94-019,253,1994
+#REFERENCE1     Conf: JAERI-M Reports, No.94-019, p.253 (1994)
+#DATE           20150823
+#INSTITUTE      2JPNNAG,2JPNOSA
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       50-SN-119(N,P)49-IN-119-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           50119            
+#TARGET         50119           [ ]             50-SN-119       [ ] 
+#REAC1          N,P
+#PRODUCT        49-IN-119-M
+#C4ReaCode      (N,P),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 50119   3 103MS ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 50119   3 103MS    1.34E7  90000.0  0.00235 5.875E-4                                       K.Yamauchi,          (94)22363  9 6.0189E-4                   5.875E-4 25.6                       25       25
+    1 50119   3 103MS   1.365E7  90000.0  0.002620.0010218                                       K.Yamauchi,          (94)22363  9 .00103349                  0.0010218 39.4                       39       39
+    1 50119   3 103MS   1.458E7  90000.0  0.00288 9.792E-4                                       K.Yamauchi,          (94)22363  9  9.677E-4                   9.792E-4 33.6                       34       34
+    1 50119   3 103MS   1.487E7  90000.0  0.00351 9.828E-4                                       K.Yamauchi,          (94)22363  9 9.9278E-4                   9.828E-4 28.3                       28       28
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.34E7      1.487E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.34E7      1.34E7      0.00235     25.61        100
+1.365E7     1.365E7     0.00262     39.45        83 100
+1.458E7     1.458E7     0.00288     34.0         49 49 100
+1.487E7     1.487E7     0.00351     28.28        50 50 79 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       22363009 
+#/C5M.2.3       1               7               7               0               36              

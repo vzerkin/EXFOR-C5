@@ -1,0 +1,792 @@
+#C5M.2.3
+#DATASET        12956002   19860314
+#SUBENT         12956002   19860314
+#ENTRY          12956      20171128
+#TITLE          14-MeV cross section measurements of threshold
+#+               reactions for seven metals.
+#AUTHORS        R.Spangler,E.L.Draper Jr,T.A.Parish
+#AUTHOR1        R.Spangler+
+#YEAR           1975
+#X4REF1         J,ANS,22,818,1975
+#REFERENCE1     Jour: Transactions of the American Nuclear Society, Vol.22, p.818 (1975)
+#DATE           19860314
+#INSTITUTE      1USATEX
+#METHOD         ACTIV
+#REACTION       30-ZN-64(N,2N)30-ZN-63,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           30064            
+#TARGET         30064           [ ]             30-ZN-64        [ ] 
+#REAC1          N,2N
+#PRODUCT        30-ZN-63
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0521739(1.4e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.270%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 30064   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.115  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.121(0.46%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 30-ZN-64(N,2N)30-ZN-63,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.41E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.115
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (30-ZN-64(N,2N)30-ZN-63,,SIG)
+#+               #[1]#DECAY-DATA (30-ZN-63,38.4MIN,AR,511.,1.86) #Ix_old=1.86
+#+                a1=1.86/1.855;              #[1]#DECAY-DATA: correction to new 511 keV gamma-yield per decay Zn-63 Ix_new=1.855
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0026954
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12956002    1.05501     1.05217     1.00270     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12956002    CS          1           1.05501     1.05501     1.05501     +5.50%      1.05501     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30064   3  16      1.41E7          0.107611 9.4951-3                                       R.Spangler*,         (75)12956  2                             9.4951-3                            8.82     8.82    0.115             0.121    5.5949E-41.05501  1.05501
+#/C5DATA        0
+#/DATASET       12956002 
+#DATASET        12956003   19860314
+#SUBENT         12956003   19860314
+#ENTRY          12956      20171128
+#TITLE          14-MeV cross section measurements of threshold
+#+               reactions for seven metals.
+#AUTHORS        R.Spangler,E.L.Draper Jr,T.A.Parish
+#AUTHOR1        R.Spangler+
+#YEAR           1975
+#X4REF1         J,ANS,22,818,1975
+#REFERENCE1     Jour: Transactions of the American Nuclear Society, Vol.22, p.818 (1975)
+#DATE           19860314
+#INSTITUTE      1USATEX
+#METHOD         ACTIV
+#REACTION       30-ZN-64(N,P)29-CU-64,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           30064            
+#TARGET         30064           [ ]             30-ZN-64        [ ] 
+#REAC1          N,P
+#PRODUCT        29-CU-64
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0521739(1.4e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+7.95%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 30064   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.115  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.121(0.46%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 30-ZN-64(N,P)29-CU-64,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.41E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.115
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (30-ZN-64(N,P)29-CU-64,,SIG)
+#+               #[1]#DECAY-DATA (29-CU-64,12.7HR,AR,511.,0.38) #Ix_old=0.38
+#+                a1=0.38/0.352;              #[1]#DECAY-DATA: correction to new 511 keV gamma-yield per decay Cu-64 Ix_new=0.352
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0795455
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12956003    1.13587     1.05217     1.07955     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12956003    CS          1           1.13587     1.13587     1.13587     +13.6%      1.13587     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30064   3 103      1.41E7         0.16242930.0147663                                       R.Spangler*,         (75)12956  3                            0.0147663                            9.09     9.09    0.115             0.121    5.5949E-41.13586951.1358695
+#/C5DATA        0
+#/DATASET       12956003 
+#DATASET        12956004   19860314
+#SUBENT         12956004   19860314
+#ENTRY          12956      20171128
+#TITLE          14-MeV cross section measurements of threshold
+#+               reactions for seven metals.
+#AUTHORS        R.Spangler,E.L.Draper Jr,T.A.Parish
+#AUTHOR1        R.Spangler+
+#YEAR           1975
+#X4REF1         J,ANS,22,818,1975
+#REFERENCE1     Jour: Transactions of the American Nuclear Society, Vol.22, p.818 (1975)
+#DATE           19860314
+#INSTITUTE      1USATEX
+#METHOD         ACTIV
+#REACTION       28-NI-58(N,2N)28-NI-57,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           28058            
+#TARGET         28058           [ ]             28-NI-58        [ ] 
+#REAC1          N,2N
+#PRODUCT        28-NI-57
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0521739(1.4e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.75%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 28058   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.115  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.121(0.46%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 28-NI-58(N,2N)28-NI-57,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.41E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.115
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (28-NI-58(N,2N)28-NI-57,,SIG)
+#+               #[1]#DECAY-DATA (28-NI-57,,AR,511.,0.92) #Ix_old=0.92
+#+                a1=0.92/0.87;               #[1]#DECAY-DATA: correction to new 511 keV gamma-yield per decay Ni-57 Ix_new=0.87
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0574713
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12956004    1.11264     1.05217     1.05747     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12956004    CS          1           1.11264     1.11264     1.11264     +11.3%      1.11264     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 28058   3  16      1.41E7         .04895632 3.3379-3                                       R.Spangler*,         (75)12956  4                             3.3379-3                            6.82     6.82    0.115             0.121    5.5949E-41.11264361.1126436
+#/C5DATA        0
+#/DATASET       12956004 
+#DATASET        12956005   19860314
+#SUBENT         12956005   19860314
+#ENTRY          12956      20171128
+#TITLE          14-MeV cross section measurements of threshold
+#+               reactions for seven metals.
+#AUTHORS        R.Spangler,E.L.Draper Jr,T.A.Parish
+#AUTHOR1        R.Spangler+
+#YEAR           1975
+#X4REF1         J,ANS,22,818,1975
+#REFERENCE1     Jour: Transactions of the American Nuclear Society, Vol.22, p.818 (1975)
+#DATE           19860314
+#INSTITUTE      1USATEX
+#METHOD         ACTIV
+#REACTION       40-ZR-90(N,P)39-Y-90-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           40090            
+#TARGET         40090           [ ]             40-ZR-90        [ ] 
+#REAC1          N,P
+#PRODUCT        39-Y-90-M
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0521739(1.4e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40090   3 103M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.115  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.121(0.46%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-90(N,P)39-Y-90-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.41E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.115
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12956005    1.05217     1.05217     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12956005    CS          1           1.05217     1.05217     1.05217     +5.22%      1.05217     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40090   3 103M     1.41E7         .01262609    0.003                                       R.Spangler*,         (75)12956  5                                0.003                            23.8     23.8    0.115             0.121    5.5949E-41.0521739
+#/C5DATA        0
+#/DATASET       12956005 
+#DATASET        12956006   19860314
+#SUBENT         12956006   19860314
+#ENTRY          12956      20171128
+#TITLE          14-MeV cross section measurements of threshold
+#+               reactions for seven metals.
+#AUTHORS        R.Spangler,E.L.Draper Jr,T.A.Parish
+#AUTHOR1        R.Spangler+
+#YEAR           1975
+#X4REF1         J,ANS,22,818,1975
+#REFERENCE1     Jour: Transactions of the American Nuclear Society, Vol.22, p.818 (1975)
+#DATE           19860314
+#INSTITUTE      1USATEX
+#METHOD         ACTIV
+#REACTION       40-ZR-90(N,2N)40-ZR-89,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           40090            
+#TARGET         40090           [ ]             40-ZR-90        [ ] 
+#REAC1          N,2N
+#PRODUCT        40-ZR-89
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0521739(1.4e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-3.30%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40090   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.115  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.121(0.46%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-90(N,2N)40-ZR-89,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.41E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.115
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (40-ZR-90(N,2N)40-ZR-89,,SIG)
+#+               #[1]#DECAY-DATA (40-ZR-89-G,,AR,511.,0.44) #Ix_old=0.44
+#+                a1=0.44/0.455;              #[1]#DECAY-DATA: correction to new 511 keV gamma-yield per decay Zr-89-g Ix_new=0.455
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9670329
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12956006    1.01749     1.05217     0.967033    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12956006    CS          1           1.01749     1.01749     1.01749     +1.75%      1.01749     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40090   3  16      1.41E7         0.5036559.04985685                                       R.Spangler*,         (75)12956  6                            .04985685                            9.90     9.90    0.115             0.121    5.5949E-41.01748671.0174867
+#/C5DATA        0
+#/DATASET       12956006 
+#DATASET        12956007   19860314
+#SUBENT         12956007   19860314
+#ENTRY          12956      20171128
+#TITLE          14-MeV cross section measurements of threshold
+#+               reactions for seven metals.
+#AUTHORS        R.Spangler,E.L.Draper Jr,T.A.Parish
+#AUTHOR1        R.Spangler+
+#YEAR           1975
+#X4REF1         J,ANS,22,818,1975
+#REFERENCE1     Jour: Transactions of the American Nuclear Society, Vol.22, p.818 (1975)
+#DATE           19860314
+#INSTITUTE      1USATEX
+#METHOD         ACTIV
+#REACTION       29-CU-65(N,2N)29-CU-64,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           29065            
+#TARGET         29065           [ ]             29-CU-65        [ ] 
+#REAC1          N,2N
+#PRODUCT        29-CU-64
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0521739(1.4e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+7.95%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 29065   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.115  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.121(0.46%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 29-CU-65(N,2N)29-CU-64,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.41E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.115
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (29-CU-65(N,2N)29-CU-64,,SIG)
+#+               #[1]#DECAY-DATA (29-CU-64,,AR,511.,0.38) #Ix_old=0.38
+#+                a1=0.38/0.352;              #[1]#DECAY-DATA: correction to new 511 keV gamma-yield per decay Cu-64 Ix_new=0.352
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0795455
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12956007    1.13587     1.05217     1.07955     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12956007    CS          1           1.13587     1.13587     1.13587     +13.6%      1.13587     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 29065   3  16      1.41E7         1.3176087.02271739                                       R.Spangler*,         (75)12956  7                            .02271739                            1.72     1.72    0.115             0.121    5.5949E-41.13586951.1358694
+#/C5DATA        0
+#/DATASET       12956007 
+#DATASET        12956008   19860314
+#SUBENT         12956008   19860314
+#ENTRY          12956      20171128
+#TITLE          14-MeV cross section measurements of threshold
+#+               reactions for seven metals.
+#AUTHORS        R.Spangler,E.L.Draper Jr,T.A.Parish
+#AUTHOR1        R.Spangler+
+#YEAR           1975
+#X4REF1         J,ANS,22,818,1975
+#REFERENCE1     Jour: Transactions of the American Nuclear Society, Vol.22, p.818 (1975)
+#DATE           19860314
+#INSTITUTE      1USATEX
+#METHOD         ACTIV
+#REACTION       22-TI-48(N,P)21-SC-48,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           22048            
+#TARGET         22048           [ ]             22-TI-48        [ ] 
+#REAC1          N,P
+#PRODUCT        21-SC-48
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0521739(1.4e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 22048   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.115  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.121(0.46%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 22-TI-48(N,P)21-SC-48,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.41E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.115
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12956008    1.05217     1.05217     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12956008    CS          1           1.05217     1.05217     1.05217     +5.22%      1.05217     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 22048   3 103      1.41E7         .06944348    0.007                                       R.Spangler*,         (75)12956  8                                0.007                            10.1     10.1    0.115             0.121    5.5949E-41.0521739
+#/C5DATA        0
+#/DATASET       12956008 
+#DATASET        12956009   19860314
+#SUBENT         12956009   19860314
+#ENTRY          12956      20171128
+#TITLE          14-MeV cross section measurements of threshold
+#+               reactions for seven metals.
+#AUTHORS        R.Spangler,E.L.Draper Jr,T.A.Parish
+#AUTHOR1        R.Spangler+
+#YEAR           1975
+#X4REF1         J,ANS,22,818,1975
+#REFERENCE1     Jour: Transactions of the American Nuclear Society, Vol.22, p.818 (1975)
+#DATE           19860314
+#INSTITUTE      1USATEX
+#METHOD         ACTIV
+#REACTION       22-TI-47(N,P)21-SC-47,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           22047            
+#TARGET         22047           [ ]             22-TI-47        [ ] 
+#REAC1          N,P
+#PRODUCT        21-SC-47
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0521739(1.4e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+6.88%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 22047   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.115  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.121(0.46%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 22-TI-47(N,P)21-SC-47,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.41E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.115
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (22-TI-47(N,P)21-SC-47,,SIG)
+#+               #[1]#DECAY-DATA (21-SC-47,,DG,160.,0.73) #Ix_old=0.73
+#+                a1=0.73/0.683;              #[1]#DECAY-DATA: correction to new 159.381 keV gamma-yield per decay Sc-47 Ix_new=0.683
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.068814
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12956009    1.12458     1.05217     1.06881     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12956009    CS          1           1.12458     1.12458     1.12458     +12.5%      1.12458     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 22047   3 103      1.41E7          0.136074.01237036                                       R.Spangler*,         (75)12956  9                            .01237036                            9.09     9.09    0.115             0.121    5.5949E-41.12457821.1245782
+#/C5DATA        0
+#/DATASET       12956009 
+#DATASET        12956010   19860314
+#SUBENT         12956010   19860314
+#ENTRY          12956      20171128
+#TITLE          14-MeV cross section measurements of threshold
+#+               reactions for seven metals.
+#AUTHORS        R.Spangler,E.L.Draper Jr,T.A.Parish
+#AUTHOR1        R.Spangler+
+#YEAR           1975
+#X4REF1         J,ANS,22,818,1975
+#REFERENCE1     Jour: Transactions of the American Nuclear Society, Vol.22, p.818 (1975)
+#DATE           19860314
+#INSTITUTE      1USATEX
+#METHOD         ACTIV
+#REACTION       23-V-51(N,P)22-TI-51,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           23051            
+#TARGET         23051           [ ]             23-V-51         [ ] 
+#REAC1          N,P
+#PRODUCT        22-TI-51
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0521739(1.4e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+2.04%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 23051   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.115  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.121(0.46%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 23-V-51(N,P)22-TI-51,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.41E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.115
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (23-V-51(N,P)22-TI-51,,SIG)
+#+               #[1]#DECAY-DATA (22-TI-51,,DG,320.,0.95) #Ix_old=0.95
+#+                a1=0.95/0.931;              #[1]#DECAY-DATA: correction to new 320.076 keV gamma-yield per decay Ti-51 Ix_new=0.931
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0204082
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12956010    1.07365     1.05217     1.02041     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12956010    CS          1           1.07365     1.07365     1.07365     +7.36%      1.07365     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 23051   3 103      1.41E7         .04509316 4.2946-3                                       R.Spangler*,         (75)12956 10                             4.2946-3                            9.52     9.52    0.115             0.121    5.5949E-41.07364681.0736468
+#/C5DATA        0
+#/DATASET       12956010 
+#DATASET        12956011   19860314
+#SUBENT         12956011   19860314
+#ENTRY          12956      20171128
+#TITLE          14-MeV cross section measurements of threshold
+#+               reactions for seven metals.
+#AUTHORS        R.Spangler,E.L.Draper Jr,T.A.Parish
+#AUTHOR1        R.Spangler+
+#YEAR           1975
+#X4REF1         J,ANS,22,818,1975
+#REFERENCE1     Jour: Transactions of the American Nuclear Society, Vol.22, p.818 (1975)
+#DATE           19860314
+#INSTITUTE      1USATEX
+#METHOD         ACTIV
+#REACTION       23-V-51(N,A)21-SC-48,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           23051            
+#TARGET         23051           [ ]             23-V-51         [ ] 
+#REAC1          N,A
+#PRODUCT        21-SC-48
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0521739(1.4e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 23051   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.115  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.121(0.46%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 23-V-51(N,A)21-SC-48,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.41E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.115
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12956011    1.05217     1.05217     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12956011    CS          1           1.05217     1.05217     1.05217     +5.22%      1.05217     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 23051   3 107      1.41E7         .01893913    0.002                                       R.Spangler*,         (75)12956 11                                0.002                            10.6     10.6    0.115             0.121    5.5949E-41.0521739
+#/C5DATA        0
+#/DATASET       12956011 
+#DATASET        12956012   19860314
+#SUBENT         12956012   19860314
+#ENTRY          12956      20171128
+#TITLE          14-MeV cross section measurements of threshold
+#+               reactions for seven metals.
+#AUTHORS        R.Spangler,E.L.Draper Jr,T.A.Parish
+#AUTHOR1        R.Spangler+
+#YEAR           1975
+#X4REF1         J,ANS,22,818,1975
+#REFERENCE1     Jour: Transactions of the American Nuclear Society, Vol.22, p.818 (1975)
+#DATE           19860314
+#INSTITUTE      1USATEX
+#METHOD         ACTIV
+#REACTION       26-FE-56(N,P)25-MN-56,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           26056            
+#TARGET         26056           [ ]             26-FE-56        [ ] 
+#REAC1          N,P
+#PRODUCT        25-MN-56
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0521739(1.4e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.152%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 26056   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.115  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.121(0.46%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-56(N,P)25-MN-56,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.41E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.115
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (26-FE-56(N,P)25-MN-56,,SIG)
+#+               #[1]#DECAY-DATA (25-MN-56,,DG,847.,0.99) #Ix_old=0.99
+#+                a1=0.99/0.9885;             #[1]#DECAY-DATA: correction to new 846.7638 keV gamma-yield per decay Mn-56 Ix_new=0.9885
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0015174
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12956012    1.05377     1.05217     1.00152     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12956012    CS          1           1.05377     1.05377     1.05377     +5.38%      1.05377     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26056   3 103      1.41E7         0.1001082 9.4839-3                                       R.Spangler*,         (75)12956 12                             9.4839-3                            9.47     9.47    0.115             0.121    5.5949E-41.05377041.0537704
+#/C5DATA        0
+#/DATASET       12956012 
+#/C5M.2.3       1               11              11              0               11              

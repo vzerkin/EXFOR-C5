@@ -1,0 +1,248 @@
+#C5M.2.3
+#DATASET        32670002   20090909
+#SUBENT         32670002   20090909
+#ENTRY          32670      20090909
+#TITLE          Activation cross-sections for 158Dy(n,p)158Tb,
+#+              156Dy(n,a)153Gd and 160Dy(n,p)160Tb reactions
+#+              induced by neutrons at 14.7MeV
+#AUTHORS        Junhua Luo, Xinxing Wang, Zhenlai Liu, Fei Tuo,
+#+              Xiangzhong Kong
+#AUTHOR1        Junhua Luo+
+#YEAR           2009
+#X4REF1         J,ARI,67,1892,2009
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.67, p.1892 (2009)
+#DATE           20090909
+#INSTITUTE      3CPRCPR,3CPRLNZ
+#METHOD         ACTIV
+#REACTION       66-DY-158(N,P)65-TB-158,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           66158            
+#TARGET         66158           [ ]             66-DY-158       [ ] 
+#REAC1          N,P
+#PRODUCT        65-TB-158
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,1.,15.)     ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-3,2.,3.)      ADDED AS COMMON:ERR-3,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-4,0.,5.)      ADDED AS COMMON:ERR-4,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-5,0.1,1.)     ADDED AS COMMON:ERR-5,PER-CENT=0.1%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.45%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0052625(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.901%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 66158   3 103 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1119(0.45%)  EN-NRM(eV):1.47E7
+#M1             Point: XS(b)=0.1124889(0.41%)  EN-NRM(eV):1.47E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 66-DY-158(N,P)65-TB-158,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.47E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1119
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.7MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (66-DY-158(N,P)65-TB-158,,SIG)
+#+               #[1]#DECAY-DATA (65-TB-158-G,180.0YR,DG,944.09,0.440) #Ix_old=0.44
+#+                a1=0.44/0.444;              #[1]#DECAY-DATA: correction to new 944.189 keV gamma-yield per decay Tb-158-g Ix_new=0.444
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.990991
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32670002    0.996206    1.00526     0.990991    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32670002    CS          1           0.996206    0.996206    0.996206    -0.379%     1.00381     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 66158   3 103 A    1.47E7 200000.0 7.5712-3 3.9825-4                                       Junhua Luo*,         (09)32670  2  2.4755-4   7.6E-5          3.9825-4 3.27     1                 5.26     5.26    0.1119   5.0E-4   0.11248894.6096-4 0.99620610.9956354
+#/C5DATA        0
+#/DATASET       32670002 
+#DATASET        32670003   20090909
+#SUBENT         32670003   20090909
+#ENTRY          32670      20090909
+#TITLE          Activation cross-sections for 158Dy(n,p)158Tb,
+#+              156Dy(n,a)153Gd and 160Dy(n,p)160Tb reactions
+#+              induced by neutrons at 14.7MeV
+#AUTHORS        Junhua Luo, Xinxing Wang, Zhenlai Liu, Fei Tuo,
+#+              Xiangzhong Kong
+#AUTHOR1        Junhua Luo+
+#YEAR           2009
+#X4REF1         J,ARI,67,1892,2009
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.67, p.1892 (2009)
+#DATE           20090909
+#INSTITUTE      3CPRCPR,3CPRLNZ
+#METHOD         ACTIV
+#REACTION       66-DY-156(N,A)64-GD-153,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           66156            
+#TARGET         66156           [ ]             66-DY-156       [ ] 
+#REAC1          N,A
+#PRODUCT        64-GD-153
+#C4ReaCode      (N,A),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,1.,15.)     ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-3,2.,3.)      ADDED AS COMMON:ERR-3,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-4,0.,5.)      ADDED AS COMMON:ERR-4,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-5,0.1,1.)     ADDED AS COMMON:ERR-5,PER-CENT=0.1%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.45%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0052625(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-3.17%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 66156   3 107 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1119(0.45%)  EN-NRM(eV):1.47E7
+#M1             Point: XS(b)=0.1124889(0.41%)  EN-NRM(eV):1.47E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 66-DY-156(N,A)64-GD-153,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.47E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1119
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.7MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (66-DY-156(N,A)64-GD-153,,SIG)
+#+               #[1]#DECAY-DATA (64-GD-153,241.6D,DG,103.18,0.214) #Ix_old=0.214
+#+                a1=0.214/0.221;             #[1]#DECAY-DATA: correction to new 103.18012 keV gamma-yield per decay Gd-153 Ix_new=0.221
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9683258
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32670003    0.973422    1.00526     0.968326    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32670003    CS          1           0.973422    0.973422    0.973422    -2.66%      1.02730     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 66156   3 107 A    1.47E7 200000.0 1.9468-3 9.7280-5                                       Junhua Luo*,         (09)32670  3  6.3655-5   2.0E-5          9.7280-5 3.27     1.03              5        5       0.1119   5.0E-4   0.11248894.6096-4 0.97342160.9728035
+#/C5DATA        0
+#/DATASET       32670003 
+#DATASET        32670004   20090909
+#SUBENT         32670004   20090909
+#ENTRY          32670      20090909
+#TITLE          Activation cross-sections for 158Dy(n,p)158Tb,
+#+              156Dy(n,a)153Gd and 160Dy(n,p)160Tb reactions
+#+              induced by neutrons at 14.7MeV
+#AUTHORS        Junhua Luo, Xinxing Wang, Zhenlai Liu, Fei Tuo,
+#+              Xiangzhong Kong
+#AUTHOR1        Junhua Luo+
+#YEAR           2009
+#X4REF1         J,ARI,67,1892,2009
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.67, p.1892 (2009)
+#DATE           20090909
+#INSTITUTE      3CPRCPR,3CPRLNZ
+#METHOD         ACTIV
+#REACTION       66-DY-160(N,P)65-TB-160,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           66160            
+#TARGET         66160           [ ]             66-DY-160       [ ] 
+#REAC1          N,P
+#PRODUCT        65-TB-160
+#C4ReaCode      (N,P),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,1.,15.)     ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-3,2.,3.)      ADDED AS COMMON:ERR-3,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-4,0.,5.)      ADDED AS COMMON:ERR-4,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(ERR-5,0.1,1.)     ADDED AS COMMON:ERR-5,PER-CENT=0.1%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.45%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0052625(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 66160   3 103 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1119(0.45%)  EN-NRM(eV):1.47E7
+#M1             Point: XS(b)=0.1124889(0.41%)  EN-NRM(eV):1.47E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 66-DY-160(N,P)65-TB-160,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #[0]#En=1.47E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1119
+#+              a1=recom$al27na[EN];          #[0]#new monitor point [14.7MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32670004    1.00526     1.00526     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32670004    CS          1           1.00526     1.00526     1.00526     +0.526%     1.00526     [MONIT]::al27na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 66160   3 103 A    1.47E7 200000.0 2.7142-33.0154E-4                                       Junhua Luo*,         (09)32670  4  8.8746-5   2.7E-5         3.0154E-4 3.27     0.99              11.1     11.1    0.1119   5.0E-4   0.11248894.6096-4 1.00526251.0051333
+#/C5DATA        0
+#/DATASET       32670004 
+#/C5M.2.3       1               3               3               0               3               

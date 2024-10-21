@@ -1,0 +1,70 @@
+#C5.2.3
+#DATASET        23766002   20210301
+#SUBENT         23766002   20210301
+#ENTRY          23766      20210301
+#TITLE          Measurement of the 234U(n,f) cross section in the
+#+              energy range between 14.8 and 17.8 MeV using
+#+              Micromegas detectors
+#AUTHORS        A.Kalamara,S.Chasapoglou,V.Michalopoulou,
+#+              A.Stamatopoulos, Z.Eleme,M.Kokkoris,A.Lagoyannis,
+#+              N.Patronis,R.Vlastou
+#AUTHOR1        A.Kalamara+
+#YEAR           2020
+#X4REF1         J,EPJ/CS,239,05005,2020
+#REFERENCE1     Jour: EPJ Web of Conferences, Vol.239, p.05005 (2020)
+#DATE           20210301
+#INSTITUTE      2GRCTUA,2ZZZCER,2GRCIOA,2GRCATH
+#REACTION       92-U-234(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           92234            
+#TARGET         92234           [ ]             92-U-234        [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0000163(1.5e7) Data[2]*0.9997272(1.8e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92234   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-238(N,F),,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$u238nf}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 92-U-234(N,F),,SIG
+#+              #[0]#Monitor:  92-U-238(N,F),,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$u238nf;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23766002    0.999864    0.999864    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23766002    CS          3           0.999727    1.00002     0.999864    -0.0136%    1.00027     [EN,MONIT]::u238nf
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92234   3  18      1.48E7 600000.02.16403530.1156134                                       A.Kalamara*,         (20)23766  2 .04838851    0.105                   2.24     4.85                       5.34    1.2210001         1.22102  .016992241.0000163
+    1 92234   3  18      1.65E7 600000.02.4886224.09827799                                       A.Kalamara*,         (20)23766  2 .05565573.08100001                   2.24     3.25                       3.95    1.3180001         1.3178   0.01970120.9998482
+    1 92234   3  18      1.78E7 400000.0 2.3423610.1798022                                       A.Kalamara*,         (20)23766  2 .05239107    0.172                   2.24     7.34                       7.68    1.32              1.3196399.019743460.9997272
+#/C5DATA        0
+#/DATASET       23766002 
+#/C5.2.3        1               1               1               0               3               

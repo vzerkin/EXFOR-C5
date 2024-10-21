@@ -1,0 +1,426 @@
+#C5M.2.3
+#DATASET        30715002   20090906
+#SUBENT         30715002   20090906
+#ENTRY          30715      20090916
+#TITLE          Measurement of cross section for reaction Pt(n,x)Pt195m
+#AUTHORS        Zhao Wenrong,Lu Hanlin,Fan Peiguo,Yu Baosheng,
+#+               Zhou Enchen,Teng Dan
+#AUTHOR1        Zhao Wenrong+
+#YEAR           1984
+#X4REF1         J,CNP,6,342,198411
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.6, p.342 (1984)
+#DATE           20090906
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       78-PT-0(N,X)78-PT-195-M,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           78000            
+#TARGET         78000           [ ]             78-PT-0         [ ] 
+#REAC1          N,X
+#PRODUCT        78-PT-195-M
+#C4ReaCode      (N,X),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9810629(1.4e5) Data[7]*0.9665426(1.0e6)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-5.04%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 78000   39000M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 78-PT-0(N,X)78-PT-195-M,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (78-PT-0(N,X)78-PT-195-M,,SIG)
+#+               #[1]#DECAY-DATA (78-PT-195-M,4.02D,DG,98.8,0.1111) #Ix_old=0.1111
+#+                a1=0.1111/0.117;            #[1]#DECAY-DATA: correction to new 98.9 keV gamma-yield per decay Pt-195-m Ix_new=0.117
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9495727
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30715002    0.916734    0.965417    0.949573    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30715002    CS          8           0.876542    0.941718    0.916734    -8.33%      1.14085     [EN,MONIT]::au197ng
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 78000   39000M   144000.0  40000.0 5.7386-3 4.8443-4           78195.9                     Zhao Wenrong*,       (84)30715  2                             4.8443-4                            8.44     8.44    0.286             0.280584 .005404010.93159050.9315905
+    1 78000   39000M   329000.0 114000.0 5.9447-3 3.7625-4           78195.9                     Zhao Wenrong*,       (84)30715  2                             3.7625-4                            6.33     6.33    0.1916            0.18979443.7327-3 0.94062390.9406239
+    1 78000   39000M   565000.0 123000.0 7.7974-3 4.3319-4           78195.9                     Zhao Wenrong*,       (84)30715  2                             4.3319-4                            5.56     5.56    0.1221            0.12109  .002581740.94171790.9417179
+    1 78000   39000M   653000.0 132000.0.01078147 1.1395-3           78195.9                     Zhao Wenrong*,       (84)30715  2                             1.1395-3                            10.6     10.6    0.1082            .099878462.0656-3 0.876542 0.8765421
+    1 78000   39000M   677000.0 110000.0 9.5310-3 6.2352-4           78195.9                     Zhao Wenrong*,       (84)30715  2                             6.2352-4                            6.54     6.54    0.1045            .098026142.0330-3 0.89074590.8907458
+    1 78000   39000M   776000.0  53000.0.01046213 1.0184-3           78195.9                     Zhao Wenrong*,       (84)30715  2                             1.0184-3                            9.73     9.73    0.094             .091651881.9432-3 0.92585230.9258524
+    1 78000   39000M  1010000.0 160000.0.03508722 2.0907-3           78195.9                     Zhao Wenrong*,       (84)30715  2                             2.0907-3                            5.96     5.96    .08290001         0.07935751.6259-3 0.90899520.9089952
+    1 78000   39000M  1030000.0  70000.00.0376299 2.2945-3           78195.9                     Zhao Wenrong*,       (84)30715  2                             2.2945-3                            6.10     6.10    0.082             0.07925650.001642 0.91780250.9178025
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           144000.0    1030000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           8           8
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+144000.     144000.     5.7386-3    8.44         100
+329000.     329000.     5.9447-3    6.33         40 100
+565000.     565000.     7.7974-3    5.56         26 37 100
+653000.     653000.     1.0781-2    10.57        25 32 45 100
+677000.     677000.     9.5310-3    6.54         25 30 44 49 100
+776000.     776000.     1.0462-2    9.73         25 25 38 43 44 100
+1010000.    1010000.    3.5087-2    5.96         25 25 25 30 31 37 100
+1030000.    1030000.    3.7630-2    6.1          25 25 25 29 30 36 49 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       30715002 
+#DATASET        30715003   20090916
+#SUBENT         30715003   20090916
+#ENTRY          30715      20090916
+#TITLE          Measurement of cross section for reaction Pt(n,x)Pt195m
+#AUTHORS        Zhao Wenrong,Lu Hanlin,Fan Peiguo,Yu Baosheng,
+#+               Zhou Enchen,Teng Dan
+#AUTHOR1        Zhao Wenrong+
+#YEAR           1984
+#X4REF1         J,CNP,6,342,198411
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.6, p.342 (1984)
+#DATE           20090916
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       78-PT-0(N,X)78-PT-195-M,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           78000            
+#TARGET         78000           [ ]             78-PT-0         [ ] 
+#REAC1          N,X
+#PRODUCT        78-PT-195-M
+#C4ReaCode      (N,X),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0700057(1.4e6) Data[10]*1.0129579(5.6e6)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-5.04%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 78000   39000M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,INL)49-IN-115-M,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$in115ninl}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 78-PT-0(N,X)78-PT-195-M,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,INL)49-IN-115-M,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$in115ninl;          #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (78-PT-0(N,X)78-PT-195-M,,SIG)
+#+               #[1]#DECAY-DATA (78-PT-195-M,4.02D,DG,98.8,0.1111) #Ix_old=0.1111
+#+                a1=0.1111/0.117;            #[1]#DECAY-DATA: correction to new 98.9 keV gamma-yield per decay Pt-195-m Ix_new=0.117
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9495727
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30715003    0.970339    1.02187     0.949573    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30715003    CS          11          0.950248    1.01605     0.970339    -2.97%      1.05236     [EN,MONIT]::in115ninl
+#C5DATA         11
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 78000   39000M  1390000.0 170000.0 0.105669 6.0963-3           78195.9                     Zhao Wenrong*,       (84)30715  3                             6.0963-3                            5.77     5.77    0.138             0.14766084.3630-3 1.01604821.0160482
+    1 78000   39000M  2840000.0259999.980.2356615.01520397           78195.9                     Zhao Wenrong*,       (84)30715  3                            .01520397                            6.45     6.45    0.344             0.34424468.6693-3 0.95024780.9502479
+    1 78000   39000M  2870000.0 390000.00.2094756.01333027           78195.9                     Zhao Wenrong*,       (84)30715  3                            .01333027                            6.36     6.36    0.343             0.34393538.5613-3 0.952162 0.952162
+    1 78000   39000M  2940000.0 410000.00.2309218.01539479           78195.9                     Zhao Wenrong*,       (84)30715  3                            .01539479                            6.67     6.67    0.338             0.3424856.008292820.96217440.9621744
+    1 78000   39000M  4070000.0 300000.00.3378119.03309972           78195.9                     Zhao Wenrong*,       (84)30715  3                            .03309972                            9.80     9.80    0.315             0.3229444.007881820.97352120.9735212
+    1 78000   39000M  4110000.0259999.980.3209782.02250762           78195.9                     Zhao Wenrong*,       (84)30715  3                            .02250762                            7.01     7.01    0.313             0.32256547.8753-3 0.978592 0.978592
+    1 78000   39000M  4370000.0 220000.00.3083085.02126266           78195.9                     Zhao Wenrong*,       (84)30715  3                            .02126266                            6.90     6.90    0.316             0.32162797.8699-3 0.96648430.9664843
+    1 78000   39000M  5130000.0 200000.00.3243233.01850493           78195.9                     Zhao Wenrong*,       (84)30715  3                            .01850493                            5.71     5.71    0.325             0.3333413.008998160.97394390.9739438
+    1 78000   39000M  5190000.0 180000.00.3383802.02151551           78195.9                     Zhao Wenrong*,       (84)30715  3                            .02151551                            6.36     6.36    0.325             0.3347219.009194540.97797760.9779776
+    1 78000   39000M  5530000.0 210000.00.3410504.01633199           78195.9                     Zhao Wenrong*,       (84)30715  3                            .01633199                            4.79     4.79    0.336             0.3399393.010258760.96070550.9607054
+    1 78000   39000M  5590000.0 170000.00.3674371.01731379           78195.9                     Zhao Wenrong*,       (84)30715  3                            .01731379                            4.71     4.71    0.336             0.3403539.010441280.96187720.9618771
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1390000.0   5590000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           11          11
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1390000.    1390000.    0.105669    5.77         100
+2840000.    2840000.    0.235662    6.45         33 100
+2870000.    2870000.    0.209476    6.36         32 50 100
+2940000.    2940000.    0.230922    6.67         32 49 49 100
+4070000.    4070000.    0.337812    9.8          25 35 36 37 100
+4110000.    4110000.    0.320978    7.01         25 35 35 36 50 100
+4370000.    4370000.    0.308309    6.9          25 32 32 33 46 47 100
+5130000.    5130000.    0.324323    5.71         25 25 25 25 37 38 41 100
+5190000.    5190000.    0.33838     6.36         25 25 25 25 37 37 40 49 100
+5530000.    5530000.    0.34105     4.79         25 25 25 25 33 33 36 45 46 100
+5590000.    5590000.    0.367437    4.71         25 25 25 25 32 32 35 45 45 49 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       30715003 
+#DATASET        30715004   20090906
+#SUBENT         30715004   20090906
+#ENTRY          30715      20090916
+#TITLE          Measurement of cross section for reaction Pt(n,x)Pt195m
+#AUTHORS        Zhao Wenrong,Lu Hanlin,Fan Peiguo,Yu Baosheng,
+#+               Zhou Enchen,Teng Dan
+#AUTHOR1        Zhao Wenrong+
+#YEAR           1984
+#X4REF1         J,CNP,6,342,198411
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.6, p.342 (1984)
+#DATE           20090906
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       78-PT-0(N,X)78-PT-195-M,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           78000            
+#TARGET         78000           [ ]             78-PT-0         [ ] 
+#REAC1          N,X
+#PRODUCT        78-PT-195-M
+#C4ReaCode      (N,X),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0014058(1.4e7) Data[8]*1.0502027(1.8e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-5.04%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 78000   39000M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 78-PT-0(N,X)78-PT-195-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (78-PT-0(N,X)78-PT-195-M,,SIG)
+#+               #[1]#DECAY-DATA (78-PT-195-M,4.02D,DG,98.8,0.1111) #Ix_old=0.1111
+#+                a1=0.1111/0.117;            #[1]#DECAY-DATA: correction to new 98.9 keV gamma-yield per decay Pt-195-m Ix_new=0.117
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9495727
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30715004    0.945339    0.995541    0.949573    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30715004    CS          9           0.911715    0.997244    0.945339    -5.47%      1.09683     [EN,MONIT]::al27na
+#C5DATA         9
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 78000   39000M    1.372E7 270000.00.3974794.01331271           78195.9                     Zhao Wenrong*,       (84)30715  4                            .01331271                            3.35     3.35    0.12447           0.124645 6.4988-4 0.95090760.9509076
+    1 78000   39000M    1.435E7129999.990.3856829.01316966           78195.9                     Zhao Wenrong*,       (84)30715  4                            .01316966                            3.41     3.41    0.11866           0.11755  4.8035-4 0.94068990.9406899
+    1 78000   39000M     1.46E7 210000.00.3844337.01227921           78195.9                     Zhao Wenrong*,       (84)30715  4                            .01227921                            3.19     3.19    0.11459           0.11398444.4691-4 0.94455460.9445546
+    1 78000   39000M    1.464E7 210000.00.40444180.0132294           78195.9                     Zhao Wenrong*,       (84)30715  4                            0.0132294                            3.27     3.27    0.11394           0.11338624.5253-4 0.94495740.9449574
+    1 78000   39000M    1.482E7259999.980.3937488.01312496           78195.9                     Zhao Wenrong*,       (84)30715  4                            .01312496                            3.33     3.33    0.11212           0.11069424.7782-4 0.93749730.9374973
+    1 78000   39000M    1.578E7 350000.00.4268394.02667746           78195.9                     Zhao Wenrong*,       (84)30715  4                            .02667746                            6.25     6.25    .09905001         .095956156.0320-4 0.91991250.9199125
+    1 78000   39000M    1.675E7 270000.00.4264938.03073829           78195.9                     Zhao Wenrong*,       (84)30715  4                            .03073829                            7.21     7.21    0.07945           .080370286.3098-4 0.96057160.9605716
+    1 78000   39000M    1.722E7 300000.00.3947727.01549916           78195.9                     Zhao Wenrong*,       (84)30715  4                            .01549916                            3.93     3.93    0.0759            .072874046.1418-4 0.91171530.9117153
+    1 78000   39000M    1.776E7 240000.00.4018893.02393385           78195.9                     Zhao Wenrong*,       (84)30715  4                            .02393385                            5.96     5.96    0.06163           0.064724 5.8196-4 0.99724380.9972438
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.372E7     1.776E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           9           9
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.372E7     1.372E7     0.397479    3.35         100
+1.435E7     1.435E7     0.385683    3.41         42 100
+1.46E7      1.46E7      0.384434    3.19         39 47 100
+1.464E7     1.464E7     0.404442    3.27         39 46 50 100
+1.482E7     1.482E7     0.393749    3.33         36 44 47 48 100
+1.578E7     1.578E7     0.426839    6.25         25 32 35 36 38 100
+1.675E7     1.675E7     0.426494    7.21         25 25 25 25 26 38 100
+1.722E7     1.722E7     0.394773    3.93         25 25 25 25 25 32 44 100
+1.776E7     1.776E7     0.401889    5.96         25 25 25 25 25 25 37 43 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       30715004 
+#DATASET        30715005   20090906
+#SUBENT         30715005   20090906
+#ENTRY          30715      20090916
+#TITLE          Measurement of cross section for reaction Pt(n,x)Pt195m
+#AUTHORS        Zhao Wenrong,Lu Hanlin,Fan Peiguo,Yu Baosheng,
+#+               Zhou Enchen,Teng Dan
+#AUTHOR1        Zhao Wenrong+
+#YEAR           1984
+#X4REF1         J,CNP,6,342,198411
+#REFERENCE1     Jour: Chinese J.of Nuclear Physics (Beijing)., Vol.6, p.342 (1984)
+#DATE           20090906
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       78-PT-0(N,X)78-PT-195-M,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           78000            
+#TARGET         78000           [ ]             78-PT-0         [ ] 
+#REAC1          N,X
+#PRODUCT        78-PT-195-M
+#C4ReaCode      (N,X),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0058562(1.3e7) Data[9]*1.052712(1.7e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-5.04%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 78000   39000M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$nb93n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 78-PT-0(N,X)78-PT-195-M,,SIG
+#+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (78-PT-0(N,X)78-PT-195-M,,SIG)
+#+               #[1]#DECAY-DATA (78-PT-195-M,4.02D,DG,98.8,0.1111) #Ix_old=0.1111
+#+                a1=0.1111/0.117;            #[1]#DECAY-DATA: correction to new 98.9 keV gamma-yield per decay Pt-195-m Ix_new=0.117
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9495727
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30715005    0.963982    1.01517     0.949573    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30715005    CS          10          0.953824    0.999627    0.963982    -3.60%      1.04841     [EN,MONIT]::nb93n2n
+#C5DATA         10
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 78000   39000M    1.299E7 180000.00.4030664.02387834           78195.9                     Zhao Wenrong*,       (84)30715  5                            .02387834                            5.92     5.92    0.43865           0.44121883.0167-3 0.95513360.9551336
+    1 78000   39000M    1.362E7 110000.00.4041911.01628258           78195.9                     Zhao Wenrong*,       (84)30715  5                            .01628258                            4.03     4.03    0.45111           0.455018 2.6263-3 0.95779890.9577989
+    1 78000   39000M    1.374E7 270000.00.39396280.0306735           78195.9                     Zhao Wenrong*,       (84)30715  5                            0.0306735                            7.79     7.79    0.4524            0.45667562.5752-3 0.95854690.9585468
+    1 78000   39000M    1.376E7 290000.00.3930395.02300719           78195.9                     Zhao Wenrong*,       (84)30715  5                            .02300719                            5.85     5.85    0.4526            0.45691842.5683-3 0.95863280.9586328
+    1 78000   39000M    1.383E7  90000.00.4006829.01629572           78195.9                     Zhao Wenrong*,       (84)30715  5                            .01629572                            4.07     4.07    0.4534            0.45769682.5475-3 0.95857160.9585716
+    1 78000   39000M    1.433E7129999.990.4115146.01527665           78195.9                     Zhao Wenrong*,       (84)30715  5                            .01527665                            3.71     3.71    0.4576            0.46011442.5163-3 0.95479030.9547903
+    1 78000   39000M    1.477E7 250000.00.4177747.01716883           78195.9                     Zhao Wenrong*,       (84)30715  5                            .01716883                            4.11     4.11    0.45814           0.460191 0.00268810.95382360.9538237
+    1 78000   39000M    1.556E7 340000.00.4255427.03303299           78195.9                     Zhao Wenrong*,       (84)30715  5                            .03303299                            7.76     7.76    0.4471            0.457452 3.4218-3 0.97155860.9715586
+    1 78000   39000M    1.571E7 330000.00.4390427.03205401           78195.9                     Zhao Wenrong*,       (84)30715  5                            .03205401                            7.30     7.30    0.4454            0.455607 3.5536-3 0.97133350.9713336
+    1 78000   39000M    1.735E7 310000.00.4168442.03298768           78195.9                     Zhao Wenrong*,       (84)30715  5                            .03298768                            7.91     7.91    0.40873           0.430275 .004844570.99962650.9996266
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.299E7     1.735E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           10          10
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.299E7     1.299E7     0.403066    5.92         100
+1.362E7     1.362E7     0.404191    4.03         43 100
+1.374E7     1.374E7     0.393963    7.79         41 49 100
+1.376E7     1.376E7     0.393039    5.85         41 48 50 100
+1.383E7     1.383E7     0.400683    4.07         40 48 49 49 100
+1.433E7     1.433E7     0.411515    3.71         35 42 43 43 44 100
+1.477E7     1.477E7     0.417775    4.11         30 37 38 38 39 45 100
+1.556E7     1.556E7     0.425543    7.76         25 28 29 29 30 36 41 100
+1.571E7     1.571E7     0.439043    7.3          25 26 27 28 28 34 39 48 100
+1.735E7     1.735E7     0.416844    7.91         25 25 25 25 25 25 25 29 31 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       30715005 
+#/C5M.2.3       1               4               4               0               38              

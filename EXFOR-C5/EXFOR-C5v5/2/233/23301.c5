@@ -1,0 +1,305 @@
+#C5M.2.3
+#DATASET        23301003   20160810
+#SUBENT         23301003   20160810
+#ENTRY          23301      20191119
+#TITLE          The neutron cross-section functions for the reactions
+#+              187Re(n,a)184Ta, 187Re(n,2n)186Re and 185Re(n,2n)184Re
+#+              in the energy range 13.08 - 19.5 MeV.
+#AUTHORS        N.Jovancevic, L.Daraban, H.Stroh, S.Oberstedt,M.Hult,
+#+              C.Bonaldi, W.Geerts, F.-J.Hambsch,G.Lutter,G.Marissens,
+#+              M.Vidali
+#AUTHOR1        N.Jovancevic+
+#YEAR           2016
+#X4REF1         J,EPJ/A,52,148,2016
+#REFERENCE1     Jour: European Physical Journal A: Hadrons and Nuclei, Vol.52, p.148 (2016)
+#DATE           20160810
+#INSTITUTE      2ZZZGEL,3SRBSRB
+#METHOD         ACTIV,GSPEC
+#REACTION       75-RE-187(N,A)73-TA-184,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           75187            
+#TARGET         75187           [ ]             75-RE-187       [ ] 
+#REAC1          N,A
+#PRODUCT        73-TA-184
+#C4ReaCode      (N,A),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.99%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0062585(1.8e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+2.64%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 75187   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-238(N,F),,SIG
+#M0             Point: XS(b)=1.315(0.99%)  EN-NRM(eV):1.81E7
+#M1             Point: XS(b)=1.32323(1.50%)  EN-NRM(eV):1.81E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 75-RE-187(N,A)73-TA-184,,SIG
+#+              #[0]#Monitor:  92-U-238(N,F),,SIG
+#+              #[0]#En=1.81E7
+#+              a0=[MONIT];                   #[0]#old monitor point 1.315
+#+              a1=recom$u238nf[EN];          #[0]#new monitor point [18.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (75-RE-187(N,A)73-TA-184,,SIG)
+#+               #[1]#DECAY-DATA (73-TA-184,8.7HR,DG,414.0,0.739) #Ix_old=0.739
+#+                a1=0.739/0.72;              #[1]#DECAY-DATA: correction to new 414.01 keV gamma-yield per decay Ta-184 Ix_new=0.72
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0263889
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23301003    1.03281     1.00626     1.02639     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23301003    CS          1           1.03281     1.03281     1.03281     +3.28%      1.03281     [MONIT]::u238nf
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 75187   3 107      1.81E7 280000.0 1.5699-3 5.4583-5                                       N.Jovancevic*,       (16)23301  3  2.3540-5                   5.4583-5 1.50                       3.48     3.48    1.315    0.013    1.32323  0.01982951.03281251.0916684
+#/C5DATA        0
+#/DATASET       23301003 
+#DATASET        23301006   20160810
+#SUBENT         23301006   20160810
+#ENTRY          23301      20191119
+#TITLE          The neutron cross-section functions for the reactions
+#+              187Re(n,a)184Ta, 187Re(n,2n)186Re and 185Re(n,2n)184Re
+#+              in the energy range 13.08 - 19.5 MeV.
+#AUTHORS        N.Jovancevic, L.Daraban, H.Stroh, S.Oberstedt,M.Hult,
+#+              C.Bonaldi, W.Geerts, F.-J.Hambsch,G.Lutter,G.Marissens,
+#+              M.Vidali
+#AUTHOR1        N.Jovancevic+
+#YEAR           2016
+#X4REF1         J,EPJ/A,52,148,2016
+#REFERENCE1     Jour: European Physical Journal A: Hadrons and Nuclei, Vol.52, p.148 (2016)
+#DATE           20160810
+#INSTITUTE      2ZZZGEL,3SRBSRB
+#METHOD         ACTIV,GSPEC
+#REACTION       75-RE-187(N,A)73-TA-184,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           75187            
+#TARGET         75187           [ ]             75-RE-187       [ ] 
+#REAC1          N,A
+#PRODUCT        73-TA-184
+#C4ReaCode      (N,A),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 75187   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 75187   3 107      1.48E7 500000.0   5.3E-4   3.0E-5                                       N.Jovancevic,        (16)23301  6                               3.0E-5                            5.66     5.66
+    1 75187   3 107      1.53E7 600000.0   8.9E-4   5.0E-5                                       N.Jovancevic,        (16)23301  6                               5.0E-5                            5.62     5.62
+    1 75187   3 107      1.61E7 700000.0  0.00107   6.0E-5                                       N.Jovancevic,        (16)23301  6                               6.0E-5                            5.61     5.61
+    1 75187   3 107      1.68E7 900000.0  0.00106   6.0E-5                                       N.Jovancevic,        (16)23301  6                               6.0E-5                            5.66     5.66
+    1 75187   3 107      1.73E71000000.0   9.9E-4   5.0E-5                                       N.Jovancevic,        (16)23301  6                               5.0E-5                            5.05     5.05
+    1 75187   3 107      1.83E71200000.0  0.00152   8.0E-5                                       N.Jovancevic,        (16)23301  6                               8.0E-5                            5.26     5.26
+#/C5DATA        0
+#/DATASET       23301006 
+#DATASET        23301008   20191119
+#SUBENT         23301008   20191119
+#ENTRY          23301      20191119
+#TITLE          The neutron cross-section functions for the reactions
+#+              187Re(n,a)184Ta, 187Re(n,2n)186Re and 185Re(n,2n)184Re
+#+              in the energy range 13.08 - 19.5 MeV.
+#AUTHORS        N.Jovancevic, L.Daraban, H.Stroh, S.Oberstedt,M.Hult,
+#+              C.Bonaldi, W.Geerts, F.-J.Hambsch,G.Lutter,G.Marissens,
+#+              M.Vidali
+#AUTHOR1        N.Jovancevic+
+#YEAR           2016
+#X4REF1         J,EPJ/A,52,148,2016
+#REFERENCE1     Jour: European Physical Journal A: Hadrons and Nuclei, Vol.52, p.148 (2016)
+#DATE           20191119
+#INSTITUTE      2ZZZGEL,3SRBSRB
+#METHOD         ACTIV,GSPEC
+#REACTION       75-RE-185(N,3N)75-RE-183,,SIG
+#C4Reaction     (N,3N),SIG
+#ReactionType   CS
+#MF             3
+#MT             17
+#PROJ           1
+#TARG           75185            
+#TARGET         75185           [ ]             75-RE-185       [ ] 
+#REAC1          N,3N
+#PRODUCT        75-RE-183
+#C4ReaCode      (N,3N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.99%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0062585(1.8e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-12.4%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 75185   3  17   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-238(N,F),,SIG
+#M0             Point: XS(b)=1.315(0.99%)  EN-NRM(eV):1.81E7
+#M1             Point: XS(b)=1.32323(1.50%)  EN-NRM(eV):1.81E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 75-RE-185(N,3N)75-RE-183,,SIG
+#+              #[0]#Monitor:  92-U-238(N,F),,SIG
+#+              #[0]#En=1.81E7
+#+              a0=[MONIT];                   #[0]#old monitor point 1.315
+#+              a1=recom$u238nf[EN];          #[0]#new monitor point [18.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (75-RE-185(N,3N)75-RE-183,,SIG)
+#+               #[1]#DECAY-DATA (75-RE-183,,DG,162.3,0.22) #Ix_old=0.22
+#+                a1=0.22/0.251;              #[1]#DECAY-DATA: correction to new 162.33 keV gamma-yield per decay Re-183 Ix_new=0.251
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.87649405
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23301008    0.881980    1.00626     0.876494    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23301008    CS          1           0.881980    0.881980    0.881980    -11.8%      1.13381     [MONIT]::u238nf
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 75185   3  17      1.81E7 280000.00.74527280.0269194                                       N.Jovancevic*,       (16)23301  8 .01117534                  0.0269194 1.50                       3.61     3.61    1.315    0.013    1.32323  0.01982950.88197960.9282552
+#/C5DATA        0
+#/DATASET       23301008 
+#DATASET        23301009   20191119
+#SUBENT         23301009   20191119
+#ENTRY          23301      20191119
+#TITLE          The neutron cross-section functions for the reactions
+#+              187Re(n,a)184Ta, 187Re(n,2n)186Re and 185Re(n,2n)184Re
+#+              in the energy range 13.08 - 19.5 MeV.
+#AUTHORS        N.Jovancevic, L.Daraban, H.Stroh, S.Oberstedt,M.Hult,
+#+              C.Bonaldi, W.Geerts, F.-J.Hambsch,G.Lutter,G.Marissens,
+#+              M.Vidali
+#AUTHOR1        N.Jovancevic+
+#YEAR           2016
+#X4REF1         J,EPJ/A,52,148,2016
+#REFERENCE1     Jour: European Physical Journal A: Hadrons and Nuclei, Vol.52, p.148 (2016)
+#DATE           20191119
+#INSTITUTE      2ZZZGEL,3SRBSRB
+#METHOD         ACTIV,GSPEC
+#REACTION       75-RE-187(N,P)74-W-187,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           75187            
+#TARGET         75187           [ ]             75-RE-187       [ ] 
+#REAC1          N,P
+#PRODUCT        74-W-187
+#C4ReaCode      (N,P),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.99%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0062585(1.8e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.396%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 75187   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-238(N,F),,SIG
+#M0             Point: XS(b)=1.315(0.99%)  EN-NRM(eV):1.81E7
+#M1             Point: XS(b)=1.32323(1.50%)  EN-NRM(eV):1.81E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 75-RE-187(N,P)74-W-187,,SIG
+#+              #[0]#Monitor:  92-U-238(N,F),,SIG
+#+              #[0]#En=1.81E7
+#+              a0=[MONIT];                   #[0]#old monitor point 1.315
+#+              a1=recom$u238nf[EN];          #[0]#new monitor point [18.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (75-RE-187(N,P)74-W-187,,SIG)
+#+               #[1]#DECAY-DATA (74-W-187,,DG,618.3,0.076) #Ix_old=0.076
+#+                a1=0.076/0.0757;            #[1]#DECAY-DATA: correction to new 618.37 keV gamma-yield per decay W-187 Ix_new=0.0757
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.003963
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23301009    1.01025     1.00626     1.00396     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23301009    CS          1           1.01025     1.01025     1.01025     +1.02%      1.01025     [MONIT]::u238nf
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 75187   3 103      1.81E7 280000.0 4.8492-3 1.8022-4                                       N.Jovancevic*,       (16)23301  9  7.2713-5                   1.8022-4 1.50                       3.72     3.72    1.315    0.013    1.32323  0.01982951.01024631.0600946
+#/C5DATA        0
+#/DATASET       23301009 
+#/C5M.2.3       1               4               8               0               9               

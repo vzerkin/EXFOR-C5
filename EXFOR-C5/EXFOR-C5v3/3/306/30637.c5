@@ -1,0 +1,292 @@
+#C5.2.3
+#DATASET        30637003   20201225
+#SUBENT         30637003   20201225
+#ENTRY          30637      20201225
+#TITLE          Compilation of measurements and evaluations of nuclear
+#+               activation cross sections for nuclear data application
+#AUTHORS        Zhao Wenrong, Lu Hanlin, Yu Weixiang, Yuan Xialin
+#AUTHOR1        Zhao Wenrong+
+#YEAR           1989
+#X4REF1         R,INDC(CPR)-16,1989
+#REFERENCE1     Rept: Chinese report to the I.N.D.C., No.16 (1989)
+#DATE           20201225
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       28-NI-58(N,2N)28-NI-57,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           28058            
+#TARGET         28058           [ ]             28-NI-58        [ ] 
+#REAC1          N,2N
+#PRODUCT        28-NI-57
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.38%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.98690456(1.3e7) Data[12]*0.98690456(1.8e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 28058   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1158(1.38%)  EN-NRM(eV):1.458E7
+#M1             Point: XS(b)=0.1142836(0.39%)  EN-NRM(eV):1.458E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 28-NI-58(N,2N)28-NI-57,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1158
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.58MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30637003    0.986905    0.986905    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30637003    CS          13          0.986905    0.986905    0.986905    -1.31%      1.01327     [MONIT]::al27na
+#C5DATA         13
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 28058   3  16     1.279E7 290000.0 3.7502-3 4.9094-4                                       Zhao Wenrong*,       (89)30637  3  1.4346-5                   4.9094-4 0.38                       13.1     13.1    0.1158   0.0016   0.11428364.4410-4 0.98690460.9818809
+    1 28058   3  16     1.286E7 210000.0 3.8489-3 4.9081-4                                       Zhao Wenrong*,       (89)30637  3  1.4723-5                   4.9081-4 0.38                       12.8     12.8    0.1158   0.0016   0.11428364.4410-4 0.98690460.9816123
+    1 28058   3  16     1.364E7 310000.0.01776428 1.2612-3                                       Zhao Wenrong*,       (89)30637  3  6.7954-5                   1.2612-3 0.38                       7.10     7.10    0.1158   0.0016   0.11428364.4410-4 0.98690460.9701301
+    1 28058   3  16     1.368E7 350000.0.02023154 8.4674-4                                       Zhao Wenrong*,       (89)30637  3  7.7393-5                   8.4674-4 0.38                       4.19     4.19    0.1158   0.0016   0.11428364.4410-4 0.98690460.9408193
+    1 28058   3  16     1.458E7 200000.0.03937749 8.3748-4                                       Zhao Wenrong*,       (89)30637  3  1.5063-4                   8.3748-4 0.38                       2.13     2.13    0.1158   0.0016   0.11428364.4410-4 0.98690460.8374825
+    1 28058   3  16     1.568E7 360000.00.0609907 2.8481-3                                       Zhao Wenrong*,       (89)30637  3  2.3331-4                   2.8481-3 0.38                       4.67     4.67    0.1158   0.0016   0.11428364.4410-4 0.98690460.9493769
+    1 28058   3  16     1.605E7 430000.0.06474094.00199429                                       Zhao Wenrong*,       (89)30637  3  2.4766-4                  .00199429 0.38                       3.08     3.08    0.1158   0.0016   0.11428364.4410-4 0.98690460.9064953
+    1 28058   3  16     1.663E7 330000.00.0702676 2.1776-3                                       Zhao Wenrong*,       (89)30637  3  2.6880-4                   2.1776-3 0.38                       3.10     3.10    0.1158   0.0016   0.11428364.4410-4 0.98690460.9073462
+    1 28058   3  16     1.718E7 380000.0.07411653 2.2631-3                                       Zhao Wenrong*,       (89)30637  3  2.8352-4                   2.2631-3 0.38                       3.05     3.05    0.1158   0.0016   0.11428364.4410-4 0.98690460.9052404
+    1 28058   3  16      1.73E7259999.98.07559689 2.3621-3                                       Zhao Wenrong*,       (89)30637  3  2.8918-4                   2.3621-3 0.38                       3.12     3.12    0.1158   0.0016   0.11428364.4410-4 0.98690460.9084899
+    1 28058   3  16     1.754E7 220000.0.07895238 2.4504-3                                       Zhao Wenrong*,       (89)30637  3  3.0202-4                   2.4504-3 0.38                       3.10     3.10    0.1158   0.0016   0.11428364.4410-4 0.98690460.9075533
+    1 28058   3  16     1.797E7 270000.0.07697856.00246141                                       Zhao Wenrong*,       (89)30637  3  2.9447-4                  .00246141 0.38                       3.20     3.20    0.1158   0.0016   0.11428364.4410-4 0.98690460.9116334
+    1 28058   3  16     1.826E7 210000.0.08220916 2.6463-3                                       Zhao Wenrong*,       (89)30637  3  3.1448-4                   2.6463-3 0.38                       3.22     3.22    0.1158   0.0016   0.11428364.4410-4 0.98690460.9125244
+#/C5DATA        0
+#/DATASET       30637003 
+#DATASET        30637005   20201225
+#SUBENT         30637005   20201225
+#ENTRY          30637      20201225
+#TITLE          Compilation of measurements and evaluations of nuclear
+#+               activation cross sections for nuclear data application
+#AUTHORS        Zhao Wenrong, Lu Hanlin, Yu Weixiang, Yuan Xialin
+#AUTHOR1        Zhao Wenrong+
+#YEAR           1989
+#X4REF1         R,INDC(CPR)-16,1989
+#REFERENCE1     Rept: Chinese report to the I.N.D.C., No.16 (1989)
+#DATE           20201225
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV,ASSOP
+#REACTION       41-NB-93(N,2N)41-NB-92-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           41093            
+#TARGET         41093           [ ]             41-NB-93        [ ] 
+#REAC1          N,2N
+#PRODUCT        41-NB-92-M
+#C4ReaCode      (N,2N),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 41093   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         14
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 41093   3  16M    1.279E7 160000.0    0.434    0.017                                       Zhao Wenrong,        (89)30637  5                                0.017                            3.92     3.92
+    1 41093   3  16M    1.287E7 100000.0    0.448    0.018                                       Zhao Wenrong,        (89)30637  5                                0.018                            4.02     4.02
+    1 41093   3  16M    1.366E7 100000.0     0.47    0.019                                       Zhao Wenrong,        (89)30637  5                                0.019                            4.04     4.04
+    1 41093   3  16M    1.369E7 320000.0    0.452    0.018                                       Zhao Wenrong,        (89)30637  5                                0.018                            3.98     3.98
+    1 41093   3  16M    1.458E7 200000.0    0.457    0.011                                       Zhao Wenrong,        (89)30637  5                                0.011                            2.41     2.41
+    1 41093   3  16M     1.46E7 300000.0    0.457    0.018                                       Zhao Wenrong,        (89)30637  5                                0.018                            3.94     3.94
+    1 41093   3  16M    1.569E7 330000.0    0.439    0.018                                       Zhao Wenrong,        (89)30637  5                                0.018                            4.10     4.10
+    1 41093   3  16M    1.605E7 310000.0    0.429    0.017                                       Zhao Wenrong,        (89)30637  5                                0.017                            3.96     3.96
+    1 41093   3  16M    1.665E7 340000.0     0.42    0.017                                       Zhao Wenrong,        (89)30637  5                                0.017                            4.05     4.05
+    1 41093   3  16M    1.718E7 300000.0    0.413    0.016                                       Zhao Wenrong,        (89)30637  5                                0.016                            3.87     3.87
+    1 41093   3  16M    1.731E7 310000.0    0.408    0.016                                       Zhao Wenrong,        (89)30637  5                                0.016                            3.92     3.92
+    1 41093   3  16M    1.755E7 210000.0    0.405    0.016                                       Zhao Wenrong,        (89)30637  5                                0.016                            3.95     3.95
+    1 41093   3  16M    1.797E7 240000.0    0.395    0.016                                       Zhao Wenrong,        (89)30637  5                                0.016                            4.05     4.05
+    1 41093   3  16M    1.824E7 160000.0    0.388    0.016                                       Zhao Wenrong,        (89)30637  5                                0.016                            4.12     4.12
+#/C5DATA        0
+#/DATASET       30637005 
+#DATASET        30637007   20201225
+#SUBENT         30637007   20201225
+#ENTRY          30637      20201225
+#TITLE          Compilation of measurements and evaluations of nuclear
+#+               activation cross sections for nuclear data application
+#AUTHORS        Zhao Wenrong, Lu Hanlin, Yu Weixiang, Yuan Xialin
+#AUTHOR1        Zhao Wenrong+
+#YEAR           1989
+#X4REF1         R,INDC(CPR)-16,1989
+#REFERENCE1     Rept: Chinese report to the I.N.D.C., No.16 (1989)
+#DATE           20201225
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       79-AU-197(N,2N)79-AU-196,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           79197            
+#TARGET         79197           [ ]             79-AU-197       [ ] 
+#REAC1          N,2N
+#PRODUCT        79-AU-196
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.38%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.98690456(1.3e7) Data[6]*0.98690456(1.8e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 79197   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1158(1.38%)  EN-NRM(eV):1.458E7
+#M1             Point: XS(b)=0.1142836(0.39%)  EN-NRM(eV):1.458E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 79-AU-197(N,2N)79-AU-196,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1158
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.58MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30637007    0.986905    0.986905    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30637007    CS          7           0.986905    0.986905    0.986905    -1.31%      1.01327     [MONIT]::al27na
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 79197   3  16     1.278E7          2.0478270.1132451                                       Zhao Wenrong*,       (89)30637  7  7.8336-3                  0.1132451 0.38                       5.53     5.53    0.1158   0.0016   0.11428364.4410-4 0.98690460.9597039
+    1 79197   3  16     1.368E7         2.09914610.1151114                                       Zhao Wenrong*,       (89)30637  7  8.0299-3                  0.1151114 0.38                       5.48     5.48    0.1158   0.0016   0.11428364.4410-4 0.98690460.959262
+    1 79197   3  16      1.46E7           2.10112.08952118                                       Zhao Wenrong*,       (89)30637  7  8.0375-3                  .08952118 0.38                       4.26     4.26    0.1158   0.0016   0.11428364.4410-4 0.98690460.9423281
+    1 79197   3  16     1.605E7         2.03203650.1112652                                       Zhao Wenrong*,       (89)30637  7  7.7732-3                  0.1112652 0.38                       5.48     5.48    0.1158   0.0016   0.11428364.4410-4 0.98690460.9591829
+    1 79197   3  16     1.718E7         1.89979140.1055966                                       Zhao Wenrong*,       (89)30637  7  7.2673-3                  0.1055966 0.38                       5.56     5.56    0.1158   0.0016   0.11428364.4410-4 0.98690460.9599691
+    1 79197   3  16     1.797E7         1.6185236.08923795                                       Zhao Wenrong*,       (89)30637  7  6.1914-3                  .08923795 0.38                       5.51     5.51    0.1158   0.0016   0.11428364.4410-4 0.98690460.9595478
+    1 79197   3  16     1.823E7         1.5681914.04475045                                       Zhao Wenrong*,       (89)30637  7  5.9989-3                  .04475045 0.38                       2.85     2.85    0.1158   0.0016   0.11428364.4410-4 0.98690460.895009
+#/C5DATA        0
+#/DATASET       30637007 
+#DATASET        30637008   20201225
+#SUBENT         30637008   20201225
+#ENTRY          30637      20201225
+#TITLE          Compilation of measurements and evaluations of nuclear
+#+               activation cross sections for nuclear data application
+#AUTHORS        Zhao Wenrong, Lu Hanlin, Yu Weixiang, Yuan Xialin
+#AUTHOR1        Zhao Wenrong+
+#YEAR           1989
+#X4REF1         R,INDC(CPR)-16,1989
+#REFERENCE1     Rept: Chinese report to the I.N.D.C., No.16 (1989)
+#DATE           20201225
+#INSTITUTE      3CPRAEP
+#METHOD         ACTIV
+#REACTION       79-AU-197(N,3N)79-AU-195,,SIG
+#C4Reaction     (N,3N),SIG
+#ReactionType   CS
+#MF             3
+#MT             17
+#PROJ           1
+#TARG           79197            
+#TARGET         79197           [ ]             79-AU-197       [ ] 
+#REAC1          N,3N
+#PRODUCT        79-AU-195
+#C4ReaCode      (N,3N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.38%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.98690456(1.6e7) Data[3]*0.98690456(1.8e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 79197   3  17   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.1158(1.38%)  EN-NRM(eV):1.458E7
+#M1             Point: XS(b)=0.1142836(0.39%)  EN-NRM(eV):1.458E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 79-AU-197(N,3N)79-AU-195,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1158
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.58MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30637008    0.986905    0.986905    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30637008    CS          4           0.986905    0.986905    0.986905    -1.31%      1.01327     [MONIT]::al27na
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 79197   3  17     1.605E7         .02921237 6.2054-3                                       Zhao Wenrong*,       (89)30637  8  1.1175-4                   6.2054-3 0.38                       21.2     21.2    0.1158   0.0016   0.11428364.4410-4 0.98690460.9849877
+    1 79197   3  17     1.718E7         0.2408047.02147585                                       Zhao Wenrong*,       (89)30637  8  9.2116-4                  .02147585 0.38                       8.92     8.92    0.1158   0.0016   0.11428364.4410-4 0.98690460.976175
+    1 79197   3  17     1.797E7         0.5161512.03687263                                       Zhao Wenrong*,       (89)30637  8  1.9744-3                  .03687263 0.38                       7.14     7.14    0.1158   0.0016   0.11428364.4410-4 0.98690460.9703324
+    1 79197   3  17     1.823E7         0.7214274.05343024                                       Zhao Wenrong*,       (89)30637  8  2.7597-3                  .05343024 0.38                       7.41     7.41    0.1158   0.0016   0.11428364.4410-4 0.98690460.971459
+#/C5DATA        0
+#/DATASET       30637008 
+#/C5.2.3        1               4               4               0               38              

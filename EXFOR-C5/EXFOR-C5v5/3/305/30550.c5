@@ -1,0 +1,119 @@
+#C5M.2.3
+#DATASET        30550002   20090505
+#SUBENT         30550002   20090505
+#ENTRY          30550      20090505
+#TITLE          Determination of (n,2p) and (n,t) cross sections
+#+              for Pr-141 at 14.7 MeV
+#AUTHORS        J.Csikai,A.K.Chouak
+#AUTHOR1        J.Csikai+
+#YEAR           1979
+#X4REF1         J,RCA,26,135,1979
+#REFERENCE1     Jour: Radiochimica Acta, Vol.26, p.135 (1979)
+#DATE           20090505
+#INSTITUTE      3HUNKOS
+#METHOD         ACTIV
+#REACTION       59-PR-141(N,2P)57-LA-140,,SIG
+#C4Reaction     (N,2P),SIG
+#ReactionType   CS
+#MF             3
+#MT             111
+#PROJ           1
+#TARG           59141            
+#TARGET         59141           [ ]             59-PR-141       [ ] 
+#REAC1          N,2P
+#PRODUCT        57-LA-140
+#C4ReaCode      (N,2P),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=6.25%
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 59141   3 111 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 59141   3 111 A    1.47E7            7.3E-71.0992E-7                                       J.Csikai,            (79)30550  2 4.5625E-8   1.0E-7                   6.25     13.7                       15.1
+#/C5DATA        0
+#/DATASET       30550002 
+#DATASET        30550003   20090505
+#SUBENT         30550003   20090505
+#ENTRY          30550      20090505
+#TITLE          Determination of (n,2p) and (n,t) cross sections
+#+              for Pr-141 at 14.7 MeV
+#AUTHORS        J.Csikai,A.K.Chouak
+#AUTHOR1        J.Csikai+
+#YEAR           1979
+#X4REF1         J,RCA,26,135,1979
+#REFERENCE1     Jour: Radiochimica Acta, Vol.26, p.135 (1979)
+#DATE           20090505
+#INSTITUTE      3HUNKOS
+#METHOD         ACTIV
+#REACTION       59-PR-141(N,T)58-CE-139,,SIG
+#C4Reaction     (N,T),SIG
+#ReactionType   CS
+#MF             3
+#MT             105
+#PROJ           1
+#TARG           59141            
+#TARGET         59141           [ ]             59-PR-141       [ ] 
+#REAC1          N,T
+#PRODUCT        58-CE-139
+#C4ReaCode      (N,T),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=6.25%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.38%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 59141   3 105 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      23-V-51(N,A)21-SC-48,,SIG
+#M0             Point: XS(b)=0.016(6.25%)  EN-NRM(eV):1.47E7
+#C5CORR         #Reaction: 59-PR-141(N,T)58-CE-139,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (59-PR-141(N,T)58-CE-139,,SIG)
+#+               #[1]#DECAY-DATA (58-CE-139-G,,DG,166.,0.81) #Ix_old=0.81
+#+                a1=0.81/0.799;              #[1]#DECAY-DATA: correction to new 165.8575 keV gamma-yield per decay Ce-139-g Ix_new=0.799
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0137671
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30550003    1.01377     -           1.01377     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30550003    CS          1           1.01377     1.01377     1.01377     +1.38%      1.01377     [MONIT]::v51na
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 59141   3 105 A    1.47E7          1.6626-4 1.7590-5                                       J.Csikai*,           (79)30550  3  1.0391-5   1.4E-5                   6.25     8.42                       10.6                                        1.01376711.0137671
+#/C5DATA        0
+#/DATASET       30550003 
+#/C5M.2.3       1               2               2               0               2               

@@ -1,0 +1,167 @@
+#C5M.2.3
+#DATASET        41152002   20110505
+#SUBENT         41152002   20110505
+#ENTRY          41152      20150930
+#TITLE          Ionization Method of (N,ALPHA) Reaction Investigation
+#+               At the Gaseous and Solid Targets
+#AUTHORS        A.A.Goverdovskiy,O.T.Grudzevich,A.V.Zelenetskiy,
+#+               V.F.Mitrofanov,N.N.Semenov,V.A.Khryachkov,M.Florek
+#AUTHOR1        A.A.Goverdovskiy+
+#YEAR           1992
+#X4REF1         R,FEI-2242,199203
+#REFERENCE1     Rept: Fiz.-Energ Institut, Obninsk Reports, No.2242 (1992)
+#DATE           20110505
+#INSTITUTE      4RUSFEI
+#REACTION       18-AR-36(N,A)16-S-33,PAR,SIG
+#C4Reaction     (N,A)PAR,SIG
+#ReactionType   CSP
+#MF             3
+#MT             801
+#PROJ           1
+#TARG           18036            
+#TARGET         18036           [ ]             18-AR-36        [ ] 
+#REAC1          N,A
+#PRODUCT        16-S-33
+#C4ReaCode      (N,A)PAR,SIG
+#CompNotes      RESET MT801 to MT800: ZAP=16033 iLvl=0   eLvl=0.0 eV
+#CompNotes      RESET MT801 to MT801: ZAP=16033 iLvl=1   eLvl=841000.0 eV
+#CompNotes      RESET MT801 to MT802: ZAP=16033 iLvl=2   eLvl=1967000.0 eV
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9956909(3.5e6) Data[30]*0.9956909(5.1e6)
+#Quantity       Partial cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [    1 18036   3 801   ]
+#DATA-HDR       DATA
+#VarFamily      [0 23       ]
+#xVariables     2
+#+              Y = Y(X1,X2)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-238(N,F),,SIG
+#M0             Point: XS(b)=0.55  EN-NRM(eV):5500000.0
+#M1             Point: XS(b)=0.54763(1.39%)  EN-NRM(eV):5500000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 18-AR-36(N,A)16-S-33,PAR,SIG
+#+              #[0]#Monitor:  92-U-238(N,F),,SIG
+#+              #[0]#En=5500000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.55
+#+              a1=recom$u238nf[EN-NRM-MIN!EN-NRM-MAX];#[0]#new monitor point [5.5MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        41152002    0.995691    0.995691    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          41152002    CSP         31          0.995691    0.995691    0.995691    -0.431%     1.00433     [MONIT]::u238nf
+#C5DATA         31
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                        LVL     dLVL
+#Units                       EV       EV        B        B                         EV       EV
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 18036   3 800   3500000.0 210000.0.05028239   0.0076                        0.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0076                            15.1     15.1    0.55              0.54763  0.00761810.9956909
+    1 18036   3 800   3650000.0 200000.0.05177593    0.004                        0.0         LVLA.A.Goverdovskiy*,   (92)41152  2                                0.004                            7.73     7.73    0.55              0.54763  0.00761810.9956909
+    1 18036   3 800   3780000.0 190000.0.06103585   0.0035                        0.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0035                            5.73     5.73    0.55              0.54763  0.00761810.9956909
+    1 18036   3 800   3920000.0 190000.0.07388026   0.0033                        0.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0033                            4.47     4.47    0.55              0.54763  0.00761810.9956909
+    1 18036   3 800   4050000.0 180000.0.06969837   0.0083                        0.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0083                            11.9     11.9    0.55              0.54763  0.00761810.9956909
+    1 18036   3 800   4170000.0 170000.0.08104924    0.004                        0.0         LVLA.A.Goverdovskiy*,   (92)41152  2                                0.004                            4.94     4.94    0.55              0.54763  0.00761810.9956909
+    1 18036   3 800   4290000.0 160000.0.09897169    0.004                        0.0         LVLA.A.Goverdovskiy*,   (92)41152  2                                0.004                            4.04     4.04    0.55              0.54763  0.00761810.9956909
+    1 18036   3 800   4420000.0 160000.00.1038506    0.004                        0.0         LVLA.A.Goverdovskiy*,   (92)41152  2                                0.004                            3.85     3.85    0.55              0.54763  0.00761810.9956909
+    1 18036   3 800   4540000.0 160000.00.1002661   0.0028                        0.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0028                            2.79     2.79    0.55              0.54763  0.00761810.9956909
+    1 18036   3 800   4660000.0 140000.0.09259926   0.0021                        0.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0021                            2.27     2.27    0.55              0.54763  0.00761810.9956909
+    1 18036   3 800   4780000.0 140000.0.08791952   0.0028                        0.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0028                            3.18     3.18    0.55              0.54763  0.00761810.9956909
+    1 18036   3 800   4890000.0129999.99.08184581   0.0021                        0.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0021                            2.57     2.57    0.55              0.54763  0.00761810.9956909
+    1 18036   3 800   5000000.0 120000.0.07636949   0.0022                        0.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0022                            2.88     2.88    0.55              0.54763  0.00761810.9956909
+    1 18036   3 800   5120000.0 120000.0.09329624    0.002                        0.0         LVLA.A.Goverdovskiy*,   (92)41152  2                                0.002                            2.14     2.14    0.55              0.54763  0.00761810.9956909
+    1 18036   3 801   3650000.0 200000.0 9.1604-3   0.0019                   840000.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0019                            20.7     20.7    0.55              0.54763  0.00761810.9956909
+    1 18036   3 801   3780000.0 190000.0 9.1604-3   0.0019                   840000.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0019                            20.7     20.7    0.55              0.54763  0.00761810.9956909
+    1 18036   3 801   3920000.0 190000.0.01075346   0.0018                   840000.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0018                            16.7     16.7    0.55              0.54763  0.00761810.9956909
+    1 18036   3 801   4050000.0 180000.0.01035518   0.0018                   840000.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0018                            17.4     17.4    0.55              0.54763  0.00761810.9956909
+    1 18036   3 801   4170000.0 170000.0.01523407   0.0017                   840000.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0017                            11.2     11.2    0.55              0.54763  0.00761810.9956909
+    1 18036   3 801   4290000.0 160000.0.01453709   0.0017                   840000.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0017                            11.7     11.7    0.55              0.54763  0.00761810.9956909
+    1 18036   3 801   4420000.0 160000.0.02648538   0.0017                   840000.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0017                            6.42     6.42    0.55              0.54763  0.00761810.9956909
+    1 18036   3 801   4540000.0 160000.0.02817805   0.0011                   840000.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0011                            3.90     3.90    0.55              0.54763  0.00761810.9956909
+    1 18036   3 801   4660000.0 140000.00.0260871   0.0011                   840000.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0011                            4.22     4.22    0.55              0.54763  0.00761810.9956909
+    1 18036   3 801   4780000.0 140000.0.02718236   0.0011                   840000.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0011                            4.05     4.05    0.55              0.54763  0.00761810.9956909
+    1 18036   3 801   4890000.0129999.99.03604401   0.0011                   840000.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0011                            3.05     3.05    0.55              0.54763  0.00761810.9956909
+    1 18036   3 801   5000000.0 120000.0.03823454   0.0014                   840000.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0014                            3.66     3.66    0.55              0.54763  0.00761810.9956909
+    1 18036   3 801   5120000.0 120000.0.03534703   0.0014                   840000.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0014                            3.96     3.96    0.55              0.54763  0.00761810.9956909
+    1 18036   3 802   4780000.0 140000.0.02170606   0.0036                  1970000.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0036                            16.6     16.6    0.55              0.54763  0.00761810.9956909
+    1 18036   3 802   4890000.0129999.99.03604401   0.0018                  1970000.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0018                            4.99     4.99    0.55              0.54763  0.00761810.9956909
+    1 18036   3 802   5000000.0 120000.0.04291428   0.0021                  1970000.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0021                            4.89     4.89    0.55              0.54763  0.00761810.9956909
+    1 18036   3 802   5120000.0 120000.0.04351169   0.0021                  1970000.0         LVLA.A.Goverdovskiy*,   (92)41152  2                               0.0021                            4.83     4.83    0.55              0.54763  0.00761810.9956909
+#/C5DATA        0
+#/DATASET       41152002 
+#DATASET        41152003   20110505
+#SUBENT         41152003   20110505
+#ENTRY          41152      20150930
+#TITLE          Ionization Method of (N,ALPHA) Reaction Investigation
+#+               At the Gaseous and Solid Targets
+#AUTHORS        A.A.Goverdovskiy,O.T.Grudzevich,A.V.Zelenetskiy,
+#+               V.F.Mitrofanov,N.N.Semenov,V.A.Khryachkov,M.Florek
+#AUTHOR1        A.A.Goverdovskiy+
+#YEAR           1992
+#X4REF1         R,FEI-2242,199203
+#REFERENCE1     Rept: Fiz.-Energ Institut, Obninsk Reports, No.2242 (1992)
+#DATE           20110505
+#INSTITUTE      4RUSFEI
+#REACTION       28-NI-58(N,A)26-FE-55,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           28058            
+#TARGET         28058           [ ]             28-NI-58        [ ] 
+#REAC1          N,A
+#PRODUCT        26-FE-55
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9956909(5.1e6)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 28058   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-238(N,F),,SIG
+#M0             Point: XS(b)=0.55  EN-NRM(eV):5500000.0
+#M1             Point: XS(b)=0.54763(1.39%)  EN-NRM(eV):5500000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 28-NI-58(N,A)26-FE-55,,SIG
+#+              #[0]#Monitor:  92-U-238(N,F),,SIG
+#+              #[0]#En=5500000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.55
+#+              a1=recom$u238nf[EN-NRM-MIN!EN-NRM-MAX];#[0]#new monitor point [5.5MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        41152003    0.995691    0.995691    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          41152003    CS          1           0.995691    0.995691    0.995691    -0.431%     1.00433     [MONIT]::u238nf
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 28058   3 107   5120000.0 120000.0.02100908   0.0045                                       A.A.Goverdovskiy*,   (92)41152  3                               0.0045                            21.4     21.4    0.55              0.54763  0.00761810.9956909
+#/C5DATA        0
+#/DATASET       41152003 
+#/C5M.2.3       1               2               3               0               32              

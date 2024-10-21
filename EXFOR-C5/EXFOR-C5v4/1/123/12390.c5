@@ -1,0 +1,95 @@
+#C5.2.3
+#DATASET        12390002   19820519
+#SUBENT         12390002   19820519
+#ENTRY          12390      19820519
+#TITLE          
+#AUTHORS        L.M.BOLLINGER,A.SAPLAKOGLU
+#AUTHOR1        L.M.Bollinger+
+#YEAR           1958
+#X4REF1         W,BOLLINGER,58
+#REFERENCE1     Priv.Comm: Bollinger (1958)
+#DATE           19820519
+#INSTITUTE      1USAANL
+#METHOD         TOF
+#REACTION       92-U-235(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           92235            
+#TARGET         92235           [ ]             92-U-235        [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0091065(3.8e-3) Data[30]*1.0091065(9.5e-1)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92235   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-235(N,F),,SIG
+#M0             Point: XS(b)=582.0  EN-NRM(eV):0.0253
+#M1             Point: XS(b)=587.3(0.24%)  EN-NRM(eV):0.0253
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 92-U-235(N,F),,SIG
+#+              #[0]#Monitor:  92-U-235(N,F),,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 582.0
+#+              a1=recom$u235nf[EN-NRM];      #[0]#new monitor point [2.53E-8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12390002    1.00911     1.00911     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12390002    CS          31          1.00911     1.00911     1.00911     +0.911%     1.00911     [MONIT]::u235nf
+#C5DATA         31
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92235   3  18      0.0038         1665.0258     56.0                                       L.M.BOLLINGER*,      (58)12390  2                                 56.0                            3.36     3.36    582.0             587.3    1.4      1.0091065
+    1 92235   3  18      0.0044         1526.7782     40.0                                       L.M.BOLLINGER*,      (58)12390  2                                 40.0                            2.62     2.62    582.0             587.3    1.4      1.0091065
+    1 92235   3  18      0.0052         1369.3575     28.0                                       L.M.BOLLINGER*,      (58)12390  2                                 28.0                            2.04     2.04    582.0             587.3    1.4      1.0091065
+    1 92235   3  18      0.0064         1257.3467     20.0                                       L.M.BOLLINGER*,      (58)12390  2                                 20.0                            1.59     1.59    582.0             587.3    1.4      1.0091065
+    1 92235   3  18       0.008         1061.5801     12.0                                       L.M.BOLLINGER*,      (58)12390  2                                 12.0                            1.13     1.13    582.0             587.3    1.4      1.0091065
+    1 92235   3  18      0.0105         949.26654     14.7                                       L.M.BOLLINGER*,      (58)12390  2                                 14.7                            1.55     1.55    582.0             587.3    1.4      1.0091065
+    1 92235   3  18      0.0125          869.9507      8.8                                       L.M.BOLLINGER*,      (58)12390  2                                  8.8                            1.01     1.01    582.0             587.3    1.4      1.0091065
+    1 92235   3  18      0.0146          816.7708      9.0                                       L.M.BOLLINGER*,      (58)12390  2                                  9.0                            1.10     1.10    582.0             587.3    1.4      1.0091065
+    1 92235   3  18      0.0172          732.0059      7.3                                       L.M.BOLLINGER*,      (58)12390  2                                  7.3                            1        1       582.0             587.3    1.4      1.0091065
+    1 92235   3  18      0.0206          653.8001      5.7                                       L.M.BOLLINGER*,      (58)12390  2                                  5.7                            0.87     0.87    582.0             587.3    1.4      1.0091065
+    1 92235   3  18      0.0251             587.3      4.5                                       L.M.BOLLINGER*,      (58)12390  2                                  4.5                            0.77     0.77    582.0             587.3    1.4      1.0091065
+    1 92235   3  18      0.0311          510.7088      3.5                                       L.M.BOLLINGER*,      (58)12390  2                                  3.5                            0.69     0.69    582.0             587.3    1.4      1.0091065
+    1 92235   3  18      0.0399          448.1442      2.9                                       L.M.BOLLINGER*,      (58)12390  2                                  2.9                            0.65     0.65    582.0             587.3    1.4      1.0091065
+    1 92235   3  18       0.053         371.55304      2.3                                       L.M.BOLLINGER*,      (58)12390  2                                  2.3                            0.62     0.62    582.0             587.3    1.4      1.0091065
+    1 92235   3  18      0.0655          324.8314      2.0                                       L.M.BOLLINGER*,      (58)12390  2                                  2.0                            0.62     0.62    582.0             587.3    1.4      1.0091065
+    1 92235   3  18      0.0736         303.33743      2.0                                       L.M.BOLLINGER*,      (58)12390  2                                  2.0                            0.66     0.66    582.0             587.3    1.4      1.0091065
+    1 92235   3  18      0.0833          281.5407      1.9                                       L.M.BOLLINGER*,      (58)12390  2                                  1.9                            0.67     0.67    582.0             587.3    1.4      1.0091065
+    1 92235   3  18      0.0951         258.23035      1.9                                       L.M.BOLLINGER*,      (58)12390  2                                  1.9                            0.74     0.74    582.0             587.3    1.4      1.0091065
+    1 92235   3  18        0.11         234.11272      2.0                                       L.M.BOLLINGER*,      (58)12390  2                                  2.0                            0.85     0.85    582.0             587.3    1.4      1.0091065
+    1 92235   3  18       0.128         214.73787      2.1                                       L.M.BOLLINGER*,      (58)12390  2                                  2.1                            0.98     0.98    582.0             587.3    1.4      1.0091065
+    1 92235   3  18       0.151         192.84026      2.3                                       L.M.BOLLINGER*,      (58)12390  2                                  2.3                            1.19     1.19    582.0             587.3    1.4      1.0091065
+    1 92235   3  18        0.18         177.90549      2.6                                       L.M.BOLLINGER*,      (58)12390  2                                  2.6                            1.46     1.46    582.0             587.3    1.4      1.0091065
+    1 92235   3  18       0.219         174.27269      3.3                                       L.M.BOLLINGER*,      (58)12390  2                                  3.3                            1.89     1.89    582.0             587.3    1.4      1.0091065
+    1 92235   3  18       0.261         184.26286      3.8                                       L.M.BOLLINGER*,      (58)12390  2                                  3.8                            2.06     2.06    582.0             587.3    1.4      1.0091065
+    1 92235   3  18         0.3         190.11566      4.0                                       L.M.BOLLINGER*,      (58)12390  2                                  4.0                            2.10     2.10    582.0             587.3    1.4      1.0091065
+    1 92235   3  18        0.35         150.86142      3.5                                       L.M.BOLLINGER*,      (58)12390  2                                  3.5                            2.32     2.32    582.0             587.3    1.4      1.0091065
+    1 92235   3  18       0.412         107.16711      3.0                                       L.M.BOLLINGER*,      (58)12390  2                                  3.0                            2.80     2.80    582.0             587.3    1.4      1.0091065
+    1 92235   3  18       0.492          82.04036      2.5                                       L.M.BOLLINGER*,      (58)12390  2                                  2.5                            3.05     3.05    582.0             587.3    1.4      1.0091065
+    1 92235   3  18       0.599         61.656406                                                L.M.BOLLINGER*,      (58)12390  2                                                                                  582.0             587.3    1.4      1.0091065
+    1 92235   3  18       0.744         55.904503                                                L.M.BOLLINGER*,      (58)12390  2                                                                                  582.0             587.3    1.4      1.0091065
+    1 92235   3  18       0.949          64.28008                                                L.M.BOLLINGER*,      (58)12390  2                                                                                  582.0             587.3    1.4      1.0091065
+#/C5DATA        0
+#/DATASET       12390002 
+#/C5.2.3        1               1               1               0               31              

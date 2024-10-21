@@ -1,0 +1,81 @@
+#C5.2.3
+#DATASET        33127002   20191113
+#SUBENT         33127002   20191113
+#ENTRY          33127      20191113
+#TITLE          Cross sections for formation of 139mCe radioisotope
+#+              through the 140Ce(n,2n) reaction over 13.73 - 14.77 MeV
+#+              neutrons
+#AUTHORS        V.D.Bharud, F.M.D.Attar, S.S.Dahiwale, S.D.Dhole,
+#+              V.N.Bhoraskar
+#AUTHOR1        V.D.Bharud+
+#YEAR           2019
+#X4REF1         J,ARI,146,10,2019
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.146, p.10 (2019)
+#DATE           20191113
+#INSTITUTE      3INDPOO,3INDIND
+#METHOD         ACTIV,MOMIX
+#REACTION       58-CE-140(N,2N)58-CE-139-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           58140            
+#TARGET         58140           [ ]             58-CE-140       [ ] 
+#REAC1          N,2N
+#PRODUCT        58-CE-139-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-1,,6.)        ADDED AS COMMON:ERR-1,PER-CENT=3.0%
+#CompNotes      ERR-ANALYS:(ERR-2,,4.)        ADDED AS COMMON:ERR-2,PER-CENT=2.0%
+#CompNotes      ERR-ANALYS:(ERR-3,,0.3)       ADDED AS COMMON:ERR-3,PER-CENT=0.15%
+#CompNotes      ERR-ANALYS:(ERR-4,,6.)        ADDED AS COMMON:ERR-4,PER-CENT=3.0%
+#CompNotes      ERR-ANALYS:(ERR-5,,3.)        ADDED AS COMMON:ERR-5,PER-CENT=1.5%
+#CompNotes      ERR-ANALYS:(ERR-6,,1.)        ADDED AS COMMON:ERR-6,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-7,,1.)        ADDED AS COMMON:ERR-7,PER-CENT=0.5%
+#CompNotes      ERR-ANALYS:(ERR-8,,1.)        ADDED AS COMMON:ERR-8,PER-CENT=0.5%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0206447(1.4e7) Data[4]*1.03678(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 58140   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,P)12-MG-27,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 58-CE-140(N,2N)58-CE-139-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,P)12-MG-27,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$al27np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        33127002    1.02612     1.02612     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          33127002    CS          5           1.01680     1.03678     1.02612     +2.61%      1.03678     [EN,MONIT]::al27np
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 58140   3  16M    1.373E7 140000.0 0.867548    0.058                                       V.D.Bharud*,         (19)33127  2 .04251912                      0.058 4.90                       6.69     6.69    0.07824           .07985524.001276651.0206447
+    1 58140   3  16M    1.407E7 160000.00.9716678    0.058                                       V.D.Bharud*,         (19)33127  2 .04757139                      0.058 4.90                       5.97     5.97    0.07365           .075250611.1337-3 1.0217327
+    1 58140   3  16M    1.442E7 240000.01.0501375    0.063                                       V.D.Bharud*,         (19)33127  2 .05077284                      0.063 4.83                       6        6       0.06831           .070674761.0237-3 1.0346181
+    1 58140   3  16M    1.468E7 300000.01.0645921    0.062                                       V.D.Bharud*,         (19)33127  2 .05237356                      0.062 4.92                       5.82     5.82    0.06631           .067424169.9453-4 1.0168023
+    1 58140   3  16M    1.477E7 340000.01.1321638.08100001                                       V.D.Bharud*,         (19)33127  2 .05462457                  .08100001 4.82                       7.15     7.15    .06398001         .066333199.9149-4 1.03678
+#/C5DATA        0
+#/DATASET       33127002 
+#/C5.2.3        1               1               1               0               5               

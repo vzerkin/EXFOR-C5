@@ -1,0 +1,71 @@
+#C5M.2.3
+#DATASET        22146002   19900917
+#SUBENT         22146002   19900917
+#ENTRY          22146      19900917
+#TITLE          -THE ESCAPE OF RECOILS FROM NEUTRON-BOMBARDED FOILS.
+#AUTHORS        P.KOLKOWSKI,T.B.RYVES
+#AUTHOR1        P.Kolkowski+
+#YEAR           1989
+#X4REF1         J,NIM/A,276,539,89
+#REFERENCE1     Jour: Nucl. Instrum. Methods in Physics Res., Sect.A, Vol.276, p.539 (1989)
+#DATE           19900917
+#INSTITUTE      2UK NPL
+#METHOD         ACTIV,BGCT ,REC  
+#REACTION       12-MG-24(N,P)11-NA-24,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           12024            
+#TARGET         12024           [ ]             12-MG-24        [ ] 
+#REAC1          N,P
+#PRODUCT        11-NA-24
+#C4ReaCode      (N,P),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.46%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9882564(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 12024   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             Point: XS(b)=0.1084(0.46%)  EN-NRM(eV):1.47E7
+#M1             Point: XS(b)=0.107127(1.14%)  EN-NRM(eV):1.47E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 12-MG-24(N,P)11-NA-24,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              #[0]#En=1.47E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1084
+#+              a1=recom$fe56np[EN];          #[0]#new monitor point [14.7MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22146002    0.988256    0.988256    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22146002    CS          1           0.988256    0.988256    0.988256    -1.17%      1.01188     [MONIT]::fe56np
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 12024   3 103      1.47E7  30000.00.1739331 3.4716-3                                       P.KOLKOWSKI*,        (89)22146  2  1.9754-3                   3.4716-3 1.14                       2        2       0.1084   5.0E-4   0.107127 .001217220.98825641.157198
+#/C5DATA        0
+#/DATASET       22146002 
+#/C5M.2.3       1               1               1               0               1               

@@ -1,0 +1,302 @@
+#C5M.2.3
+#DATASET        13883002   20030911
+#SUBENT         13883002   20030911
+#ENTRY          13883      20031104
+#TITLE          239Pu and 241Am(n,2n) cross-section measurements near
+#+               E(n) = 14 MeV
+#AUTHORS        R.W.Lougheed,W.Webster,M.N.Namboodiri,D.R.Nethaway,
+#+              K.J.Moody,J.H.Landrum,R.W.Hoff,R.J.Dupzyk,J.H.McQuaid,
+#+              R.Gunnink,E.D.Watkins
+#AUTHOR1        R.W.Lougheed+
+#YEAR           2002
+#X4REF1         J,RCA,90,833,2002
+#REFERENCE1     Jour: Radiochimica Acta, Vol.90, p.833 (2002)
+#DATE           20030911
+#INSTITUTE      1USALRL
+#METHOD         CHSEP,ACTIV
+#REACTION       94-PU-239(N,2N)94-PU-238,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           94239            
+#TARGET         94239           [ ]             94-PU-239       [ ] 
+#REAC1          N,2N
+#PRODUCT        94-PU-238
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0001988(1.4e7) Data[2]*1.0133567(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 94239   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,2N)79-AU-196,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$au197n2n}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 94-PU-239(N,2N)94-PU-238,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,2N)79-AU-196,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$au197n2n;           #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        13883002    1.00800     1.00800     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          13883002    CS          3           1.00020     1.01336     1.00800     +0.800%     1.01336     [EN,MONIT]::au197n2n
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 94239   3  16      1.38E7         0.2280453 0.006384                                       R.W.Lougheed*,       (02)13883  2                             0.006384                            2.80     2.80    2.1120002         2.11242  0.02480221.0001988
+    1 94239   3  16       1.4E7         0.2212854 0.007884                                       R.W.Lougheed*,       (02)13883  2                             0.007884                            3.56     3.56    2.1120002         2.13404  0.02399141.0104356
+    1 94239   3  16      1.48E7         0.2168583 0.002996                                       R.W.Lougheed*,       (02)13883  2                             0.002996                            1.38     1.38    2.1360002         2.16453  0.02340251.0133567
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.38E7      1.48E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.38E7      1.38E7      0.228045    2.8          100
+1.4E7       1.4E7       0.221285    3.56         40 100
+1.48E7      1.48E7      0.216858    1.38         25 25 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       13883002 
+#DATASET        13883003   20030911
+#SUBENT         13883003   20030911
+#ENTRY          13883      20031104
+#TITLE          239Pu and 241Am(n,2n) cross-section measurements near
+#+               E(n) = 14 MeV
+#AUTHORS        R.W.Lougheed,W.Webster,M.N.Namboodiri,D.R.Nethaway,
+#+              K.J.Moody,J.H.Landrum,R.W.Hoff,R.J.Dupzyk,J.H.McQuaid,
+#+              R.Gunnink,E.D.Watkins
+#AUTHOR1        R.W.Lougheed+
+#YEAR           2002
+#X4REF1         J,RCA,90,833,2002
+#REFERENCE1     Jour: Radiochimica Acta, Vol.90, p.833 (2002)
+#DATE           20030911
+#INSTITUTE      1USALRL
+#METHOD         ACTIV
+#REACTION       95-AM-241(N,2N)95-AM-240,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           95241            
+#TARGET         95241           [ ]             95-AM-241       [ ] 
+#REAC1          N,2N
+#PRODUCT        95-AM-240
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0032048(1.4e7) Data[4]*0.98705906(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 95241   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 95-AM-241(N,2N)95-AM-240,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        13883003    0.999314    0.999314    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          13883003    CS          5           0.987059    1.01199     0.999314    -0.0686%    1.01311     [EN,MONIT]::al27na
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 95241   3  16     1.367E7         0.2608332  0.00364                                       R.W.Lougheed*,       (02)13883  3                              0.00364                            1.40     1.40    0.1245            0.124899 7.0626-4 1.0032048
+    1 95241   3  16     1.398E7         0.2621063 0.004662                                       R.W.Lougheed*,       (02)13883  3                             0.004662                            1.78     1.78    0.1209            0.12235  5.8710-4 1.0119933
+    1 95241   3  16     1.429E7         0.2494784 0.004267                                       R.W.Lougheed*,       (02)13883  3                             0.004267                            1.71     1.71    0.1191            0.118378 4.9934-4 0.9939378
+    1 95241   3  16     1.477E7         0.2330878 0.004194                                       R.W.Lougheed*,       (02)13883  3                             0.004194                            1.80     1.80    0.1114            0.111442 4.7080-4 1.0003769
+    1 95241   3  16     1.512E7         0.2191271 0.003552                                       R.W.Lougheed*,       (02)13883  3                             0.003552                            1.62     1.62    0.1076            0.10620765.1998-4 0.9870591
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.367E7     1.512E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           5           5
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.367E7     1.367E7     0.260833    1.4          100
+1.398E7     1.398E7     0.262106    1.78         39 100
+1.429E7     1.429E7     0.249478    1.71         29 39 100
+1.477E7     1.477E7     0.233088    1.8          25 25 33 100
+1.512E7     1.512E7     0.219127    1.62         25 25 25 38 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       13883003 
+#DATASET        13883004   20030911
+#SUBENT         13883004   20030911
+#ENTRY          13883      20031104
+#TITLE          239Pu and 241Am(n,2n) cross-section measurements near
+#+               E(n) = 14 MeV
+#AUTHORS        R.W.Lougheed,W.Webster,M.N.Namboodiri,D.R.Nethaway,
+#+              K.J.Moody,J.H.Landrum,R.W.Hoff,R.J.Dupzyk,J.H.McQuaid,
+#+              R.Gunnink,E.D.Watkins
+#AUTHOR1        R.W.Lougheed+
+#YEAR           2002
+#X4REF1         J,RCA,90,833,2002
+#REFERENCE1     Jour: Radiochimica Acta, Vol.90, p.833 (2002)
+#DATE           20030911
+#INSTITUTE      1USALRL
+#METHOD         ACTIV
+#REACTION       95-AM-241(N,F)ELEM/MASS,CUM,SIG
+#C4Reaction     (N,F)ELEM/MASS,CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           95241            
+#TARGET         95241           [ ]             95-AM-241       [ ] 
+#REAC1          N,F
+#PRODUCT        ELEM/MASS
+#C4ReaCode      (N,F)ELEM/MASS,CUM,SIG
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [    1 95241   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2    7   ]
+#xVariables     2
+#+              Y = Y(X1,X2)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         72
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData            ZAProd                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 95241   3  18      1.37E7             0.057 0.001026           38091.9                     R.W.Lougheed,        (02)13883  4           0.001026                            1.80                       1.80
+    1 95241   3  18      1.37E7            0.1058 0.016399           39093.9                     R.W.Lougheed,        (02)13883  4           0.016399                            15.5                       15.5
+    1 95241   3  18      1.37E7             0.113  0.00113           40097.9                     R.W.Lougheed,        (02)13883  4            0.00113                            1                          1
+    1 95241   3  18      1.37E7            0.10550.0165635           42099.9                     R.W.Lougheed,        (02)13883  4          0.0165635                            15.7                       15.7
+    1 95241   3  18      1.37E7            0.12880.0087584           44103.9                     R.W.Lougheed,        (02)13883  4          0.0087584                            6.80                       6.80
+    1 95241   3  18      1.37E7            0.12440.0065932           45105.9                     R.W.Lougheed,        (02)13883  4          0.0065932                            5.30                       5.30
+    1 95241   3  18      1.37E7            0.04550.0065975           48115.9                     R.W.Lougheed,        (02)13883  4          0.0065975                            14.5                       14.5
+    1 95241   3  18      1.37E7            0.03810.0121539           50125.9                     R.W.Lougheed,        (02)13883  4          0.0121539                            31.9                       31.9
+    1 95241   3  18      1.37E7         .072100010.0078589           51127.9                     R.W.Lougheed,        (02)13883  4          0.0078589                            10.9                       10.9
+    1 95241   3  18      1.37E7            0.0356 6.408E-4           51128.9                     R.W.Lougheed,        (02)13883  4           6.408E-4                            1.80                       1.80
+    1 95241   3  18      1.37E7            0.08670.0037281           53131.9                     R.W.Lougheed,        (02)13883  4          0.0037281                            4.30                       4.30
+    1 95241   3  18      1.37E7         .065300010.0025467           52132.9                     R.W.Lougheed,        (02)13883  4          0.0025467                            3.90                       3.90
+    1 95241   3  18      1.37E7            0.12130.0025473           53133.9                     R.W.Lougheed,        (02)13883  4          0.0025473                            2.10                       2.10
+    1 95241   3  18      1.37E7            0.0755 0.001661           56140.9                     R.W.Lougheed,        (02)13883  4           0.001661                            2.20                       2.20
+    1 95241   3  18       1.4E7            0.05910.0025413           38091.9                     R.W.Lougheed,        (02)13883  4          0.0025413                            4.30                       4.30
+    1 95241   3  18       1.4E7            0.11560.0523668           39093.9                     R.W.Lougheed,        (02)13883  4          0.0523668                            45.3                       45.3
+    1 95241   3  18       1.4E7            0.10380.0012456           40097.9                     R.W.Lougheed,        (02)13883  4          0.0012456                            1.20                       1.20
+    1 95241   3  18       1.4E7         .099500010.0162185           42099.9                     R.W.Lougheed,        (02)13883  4          0.0162185                            16.3                       16.3
+    1 95241   3  18       1.4E7            0.13080.0056244           44103.9                     R.W.Lougheed,        (02)13883  4          0.0056244                            4.30                       4.30
+    1 95241   3  18       1.4E7             0.126 0.005292           45105.9                     R.W.Lougheed,        (02)13883  4           0.005292                            4.20                       4.20
+    1 95241   3  18       1.4E7             0.046  0.00414           48115.9                     R.W.Lougheed,        (02)13883  4            0.00414                            9                          9
+    1 95241   3  18       1.4E7            0.02270.0048124           50125.9                     R.W.Lougheed,        (02)13883  4          0.0048124                            21.2                       21.2
+    1 95241   3  18       1.4E7            0.0636 0.004452           51127.9                     R.W.Lougheed,        (02)13883  4           0.004452                            7                          7
+    1 95241   3  18       1.4E7            0.03210.0024717           51128.9                     R.W.Lougheed,        (02)13883  4          0.0024717                            7.70                       7.70
+    1 95241   3  18       1.4E7            0.10330.0027891           53131.9                     R.W.Lougheed,        (02)13883  4          0.0027891                            2.70                       2.70
+    1 95241   3  18       1.4E7         .06500001  0.00156           52132.9                     R.W.Lougheed,        (02)13883  4            0.00156                            2.40                       2.40
+    1 95241   3  18       1.4E7            0.11270.0021413           53133.9                     R.W.Lougheed,        (02)13883  4          0.0021413                            1.90                       1.90
+    1 95241   3  18       1.4E7            0.08210.0012315           56140.9                     R.W.Lougheed,        (02)13883  4          0.0012315                            1.50                       1.50
+    1 95241   3  18       1.4E7         .07250001  0.01044           58143.9                     R.W.Lougheed,        (02)13883  4            0.01044                            14.4                       14.4
+    1 95241   3  18      1.43E7         .063900010.0063261           38091.9                     R.W.Lougheed,        (02)13883  4          0.0063261                            9.90                       9.90
+    1 95241   3  18      1.43E7            0.10220.0017374           40097.9                     R.W.Lougheed,        (02)13883  4          0.0017374                            1.70                       1.70
+    1 95241   3  18      1.43E7            0.06840.0162108           42099.9                     R.W.Lougheed,        (02)13883  4          0.0162108                            23.7                       23.7
+    1 95241   3  18      1.43E7            0.13680.0091656           44103.9                     R.W.Lougheed,        (02)13883  4          0.0091656                            6.70                       6.70
+    1 95241   3  18      1.43E7            0.14650.0106945           45105.9                     R.W.Lougheed,        (02)13883  4          0.0106945                            7.30                       7.30
+    1 95241   3  18      1.43E7            0.05730.0082512           48115.9                     R.W.Lougheed,        (02)13883  4          0.0082512                            14.4                       14.4
+    1 95241   3  18      1.43E7            0.02950.0088795           50125.9                     R.W.Lougheed,        (02)13883  4          0.0088795                            30.1                       30.1
+    1 95241   3  18      1.43E7             0.058  0.00319           51127.9                     R.W.Lougheed,        (02)13883  4            0.00319                            5.50                       5.50
+    1 95241   3  18      1.43E7            0.03270.0127203           51128.9                     R.W.Lougheed,        (02)13883  4          0.0127203                            38.9                       38.9
+    1 95241   3  18      1.43E7            0.11410.0047922           53131.9                     R.W.Lougheed,        (02)13883  4          0.0047922                            4.20                       4.20
+    1 95241   3  18      1.43E7            0.07190.0013661           52132.9                     R.W.Lougheed,        (02)13883  4          0.0013661                            1.90                       1.90
+    1 95241   3  18      1.43E7            0.12080.0041072           53133.9                     R.W.Lougheed,        (02)13883  4          0.0041072                            3.40                       3.40
+    1 95241   3  18      1.43E7         .087800010.0018438           56140.9                     R.W.Lougheed,        (02)13883  4          0.0018438                            2.10                       2.10
+    1 95241   3  18      1.43E7         .08240001 0.009476           58143.9                     R.W.Lougheed,        (02)13883  4           0.009476                            11.5                       11.5
+    1 95241   3  18      1.48E7         .06150001 0.003075           38091.9                     R.W.Lougheed,        (02)13883  4           0.003075                            5                          5
+    1 95241   3  18      1.48E7            0.10470.0012564           40097.9                     R.W.Lougheed,        (02)13883  4          0.0012564                            1.20                       1.20
+    1 95241   3  18      1.48E7         .093200010.0142596           42099.9                     R.W.Lougheed,        (02)13883  4          0.0142596                            15.3                       15.3
+    1 95241   3  18      1.48E7            0.12620.0060576           44103.9                     R.W.Lougheed,        (02)13883  4          0.0060576                            4.80                       4.80
+    1 95241   3  18      1.48E7            0.14110.0073372           45105.9                     R.W.Lougheed,        (02)13883  4          0.0073372                            5.20                       5.20
+    1 95241   3  18      1.48E7            0.04580.0035266           48115.9                     R.W.Lougheed,        (02)13883  4          0.0035266                            7.70                       7.70
+    1 95241   3  18      1.48E7            0.02740.0061102           50125.9                     R.W.Lougheed,        (02)13883  4          0.0061102                            22.3                       22.3
+    1 95241   3  18      1.48E7             0.059 0.002124           51127.9                     R.W.Lougheed,        (02)13883  4           0.002124                            3.60                       3.60
+    1 95241   3  18      1.48E7            0.03040.0020064           51128.9                     R.W.Lougheed,        (02)13883  4          0.0020064                            6.60                       6.60
+    1 95241   3  18      1.48E7         .093400010.0039228           53131.9                     R.W.Lougheed,        (02)13883  4          0.0039228                            4.20                       4.20
+    1 95241   3  18      1.48E7            0.06190.0011761           52132.9                     R.W.Lougheed,        (02)13883  4          0.0011761                            1.90                       1.90
+    1 95241   3  18      1.48E7            0.11670.0031509           53133.9                     R.W.Lougheed,        (02)13883  4          0.0031509                            2.70                       2.70
+    1 95241   3  18      1.48E7         .07650001 0.001224           56140.9                     R.W.Lougheed,        (02)13883  4           0.001224                            1.60                       1.60
+    1 95241   3  18      1.48E7         .073800010.0061254           58143.9                     R.W.Lougheed,        (02)13883  4          0.0061254                            8.30                       8.30
+    1 95241   3  18      1.51E7            0.05870.0012914           38091.9                     R.W.Lougheed,        (02)13883  4          0.0012914                            2.20                       2.20
+    1 95241   3  18      1.51E7         .071800010.0121342           39093.9                     R.W.Lougheed,        (02)13883  4          0.0121342                            16.9                       16.9
+    1 95241   3  18      1.51E7            0.1096 9.864E-4           40097.9                     R.W.Lougheed,        (02)13883  4           9.864E-4                            0.90                       0.90
+    1 95241   3  18      1.51E7         .095900010.0122752           42099.9                     R.W.Lougheed,        (02)13883  4          0.0122752                            12.8                       12.8
+    1 95241   3  18      1.51E7            0.13250.0064925           44103.9                     R.W.Lougheed,        (02)13883  4          0.0064925                            4.90                       4.90
+    1 95241   3  18      1.51E7            0.12060.0051858           45105.9                     R.W.Lougheed,        (02)13883  4          0.0051858                            4.30                       4.30
+    1 95241   3  18      1.51E7            0.0456 0.002964           48115.9                     R.W.Lougheed,        (02)13883  4           0.002964                            6.50                       6.50
+    1 95241   3  18      1.51E7             0.033 0.004323           50125.9                     R.W.Lougheed,        (02)13883  4           0.004323                            13.1                       13.1
+    1 95241   3  18      1.51E7            0.06270.0018183           51127.9                     R.W.Lougheed,        (02)13883  4          0.0018183                            2.90                       2.90
+    1 95241   3  18      1.51E7            0.0339  6.78E-4           51128.9                     R.W.Lougheed,        (02)13883  4            6.78E-4                            2                          2
+    1 95241   3  18      1.51E7            0.09220.0025816           53131.9                     R.W.Lougheed,        (02)13883  4          0.0025816                            2.80                       2.80
+    1 95241   3  18      1.51E7             0.064 0.001216           52132.9                     R.W.Lougheed,        (02)13883  4           0.001216                            1.90                       1.90
+    1 95241   3  18      1.51E7             0.115 0.001725           53133.9                     R.W.Lougheed,        (02)13883  4           0.001725                            1.50                       1.50
+    1 95241   3  18      1.51E7         .08130001 9.756E-4           56140.9                     R.W.Lougheed,        (02)13883  4           9.756E-4                            1.20                       1.20
+    1 95241   3  18      1.51E7         .062800010.0071592           58143.9                     R.W.Lougheed,        (02)13883  4          0.0071592                            11.4                       11.4
+#/C5DATA        0
+#/DATASET       13883004 
+#/C5M.2.3       1               3               3               0               80              

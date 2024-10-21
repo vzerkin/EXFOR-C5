@@ -1,0 +1,230 @@
+#C5.2.3
+#DATASET        30823002   20090910
+#SUBENT         30823002   20090910
+#ENTRY          30823      20090910
+#TITLE          Measurements of (n,p) and (n,np) cross sections for
+#+              some Fe isotopes at 14.7 MeV
+#AUTHORS        F.Habbani,G.Paic
+#AUTHOR1        F.Habbani+
+#YEAR           1988
+#X4REF1         J,ARI,39,(10),1041,1988
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.39, Issue.10, p.1041 (1988)
+#DATE           20090910
+#INSTITUTE      3SUDKHA,3CRORBZ
+#METHOD         ACTIV
+#REACTION       26-FE-57(N,P)25-MN-57,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           26057            
+#TARGET         26057           [ ]             26-FE-57        [ ] 
+#REAC1          N,P
+#PRODUCT        25-MN-57
+#C4ReaCode      (N,P),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.56%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0163543(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-26.4%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 26057   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             Point: XS(b)=0.1078(0.56%)  EN-NRM(eV):1.45E7
+#M1             Point: XS(b)=0.109563(1.08%)  EN-NRM(eV):1.45E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-57(N,P)25-MN-57,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              #[0]#En=1.45E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1078
+#+              a1=recom$fe56np[EN];          #[0]#new monitor point [14.5MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (26-FE-57(N,P)25-MN-57,,SIG)
+#+               #[1]#DECAY-DATA (25-MN-57,1.45MIN,DG,122.,0.103) #Ix_old=0.103
+#+                a1=0.103/0.14;              #[1]#DECAY-DATA: correction to new 122.063 keV gamma-yield per decay Mn-57 Ix_new=0.14
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.73571426
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30823002    0.747746    1.01635     0.735714    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30823002    CS          1           0.747746    0.747746    0.747746    -25.2%      1.33735     [MONIT]::fe56np
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26057   3 103      1.45E7 200000.0.05608098 2.3030-3                                       F.Habbani*,          (88)30823  2  6.0861-4                   2.3030-3 1.09                       4.11     4.11    0.1078   0.0006   0.109563 .001187090.74774630.7676731
+#/C5DATA        0
+#/DATASET       30823002 
+#DATASET        30823003   20090910
+#SUBENT         30823003   20090910
+#ENTRY          30823      20090910
+#TITLE          Measurements of (n,p) and (n,np) cross sections for
+#+              some Fe isotopes at 14.7 MeV
+#AUTHORS        F.Habbani,G.Paic
+#AUTHOR1        F.Habbani+
+#YEAR           1988
+#X4REF1         J,ARI,39,(10),1041,1988
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.39, Issue.10, p.1041 (1988)
+#DATE           20090910
+#INSTITUTE      3SUDKHA,3CRORBZ
+#METHOD         ACTIV
+#REACTION       26-FE-58(N,P)25-MN-58-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           26058            
+#TARGET         26058           [ ]             26-FE-58        [ ] 
+#REAC1          N,P
+#PRODUCT        25-MN-58-M
+#C4ReaCode      (N,P),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.56%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0163543(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-6.59%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 26058   3 103M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             Point: XS(b)=0.1078(0.56%)  EN-NRM(eV):1.45E7
+#M1             Point: XS(b)=0.109563(1.08%)  EN-NRM(eV):1.45E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-58(N,P)25-MN-58-M,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              #[0]#En=1.45E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1078
+#+              a1=recom$fe56np[EN];          #[0]#new monitor point [14.5MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (26-FE-58(N,P)25-MN-58-M,,SIG)
+#+               #[1]#DECAY-DATA (25-MN-58-M,63.37SEC,DG,811.,0.822) #Ix_old=0.822
+#+                a1=0.822/0.88;              #[1]#DECAY-DATA: correction to new 810.761 keV gamma-yield per decay Mn-58-m Ix_new=0.88
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.934091
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30823003    0.949367    1.01635     0.934091    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30823003    CS          1           0.949367    0.949367    0.949367    -5.06%      1.05333     [MONIT]::fe56np
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26058   3 103M     1.45E7 200000.0.02468355 3.8044-3                                       F.Habbani*,          (88)30823  3  2.6787-4                   3.8044-3 1.09                       15.4     15.4    0.1078   0.0006   0.109563 .001187090.94936740.9510989
+#/C5DATA        0
+#/DATASET       30823003 
+#DATASET        30823004   20090910
+#SUBENT         30823004   20090910
+#ENTRY          30823      20090910
+#TITLE          Measurements of (n,p) and (n,np) cross sections for
+#+              some Fe isotopes at 14.7 MeV
+#AUTHORS        F.Habbani,G.Paic
+#AUTHOR1        F.Habbani+
+#YEAR           1988
+#X4REF1         J,ARI,39,(10),1041,1988
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.39, Issue.10, p.1041 (1988)
+#DATE           20090910
+#INSTITUTE      3SUDKHA,3CRORBZ
+#METHOD         ACTIV
+#REACTION       26-FE-57(N,X)25-MN-56,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           26057            
+#TARGET         26057           [ ]             26-FE-57        [ ] 
+#REAC1          N,X
+#PRODUCT        25-MN-56
+#C4ReaCode      (N,X),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.56%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0163543(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 26057   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             Point: XS(b)=0.1078(0.56%)  EN-NRM(eV):1.45E7
+#M1             Point: XS(b)=0.109563(1.08%)  EN-NRM(eV):1.45E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 26-FE-57(N,X)25-MN-56,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              #[0]#En=1.45E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1078
+#+              a1=recom$fe56np[EN];          #[0]#new monitor point [14.5MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30823004    1.01635     1.01635     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30823004    CS          1           1.01635     1.01635     1.01635     +1.64%      1.01635     [MONIT]::fe56np
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 26057   39000      1.45E7 200000.0.01941237 2.7501-3           25056.9                     F.Habbani*,          (88)30823  4  2.1067-4                   2.7501-3 1.09                       14.2     14.2    0.1078   0.0006   0.109563 .001187091.01635431.0185496
+#/C5DATA        0
+#/DATASET       30823004 
+#/C5.2.3        1               3               3               0               3               

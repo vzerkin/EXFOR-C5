@@ -1,0 +1,2345 @@
+#C5M.2.3
+#DATASET        D61850021  20131124
+#SUBENT         D6185002   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)36-KR-77,CUM,SIG
+#C4Reaction     (10-NE-20,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        36-KR-77
+#C4ReaCode      (10-NE-20,X)CUM,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.23%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 27-CO-59(10-NE-20,X)36-KR-77,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (27-CO-59(10-NE-20,X)36-KR-77,CUM,SIG)
+#+               #[1]#DECAY-DATA (36-KR-77,1.24HR,DG,129.8,0.800) #Ix_old=0.8
+#+                a1=0.8/0.81;                #[1]#DECAY-DATA: correction to new 129.64 keV gamma-yield per decay Kr-77 Ix_new=0.81
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9876543
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D61850021   0.987654    -           0.987654    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D61850021   CS          3           0.987654    0.987654    0.987654    -1.23%      1.01250                
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39001      6.29E71000000.00.11170370.0105679           36077.9                     D.Singh*,            (11)D6185  21                           0.0105679                            9.46     9.46                                        0.98765430.9876543
+10020 27059   39001      7.52E7 800000.0.02172839 2.0741-3           36077.9                     D.Singh*,            (11)D6185  21                            2.0741-3                            9.55     9.55                                        0.98765430.9876543
+10020 27059   39001      8.65E7 800000.0 4.9383-4 9.8765-5           36077.9                     D.Singh*,            (11)D6185  21                            9.8765-5                            20       20                                          0.98765430.9876543
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.29E7      8.65E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.29E7      6.29E7      0.111704    9.46         100
+7.52E7      7.52E7      2.1728-2    9.55         25 100
+8.65E7      8.65E7      4.9383-4    20.0         25 26 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850021
+#DATASET        D61850022  20131124
+#SUBENT         D6185002   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)36-KR-77,IND,SIG
+#C4Reaction     (10-NE-20,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        36-KR-77
+#C4ReaCode      (10-NE-20,X)IND,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.23%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 27-CO-59(10-NE-20,X)36-KR-77,IND,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (27-CO-59(10-NE-20,X)36-KR-77,IND,SIG)
+#+               #[1]#DECAY-DATA (36-KR-77,1.24HR,DG,129.8,0.800) #Ix_old=0.8
+#+                a1=0.8/0.81;                #[1]#DECAY-DATA: correction to new 129.64 keV gamma-yield per decay Kr-77 Ix_new=0.81
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9876543
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D61850022   0.987654    -           0.987654    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D61850022   CS          3           0.987654    0.987654    0.987654    -1.23%      1.01250                
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39000      6.29E71000000.00.10153090.0105679           36077.9                     D.Singh*,            (11)D6185  22                           0.0105679                            10.4     10.4                                        0.98765430.9876543
+10020 27059   39000      7.52E7 800000.0.01995062 2.0741-3           36077.9                     D.Singh*,            (11)D6185  22                            2.0741-3                            10.4     10.4                                        0.98765430.9876543
+10020 27059   39000      8.65E7 800000.0 4.9383-4 9.8765-5           36077.9                     D.Singh*,            (11)D6185  22                            9.8765-5                            20       20                                          0.98765430.9876543
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.29E7      8.65E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.29E7      6.29E7      0.101531    10.41        100
+7.52E7      7.52E7      1.9951-2    10.4         25 100
+8.65E7      8.65E7      4.9383-4    20.0         25 26 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850022
+#DATASET        D61850031  20131124
+#SUBENT         D6185003   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)36-KR-76,CUM,SIG
+#C4Reaction     (10-NE-20,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        36-KR-76
+#C4ReaCode      (10-NE-20,X)CUM,SIG
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39001      6.29E71000000.0   0.0727    0.003           36076.9                     D.Singh,             (11)D6185  31                               0.003                            4.13     4.13
+10020 27059   39001      7.52E7 800000.0   0.1476   0.0049           36076.9                     D.Singh,             (11)D6185  31                              0.0049                            3.32     3.32
+10020 27059   39001      8.65E7 800000.0.04520001   0.0018           36076.9                     D.Singh,             (11)D6185  31                              0.0018                            3.98     3.98
+10020 27059   39001      9.71E7 700000.0   0.0155   7.0E-4           36076.9                     D.Singh,             (11)D6185  31                              7.0E-4                            4.52     4.52
+10020 27059   39001      1.07E8 700000.0   0.0019   3.0E-4           36076.9                     D.Singh,             (11)D6185  31                              3.0E-4                            15.8     15.8
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.29E7      1.07E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           5           5
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.29E7      6.29E7      0.0727      4.13         100
+7.52E7      7.52E7      0.1476      3.32         36 100
+8.65E7      8.65E7      0.0452      3.98         25 37 100
+9.71E7      9.71E7      0.0155      4.52         25 25 38 100
+1.07E8      1.07E8      0.0019      15.79        25 25 27 39 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850031
+#DATASET        D61850032  20131124
+#SUBENT         D6185003   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)36-KR-76,IND,SIG
+#C4Reaction     (10-NE-20,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        36-KR-76
+#C4ReaCode      (10-NE-20,X)IND,SIG
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39000      6.29E71000000.0   0.0696    0.003           36076.9                     D.Singh,             (11)D6185  32                               0.003                            4.31     4.31
+10020 27059   39000      7.52E7 800000.0   0.1392   0.0049           36076.9                     D.Singh,             (11)D6185  32                              0.0049                            3.52     3.52
+10020 27059   39000      8.65E7 800000.0   0.0398   0.0018           36076.9                     D.Singh,             (11)D6185  32                              0.0018                            4.52     4.52
+10020 27059   39000      9.71E7 700000.0   0.0137   7.0E-4           36076.9                     D.Singh,             (11)D6185  32                              7.0E-4                            5.11     5.11
+10020 27059   39000      1.07E8 700000.0   0.0015   3.0E-4           36076.9                     D.Singh,             (11)D6185  32                              3.0E-4                            20       20
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.29E7      1.07E8      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           5           5
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.29E7      6.29E7      0.0696      4.31         100
+7.52E7      7.52E7      0.1392      3.52         36 100
+8.65E7      8.65E7      0.0398      4.52         25 37 100
+9.71E7      9.71E7      0.0137      5.11         25 25 38 100
+1.07E8      1.07E8      0.0015      20.0         25 25 27 39 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850032
+#DATASET        D61850041  20131124
+#SUBENT         D6185004   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)35-BR-76,CUM,SIG
+#C4Reaction     (10-NE-20,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        35-BR-76
+#C4ReaCode      (10-NE-20,X)CUM,SIG
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39001      6.29E71000000.0   0.1072   0.0072           35076.9                     D.Singh,             (11)D6185  41                              0.0072                            6.72     6.72
+10020 27059   39001      7.52E7 800000.0   0.1827   0.0123           35076.9                     D.Singh,             (11)D6185  41                              0.0123                            6.73     6.73
+10020 27059   39001      8.65E7 800000.0.09680001   0.0065           35076.9                     D.Singh,             (11)D6185  41                              0.0065                            6.71     6.71
+10020 27059   39001      9.71E7 700000.0   0.0142    0.001           35076.9                     D.Singh,             (11)D6185  41                               0.001                            7.04     7.04
+10020 27059   39001      1.07E8 700000.0   0.0023   2.0E-4           35076.9                     D.Singh,             (11)D6185  41                              2.0E-4                            8.70     8.70
+10020 27059   39001     1.163E8 600000.0   4.0E-4   1.0E-4           35076.9                     D.Singh,             (11)D6185  41                              1.0E-4                            25       25
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.29E7      1.163E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.29E7      6.29E7      0.1072      6.72         100
+7.52E7      7.52E7      0.1827      6.73         38 100
+8.65E7      8.65E7      0.0968      6.71         28 39 100
+9.71E7      9.71E7      0.0142      7.04         25 29 40 100
+1.07E8      1.07E8      0.0023      8.7          25 25 31 41 100
+1.163E8     1.163E8     4.0E-4      25.0         25 25 25 32 41 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850041
+#DATASET        D61850042  20131124
+#SUBENT         D6185004   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)35-BR-76,IND,SIG
+#C4Reaction     (10-NE-20,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        35-BR-76
+#C4ReaCode      (10-NE-20,X)IND,SIG
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39000      6.29E71000000.0   0.0282   0.0019           35076.9                     D.Singh,             (11)D6185  42                              0.0019                            6.74     6.74
+10020 27059   39000      7.52E7 800000.0   0.0621   0.0042           35076.9                     D.Singh,             (11)D6185  42                              0.0042                            6.76     6.76
+10020 27059   39000      8.65E7 800000.0   0.0416   0.0028           35076.9                     D.Singh,             (11)D6185  42                              0.0028                            6.73     6.73
+10020 27059   39000      9.71E7 700000.0   0.0061   4.0E-4           35076.9                     D.Singh,             (11)D6185  42                              4.0E-4                            6.56     6.56
+10020 27059   39000      1.07E8 700000.0   0.0011   1.0E-4           35076.9                     D.Singh,             (11)D6185  42                              1.0E-4                            9.09     9.09
+10020 27059   39000     1.163E8 600000.0   2.0E-4   2.0E-5           35076.9                     D.Singh,             (11)D6185  42                              2.0E-5                            10       10
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.29E7      1.163E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.29E7      6.29E7      0.0282      6.74         100
+7.52E7      7.52E7      0.0621      6.76         38 100
+8.65E7      8.65E7      0.0416      6.73         28 39 100
+9.71E7      9.71E7      0.0061      6.56         25 29 40 100
+1.07E8      1.07E8      0.0011      9.09         25 25 31 41 100
+1.163E8     1.163E8     2.0E-4      10.0         25 25 25 32 41 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850042
+#DATASET        D61850051  20131124
+#SUBENT         D6185005   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)35-BR-75,CUM,SIG
+#C4Reaction     (10-NE-20,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        35-BR-75
+#C4ReaCode      (10-NE-20,X)CUM,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+4.55%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 27-CO-59(10-NE-20,X)35-BR-75,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (27-CO-59(10-NE-20,X)35-BR-75,CUM,SIG)
+#+               #[1]#DECAY-DATA (35-BR-75,1.62HR,DG,286.6,0.920) #Ix_old=0.92
+#+                a1=0.92/0.88;               #[1]#DECAY-DATA: correction to new 286.5 keV gamma-yield per decay Br-75 Ix_new=0.88
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0454546
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D61850051   1.04545     -           1.04545     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D61850051   CS          9           1.04545     1.04545     1.04545     +4.55%      1.04545                
+#C5DATA         9
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39001      7.52E7 800000.0.09545002 8.7818-3           35075.9                     D.Singh*,            (11)D6185  51                            8.7818-3                            9.20     9.20                                        1.04545461.0454546
+10020 27059   39001      8.65E7 800000.0  0.18285.01233636           35075.9                     D.Singh*,            (11)D6185  51                           .01233636                            6.75     6.75                                        1.04545461.0454546
+10020 27059   39001      9.71E7 700000.00.1716636.01641364           35075.9                     D.Singh*,            (11)D6185  51                           .01641364                            9.56     9.56                                        1.04545461.0454546
+10020 27059   39001      1.07E8 700000.0.08813184 5.9591-3           35075.9                     D.Singh*,            (11)D6185  51                            5.9591-3                            6.76     6.76                                        1.04545461.0454546
+10020 27059   39001     1.163E8 600000.0.05927728 4.0773-3           35075.9                     D.Singh*,            (11)D6185  51                            4.0773-3                            6.88     6.88                                        1.04545461.0454546
+10020 27059   39001     1.252E8 600000.0.01400909 1.0455-3           35075.9                     D.Singh*,            (11)D6185  51                            1.0455-3                            7.46     7.46                                        1.04545461.0454546
+10020 27059   39001     1.338E8 600000.0 5.3318-3 6.2727-4           35075.9                     D.Singh*,            (11)D6185  51                            6.2727-4                            11.8     11.8                                        1.04545461.0454546
+10020 27059   39001     1.421E8 600000.0 1.8818-3 4.1818-4           35075.9                     D.Singh*,            (11)D6185  51                            4.1818-4                            22.2     22.2                                        1.04545461.0454546
+10020 27059   39001     1.502E8 700000.0 7.3182-4 1.0455-4           35075.9                     D.Singh*,            (11)D6185  51                            1.0455-4                            14.3     14.3                                        1.04545461.0454546
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           7.52E7      1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           9           9
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+7.52E7      7.52E7      0.09545     9.2          100
+8.65E7      8.65E7      0.18285     6.75         42 100
+9.71E7      9.71E7      0.171664    9.56         35 43 100
+1.07E8      1.07E8      8.8132-2    6.76         29 36 43 100
+1.163E8     1.163E8     5.9277-2    6.88         25 30 37 44 100
+1.252E8     1.252E8     1.4009-2    7.46         25 25 31 38 44 100
+1.338E8     1.338E8     5.3318-3    11.76        25 25 26 32 38 44 100
+1.421E8     1.421E8     1.8818-3    22.22        25 25 25 27 33 39 44 100
+1.502E8     1.502E8     7.3182-4    14.29        25 25 25 25 27 33 39 45 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850051
+#DATASET        D61850052  20131124
+#SUBENT         D6185005   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)35-BR-75,IND,SIG
+#C4Reaction     (10-NE-20,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        35-BR-75
+#C4ReaCode      (10-NE-20,X)IND,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+4.55%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 27-CO-59(10-NE-20,X)35-BR-75,IND,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (27-CO-59(10-NE-20,X)35-BR-75,IND,SIG)
+#+               #[1]#DECAY-DATA (35-BR-75,1.62HR,DG,286.6,0.920) #Ix_old=0.92
+#+                a1=0.92/0.88;               #[1]#DECAY-DATA: correction to new 286.5 keV gamma-yield per decay Br-75 Ix_new=0.88
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0454546
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D61850052   1.04545     -           1.04545     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D61850052   CS          7           1.04545     1.04545     1.04545     +4.55%      1.04545                
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39000      7.52E7 800000.00.0830091 8.7818-3           35075.9                     D.Singh*,            (11)D6185  52                            8.7818-3                            10.6     10.6                                        1.04545461.0454546
+10020 27059   39000      8.65E7 800000.0   0.1426.01233637           35075.9                     D.Singh*,            (11)D6185  52                           .01233637                            8.65     8.65                                        1.04545461.0454547
+10020 27059   39000      9.71E7 700000.00.1298455.01641364           35075.9                     D.Singh*,            (11)D6185  52                           .01641364                            12.6     12.6                                        1.04545461.0454546
+10020 27059   39000      1.07E8 700000.0.06680456 5.9591-3           35075.9                     D.Singh*,            (11)D6185  52                            5.9591-3                            8.92     8.92                                        1.04545461.0454546
+10020 27059   39000     1.163E8 600000.0.05269091 4.0773-3           35075.9                     D.Singh*,            (11)D6185  52                            4.0773-3                            7.74     7.74                                        1.04545461.0454545
+10020 27059   39000     1.252E8 600000.0.01170909 1.0455-3           35075.9                     D.Singh*,            (11)D6185  52                            1.0455-3                            8.93     8.93                                        1.04545461.0454546
+10020 27059   39000     1.338E8 600000.0 5.1227-3 6.2727-4           35075.9                     D.Singh*,            (11)D6185  52                            6.2727-4                            12.2     12.2                                        1.04545461.0454545
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           7.52E7      1.338E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+7.52E7      7.52E7      8.3009-2    10.58        100
+8.65E7      8.65E7      0.1426      8.65         40 100
+9.71E7      9.71E7      0.129845    12.64        31 41 100
+1.07E8      1.07E8      6.6805-2    8.92         25 33 42 100
+1.163E8     1.163E8     5.2691-2    7.74         25 25 34 42 100
+1.252E8     1.252E8     1.1709-2    8.93         25 25 26 34 42 100
+1.338E8     1.338E8     5.1227-3    12.24        25 25 25 27 35 43 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850052
+#DATASET        D61850061  20131124
+#SUBENT         D6185006   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)35-BR-74,CUM,SIG
+#C4Reaction     (10-NE-20,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        35-BR-74
+#C4ReaCode      (10-NE-20,X)CUM,SIG
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         10
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39001      6.29E71000000.0   0.0467   0.0071           35074.9                     D.Singh,             (11)D6185  61                              0.0071                            15.2     15.2
+10020 27059   39001      7.52E7 800000.0.06220001   0.0084           35074.9                     D.Singh,             (11)D6185  61                              0.0084                            13.5     13.5
+10020 27059   39001      8.65E7 800000.0   0.1082   0.0131           35074.9                     D.Singh,             (11)D6185  61                              0.0131                            12.1     12.1
+10020 27059   39001      9.71E7 700000.0   0.1718   0.0178           35074.9                     D.Singh,             (11)D6185  61                              0.0178                            10.4     10.4
+10020 27059   39001      1.07E8 700000.0   0.2106   0.0206           35074.9                     D.Singh,             (11)D6185  61                              0.0206                            9.78     9.78
+10020 27059   39001     1.163E8 600000.0   0.2534   0.0248           35074.9                     D.Singh,             (11)D6185  61                              0.0248                            9.79     9.79
+10020 27059   39001     1.252E8 600000.0   0.1412    0.015           35074.9                     D.Singh,             (11)D6185  61                               0.015                            10.6     10.6
+10020 27059   39001     1.338E8 600000.0   0.1234   0.0129           35074.9                     D.Singh,             (11)D6185  61                              0.0129                            10.5     10.5
+10020 27059   39001     1.421E8 600000.0   0.0861   0.0143           35074.9                     D.Singh,             (11)D6185  61                              0.0143                            16.6     16.6
+10020 27059   39001     1.502E8 700000.0   0.0605   0.0091           35074.9                     D.Singh,             (11)D6185  61                              0.0091                            15       15
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.29E7      1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           10          10
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.29E7      6.29E7      0.0467      15.2         100
+7.52E7      7.52E7      0.0622      13.5         43 100
+8.65E7      8.65E7      0.1082      12.11        36 44 100
+9.71E7      9.71E7      0.1718      10.36        30 37 44 100
+1.07E8      1.07E8      0.2106      9.78         25 32 38 44 100
+1.163E8     1.163E8     0.2534      9.79         25 26 33 39 45 100
+1.252E8     1.252E8     0.1412      10.62        25 25 28 34 40 45 100
+1.338E8     1.338E8     0.1234      10.45        25 25 25 29 35 40 45 100
+1.421E8     1.421E8     0.0861      16.61        25 25 25 25 30 35 40 45 100
+1.502E8     1.502E8     0.0605      15.04        25 25 25 25 25 31 36 41 45 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850061
+#DATASET        D61850062  20131124
+#SUBENT         D6185006   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)35-BR-74,IND,SIG
+#C4Reaction     (10-NE-20,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        35-BR-74
+#C4ReaCode      (10-NE-20,X)IND,SIG
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39000      8.65E7 800000.0   0.1076   0.0131           35074.9                     D.Singh,             (11)D6185  62                              0.0131                            12.2     12.2
+10020 27059   39000      9.71E7 700000.0   0.1693   0.0178           35074.9                     D.Singh,             (11)D6185  62                              0.0178                            10.5     10.5
+10020 27059   39000      1.07E8 700000.0    0.204   0.0206           35074.9                     D.Singh,             (11)D6185  62                              0.0206                            10.1     10.1
+10020 27059   39000     1.163E8 600000.0   0.2459   0.0248           35074.9                     D.Singh,             (11)D6185  62                              0.0248                            10.1     10.1
+10020 27059   39000     1.252E8 600000.0   0.1369    0.015           35074.9                     D.Singh,             (11)D6185  62                               0.015                            11       11
+10020 27059   39000     1.338E8 600000.0   0.1197   0.0129           35074.9                     D.Singh,             (11)D6185  62                              0.0129                            10.8     10.8
+10020 27059   39000     1.421E8 600000.0   0.0847   0.0143           35074.9                     D.Singh,             (11)D6185  62                              0.0143                            16.9     16.9
+10020 27059   39000     1.502E8 700000.0     0.06   0.0091           35074.9                     D.Singh,             (11)D6185  62                              0.0091                            15.2     15.2
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           8.65E7      1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           8           8
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+8.65E7      8.65E7      0.1076      12.17        100
+9.71E7      9.71E7      0.1693      10.51        42 100
+1.07E8      1.07E8      0.204       10.1         34 42 100
+1.163E8     1.163E8     0.2459      10.09        27 35 43 100
+1.252E8     1.252E8     0.1369      10.96        25 28 36 43 100
+1.338E8     1.338E8     0.1197      10.78        25 25 29 36 43 100
+1.421E8     1.421E8     0.0847      16.88        25 25 25 30 37 43 100
+1.502E8     1.502E8     0.06        15.17        25 25 25 25 30 37 44 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850062
+#DATASET        D61850071  20131124
+#SUBENT         D6185007   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)34-SE-73,CUM,SIG
+#C4Reaction     (10-NE-20,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        34-SE-73
+#C4ReaCode      (10-NE-20,X)CUM,SIG
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         10
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39001      6.29E71000000.0   0.0229   0.0013           34073.9                     D.Singh,             (11)D6185  71                              0.0013                            5.68     5.68
+10020 27059   39001      7.52E7 800000.0   0.1334   0.0073           34073.9                     D.Singh,             (11)D6185  71                              0.0073                            5.47     5.47
+10020 27059   39001      8.65E7 800000.0    0.141   0.0077           34073.9                     D.Singh,             (11)D6185  71                              0.0077                            5.46     5.46
+10020 27059   39001      9.71E7 700000.0.09640001   0.0053           34073.9                     D.Singh,             (11)D6185  71                              0.0053                            5.50     5.50
+10020 27059   39001      1.07E8 700000.0   0.0682   0.0046           34073.9                     D.Singh,             (11)D6185  71                              0.0046                            6.74     6.74
+10020 27059   39001     1.163E8 600000.0.09550001   0.0052           34073.9                     D.Singh,             (11)D6185  71                              0.0052                            5.45     5.45
+10020 27059   39001     1.252E8 600000.0   0.0772   0.0043           34073.9                     D.Singh,             (11)D6185  71                              0.0043                            5.57     5.57
+10020 27059   39001     1.338E8 600000.0.09280001   0.0051           34073.9                     D.Singh,             (11)D6185  71                              0.0051                            5.50     5.50
+10020 27059   39001     1.421E8 600000.0    0.079   0.0043           34073.9                     D.Singh,             (11)D6185  71                              0.0043                            5.44     5.44
+10020 27059   39001     1.502E8 700000.0   0.0607   0.0042           34073.9                     D.Singh,             (11)D6185  71                              0.0042                            6.92     6.92
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.29E7      1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           10          10
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.29E7      6.29E7      0.0229      5.68         100
+7.52E7      7.52E7      0.1334      5.47         43 100
+8.65E7      8.65E7      0.141       5.46         36 44 100
+9.71E7      9.71E7      0.0964      5.5          30 37 44 100
+1.07E8      1.07E8      0.0682      6.74         25 32 38 44 100
+1.163E8     1.163E8     0.0955      5.45         25 26 33 39 45 100
+1.252E8     1.252E8     0.0772      5.57         25 25 28 34 40 45 100
+1.338E8     1.338E8     0.0928      5.5          25 25 25 29 35 40 45 100
+1.421E8     1.421E8     0.079       5.44         25 25 25 25 30 35 40 45 100
+1.502E8     1.502E8     0.0607      6.92         25 25 25 25 25 31 36 41 45 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850071
+#DATASET        D61850072  20131124
+#SUBENT         D6185007   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)34-SE-73,IND,SIG
+#C4Reaction     (10-NE-20,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        34-SE-73
+#C4ReaCode      (10-NE-20,X)IND,SIG
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         10
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39000      6.29E71000000.0   0.0192   0.0013           34073.9                     D.Singh,             (11)D6185  72                              0.0013                            6.77     6.77
+10020 27059   39000      7.52E7 800000.0   0.1265   0.0073           34073.9                     D.Singh,             (11)D6185  72                              0.0073                            5.77     5.77
+10020 27059   39000      8.65E7 800000.0   0.1261   0.0077           34073.9                     D.Singh,             (11)D6185  72                              0.0077                            6.11     6.11
+10020 27059   39000      9.71E7 700000.0   0.0881   0.0053           34073.9                     D.Singh,             (11)D6185  72                              0.0053                            6.02     6.02
+10020 27059   39000      1.07E8 700000.0.06330001   0.0046           34073.9                     D.Singh,             (11)D6185  72                              0.0046                            7.27     7.27
+10020 27059   39000     1.163E8 600000.0.08830001   0.0052           34073.9                     D.Singh,             (11)D6185  72                              0.0052                            5.89     5.89
+10020 27059   39000     1.252E8 600000.0   0.0652   0.0043           34073.9                     D.Singh,             (11)D6185  72                              0.0043                            6.60     6.60
+10020 27059   39000     1.338E8 600000.0.08100001   0.0051           34073.9                     D.Singh,             (11)D6185  72                              0.0051                            6.30     6.30
+10020 27059   39000     1.421E8 600000.0   0.0691   0.0043           34073.9                     D.Singh,             (11)D6185  72                              0.0043                            6.22     6.22
+10020 27059   39000     1.502E8 700000.0   0.0541   0.0042           34073.9                     D.Singh,             (11)D6185  72                              0.0042                            7.76     7.76
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.29E7      1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           10          10
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.29E7      6.29E7      0.0192      6.77         100
+7.52E7      7.52E7      0.1265      5.77         43 100
+8.65E7      8.65E7      0.1261      6.11         36 44 100
+9.71E7      9.71E7      0.0881      6.02         30 37 44 100
+1.07E8      1.07E8      0.0633      7.27         25 32 38 44 100
+1.163E8     1.163E8     0.0883      5.89         25 26 33 39 45 100
+1.252E8     1.252E8     0.0652      6.6          25 25 28 34 40 45 100
+1.338E8     1.338E8     0.081       6.3          25 25 25 29 35 40 45 100
+1.421E8     1.421E8     0.0691      6.22         25 25 25 25 30 35 40 45 100
+1.502E8     1.502E8     0.0541      7.76         25 25 25 25 25 31 36 41 45 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850072
+#DATASET        D6185008   20131124
+#SUBENT         D6185008   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)34-SE-70,IND,SIG
+#C4Reaction     (10-NE-20,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        34-SE-70
+#C4ReaCode      (10-NE-20,X)IND,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.03%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 27-CO-59(10-NE-20,X)34-SE-70,IND,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (27-CO-59(10-NE-20,X)34-SE-70,IND,SIG)
+#+               #[1]#DECAY-DATA (34-SE-70,41.1MIN,DG,426.8,0.288) #Ix_old=0.288
+#+                a1=0.288/0.291;             #[1]#DECAY-DATA: correction to new 426.15 keV gamma-yield per decay Se-70 Ix_new=0.291
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.98969066
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D6185008    0.989691    -           0.989691    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D6185008    CS          7           0.989691    0.989691    0.989691    -1.03%      1.01042                
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39000      6.29E71000000.0 1.4845-3 1.9794-4           34070.9                     D.Singh*,            (11)D6185  8                             1.9794-4                            13.3     13.3                                        0.98969070.9896906
+10020 27059   39000      7.52E7 800000.0.01039175.00108866           34070.9                     D.Singh*,            (11)D6185  8                            .00108866                            10.5     10.5                                        0.98969070.9896907
+10020 27059   39000      8.65E7 800000.0.01217319 1.4845-3           34070.9                     D.Singh*,            (11)D6185  8                             1.4845-3                            12.2     12.2                                        0.98969070.9896907
+10020 27059   39000      9.71E7 700000.0.01553814 1.6825-3           34070.9                     D.Singh*,            (11)D6185  8                             1.6825-3                            10.8     10.8                                        0.98969070.9896907
+10020 27059   39000      1.07E8 700000.0.02098144 7.7196-3           34070.9                     D.Singh*,            (11)D6185  8                             7.7196-3                            36.8     36.8                                        0.98969070.9896907
+10020 27059   39000     1.163E8 600000.0.03661855 4.5526-3           34070.9                     D.Singh*,            (11)D6185  8                             4.5526-3                            12.4     12.4                                        0.98969070.9896907
+10020 27059   39000     1.252E8 600000.0.04186391 6.1361-3           34070.9                     D.Singh*,            (11)D6185  8                             6.1361-3                            14.7     14.7                                        0.98969070.9896905
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.29E7      1.252E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.29E7      6.29E7      1.4845-3    13.33        100
+7.52E7      7.52E7      1.0392-2    10.48        40 100
+8.65E7      8.65E7      1.2173-2    12.2         31 41 100
+9.71E7      9.71E7      1.5538-2    10.83        25 32 41 100
+1.07E8      1.07E8      2.0981-2    36.79        25 25 34 42 100
+1.163E8     1.163E8     3.6619-2    12.43        25 25 26 35 43 100
+1.252E8     1.252E8     4.1864-2    14.66        25 25 25 27 35 43 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D6185008 
+#DATASET        D6185009   20131124
+#SUBENT         D6185009   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)33-AS-72,IND,SIG
+#C4Reaction     (10-NE-20,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        33-AS-72
+#C4ReaCode      (10-NE-20,X)IND,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.85%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 27-CO-59(10-NE-20,X)33-AS-72,IND,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (27-CO-59(10-NE-20,X)33-AS-72,IND,SIG)
+#+               #[1]#DECAY-DATA (33-AS-72,1.08D,DG,834.0,0.795) #Ix_old=0.795
+#+                a1=0.795/0.81;              #[1]#DECAY-DATA: correction to new 833.99 keV gamma-yield per decay As-72 Ix_new=0.81
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9814815
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D6185009    0.981481    -           0.981481    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D6185009    CS          9           0.981481    0.981481    0.981481    -1.85%      1.01887                
+#C5DATA         9
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39000      7.52E7 800000.0.02600926 2.4537-3           33072.9                     D.Singh*,            (11)D6185  9                             2.4537-3                            9.43     9.43                                        0.98148150.9814816
+10020 27059   39000      8.65E7 800000.0.08509444 4.7111-3           33072.9                     D.Singh*,            (11)D6185  9                             4.7111-3                            5.54     5.54                                        0.98148150.9814814
+10020 27059   39000      9.71E7 700000.00.1416278 7.8519-3           33072.9                     D.Singh*,            (11)D6185  9                             7.8519-3                            5.54     5.54                                        0.98148150.9814815
+10020 27059   39000      1.07E8 700000.0.08676297 8.2444-3           33072.9                     D.Singh*,            (11)D6185  9                             8.2444-3                            9.50     9.50                                        0.98148150.9814816
+10020 27059   39000     1.163E8 600000.0.09432037 5.2019-3           33072.9                     D.Singh*,            (11)D6185  9                             5.2019-3                            5.52     5.52                                        0.98148150.9814814
+10020 27059   39000     1.252E8 600000.00.0581037 3.3370-3           33072.9                     D.Singh*,            (11)D6185  9                             3.3370-3                            5.74     5.74                                        0.98148150.9814815
+10020 27059   39000     1.338E8 600000.0.08843149 4.9074-3           33072.9                     D.Singh*,            (11)D6185  9                             4.9074-3                            5.55     5.55                                        0.98148150.9814815
+10020 27059   39000     1.421E8 600000.0.06585741 3.8278-3           33072.9                     D.Singh*,            (11)D6185  9                             3.8278-3                            5.81     5.81                                        0.98148150.9814815
+10020 27059   39000     1.502E8 700000.0.05211667 3.2389-3           33072.9                     D.Singh*,            (11)D6185  9                             3.2389-3                            6.21     6.21                                        0.98148150.9814815
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           7.52E7      1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           9           9
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+7.52E7      7.52E7      2.6009-2    9.43         100
+8.65E7      8.65E7      8.5094-2    5.54         42 100
+9.71E7      9.71E7      0.141628    5.54         35 43 100
+1.07E8      1.07E8      0.086763    9.5          29 36 43 100
+1.163E8     1.163E8     9.4320-2    5.52         25 30 37 44 100
+1.252E8     1.252E8     5.8104-2    5.74         25 25 31 38 44 100
+1.338E8     1.338E8     8.8431-2    5.55         25 25 26 32 38 44 100
+1.421E8     1.421E8     6.5857-2    5.81         25 25 25 27 33 39 44 100
+1.502E8     1.502E8     5.2117-2    6.21         25 25 25 25 27 33 39 45 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D6185009 
+#DATASET        D6185010   20131124
+#SUBENT         D6185010   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)33-AS-71,CUM,SIG
+#C4Reaction     (10-NE-20,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        33-AS-71
+#C4ReaCode      (10-NE-20,X)CUM,SIG
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         9
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39001      7.52E7 800000.0   0.0134    0.001           33071.9                     D.Singh,             (11)D6185 10                                0.001                            7.46     7.46
+10020 27059   39001      8.65E7 800000.0   0.0594   0.0078           33071.9                     D.Singh,             (11)D6185 10                               0.0078                            13.1     13.1
+10020 27059   39001      9.71E7 700000.0.09670001   0.0057           33071.9                     D.Singh,             (11)D6185 10                               0.0057                            5.89     5.89
+10020 27059   39001      1.07E8 700000.0   0.1319   0.0094           33071.9                     D.Singh,             (11)D6185 10                               0.0094                            7.13     7.13
+10020 27059   39001     1.163E8 600000.0   0.2151   0.0124           33071.9                     D.Singh,             (11)D6185 10                               0.0124                            5.76     5.76
+10020 27059   39001     1.252E8 600000.0   0.1798   0.0105           33071.9                     D.Singh,             (11)D6185 10                               0.0105                            5.84     5.84
+10020 27059   39001     1.338E8 600000.0   0.1441   0.0083           33071.9                     D.Singh,             (11)D6185 10                               0.0083                            5.76     5.76
+10020 27059   39001     1.421E8 600000.0    0.126   0.0074           33071.9                     D.Singh,             (11)D6185 10                               0.0074                            5.87     5.87
+10020 27059   39001     1.502E8 700000.0   0.0865   0.0064           33071.9                     D.Singh,             (11)D6185 10                               0.0064                            7.40     7.40
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           7.52E7      1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           9           9
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+7.52E7      7.52E7      0.0134      7.46         100
+8.65E7      8.65E7      0.0594      13.13        42 100
+9.71E7      9.71E7      0.0967      5.89         35 43 100
+1.07E8      1.07E8      0.1319      7.13         29 36 43 100
+1.163E8     1.163E8     0.2151      5.76         25 30 37 44 100
+1.252E8     1.252E8     0.1798      5.84         25 25 31 38 44 100
+1.338E8     1.338E8     0.1441      5.76         25 25 26 32 38 44 100
+1.421E8     1.421E8     0.126       5.87         25 25 25 27 33 39 44 100
+1.502E8     1.502E8     0.0865      7.4          25 25 25 25 27 33 39 45 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D6185010 
+#DATASET        D61850111  20131124
+#SUBENT         D6185011   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)33-AS-70,CUM,SIG
+#C4Reaction     (10-NE-20,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        33-AS-70
+#C4ReaCode      (10-NE-20,X)CUM,SIG
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         10
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39001      6.29E71000000.0   0.0225   0.0025           33070.9                     D.Singh,             (11)D6185 111                              0.0025                            11.1     11.1
+10020 27059   39001      7.52E7 800000.0   0.0447   0.0047           33070.9                     D.Singh,             (11)D6185 111                              0.0047                            10.5     10.5
+10020 27059   39001      8.65E7 800000.0.06370001   0.0044           33070.9                     D.Singh,             (11)D6185 111                              0.0044                            6.91     6.91
+10020 27059   39001      9.71E7 700000.0.06290001   0.0037           33070.9                     D.Singh,             (11)D6185 111                              0.0037                            5.88     5.88
+10020 27059   39001      1.07E8 700000.0   0.0776   0.0038           33070.9                     D.Singh,             (11)D6185 111                              0.0038                            4.90     4.90
+10020 27059   39001     1.163E8 600000.0   0.1627   0.0071           33070.9                     D.Singh,             (11)D6185 111                              0.0071                            4.36     4.36
+10020 27059   39001     1.252E8 600000.0   0.2135   0.0086           33070.9                     D.Singh,             (11)D6185 111                              0.0086                            4.03     4.03
+10020 27059   39001     1.338E8 600000.0   0.2462    0.008           33070.9                     D.Singh,             (11)D6185 111                               0.008                            3.25     3.25
+10020 27059   39001     1.421E8 600000.0   0.1181   0.0039           33070.9                     D.Singh,             (11)D6185 111                              0.0039                            3.30     3.30
+10020 27059   39001     1.502E8 700000.0   0.0585   0.0024           33070.9                     D.Singh,             (11)D6185 111                              0.0024                            4.10     4.10
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.29E7      1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           10          10
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.29E7      6.29E7      0.0225      11.11        100
+7.52E7      7.52E7      0.0447      10.51        43 100
+8.65E7      8.65E7      0.0637      6.91         36 44 100
+9.71E7      9.71E7      0.0629      5.88         30 37 44 100
+1.07E8      1.07E8      0.0776      4.9          25 32 38 44 100
+1.163E8     1.163E8     0.1627      4.36         25 26 33 39 45 100
+1.252E8     1.252E8     0.2135      4.03         25 25 28 34 40 45 100
+1.338E8     1.338E8     0.2462      3.25         25 25 25 29 35 40 45 100
+1.421E8     1.421E8     0.1181      3.3          25 25 25 25 30 35 40 45 100
+1.502E8     1.502E8     0.0585      4.1          25 25 25 25 25 31 36 41 45 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850111
+#DATASET        D61850112  20131124
+#SUBENT         D6185011   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)33-AS-70,IND,SIG
+#C4Reaction     (10-NE-20,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        33-AS-70
+#C4ReaCode      (10-NE-20,X)IND,SIG
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39000      6.29E71000000.0    0.021   0.0025           33070.9                     D.Singh,             (11)D6185 112                              0.0025                            11.9     11.9
+10020 27059   39000      7.52E7 800000.0   0.0342   0.0049           33070.9                     D.Singh,             (11)D6185 112                              0.0049                            14.3     14.3
+10020 27059   39000      8.65E7 800000.0.05140001   0.0046           33070.9                     D.Singh,             (11)D6185 112                              0.0046                            8.95     8.95
+10020 27059   39000      9.71E7 700000.0.04720001   0.0041           33070.9                     D.Singh,             (11)D6185 112                              0.0041                            8.69     8.69
+10020 27059   39000      1.07E8 700000.0   0.0564   0.0087           33070.9                     D.Singh,             (11)D6185 112                              0.0087                            15.4     15.4
+10020 27059   39000     1.163E8 600000.0   0.1257   0.0085           33070.9                     D.Singh,             (11)D6185 112                              0.0085                            6.76     6.76
+10020 27059   39000     1.252E8 600000.0   0.1712   0.0106           33070.9                     D.Singh,             (11)D6185 112                              0.0106                            6.19     6.19
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           6.29E7      1.252E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+6.29E7      6.29E7      0.021       11.9         100
+7.52E7      7.52E7      0.0342      14.33        40 100
+8.65E7      8.65E7      0.0514      8.95         31 41 100
+9.71E7      9.71E7      0.0472      8.69         25 32 41 100
+1.07E8      1.07E8      0.0564      15.43        25 25 34 42 100
+1.163E8     1.163E8     0.1257      6.76         25 25 26 35 43 100
+1.252E8     1.252E8     0.1712      6.19         25 25 25 27 35 43 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850112
+#DATASET        D6185012   20131124
+#SUBENT         D6185012   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)33-AS-69,IND,SIG
+#C4Reaction     (10-NE-20,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        33-AS-69
+#C4ReaCode      (10-NE-20,X)IND,SIG
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39000      1.07E8 700000.0   0.0363   0.0068           33069.9                     D.Singh,             (11)D6185 12                               0.0068                            18.7     18.7
+10020 27059   39000     1.163E8 600000.0   0.0511   0.0052           33069.9                     D.Singh,             (11)D6185 12                               0.0052                            10.2     10.2
+10020 27059   39000     1.252E8 600000.0   0.0424   0.0043           33069.9                     D.Singh,             (11)D6185 12                               0.0043                            10.1     10.1
+10020 27059   39000     1.338E8 600000.0   0.0396   0.0072           33069.9                     D.Singh,             (11)D6185 12                               0.0072                            18.2     18.2
+10020 27059   39000     1.421E8 600000.0.05740001   0.0102           33069.9                     D.Singh,             (11)D6185 12                               0.0102                            17.8     17.8
+10020 27059   39000     1.502E8 700000.0   0.0464   0.0048           33069.9                     D.Singh,             (11)D6185 12                               0.0048                            10.3     10.3
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.07E8      1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.07E8      1.07E8      0.0363      18.73        100
+1.163E8     1.163E8     0.0511      10.18        39 100
+1.252E8     1.252E8     0.0424      10.14        29 40 100
+1.338E8     1.338E8     0.0396      18.18        25 30 40 100
+1.421E8     1.421E8     0.0574      17.77        25 25 30 40 100
+1.502E8     1.502E8     0.0464      10.34        25 25 25 31 41 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D6185012 
+#DATASET        D61850131  20131124
+#SUBENT         D6185013   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)32-GE-69,CUM,SIG
+#C4Reaction     (10-NE-20,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        32-GE-69
+#C4ReaCode      (10-NE-20,X)CUM,SIG
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         9
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39001      7.52E7 800000.0   0.0147   0.0025           32069.9                     D.Singh,             (11)D6185 131                              0.0025                            17       17
+10020 27059   39001      8.65E7 800000.0   0.0398   0.0023           32069.9                     D.Singh,             (11)D6185 131                              0.0023                            5.78     5.78
+10020 27059   39001      9.71E7 700000.0   0.1077   0.0043           32069.9                     D.Singh,             (11)D6185 131                              0.0043                            3.99     3.99
+10020 27059   39001      1.07E8 700000.0   0.1154   0.0067           32069.9                     D.Singh,             (11)D6185 131                              0.0067                            5.81     5.81
+10020 27059   39001     1.163E8 600000.0   0.1467   0.0058           32069.9                     D.Singh,             (11)D6185 131                              0.0058                            3.95     3.95
+10020 27059   39001     1.252E8 600000.0    0.129   0.0048           32069.9                     D.Singh,             (11)D6185 131                              0.0048                            3.72     3.72
+10020 27059   39001     1.338E8 600000.0   0.1206   0.0048           32069.9                     D.Singh,             (11)D6185 131                              0.0048                            3.98     3.98
+10020 27059   39001     1.421E8 600000.0   0.1812   0.0079           32069.9                     D.Singh,             (11)D6185 131                              0.0079                            4.36     4.36
+10020 27059   39001     1.502E8 700000.0   0.1601   0.0078           32069.9                     D.Singh,             (11)D6185 131                              0.0078                            4.87     4.87
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           7.52E7      1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           9           9
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+7.52E7      7.52E7      0.0147      17.01        100
+8.65E7      8.65E7      0.0398      5.78         42 100
+9.71E7      9.71E7      0.1077      3.99         35 43 100
+1.07E8      1.07E8      0.1154      5.81         29 36 43 100
+1.163E8     1.163E8     0.1467      3.95         25 30 37 44 100
+1.252E8     1.252E8     0.129       3.72         25 25 31 38 44 100
+1.338E8     1.338E8     0.1206      3.98         25 25 26 32 38 44 100
+1.421E8     1.421E8     0.1812      4.36         25 25 25 27 33 39 44 100
+1.502E8     1.502E8     0.1601      4.87         25 25 25 25 27 33 39 45 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850131
+#DATASET        D61850132  20131124
+#SUBENT         D6185013   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)32-GE-69,IND,SIG
+#C4Reaction     (10-NE-20,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        32-GE-69
+#C4ReaCode      (10-NE-20,X)IND,SIG
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39000      1.07E8 700000.0.07910001   0.0046           32069.9                     D.Singh,             (11)D6185 132                              0.0046                            5.82     5.82
+10020 27059   39000     1.163E8 600000.0.09530001   0.0038           32069.9                     D.Singh,             (11)D6185 132                              0.0038                            3.99     3.99
+10020 27059   39000     1.252E8 600000.0.08630001   0.0034           32069.9                     D.Singh,             (11)D6185 132                              0.0034                            3.94     3.94
+10020 27059   39000     1.338E8 600000.0   0.0808   0.0032           32069.9                     D.Singh,             (11)D6185 132                              0.0032                            3.96     3.96
+10020 27059   39000     1.421E8 600000.0   0.1234   0.0055           32069.9                     D.Singh,             (11)D6185 132                              0.0055                            4.46     4.46
+10020 27059   39000     1.502E8 700000.0   0.1137   0.0055           32069.9                     D.Singh,             (11)D6185 132                              0.0055                            4.84     4.84
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.07E8      1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.07E8      1.07E8      0.0791      5.82         100
+1.163E8     1.163E8     0.0953      3.99         39 100
+1.252E8     1.252E8     0.0863      3.94         29 40 100
+1.338E8     1.338E8     0.0808      3.96         25 30 40 100
+1.421E8     1.421E8     0.1234      4.46         25 25 30 40 100
+1.502E8     1.502E8     0.1137      4.84         25 25 25 31 41 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850132
+#DATASET        D6185014   20131124
+#SUBENT         D6185014   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)32-GE-67,IND,SIG
+#C4Reaction     (10-NE-20,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        32-GE-67
+#C4ReaCode      (10-NE-20,X)IND,SIG
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39000     1.163E8 600000.0   0.0284   0.0045           32067.9                     D.Singh,             (11)D6185 14                               0.0045                            15.8     15.8
+10020 27059   39000     1.252E8 600000.0   0.0458   0.0051           32067.9                     D.Singh,             (11)D6185 14                               0.0051                            11.1     11.1
+10020 27059   39000     1.338E8 600000.0   0.0612   0.0062           32067.9                     D.Singh,             (11)D6185 14                               0.0062                            10.1     10.1
+10020 27059   39000     1.421E8 600000.0   0.0483    0.005           32067.9                     D.Singh,             (11)D6185 14                                0.005                            10.4     10.4
+10020 27059   39000     1.502E8 700000.0   0.0408   0.0044           32067.9                     D.Singh,             (11)D6185 14                               0.0044                            10.8     10.8
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.163E8     1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           5           5
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.163E8     1.163E8     0.0284      15.85        100
+1.252E8     1.252E8     0.0458      11.14        37 100
+1.338E8     1.338E8     0.0612      10.13        25 37 100
+1.421E8     1.421E8     0.0483      10.35        25 25 38 100
+1.502E8     1.502E8     0.0408      10.78        25 25 26 38 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D6185014 
+#DATASET        D6185015   20131124
+#SUBENT         D6185015   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)32-GE-66,IND,SIG
+#C4Reaction     (10-NE-20,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        32-GE-66
+#C4ReaCode      (10-NE-20,X)IND,SIG
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39000      1.07E8 700000.0   0.0306   0.0031           32066.9                     D.Singh,             (11)D6185 15                               0.0031                            10.1     10.1
+10020 27059   39000     1.163E8 600000.0.04590001   0.0035           32066.9                     D.Singh,             (11)D6185 15                               0.0035                            7.63     7.63
+10020 27059   39000     1.252E8 600000.0   0.0565   0.0055           32066.9                     D.Singh,             (11)D6185 15                               0.0055                            9.73     9.73
+10020 27059   39000     1.338E8 600000.0   0.0652   0.0065           32066.9                     D.Singh,             (11)D6185 15                               0.0065                            9.97     9.97
+10020 27059   39000     1.421E8 600000.0   0.0605   0.0063           32066.9                     D.Singh,             (11)D6185 15                               0.0063                            10.4     10.4
+10020 27059   39000     1.502E8 700000.0   0.0518   0.0058           32066.9                     D.Singh,             (11)D6185 15                               0.0058                            11.2     11.2
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.07E8      1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.07E8      1.07E8      0.0306      10.13        100
+1.163E8     1.163E8     0.0459      7.63         39 100
+1.252E8     1.252E8     0.0565      9.73         29 40 100
+1.338E8     1.338E8     0.0652      9.97         25 30 40 100
+1.421E8     1.421E8     0.0605      10.41        25 25 30 40 100
+1.502E8     1.502E8     0.0518      11.2         25 25 25 31 41 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D6185015 
+#DATASET        D61850161  20131124
+#SUBENT         D6185016   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)31-GA-67,CUM,SIG
+#C4Reaction     (10-NE-20,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        31-GA-67
+#C4ReaCode      (10-NE-20,X)CUM,SIG
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39001      8.65E7 800000.0   0.0102   0.0018           31067.9                     D.Singh,             (11)D6185 161                              0.0018                            17.6     17.6
+10020 27059   39001      9.71E7 700000.0   0.0231   0.0031           31067.9                     D.Singh,             (11)D6185 161                              0.0031                            13.4     13.4
+10020 27059   39001      1.07E8 700000.0   0.0398   0.0043           31067.9                     D.Singh,             (11)D6185 161                              0.0043                            10.8     10.8
+10020 27059   39001     1.163E8 600000.0    0.118   0.0055           31067.9                     D.Singh,             (11)D6185 161                              0.0055                            4.66     4.66
+10020 27059   39001     1.252E8 600000.0   0.2316   0.0098           31067.9                     D.Singh,             (11)D6185 161                              0.0098                            4.23     4.23
+10020 27059   39001     1.338E8 600000.0   0.2712   0.0123           31067.9                     D.Singh,             (11)D6185 161                              0.0123                            4.54     4.54
+10020 27059   39001     1.421E8 600000.0    0.214   0.0092           31067.9                     D.Singh,             (11)D6185 161                              0.0092                            4.30     4.30
+10020 27059   39001     1.502E8 700000.0   0.3277   0.0152           31067.9                     D.Singh,             (11)D6185 161                              0.0152                            4.64     4.64
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           8.65E7      1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           8           8
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+8.65E7      8.65E7      0.0102      17.65        100
+9.71E7      9.71E7      0.0231      13.42        42 100
+1.07E8      1.07E8      0.0398      10.8         34 42 100
+1.163E8     1.163E8     0.118       4.66         27 35 43 100
+1.252E8     1.252E8     0.2316      4.23         25 28 36 43 100
+1.338E8     1.338E8     0.2712      4.54         25 25 29 36 43 100
+1.421E8     1.421E8     0.214       4.3          25 25 25 30 37 43 100
+1.502E8     1.502E8     0.3277      4.64         25 25 25 25 30 37 44 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850161
+#DATASET        D61850162  20131124
+#SUBENT         D6185016   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)31-GA-67,IND,SIG
+#C4Reaction     (10-NE-20,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        31-GA-67
+#C4ReaCode      (10-NE-20,X)IND,SIG
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39000     1.163E8 600000.0   0.0895   0.0042           31067.9                     D.Singh,             (11)D6185 162                              0.0042                            4.69     4.69
+10020 27059   39000     1.252E8 600000.0   0.1856   0.0079           31067.9                     D.Singh,             (11)D6185 162                              0.0079                            4.26     4.26
+10020 27059   39000     1.338E8 600000.0   0.2098   0.0095           31067.9                     D.Singh,             (11)D6185 162                              0.0095                            4.53     4.53
+10020 27059   39000     1.421E8 600000.0   0.1655   0.0071           31067.9                     D.Singh,             (11)D6185 162                              0.0071                            4.29     4.29
+10020 27059   39000     1.502E8 700000.0   0.2868   0.0133           31067.9                     D.Singh,             (11)D6185 162                              0.0133                            4.64     4.64
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.163E8     1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           5           5
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.163E8     1.163E8     0.0895      4.69         100
+1.252E8     1.252E8     0.1856      4.26         37 100
+1.338E8     1.338E8     0.2098      4.53         25 37 100
+1.421E8     1.421E8     0.1655      4.29         25 25 38 100
+1.502E8     1.502E8     0.2868      4.64         25 25 26 38 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850162
+#DATASET        D61850171  20131124
+#SUBENT         D6185017   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)31-GA-66,CUM,SIG
+#C4Reaction     (10-NE-20,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        31-GA-66
+#C4ReaCode      (10-NE-20,X)CUM,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+2.43%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 27-CO-59(10-NE-20,X)31-GA-66,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (27-CO-59(10-NE-20,X)31-GA-66,CUM,SIG)
+#+               #[1]#DECAY-DATA (31-GA-66,9.49HR,DG,1039.3,0.379) #Ix_old=0.379
+#+                a1=0.379/0.37;              #[1]#DECAY-DATA: correction to new 1039.22 keV gamma-yield per decay Ga-66 Ix_new=0.37
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0243243
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D61850171   1.02432     -           1.02432     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D61850171   CS          8           1.02432     1.02432     1.02432     +2.43%      1.02432                
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39001      8.65E7 800000.00.1154414 8.5019-3           31066.9                     D.Singh*,            (11)D6185 171                            8.5019-3                            7.36     7.36                                        1.02432431.0243243
+10020 27059   39001      9.71E7 700000.0.09024297 6.5557-3           31066.9                     D.Singh*,            (11)D6185 171                            6.5557-3                            7.26     7.26                                        1.02432431.0243243
+10020 27059   39001      1.07E8 700000.00.1233286.01229189           31066.9                     D.Singh*,            (11)D6185 171                           .01229189                            9.97     9.97                                        1.02432431.0243243
+10020 27059   39001     1.163E8 600000.00.1107295 7.7849-3           31066.9                     D.Singh*,            (11)D6185 171                            7.7849-3                            7.03     7.03                                        1.02432431.0243243
+10020 27059   39001     1.252E8 600000.0 0.128143.01280405           31066.9                     D.Singh*,            (11)D6185 171                           .01280405                            9.99     9.99                                        1.02432431.0243243
+10020 27059   39001     1.338E8 600000.00.1658381.01638919           31066.9                     D.Singh*,            (11)D6185 171                           .01638919                            9.88     9.88                                        1.02432431.0243243
+10020 27059   39001     1.421E8 600000.00.2384627.02366189           31066.9                     D.Singh*,            (11)D6185 171                           .02366189                            9.92     9.92                                        1.02432431.0243243
+10020 27059   39001     1.502E8 700000.00.2680657.02734946           31066.9                     D.Singh*,            (11)D6185 171                           .02734946                            10.2     10.2                                        1.02432431.0243243
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           8.65E7      1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           8           8
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+8.65E7      8.65E7      0.115441    7.36         100
+9.71E7      9.71E7      0.090243    7.26         42 100
+1.07E8      1.07E8      0.123329    9.97         34 42 100
+1.163E8     1.163E8     0.11073     7.03         27 35 43 100
+1.252E8     1.252E8     0.128143    9.99         25 28 36 43 100
+1.338E8     1.338E8     0.165838    9.88         25 25 29 36 43 100
+1.421E8     1.421E8     0.238463    9.92         25 25 25 30 37 43 100
+1.502E8     1.502E8     0.268066    10.2         25 25 25 25 30 37 44 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850171
+#DATASET        D61850172  20131124
+#SUBENT         D6185017   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)31-GA-66,IND,SIG
+#C4Reaction     (10-NE-20,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        31-GA-66
+#C4ReaCode      (10-NE-20,X)IND,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+2.43%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 27-CO-59(10-NE-20,X)31-GA-66,IND,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (27-CO-59(10-NE-20,X)31-GA-66,IND,SIG)
+#+               #[1]#DECAY-DATA (31-GA-66,9.49HR,DG,1039.3,0.379) #Ix_old=0.379
+#+                a1=0.379/0.37;              #[1]#DECAY-DATA: correction to new 1039.22 keV gamma-yield per decay Ga-66 Ix_new=0.37
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0243243
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D61850172   1.02432     -           1.02432     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D61850172   CS          6           1.02432     1.02432     1.02432     +2.43%      1.02432                
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39000      1.07E8 700000.0.08194596 8.1946-3           31066.9                     D.Singh*,            (11)D6185 172                            8.1946-3                            10       10                                          1.02432431.0243243
+10020 27059   39000     1.163E8 600000.0.04845054.00338027           31066.9                     D.Singh*,            (11)D6185 172                           .00338027                            6.98     6.98                                        1.02432431.0243244
+10020 27059   39000     1.252E8 600000.0.05152351 5.1216-3           31066.9                     D.Singh*,            (11)D6185 172                            5.1216-3                            9.94     9.94                                        1.02432431.0243243
+10020 27059   39000     1.338E8 600000.0.07743893 7.6824-3           31066.9                     D.Singh*,            (11)D6185 172                            7.6824-3                            9.92     9.92                                        1.02432431.0243243
+10020 27059   39000     1.421E8 600000.00.15641430.0154673           31066.9                     D.Singh*,            (11)D6185 172                           0.0154673                            9.89     9.89                                        1.02432431.0243243
+10020 27059   39000     1.502E8 700000.0 0.197797.01997432           31066.9                     D.Singh*,            (11)D6185 172                           .01997432                            10.1     10.1                                        1.02432431.0243243
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.07E8      1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           6           6
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.07E8      1.07E8      0.081946    10.0         100
+1.163E8     1.163E8     4.8451-2    6.98         39 100
+1.252E8     1.252E8     5.1524-2    9.94         29 40 100
+1.338E8     1.338E8     7.7439-2    9.92         25 30 40 100
+1.421E8     1.421E8     0.156414    9.89         25 25 30 40 100
+1.502E8     1.502E8     0.197797    10.1         25 25 25 31 41 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D61850172
+#DATASET        D6185018   20131124
+#SUBENT         D6185018   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)31-GA-65,IND,SIG
+#C4Reaction     (10-NE-20,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        31-GA-65
+#C4ReaCode      (10-NE-20,X)IND,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.85%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 27-CO-59(10-NE-20,X)31-GA-65,IND,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (27-CO-59(10-NE-20,X)31-GA-65,IND,SIG)
+#+               #[1]#DECAY-DATA (31-GA-65,15.20MIN,DG,115.2,0.550) #Ix_old=0.55
+#+                a1=0.55/0.54;               #[1]#DECAY-DATA: correction to new 115.09 keV gamma-yield per decay Ga-65 Ix_new=0.54
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0185184
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D6185018    1.01852     -           1.01852     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D6185018    CS          4           1.01852     1.01852     1.01852     +1.85%      1.01852                
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39000     1.252E8 600000.0.06885184 7.2315-3           31065.9                     D.Singh*,            (11)D6185 18                             7.2315-3                            10.5     10.5                                        1.01851841.0185184
+10020 27059   39000     1.338E8 600000.0.05550925 6.7222-3           31065.9                     D.Singh*,            (11)D6185 18                             6.7222-3                            12.1     12.1                                        1.01851841.0185184
+10020 27059   39000     1.421E8 600000.00.0526574 6.2130-3           31065.9                     D.Singh*,            (11)D6185 18                             6.2130-3                            11.8     11.8                                        1.01851841.0185184
+10020 27059   39000     1.502E8 700000.0.06029629 8.6574-3           31065.9                     D.Singh*,            (11)D6185 18                             8.6574-3                            14.4     14.4                                        1.01851841.0185186
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.252E8     1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.252E8     1.252E8     6.8852-2    10.5         100
+1.338E8     1.338E8     5.5509-2    12.11        33 100
+1.421E8     1.421E8     5.2657-2    11.8         25 33 100
+1.502E8     1.502E8     6.0296-2    14.36        25 25 34 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D6185018 
+#DATASET        D6185019   20131124
+#SUBENT         D6185019   20131124
+#ENTRY          D6185      20131124
+#TITLE          Reaction mechanism in the 20Ne+59Co system at
+#+               3-7 MeV/nucleon, and observation of entrance-channel
+#+               mass-asymmetry of the incomplete fusion fraction
+#AUTHORS        D.Singh, R.Ali, M.Afzal Ansari, B.S.Tomar, M.H.Rashid,
+#+               R.Guin, S.K.Das
+#AUTHOR1        D.Singh+
+#YEAR           2011
+#X4REF1         J,PR/C,83,054604,2011
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.83, p.054604 (2011)
+#DATE           20131124
+#INSTITUTE      3INDNSD,3INDMUA,3INDTRM,3INDVEC
+#METHOD         ACTIV,BCINT,EDEG,STTA
+#REACTION       27-CO-59(10-NE-20,X)29-CU-61,IND,SIG
+#C4Reaction     (10-NE-20,X)IND,SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           10020
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          10-NE-20,X
+#PRODUCT        29-CU-61
+#C4ReaCode      (10-NE-20,X)IND,SIG
+#Quantity       Independent cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [10020 27059   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39000      9.71E7 700000.0   0.0025   5.0E-4           29061.9                     D.Singh,             (11)D6185 19                               5.0E-4                            20       20
+10020 27059   39000      1.07E8 700000.0   0.0184   0.0036           29061.9                     D.Singh,             (11)D6185 19                               0.0036                            19.6     19.6
+10020 27059   39000     1.163E8 600000.0   0.0495    0.008           29061.9                     D.Singh,             (11)D6185 19                                0.008                            16.2     16.2
+10020 27059   39000     1.252E8 600000.0.04590001   0.0024           29061.9                     D.Singh,             (11)D6185 19                               0.0024                            5.23     5.23
+10020 27059   39000     1.338E8 600000.0.06020001   0.0026           29061.9                     D.Singh,             (11)D6185 19                               0.0026                            4.32     4.32
+10020 27059   39000     1.421E8 600000.0.09450001   0.0049           29061.9                     D.Singh,             (11)D6185 19                               0.0049                            5.19     5.19
+10020 27059   39000     1.502E8 700000.0   0.1179    0.005           29061.9                     D.Singh,             (11)D6185 19                                0.005                            4.24     4.24
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           9.71E7      1.502E8     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+9.71E7      9.71E7      0.0025      20.0         100
+1.07E8      1.07E8      0.0184      19.57        41 100
+1.163E8     1.163E8     0.0495      16.16        32 41 100
+1.252E8     1.252E8     0.0459      5.23         25 33 42 100
+1.338E8     1.338E8     0.0602      4.32         25 25 34 42 100
+1.421E8     1.421E8     0.0945      5.19         25 25 26 34 42 100
+1.502E8     1.502E8     0.1179      4.24         25 25 25 26 35 42 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       D6185019 
+#/C5M.2.3       1               28              28              0               194             

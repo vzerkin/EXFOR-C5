@@ -1,0 +1,353 @@
+#C5.2.3
+#DATASET        C1949002   20121003
+#SUBENT         C1949002   20121003
+#ENTRY          C1949      20121003
+#TITLE          225Ac and 223Ra production via 800 MeV proton
+#+              irradiation of natural thorium targets
+#AUTHORS        J.W.Weidner,S.G.Mashnik,K.D.John,B.Ballard,
+#+              E.R.Birnbaum,L.J.Bitteker,A.Coutur,M.E.Fassbender,
+#+              G.S.Goff,R.Gritzo,F.M.Hemez,W.Runde,J.L.Ullmann,
+#+              L.E.Wolfsberg,F.M.Nortier
+#AUTHOR1        J.W.Weidner+
+#YEAR           2012
+#X4REF1         J,ARI,70,2590,2012
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.70, p.2590 (2012)
+#DATE           20121003
+#INSTITUTE      1USALAS
+#METHOD         ACTIV
+#REACTION       90-TH-232(P,X)89-AC-225,CUM,SIG
+#C4Reaction     (P,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           1001
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          P,X
+#PRODUCT        89-AC-225
+#C4ReaCode      (P,X)CUM,SIG
+#CompNotes      ERR-ANALYS:(ERR-3,2.0,10.0)   ADDED AS COMMON:ERR-3,PER-CENT=2.0%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=6.0%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.00%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 90232   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-22,CUM,SIG
+#M0             Point: XS(b)=0.015(6%)  EN-NRM(eV):8.0E8
+#M1             Point: XS(b)=  EN-NRM(eV):8.0E8
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 90-TH-232(P,X)89-AC-225,CUM,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-22,CUM,SIG
+#+              #[0]#En=8.0E8
+#+              a0=[MONIT];                   #[0]#old monitor point 0.015
+#+              a1=recom$al27px[EN];          #[0]#new monitor point [800.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (90-TH-232(P,X)89-AC-225,CUM,SIG)
+#+               #[1]#DECAY-DATA (89-AC-225,10.0D,DG,99.91,0.0101) #Ix_old=0.0101
+#+                a1=0.0101/0.01;             #[1]#DECAY-DATA: correction to new 99.8 keV gamma-yield per decay Ac-225 Ix_new=0.01
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.01
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        C1949002    1.01000     1.00000     1.01000     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          C1949002    CS          1           1.01000     1.01000     1.01000     +1.00%      1.01000     [MONIT]::al27px
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 90232   39001       8.0E8          0.014948 0.001111           89225.9                     J.W.Weidner*,        (12)C1949  2  1.0073-3                   0.001111 6.74                       7.43     7.43    0.015    9.0E-4                     1.01     1.0100001
+#/C5DATA        0
+#/DATASET       C1949002 
+#DATASET        C1949003   20121003
+#SUBENT         C1949003   20121003
+#ENTRY          C1949      20121003
+#TITLE          225Ac and 223Ra production via 800 MeV proton
+#+              irradiation of natural thorium targets
+#AUTHORS        J.W.Weidner,S.G.Mashnik,K.D.John,B.Ballard,
+#+              E.R.Birnbaum,L.J.Bitteker,A.Coutur,M.E.Fassbender,
+#+              G.S.Goff,R.Gritzo,F.M.Hemez,W.Runde,J.L.Ullmann,
+#+              L.E.Wolfsberg,F.M.Nortier
+#AUTHOR1        J.W.Weidner+
+#YEAR           2012
+#X4REF1         J,ARI,70,2590,2012
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.70, p.2590 (2012)
+#DATE           20121003
+#INSTITUTE      1USALAS
+#METHOD         ACTIV
+#REACTION       90-TH-232(P,X)88-RA-225,CUM,SIG
+#C4Reaction     (P,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           1001
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          P,X
+#PRODUCT        88-RA-225
+#C4ReaCode      (P,X)CUM,SIG
+#CompNotes      ERR-ANALYS:(ERR-3,2.0,10.0)   ADDED AS COMMON:ERR-3,PER-CENT=2.0%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=6.0%
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 90232   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-22,CUM,SIG
+#M0             Point: XS(b)=0.015(6%)  EN-NRM(eV):8.0E8
+#M1             Point: XS(b)=  EN-NRM(eV):8.0E8
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 90232   39001       8.0E8            0.0033   4.0E-4           88225.9                     J.W.Weidner,         (12)C1949  3 2.2238E-4                     4.0E-4 6.74                       12.1     12.1    0.015    9.0E-4
+#/C5DATA        0
+#/DATASET       C1949003 
+#DATASET        C1949004   20121003
+#SUBENT         C1949004   20121003
+#ENTRY          C1949      20121003
+#TITLE          225Ac and 223Ra production via 800 MeV proton
+#+              irradiation of natural thorium targets
+#AUTHORS        J.W.Weidner,S.G.Mashnik,K.D.John,B.Ballard,
+#+              E.R.Birnbaum,L.J.Bitteker,A.Coutur,M.E.Fassbender,
+#+              G.S.Goff,R.Gritzo,F.M.Hemez,W.Runde,J.L.Ullmann,
+#+              L.E.Wolfsberg,F.M.Nortier
+#AUTHOR1        J.W.Weidner+
+#YEAR           2012
+#X4REF1         J,ARI,70,2590,2012
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.70, p.2590 (2012)
+#DATE           20121003
+#INSTITUTE      1USALAS
+#METHOD         ACTIV
+#REACTION       90-TH-232(P,X)89-AC-227,CUM,SIG
+#C4Reaction     (P,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           1001
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          P,X
+#PRODUCT        89-AC-227
+#C4ReaCode      (P,X)CUM,SIG
+#CompNotes      ERR-ANALYS:(ERR-3,2.0,10.0)   ADDED AS COMMON:ERR-3,PER-CENT=2.0%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=6.0%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+60.7%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 90232   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-22,CUM,SIG
+#M0             Point: XS(b)=0.015(6%)  EN-NRM(eV):8.0E8
+#M1             Point: XS(b)=  EN-NRM(eV):8.0E8
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 90-TH-232(P,X)89-AC-227,CUM,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-22,CUM,SIG
+#+              #[0]#En=8.0E8
+#+              a0=[MONIT];                   #[0]#old monitor point 0.015
+#+              a1=recom$al27px[EN];          #[0]#new monitor point [800.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (90-TH-232(P,X)89-AC-227,CUM,SIG)
+#+               #[1]#DECAY-DATA (89-AC-227,27.773YR,DG,100.0,0.00009) #Ix_old=9.0E-5
+#+                a1=9.0E-5/5.6E-5;           #[1]#DECAY-DATA: correction to new 99.6 keV gamma-yield per decay Ac-227 Ix_new=5.6E-5
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.6071428
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        C1949004    1.60714     1.00000     1.60714     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          C1949004    CS          1           1.60714     1.60714     1.60714     +60.7%      1.60714     [MONIT]::al27px
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 90232   39001       8.0E8         .03342857 3.2143-3           89227.9                     J.W.Weidner*,        (12)C1949  4  2.2526-3                   3.2143-3 6.74                       9.62     9.62    0.015    9.0E-4                     1.60714281.6071429
+#/C5DATA        0
+#/DATASET       C1949004 
+#DATASET        C1949005   20121003
+#SUBENT         C1949005   20121003
+#ENTRY          C1949      20121003
+#TITLE          225Ac and 223Ra production via 800 MeV proton
+#+              irradiation of natural thorium targets
+#AUTHORS        J.W.Weidner,S.G.Mashnik,K.D.John,B.Ballard,
+#+              E.R.Birnbaum,L.J.Bitteker,A.Coutur,M.E.Fassbender,
+#+              G.S.Goff,R.Gritzo,F.M.Hemez,W.Runde,J.L.Ullmann,
+#+              L.E.Wolfsberg,F.M.Nortier
+#AUTHOR1        J.W.Weidner+
+#YEAR           2012
+#X4REF1         J,ARI,70,2590,2012
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.70, p.2590 (2012)
+#DATE           20121003
+#INSTITUTE      1USALAS
+#METHOD         ACTIV
+#REACTION       90-TH-232(P,X)88-RA-223,CUM,SIG
+#C4Reaction     (P,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           1001
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          P,X
+#PRODUCT        88-RA-223
+#C4ReaCode      (P,X)CUM,SIG
+#CompNotes      ERR-ANALYS:(ERR-3,2.0,10.0)   ADDED AS COMMON:ERR-3,PER-CENT=2.0%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=6.0%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+3.01%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 90232   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-22,CUM,SIG
+#M0             Point: XS(b)=0.015(6%)  EN-NRM(eV):8.0E8
+#M1             Point: XS(b)=  EN-NRM(eV):8.0E8
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 90-TH-232(P,X)88-RA-223,CUM,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-22,CUM,SIG
+#+              #[0]#En=8.0E8
+#+              a0=[MONIT];                   #[0]#old monitor point 0.015
+#+              a1=recom$al27px[EN];          #[0]#new monitor point [800.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (90-TH-232(P,X)88-RA-223,CUM,SIG)
+#+               #[1]#DECAY-DATA (88-RA-223,11.435D,DG,269.459,0.137) #Ix_old=0.137
+#+                a1=0.137/0.133;             #[1]#DECAY-DATA: correction to new 269.463 keV gamma-yield per decay Ra-223 Ix_new=0.133
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0300752
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        C1949005    1.03008     1.00000     1.03008     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          C1949005    CS          1           1.03008     1.03008     1.03008     +3.01%      1.03008     [MONIT]::al27px
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 90232   39001       8.0E8          5.4594-3 6.1805-4           88223.9                     J.W.Weidner*,        (12)C1949  5  3.6789-4                   6.1805-4 6.74                       11.3     11.3    0.015    9.0E-4                     1.03007521.0300752
+#/C5DATA        0
+#/DATASET       C1949005 
+#DATASET        C1949006   20121003
+#SUBENT         C1949006   20121003
+#ENTRY          C1949      20121003
+#TITLE          225Ac and 223Ra production via 800 MeV proton
+#+              irradiation of natural thorium targets
+#AUTHORS        J.W.Weidner,S.G.Mashnik,K.D.John,B.Ballard,
+#+              E.R.Birnbaum,L.J.Bitteker,A.Coutur,M.E.Fassbender,
+#+              G.S.Goff,R.Gritzo,F.M.Hemez,W.Runde,J.L.Ullmann,
+#+              L.E.Wolfsberg,F.M.Nortier
+#AUTHOR1        J.W.Weidner+
+#YEAR           2012
+#X4REF1         J,ARI,70,2590,2012
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.70, p.2590 (2012)
+#DATE           20121003
+#INSTITUTE      1USALAS
+#METHOD         ACTIV
+#REACTION       90-TH-232(P,X)90-TH-227,CUM,SIG
+#C4Reaction     (P,X)CUM,SIG
+#ReactionType   CS
+#MF             3
+#MT             9001
+#PROJ           1001
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          P,X
+#PRODUCT        90-TH-227
+#C4ReaCode      (P,X)CUM,SIG
+#CompNotes      ERR-ANALYS:(ERR-3,2.0,10.0)   ADDED AS COMMON:ERR-3,PER-CENT=2.0%
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=6.0%
+#Quantity       Cumulative cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 90232   39001   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-22,CUM,SIG
+#M0             Point: XS(b)=0.015(6%)  EN-NRM(eV):8.0E8
+#M1             Point: XS(b)=  EN-NRM(eV):8.0E8
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 90232   39001       8.0E8            0.0127   7.0E-4           90227.9                     J.W.Weidner,         (12)C1949  6 8.5581E-4                     7.0E-4 6.74                       5.51     5.51    0.015    9.0E-4
+#/C5DATA        0
+#/DATASET       C1949006 
+#/C5.2.3        1               5               5               0               5               

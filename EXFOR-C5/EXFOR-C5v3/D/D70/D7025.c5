@@ -1,0 +1,218 @@
+#C5.2.3
+#DATASET        D7025002   20190910
+#SUBENT         D7025002   20190910
+#ENTRY          D7025      20190910
+#TITLE          Measurement of natW(p,xn)177,178,179Re excitation
+#+              function of natural tungsten by using a 100-MeV proton
+#+              beam
+#AUTHORS        J.R.Yoon, J.E.Lee, S.Y.Lee
+#AUTHOR1        J.R.Yoon+
+#YEAR           2017
+#X4REF1         J,KPS,70,47,2017
+#REFERENCE1     Jour: Journal of the Korean Physical Society, Vol.70, p.47 (2017)
+#DATE           20190910
+#INSTITUTE      3KORDAU,3KORKOR
+#METHOD         ACTIV,STTA,GSPEC
+#REACTION       74-W-0(P,X)75-RE-177,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           74000            
+#TARGET         74000           [ ]             74-W-0          [ ] 
+#REAC1          P,X
+#PRODUCT        75-RE-177
+#C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.3,0.8)    ADDED AS COMMON:ERR-S,PER-CENT=0.3%
+#CompNotes      ERR-ANALYS:(ERR-SYS,14.,20.)  ADDED AS COMMON:ERR-SYS,PER-CENT=14.0%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0145454(7.8e7) Data[3]*1.0145454(9.3e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 74000   39000 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             Point: XS(b)=0.011  EN-NRM(eV):9.32E7
+#M1             Point: XS(b)=0.01116(3.05%)  EN-NRM(eV):9.32E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 74-W-0(P,X)75-RE-177,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              #[0]#En=9.32E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.011
+#+              a1=recom$al27px[EN-NRM-MIN!EN-NRM-MAX];#[0]#new monitor point [93.2MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D7025002    1.01455     1.01455     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D7025002    CS          4           1.01455     1.01455     1.01455     +1.45%      1.01455     [MONIT]::al27px
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 74000   39000 A    7.79E7         0.1373695   0.0139           75177.9                     J.R.Yoon*,           (17)D7025  2  0.018956 4.062E-4            0.0139 13.8     0.30              10.1     10.1    0.011             0.01116  3.4E-4   1.0145454
+ 1001 74000   39000 A    8.32E7         0.1190062    0.015           75177.9                     J.R.Yoon*,           (17)D7025  2  0.016422 3.519E-4             0.015 13.8     0.30              12.6     12.6    0.011             0.01116  3.4E-4   1.0145454
+ 1001 74000   39000 A    8.83E7         0.1183975   0.0122           75177.9                     J.R.Yoon*,           (17)D7025  2  0.016338 3.501E-4            0.0122 13.8     0.30              10.3     10.3    0.011             0.01116  3.4E-4   1.0145454
+ 1001 74000   39000 A    9.32E7         0.1111942   0.0131           75177.9                     J.R.Yoon*,           (17)D7025  2  0.015344 3.288E-4            0.0131 13.8     0.30              11.8     11.8    0.011             0.01116  3.4E-4   1.0145454
+#/C5DATA        0
+#/DATASET       D7025002 
+#DATASET        D7025003   20190910
+#SUBENT         D7025003   20190910
+#ENTRY          D7025      20190910
+#TITLE          Measurement of natW(p,xn)177,178,179Re excitation
+#+              function of natural tungsten by using a 100-MeV proton
+#+              beam
+#AUTHORS        J.R.Yoon, J.E.Lee, S.Y.Lee
+#AUTHOR1        J.R.Yoon+
+#YEAR           2017
+#X4REF1         J,KPS,70,47,2017
+#REFERENCE1     Jour: Journal of the Korean Physical Society, Vol.70, p.47 (2017)
+#DATE           20190910
+#INSTITUTE      3KORDAU,3KORKOR
+#METHOD         ACTIV,STTA,GSPEC
+#REACTION       74-W-0(P,X)75-RE-178,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           74000            
+#TARGET         74000           [ ]             74-W-0          [ ] 
+#REAC1          P,X
+#PRODUCT        75-RE-178
+#C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.3,0.8)    ADDED AS COMMON:ERR-S,PER-CENT=0.3%
+#CompNotes      ERR-ANALYS:(ERR-SYS,14.,20.)  ADDED AS COMMON:ERR-SYS,PER-CENT=14.0%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0145454(7.8e7) Data[3]*1.0145454(9.3e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 74000   39000 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             Point: XS(b)=0.011  EN-NRM(eV):9.32E7
+#M1             Point: XS(b)=0.01116(3.05%)  EN-NRM(eV):9.32E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 74-W-0(P,X)75-RE-178,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              #[0]#En=9.32E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.011
+#+              a1=recom$al27px[EN-NRM-MIN!EN-NRM-MAX];#[0]#new monitor point [93.2MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D7025003    1.01455     1.01455     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D7025003    CS          4           1.01455     1.01455     1.01455     +1.45%      1.01455     [MONIT]::al27px
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 74000   39000 A    7.79E7         0.1210353   0.0122           75178.9                     J.R.Yoon*,           (17)D7025  3  0.016702 3.579E-4            0.0122 13.8     0.30              10.1     10.1    0.011             0.01116  3.4E-4   1.0145454
+ 1001 74000   39000 A    8.32E7          0.104904   0.0137           75178.9                     J.R.Yoon*,           (17)D7025  3  0.014476 3.102E-4            0.0137 13.8     0.30              13.1     13.1    0.011             0.01116  3.4E-4   1.0145454
+ 1001 74000   39000 A    8.83E7         0.1137305   0.0112           75178.9                     J.R.Yoon*,           (17)D7025  3  0.015694 3.363E-4            0.0112 13.8     0.30              9.85     9.85    0.011             0.01116  3.4E-4   1.0145454
+ 1001 74000   39000 A    9.32E7         0.1057156   0.0141           75178.9                     J.R.Yoon*,           (17)D7025  3  0.014588 3.126E-4            0.0141 13.8     0.30              13.3     13.3    0.011             0.01116  3.4E-4   1.0145454
+#/C5DATA        0
+#/DATASET       D7025003 
+#DATASET        D7025004   20190910
+#SUBENT         D7025004   20190910
+#ENTRY          D7025      20190910
+#TITLE          Measurement of natW(p,xn)177,178,179Re excitation
+#+              function of natural tungsten by using a 100-MeV proton
+#+              beam
+#AUTHORS        J.R.Yoon, J.E.Lee, S.Y.Lee
+#AUTHOR1        J.R.Yoon+
+#YEAR           2017
+#X4REF1         J,KPS,70,47,2017
+#REFERENCE1     Jour: Journal of the Korean Physical Society, Vol.70, p.47 (2017)
+#DATE           20190910
+#INSTITUTE      3KORDAU,3KORKOR
+#METHOD         ACTIV,STTA,GSPEC
+#REACTION       74-W-0(P,X)75-RE-179,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           74000            
+#TARGET         74000           [ ]             74-W-0          [ ] 
+#REAC1          P,X
+#PRODUCT        75-RE-179
+#C4ReaCode      (P,X),SIG
+#CompNotes      ERR-ANALYS:(ERR-S,0.3,0.8)    ADDED AS COMMON:ERR-S,PER-CENT=0.3%
+#CompNotes      ERR-ANALYS:(ERR-SYS,14.,20.)  ADDED AS COMMON:ERR-SYS,PER-CENT=14.0%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0145454(7.8e7) Data[3]*1.0145454(9.3e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 74000   39000 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             Point: XS(b)=0.011  EN-NRM(eV):9.32E7
+#M1             Point: XS(b)=0.01116(3.05%)  EN-NRM(eV):9.32E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 74-W-0(P,X)75-RE-179,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              #[0]#En=9.32E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.011
+#+              a1=recom$al27px[EN-NRM-MIN!EN-NRM-MAX];#[0]#new monitor point [93.2MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D7025004    1.01455     1.01455     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D7025004    CS          4           1.01455     1.01455     1.01455     +1.45%      1.01455     [MONIT]::al27px
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 74000   39000 A    7.79E7         0.1188033   0.0133           75179.9                     J.R.Yoon*,           (17)D7025  4  0.016394 3.513E-4            0.0133 13.8     0.30              11.2     11.2    0.011             0.01116  3.4E-4   1.0145454
+ 1001 74000   39000 A    8.32E7         0.1079476   0.0144           75179.9                     J.R.Yoon*,           (17)D7025  4  0.014896 3.192E-4            0.0144 13.8     0.30              13.3     13.3    0.011             0.01116  3.4E-4   1.0145454
+ 1001 74000   39000 A    8.83E7         .09871528   0.0105           75179.9                     J.R.Yoon*,           (17)D7025  4  0.013622 2.919E-4            0.0105 13.8     0.30              10.6     10.6    0.011             0.01116  3.4E-4   1.0145454
+ 1001 74000   39000 A    9.32E7         .09445418   0.0111           75179.9                     J.R.Yoon*,           (17)D7025  4  0.013034 2.793E-4            0.0111 13.8     0.30              11.8     11.8    0.011             0.01116  3.4E-4   1.0145454
+#/C5DATA        0
+#/DATASET       D7025004 
+#/C5.2.3        1               3               3               0               12              

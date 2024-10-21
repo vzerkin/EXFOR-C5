@@ -1,0 +1,983 @@
+#C5M.2.3
+#DATASET        21343002   20140818
+#SUBENT         21343002   20140818
+#ENTRY          21343      20140818
+#TITLE          -Investigations of the energy dependence of neutron
+#+               induced reactions in the energy range of 12-19 MeV.-
+#+               (In German).
+#AUTHORS        M.Bormann, S.Cierjacks, E.Fretwurst, K.-J.Giesicke,
+#+               H.Neuert, H.Pollehn
+#AUTHOR1        M.Bormann+
+#YEAR           1963
+#X4REF1         J,ZP,174,1,196302
+#REFERENCE1     Jour: Zeitschrift fuer Physik, Vol.174, p.1 (1963)
+#DATE           20140818
+#INSTITUTE      2GERHAM
+#METHOD         ACTIV
+#REACTION       15-P-31(N,2N)15-P-30,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           15031            
+#TARGET         15031           [ ]             15-P-31         [ ] 
+#REAC1          N,2N
+#PRODUCT        15-P-30
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.95121545(1.3e7) Data[6]*0.95121545(2.0e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 15031   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-63(N,2N)29-CU-62,,SIG
+#M0             Point: XS(b)=0.478(8%)  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.454681(1.25%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 15-P-31(N,2N)15-P-30,,SIG
+#+              #[0]#Monitor:  29-CU-63(N,2N)29-CU-62,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.478
+#+              a1=recom$cu63n2n[EN-NRM];     #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        21343002    0.951215    0.951215    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          21343002    CS          7           0.951215    0.951215    0.951215    -4.88%      1.05129     [MONIT]::cu63n2n
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 15031   3  16      1.32E7 300000.0 2.8536-3 9.2410-4                                       M.Bormann*,          (63)21343  2  3.5695-5                   9.2410-4 1.25                       32.4     32.4    0.478    0.03824  0.454681 .005687450.95121540.9241039
+    1 15031   3  16      1.41E7 500000.0.01189019 2.6946-3                                       M.Bormann*,          (63)21343  2  1.4873-4                   2.6946-3 1.25                       22.7     22.7    0.478    0.03824  0.454681 .005687450.95121540.8981838
+    1 15031   3  16      1.52E7 400000.0.02758525 1.9024-3                                       M.Bormann*,          (63)21343  2  3.4505-4                   1.9024-3 1.25                       6.90     6.90    0.478    0.03824  0.454681 .005687450.95121540.9512154
+    1 15031   3  16       1.6E7 400000.0.03281693.00208805                                       M.Bormann*,          (63)21343  2  4.1050-4                  .00208805 1.25                       6.36     6.36    0.478    0.03824  0.454681 .005687450.95121540.5965858
+    1 15031   3  16      1.72E7 300000.0.04470712 1.4135-3                                       M.Bormann*,          (63)21343  2  5.5923-4                   1.4135-3 1.25                       3.16     3.16    0.478    0.03824  0.454681 .005687450.95121540.3533638
+    1 15031   3  16      1.88E7 300000.00.0551705 3.6836-3                                       M.Bormann*,          (63)21343  2  6.9011-4                   3.6836-3 1.25                       6.68     6.68    0.478    0.03824  0.454681 .005687450.95121540.6139405
+    1 15031   3  16      1.97E7 300000.0.05849976 5.4340-3                                       M.Bormann*,          (63)21343  2  7.3175-4                   5.4340-3 1.25                       9.29     9.29    0.478    0.03824  0.454681 .005687450.95121540.7245394
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.32E7      1.97E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.32E7      1.32E7      2.8536-3    32.38        100
+1.41E7      1.41E7      1.1890-2    22.66         0 100
+1.52E7      1.52E7      2.7585-2    6.9           0  1 100
+1.6E7       1.6E7       3.2817-2    6.36          0  1  3 100
+1.72E7      1.72E7      4.4707-2    3.16          1  1  5  6 100
+1.88E7      1.88E7      5.5170-2    6.68          0  1  2  2  6 100
+1.97E7      1.97E7      5.8500-2    9.29          0  0  1  1  3  2 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       21343002 
+#DATASET        21343003   20081106
+#SUBENT         21343003   20081106
+#ENTRY          21343      20140818
+#TITLE          -Investigations of the energy dependence of neutron
+#+               induced reactions in the energy range of 12-19 MeV.-
+#+               (In German).
+#AUTHORS        M.Bormann, S.Cierjacks, E.Fretwurst, K.-J.Giesicke,
+#+               H.Neuert, H.Pollehn
+#AUTHOR1        M.Bormann+
+#YEAR           1963
+#X4REF1         J,ZP,174,1,196302
+#REFERENCE1     Jour: Zeitschrift fuer Physik, Vol.174, p.1 (1963)
+#DATE           20081106
+#INSTITUTE      2GERHAM
+#METHOD         ACTIV
+#REACTION       23-V-51(N,P)22-TI-51,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           23051            
+#TARGET         23051           [ ]             23-V-51         [ ] 
+#REAC1          N,P
+#PRODUCT        22-TI-51
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.95121545(1.3e7) Data[6]*0.95121545(1.9e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 23051   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-63(N,2N)29-CU-62,,SIG
+#M0             Point: XS(b)=0.478(8%)  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.454681(1.25%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 23-V-51(N,P)22-TI-51,,SIG
+#+              #[0]#Monitor:  29-CU-63(N,2N)29-CU-62,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.478
+#+              a1=recom$cu63n2n[EN-NRM];     #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        21343003    0.951215    0.951215    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          21343003    CS          7           0.951215    0.951215    0.951215    -4.88%      1.05129     [MONIT]::cu63n2n
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 23051   3 103      1.32E7 400000.0.03376815.00271248                                       M.Bormann*,          (63)21343  3  4.2239-4                  .00271248 1.25                       8.03     8.03    0.478    0.03824  0.454681 .005687450.95121540.6781201
+    1 23051   3 103      1.41E7 200000.0.03471936 7.8558-4                                       M.Bormann*,          (63)21343  3  4.3429-4                   7.8558-4 1.25                       2.26     2.26    0.478    0.03824  0.454681 .005687450.95121540.2618585
+    1 23051   3 103      1.52E7 400000.0.03424376 9.0659-4                                       M.Bormann*,          (63)21343  3  4.2834-4                   9.0659-4 1.25                       2.65     2.65    0.478    0.03824  0.454681 .005687450.95121540.3021981
+    1 23051   3 103       1.6E7 400000.0.03471936 1.8862-3                                       M.Bormann*,          (63)21343  3  4.3429-4                   1.8862-3 1.25                       5.43     5.43    0.478    0.03824  0.454681 .005687450.95121540.5389154
+    1 23051   3 103       1.7E7 500000.0.02948768 2.3780-3                                       M.Bormann*,          (63)21343  3  3.6885-4                   2.3780-3 1.25                       8.06     8.06    0.478    0.03824  0.454681 .005687450.95121540.6794377
+    1 23051   3 103      1.79E7 400000.0.02758525 1.8418-3                                       M.Bormann*,          (63)21343  3  3.4505-4                   1.8418-3 1.25                       6.68     6.68    0.478    0.03824  0.454681 .005687450.95121540.6139405
+    1 23051   3 103      1.86E7 400000.0.02663403 3.1699-3                                       M.Bormann*,          (63)21343  3  3.3316-4                   3.1699-3 1.25                       11.9     11.9    0.478    0.03824  0.454681 .005687450.95121540.792464
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.32E7      1.86E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.32E7      1.32E7      3.3768-2    8.03         100
+1.41E7      1.41E7      3.4719-2    2.26          7 100
+1.52E7      1.52E7      3.4244-2    2.65          5 21 100
+1.6E7       1.6E7       3.4719-2    5.43          2  8  9 100
+1.7E7       1.7E7       2.9488-2    8.06          1  4  5  3 100
+1.79E7      1.79E7      2.7585-2    6.68          1  5  4  3  2 100
+1.86E7      1.86E7      0.026634    11.9          1  3  2  1  1  2 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       21343003 
+#DATASET        21343004   20081106
+#SUBENT         21343004   20081106
+#ENTRY          21343      20140818
+#TITLE          -Investigations of the energy dependence of neutron
+#+               induced reactions in the energy range of 12-19 MeV.-
+#+               (In German).
+#AUTHORS        M.Bormann, S.Cierjacks, E.Fretwurst, K.-J.Giesicke,
+#+               H.Neuert, H.Pollehn
+#AUTHOR1        M.Bormann+
+#YEAR           1963
+#X4REF1         J,ZP,174,1,196302
+#REFERENCE1     Jour: Zeitschrift fuer Physik, Vol.174, p.1 (1963)
+#DATE           20081106
+#INSTITUTE      2GERHAM
+#METHOD         ACTIV
+#REACTION       29-CU-65(N,2N)29-CU-64,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           29065            
+#TARGET         29065           [ ]             29-CU-65        [ ] 
+#REAC1          N,2N
+#PRODUCT        29-CU-64
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0254236(1.3e7) Data[9]*1.0254236(1.9e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 29065   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.118(8%)  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.121(0.46%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 29-CU-65(N,2N)29-CU-64,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.118
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        21343004    1.02542     1.02542     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          21343004    CS          10          1.02542     1.02542     1.02542     +2.54%      1.02542     [MONIT]::al27na
+#C5DATA         10
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 29065   3  16      1.32E7 300000.00.7854745.04726821                                       M.Bormann*,          (63)21343  4  3.6319-3                  .04726821 0.46                       6.02     6.02    0.118    0.00944  0.121    5.5949E-41.02542360.6170784
+    1 29065   3  16      1.41E7 400000.00.94133890.0566478                                       M.Bormann*,          (63)21343  4  4.3526-3                  0.0566478 0.46                       6.02     6.02    0.118    0.00944  0.121    5.5949E-41.02542360.6170784
+    1 29065   3  16      1.46E7 400000.00.9762034.04050221                                       M.Bormann*,          (63)21343  4  4.5139-3                  .04050221 0.46                       4.15     4.15    0.118    0.00944  0.121    5.5949E-41.02542360.4727148
+    1 29065   3  16      1.52E7 400000.00.9608219.05782026                                       M.Bormann*,          (63)21343  4 .00444273                  .05782026 0.46                       6.02     6.02    0.118    0.00944  0.121    5.5949E-41.02542360.6170785
+    1 29065   3  16      1.55E7 400000.0 0.994661.05985662                                       M.Bormann*,          (63)21343  4  4.5992-3                  .05985662 0.46                       6.02     6.02    0.118    0.00944  0.121    5.5949E-41.02542360.6170784
+    1 29065   3  16      1.59E7 400000.00.9987626.06010345                                       M.Bormann*,          (63)21343  4  4.6181-3                  .06010345 0.46                       6.02     6.02    0.118    0.00944  0.121    5.5949E-41.02542360.6170784
+    1 29065   3  16      1.65E7 400000.00.9772289.04054473                                       M.Bormann*,          (63)21343  4  4.5183-3                  .04054473 0.46                       4.15     4.15    0.118    0.00944  0.121    5.5949E-41.02542360.4727146
+    1 29065   3  16      1.75E7 400000.00.8634068.03582229                                       M.Bormann*,          (63)21343  4  3.9923-3                  .03582229 0.46                       4.15     4.15    0.118    0.00944  0.121    5.5949E-41.02542360.4727143
+    1 29065   3  16      1.85E7 400000.00.8439237.03501399                                       M.Bormann*,          (63)21343  4  3.9022-3                  .03501399 0.46                       4.15     4.15    0.118    0.00944  0.121    5.5949E-41.02542360.4727148
+    1 29065   3  16      1.87E7 300000.00.8305933.03446087                                       M.Bormann*,          (63)21343  4  3.8404-3                  .03446087 0.46                       4.15     4.15    0.118    0.00944  0.121    5.5949E-41.02542360.4727143
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.32E7      1.87E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           10          10
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.32E7      1.32E7      0.785474    6.02         100
+1.41E7      1.41E7      0.941339    6.02          0 100
+1.46E7      1.46E7      0.976203    4.15          1  1 100
+1.52E7      1.52E7      0.960822    6.02          0  0  1 100
+1.55E7      1.55E7      0.994661    6.02          0  0  1  1 100
+1.59E7      1.59E7      0.998763    6.02          0  0  1  1  1 100
+1.65E7      1.65E7      0.977229    4.15          0  0  1  1  1  1 100
+1.75E7      1.75E7      0.863407    4.15          0  0  1  0  1  1  1 100
+1.85E7      1.85E7      0.843924    4.15          0  0  1  0  0  0  1  1 100
+1.87E7      1.87E7      0.830593    4.15          0  0  1  0  0  0  1  1  1 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       21343004 
+#DATASET        21343005   20081106
+#SUBENT         21343005   20081106
+#ENTRY          21343      20140818
+#TITLE          -Investigations of the energy dependence of neutron
+#+               induced reactions in the energy range of 12-19 MeV.-
+#+               (In German).
+#AUTHORS        M.Bormann, S.Cierjacks, E.Fretwurst, K.-J.Giesicke,
+#+               H.Neuert, H.Pollehn
+#AUTHOR1        M.Bormann+
+#YEAR           1963
+#X4REF1         J,ZP,174,1,196302
+#REFERENCE1     Jour: Zeitschrift fuer Physik, Vol.174, p.1 (1963)
+#DATE           20081106
+#INSTITUTE      2GERHAM
+#METHOD         ACTIV
+#REACTION       30-ZN-64(N,2N)30-ZN-63,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           30064            
+#TARGET         30064           [ ]             30-ZN-64        [ ] 
+#REAC1          N,2N
+#PRODUCT        30-ZN-63
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.95121545(1.3e7) Data[7]*0.95121545(2.0e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 30064   3  16   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-63(N,2N)29-CU-62,,SIG
+#M0             Point: XS(b)=0.478(8%)  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.454681(1.25%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 30-ZN-64(N,2N)30-ZN-63,,SIG
+#+              #[0]#Monitor:  29-CU-63(N,2N)29-CU-62,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.478
+#+              a1=recom$cu63n2n[EN-NRM];     #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        21343005    0.951215    0.951215    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          21343005    CS          8           0.951215    0.951215    0.951215    -4.88%      1.05129     [MONIT]::cu63n2n
+#C5DATA         8
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30064   3  16      1.32E7 300000.00.0428047.00573551                                       M.Bormann*,          (63)21343  5  5.3543-4                  .00573551 1.25                       13.4     13.4    0.478    0.03824  0.454681 .005687450.95121540.8193585
+    1 30064   3  16       1.4E7 400000.0.09702397.01423783                                       M.Bormann*,          (63)21343  5 .00121364                  .01423783 1.25                       14.7     14.7    0.478    0.03824  0.454681 .005687450.95121540.8375195
+    1 30064   3  16      1.52E7 400000.00.1740724.01172391                                       M.Bormann*,          (63)21343  5  2.1774-3                  .01172391 1.25                       6.74     6.74    0.478    0.03824  0.454681 .005687450.95121540.617048
+    1 30064   3  16       1.6E7 500000.00.2282917.02211187                                       M.Bormann*,          (63)21343  5  2.8556-3                  .02211187 1.25                       9.69     9.69    0.478    0.03824  0.454681 .005687450.95121540.7370624
+    1 30064   3  16      1.71E7 400000.00.2701452.02429646                                       M.Bormann*,          (63)21343  5  3.3792-3                  .02429646 1.25                       8.99     8.99    0.478    0.03824  0.454681 .005687450.95121540.7146019
+    1 30064   3  16      1.85E7 400000.00.2863159.02570623                                       M.Bormann*,          (63)21343  5  3.5814-3                  .02570623 1.25                       8.98     8.98    0.478    0.03824  0.454681 .005687450.95121540.7140619
+    1 30064   3  16      1.93E7 400000.00.2710964.01885397                                       M.Bormann*,          (63)21343  5  3.3911-3                  .01885397 1.25                       6.95     6.95    0.478    0.03824  0.454681 .005687450.95121540.6284657
+    1 30064   3  16      1.96E7 300000.00.2568282.02006245                                       M.Bormann*,          (63)21343  5  3.2126-3                  .02006245 1.25                       7.81     7.81    0.478    0.03824  0.454681 .005687450.95121540.6687483
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.32E7      1.96E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           8           8
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.32E7      1.32E7      4.2805-2    13.4         100
+1.4E7       1.4E7       0.097024    14.67         1 100
+1.52E7      1.52E7      0.174072    6.74          1  1 100
+1.6E7       1.6E7       0.228292    9.69          1  1  2 100
+1.71E7      1.71E7      0.270145    8.99          1  1  2  1 100
+1.85E7      1.85E7      0.286316    8.98          1  1  1  1  2 100
+1.93E7      1.93E7      0.271096    6.95          1  1  2  1  2  2 100
+1.96E7      1.96E7      0.256828    7.81          1  1  1  1  1  2  3 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       21343005 
+#DATASET        21343006   20081106
+#SUBENT         21343006   20081106
+#ENTRY          21343      20140818
+#TITLE          -Investigations of the energy dependence of neutron
+#+               induced reactions in the energy range of 12-19 MeV.-
+#+               (In German).
+#AUTHORS        M.Bormann, S.Cierjacks, E.Fretwurst, K.-J.Giesicke,
+#+               H.Neuert, H.Pollehn
+#AUTHOR1        M.Bormann+
+#YEAR           1963
+#X4REF1         J,ZP,174,1,196302
+#REFERENCE1     Jour: Zeitschrift fuer Physik, Vol.174, p.1 (1963)
+#DATE           20081106
+#INSTITUTE      2GERHAM
+#METHOD         ACTIV
+#REACTION       35-BR-79(N,A)33-AS-76,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           35079            
+#TARGET         35079           [ ]             35-BR-79        [ ] 
+#REAC1          N,A
+#PRODUCT        33-AS-76
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0254236(1.3e7) Data[9]*1.0254236(1.9e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 35079   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Point: XS(b)=0.118(8%)  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.121(0.46%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 35-BR-79(N,A)33-AS-76,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.118
+#+              a1=recom$al27na[EN-NRM];      #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        21343006    1.02542     1.02542     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          21343006    CS          10          1.02542     1.02542     1.02542     +2.54%      1.02542     [MONIT]::al27na
+#C5DATA         10
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 35079   3 107      1.32E7 300000.0.01189491 2.8179-3                                       M.Bormann*,          (63)21343  6  5.5001-5                   2.8179-3 0.46                       23.7     23.7    0.118    0.00944  0.121    5.5949E-41.02542360.9716895
+    1 35079   3 107      1.41E7 400000.0.01333051 3.1580-3                                       M.Bormann*,          (63)21343  6  6.1637-5                   3.1580-3 0.46                       23.7     23.7    0.118    0.00944  0.121    5.5949E-41.02542360.9716895
+    1 35079   3 107      1.44E7 400000.0.01394576 3.1562-3                                       M.Bormann*,          (63)21343  6  6.4482-5                   3.1562-3 0.46                       22.6     22.6    0.118    0.00944  0.121    5.5949E-41.02542360.9669806
+    1 35079   3 107      1.55E7 400000.0.01302288 3.0851-3                                       M.Bormann*,          (63)21343  6  6.0216-5                   3.0851-3 0.46                       23.7     23.7    0.118    0.00944  0.121    5.5949E-41.02542360.9716894
+    1 35079   3 107      1.59E7 400000.0.01117712 2.5296-3                                       M.Bormann*,          (63)21343  6  5.1681-5                   2.5296-3 0.46                       22.6     22.6    0.118    0.00944  0.121    5.5949E-41.02542360.9669805
+    1 35079   3 107      1.64E7 400000.00.0113822 2.3333-3                                       M.Bormann*,          (63)21343  6  5.2630-5                   2.3333-3 0.46                       20.5     20.5    0.118    0.00944  0.121    5.5949E-41.02542360.9554672
+    1 35079   3 107      1.71E7 400000.0.00994661 2.2511-3                                       M.Bormann*,          (63)21343  6  4.5991-5                   2.2511-3 0.46                       22.6     22.6    0.118    0.00944  0.121    5.5949E-41.02542360.9669806
+    1 35079   3 107      1.75E7 400000.0 8.2034-3 1.9434-3                                       M.Bormann*,          (63)21343  6  3.7929-5                   1.9434-3 0.46                       23.7     23.7    0.118    0.00944  0.121    5.5949E-41.02542360.9716893
+    1 35079   3 107       1.8E7 400000.0 6.5627-3 1.6238-3                                       M.Bormann*,          (63)21343  6  3.0345-5                   1.6238-3 0.46                       24.7     24.7    0.118    0.00944  0.121    5.5949E-41.02542360.9758465
+    1 35079   3 107      1.87E7 300000.0 7.8958-3 1.6186-3                                       M.Bormann*,          (63)21343  6  3.6508-5                   1.6186-3 0.46                       20.5     20.5    0.118    0.00944  0.121    5.5949E-41.02542360.9554672
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.32E7      1.87E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           10          10
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.32E7      1.32E7      1.1895-2    23.69        100
+1.41E7      1.41E7      1.3331-2    23.69         0 100
+1.44E7      1.44E7      1.3946-2    22.63         0  0 100
+1.55E7      1.55E7      1.3023-2    23.69         0  0  0 100
+1.59E7      1.59E7      1.1177-2    22.63         0  0  0  0 100
+1.64E7      1.64E7      1.1382-2    20.5          0  0  0  0  0 100
+1.71E7      1.71E7      9.9466-3    22.63         0  0  0  0  0  0 100
+1.75E7      1.75E7      8.2034-3    23.69         0  0  0  0  0  0  0 100
+1.8E7       1.8E7       6.5627-3    24.74         0  0  0  0  0  0  0  0 100
+1.87E7      1.87E7      7.8958-3    20.5          0  0  0  0  0  0  0  0  0 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       21343006 
+#DATASET        21343007   20081106
+#SUBENT         21343007   20081106
+#ENTRY          21343      20140818
+#TITLE          -Investigations of the energy dependence of neutron
+#+               induced reactions in the energy range of 12-19 MeV.-
+#+               (In German).
+#AUTHORS        M.Bormann, S.Cierjacks, E.Fretwurst, K.-J.Giesicke,
+#+               H.Neuert, H.Pollehn
+#AUTHOR1        M.Bormann+
+#YEAR           1963
+#X4REF1         J,ZP,174,1,196302
+#REFERENCE1     Jour: Zeitschrift fuer Physik, Vol.174, p.1 (1963)
+#DATE           20081106
+#INSTITUTE      2GERHAM
+#METHOD         ACTIV
+#REACTION       15-P-31(N,A)13-AL-28,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           15031            
+#TARGET         15031           [ ]             15-P-31         [ ] 
+#REAC1          N,A
+#PRODUCT        13-AL-28
+#C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.95121545(1.3e7) Data[6]*0.95121545(2.0e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 15031   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-63(N,2N)29-CU-62,,SIG
+#M0             Point: XS(b)=0.478(8%)  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.454681(1.25%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 15-P-31(N,A)13-AL-28,,SIG
+#+              #[0]#Monitor:  29-CU-63(N,2N)29-CU-62,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.478
+#+              a1=recom$cu63n2n[EN-NRM];     #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        21343007    0.951215    0.951215    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          21343007    CS          7           0.951215    0.951215    0.951215    -4.88%      1.05129     [MONIT]::cu63n2n
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 15031   3 107      1.32E7 300000.00.1165239.01386812                                       M.Bormann*,          (63)21343  7  1.4576-3                  .01386812 1.25                       11.9     11.9    0.478    0.03824  0.454681 .005687450.95121540.7924639
+    1 15031   3 107      1.41E7 400000.00.1122434.01236818                                       M.Bormann*,          (63)21343  7  1.4040-3                  .01236818 1.25                       11       11      0.478    0.03824  0.454681 .005687450.95121540.7730112
+    1 15031   3 107      1.52E7 300000.0.09987762.00687019                                       M.Bormann*,          (63)21343  7  1.2493-3                  .00687019 1.25                       6.88     6.88    0.478    0.03824  0.454681 .005687450.95121540.6245627
+    1 15031   3 107       1.6E7 400000.0.07895088 6.5377-3                                       M.Bormann*,          (63)21343  7  9.8757-4                   6.5377-3 1.25                       8.28     8.28    0.478    0.03824  0.454681 .005687450.95121540.6881806
+    1 15031   3 107      1.72E7 400000.0.06182902 4.7561-3                                       M.Bormann*,          (63)21343  7  7.7339-4                   4.7561-3 1.25                       7.69     7.69    0.478    0.03824  0.454681 .005687450.95121540.9512154
+    1 15031   3 107      1.88E7 300000.0.03947544 2.9314-3                                       M.Bormann*,          (63)21343  7  4.9378-4                   2.9314-3 1.25                       7.43     7.43    0.478    0.03824  0.454681 .005687450.95121540.6514203
+    1 15031   3 107      1.97E7 300000.0.02948768 0.003008                                       M.Bormann*,          (63)21343  7  3.6885-4                   0.003008 1.25                       10.2     10.2    0.478    0.03824  0.454681 .005687450.95121540.7520006
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.32E7      1.97E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.32E7      1.32E7      0.116524    11.9         100
+1.41E7      1.41E7      0.112243    11.02         1 100
+1.52E7      1.52E7      9.9878-2    6.88          1  2 100
+1.6E7       1.6E7       7.8951-2    8.28          1  1  2 100
+1.72E7      1.72E7      0.061829    7.69          1  1  2  2 100
+1.88E7      1.88E7      3.9475-2    7.43          1  1  2  1  2 100
+1.97E7      1.97E7      2.9488-2    10.2          1  1  1  1  1  2 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       21343007 
+#DATASET        21343008   20081106
+#SUBENT         21343008   20081106
+#ENTRY          21343      20140818
+#TITLE          -Investigations of the energy dependence of neutron
+#+               induced reactions in the energy range of 12-19 MeV.-
+#+               (In German).
+#AUTHORS        M.Bormann, S.Cierjacks, E.Fretwurst, K.-J.Giesicke,
+#+               H.Neuert, H.Pollehn
+#AUTHOR1        M.Bormann+
+#YEAR           1963
+#X4REF1         J,ZP,174,1,196302
+#REFERENCE1     Jour: Zeitschrift fuer Physik, Vol.174, p.1 (1963)
+#DATE           20081106
+#INSTITUTE      2GERHAM
+#METHOD         ACTIV
+#REACTION       29-CU-65(N,P)28-NI-65,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           29065            
+#TARGET         29065           [ ]             29-CU-65        [ ] 
+#REAC1          N,P
+#PRODUCT        28-NI-65
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0083288(1.3e7) Data[9]*1.0083288(1.9e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 29065   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      26-FE-56(N,P)25-MN-56,,SIG
+#M0             Point: XS(b)=0.1125(7.20%)  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.113437(1.07%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 29-CU-65(N,P)28-NI-65,,SIG
+#+              #[0]#Monitor:  26-FE-56(N,P)25-MN-56,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.1125
+#+              a1=recom$fe56np[EN-NRM];      #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        21343008    1.00833     1.00833     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          21343008    CS          10          1.00833     1.00833     1.00833     +0.833%     1.00833     [MONIT]::fe56np
+#C5DATA         10
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 29065   3 103      1.32E7 300000.0.02762821 9.7497-3                                       M.Bormann*,          (63)21343  8  2.9569-4                   9.7497-3 1.07                       35.3     35.3    0.1125   0.0081   0.113437 .001214071.00832880.9884111
+    1 29065   3 103      1.41E7 400000.0.02581322.00884571                                       M.Bormann*,          (63)21343  8  2.7627-4                  .00884571 1.07                       34.3     34.3    0.1125   0.0081   0.113437 .001214071.00832880.9872444
+    1 29065   3 103      1.46E7 300000.0.02167907 7.2075-3                                       M.Bormann*,          (63)21343  8  2.3202-4                   7.2075-3 1.07                       33.2     33.2    0.1125   0.0081   0.113437 .001214071.00832880.9859716
+    1 29065   3 103      1.52E7 400000.0.02127574 6.6376-3                                       M.Bormann*,          (63)21343  8  2.2771-4                   6.6376-3 1.07                       31.2     31.2    0.1125   0.0081   0.113437 .001214071.00832880.9830526
+    1 29065   3 103      1.54E7 400000.0.01925908 5.8107-3                                       M.Bormann*,          (63)21343  8  2.0612-4                   5.8107-3 1.07                       30.2     30.2    0.1125   0.0081   0.113437 .001214071.00832880.9813728
+    1 29065   3 103      1.59E7 300000.00.0220824 6.8892-3                                       M.Bormann*,          (63)21343  8  2.3634-4                   6.8892-3 1.07                       31.2     31.2    0.1125   0.0081   0.113437 .001214071.00832880.9830527
+    1 29065   3 103      1.64E7 300000.0.01724242 5.3793-3                                       M.Bormann*,          (63)21343  8  1.8454-4                   5.3793-3 1.07                       31.2     31.2    0.1125   0.0081   0.113437 .001214071.00832880.9830526
+    1 29065   3 103      1.75E7 300000.0.01814992 5.6624-3                                       M.Bormann*,          (63)21343  8  1.9425-4                   5.6624-3 1.07                       31.2     31.2    0.1125   0.0081   0.113437 .001214071.00832880.9830527
+    1 29065   3 103       1.8E7 300000.0.01603243 4.5071-3                                       M.Bormann*,          (63)21343  8  1.7159-4                   4.5071-3 1.07                       28.1     28.1    0.1125   0.0081   0.113437 .001214071.00832880.977466
+    1 29065   3 103      1.87E7 300000.0.01643576.00445074                                       M.Bormann*,          (63)21343  8  1.7591-4                  .00445074 1.07                       27.1     27.1    0.1125   0.0081   0.113437 .001214071.00832880.975184
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.32E7      1.87E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           10          10
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.32E7      1.32E7      2.7628-2    35.29        100
+1.41E7      1.41E7      2.5813-2    34.27         0 100
+1.46E7      1.46E7      2.1679-2    33.25         0  0 100
+1.52E7      1.52E7      2.1276-2    31.2          0  0  0 100
+1.54E7      1.54E7      1.9259-2    30.17         0  0  0  0 100
+1.59E7      1.59E7      2.2082-2    31.2          0  0  0  0  0 100
+1.64E7      1.64E7      1.7242-2    31.2          0  0  0  0  0  0 100
+1.75E7      1.75E7      1.8150-2    31.2          0  0  0  0  0  0  0 100
+1.8E7       1.8E7       1.6032-2    28.11         0  0  0  0  0  0  0  0 100
+1.87E7      1.87E7      1.6436-2    27.08         0  0  0  0  0  0  0  0  0 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       21343008 
+#DATASET        21343009   20081106
+#SUBENT         21343009   20081106
+#ENTRY          21343      20140818
+#TITLE          -Investigations of the energy dependence of neutron
+#+               induced reactions in the energy range of 12-19 MeV.-
+#+               (In German).
+#AUTHORS        M.Bormann, S.Cierjacks, E.Fretwurst, K.-J.Giesicke,
+#+               H.Neuert, H.Pollehn
+#AUTHOR1        M.Bormann+
+#YEAR           1963
+#X4REF1         J,ZP,174,1,196302
+#REFERENCE1     Jour: Zeitschrift fuer Physik, Vol.174, p.1 (1963)
+#DATE           20081106
+#INSTITUTE      2GERHAM
+#METHOD         ACTIV
+#REACTION       30-ZN-64(N,P)29-CU-64,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           30064            
+#TARGET         30064           [ ]             30-ZN-64        [ ] 
+#REAC1          N,P
+#PRODUCT        29-CU-64
+#C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9567548(1.3e7) Data[4]*0.9567548(1.9e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 30064   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      29-CU-65(N,2N)29-CU-64,,SIG
+#M0             Point: XS(b)=0.9300001(9%)  EN-NRM(eV):1.41E7
+#M1             Point: XS(b)=0.889782(1.50%)  EN-NRM(eV):1.41E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 30-ZN-64(N,P)29-CU-64,,SIG
+#+              #[0]#Monitor:  29-CU-65(N,2N)29-CU-64,,SIG
+#+              a0=[MONIT];                   #[0]#old monitor point 0.9300001
+#+              a1=recom$cu65n2n[EN-NRM];     #[0]#new monitor point [14.1MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        21343009    0.956755    0.956755    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          21343009    CS          5           0.956755    0.956755    0.956755    -4.32%      1.04520     [MONIT]::cu65n2n
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30064   3 103      1.31E7 300000.00.2391887 9.5675-3                                       M.Bormann*,          (63)21343  9  3.5877-3                   9.5675-3 1.50                       4        4       0.9300001.083700010.889782 0.01334640.95675480.9567548
+    1 30064   3 103       1.4E7 200000.00.1980482.01339457                                       M.Bormann*,          (63)21343  9  2.9706-3                  .01339457 1.50                       6.76     6.76    0.9300001.083700010.889782 0.01334640.95675480.9567549
+    1 30064   3 103      1.59E7 400000.00.1894374.01530808                                       M.Bormann*,          (63)21343  9  2.8415-3                  .01530808 1.50                       8.08     8.08    0.9300001.083700010.889782 0.01334640.95675480.9567549
+    1 30064   3 103       1.8E7 400000.00.1789132 3.5308-3                                       M.Bormann*,          (63)21343  9  2.6836-3                   3.5308-3 1.50                       1.97     1.97    0.9300001.083700010.889782 0.01334640.95675480.2076923
+    1 30064   3 103      1.93E7 400000.00.1722159 8.8189-4                                       M.Bormann*,          (63)21343  9  2.5832-3                   8.8189-4 1.50                       0.51     0.51    0.9300001.083700010.889782 0.01334640.9567548.05511833
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.31E7      1.93E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           5           5
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.31E7      1.31E7      0.239189    4.0          100
+1.4E7       1.4E7       0.198048    6.76          7 100
+1.59E7      1.59E7      0.189437    8.08          4  3 100
+1.8E7       1.8E7       0.178913    1.97         14  8  9 100
+1.93E7      1.93E7      0.172216    1.5          19 11  9 60 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       21343009 
+#DATASET        21343010   20081106
+#SUBENT         21343010   20081106
+#ENTRY          21343      20140818
+#TITLE          -Investigations of the energy dependence of neutron
+#+               induced reactions in the energy range of 12-19 MeV.-
+#+               (In German).
+#AUTHORS        M.Bormann, S.Cierjacks, E.Fretwurst, K.-J.Giesicke,
+#+               H.Neuert, H.Pollehn
+#AUTHOR1        M.Bormann+
+#YEAR           1963
+#X4REF1         J,ZP,174,1,196302
+#REFERENCE1     Jour: Zeitschrift fuer Physik, Vol.174, p.1 (1963)
+#DATE           20081106
+#INSTITUTE      2GERHAM
+#METHOD         PHD
+#REACTION       8-O-16(N,A)6-C-13,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           8016             
+#TARGET         8016            [ ]             8-O-16          [ ] 
+#REAC1          N,A
+#PRODUCT        6-C-13
+#C4ReaCode      (N,A),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1  8016   3 107   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1  8016   3 107      1.48E7 100000.0    0.328    0.025                                       M.Bormann,           (63)21343 10                                0.025                            7.62     7.62
+#/C5DATA        0
+#/DATASET       21343010 
+#DATASET        21343011   20081106
+#SUBENT         21343011   20081106
+#ENTRY          21343      20140818
+#TITLE          -Investigations of the energy dependence of neutron
+#+               induced reactions in the energy range of 12-19 MeV.-
+#+               (In German).
+#AUTHORS        M.Bormann, S.Cierjacks, E.Fretwurst, K.-J.Giesicke,
+#+               H.Neuert, H.Pollehn
+#AUTHOR1        M.Bormann+
+#YEAR           1963
+#X4REF1         J,ZP,174,1,196302
+#REFERENCE1     Jour: Zeitschrift fuer Physik, Vol.174, p.1 (1963)
+#DATE           20081106
+#INSTITUTE      2GERHAM
+#METHOD         PHD
+#REACTION       30-ZN-0(N,A),,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           30000            
+#TARGET         30000           [ ]             30-ZN-0         [ ] 
+#REAC1          N,A
+#C4ReaCode      (N,A),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 30000   3 107 D ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30000   3 107 D    1.48E7 400000.0     0.13     0.03                                       M.Bormann,           (63)21343 11                                 0.03                            23.1     23.1
+#/C5DATA        0
+#/DATASET       21343011 
+#DATASET        21343012   20081106
+#SUBENT         21343012   20081106
+#ENTRY          21343      20140818
+#TITLE          -Investigations of the energy dependence of neutron
+#+               induced reactions in the energy range of 12-19 MeV.-
+#+               (In German).
+#AUTHORS        M.Bormann, S.Cierjacks, E.Fretwurst, K.-J.Giesicke,
+#+               H.Neuert, H.Pollehn
+#AUTHOR1        M.Bormann+
+#YEAR           1963
+#X4REF1         J,ZP,174,1,196302
+#REFERENCE1     Jour: Zeitschrift fuer Physik, Vol.174, p.1 (1963)
+#DATE           20081106
+#INSTITUTE      2GERHAM
+#METHOD         PHD
+#REACTION       8-O-16(N,A)6-C-13,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           8016             
+#TARGET         8016            [ ]             8-O-16          [ ] 
+#REAC1          N,A
+#PRODUCT        6-C-13
+#C4ReaCode      (N,A),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=7.62%
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1  8016   3 107 D ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1  8016   3 107 D    1.23E7 200000.0     0.18     0.04                                       M.Bormann,           (63)21343 12  0.013716                       0.04 7.62                       22.2     22.2
+    1  8016   3 107 D     1.3E7 200000.0     0.15     0.04                                       M.Bormann,           (63)21343 12   0.01143                       0.04 7.62                       26.7     26.7
+    1  8016   3 107 D    1.41E7 200000.0    0.295    0.035                                       M.Bormann,           (63)21343 12  0.022479                      0.035 7.62                       11.9     11.9
+    1  8016   3 107 D     1.6E7 100000.0     0.36     0.03                                       M.Bormann,           (63)21343 12  0.027432                       0.03 7.62                       8.33     8.33
+    1  8016   3 107 D    1.69E7 100000.0    0.345     0.03                                       M.Bormann,           (63)21343 12  0.026289                       0.03 7.62                       8.70     8.70
+    1  8016   3 107 D     1.8E7 100000.0     0.24    0.025                                       M.Bormann,           (63)21343 12  0.018288                      0.025 7.62                       10.4     10.4
+    1  8016   3 107 D    1.95E7 100000.0    0.215    0.025                                       M.Bormann,           (63)21343 12  0.016383                      0.025 7.62                       11.6     11.6
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.23E7      1.95E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.23E7      1.23E7      0.18        22.22        100
+1.3E7       1.3E7       0.15        26.67         9 100
+1.41E7      1.41E7      0.295       11.86        17 16 100
+1.6E7       1.6E7       0.36        8.33         16 15 43 100
+1.69E7      1.69E7      0.345       8.7          15 13 34 70 100
+1.8E7       1.8E7       0.24        10.42        13 10 23 48 54 100
+1.95E7      1.95E7      0.215       11.63        11  9 21 31 37 38 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       21343012 
+#/C5M.2.3       1               11              11              0               73              

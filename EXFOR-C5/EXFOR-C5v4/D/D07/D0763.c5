@@ -1,0 +1,119 @@
+#C5.2.3
+#DATASET        D07630021  20150113
+#SUBENT         D0763002   20150113
+#ENTRY          D0763      20150113
+#TITLE          Application of PIXE in the determination of the
+#+               production cross section of a radionuclide decaying
+#+               by electron capture
+#AUTHORS        J.R.Morales, M.A.Chesta, S.A.Cancino, P.A.Miranda,
+#+               M.I.Dinator, M.J.Avila
+#AUTHOR1        J.R.Morales+
+#YEAR           2005
+#X4REF1         J,NIM/B,227,385,2005
+#REFERENCE1     Jour: Nucl. Instrum. Methods in Physics Res., Sect.B, Vol.227, p.385 (2005)
+#DATE           20150113
+#INSTITUTE      3CHLSAN,3CHLCEC
+#METHOD         BCINT,ACTIV,XSPEC
+#REACTION       29-CU-63(D,P)29-CU-64,,SIG
+#C4Reaction     (D,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1002
+#TARG           29063            
+#TARGET         29063           [ ]             29-CU-63        [ ] 
+#REAC1          D,P
+#PRODUCT        29-CU-64
+#C4ReaCode      (D,P),SIG
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1002 29063   3 103 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1002 29063   3 103 A 2400000.0           0.001391.3622E-4                                       J.R.Morales,         (05)D0763  21                           1.3622E-4                            9.80     9.80
+#/C5DATA        0
+#/DATASET       D07630021
+#DATASET        D07630022  20150113
+#SUBENT         D0763002   20150113
+#ENTRY          D0763      20150113
+#TITLE          Application of PIXE in the determination of the
+#+               production cross section of a radionuclide decaying
+#+               by electron capture
+#AUTHORS        J.R.Morales, M.A.Chesta, S.A.Cancino, P.A.Miranda,
+#+               M.I.Dinator, M.J.Avila
+#AUTHOR1        J.R.Morales+
+#YEAR           2005
+#X4REF1         J,NIM/B,227,385,2005
+#REFERENCE1     Jour: Nucl. Instrum. Methods in Physics Res., Sect.B, Vol.227, p.385 (2005)
+#DATE           20150113
+#INSTITUTE      3CHLSAN,3CHLCEC
+#METHOD         BCINT,ACTIV,GSPEC
+#REACTION       29-CU-63(D,P)29-CU-64,,SIG
+#C4Reaction     (D,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1002
+#TARG           29063            
+#TARGET         29063           [ ]             29-CU-63        [ ] 
+#REAC1          D,P
+#PRODUCT        29-CU-64
+#C4ReaCode      (D,P),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.842%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1002 29063   3 103 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 29-CU-63(D,P)29-CU-64,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (29-CU-63(D,P)29-CU-64,,SIG)
+#+               #[1]#DECAY-DATA (29-CU-64,12.7HR,DG,1346.,0.00471) #Ix_old=0.00471
+#+                a1=0.00471/0.00475;         #[1]#DECAY-DATA: correction to new 1345.77 keV gamma-yield per decay Cu-64 Ix_new=0.00475
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.991579
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D07630022   0.991579    -           0.991579    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D07630022   CS          1           0.991579    0.991579    0.991579    -0.842%     1.00849                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1002 29063   3 103 A 2400000.0          1.3684-3 1.2042-4                                       J.R.Morales*,        (05)D0763  22                            1.2042-4                            8.80     8.80                                        0.991579 0.9915789
+#/C5DATA        0
+#/DATASET       D07630022
+#/C5.2.3        1               2               2               0               2               

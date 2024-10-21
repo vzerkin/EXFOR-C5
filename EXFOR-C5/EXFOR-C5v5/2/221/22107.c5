@@ -1,0 +1,71 @@
+#C5M.2.3
+#DATASET        22107002   19890203
+#SUBENT         22107002   19890203
+#ENTRY          22107      19890531
+#TITLE          -MEASUREMENT OF THE NB-93(N,INL)NB-93-M CROSS SECTION
+#+               AT 7.9 MEV.
+#AUTHORS        M.WAGNER,G.WINKLER,H.VONACH,H.LISKIEN
+#AUTHOR1        M.Wagner+
+#YEAR           1988
+#X4REF1         C,88MITO,1049,88
+#REFERENCE1     Conf: Conf.on Nucl.Data For Sci.and Technol.,Mito 1988, p.1049 (1988)
+#DATE           19890203
+#INSTITUTE      2ZZZGEL,2AUSIRK
+#METHOD         ACTIV
+#REACTION       41-NB-93(N,INL)41-NB-93-M,,SIG
+#C4Reaction     (N,INL),SIG
+#ReactionType   CS
+#MF             3
+#MT             4
+#PROJ           1
+#TARG           41093            
+#TARGET         41093           [ ]             41-NB-93        [ ] 
+#REAC1          N,INL
+#PRODUCT        41-NB-93-M
+#C4ReaCode      (N,INL),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0168282(7.9e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 41093   3   4M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-238(N,F),,SIG
+#M0             Point: XS(b)=0.9925001(1.20%)  EN-NRM(eV):7910000.0
+#M1             Point: XS(b)=1.009202(1.43%)  EN-NRM(eV):7910000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 41-NB-93(N,INL)41-NB-93-M,,SIG
+#+              #[0]#Monitor:  92-U-238(N,F),,SIG
+#+              #[0]#En=7910000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.9925001
+#+              a1=recom$u238nf[EN];          #[0]#new monitor point [7.91MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22107002    1.01683     1.01683     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22107002    CS          1           1.01683     1.01683     1.01683     +1.68%      1.01683     [MONIT]::u238nf
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 41093   3   4M  7910000.0  20000.00.2703746.01018673                                       M.WAGNER*,           (88)22107  2  3.8726-3                  .01018673 1.43                       3.77     3.77    0.99250010.01191  1.009202 .014454751.01682821.0394626
+#/C5DATA        0
+#/DATASET       22107002 
+#/C5M.2.3       1               1               1               0               1               

@@ -1,0 +1,82 @@
+#C5.2.3
+#DATASET        23114002   20130924
+#SUBENT         23114002   20130924
+#ENTRY          23114      20170322
+#TITLE          High resolution measurements of the 241Am(n,2n)
+#+               reaction cross section
+#AUTHORS        C.Sage, V.Semkova, O.Bouland, P.Dessagne, A.Fernandez,
+#+               F.Gunsing, C.Naestren, G.Noguere, H.Ottmar,
+#+               A.J.M.Plompen, P.Romain, G.Rudolf, J.Somers, F.Wastin
+#AUTHOR1        C.Sage+
+#YEAR           2010
+#X4REF1         J,PR/C,81,064604,2010
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.81, p.064604 (2010)
+#DATE           20130924
+#INSTITUTE      2FR SAC,2ZZZGEL,2FR CAD,2FR STR,3BULBLA,1USALAS,2ZZZITU,2FR BRC
+#METHOD         ACTIV,GSPEC
+#REACTION       95-AM-241(N,2N)95-AM-240,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           95241            
+#TARGET         95241           [ ]             95-AM-241       [ ] 
+#REAC1          N,2N
+#PRODUCT        95-AM-240
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.98763853(8.3e6) Data[8]*0.97794896(2.1e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dOther
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 95241   3  16 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{wagner90$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 95-AM-241(N,2N)95-AM-240,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,M.Wagner+,B,PH-DAT,13-5,1990} $ al27na;#[0]#old monit-ref
+#+              m0: wagner90$al27na;          #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        23114002    0.981665    0.981665    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23114002    CS          9           0.897153    1.09798     0.981665    -1.83%      1.11464     wagner90::al27na
+#C5DATA         9
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 95241   3  16 A 8340000.0 150000.0.09560341 6.0164-3                                       C.Sage*,             (10)23114  2 0.00324680.0049368 9.8071-4 6.0164-3 3.40     5.16     1.03     6.29     6.29    0.05035  9.3E-4   0.04972764.3463-4 0.98763850.9561908
+    1 95241   3  16 A 9150000.0 150000.00.1501352 8.1108-3                                       C.Sage*,             (10)23114  2 0.00535340.0067185 9.4384-4 8.1108-3 3.57     4.47     0.63     5.40     5.40    .078290010.00158  .072155246.3242-4 0.92164050.873512
+    1 95241   3  16 A   1.333E7 150000.00.2385081.01029345                                       C.Sage*,             (10)23114  2 0.00787240.0065554 8.1159-4.01029345 3.30     2.75     0.34     4.32     4.32    0.127    0.00226  0.125271 9.9631-4 0.98638590.9254366
+    1 95241   3  16 A    1.61E7 150000.00.1526011 6.2812-3                                       C.Sage*,             (10)23114  2 0.00500840.0035773 3.0862-3 6.2812-3 3.28     2.34     2.02     4.12     4.12    0.09073  0.00197  .090849756.4015-4 1.00131980.8959795
+    1 95241   3  16 A   1.716E7  30000.0 0.127476 5.0930-3                                       C.Sage*,             (10)23114  2 0.0038154 0.002125 1.0606-3 5.0930-3 2.99     1.67     0.83     4        4       0.06721  0.00136  .073795526.1599-4 1.09798420.9969869
+    1 95241   3  16 A    1.79E7 100000.0.09860602 3.9533-3                                       C.Sage*,             (10)23114  2 0.0034945 0.001596 1.2642-3 3.9533-3 3.54     1.62     1.28     4.01     4.01    0.06721  0.00136  .062699255.6375-4 0.93288570.8500332
+    1 95241   3  16 A   1.936E7 150000.0.09236676.00706887                                       C.Sage*,             (10)23114  2 .002941270.0060298 9.3713-4.00706887 3.18     6.53     1.01     7.65     7.65    0.04315  0.00137  .044532145.2870-4 1.03203080.9631925
+    1 95241   3  16 A   1.995E7  70000.0.09159935 4.6046-3                                       C.Sage*,             (10)23114  2 0.0033553 0.002267 2.6753-3 4.6046-3 3.66     2.47     2.92     5.03     5.03    0.04315  0.00137  .038712175.0631-4 0.89715330.7775748
+    1 95241   3  16 A   2.061E7  40000.0.07618223 5.5979-3                                       C.Sage*,             (10)23114  2 0.00256010.0047398 1.8353-3 5.5979-3 3.36     6.22     2.41     7.35     7.35    0.03387  0.00174  .033123135.6846-4 0.977949 0.8165907
+#/C5DATA        0
+#/DATASET       23114002 
+#/C5.2.3        1               1               1               0               9               

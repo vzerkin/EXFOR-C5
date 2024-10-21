@@ -1,0 +1,94 @@
+#C5M.2.3
+#DATASET        33168002   20220111
+#SUBENT         33168002   20220111
+#ENTRY          33168      20220111
+#TITLE          Neutron induced reaction cross section of 51V with
+#+              covariance analysis
+#AUTHORS        R.K.Singh, N.L.Singh, R.D.Chauhan, M.Mehta,
+#+              S.V.Suryanarayana, R.Makwana, S.Mukherjee, B.K.Nayak,
+#+              H.Naik, T.N.Nag, J.Varmuza, K.Katovsky
+#AUTHOR1        R.K.Singh+
+#YEAR           2021
+#X4REF1         J,EPJ/A,57,337,2021
+#REFERENCE1     Jour: European Physical Journal A: Hadrons and Nuclei, Vol.57, p.337 (2021)
+#DATE           20220111
+#INSTITUTE      3INDBDA,3INDTRM,3INDIND,3CZRCZR
+#METHOD         ACTIV
+#REACTION       23-V-51(N,P)22-TI-51,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           23051            
+#TARGET         23051           [ ]             23-V-51         [ ] 
+#REAC1          N,P
+#PRODUCT        22-TI-51
+#C4ReaCode      (N,P),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=3
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.8857627(7.9e6) Data[2]*0.94870377(1.7e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dOther
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 23051   3 103   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 23-V-51(N,P)22-TI-51,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        33168002    0.957626    0.957626    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          33168002    CS          3           0.885763    1.03841     0.957626    -4.24%      1.12897     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 23051   3 103   7870000.01160000.0.01018627 5.9460-4                                       R.K.Singh*,          (21)33168  2 5.5197E-40.0025752 9.4575-5 5.9460-4 5.42     25.3     0.93     5.84     5.84    0.0413   0.0094   0.036582 3.4223E-40.88576270.2202208
+    1 23051   3 103     1.305E71360000.0.03084078 3.5879-3                                       R.K.Singh*,          (21)33168  2 0.00142480.0031641 2.8134-4 3.5879-3 4.62     10.3     0.91     11.6     11.6    0.1195   0.0025   0.12409  1.1378-3 1.03841011.0251052
+    1 23051   3 103     1.698E71060000.0.02533039 2.6385-3                                       R.K.Singh*,          (21)33168  2 0.0012846.00370722 1.9821-4 2.6385-3 5.07     14.6     0.78     10.4     10.4    0.0808   0.0083   .076655276.2231-4 0.94870380.6765263
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      3           1           100.        100.        100.        0           7870000.0   1.698E7     0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Other.MERC  Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           3           3
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+7870000.    7870000.    1.0186-2    25.87        100
+1.305E7     1.305E7     3.0841-2    11.29         9 100
+1.698E7     1.698E7     2.5330-2    15.51         7 13 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       33168002 
+#/C5M.2.3       1               1               1               0               3               

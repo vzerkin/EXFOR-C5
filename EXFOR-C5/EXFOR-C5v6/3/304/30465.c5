@@ -1,0 +1,71 @@
+#C5.2.3
+#DATASET        30465002   20090311
+#SUBENT         30465002   20090311
+#ENTRY          30465      20090311
+#TITLE          Measurements of neutron capture cross-section of
+#+              232-Th by activation method
+#AUTHORS        H.M.Jain,R.P.Anand,M.L.Jhingan,R.N.Jindal,
+#+              V.C.Deniz,M.K.Mehta
+#AUTHOR1        H.M.Jain+
+#YEAR           1978
+#X4REF1         C,78HARWELL,,1108,197809
+#REFERENCE1     Conf: Int.Conf.on Neutr.Phys.and Nucl.Data,Harwell 1978, p.1108 (1978)
+#DATE           20090311
+#INSTITUTE      3INDTRM
+#METHOD         ACTIV
+#STATUS         SPSDD
+#REACTION       90-TH-232(N,G)90-TH-233,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          N,G
+#PRODUCT        90-TH-233
+#C4ReaCode      (N,G),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94909084(3.5e5) Data[2]*0.9055055(6.8e5)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 90232   3 102 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      79-AU-197(N,G)79-AU-198,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$au197ng}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 90-TH-232(N,G)90-TH-233,,SIG
+#+              #[0]#Monitor:  79-AU-197(N,G)79-AU-198,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$au197ng;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30465002    0.937919    0.937919    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30465002    CS          3           0.905505    0.959160    0.937919    -6.21%      1.10436     [EN,MONIT]::au197ng
+#C5DATA         3
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 90232   3 102 S  350000.0  20000.00.1338218    0.014                                       H.M.Jain*,           (78)30465  2 .01284571                      0.014 9.60                       10.5     10.5    0.187             0.17748  .003468180.9490908
+    1 90232   3 102 S  460000.0  20000.00.1179767    0.012                                       H.M.Jain*,           (78)30465  2 .01120583                      0.012 9.50                       10.2     10.2    0.15              0.143874 2.8426-3 0.95916
+    1 90232   3 102 S  680000.0  20000.00.1131882    0.012                                       H.M.Jain*,           (78)30465  2 .01138804                      0.012 10.1                       10.6     10.6    0.108             0.09779462.0289-3 0.9055055
+#/C5DATA        0
+#/DATASET       30465002 
+#/C5.2.3        1               1               1               0               3               

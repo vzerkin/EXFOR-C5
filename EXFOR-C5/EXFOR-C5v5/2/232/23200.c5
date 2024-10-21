@@ -1,0 +1,73 @@
+#C5M.2.3
+#DATASET        23200002   20131022
+#SUBENT         23200002   20131022
+#ENTRY          23200      20131022
+#TITLE          Measurement of the MACS of Ta-181(n,gamma) at kT=30 keV
+#+              as a test of a method for Maxwellian neutron spectra
+#+              generation.
+#AUTHORS        J.Praena, P.F.Mastinu, M.Pignatari, J.M.Quesada,
+#+              J.Garcia-Lopez, M.Lozano, N.Dzysiuk, R.Capote,
+#+              G.Martin-Hernandez
+#AUTHOR1        J.Praena+
+#YEAR           2013
+#X4REF1         J,NIM/A,727,1,2013
+#REFERENCE1     Jour: Nucl. Instrum. Methods in Physics Res., Sect.A, Vol.727, p.1 (2013)
+#DATE           20131022
+#INSTITUTE      2SPNSEU,2ITYPAD,2SWTBAS,4UKRUKR,3ZZZIAE,3CUBPLY
+#METHOD         ACTIV
+#REACTION       73-TA-181(N,G)73-TA-182,,SIG,,MXW
+#C4Reaction     (N,G),SIG,,MXW
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           73181            
+#TARGET         73181           [ ]             73-TA-181       [ ] 
+#REAC1          N,G
+#PRODUCT        73-TA-182
+#C4ReaCode      (N,G),SIG,,MXW
+#CompNotes      ERR-ANALYS:(ERR-4,,0.2)       ADDED AS COMMON:ERR-4,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-5,,0.2)       ADDED AS COMMON:ERR-5,PER-CENT=0.1%
+#CompNotes      ERR-ANALYS:(ERR-7,,0.1)       ADDED AS COMMON:ERR-7,PER-CENT=0.05%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.114%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 73181   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 73-TA-181(N,G)73-TA-182,,SIG,,MXW
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (73-TA-181(N,G)73-TA-182,,SIG,,MXW)
+#+               #[1]#DECAY-DATA (73-TA-182-G,114.7D,DG,1121.3,0.352) #Ix_old=0.352
+#+                a1=0.352/0.3524;            #[1]#DECAY-DATA: correction to new 1121.29 keV gamma-yield per decay Ta-182-g Ix_new=0.3524
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9988649
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23200002    0.998865    -           0.998865    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23200002    CS          1           0.998865    0.998865    0.998865    -0.114%     1.00114                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                    SpT     dSpT     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 73181   3 102     30000.0          0.814075.07291714                                       J.Praena*,           (13)23200  2 .04896815 0.002445         .07291714 6.02     0.30              8.96     8.96                                        0.99886490.9988648
+#/C5DATA        0
+#/DATASET       23200002 
+#/C5M.2.3       1               1               1               0               1               

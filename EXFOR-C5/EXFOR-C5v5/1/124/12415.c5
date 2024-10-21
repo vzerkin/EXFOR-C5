@@ -1,0 +1,107 @@
+#C5M.2.3
+#DATASET        12415002   20220304
+#SUBENT         12415002   20220304
+#ENTRY          12415      20220304
+#TITLE          Fission Cross Section of U235 for Fast Neutrons
+#AUTHORS        B.C.Diven
+#AUTHOR1        B.C.Diven
+#YEAR           1957
+#X4REF1         J,PR,105,1350,1957
+#REFERENCE1     Jour: Physical Review, Vol.105, p.1350 (1957)
+#DATE           20220304
+#INSTITUTE      1USALAS
+#METHOD         REC
+#REACTION       92-U-235(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           92235            
+#TARGET         92235           [ ]             92-U-235        [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99521106(4.0e5) Data[13]*1.0008695(1.6e6)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92235   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      1-H-1(N,EL)1-H-1,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$h1nel}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 92-U-235(N,F),,SIG
+#+              #[0]#Monitor:  1-H-1(N,EL)1-H-1,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$h1nel;              #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12415002    0.998286    0.998286    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12415002    CS          14          0.981814    1.01666     0.998286    -0.171%     1.01852     [EN,MONIT]::h1nel
+#C5DATA         14
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92235   3  18    403000.0  39000.01.2738701     0.08                                       B.C.Diven*           (57)12415  2 .04287522                       0.08 3.37                       6.28     6.28    6.886             6.8530235.025795070.9952111
+    1 92235   3  18    513000.0  39000.0 1.238028     0.07                                       B.C.Diven*           (57)12415  2 .04153537                       0.07 3.35                       5.65     5.65    6.06              6.0503626.022115060.9984097
+    1 92235   3  18    562000.0  39000.01.2676616     0.07                                       B.C.Diven*           (57)12415  2 .04254026                       0.07 3.36                       5.52     5.52    5.778             5.767361 .020884480.9981588
+    1 92235   3  18    673000.0  41000.01.1640983     0.06                                       B.C.Diven*           (57)12415  2 .03919063                       0.06 3.37                       5.15     5.15    5.272             5.2454066.018769340.9949558
+    1 92235   3  18    770000.0  40000.0 1.184754     0.06                                       B.C.Diven*           (57)12415  2 .03986056                       0.06 3.36                       5.06     5.06    4.906             4.884372 .017368740.9955915
+    1 92235   3  18    865000.0  39000.01.2274982     0.06                                       B.C.Diven*           (57)12415  2 .04120041                       0.06 3.36                       4.89     4.89    4.601             4.591641 .016267530.9979659
+    1 92235   3  18    944000.0  39000.01.2675508     0.05                                       B.C.Diven*           (57)12415  2 .04254026                       0.05 3.36                       3.94     3.94    4.391             4.3825316.015498240.9980715
+    1 92235   3  18   1025000.0  39000.01.2590199     0.05                                       B.C.Diven*           (57)12415  2 0.0422053                       0.05 3.35                       3.97     3.97    4.2               4.1967325.014827950.9992221
+    1 92235   3  18   1095000.0  39000.01.2687502     0.04                                       B.C.Diven*           (57)12415  2 .04254026                       0.04 3.35                       3.15     3.15    4.053             4.049011 .014301410.9990159
+    1 92235   3  18   1171000.0  37000.01.2469041     0.04                                       B.C.Diven*           (57)12415  2 .04254026                       0.04 3.41                       3.21     3.21    3.98              3.9076211.013805920.9818143
+    1 92235   3  18   1272000.0  35000.01.2699609    0.044                                       B.C.Diven*           (57)12415  2 .04254026                      0.044 3.35                       3.46     3.46    3.737             3.7368848.013214120.9999692
+    1 92235   3  18   1424000.0  35000.01.2701098     0.04                                       B.C.Diven*           (57)12415  2 .04254026                       0.04 3.35                       3.15     3.15    3.514             3.5143034.012455021.0000864
+    1 92235   3  18   1545000.032000.0021.3216618     0.05                                       B.C.Diven*           (57)12415  2 .04354515                       0.05 3.29                       3.78     3.78    3.306             3.3610876.011940931.016663
+    1 92235   3  18   1620000.0  30000.0 1.311139     0.05                                       B.C.Diven*           (57)12415  2 .04388011                       0.05 3.35                       3.81     3.81    3.271             3.273844 .011651021.0008695
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           403000.0    1620000.0   0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           14          14
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+403000.     403000.     1.27387     6.28         100
+513000.     513000.     1.23803     5.65         29 100
+562000.     562000.     1.26766     5.52         28 35 100
+673000.     673000.     1.1641      5.15         27 34 36 100
+770000.     770000.     1.18475     5.06         25 31 33 40 100
+865000.     865000.     1.2275      4.89         23 29 31 38 42 100
+944000.     944000.     1.26755     3.94         25 33 35 43 48 55 100
+1025000.    1025000.    1.25902     3.97         23 29 32 39 44 50 67 100
+1095000.    1095000.    1.26875     3.35         27 31 34 43 49 56 75 80 100
+1171000.    1171000.    1.2469      3.41         27 30 30 39 45 51 69 74 94 100
+1272000.    1272000.    1.26996     3.46         26 29 29 32 38 44 60 65 83 89 100
+1424000.    1424000.    1.27011     3.35         27 30 30 33 33 37 52 57 73 79 85 100
+1545000.    1545000.    1.32166     3.78         23 26 26 28 29 30 38 42 55 60 65 78 100
+1620000.    1620000.    1.31114     3.81         24 26 27 29 29 30 37 38 50 55 61 74 72 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       12415002 
+#/C5M.2.3       1               1               1               0               14              

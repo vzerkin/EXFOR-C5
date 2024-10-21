@@ -1,0 +1,310 @@
+#C5.2.3
+#DATASET        327050021  20120905
+#SUBENT         32705002   20120905
+#ENTRY          32705      20120905
+#TITLE          Measurement of fission cross section for 232Th(n,x)89Rb
+#+              reaction induced by neutrons around 14 MeV
+#AUTHORS        Kaihong Fang,Changlin Lan,Yupeng He,Xiangzhong Kong
+#AUTHOR1        Kaihong Fang+
+#YEAR           2012
+#X4REF1         J,ARI,70,2295,2012
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.70, p.2295 (2012)
+#DATE           20120905
+#INSTITUTE      3CPRLNZ
+#REACTION       90-TH-232(N,F)37-RB-89,,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          N,F
+#PRODUCT        37-RB-89
+#C4ReaCode      (N,F),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99531126(1.4e7) Data[1]*0.99999005(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-7.41%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 90232   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{wagner90$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 90-TH-232(N,F)37-RB-89,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,M.Wagner+,B,PH-DAT,13-5,1990} $ al27na;#[0]#old monit-ref
+#+              m0: wagner90$al27na;          #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (90-TH-232(N,F)37-RB-89,,SIG)
+#+               #[1]#DECAY-DATA (37-RB-89,15.15MIN,DG,657.8,0.100) #Ix_old=0.1
+#+                a1=0.1/0.108;               #[1]#DECAY-DATA: correction to new 657.77 keV gamma-yield per decay Rb-89 Ix_new=0.108
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9259259
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        327050021   0.923751    0.997651    0.925926    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          327050021   CS          2           0.921584    0.925917    0.923751    -7.62%      1.08509     wagner90::al27na
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 90232   3  18      1.41E7 300000.0.01594341 2.0274-3     37.0     89.0                     Kaihong Fang*,       (12)32705  21 3.1863-4                   2.0274-3 2                          12.7     12.7    0.12157  5.7E-4   0.121    5.5949E-40.92158450.9215673
+    1 90232   3  18      1.47E7 300000.00.0166665.00194443     37.0     89.0                     Kaihong Fang*,       (12)32705  21 3.3336-4                  .00194443 2                          11.7     11.7    0.11249  4.6E-4   0.11248894.6096-4 0.92591670.9259191
+#/C5DATA        0
+#/DATASET       327050021
+#DATASET        327050022  20120905
+#SUBENT         32705002   20120905
+#ENTRY          32705      20120905
+#TITLE          Measurement of fission cross section for 232Th(n,x)89Rb
+#+              reaction induced by neutrons around 14 MeV
+#AUTHORS        Kaihong Fang,Changlin Lan,Yupeng He,Xiangzhong Kong
+#AUTHOR1        Kaihong Fang+
+#YEAR           2012
+#X4REF1         J,ARI,70,2295,2012
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.70, p.2295 (2012)
+#DATE           20120905
+#INSTITUTE      3CPRLNZ
+#REACTION       90-TH-232(N,F)37-RB-89,,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          N,F
+#PRODUCT        37-RB-89
+#C4ReaCode      (N,F),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99531126(1.4e7) Data[1]*0.99999005(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-7.94%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 90232   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{wagner90$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 90-TH-232(N,F)37-RB-89,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,M.Wagner+,B,PH-DAT,13-5,1990} $ al27na;#[0]#old monit-ref
+#+              m0: wagner90$al27na;          #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (90-TH-232(N,F)37-RB-89,,SIG)
+#+               #[1]#DECAY-DATA (37-RB-89,15.15MIN,DG,1031.9,0.580) #Ix_old=0.58
+#+                a1=0.58/0.63;               #[1]#DECAY-DATA: correction to new 1031.92 keV gamma-yield per decay Rb-89 Ix_new=0.63
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9206349
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        327050022   0.918472    0.997651    0.920635    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          327050022   CS          2           0.916318    0.920626    0.918472    -8.15%      1.09132     wagner90::al27na
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 90232   3  18      1.41E7 300000.0.01163724.00119118     37.0     89.0                     Kaihong Fang*,       (12)32705  22 2.3257-4                  .00119118 2                          10.2     10.2    0.12157  5.7E-4   0.121    5.5949E-40.91631830.9162919
+    1 90232   3  18      1.47E7 300000.0.01298082 1.0127-3     37.0     89.0                     Kaihong Fang*,       (12)32705  22 2.5964-4                   1.0127-3 2                          7.80     7.80    0.11249  4.6E-4   0.11248894.6096-4 0.92062570.920631
+#/C5DATA        0
+#/DATASET       327050022
+#DATASET        327050023  20120905
+#SUBENT         32705002   20120905
+#ENTRY          32705      20120905
+#TITLE          Measurement of fission cross section for 232Th(n,x)89Rb
+#+              reaction induced by neutrons around 14 MeV
+#AUTHORS        Kaihong Fang,Changlin Lan,Yupeng He,Xiangzhong Kong
+#AUTHOR1        Kaihong Fang+
+#YEAR           2012
+#X4REF1         J,ARI,70,2295,2012
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.70, p.2295 (2012)
+#DATE           20120905
+#INSTITUTE      3CPRLNZ
+#REACTION       90-TH-232(N,F)37-RB-89,,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          N,F
+#PRODUCT        37-RB-89
+#C4ReaCode      (N,F),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99531126(1.4e7) Data[1]*0.99999005(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-7.39%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 90232   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{wagner90$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 90-TH-232(N,F)37-RB-89,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,M.Wagner+,B,PH-DAT,13-5,1990} $ al27na;#[0]#old monit-ref
+#+              m0: wagner90$al27na;          #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (90-TH-232(N,F)37-RB-89,,SIG)
+#+               #[1]#DECAY-DATA (37-RB-89,15.15MIN,DG,1248.1,0.426) #Ix_old=0.426
+#+                a1=0.426/0.46;              #[1]#DECAY-DATA: correction to new 1248.14 keV gamma-yield per decay Rb-89 Ix_new=0.46
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.92608696
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        327050023   0.923911    0.997651    0.926087    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          327050023   CS          2           0.921745    0.926078    0.923911    -7.61%      1.08490     wagner90::al27na
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 90232   3  18      1.41E7 300000.00.0126279 1.3826-3     37.0     89.0                     Kaihong Fang*,       (12)32705  23 2.5237-4                   1.3826-3 2                          10.9     10.9    0.12157  5.7E-4   0.121    5.5949E-40.92174480.9217216
+    1 90232   3  18      1.47E7 300000.0.01287248 1.2965-3     37.0     89.0                     Kaihong Fang*,       (12)32705  23 2.5747-4                   1.2965-3 2                          10.1     10.1    0.11249  4.6E-4   0.11248894.6096-4 0.92607770.9260809
+#/C5DATA        0
+#/DATASET       327050023
+#DATASET        32705003   20120905
+#SUBENT         32705003   20120905
+#ENTRY          32705      20120905
+#TITLE          Measurement of fission cross section for 232Th(n,x)89Rb
+#+              reaction induced by neutrons around 14 MeV
+#AUTHORS        Kaihong Fang,Changlin Lan,Yupeng He,Xiangzhong Kong
+#AUTHOR1        Kaihong Fang+
+#YEAR           2012
+#X4REF1         J,ARI,70,2295,2012
+#REFERENCE1     Jour: Applied Radiation and Isotopes, Vol.70, p.2295 (2012)
+#DATE           20120905
+#INSTITUTE      3CPRLNZ
+#DERIVED        3  Derived data in EXFOR
+#REACTION       90-TH-232(N,F)37-RB-89,,SIG,,,DERIV
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           90232            
+#TARGET         90232           [ ]             90-TH-232       [ ] 
+#REAC1          N,F
+#PRODUCT        37-RB-89
+#C4ReaCode      (N,F),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99531126(1.4e7) Data[1]*0.99999005(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 90232   3  18 D ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             Monitor:{wagner90$al27na}
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 90-TH-232(N,F)37-RB-89,,SIG,,,DERIV
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              #m0: {,M.Wagner+,B,PH-DAT,13-5,1990} $ al27na;#[0]#old monit-ref
+#+              m0: wagner90$al27na;          #[0]#old monitor(energy) in ENDF
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
+#+
+#/C5CORR        32705003    0.997651    0.997651    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32705003    CS          2           0.995311    0.999990    0.997651    -0.235%     1.00471     wagner90::al27na
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 90232   3  18 D    1.41E7 300000.0.01313811 9.9526-4     37.0     89.0                     Kaihong Fang*,       (12)32705  3  2.6256-4                   9.9526-4 2                          7.58     7.58    0.12157  5.7E-4   0.121    5.5949E-40.99531130.995259
+    1 90232   3  18 D    1.47E7 300000.0.01399986 9.0000-4     37.0     89.0                     Kaihong Fang*,       (12)32705  3  2.8002-4                   9.0000-4 2                          6.43     6.43    0.11249  4.6E-4   0.11248894.6096-4 0.99999  0.9999986
+#/C5DATA        0
+#/DATASET       32705003 
+#/C5.2.3        1               4               4               0               8               

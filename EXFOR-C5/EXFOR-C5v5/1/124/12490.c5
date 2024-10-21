@@ -1,0 +1,166 @@
+#C5M.2.3
+#DATASET        12490002   19830809
+#SUBENT         12490002   19830809
+#ENTRY          12490      19830809
+#TITLE          NEUTRON-INDUCED FISSION CROSS SECTION OF PU238.
+#AUTHORS        D.M.BARTON,P.G.KOONTZ
+#AUTHOR1        D.M.Barton+
+#YEAR           1967
+#X4REF1         J,PR,162,1070,67
+#REFERENCE1     Jour: Physical Review, Vol.162, p.1070 (1967)
+#DATE           19830809
+#INSTITUTE      1USALAS
+#REACTION       94-PU-238(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           94238            
+#TARGET         94238           [ ]             94-PU-238       [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.98590165(1.0e6) Data[3]*0.9948732(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 94238   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-235(N,F),,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$u235nf}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 94-PU-238(N,F),,SIG
+#+              #[0]#Monitor:  92-U-235(N,F),,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$u235nf;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12490002    1.00366     1.00366     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12490002    CS          4           0.985079    1.04879     1.00366     +0.366%     1.04879     [EN,MONIT]::u235nf
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 94238   3  18   1000000.0         2.0506754      0.1                                       D.M.BARTON*,         (67)12490  2                                  0.1                            4.88     4.88    1.22              1.2028   0.01565850.9859017
+    1 94238   3  18   1500000.0         2.1671746     0.11                                       D.M.BARTON*,         (67)12490  2                                 0.11                            5.08     5.08    1.26              1.2412   0.01606670.9850793
+    1 94238   3  18   3000000.0         2.3388085     0.11                                       D.M.BARTON*,         (67)12490  2                                 0.11                            4.70     4.70    1.16              1.2166   0.01584851.0487931
+    1 94238   3  18      1.49E7         2.6563115     0.13                                       D.M.BARTON*,         (67)12490  2                                 0.13                            4.89     4.89    2.13              2.11908  0.02904670.9948732
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1000000.0   1.49E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.e+06      1.e+06      2.05067     4.88         100
+1.5e+06     1.5e+06     2.16718     5.08         48 100
+3.e+06      3.e+06      2.33881     4.7          43 45 100
+1.49E7      1.49E7      2.65631     4.89         25 25 25 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       12490002 
+#DATASET        12490003   19830809
+#SUBENT         12490003   19830809
+#ENTRY          12490      19830809
+#TITLE          NEUTRON-INDUCED FISSION CROSS SECTION OF PU238.
+#AUTHORS        D.M.BARTON,P.G.KOONTZ
+#AUTHOR1        D.M.Barton+
+#YEAR           1967
+#X4REF1         J,PR,162,1070,67
+#REFERENCE1     Jour: Physical Review, Vol.162, p.1070 (1967)
+#DATE           19830809
+#INSTITUTE      1USALAS
+#REACTION       94-PU-239(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           94239            
+#TARGET         94239           [ ]             94-PU-239       [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0487931(3.0e6) Data[1]*0.9948732(1.5e7)
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 94239   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-235(N,F),,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$u235nf}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 94-PU-239(N,F),,SIG
+#+              #[0]#Monitor:  92-U-235(N,F),,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$u235nf;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12490003    1.02183     1.02183     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12490003    CS          2           0.994873    1.04879     1.02183     +2.18%      1.04879     [EN,MONIT]::u235nf
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 94239   3  18   3000000.0         1.8878275    0.108                                       D.M.BARTON*,         (67)12490  3                                0.108                            5.72     5.72    1.16              1.2166   0.01584851.0487931
+    1 94239   3  18      1.49E7         2.5468755   0.1536                                       D.M.BARTON*,         (67)12490  3                               0.1536                            6.03     6.03    2.13              2.11908  0.02904670.9948732
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           3000000.0   1.49E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+3.e+06      3.e+06      1.88783     5.72         100
+1.49E7      1.49E7      2.54688     6.03         25 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       12490003 
+#/C5M.2.3       1               2               2               0               6               

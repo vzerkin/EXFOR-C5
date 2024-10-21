@@ -1,0 +1,80 @@
+#C5.2.3
+#DATASET        32846002   20220105
+#SUBENT         32846002   20220105
+#ENTRY          32846      20220105
+#TITLE          Measurement and Monte-Carlo correction of neutron
+#+              radiative capture cross section for 75As
+#AUTHORS        Shi Shu-Ting,Luo Xiao-Bing,Wang Lei
+#AUTHOR1        Shi Shu-Ting+
+#YEAR           2007
+#X4REF1         J,CNPR,24,29,2007
+#REFERENCE1     Jour: Nuclear Physics Review, Vol.24, p.29 (2007)
+#DATE           20220105
+#INSTITUTE      3CPRSIU
+#METHOD         ACTIV
+#REACTION       33-AS-75(N,G)33-AS-76,,SIG
+#C4Reaction     (N,G),SIG
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           33075            
+#TARGET         33075           [ ]             33-AS-75        [ ] 
+#REAC1          N,G
+#PRODUCT        33-AS-76
+#C4ReaCode      (N,G),SIG
+#CompNotes      ERR-ANALYS:(ERR-T,6.7,7.8)    ADDED AS COMMON:ERR-T,PER-CENT=6.7%
+#CompNotes      ERR-ANALYS:(ERR-S,1.,2.)      ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      ERR-ANALYS:(ERR-1,2.5,3.5)    ADDED AS COMMON:ERR-1,PER-CENT=2.5%
+#CompNotes      ERR-ANALYS:(MONIT-ERR,3.,4.5) ADDED AS COMMON:MONIT-ERR,PER-CENT=3.0%
+#CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.126%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 33075   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 33-AS-75(N,G)33-AS-76,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[2]#---Monitor decay-data
+#+               #[2]#MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
+#+               #[2]#DECAY-MON  (79-AU-198-G,2.6935D,DG,411.8,0.955) #Im_old=0.955
+#+                a2=0.9562/0.955;            #[2]#DECAY-MON: correction to new 411.80205 keV gamma-yield per decay Au-198-g Im_new=0.9562
+#+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0012566
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32846002    1.00126     -           -           1.00126
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32846002    CS          10          1.00126     1.00126     1.00126     +0.126%     1.00126     endfb5::au197ng
+#C5DATA         10
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 33075   3 102     29000.0   7000.00.3000766.02010513                                       Shi Shu-Ting*,       (07)32846  2 .01697489 0.002997         .02010513 5.66     1                 6.70     6.70                      0.59815  .010663571.00125661.0012566
+    1 33075   3 102     59000.0  16000.00.2124666.01423527                                       Shi Shu-Ting*,       (07)32846  2 .01201893 0.002122         .01423527 5.66     1                 6.70     6.70                      0.411386 7.3226-3 1.00125661.0012566
+    1 33075   3 102    121000.0  27000.00.1260582 8.4459-3                                       Shi Shu-Ting*,       (07)32846  2 .00713095 0.001259          8.4459-3 5.66     1                 6.70     6.70                      0.29485935.6010-3 1.00125661.0012566
+    1 33075   3 102    196000.0  30000.00.1120406 7.5067-3                                       Shi Shu-Ting*,       (07)32846  2  6.3380-3 0.001119          7.5067-3 5.66     1                 6.70     6.70                      0.258816 5.2266-3 1.00125661.0012567
+    1 33075   3 102    215000.0  44000.00.1087365 7.2853-3                                       Shi Shu-Ting*,       (07)32846  2  6.1510-3 0.001086          7.2853-3 5.66     1                 6.70     6.70                      0.2513   5.1664-3 1.00125661.0012566
+    1 33075   3 102    230000.0  12000.00.0975224 0.006534                                       Shi Shu-Ting*,       (07)32846  2  5.5167-3  9.74E-4          0.006534 5.66     1                 6.70     6.70                      0.24747  .005117721.00125661.0012566
+    1 33075   3 102    376000.0  87000.0.04946208 3.3140-3                                       Shi Shu-Ting*,       (07)32846  2  2.7980-3  4.94E-4          3.3140-3 5.66     1                 6.70     6.70                      0.16682043.2527-3 1.00125661.0012565
+    1 33075   3 102    655000.0 134000.0.02843569 1.9052-3                                       Shi Shu-Ting*,       (07)32846  2  1.6085-3  2.84E-4          1.9052-3 5.66     1                 6.70     6.70                      0.09972412.0629-3 1.00125661.0012566
+    1 33075   3 102    962000.0 135000.0.02012526 1.3484-3                                       Shi Shu-Ting*,       (07)32846  2  1.1384-3  2.01E-4          1.3484-3 5.66     1                 6.70     6.70                      0.086144 3.4213-3 1.00125661.0012566
+    1 33075   3 102   1100000.0  83000.0.01662086 1.1136-3                                       Shi Shu-Ting*,       (07)32846  2 9.4022E-4  1.66E-4          1.1136-3 5.66     1                 6.70     6.70                      0.078903 0.00169851.00125661.0012567
+#/C5DATA        0
+#/DATASET       32846002 
+#/C5.2.3        1               1               1               0               10              

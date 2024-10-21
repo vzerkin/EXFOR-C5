@@ -1,0 +1,69 @@
+#C5M.2.3
+#DATASET        30621002   20090806
+#SUBENT         30621002   20090806
+#ENTRY          30621      20090806
+#TITLE          The Nd-143(n,alpha)Ce-140 reaction with 2 keV neutrons
+#AUTHORS        J.Cervena,J.Kvitek,J.Vacik,Yu.P.Popov
+#AUTHOR1        J.Cervena+
+#YEAR           1982
+#X4REF1         J,CZJ/B,32,(1),117,198201
+#REFERENCE1     Jour: Czech.J.of Physics, Part B, Vol.32, Issue.1, p.117 (1982)
+#DATE           20090806
+#INSTITUTE      3CZRUJF,4ZZZDUB
+#METHOD         PHD
+#REACTION       60-ND-143(N,A)58-CE-140,PAR,SIG
+#C4Reaction     (N,A)PAR,SIG
+#ReactionType   CSP
+#MF             3
+#MT             801
+#PROJ           1
+#TARG           60143            
+#TARGET         60143           [ ]             60-ND-143       [ ] 
+#REAC1          N,A
+#PRODUCT        58-CE-140
+#C4ReaCode      (N,A)PAR,SIG
+#CompNotes      OPERATION...  Value=Aprx  Aprx:EN-APRX
+#CompNotes      RESET MT801 to MT800: ZAP=58140 iLvl=0   eLvl=0.0 eV
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.027709(2.0e3)
+#Quantity       Partial cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [    1 60143   3 801 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 23       ]
+#xVariables     2
+#+              Y = Y(X1,X2)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      3-LI-6(N,T)2-HE-4,,SIG,,,DERIV
+#M0             Point: XS(b)=3.23  EN-NRM(eV):2000.0
+#M1             Point: XS(b)=3.3195(0.51%)  EN-NRM(eV):2000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 60-ND-143(N,A)58-CE-140,PAR,SIG
+#+              #[0]#Monitor:  3-LI-6(N,T)2-HE-4,,SIG,,,DERIV
+#+              #[0]#En=2000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 3.23
+#+              a1=recom$li6nt[EN-APRX];      #[0]#new monitor point [0.002MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30621002    1.02771     1.02771     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30621002    CSP         1           1.02771     1.02771     1.02771     +2.77%      1.02771     [MONIT]::li6nt
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                        LVL     dLVL
+#Units                       EV       EV        B        B                         EV       EV
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 60143   3 800 A    2000.0          3.2887-5   6.0E-6                        0.0         LVLJ.Cervena*,          (82)30621  2                               6.0E-6                            18.2     18.2    3.23              3.3195   0.01680381.027709
+#/C5DATA        0
+#/DATASET       30621002 
+#/C5M.2.3       1               1               1               0               1               

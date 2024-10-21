@@ -1,0 +1,266 @@
+#C5M.2.3
+#DATASET        21780002   20140822
+#SUBENT         21780002   20140822
+#ENTRY          21780      20160907
+#TITLE          Measurement of the fission cross-section of 235U and
+#+               239Pu for thermal neutrons. (in French)
+#AUTHORS        G.Fraysse,A.Prosdocimi,F.Netter,C.Samour
+#AUTHOR1        G.Fraysse+
+#YEAR           1965
+#X4REF1         R,CEA-R-2775,196504
+#REFERENCE1     Rept: Centre d'Etudes Nucleaires, Saclay Reports, No.2775 (1965)
+#DATE           20140822
+#INSTITUTE      2FR SAC
+#METHOD         DIFFR
+#REACTION       92-U-235(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           92235            
+#TARGET         92235           [ ]             92-U-235        [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*5.2461915(3.2e-2) Data[3]*5.2433653(6.3e-2)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92235   3  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      5-B-10(N,A)3-LI-7,,SIG,,A
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$b10na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 92-U-235(N,F),,SIG
+#+              #[0]#Monitor:  5-B-10(N,A)3-LI-7,,SIG,,A
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$b10na;              #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        21780002    5.24407     5.24407     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          21780002    CS          4           5.24337     5.24619     5.24407     +424%       5.24619     [EN,MONIT,MONIT-ERR]::b10na
+#C5DATA         4
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92235   3  18     0.03216   4.0E-5  2686.0560.822372                                       G.Fraysse*,          (65)21780  2  57.64773   3.4816         60.822372 2.15     0.13              2.26     2.26    674.0    2.022    3535.933 27.4264375.24619155.5293064
+    1 92235   3  18      0.0626   1.0E-41761.7708  43.7988                                       G.Fraysse*,          (65)21780  2 39.441616   2.3856           43.7988 2.24     0.14              2.49     2.49    483.0    1.44900012532.545419.6430725.24336535.47485
+    1 92235   3  18      0.0626   1.0E-41767.014253.935383                                       G.Fraysse*,          (65)21780  2 42.452473    6.066         53.935383 2.40     0.34              3.05     3.05    483.0    1.44900012532.545419.6430725.24336535.3935385
+    1 92235   3  18      0.0626   1.0E-4 1735.554 43.74522                                       G.Fraysse*,          (65)21780  2 41.696644   2.0853          43.74522 2.40     0.12              2.52     2.52    483.0    1.44900012532.545419.6430725.24336535.4681525
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           0.03216     0.0626      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           4           4
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+0.03216     0.03216     2686.05     2.15         100
+0.0626      0.0626      1761.77     2.24         50 100
+0.0626      0.0626      1767.01     2.43         49 99 100
+0.0626      0.0626      1735.55     2.41         50 100 99 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       21780002 
+#DATASET        217800031  20160907
+#SUBENT         21780003   20160907
+#ENTRY          21780      20160907
+#TITLE          Measurement of the fission cross-section of 235U and
+#+               239Pu for thermal neutrons. (in French)
+#AUTHORS        G.Fraysse,A.Prosdocimi,F.Netter,C.Samour
+#AUTHOR1        G.Fraysse+
+#YEAR           1965
+#X4REF1         R,CEA-R-2775,196504
+#REFERENCE1     Rept: Centre d'Etudes Nucleaires, Saclay Reports, No.2775 (1965)
+#DATE           20160907
+#INSTITUTE      2FR SAC
+#METHOD         DIFFR
+#STATUS         SPSDD
+#REACTION       94-PU-239(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           94239            
+#TARGET         94239           [ ]             94-PU-239       [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*5.2461915(3.2e-2) Data[1]*5.2433653(6.3e-2)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 94239   3  18 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      5-B-10(N,A)3-LI-7,,SIG,,A
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$b10na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 94-PU-239(N,F),,SIG
+#+              #[0]#Monitor:  5-B-10(N,A)3-LI-7,,SIG,,A
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$b10na;              #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        217800031   5.24478     5.24478     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          217800031   CS          2           5.24337     5.24619     5.24478     +424%       5.24619     [EN,MONIT,MONIT-ERR]::b10na
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 94239   3  18 S   0.03216   4.0E-53299.854543.654568                                       G.Fraysse*,          (65)21780  31 45.18429   2.0757         43.654568 1.37     0.06              1.32     1.32    674.0    2.022    3535.933 27.4264375.24619156.2363667
+    1 94239   3  18 S    0.0626   1.0E-42658.386250.876995                                       G.Fraysse*,          (65)21780  3145.9062163.7517998         50.876995 1.73     0.14              1.91     1.91    483.0    1.44900012532.545419.6430725.24336535.6529994
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           0.03216     0.0626      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+0.03216     0.03216     3299.85     1.37         100
+0.0626      0.0626      2658.39     1.73         50 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       217800031
+#DATASET        217800032  20160907
+#SUBENT         21780003   20160907
+#ENTRY          21780      20160907
+#TITLE          Measurement of the fission cross-section of 235U and
+#+               239Pu for thermal neutrons. (in French)
+#AUTHORS        G.Fraysse,A.Prosdocimi,F.Netter,C.Samour
+#AUTHOR1        G.Fraysse+
+#YEAR           1965
+#X4REF1         R,CEA-R-2775,196504
+#REFERENCE1     Rept: Centre d'Etudes Nucleaires, Saclay Reports, No.2775 (1965)
+#DATE           20160907
+#INSTITUTE      2FR SAC
+#METHOD         DIFFR
+#STATUS         SPSDD
+#REACTION       94-PU-239(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           94239            
+#TARGET         94239           [ ]             94-PU-239       [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*5.2461915(3.2e-2) Data[1]*5.374025(2.8e-1)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 94239   3  18 S ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      5-B-10(N,A)3-LI-7,,SIG,,A
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$b10na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 94-PU-239(N,F),,SIG
+#+              #[0]#Monitor:  5-B-10(N,A)3-LI-7,,SIG,,A
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$b10na;              #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        217800032   5.31011     5.31011     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          217800032   CS          2           5.24619     5.37402     5.31011     +431%       5.37402     [EN,MONIT,MONIT-ERR]::b10na
+#C5DATA         2
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 94239   3  18 S   0.03216   4.0E-53530.6868 72.72615                                       G.Fraysse*,          (65)21780  3248.345043   3.4996          72.72615 1.37     0.10              2.06     2.06    674.0    2.022    3535.933 27.4264375.24619155.5943193
+    1 94239   3  18 S     0.275    0.00217599.932204.53569                                       G.Fraysse*,          (65)21780  32174.65263                  204.53569 0.99                       1.16     1.16    231.0    0.693    1241.39989.627496 5.374025 6.8178563
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           0.03216     0.275       0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           2           2
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+0.03216     0.03216     3530.69     1.37         100
+0.275       0.275       17599.9     1.0          50 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       217800032
+#/C5M.2.3       1               3               3               0               8               

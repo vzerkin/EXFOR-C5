@@ -1,0 +1,608 @@
+#C5M.2.3
+#DATASET        O2482002   20200830
+#SUBENT         O2482002   20200830
+#ENTRY          O2482      20210723
+#TITLE          Production of 67Cu by enriched 70Zn targets: first
+#+              measurements of formation cross sections of 67Cu,
+#+              64Cu, 67Ga, 66Ga, 69mZn and 65Zn in interactions of
+#+              70Zn with protons above 45 MeV
+#AUTHORS        G.Pupillo,L.Mou,P.Martini,M.Pasquali,A.Boschi,
+#+              G.Cicoria, A.Duatti,F.Haddad,J.Esposito
+#AUTHOR1        G.Pupillo+
+#YEAR           2020
+#X4REF1         J,RCA,108,593,2020
+#REFERENCE1     Jour: Radiochimica Acta, Vol.108, p.593 (2020)
+#DATE           20200830
+#INSTITUTE      2ITYPAD,2FR NTE,2ITYITY
+#METHOD         STTA,EDEG,CHSEP,ACTIV
+#REACTION       30-ZN-70(P,X)29-CU-67,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           30070            
+#TARGET         30070           [ ]             30-ZN-70        [ ] 
+#REAC1          P,X
+#PRODUCT        29-CU-67
+#C4ReaCode      (P,X),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=7
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0551723(4.5e7) Data[6]*0.99741375(6.8e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 30070   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27px}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 30-ZN-70(P,X)29-CU-67,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O2482002    1.01417     1.01417     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O2482002    CS          7           0.994565    1.05517     1.01417     +1.42%      1.05517     [EN,MONIT,MONIT-ERR]::al27px
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 30070   39000      4.47E7 700000.0 8.4414-30.0011632           29067.9                     G.Pupillo*,          (20)O2482  2  1.9036-3                  0.0011632 22.6                       13.8     13.8    0.0029   7.0E-4   0.00306  6.9E-4   1.05517230.894769
+ 1001 30070   39000      4.77E7 600000.0.01121727 1.9626-3           29067.9                     G.Pupillo*,          (20)O2482  2  7.3658-4                   1.9626-3 6.57                       17.5     17.5    0.0044   3.0E-4   0.00457  3.0E-4   1.03863631.0329254
+ 1001 30070   39000      5.08E7 500000.0.01282095 2.1726-3           29067.9                     G.Pupillo*,          (20)O2482  2  9.0764-4                   2.1726-3 7.08                       16.9     16.9    0.0063   5.0E-4   0.00636  4.5E-4   1.00952370.9875421
+ 1001 30070   39000      5.58E7 500000.0 0.016912 3.0531-3           29067.9                     G.Pupillo*,          (20)O2482  2  1.2139-3                   3.0531-3 7.18                       18.1     18.1    0.009    0.0006   0.00906  6.5E-4   1.00666671.0176986
+ 1001 30070   39000       5.6E7 800000.0.01859837 3.3433-3           29067.9                     G.Pupillo*,          (20)O2482  2  1.3215-3                   3.3433-3 7.11                       18       18      0.0092   7.0E-4   0.00915  6.5E-4   0.99456520.9833281
+ 1001 30070   39000      6.08E7 500000.0.02004416 3.5812-3           29067.9                     G.Pupillo*,          (20)O2482  2  8.9341-4                   3.5812-3 4.46                       17.9     17.9    0.0108   5.0E-4   0.01077  4.8E-4   0.99722220.9947785
+ 1001 30070   39000      6.78E7 600000.00.0214444 3.9990-3           29067.9                     G.Pupillo*,          (20)O2482  2  9.6372-4                   3.9990-3 4.49                       18.6     18.6    0.0116   5.0E-4   0.01157  5.2E-4   0.99741380.9997456
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.47E7      6.78E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.47E7      4.47E7      8.4414-3    22.55        100
+4.77E7      4.77E7      1.1217-2    17.5         33 100
+5.08E7      5.08E7      1.2821-2    16.95        31 14 100
+5.58E7      5.58E7      0.016912    18.05        21 10 13 100
+5.6E7       5.6E7       1.8598-2    17.98        20 10 13 16 100
+6.08E7      6.08E7      2.0044-2    17.87        12  5  6  8  8 100
+6.78E7      6.78E7      2.1444-2    18.65        12  5  5  5  5  4 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       O2482002 
+#DATASET        O2482003   20200830
+#SUBENT         O2482003   20200830
+#ENTRY          O2482      20210723
+#TITLE          Production of 67Cu by enriched 70Zn targets: first
+#+              measurements of formation cross sections of 67Cu,
+#+              64Cu, 67Ga, 66Ga, 69mZn and 65Zn in interactions of
+#+              70Zn with protons above 45 MeV
+#AUTHORS        G.Pupillo,L.Mou,P.Martini,M.Pasquali,A.Boschi,
+#+              G.Cicoria, A.Duatti,F.Haddad,J.Esposito
+#AUTHOR1        G.Pupillo+
+#YEAR           2020
+#X4REF1         J,RCA,108,593,2020
+#REFERENCE1     Jour: Radiochimica Acta, Vol.108, p.593 (2020)
+#DATE           20200830
+#INSTITUTE      2ITYPAD,2FR NTE,2ITYITY
+#METHOD         STTA,EDEG,CHSEP,ACTIV
+#REACTION       30-ZN-70(P,X)29-CU-64,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           30070            
+#TARGET         30070           [ ]             30-ZN-70        [ ] 
+#REAC1          P,X
+#PRODUCT        29-CU-64
+#C4ReaCode      (P,X),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=7
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0551723(4.5e7) Data[6]*0.99741375(6.8e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 30070   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27px}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 30-ZN-70(P,X)29-CU-64,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O2482003    1.01417     1.01417     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O2482003    CS          7           0.994565    1.05517     1.01417     +1.42%      1.05517     [EN,MONIT,MONIT-ERR]::al27px
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 30070   39000      4.47E7 700000.0.05064827 2.1284-3           29064.9                     G.Pupillo*,          (20)O2482  3 .01142181                   2.1284-3 22.6                       4.20     4.20    0.0029   7.0E-4   0.00306  6.9E-4   1.05517230.4626879
+ 1001 30070   39000      4.77E7 600000.0.05951386 5.3945-3           29064.9                     G.Pupillo*,          (20)O2482  3  3.9079-3                   5.3945-3 6.57                       9.06     9.06    0.0044   3.0E-4   0.00457  3.0E-4   1.03863631.0178244
+ 1001 30070   39000      5.08E7 500000.0.05158667 5.0187-3           29064.9                     G.Pupillo*,          (20)O2482  3 .00365202                   5.0187-3 7.08                       9.73     9.73    0.0063   5.0E-4   0.00636  4.5E-4   1.00952370.9469327
+ 1001 30070   39000      5.58E7 500000.0.04550134 4.2034-3           29064.9                     G.Pupillo*,          (20)O2482  3  3.2659-3                   4.2034-3 7.18                       9.24     9.24    0.009    0.0006   0.00906  6.5E-4   1.00666671.0508623
+ 1001 30070   39000       5.6E7 800000.0.04773913 4.2822-3           29064.9                     G.Pupillo*,          (20)O2482  3  3.3920-3                   4.2822-3 7.11                       8.97     8.97    0.0092   7.0E-4   0.00915  6.5E-4   0.99456520.9516106
+ 1001 30070   39000      6.08E7 500000.0.03290833 2.6607-3           29064.9                     G.Pupillo*,          (20)O2482  3  1.4668-3                   2.6607-3 4.46                       8.09     8.09    0.0108   5.0E-4   0.01077  4.8E-4   0.99722220.9854574
+ 1001 30070   39000      6.78E7 600000.0  0.02314 0.001721           29064.9                     G.Pupillo*,          (20)O2482  3  1.0399-3                   0.001721 4.49                       7.44     7.44    0.0116   5.0E-4   0.01157  5.2E-4   0.99741381.0123521
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.47E7      6.78E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.47E7      4.47E7      5.0648-2    22.55        100
+4.77E7      4.77E7      5.9514-2    9.06         63 100
+5.08E7      5.08E7      5.1587-2    9.73         54 46 100
+5.58E7      5.58E7      4.5501-2    9.24         40 37 44 100
+5.6E7       5.6E7       4.7739-2    8.97         40 37 45 61 100
+6.08E7      6.08E7      3.2908-2    8.09         28 20 23 34 35 100
+6.78E7      6.78E7      0.02314     7.44         30 22 22 23 24 23 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       O2482003 
+#DATASET        O2482004   20210723
+#SUBENT         O2482004   20210723
+#ENTRY          O2482      20210723
+#TITLE          Production of 67Cu by enriched 70Zn targets: first
+#+              measurements of formation cross sections of 67Cu,
+#+              64Cu, 67Ga, 66Ga, 69mZn and 65Zn in interactions of
+#+              70Zn with protons above 45 MeV
+#AUTHORS        G.Pupillo,L.Mou,P.Martini,M.Pasquali,A.Boschi,
+#+              G.Cicoria, A.Duatti,F.Haddad,J.Esposito
+#AUTHOR1        G.Pupillo+
+#YEAR           2020
+#X4REF1         J,RCA,108,593,2020
+#REFERENCE1     Jour: Radiochimica Acta, Vol.108, p.593 (2020)
+#DATE           20210723
+#INSTITUTE      2ITYPAD,2FR NTE,2ITYITY
+#METHOD         STTA,EDEG,CHSEP,ACTIV
+#REACTION       30-ZN-70(P,4N)31-GA-67,,SIG
+#C4Reaction     (P,4N),SIG
+#ReactionType   CS
+#MF             3
+#MT             37
+#PROJ           1001
+#TARG           30070            
+#TARGET         30070           [ ]             30-ZN-70        [ ] 
+#REAC1          P,4N
+#PRODUCT        31-GA-67
+#C4ReaCode      (P,4N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=7
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0551723(4.5e7) Data[6]*0.99741375(6.8e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 30070   3  37   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27px}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 30-ZN-70(P,4N)31-GA-67,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O2482004    1.01417     1.01417     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O2482004    CS          7           0.994565    1.05517     1.01417     +1.42%      1.05517     [EN,MONIT,MONIT-ERR]::al27px
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 30070   3  37      4.47E7 700000.00.2967145.03723521                                       G.Pupillo*,          (20)O2482  4 .06691277                  .03723521 22.6                       12.5     12.5    0.0029   7.0E-4   0.00306  6.9E-4   1.05517230.8699815
+ 1001 30070   3  37      4.77E7 600000.00.2222682.03486626                                       G.Pupillo*,          (20)O2482  4 .01459511                  .03486626 6.57                       15.7     15.7    0.0044   3.0E-4   0.00457  3.0E-4   1.03863631.0315461
+ 1001 30070   3  37      5.08E7 500000.0 0.173739.02653177                                       G.Pupillo*,          (20)O2482  4 .01229966                  .02653177 7.08                       15.3     15.3    0.0063   5.0E-4   0.00636  4.5E-4   1.00952370.9826581
+ 1001 30070   3  37      5.58E7 500000.00.1209007.01899632                                       G.Pupillo*,          (20)O2482  4 .00867766                  .01899632 7.18                       15.7     15.7    0.009    0.0006   0.00906  6.5E-4   1.00666671.0213076
+ 1001 30070   3  37       5.6E7 800000.0 0.1348630.0205599                                       G.Pupillo*,          (20)O2482  4  9.5823-3                  0.0205599 7.11                       15.2     15.2    0.0092   7.0E-4   0.00915  6.5E-4   0.99456520.9790429
+ 1001 30070   3  37      6.08E7 500000.0.09702972.01410826                                       G.Pupillo*,          (20)O2482  4  4.3248-3                  .01410826 4.46                       14.5     14.5    0.0108   5.0E-4   0.01077  4.8E-4   0.99722220.9935395
+ 1001 30070   3  37      6.78E7 600000.00.05954560.0077174                                       G.Pupillo*,          (20)O2482  4 .00267601                  0.0077174 4.49                       13       13      0.0116   5.0E-4   0.01157  5.2E-4   0.99741381.0022597
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.47E7      6.78E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.47E7      4.47E7      0.296715    22.55        100
+4.77E7      4.77E7      0.222268    15.69        36 100
+5.08E7      5.08E7      0.173739    15.27        34 17 100
+5.58E7      5.58E7      0.120901    15.71        24 12 17 100
+5.6E7       5.6E7       0.134863    15.25        24 12 17 21 100
+6.08E7      6.08E7      9.7030-2    14.54        15  6  8 11 11 100
+6.78E7      6.78E7      5.9546-2    12.96        17  7  8  8  8  7 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       O2482004 
+#DATASET        O2482005   20210723
+#SUBENT         O2482005   20210723
+#ENTRY          O2482      20210723
+#TITLE          Production of 67Cu by enriched 70Zn targets: first
+#+              measurements of formation cross sections of 67Cu,
+#+              64Cu, 67Ga, 66Ga, 69mZn and 65Zn in interactions of
+#+              70Zn with protons above 45 MeV
+#AUTHORS        G.Pupillo,L.Mou,P.Martini,M.Pasquali,A.Boschi,
+#+              G.Cicoria, A.Duatti,F.Haddad,J.Esposito
+#AUTHOR1        G.Pupillo+
+#YEAR           2020
+#X4REF1         J,RCA,108,593,2020
+#REFERENCE1     Jour: Radiochimica Acta, Vol.108, p.593 (2020)
+#DATE           20210723
+#INSTITUTE      2ITYPAD,2FR NTE,2ITYITY
+#METHOD         STTA,EDEG,CHSEP,ACTIV
+#REACTION       30-ZN-70(P,5N)31-GA-66,,SIG
+#C4Reaction     (P,5N),SIG
+#ReactionType   CS
+#MF             3
+#MT             152
+#PROJ           1001
+#TARG           30070            
+#TARGET         30070           [ ]             30-ZN-70        [ ] 
+#REAC1          P,5N
+#PRODUCT        31-GA-66
+#C4ReaCode      (P,5N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=7
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0551723(4.5e7) Data[6]*0.99741375(6.8e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 30070   3 152   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27px}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 30-ZN-70(P,5N)31-GA-66,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O2482005    1.01417     1.01417     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O2482005    CS          7           0.994565    1.05517     1.01417     +1.42%      1.05517     [EN,MONIT,MONIT-ERR]::al27px
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 30070   3 152      4.47E7 700000.0 3.3766-3 5.6236-4                                       G.Pupillo*,          (20)O2482  5  7.6145-4                   5.6236-4 22.6                       16.7     16.7    0.0029   7.0E-4   0.00306  6.9E-4   1.05517230.937261
+ 1001 30070   3 152      4.77E7 600000.0 4.2584-3 8.2720-4                                       G.Pupillo*,          (20)O2482  5  2.7963-4                   8.2720-4 6.57                       19.4     19.4    0.0044   3.0E-4   0.00457  3.0E-4   1.03863631.0339961
+ 1001 30070   3 152      5.08E7 500000.0.01150857 2.0792-3                                       G.Pupillo*,          (20)O2482  5  8.1474-4                   2.0792-3 7.08                       18.1     18.1    0.0063   5.0E-4   0.00636  4.5E-4   1.00952370.9901099
+ 1001 30070   3 152      5.58E7 500000.0.03160933 6.1976-3                                       G.Pupillo*,          (20)O2482  5  2.2688-3                   6.1976-3 7.18                       19.6     19.6    0.009    0.0006   0.00906  6.5E-4   1.00666671.0159959
+ 1001 30070   3 152       5.6E7 800000.0.03699783 7.1900-3                                       G.Pupillo*,          (20)O2482  5  2.6288-3                   7.1900-3 7.11                       19.4     19.4    0.0092   7.0E-4   0.00915  6.5E-4   0.99456520.9849265
+ 1001 30070   3 152      6.08E7 500000.0  0.04667 8.4562-3                                       G.Pupillo*,          (20)O2482  5 .00208018                   8.4562-3 4.46                       18.1     18.1    0.0108   5.0E-4   0.01077  4.8E-4   0.99722220.994846
+ 1001 30070   3 152      6.78E7 600000.0.03441077 5.1056-3                                       G.Pupillo*,          (20)O2482  5  1.5464-3                   5.1056-3 4.49                       14.8     14.8    0.0116   5.0E-4   0.01157  5.2E-4   0.99741381.001105
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.47E7      6.78E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.47E7      4.47E7      3.3766-3    22.55        100
+4.77E7      4.77E7      4.2584-3    19.43        29 100
+5.08E7      5.08E7      1.1509-2    18.07        29 11 100
+5.58E7      5.58E7      3.1609-2    19.61        19  8 11 100
+5.6E7       5.6E7       3.6998-2    19.43        19  8 11 13 100
+6.08E7      6.08E7      0.04667     18.12        12  4  5  7  7 100
+6.78E7      6.78E7      3.4411-2    14.84        15  5  6  6  6  5 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       O2482005 
+#DATASET        O2482006   20210723
+#SUBENT         O2482006   20210723
+#ENTRY          O2482      20210723
+#TITLE          Production of 67Cu by enriched 70Zn targets: first
+#+              measurements of formation cross sections of 67Cu,
+#+              64Cu, 67Ga, 66Ga, 69mZn and 65Zn in interactions of
+#+              70Zn with protons above 45 MeV
+#AUTHORS        G.Pupillo,L.Mou,P.Martini,M.Pasquali,A.Boschi,
+#+              G.Cicoria, A.Duatti,F.Haddad,J.Esposito
+#AUTHOR1        G.Pupillo+
+#YEAR           2020
+#X4REF1         J,RCA,108,593,2020
+#REFERENCE1     Jour: Radiochimica Acta, Vol.108, p.593 (2020)
+#DATE           20210723
+#INSTITUTE      2ITYPAD,2FR NTE,2ITYITY
+#METHOD         STTA,EDEG,CHSEP,ACTIV
+#REACTION       30-ZN-70(P,X)30-ZN-69-M,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           30070            
+#TARGET         30070           [ ]             30-ZN-70        [ ] 
+#REAC1          P,X
+#PRODUCT        30-ZN-69-M
+#C4ReaCode      (P,X),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=7
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0551723(4.5e7) Data[6]*0.99741375(6.8e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 30070   39000M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27px}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 30-ZN-70(P,X)30-ZN-69-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O2482006    1.01417     1.01417     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O2482006    CS          7           0.994565    1.05517     1.01417     +1.42%      1.05517     [EN,MONIT,MONIT-ERR]::al27px
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 30070   39000M     4.47E7 700000.0.08895104 1.5082-3           30069.9                     G.Pupillo*,          (20)O2482  6 .02005956                   1.5082-3 22.6                       1.70     1.70    0.0029   7.0E-4   0.00306  6.9E-4   1.05517230.2038123
+ 1001 30070   39000M     4.77E7 600000.00.0742625 6.3988-3           30069.9                     G.Pupillo*,          (20)O2482  6  4.8764-3                   6.3988-3 6.57                       8.62     8.62    0.0044   3.0E-4   0.00457  3.0E-4   1.03863631.0156782
+ 1001 30070   39000M     5.08E7 500000.0.06713333 5.1122-3           30069.9                     G.Pupillo*,          (20)O2482  6  4.7526-3                   5.1122-3 7.08                       7.62     7.62    0.0063   5.0E-4   0.00636  4.5E-4   1.00952370.9128938
+ 1001 30070   39000M     5.58E7 500000.0.06090333 4.9992-3           30069.9                     G.Pupillo*,          (20)O2482  6 .00437133                   4.9992-3 7.18                       8.21     8.21    0.009    0.0006   0.00906  6.5E-4   1.00666671.0636629
+ 1001 30070   39000M      5.6E7 800000.0.06822717 4.7192-3           30069.9                     G.Pupillo*,          (20)O2482  6  4.8477-3                   4.7192-3 7.11                       6.92     6.92    0.0092   7.0E-4   0.00915  6.5E-4   0.99456520.9253237
+ 1001 30070   39000M     6.08E7 500000.00.0655175 4.0053-3           30069.9                     G.Pupillo*,          (20)O2482  6  2.9203-3                   4.0053-3 4.46                       6.11     6.11    0.0108   5.0E-4   0.01077  4.8E-4   0.99722220.9769116
+ 1001 30070   39000M     6.78E7 600000.0.05465828 2.8781-3           30069.9                     G.Pupillo*,          (20)O2482  6  2.4564-3                   2.8781-3 4.49                       5.27     5.27    0.0116   5.0E-4   0.01157  5.2E-4   0.99741381.0279014
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.47E7      6.78E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.47E7      4.47E7      0.088951    22.55        100
+4.77E7      4.77E7      7.4262-2    8.62         66 100
+5.08E7      5.08E7      6.7133-2    7.62         68 61 100
+5.58E7      5.58E7      6.0903-2    8.21         45 43 64 100
+5.6E7       5.6E7       6.8227-2    7.11         51 49 72 87 100
+6.08E7      6.08E7      6.5518-2    6.11         36 28 38 50 58 100
+6.78E7      6.78E7      5.4658-2    5.27         43 33 40 37 43 43 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       O2482006 
+#DATASET        O2482007   20210723
+#SUBENT         O2482007   20210723
+#ENTRY          O2482      20210723
+#TITLE          Production of 67Cu by enriched 70Zn targets: first
+#+              measurements of formation cross sections of 67Cu,
+#+              64Cu, 67Ga, 66Ga, 69mZn and 65Zn in interactions of
+#+              70Zn with protons above 45 MeV
+#AUTHORS        G.Pupillo,L.Mou,P.Martini,M.Pasquali,A.Boschi,
+#+              G.Cicoria, A.Duatti,F.Haddad,J.Esposito
+#AUTHOR1        G.Pupillo+
+#YEAR           2020
+#X4REF1         J,RCA,108,593,2020
+#REFERENCE1     Jour: Radiochimica Acta, Vol.108, p.593 (2020)
+#DATE           20210723
+#INSTITUTE      2ITYPAD,2FR NTE,2ITYITY
+#METHOD         STTA,EDEG,CHSEP,ACTIV
+#REACTION       30-ZN-70(P,X)30-ZN-65,,SIG
+#C4Reaction     (P,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1001
+#TARG           30070            
+#TARGET         30070           [ ]             30-ZN-70        [ ] 
+#REAC1          P,X
+#PRODUCT        30-ZN-65
+#C4ReaCode      (P,X),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=7
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0551723(4.5e7) Data[6]*0.99741375(6.8e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [ 1001 30070   39000   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27px}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 30-ZN-70(P,X)30-ZN-65,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27px;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O2482007    1.01417     1.01417     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O2482007    CS          7           0.994565    1.05517     1.01417     +1.42%      1.05517     [EN,MONIT,MONIT-ERR]::al27px
+#C5DATA         7
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 30070   39000      4.47E7 700000.0 6.5421-3 1.1339-3           30065.9                     G.Pupillo*,          (20)O2482  7  1.4753-3                   1.1339-3 22.6                       17.3     17.3    0.0029   7.0E-4   0.00306  6.9E-4   1.05517230.9449402
+ 1001 30070   39000      4.77E7 600000.0 7.3743-3 1.3434-3           30065.9                     G.Pupillo*,          (20)O2482  7  4.8423-4                   1.3434-3 6.57                       18.2     18.2    0.0044   3.0E-4   0.00457  3.0E-4   1.03863631.0333651
+ 1001 30070   39000      5.08E7 500000.0 8.2781-3 1.4848-3           30065.9                     G.Pupillo*,          (20)O2482  7  5.8604-4                   1.4848-3 7.08                       17.9     17.9    0.0063   5.0E-4   0.00636  4.5E-4   1.00952370.9898338
+ 1001 30070   39000      5.58E7 500000.0.01197933 2.1377-3           30065.9                     G.Pupillo*,          (20)O2482  7  8.5982-4                   2.1377-3 7.18                       17.8     17.8    0.009    0.0006   0.00906  6.5E-4   1.00666671.0179615
+ 1001 30070   39000       5.6E7 800000.0.01422228 2.5567-3           30065.9                     G.Pupillo*,          (20)O2482  7  1.0105-3                   2.5567-3 7.11                       18       18      0.0092   7.0E-4   0.00915  6.5E-4   0.99456520.983328
+ 1001 30070   39000      6.08E7 500000.0.02812167 4.6737-3           30065.9                     G.Pupillo*,          (20)O2482  7  1.2534-3                   4.6737-3 4.46                       16.6     16.6    0.0108   5.0E-4   0.01077  4.8E-4   0.99722220.9943997
+ 1001 30070   39000      6.78E7 600000.0.06513113.01050561           30065.9                     G.Pupillo*,          (20)O2482  7  2.9270-3                  .01050561 4.49                       16.1     16.1    0.0116   5.0E-4   0.01157  5.2E-4   0.99741381.0005343
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           4.47E7      6.78E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           7           7
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+4.47E7      4.47E7      6.5421-3    22.55        100
+4.77E7      4.77E7      7.3743-3    18.22        31 100
+5.08E7      5.08E7      8.2781-3    17.94        29 12 100
+5.58E7      5.58E7      1.1979-2    17.85        21  9 12 100
+5.6E7       5.6E7       1.4222-2    17.98        20  9 12 16 100
+6.08E7      6.08E7      2.8122-2    16.62        13  5  6  8  8 100
+6.78E7      6.78E7      6.5131-2    16.13        14  5  5  6  6  5 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       O2482007 
+#/C5M.2.3       1               6               6               0               42              

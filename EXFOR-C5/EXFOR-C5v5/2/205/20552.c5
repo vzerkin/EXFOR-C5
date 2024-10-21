@@ -1,0 +1,261 @@
+#C5M.2.3
+#DATASET        205520021  20170125
+#SUBENT         20552002   20170125
+#ENTRY          20552      20170125
+#TITLE          Measurements of U-233 cross-sections for thermal
+#+               neutrons
+#AUTHORS        R.Vidal, M.Robin, C.Carneiro Da Silva
+#AUTHOR1        R.Vidal+
+#YEAR           1970
+#X4REF1         C,70HELSINKI,1,295,197006
+#REFERENCE1     Conf: Nuclear Data for Reactors Conf., Helsinki 1970, Vol.1, p.295 (1970)
+#DATE           20170125
+#INSTITUTE      2FR FAR
+#REACTION       92-U-233(N,F),,SIG
+#C4Reaction     (N,F),SIG
+#ReactionType   CS
+#MF             3
+#MT             18
+#PROJ           1
+#TARG           92233            
+#TARGET         92233           [ ]             92-U-233        [ ] 
+#REAC1          N,F
+#C4ReaCode      (N,F),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.31%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0125862(2.5e-2)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92233   3  18 D ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      92-U-235(N,F),,SIG
+#M0             Point: XS(b)=580.0(0.31%)  EN-NRM(eV):0.0253
+#M1             Point: XS(b)=587.3(0.24%)  EN-NRM(eV):0.0253
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 92-U-233(N,F),,SIG
+#+              #[0]#Monitor:  92-U-235(N,F),,SIG
+#+              #[0]#En=0.0253
+#+              a0=[MONIT];                   #[0]#old monitor point 580.0
+#+              a1=therm$u235nf[0.0253];      #[0]#new monitor point [2.53E-8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        205520021   1.01259     1.01259     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          205520021   CS          1           1.01259     1.01259     1.01259     +1.26%      1.01259     [MONIT]::u235nf
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92233   3  18 D    0.0253          536.6707 3.907421                                       R.Vidal*,            (70)20552  21 2.123824     2.65          3.907421 0.40     0.49              0.73     0.73    580.0    1.8      587.3    1.4      1.01258620.9768553
+#/C5DATA        0
+#/DATASET       205520021
+#DATASET        205520022  20170125
+#SUBENT         20552002   20170125
+#ENTRY          20552      20170125
+#TITLE          Measurements of U-233 cross-sections for thermal
+#+               neutrons
+#AUTHORS        R.Vidal, M.Robin, C.Carneiro Da Silva
+#AUTHOR1        R.Vidal+
+#YEAR           1970
+#X4REF1         C,70HELSINKI,1,295,197006
+#REFERENCE1     Conf: Nuclear Data for Reactors Conf., Helsinki 1970, Vol.1, p.295 (1970)
+#DATE           20170125
+#INSTITUTE      2FR FAR
+#REACTION       (92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG)
+#C4Reaction     ((N,F),SIG)/((N,F),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             18
+#PROJ           1
+#TARG           92233            
+#TARGET         92233           [ ]             92-U-233        [ ] 
+#REAC1          N,F
+#C4ReaCode      ((N,F),SIG)/((N,F),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 92233 203  18 D ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG)
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92233 203  18 D    0.0253             0.914    0.005     18.9  92235.9                     R.Vidal,             (70)20552  220.0028903  0.00457             0.005 0.32     0.50              0.55     0.55                      587.3    1.4
+#/C5DATA        0
+#/DATASET       205520022
+#DATASET        205520041  20170125
+#SUBENT         20552004   20170125
+#ENTRY          20552      20170125
+#TITLE          Measurements of U-233 cross-sections for thermal
+#+               neutrons
+#AUTHORS        R.Vidal, M.Robin, C.Carneiro Da Silva
+#AUTHOR1        R.Vidal+
+#YEAR           1970
+#X4REF1         C,70HELSINKI,1,295,197006
+#REFERENCE1     Conf: Nuclear Data for Reactors Conf., Helsinki 1970, Vol.1, p.295 (1970)
+#DATE           20170125
+#INSTITUTE      2FR FAR
+#REACTION       92-U-233(N,ABS),,SIG
+#C4Reaction     (N,ABS),SIG
+#ReactionType   CS
+#MF             3
+#MT             101
+#PROJ           1
+#TARG           92233            
+#TARGET         92233           [ ]             92-U-233        [ ] 
+#REAC1          N,ABS
+#C4ReaCode      (N,ABS),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.28%
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 92233   3 101   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92233   3 101      0.0253             589.0      7.0                                       R.Vidal,             (70)20552  412.4877844    2.945               7.0 0.42     0.50              1.19     1.19
+#/C5DATA        0
+#/DATASET       205520041
+#DATASET        205520042  20170125
+#SUBENT         20552004   20170125
+#ENTRY          20552      20170125
+#TITLE          Measurements of U-233 cross-sections for thermal
+#+               neutrons
+#AUTHORS        R.Vidal, M.Robin, C.Carneiro Da Silva
+#AUTHOR1        R.Vidal+
+#YEAR           1970
+#X4REF1         C,70HELSINKI,1,295,197006
+#REFERENCE1     Conf: Nuclear Data for Reactors Conf., Helsinki 1970, Vol.1, p.295 (1970)
+#DATE           20170125
+#INSTITUTE      2FR FAR
+#REACTION       (92-U-233(N,ABS),,SIG)/(92-U-235(N,ABS),,SIG)
+#C4Reaction     ((N,ABS),SIG)/((N,ABS),SIG)
+#ReactionType   Ratio
+#MF             203
+#MT             101
+#PROJ           1
+#TARG           92233            
+#TARGET         92233           [ ]             92-U-233        [ ] 
+#REAC1          N,ABS
+#C4ReaCode      ((N,ABS),SIG)/((N,ABS),SIG)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 92233 203 101   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92233 203 101      0.0253             0.868    0.008    101.9  92235.9                     R.Vidal,             (70)20552  420.0027449  0.00434             0.008 0.32     0.50              0.92     0.92
+#/C5DATA        0
+#/DATASET       205520042
+#DATASET        20552005   20170125
+#SUBENT         20552005   20170125
+#ENTRY          20552      20170125
+#TITLE          Measurements of U-233 cross-sections for thermal
+#+               neutrons
+#AUTHORS        R.Vidal, M.Robin, C.Carneiro Da Silva
+#AUTHOR1        R.Vidal+
+#YEAR           1970
+#X4REF1         C,70HELSINKI,1,295,197006
+#REFERENCE1     Conf: Nuclear Data for Reactors Conf., Helsinki 1970, Vol.1, p.295 (1970)
+#DATE           20170125
+#INSTITUTE      2FR FAR
+#REACTION       (92-U-233(N,F),,SIG,,MXW)/(92-U-235(N,F),,SIG,,MXW)
+#C4Reaction     ((N,F),SIG,,MXW)/((N,F),SIG,,MXW)
+#ReactionType   Ratio
+#MF             203
+#MT             18
+#PROJ           1
+#TARG           92233            
+#TARGET         92233           [ ]             92-U-233        [ ] 
+#REAC1          N,F
+#C4ReaCode      ((N,F),SIG,,MXW)/((N,F),SIG,,MXW)
+#Quantity       Ratio of [Cross section]
+#DataUnits0     NO-DIM
+#DataUnits      ?
+#D4REAC         (R0#)/(R1#)
+#ReaCombi       a/a
+#C4FOUND        30 
+#C4BEGIN        [    1 92233 203  18   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      true
+#vReacs         2
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#REAC-RATIO     (92-U-233(N,F),,SIG,,MXW)/(92-U-235(N,F),,SIG,,MXW)
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData   MT-Rat   ZA-Rat                  
+#Units                       EV       EV   NO-DIM   NO-DIM   NO-DIM   NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92233 203  18      0.0253             0.931    0.005     18.9  92235.9                     R.Vidal,             (70)20552  5 0.0080088                      0.005 0.86                       0.54     0.54                      587.3    1.4
+#/C5DATA        0
+#/DATASET       20552005 
+#/C5M.2.3       1               5               7               0               5               

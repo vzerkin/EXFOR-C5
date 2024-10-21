@@ -1,0 +1,68 @@
+#C5M.2.3
+#DATASET        21775002   19820921
+#SUBENT         21775002   19820921
+#ENTRY          21775      19840409
+#TITLE          -THE U-235 FISSION SPECTRUM AVERAGED CROSS SECTION
+#+               FOR THE HG-199(N,N')HG-199M REACTION PROCESSED WITH
+#+               COVARIANCES BETWEEN THE DATA UNCERTAINTIES. -
+#AUTHORS        K.KOBAYASHI,S.YAMAMOTO,I.KIMURA
+#AUTHOR1        K.Kobayashi+
+#YEAR           1981
+#X4REF1         R,KURRI-AR-14,1,81
+#REFERENCE1     Rept: Kyoto Univ.,Res.Reactor Inst., Annual Report, No.14, p.1 (1981)
+#DATE           19820921
+#INSTITUTE      2JPNKTO
+#REACTION       80-HG-199(N,INL)80-HG-199-M,,SIG,,FIS
+#C4Reaction     (N,INL),SIG,,FIS
+#ReactionType   CS
+#MF             3
+#MT             4
+#PROJ           1
+#TARG           80199            
+#TARGET         80199           [ ]             80-HG-199       [ ] 
+#REAC1          N,INL
+#PRODUCT        80-HG-199-M
+#C4ReaCode      (N,INL),SIG,,FIS
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.18%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-10.7%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [    1 80199   3   4M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 80-HG-199(N,INL)80-HG-199-M,,SIG,,FIS
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (80-HG-199(N,INL)80-HG-199-M,,SIG,,FIS)
+#+               #[1]#DECAY-DATA (80-HG-199-M,42.62MIN,DG,375.,0.1233) #Ix_old=0.1233
+#+                a1=0.1233/0.138;            #[1]#DECAY-DATA: correction to new 374.1 keV gamma-yield per decay Hg-199-m Ix_new=0.138
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.8934783
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        21775002    0.893478    -           0.893478    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          21775002    CS          1           0.893478    0.893478    0.893478    -10.7%      1.11922                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                    SpE     dSpE     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 80199   3   4M  1500000.0         0.2474935.01375957                                       K.KOBAYASHI*,        (81)21775  2 .01282016                  .01375957 5.18                       5.56     5.56                                        0.89347830.8934783
+#/C5DATA        0
+#/DATASET       21775002 
+#/C5M.2.3       1               1               1               0               1               

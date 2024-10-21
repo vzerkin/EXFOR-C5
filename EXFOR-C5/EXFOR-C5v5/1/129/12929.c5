@@ -1,0 +1,96 @@
+#C5M.2.3
+#DATASET        12929002   20140414
+#SUBENT         12929002   20140414
+#ENTRY          12929      20140414
+#TITLE          Cross sections for the 59Co(n,p)59Fe reaction between
+#+               14 and 19 MeV.
+#AUTHORS        J.R.Williams,W.L.Alford,S.K.Ghorai
+#AUTHOR1        J.R.Williams+
+#YEAR           1986
+#X4REF1         J,RE,92,215,1986
+#REFERENCE1     Jour: Radiation Effects, Vol.92, p.215 (1986)
+#DATE           20140414
+#INSTITUTE      1USAAUB,1USAALS
+#METHOD         ACTIV,MOMIX
+#REACTION       27-CO-59(N,P)26-FE-59,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           27059            
+#TARGET         27059           [ ]             27-CO-59        [ ] 
+#REAC1          N,P
+#PRODUCT        26-FE-59
+#C4ReaCode      (N,P),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=5
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9804917(1.4e7) Data[4]*0.9840167(1.8e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 27059   3 103 A ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,A)11-NA-24,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27na}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 27-CO-59(N,P)26-FE-59,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,A)11-NA-24,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27na;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12929002    0.988990    0.988990    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12929002    CS          5           0.972325    1.01641     0.988990    -1.10%      1.02846     [EN,MONIT,MONIT-ERR]::al27na
+#C5DATA         5
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 27059   3 103 A    1.42E7 200000.0.05176996 3.3301-3                                       J.R.Williams*,       (86)12929  2  2.2669-4                   3.3301-3 0.44                       6.43     6.43    0.122    6.5E-4   0.11962  5.2783-4 0.98049170.979437
+    1 27059   3 103 A    1.52E7 200000.0.046088210.0031065                                       J.R.Williams*,       (86)12929  2  2.2505-4                  0.0031065 0.49                       6.74     6.74    0.108    0.00196  0.10501115.3122-4 0.972325 0.9413637
+    1 27059   3 103 A    1.62E7 200000.0.04185021.00287795                                       J.R.Williams*,       (86)12929  2  3.0059-4                  .00287795 0.72                       6.88     6.88    0.09     0.00175  0.089254 6.517E-4 0.99171110.9593168
+    1 27059   3 103 A    1.72E7 200000.0.04075786 2.9627-3                                       J.R.Williams*,       (86)12929  2  3.4398-4                   2.9627-3 0.84                       7.27     7.27    0.072    0.00141  0.07318126.1478-4 1.01640550.9875826
+    1 27059   3 103 A    1.82E7 200000.0.03886866 2.8584-3                                       J.R.Williams*,       (86)12929  2  3.6742-4                   2.8584-3 0.95                       7.35     7.35    .059500010.00126  0.058549 5.5036E-40.98401670.9528085
+#/C5DATA        0
+#COVARIANCE     2               Generated
+#COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
+#+              1) If only total uncertainties are given, assume uncertainties: statistical/systematic=50/50.
+#+              2) Statistical uncertainties are added to covariance matrix as uncorrelated components
+#+              3) If Other uncertainties are not given (ALGORITHM=2): split total systematic uncertainties: fully/partially correcated=50/50 (LERC/MERC)
+#+                 else (ALGORITHM=3): assume total systematic uncertainties fully correlated (LERC), Other - partially correcated (MERC)
+#+              4) LERC-correlated uncertainties are added to covariance matrix as fully correlated
+#+              5) MERC-correlated uncertainties are added as partially correlated using parameters:
+#ALGORITHM      2           1           100.        50.         50.         0           1.42E7      1.82E7      0.5         
+#+              Type        Groupping   Stat.SERC   Sys.LERC    Sys.MERC    Log/Lin     En-Min      En-Max      Length      
+#COVARDATA      1           5           5
+#EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
+#----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
+1.42E7      1.42E7      0.05177     6.43         100
+1.52E7      1.52E7      4.6088-2    6.74          0 100
+1.62E7      1.62E7      4.1850-2    6.88          0  1 100
+1.72E7      1.72E7      4.0758-2    7.27          0  0  1 100
+1.82E7      1.82E7      3.8869-2    7.35          0  0  1  1 100
+#/COVARDATA
+#/COVARIANCE
+#/DATASET       12929002 
+#/C5M.2.3       1               1               1               0               5               

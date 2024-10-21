@@ -1,0 +1,236 @@
+#C5.2.3
+#DATASET        22825002   20040131
+#SUBENT         22825002   20040131
+#ENTRY          22825      20130208
+#TITLE          .Measurements of isomeric cross sections for (n,2n)
+#+               reaction on 140Ce, 142Nd and 144Sm isotopes
+#+               around 14 MeV incident neutron energy
+#AUTHORS        I.A.Reyhancan,M.Bostan,A.Durusoy,A.Elmali, A.Baykal,
+#+              Y.Oezbir
+#AUTHOR1        I.A.Reyhancan+
+#YEAR           2003
+#X4REF1         J,ANE,30,1539,2003
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.30, p.1539 (2003)
+#DATE           20040131
+#INSTITUTE      2TUKCNA,2TUKSTU,2TUKYTU
+#METHOD         ACTIV,SITA
+#REACTION       58-CE-140(N,2N)58-CE-139-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           58140            
+#TARGET         58140           [ ]             58-CE-140       [ ] 
+#REAC1          N,2N
+#PRODUCT        58-CE-139-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-3,0.2,2.3)    ADDED AS COMMON:ERR-3,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-6,0.6,1.3)    ADDED AS COMMON:ERR-6,PER-CENT=0.6%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0706162(1.4e7) Data[5]*1.048844(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 58140   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,P)12-MG-27,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 58-CE-140(N,2N)58-CE-139-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,P)12-MG-27,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22825002    1.05357     1.05357     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22825002    CS          6           1.03117     1.07717     1.05357     +5.36%      1.07717     [EN,MONIT,MONIT-ERR]::al27np
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 58140   3  16M    1.357E7  40000.00.9367893.03319602                                       I.A.Reyhancan*,      (03)22825  2 .03414679                  .03319602 3.65                       3.54     3.54    0.07664  0.0022992.082052031.3474-3 1.07061620.8735794
+    1 58140   3  16M    1.375E7  50000.00.89728590.0313613                                       I.A.Reyhancan*,      (03)22825  2 .03251171                  0.0313613 3.62                       3.50     3.50    0.07388  0.00221640.0795816.001267971.07717380.8711472
+    1 58140   3  16M    1.415E7  70000.00.8418899.02837349                                       I.A.Reyhancan*,      (03)22825  2 0.0301147                  .02837349 3.58                       3.37     3.37    0.07032  0.00210960.07418761.1017-3 1.055    0.8345143
+    1 58140   3  16M    1.452E7  90000.00.89299370.0301074                                       I.A.Reyhancan*,      (03)22825  2 .03182705                  0.0301074 3.56                       3.37     3.37    0.06731  0.0020193.069408081.0089-3 1.03117050.8137134
+    1 58140   3  16M    1.475E7  90000.00.9897916.03389946                                       I.A.Reyhancan*,      (03)22825  2 .03542714                  .03389946 3.58                       3.42     3.42    0.0641   0.001923 .066574659.9217-4 1.03860590.826816
+    1 58140   3  16M    1.483E7 100000.0 0.975425.03352839                                       I.A.Reyhancan*,      (03)22825  2 .03504189                  .03352839 3.59                       3.44     3.44    .062560010.0018768.065615689.9854-4 1.048844 0.8382097
+#/C5DATA        0
+#/DATASET       22825002 
+#DATASET        22825003   20040131
+#SUBENT         22825003   20040131
+#ENTRY          22825      20130208
+#TITLE          .Measurements of isomeric cross sections for (n,2n)
+#+               reaction on 140Ce, 142Nd and 144Sm isotopes
+#+               around 14 MeV incident neutron energy
+#AUTHORS        I.A.Reyhancan,M.Bostan,A.Durusoy,A.Elmali, A.Baykal,
+#+              Y.Oezbir
+#AUTHOR1        I.A.Reyhancan+
+#YEAR           2003
+#X4REF1         J,ANE,30,1539,2003
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.30, p.1539 (2003)
+#DATE           20040131
+#INSTITUTE      2TUKCNA,2TUKSTU,2TUKYTU
+#METHOD         ACTIV,SITA
+#REACTION       60-ND-142(N,2N)60-ND-141-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           60142            
+#TARGET         60142           [ ]             60-ND-142       [ ] 
+#REAC1          N,2N
+#PRODUCT        60-ND-141-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-3,0.2,2.3)    ADDED AS COMMON:ERR-3,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-6,0.6,1.3)    ADDED AS COMMON:ERR-6,PER-CENT=0.6%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0706162(1.4e7) Data[5]*1.048844(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 60142   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,P)12-MG-27,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 60-ND-142(N,2N)60-ND-141-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,P)12-MG-27,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22825003    1.05357     1.05357     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22825003    CS          6           1.03117     1.07717     1.05357     +5.36%      1.07717     [EN,MONIT,MONIT-ERR]::al27np
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 60142   3  16M    1.357E7  40000.00.6916181.02702011                                       I.A.Reyhancan*,      (03)22825  3 .02521008                  .02702011 3.65                       3.91     3.91    0.07664  0.0022992.082052031.3474-3 1.07061620.9006702
+    1 60142   3  16M    1.375E7  50000.00.7820283.03075958                                       I.A.Reyhancan*,      (03)22825  3 .02833555                  .03075958 3.62                       3.93     3.93    0.07388  0.00221640.0795816.001267971.07717380.9046934
+    1 60142   3  16M    1.415E7  70000.00.7079051.02827064                                       I.A.Reyhancan*,      (03)22825  3 .02532201                  .02827064 3.58                       3.99     3.99    0.07032  0.00210960.07418761.1017-3 1.055    0.8834574
+    1 60142   3  16M    1.452E7  90000.00.7496611.02901946                                       I.A.Reyhancan*,      (03)22825  3 .02671856                  .02901946 3.56                       3.87     3.87    0.06731  0.0020193.069408081.0089-3 1.03117050.8535134
+    1 60142   3  16M    1.475E7  90000.00.7259856.02859053                                       I.A.Reyhancan*,      (03)22825  3 .02598486                  .02859053 3.58                       3.94     3.94    0.0641   0.001923 .066574659.9217-4 1.03860590.8663797
+    1 60142   3  16M    1.483E7 100000.00.7457281.02874488                                       I.A.Reyhancan*,      (03)22825  3 .02679008                  .02874488 3.59                       3.85     3.85    .062560010.0018768.065615689.9854-4 1.048844 0.8710571
+#/C5DATA        0
+#/DATASET       22825003 
+#DATASET        22825004   20040131
+#SUBENT         22825004   20040131
+#ENTRY          22825      20130208
+#TITLE          .Measurements of isomeric cross sections for (n,2n)
+#+               reaction on 140Ce, 142Nd and 144Sm isotopes
+#+               around 14 MeV incident neutron energy
+#AUTHORS        I.A.Reyhancan,M.Bostan,A.Durusoy,A.Elmali, A.Baykal,
+#+              Y.Oezbir
+#AUTHOR1        I.A.Reyhancan+
+#YEAR           2003
+#X4REF1         J,ANE,30,1539,2003
+#REFERENCE1     Jour: Annals of Nuclear Energy, Vol.30, p.1539 (2003)
+#DATE           20040131
+#INSTITUTE      2TUKCNA,2TUKSTU,2TUKYTU
+#METHOD         ACTIV,SITA
+#REACTION       62-SM-144(N,2N)62-SM-143-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           62144            
+#TARGET         62144           [ ]             62-SM-144       [ ] 
+#REAC1          N,2N
+#PRODUCT        62-SM-143-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      ERR-ANALYS:(ERR-3,0.2,2.3)    ADDED AS COMMON:ERR-3,PER-CENT=0.2%
+#CompNotes      ERR-ANALYS:(ERR-6,0.6,1.3)    ADDED AS COMMON:ERR-6,PER-CENT=0.6%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0706162(1.4e7) Data[5]*1.048844(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 62144   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,P)12-MG-27,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$al27np}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 62-SM-144(N,2N)62-SM-143-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,P)12-MG-27,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$al27np;             #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22825004    1.05357     1.05357     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22825004    CS          6           1.03117     1.07717     1.05357     +5.36%      1.07717     [EN,MONIT,MONIT-ERR]::al27np
+#C5DATA         6
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 62144   3  16M    1.357E7  40000.00.4250347.01339998                                       I.A.Reyhancan*,      (03)22825  4 .01549288                  .01339998 3.65                       3.15     3.15    0.07664  0.0022992.082052031.3474-3 1.07061620.8374989
+    1 62144   3  16M    1.375E7  50000.00.4567217.01416143                                       I.A.Reyhancan*,      (03)22825  4 .01654858                  .01416143 3.62                       3.10     3.10    0.07388  0.00221640.0795816.001267971.07717380.8330253
+    1 62144   3  16M    1.415E7  70000.0  0.45576.01481486                                       I.A.Reyhancan*,      (03)22825  4 0.0163027                  .01481486 3.58                       3.25     3.25    0.07032  0.00210960.07418761.1017-3 1.055    0.8230477
+    1 62144   3  16M    1.452E7  90000.00.5011489.01588554                                       I.A.Reyhancan*,      (03)22825  4 .01786137                  .01588554 3.56                       3.17     3.17    0.06731  0.0020193.069408081.0089-3 1.03117050.7942768
+    1 62144   3  16M    1.475E7  90000.00.6200479.02033632                                       I.A.Reyhancan*,      (03)22825  4 .02219308                  .02033632 3.58                       3.28     3.28    0.0641   0.001923 .066574659.9217-4 1.03860590.8134526
+    1 62144   3  16M    1.483E7 100000.0 0.666016.02114608                                       I.A.Reyhancan*,      (03)22825  4 .02392645                  .02114608 3.59                       3.18     3.18    .062560010.0018768.065615689.9854-4 1.048844 0.8133107
+#/C5DATA        0
+#/DATASET       22825004 
+#/C5.2.3        1               3               3               0               18              

@@ -1,0 +1,73 @@
+#C5.2.3
+#DATASET        41141002   20150930
+#SUBENT         41141002   20150930
+#ENTRY          41141      20150930
+#TITLE          Cross-section of the reaction (n,d) + (n,np) + (n,pn)
+#+               at even cadmium and tin isotopes for 14-MeV neutrons
+#AUTHORS        P.M.Gopych,M.N.Demchenko,I.I.Zalyubovskii,P.S.Kizim,
+#+              S.I.Panasenko
+#AUTHOR1        P.M.Gopych+
+#YEAR           1993
+#X4REF1         J,AE,75,(3),233,1993
+#REFERENCE1     Jour: Atomnaya Energiya, Vol.75, Issue.3, p.233 (1993)
+#DATE           20150930
+#INSTITUTE      4UKRKHU
+#METHOD         ACTIV
+#REACTION       48-CD-114(N,X)47-AG-113-M,,SIG
+#C4Reaction     (N,X),SIG
+#ReactionType   CS
+#MF             3
+#MT             9000
+#PROJ           1
+#TARG           48114            
+#TARGET         48114           [ ]             48-CD-114       [ ] 
+#REAC1          N,X
+#PRODUCT        47-AG-113-M
+#C4ReaCode      (N,X),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.03%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.003044(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 48114   39000M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      13-AL-27(N,P)12-MG-27,,SIG
+#M0             Point: XS(b)=0.0682(1.03%)  EN-NRM(eV):1.46E7
+#M1             Point: XS(b)=0.0684076(1.46%)  EN-NRM(eV):1.46E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 48-CD-114(N,X)47-AG-113-M,,SIG
+#+              #[0]#Monitor:  13-AL-27(N,P)12-MG-27,,SIG
+#+              #[0]#En=1.46E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.0682
+#+              a1=recom$al27np[EN];          #[0]#new monitor point [14.6MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        41141002    1.00304     1.00304     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          41141002    CS          1           1.00304     1.00304     1.00304     +0.304%     1.00304     [MONIT]::al27np
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData               ZAP                  
+#Units                       EV       EV        B        B            NO-DIM                  
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 48114   39000M     1.46E7 400000.0 4.0122-4 1.0039-4           47113.9                     P.M.Gopych*,         (93)41141  2  5.8584-6                   1.0039-4 1.46                       25       25      0.0682   7.0E-4   0.06840769.9711-4 1.003044 1.0039032
+#/C5DATA        0
+#/DATASET       41141002 
+#/C5.2.3        1               1               1               0               1               

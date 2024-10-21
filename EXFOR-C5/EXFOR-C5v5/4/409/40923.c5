@@ -1,0 +1,313 @@
+#C5M.2.3
+#DATASET        40923002   20180202
+#SUBENT         40923002   20180202
+#ENTRY          40923      20180202
+#TITLE          Improving the cross sections of reactions of fast
+#+              neutrons with 90Zr and 91Zr under formation of nuclides
+#+              in an isomeric state
+#AUTHORS        V.V.Ovechkin,A.E.Khokhlov
+#AUTHOR1        V.V.Ovechkin+
+#YEAR           1986
+#X4REF1         J,AE,60,143,1986
+#REFERENCE1     Jour: Atomnaya Energiya, Vol.60, p.143 (1986)
+#DATE           20180202
+#INSTITUTE      4RUSEPA
+#METHOD         ACTIV
+#REACTION       40-ZR-90(N,2N)40-ZR-89-M,,SIG
+#C4Reaction     (N,2N),SIG
+#ReactionType   CS
+#MF             3
+#MT             16
+#PROJ           1
+#TARG           40090            
+#TARGET         40090           [ ]             40-ZR-90        [ ] 
+#REAC1          N,2N
+#PRODUCT        40-ZR-89-M
+#C4ReaCode      (N,2N),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=6.33%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0108354(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.134%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40090   3  16M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      40-ZR-90(N,2N)40-ZR-89-G,,SIG
+#M0             Point: XS(b)=0.79(6.33%)  EN-NRM(eV):1.48E7
+#M1             Point: XS(b)=0.79856(0.82%)  EN-NRM(eV):1.48E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-90(N,2N)40-ZR-89-M,,SIG
+#+              #[0]#Monitor:  40-ZR-90(N,2N)40-ZR-89-G,,SIG
+#+              #[0]#En=1.48E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.79
+#+              a1=recom$zr90n2n[EN];         #[0]#new monitor point [14.8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (40-ZR-90(N,2N)40-ZR-89-M,,SIG)
+#+               #[1]#DECAY-DATA (40-ZR-89-M,4.18MIN,DG,587.8,0.895) #Ix_old=0.895
+#+                a1=0.895/0.8962;            #[1]#DECAY-DATA: correction to new 587.8 keV gamma-yield per decay Zr-89-m Ix_new=0.8962
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.998661
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        40923002    1.00948     1.01084     0.998661    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          40923002    CS          1           1.00948     1.00948     1.00948     +0.948%     1.00948     [MONIT]::zr90n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40090   3  16M     1.48E7         0.11003350.0123312                                       V.V.Ovechkin*,       (86)40923  2  9.1480-4                  0.0123312 0.83                       11.2     11.2    0.79     0.05     0.79856  .006585011.00948190.8808
+#/C5DATA        0
+#/DATASET       40923002 
+#DATASET        40923003   20180202
+#SUBENT         40923003   20180202
+#ENTRY          40923      20180202
+#TITLE          Improving the cross sections of reactions of fast
+#+              neutrons with 90Zr and 91Zr under formation of nuclides
+#+              in an isomeric state
+#AUTHORS        V.V.Ovechkin,A.E.Khokhlov
+#AUTHOR1        V.V.Ovechkin+
+#YEAR           1986
+#X4REF1         J,AE,60,143,1986
+#REFERENCE1     Jour: Atomnaya Energiya, Vol.60, p.143 (1986)
+#DATE           20180202
+#INSTITUTE      4RUSEPA
+#METHOD         ACTIV
+#REACTION       40-ZR-90(N,P)39-Y-90-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           40090            
+#TARGET         40090           [ ]             40-ZR-90        [ ] 
+#REAC1          N,P
+#PRODUCT        39-Y-90-M
+#C4ReaCode      (N,P),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=6.33%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0108354(1.5e7)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40090   3 103M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      40-ZR-90(N,2N)40-ZR-89-G,,SIG
+#M0             Point: XS(b)=0.79(6.33%)  EN-NRM(eV):1.48E7
+#M1             Point: XS(b)=0.79856(0.82%)  EN-NRM(eV):1.48E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-90(N,P)39-Y-90-M,,SIG
+#+              #[0]#Monitor:  40-ZR-90(N,2N)40-ZR-89-G,,SIG
+#+              #[0]#En=1.48E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.79
+#+              a1=recom$zr90n2n[EN];         #[0]#new monitor point [14.8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        40923003    1.01084     1.01084     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          40923003    CS          1           1.01084     1.01084     1.01084     +1.08%      1.01084     [MONIT]::zr90n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40090   3 103M     1.48E7         .01283761 6.1060-4                                       V.V.Ovechkin*,       (86)40923  3  1.0673-4                   6.1060-4 0.83                       4.76     4.76    0.79     0.05     0.79856  .006585011.01083540.6105958
+#/C5DATA        0
+#/DATASET       40923003 
+#DATASET        40923004   20180202
+#SUBENT         40923004   20180202
+#ENTRY          40923      20180202
+#TITLE          Improving the cross sections of reactions of fast
+#+              neutrons with 90Zr and 91Zr under formation of nuclides
+#+              in an isomeric state
+#AUTHORS        V.V.Ovechkin,A.E.Khokhlov
+#AUTHOR1        V.V.Ovechkin+
+#YEAR           1986
+#X4REF1         J,AE,60,143,1986
+#REFERENCE1     Jour: Atomnaya Energiya, Vol.60, p.143 (1986)
+#DATE           20180202
+#INSTITUTE      4RUSEPA
+#METHOD         ACTIV
+#REACTION       40-ZR-91(N,P)39-Y-91-M,,SIG
+#C4Reaction     (N,P),SIG
+#ReactionType   CS
+#MF             3
+#MT             103
+#PROJ           1
+#TARG           40091            
+#TARGET         40091           [ ]             40-ZR-91        [ ] 
+#REAC1          N,P
+#PRODUCT        39-Y-91-M
+#C4ReaCode      (N,P),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=6.33%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0108354(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.105%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40091   3 103M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      40-ZR-90(N,2N)40-ZR-89-G,,SIG
+#M0             Point: XS(b)=0.79(6.33%)  EN-NRM(eV):1.48E7
+#M1             Point: XS(b)=0.79856(0.82%)  EN-NRM(eV):1.48E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-91(N,P)39-Y-91-M,,SIG
+#+              #[0]#Monitor:  40-ZR-90(N,2N)40-ZR-89-G,,SIG
+#+              #[0]#En=1.48E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.79
+#+              a1=recom$zr90n2n[EN];         #[0]#new monitor point [14.8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (40-ZR-91(N,P)39-Y-91-M,,SIG)
+#+               #[1]#DECAY-DATA (39-Y-91-M,49.71MIN,DG,555.6,0.949) #Ix_old=0.949
+#+                a1=0.949/0.95;              #[1]#DECAY-DATA: correction to new 555.57 keV gamma-yield per decay Y-91-m Ix_new=0.95
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9989474
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        40923004    1.00977     1.01084     0.998947    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          40923004    CS          1           1.00977     1.00977     1.00977     +0.977%     1.00977     [MONIT]::zr90n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40091   3 103M     1.48E7         .02191204 1.1887-3                                       V.V.Ovechkin*,       (86)40923  4  1.8217-4                   1.1887-3 0.83                       5.42     5.42    0.79     0.05     0.79856  .006585011.00977130.6603769
+#/C5DATA        0
+#/DATASET       40923004 
+#DATASET        40923005   20180202
+#SUBENT         40923005   20180202
+#ENTRY          40923      20180202
+#TITLE          Improving the cross sections of reactions of fast
+#+              neutrons with 90Zr and 91Zr under formation of nuclides
+#+              in an isomeric state
+#AUTHORS        V.V.Ovechkin,A.E.Khokhlov
+#AUTHOR1        V.V.Ovechkin+
+#YEAR           1986
+#X4REF1         J,AE,60,143,1986
+#REFERENCE1     Jour: Atomnaya Energiya, Vol.60, p.143 (1986)
+#DATE           20180202
+#INSTITUTE      4RUSEPA
+#METHOD         ACTIV
+#REACTION       40-ZR-90(N,A)38-SR-87-M,,SIG
+#C4Reaction     (N,A),SIG
+#ReactionType   CS
+#MF             3
+#MT             107
+#PROJ           1
+#TARG           40090            
+#TARGET         40090           [ ]             40-ZR-90        [ ] 
+#REAC1          N,A
+#PRODUCT        38-SR-87-M
+#C4ReaCode      (N,A),SIG
+#CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=6.33%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0108354(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.231%
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        1 
+#C4BEGIN        [    1 40090   3 107M  ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      40-ZR-90(N,2N)40-ZR-89-G,,SIG
+#M0             Point: XS(b)=0.79(6.33%)  EN-NRM(eV):1.48E7
+#M1             Point: XS(b)=0.79856(0.82%)  EN-NRM(eV):1.48E7
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-90(N,A)38-SR-87-M,,SIG
+#+              #[0]#Monitor:  40-ZR-90(N,2N)40-ZR-89-G,,SIG
+#+              #[0]#En=1.48E7
+#+              a0=[MONIT];                   #[0]#old monitor point 0.79
+#+              a1=recom$zr90n2n[EN];         #[0]#new monitor point [14.8MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (40-ZR-90(N,A)38-SR-87-M,,SIG)
+#+               #[1]#DECAY-DATA (38-SR-87-M,168.3MIN,DG,388.8,.82) #Ix_old=0.82
+#+                a1=0.82/0.8219;             #[1]#DECAY-DATA: correction to new 388.531 keV gamma-yield per decay Sr-87-m Ix_new=0.8219
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99768823
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        40923005    1.00850     1.01084     0.997688    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          40923005    CS          1           1.00850     1.00850     1.00850     +0.850%     1.00850     [MONIT]::zr90n2n
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                     EN      dEN     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40090   3 107M     1.48E7          3.3280-3 2.1891-4                                       V.V.Ovechkin*,       (86)40923  5  2.7669-5                   2.1891-4 0.83                       6.58     6.58    0.79     0.05     0.79856  .006585011.00849850.7297028
+#/C5DATA        0
+#/DATASET       40923005 
+#/C5M.2.3       1               4               4               0               4               

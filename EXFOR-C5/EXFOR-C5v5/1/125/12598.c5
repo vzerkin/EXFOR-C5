@@ -1,0 +1,65 @@
+#C5M.2.3
+#DATASET        12598002   20190830
+#SUBENT         12598002   20190830
+#ENTRY          12598      20190830
+#TITLE          Pile neutron capture cross section of Cu-66
+#AUTHORS        T.O.Passell,R.L.Heath
+#AUTHOR1        T.O.Passell+
+#YEAR           1958
+#X4REF1         J,BAP,3,408(F13),1958
+#REFERENCE1     Jour: Bulletin of the American Physical Society Ser.II, Vol.3, p.408(F13) (1958)
+#DATE           20190830
+#INSTITUTE      1USASRI,1USAMTR
+#METHOD         ACTIV
+#REACTION       29-CU-66(N,G)29-CU-67,,SIG,,SPA
+#C4Reaction     (N,G),SIG,,SPA
+#ReactionType   CS
+#MF             3
+#MT             102
+#PROJ           1
+#TARG           29066            
+#TARGET         29066           [ ]             29-CU-66        [ ] 
+#REAC1          N,G
+#PRODUCT        29-CU-67
+#C4ReaCode      (N,G),SIG,,SPA
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-7.60%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#Quantity       Cross section
+#DataUnits0     B
+#DataUnits      ?
+#D4REAC         R0#
+#ReaCombi       a
+#C4FOUND        2 
+#C4BEGIN        [    1 29066   3 102   ]
+#DATA-HDR       DATA
+#VarFamily      [0 2        ]
+#xVariables     1
+#+              Y = Y(X1)
+#ReacRatio      false
+#vReacs         1
+#C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
+#C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
+#+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 29-CU-66(N,G)29-CU-67,,SIG,,SPA
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (29-CU-66(N,G)29-CU-67,,SIG,,SPA)
+#+               #[1]#DECAY-DATA (29-CU-67,59.HR,DG,184.,.45) #Ix_old=0.45
+#+                a1=0.45/0.487;              #[1]#DECAY-DATA: correction to new 184.577 keV gamma-yield per decay Cu-67 Ix_new=0.487
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.92402464
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        12598002    0.924025    -           0.924025    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12598002    CS          1           0.924025    0.924025    0.924025    -7.60%      1.08222                
+#C5DATA         1
+#C.M.Flag       0000                                                                            
+#Headers                    SpE     dSpE     Data    dData                                    
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 29066   3 102      0.0253         120.12321 27.72074                                       T.O.Passell*,        (58)12598  2                             27.72074                            23.1     23.1                                        0.92402460.9240246
+#/C5DATA        0
+#/DATASET       12598002 
+#/C5M.2.3       1               1               1               0               1               
