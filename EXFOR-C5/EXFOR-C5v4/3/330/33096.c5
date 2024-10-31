@@ -29,6 +29,10 @@
 #C4ReaCode      (N,G),SIG
 #CompNotes      ERR-ANALYS:(ERR-S,3.1,5.5)    ADDED AS COMMON:ERR-S,PER-CENT=3.1%
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=4
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0085145(1.1e6) Data[3]*1.0958973(4.1e6)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -45,16 +49,32 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             exfor:[EN,MONIT,MONIT-ERR]
+#M1             Monitor:{recom$in115ngm}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 79-AU-197(N,G)79-AU-198,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
+#+              m1: recom$in115ngm;           #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        33096002    1.08596     1.08596     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          33096002    CS          4           1.00851     1.12312     1.08596     +8.60%      1.12312     [EN,MONIT,MONIT-ERR]::in115ngm
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 79197   3 102   1120000.0 120000.0.06044101 0.003403                                       V.Vansola,           (15)33096  2 0.00318420.0018737          0.003403 5.27     3.10              5.63     5.63
-    1 79197   3 102   2120000.0 150000.0 0.040588 0.003063                                       V.Vansola,           (15)33096  2 0.00228420.0012582          0.003063 5.63     3.10              7.55     7.55
-    1 79197   3 102   3120000.0 210000.0 0.019771 0.002673                                       V.Vansola,           (15)33096  2 0.0010649 6.129E-4          0.002673 5.39     3.10              13.5     13.5
-    1 79197   3 102   4120000.0 320000.0 0.013944 0.001611                                       V.Vansola,           (15)33096  2 8.0308E-44.3226E-4          0.001611 5.76     3.10              11.6     11.6
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 79197   3 102   1120000.0 120000.0.06095564 3.4604-3                                       V.Vansola*,          (15)33096  2  3.2417-30.0018737          3.4604-3 5.32     3.07              5.68     5.68    0.1744   0.0067   0.17588496.8769-3 1.00851451.0168804
+    1 79197   3 102   2120000.0 150000.0.04558519 3.4304-3                                       V.Vansola*,          (15)33096  2  2.5523-30.0012582          3.4304-3 5.60     2.76              7.53     7.53    0.1041   0.0045   0.11691685.0102-3 1.12311981.1199323
+    1 79197   3 102   3120000.0 210000.0.02207055 2.9893-3                                       V.Vansola*,          (15)33096  2  1.2023-3 6.129E-4          2.9893-3 5.45     2.78              13.5     13.5    0.0375   0.0015   0.0418616.001708781.11630931.1183306
+    1 79197   3 102   4120000.0 320000.0.01528119 1.7751-3                                       V.Vansola*,          (15)33096  2  8.9930-44.3226E-4          1.7751-3 5.89     2.83              11.6     11.6    0.0156   7.0E-4   0.017096 7.9453-4 1.09589731.1018904
 #/C5DATA        0
 #/DATASET       33096002 
 #/C5.2.3        1               1               1               0               4               

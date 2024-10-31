@@ -23,7 +23,7 @@
 #PRODUCT        55-CS-129
 #C4ReaCode      (N,X)CUM,SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=4
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0050181(1.4e7) Data[3]*1.0686426(1.8e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0044512(1.4e7) Data[3]*1.0686426(1.8e7)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.654%
 #CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
 #CompNotes      MODIFY(MON): dData
@@ -50,12 +50,12 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
 #M0             exfor:[EN,MONIT,MONIT-ERR]
-#M1             Monitor:{recom$nb93n2n}
+#M1             Monitor:{recom$nb93n2nm}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 56-BA-130(N,X)55-CS-129,CUM,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
 #+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
-#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              m1: recom$nb93n2nm;           #[0]#new monitor(energy)
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
@@ -71,17 +71,17 @@
 #+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        31421002    1.04304     1.03470     1.00654     1.00152
+#/C5CORR        31421002    1.04287     1.03453     1.00654     1.00152
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31421002    CS          4           1.01293     1.07726     1.04304     +4.30%      1.07726     [EN,MONIT,MONIT-ERR]::nb93n2n
+#XCORR          31421002    CS          4           1.01255     1.07726     1.04287     +4.29%      1.07726     [EN,MONIT,MONIT-ERR]::nb93n2nm
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 56130   39001     1.421E7 170000.01.5875585.04580438           55129.9                     Lu Hanlin*,          (92)31421  2  8.5295-3                  .04580438 0.54                       2.89     2.89    0.4577   0.0045   0.45999682.4980-3 1.01311960.9745613
-    1 56130   39001     1.482E7 210000.01.8840575.05007477           55129.9                     Lu Hanlin*,          (92)31421  2 .01116788                  .05007477 0.59                       2.66     2.66    0.458    0.006    0.460214 2.7284-3 1.01293410.9273103
+    1 56130   39001     1.421E7 170000.0 1.586663.04581818           55129.9                     Lu Hanlin*,          (92)31421  2  8.7350-3                  .04581818 0.55                       2.89     2.89    0.4577   0.0045   0.45973742.5569-3 1.01254810.9748549
+    1 56130   39001     1.482E7 210000.01.8838845.05019169           55129.9                     Lu Hanlin*,          (92)31421  2 .01169965                  .05019169 0.62                       2.66     2.66    0.458    0.006    0.4601718.002858271.01284110.9294755
     1 56130   39001     1.695E7 330000.01.9944692.05247648           55129.9                     Lu Hanlin*,          (92)31421  2 .02097616                  .05247648 1.05                       2.63     2.63    0.413    0.011    0.437904 4.6435-3 1.06884730.783231
     1 56130   39001     1.798E7 210000.01.94875810.0571032           55129.9                     Lu Hanlin*,          (92)31421  2 .02374866                  0.0571032 1.22                       2.93     2.93    0.388    0.015    0.41463334.9998-3 1.077257 0.6718023
 #/C5DATA        0
@@ -98,9 +98,9 @@
 #COVARDATA      1           4           4
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.421E7     1.421E7     1.58756     2.89         100
-1.482E7     1.482E7     1.88406     2.66          3 100
-1.695E7     1.695E7     1.99447     2.63          4  4 100
+1.421E7     1.421E7     1.58666     2.89         100
+1.482E7     1.482E7     1.88389     2.66          4 100
+1.695E7     1.695E7     1.99447     2.63          4  5 100
 1.798E7     1.798E7     1.94876     2.93          4  5 12 100
 #/COVARDATA
 #/COVARIANCE
@@ -129,7 +129,7 @@
 #PRODUCT        56-BA-131
 #C4ReaCode      (N,2N),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=4
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0050181(1.4e7) Data[3]*1.0686426(1.8e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0044512(1.4e7) Data[3]*1.0686426(1.8e7)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]-8.33%
 #CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
 #CompNotes      MODIFY(MON): dData
@@ -156,12 +156,12 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
 #M0             exfor:[EN,MONIT,MONIT-ERR]
-#M1             Monitor:{recom$nb93n2n}
+#M1             Monitor:{recom$nb93n2nm}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 56-BA-132(N,2N)56-BA-131,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
 #+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
-#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              m1: recom$nb93n2nm;           #[0]#new monitor(energy)
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
@@ -177,17 +177,17 @@
 #+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        31421003    0.949911    1.03470     0.916667    1.00152
+#/C5CORR        31421003    0.949760    1.03453     0.916667    1.00152
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31421003    CS          4           0.922494    0.981073    0.949911    -5.01%      1.08402     [EN,MONIT,MONIT-ERR]::nb93n2n
+#XCORR          31421003    CS          4           0.922142    0.981073    0.949760    -5.02%      1.08443     [EN,MONIT,MONIT-ERR]::nb93n2nm
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 56132   3  16     1.421E7 170000.0 1.5694490.1452121                                       Lu Hanlin*,          (92)31421  3  8.4322-3                  0.1452121 0.54                       9.25     9.25    0.4577   0.0045   0.45999682.4980-3 0.92266250.9190638
-    1 56132   3  16     1.482E7 210000.01.60329390.1473357                                       Lu Hanlin*,          (92)31421  3  9.5036-3                  0.1473357 0.59                       9.19     9.19    0.458    0.006    0.460214 2.7284-3 0.92249350.9151286
+    1 56132   3  16     1.421E7 170000.01.56856360.1451424                                       Lu Hanlin*,          (92)31421  3  8.6354-3                  0.1451424 0.55                       9.25     9.25    0.4577   0.0045   0.45973742.5569-3 0.922142 0.9186226
+    1 56132   3  16     1.482E7 210000.01.60314670.1473521                                       Lu Hanlin*,          (92)31421  3  9.9562-3                  0.1473521 0.62                       9.19     9.19    0.458    0.006    0.4601718.002858270.92240880.9152306
     1 56132   3  16     1.695E7 330000.0 1.657725  0.15341                                       Lu Hanlin*,          (92)31421  3 .01743456                    0.15341 1.05                       9.25     9.25    0.413    0.011    0.437904 4.6435-3 0.97341450.9411657
     1 56132   3  16     1.798E7 210000.01.65016540.1532706                                       Lu Hanlin*,          (92)31421  3 .02010988                  0.1532706 1.22                       9.29     9.29    0.388    0.015    0.41463334.9998-3 0.98107330.9123248
 #/C5DATA        0
@@ -204,8 +204,8 @@
 #COVARDATA      1           4           4
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.421E7     1.421E7     1.56945     9.25         100
-1.482E7     1.482E7     1.60329     9.19          0 100
+1.421E7     1.421E7     1.56856     9.25         100
+1.482E7     1.482E7     1.60315     9.19          0 100
 1.695E7     1.695E7     1.65772     9.25          0  0 100
 1.798E7     1.798E7     1.65016     9.29          0  0  1 100
 #/COVARDATA
@@ -235,7 +235,7 @@
 #PRODUCT        56-BA-133-M
 #C4ReaCode      (N,2N),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=4
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0050181(1.4e7) Data[3]*1.0686426(1.8e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0044512(1.4e7) Data[3]*1.0686426(1.8e7)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.13%
 #CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
 #CompNotes      MODIFY(MON): dData
@@ -262,12 +262,12 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
 #M0             exfor:[EN,MONIT,MONIT-ERR]
-#M1             Monitor:{recom$nb93n2n}
+#M1             Monitor:{recom$nb93n2nm}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 56-BA-134(N,2N)56-BA-133-M,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
 #+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
-#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              m1: recom$nb93n2nm;           #[0]#new monitor(energy)
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
@@ -283,17 +283,17 @@
 #+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        31421004    1.02456     1.03470     0.988701    1.00152
+#/C5CORR        31421004    1.02439     1.03453     0.988701    1.00152
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31421004    CS          4           0.994985    1.05817     1.02456     +2.46%      1.05817     [EN,MONIT,MONIT-ERR]::nb93n2n
+#XCORR          31421004    CS          4           0.994606    1.05817     1.02439     +2.44%      1.05817     [EN,MONIT,MONIT-ERR]::nb93n2nm
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 56134   3  16M    1.421E7 170000.00.7374192.03227959                                       Lu Hanlin*,          (92)31421  4  3.9619-3                  .03227959 0.54                       4.38     4.38    0.4577   0.0045   0.45999682.4980-3 0.99516760.9781694
-    1 56134   3  16M    1.482E7 210000.00.7323093.03170043                                       Lu Hanlin*,          (92)31421  4  4.3408-3                  .03170043 0.59                       4.33     4.33    0.458    0.006    0.460214 2.7284-3 0.99498530.9606192
+    1 56134   3  16M    1.421E7 170000.00.7370033.03227352                                       Lu Hanlin*,          (92)31421  4  4.0574-3                  .03227352 0.55                       4.38     4.38    0.4577   0.0045   0.45973742.5569-3 0.99460610.9779854
+    1 56134   3  16M    1.482E7 210000.0 0.732242.03172654                                       Lu Hanlin*,          (92)31421  4  4.5475-3                  .03172654 0.62                       4.33     4.33    0.458    0.006    0.4601718.002858270.99489390.9614104
     1 56134   3  16M    1.695E7 330000.00.94281730.0424482                                       Lu Hanlin*,          (92)31421  4  9.9158-3                  0.0424482 1.05                       4.50     4.50    0.413    0.011    0.437904 4.6435-3 1.04990780.9227869
     1 56134   3  16M    1.798E7 210000.00.9206067.04069215                                       Lu Hanlin*,          (92)31421  4 .01121902                  .04069215 1.22                       4.42     4.42    0.388    0.015    0.41463334.9998-3 1.05816840.813843
 #/C5DATA        0
@@ -310,8 +310,8 @@
 #COVARDATA      1           4           4
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.421E7     1.421E7     0.737419    4.38         100
-1.482E7     1.482E7     0.732309    4.33          1 100
+1.421E7     1.421E7     0.737003    4.38         100
+1.482E7     1.482E7     0.732242    4.33          2 100
 1.695E7     1.695E7     0.942817    4.5           1  2 100
 1.798E7     1.798E7     0.920607    4.42          2  2  5 100
 #/COVARDATA
@@ -341,7 +341,7 @@
 #PRODUCT        56-BA-133
 #C4ReaCode      (N,2N),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=6
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0091289(1.4e7) Data[5]*1.0686426(1.8e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0082746(1.4e7) Data[5]*1.0686426(1.8e7)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.242%
 #CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
 #CompNotes      MODIFY(MON): dData
@@ -368,12 +368,12 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
 #M0             exfor:[EN,MONIT,MONIT-ERR]
-#M1             Monitor:{recom$nb93n2n}
+#M1             Monitor:{recom$nb93n2nm}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 56-BA-134(N,2N)56-BA-133,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
 #+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
-#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              m1: recom$nb93n2nm;           #[0]#new monitor(energy)
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
@@ -389,19 +389,19 @@
 #+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        31421005    1.02935     1.02532     1.00242     1.00152
+#/C5CORR        31421005    1.02915     1.02512     1.00242     1.00152
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31421005    CS          6           1.00647     1.07285     1.02935     +2.94%      1.07285     [EN,MONIT,MONIT-ERR]::nb93n2n
+#XCORR          31421005    CS          6           1.00622     1.07285     1.02915     +2.92%      1.07285     [EN,MONIT,MONIT-ERR]::nb93n2nm
 #C5DATA         6
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 56134   3  16      1.35E7 150000.01.6868132.04112362                                       Lu Hanlin*,          (92)31421  5 0.0100514                  .04112362 0.60                       2.44     2.44    0.4489   0.0074   0.452998 .002680131.013101 0.856742
+    1 56134   3  16      1.35E7 150000.01.68538510.0411058                                       Lu Hanlin*,          (92)31421  5 .01011221                  0.0411058 0.60                       2.44     2.44    0.4489   0.0074   0.4526145.002696611.01224330.8563708
     1 56134   3  16      1.41E7 150000.01.7409892.04285246                                       Lu Hanlin*,          (92)31421  5  9.5074-3                  .04285246 0.55                       2.46     2.46    0.4567   0.0047   0.459659 .002502551.01044060.9522769
-    1 56134   3  16     1.464E7 210000.01.8186895.03984533                                       Lu Hanlin*,          (92)31421  5 .01037451                  .03984533 0.57                       2.19     2.19    0.459    0.005    0.460158 2.6190-3 1.00646890.9266355
-    1 56134   3  16     1.482E7 210000.01.7754691.04375469                                       Lu Hanlin*,          (92)31421  5 .01052422                  .04375469 0.59                       2.46     2.46    0.458    0.006    0.460214 2.7284-3 1.00878920.9115561
+    1 56134   3  16     1.464E7 210000.01.8182373.03999463                                       Lu Hanlin*,          (92)31421  5 .01096751                  .03999463 0.60                       2.20     2.20    0.459    0.005    0.4600436.002769341.00621870.9301076
+    1 56134   3  16     1.482E7 210000.01.7753061.04387415                                       Lu Hanlin*,          (92)31421  5 .01102534                  .04387415 0.62                       2.47     2.47    0.458    0.006    0.4601718.002858271.00869660.9140447
     1 56134   3  16     1.695E7 330000.01.7020936.04563253                                       Lu Hanlin*,          (92)31421  5 0.0179012                  .04563253 1.05                       2.68     2.68    0.413    0.011    0.437904 4.6435-3 1.06447370.7867678
     1 56134   3  16     1.798E7 210000.0 1.741234.04882456                                       Lu Hanlin*,          (92)31421  5 .02121966                  .04882456 1.22                       2.80     2.80    0.388    0.015    0.41463334.9998-3 1.07284890.6509941
 #/C5DATA        0
@@ -418,10 +418,10 @@
 #COVARDATA      1           6           6
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.35E7      1.35E7      1.68681     2.44         100
+1.35E7      1.35E7      1.68538     2.44         100
 1.41E7      1.41E7      1.74099     2.46          5 100
-1.464E7     1.464E7     1.81869     2.19          5  5 100
-1.482E7     1.482E7     1.77547     2.46          4  4  6 100
+1.464E7     1.464E7     1.81824     2.2           5  5 100
+1.482E7     1.482E7     1.77531     2.47          4  5  7 100
 1.695E7     1.695E7     1.70209     2.68          5  4  5  5 100
 1.798E7     1.798E7     1.74123     2.8           5  5  6  5 13 100
 #/COVARDATA
@@ -451,7 +451,7 @@
 #PRODUCT        55-CS-134
 #C4ReaCode      (N,X),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=6
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0091289(1.4e7) Data[5]*1.0686426(1.8e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0082746(1.4e7) Data[5]*1.0686426(1.8e7)
 #CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
@@ -477,12 +477,12 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
 #M0             exfor:[EN,MONIT,MONIT-ERR]
-#M1             Monitor:{recom$nb93n2n}
+#M1             Monitor:{recom$nb93n2nm}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 56-BA-0(N,X)55-CS-134,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
 #+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
-#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              m1: recom$nb93n2nm;           #[0]#new monitor(energy)
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
@@ -493,19 +493,19 @@
 #+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        31421006    1.02687     1.02532     -           1.00152
+#/C5CORR        31421006    1.02667     1.02512     -           1.00152
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31421006    CS          6           1.00404     1.07026     1.02687     +2.69%      1.07026     [EN,MONIT,MONIT-ERR]::nb93n2n
+#XCORR          31421006    CS          6           1.00379     1.07026     1.02667     +2.67%      1.07026     [EN,MONIT,MONIT-ERR]::nb93n2nm
 #C5DATA         6
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 56000   39000      1.35E7 150000.0 4.5884-4 1.5664-5           55134.9                     Lu Hanlin*,          (92)31421  6  2.7341-6                   1.5664-5 0.60                       3.41     3.41    0.4489   0.0074   0.452998 .002680131.01065790.9213931
+    1 56000   39000      1.35E7 150000.0 4.5845-4 1.5654-5           55134.9                     Lu Hanlin*,          (92)31421  6  2.7507-6                   1.5654-5 0.60                       3.41     3.41    0.4489   0.0074   0.4526145.002696611.00980220.9208073
     1 56000   39000      1.41E7 150000.0 5.2618-4 1.6508-5           55134.9                     Lu Hanlin*,          (92)31421  6  2.8734-6                   1.6508-5 0.55                       3.14     3.14    0.4567   0.0047   0.459659 .002502551.008004 0.9710854
-    1 56000   39000     1.464E7 210000.0 6.9379-4 2.3219-5           55134.9                     Lu Hanlin*,          (92)31421  6  3.9577-6                   2.3219-5 0.57                       3.35     3.35    0.459    0.005    0.460158 2.6190-3 1.00404180.9674741
-    1 56000   39000     1.482E7 210000.0 6.4507-4 2.0818-5           55134.9                     Lu Hanlin*,          (92)31421  6  3.8237-6                   2.0818-5 0.59                       3.23     3.23    0.458    0.006    0.460214 2.7284-3 1.00635650.9462661
+    1 56000   39000     1.464E7 210000.0 6.9362-4 2.3253-5           55134.9                     Lu Hanlin*,          (92)31421  6  4.1839-6                   2.3253-5 0.60                       3.35     3.35    0.459    0.005    0.4600436.002769341.00379220.9688921
+    1 56000   39000     1.482E7 210000.0 6.4502-4 2.0850-5           55134.9                     Lu Hanlin*,          (92)31421  6  4.0058-6                   2.0850-5 0.62                       3.23     3.23    0.458    0.006    0.4601718.002858271.00626410.9477372
     1 56000   39000     1.695E7 330000.0 1.9008-3 5.8040-5           55134.9                     Lu Hanlin*,          (92)31421  6  1.9991-5                   5.8040-5 1.05                       3.05     3.05    0.413    0.011    0.437904 4.6435-3 1.06190670.8291418
     1 56000   39000     1.798E7 210000.0 1.4449-3 5.2879-5           55134.9                     Lu Hanlin*,          (92)31421  6  1.7608-5                   5.2879-5 1.22                       3.66     3.66    0.388    0.015    0.41463334.9998-3 1.07026170.7554173
 #/C5DATA        0
@@ -522,10 +522,10 @@
 #COVARDATA      1           6           6
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.35E7      1.35E7      4.5884-4    3.41         100
+1.35E7      1.35E7      4.5845-4    3.41         100
 1.41E7      1.41E7      5.2618-4    3.14          3 100
-1.464E7     1.464E7     6.9379-4    3.35          2  3 100
-1.482E7     1.482E7     6.4507-4    3.23          2  3  3 100
+1.464E7     1.464E7     6.9362-4    3.35          2  3 100
+1.482E7     1.482E7     6.4502-4    3.23          2  3  3 100
 1.695E7     1.695E7     1.9008-3    3.05          3  3  3  3 100
 1.798E7     1.798E7     1.4449-3    3.66          3  3  3  3  9 100
 #/COVARDATA
@@ -582,12 +582,12 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
 #M0             exfor:[EN,MONIT,MONIT-ERR]
-#M1             Monitor:{recom$nb93n2n}
+#M1             Monitor:{recom$nb93n2nm}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 56-BA-134(N,A)54-XE-131-M,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
 #+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
-#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              m1: recom$nb93n2nm;           #[0]#new monitor(energy)
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
@@ -605,7 +605,7 @@
 #+
 #/C5CORR        31421007    1.07155     1.06447     1.00513     1.00152
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31421007    CS          2           1.06735     1.07575     1.07155     +7.16%      1.07575     [EN,MONIT,MONIT-ERR]::nb93n2n
+#XCORR          31421007    CS          2           1.06735     1.07575     1.07155     +7.16%      1.07575     [EN,MONIT,MONIT-ERR]::nb93n2nm
 #C5DATA         2
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
@@ -657,7 +657,7 @@
 #PRODUCT        56-BA-135-M
 #C4ReaCode      (N,2N),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=4
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0050181(1.4e7) Data[3]*1.0686426(1.8e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0044512(1.4e7) Data[3]*1.0686426(1.8e7)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.50%
 #CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
 #CompNotes      MODIFY(MON): dData
@@ -684,12 +684,12 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
 #M0             exfor:[EN,MONIT,MONIT-ERR]
-#M1             Monitor:{recom$nb93n2n}
+#M1             Monitor:{recom$nb93n2nm}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 56-BA-136(N,2N)56-BA-135-M,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
 #+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
-#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              m1: recom$nb93n2nm;           #[0]#new monitor(energy)
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
@@ -705,17 +705,17 @@
 #+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        31421008    1.01036     1.03470     0.975000    1.00152
+#/C5CORR        31421008    1.01020     1.03453     0.975000    1.00152
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31421008    CS          4           0.981198    1.04351     1.01036     +1.04%      1.04351     [EN,MONIT,MONIT-ERR]::nb93n2n
+#XCORR          31421008    CS          4           0.980824    1.04351     1.01020     +1.02%      1.04351     [EN,MONIT,MONIT-ERR]::nb93n2nm
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 56136   3  16M    1.421E7 170000.00.9401596.02637606                                       Lu Hanlin*,          (92)31421  8  5.0512-3                  .02637606 0.54                       2.81     2.81    0.4577   0.0045   0.45999682.4980-3 0.98137740.9420022
-    1 56136   3  16M    1.482E7 210000.0 0.968442.02503595                                       Lu Hanlin*,          (92)31421  8 .00574051                  .02503595 0.59                       2.59     2.59    0.458    0.006    0.460214 2.7284-3 0.98119760.8941411
+    1 56136   3  16M    1.421E7 170000.00.9396293.02638532                                       Lu Hanlin*,          (92)31421  8  5.1729-3                  .02638532 0.55                       2.81     2.81    0.4577   0.0045   0.45973742.5569-3 0.98082380.9423329
+    1 56136   3  16M    1.482E7 210000.00.9683532.02509787                                       Lu Hanlin*,          (92)31421  8  6.0139-3                  .02509787 0.62                       2.59     2.59    0.458    0.006    0.4601718.002858270.98110750.8963524
     1 56136   3  16M    1.695E7 330000.01.2693504.03476927                                       Lu Hanlin*,          (92)31421  8 .01334997                  .03476927 1.05                       2.74     2.74    0.413    0.011    0.437904 4.6435-3 1.03535910.7726504
     1 56136   3  16M    1.798E7 210000.01.2386408.03498547                                       Lu Hanlin*,          (92)31421  8 .01509479                  .03498547 1.22                       2.82     2.82    0.388    0.015    0.41463334.9998-3 1.04350530.6360994
 #/C5DATA        0
@@ -732,9 +732,9 @@
 #COVARDATA      1           4           4
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.421E7     1.421E7     0.94016     2.81         100
-1.482E7     1.482E7     0.968442    2.59          4 100
-1.695E7     1.695E7     1.26935     2.74          4  4 100
+1.421E7     1.421E7     0.939629    2.81         100
+1.482E7     1.482E7     0.968353    2.59          4 100
+1.695E7     1.695E7     1.26935     2.74          4  5 100
 1.798E7     1.798E7     1.23864     2.82          4  5 12 100
 #/COVARDATA
 #/COVARIANCE
@@ -763,7 +763,7 @@
 #PRODUCT        55-CS-136
 #C4ReaCode      (N,X),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=4
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0050181(1.4e7) Data[3]*1.0686426(1.8e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0044512(1.4e7) Data[3]*1.0686426(1.8e7)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]+3.85%
 #CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
 #CompNotes      MODIFY(MON): dData
@@ -790,12 +790,12 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
 #M0             exfor:[EN,MONIT,MONIT-ERR]
-#M1             Monitor:{recom$nb93n2n}
+#M1             Monitor:{recom$nb93n2nm}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 56-BA-0(N,X)55-CS-136,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
 #+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
-#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              m1: recom$nb93n2nm;           #[0]#new monitor(energy)
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
@@ -811,17 +811,17 @@
 #+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        31421009    1.07612     1.03470     1.03846     1.00152
+#/C5CORR        31421009    1.07595     1.03453     1.03846     1.00152
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31421009    CS          4           1.04506     1.11143     1.07612     +7.61%      1.11143     [EN,MONIT,MONIT-ERR]::nb93n2n
+#XCORR          31421009    CS          4           1.04466     1.11143     1.07595     +7.60%      1.11143     [EN,MONIT,MONIT-ERR]::nb93n2nm
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 56000   39000     1.421E7 170000.0 4.4841-4 1.9517-5           55136.9                     Lu Hanlin*,          (92)31421  9  2.4092-6                   1.9517-5 0.54                       4.35     4.35    0.4577   0.0045   0.45999682.4980-3 1.045254 1.0272003
-    1 56000   39000     1.482E7 210000.0 5.4552-4 2.2090-5           55136.9                     Lu Hanlin*,          (92)31421  9  3.2336-6                   2.2090-5 0.59                       4.05     4.05    0.458    0.006    0.460214 2.7284-3 1.04506271.004113
+    1 56000   39000     1.421E7 170000.0 4.4816-4 1.9513-5           55136.9                     Lu Hanlin*,          (92)31421  9  2.4673-6                   1.9513-5 0.55                       4.35     4.35    0.4577   0.0045   0.45973742.5569-3 1.04466441.0270116
+    1 56000   39000     1.482E7 210000.0 5.4547-4 2.2112-5           55136.9                     Lu Hanlin*,          (92)31421  9  3.3876-6                   2.2112-5 0.62                       4.05     4.05    0.458    0.006    0.4601718.002858271.04496661.0050709
     1 56000   39000     1.695E7 330000.0 1.2351-3 4.6147-5           55136.9                     Lu Hanlin*,          (92)31421  9  1.2990-5                   4.6147-5 1.05                       3.74     3.74    0.413    0.011    0.437904 4.6435-3 1.10274930.9229391
     1 56000   39000     1.798E7 210000.0 1.6005-3 6.6707-5           55136.9                     Lu Hanlin*,          (92)31421  9  1.9504-5                   6.6707-5 1.22                       4.17     4.17    0.388    0.015    0.41463334.9998-3 1.11142580.8338408
 #/C5DATA        0
@@ -838,8 +838,8 @@
 #COVARDATA      1           4           4
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.421E7     1.421E7     4.4841-4    4.35         100
-1.482E7     1.482E7     5.4552-4    4.05          2 100
+1.421E7     1.421E7     4.4816-4    4.35         100
+1.482E7     1.482E7     5.4547-4    4.05          2 100
 1.695E7     1.695E7     1.2351-3    3.74          2  2 100
 1.798E7     1.798E7     1.6005-3    4.17          2  2  6 100
 #/COVARDATA
@@ -902,7 +902,7 @@
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
 #+              #[0]#En=1.798E7
 #+              a0=[MONIT];                   #[0]#old monitor point 0.388
-#+              a1=recom$nb93n2n[EN];         #[0]#new monitor point [17.98MeV]
+#+              a1=recom$nb93n2nm[EN];        #[0]#new monitor point [17.98MeV]
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y*a1/a0;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
@@ -919,7 +919,7 @@
 #+
 #/C5CORR        31421010    1.08930     1.06864     1.01779     1.00152
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31421010    CS          1           1.08930     1.08930     1.08930     +8.93%      1.08930     [MONIT]::nb93n2n
+#XCORR          31421010    CS          1           1.08930     1.08930     1.08930     +8.93%      1.08930     [MONIT]::nb93n2nm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
@@ -953,7 +953,7 @@
 #PRODUCT        54-XE-135
 #C4ReaCode      (N,A),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=4
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0050181(1.4e7) Data[3]*1.0686426(1.8e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0044512(1.4e7) Data[3]*1.0686426(1.8e7)
 #CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.152%
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
@@ -979,12 +979,12 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
 #M0             exfor:[EN,MONIT,MONIT-ERR]
-#M1             Monitor:{recom$nb93n2n}
+#M1             Monitor:{recom$nb93n2nm}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 56-BA-138(N,A)54-XE-135,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
 #+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
-#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              m1: recom$nb93n2nm;           #[0]#new monitor(energy)
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
@@ -995,17 +995,17 @@
 #+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0015152
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        31421011    1.03627     1.03470     -           1.00152
+#/C5CORR        31421011    1.03610     1.03453     -           1.00152
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31421011    CS          4           1.00636     1.07026     1.03627     +3.63%      1.07026     [EN,MONIT,MONIT-ERR]::nb93n2n
+#XCORR          31421011    CS          4           1.00597     1.07026     1.03610     +3.61%      1.07026     [EN,MONIT,MONIT-ERR]::nb93n2nm
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 56138   3 107     1.421E7 170000.0 2.2848-3 8.8632-5                                       Lu Hanlin*,          (92)31421 11  1.2276-5                   8.8632-5 0.54                       3.88     3.88    0.4577   0.0045   0.45999682.4980-3 1.00654090.9847996
-    1 56138   3 107     1.482E7 210000.0 3.1499-3 1.1502-4                                       Lu Hanlin*,          (92)31421 11  1.8671-5                   1.1502-4 0.59                       3.65     3.65    0.458    0.006    0.460214 2.7284-3 1.00635650.9584991
+    1 56138   3 107     1.421E7 170000.0 2.2836-3 8.8624-5                                       Lu Hanlin*,          (92)31421 11  1.2572-5                   8.8624-5 0.55                       3.88     3.88    0.4577   0.0045   0.45973742.5569-3 1.00597310.9847156
+    1 56138   3 107     1.482E7 210000.0 3.1496-3 1.1516-4                                       Lu Hanlin*,          (92)31421 11  1.9560-5                   1.1516-4 0.62                       3.66     3.66    0.458    0.006    0.4601718.002858271.00626410.9596441
     1 56138   3 107     1.695E7 330000.0 4.7467-3 1.9047-4                                       Lu Hanlin*,          (92)31421 11  4.9917-5                   1.9047-4 1.05                       4.01     4.01    0.413    0.011    0.437904 4.6435-3 1.06190670.9070033
     1 56138   3 107     1.798E7 210000.0 3.8529-3 1.4602-4                                       Lu Hanlin*,          (92)31421 11  4.6954-5                   1.4602-4 1.22                       3.79     3.79    0.388    0.015    0.41463334.9998-3 1.07026170.7685356
 #/C5DATA        0
@@ -1022,8 +1022,8 @@
 #COVARDATA      1           4           4
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.421E7     1.421E7     2.2848-3    3.88         100
-1.482E7     1.482E7     3.1499-3    3.65          2 100
+1.421E7     1.421E7     2.2836-3    3.88         100
+1.482E7     1.482E7     3.1496-3    3.66          2 100
 1.695E7     1.695E7     4.7467-3    4.01          2  2 100
 1.798E7     1.798E7     3.8529-3    3.79          2  3  6 100
 #/COVARDATA

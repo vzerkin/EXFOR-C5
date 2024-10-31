@@ -1,10 +1,10 @@
 #!/bin/bash
 cat EXFOR-C5.txt
-echo "        +------------------------------------------+"
-echo "        |     EXFOR-C5: full EXFOR in C5 format.   |"
-echo "        |  v.zerkin@iaea.org, IAEA-NDS 2010-2023   |"
-echo "        |  v.zerkin@gmail.com, version 2024-04-02  |"
-echo "        +------------------------------------------+"
+echo "        +----------------------------------------+"
+echo "        |   EXFOR-C5: full EXFOR in C5 format.   |"
+echo "        |   v.zerkin@iaea.org, IAEA 2010-2023.   |"
+echo "        |   v.zerkin@gmail.com, ver.2024-04-02   |"
+echo "        +----------------------------------------+"
 echo ""
 echo "Create single C5 file from C5 files stored in sub-directories"
 echo "Script:$0 `date +%F`,`date +%T` on `uname -n`/`uname -s`"
@@ -65,33 +65,38 @@ ls -la  all.c5
 
 echo ""
 echo "File all.c5 info:"
+echo "Begin:"
 head --lines=17 all.c5 
+echo "End:"
 tail --lines=1  all.c5
 
 echo ""
-echo "Statistics"
+echo "Generating statistics..."
+echo "Statistics `date +%F,%T`" >stat.txt
 
 nLines=`cat all.c5|wc -l`
-echo "	#Lines:              $nLines"
+echo "#Lines:              $nLines" >>stat.txt
 
 nEntry=`cat all.c5|grep "^#ENTRY"|sort -u|wc -l`
-echo "	#Entries:            $nEntry"
+echo "#Entries:            $nEntry" >>stat.txt
 
 nDatasets=`cat all.c5|grep "^#DATASET"|wc -l`
-echo "	#Datasets:           $nDatasets"
+echo "#Datasets:           $nDatasets" >>stat.txt
 
 nCorr=`cat all.c5|grep "^#C5CORR"|wc -l`
-echo "	#Corrected Datasets: $nCorr"
+echo "#Corrected Datasets: $nCorr" >>stat.txt
 
 nCovar=`cat all.c5|grep "^#COVARIANCE"|wc -l`
-echo "	#Covariance Data:    $nCovar"
+echo "#Covariance Data:    $nCovar" >>stat.txt
 
 str=`cat all.c5|grep "#C5DATA"|awk '{printf $2"+"}'`
 nDataPoints=`echo "${str}0"|bc`
-echo "	#Data points:        $nDataPoints"
+echo "#Data points:        $nDataPoints" >>stat.txt
 
-echo "	#Datasets by MF:"
-cat all.c5|grep "^#MF"|awk '{print $1":"$2}'|sort|uniq -c |sort -g
+echo "#Datasets by MF:" >>stat.txt
+cat all.c5|grep "^#MF"|awk '{print $1":"$2}'|sort|uniq -c |sort -g -r >>stat.txt
+
+cat stat.txt
 
 #All corrections
 echo "#Flag           DatasetID   Fc:Ave      MONIT:Ave   DECAY-DATA  DECAY-MON" >c5corr.lst

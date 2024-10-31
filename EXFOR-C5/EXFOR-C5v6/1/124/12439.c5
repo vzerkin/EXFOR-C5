@@ -58,23 +58,29 @@
 #REFERENCE1     Jour: Physical Review, Vol.113, p.1285 (1959)
 #DATE           19830809
 #INSTITUTE      1USACOL
-#REACTION       92-U-235(N,ABS),,ALF
+#REACTION_X4    92-U-235(N,ABS),,ALF
+#REACTION       92-U-235(N,G),,SIG
 #C4Reaction     (N,ABS),ALF
-#ReactionType   ALF
-#MF             203
+#ReactionTyp_X4 ALF
+#ReactionType   CS
+#MF             3
 #MT             102
 #PROJ           1
 #TARG           92235            
 #TARGET         92235           [ ]             92-U-235        [ ] 
 #REAC1          N,ABS
 #C4ReaCode      (N,ABS),ALF
-#Quantity       Capture-to-fission cross section ratio
-#DataUnits0     NO-DIM
-#DataUnits      ?
+#CompNotes      CALCULATE(MF203:RATIO->MF3:SIG): Data[0]*1768.12(2.9e-3)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#Quantity_X4    Capture-to-fission cross section ratio
+#Quantity       Cross section
+#DataUnits_X4   NO-DIM
+#DataUnits      B
 #D4REAC         R0#
 #ReaCombi       a
 #C4FOUND        1 
-#C4BEGIN        [    1 92235 203 102   ]
+#C4BEGIN        [    1 92235   3 102   ]
 #DATA-HDR       DATA
 #VarFamily      [0 2        ]
 #xVariables     1
@@ -85,13 +91,16 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #REAC-RATIO     (92-U-235(N,G),,SIG)/(92-U-235(N,F),,SIG)
+#Ratio2CS       1
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          12439003    ALF         1           1768.12     1768.12     1768.12     +1.77e+05%  1768.12                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
-#Units                       EV       EV   NO-DIM   NO-DIM                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 92235 203 102     0.00291             0.171    0.009                                       G.J.SAFFORD,         (59)12439  3                                0.009                            5.26     5.26
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92235   3 102     0.00291          302.348516.033865                                       G.J.SAFFORD*,        (59)12439  3                            16.033865                            5.30     5.30                      1768.12  11.4875991768.12  1.0075903
 #/C5DATA        0
 #/DATASET       12439003 
 #/C5.2.3        1               2               2               0               2               

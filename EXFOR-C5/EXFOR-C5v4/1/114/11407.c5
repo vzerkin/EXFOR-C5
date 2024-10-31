@@ -23,6 +23,10 @@
 #PRODUCT        11-NA-24
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -39,13 +43,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 11-NA-23(N,G)11-NA-24,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407002    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407002    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 11023   3 102    195000.0  50000.0   7.0E-4   2.0E-4                                       W.S.Lyon,            (59)11407  2  3.591E-5                     2.0E-4 5.13                       28.6     28.6
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 11023   3 102    195000.0  50000.0 7.8546-4 2.2149-4                                       W.S.Lyon*,           (59)11407  2 1.7889E-5                   2.2149-4 2.28                       28.2     28.2    0.195    0.01     0.21880814.9745-3 1.12209261.1074752
 #/C5DATA        0
 #/DATASET       11407002 
 #DATASET        11407003   20091005
@@ -72,6 +92,10 @@
 #PRODUCT        23-V-52
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -88,13 +112,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 23-V-51(N,G)23-V-52,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407003    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407003    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 23051   3 102    195000.0  50000.0    0.007   7.0E-4                                       W.S.Lyon,            (59)11407  3  3.591E-4                     7.0E-4 5.13                       10       10
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 23051   3 102    195000.0  50000.0 7.8546-3 6.9756-4                                       W.S.Lyon*,           (59)11407  3  1.7889-4                   6.9756-4 2.28                       8.88     8.88    0.195    0.01     0.21880814.9745-3 1.12209260.9965177
 #/C5DATA        0
 #/DATASET       11407003 
 #DATASET        11407004   20091005
@@ -121,6 +161,10 @@
 #PRODUCT        25-MN-56
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -137,13 +181,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 25-MN-55(N,G)25-MN-56,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407004    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407004    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 25055   3 102    195000.0  50000.0    0.011    0.001                                       W.S.Lyon,            (59)11407  4  5.643E-4                      0.001 5.13                       9.09     9.09
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 25055   3 102    195000.0  50000.0.01234302 9.6808-4                                       W.S.Lyon*,           (59)11407  4  2.8111-4                   9.6808-4 2.28                       7.84     7.84    0.195    0.01     0.21880814.9745-3 1.12209260.9680795
 #/C5DATA        0
 #/DATASET       11407004 
 #DATASET        11407005   20091005
@@ -170,9 +230,13 @@
 #PRODUCT        29-CU-64
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]+7.95%
+#CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
 #CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
 #CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
@@ -192,8 +256,15 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
 #M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
-#C5CORR         #Reaction: 29-CU-63(N,G)29-CU-64,,SIG
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 29-CU-63(N,G)29-CU-64,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
 #+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (29-CU-63(N,G)29-CU-64,,SIG)
 #+               #[1]#DECAY-DATA (29-CU-64,,DG,510.,0.38) #Ix_old=0.38
@@ -201,16 +272,16 @@
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0795455
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        11407005    1.07955     -           1.07955     -
+#/C5CORR        11407005    1.21135     1.12209     1.07955     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          11407005    CS          1           1.07955     1.07955     1.07955     +7.95%      1.07955     [MONIT]::in115ng
+#XCORR          11407005    CS          1           1.21135     1.21135     1.21135     +21.1%      1.21135     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 29063   3 102    195000.0  50000.0.04534091 6.4773-3                                       W.S.Lyon*,           (59)11407  5  2.3260-3                   6.4773-3 5.13                       14.3     14.3                                        1.07954551.0795455
+    1 29063   3 102    195000.0  50000.00.0508767 6.8816-3                                       W.S.Lyon*,           (59)11407  5  1.1587-3                   6.8816-3 2.28                       13.5     13.5    0.195    0.01     0.21880814.9745-3 1.21135  1.1469276
 #/C5DATA        0
 #/DATASET       11407005 
 #DATASET        11407006   20091005
@@ -237,9 +308,13 @@
 #PRODUCT        29-CU-66
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]+8.34%
+#CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
 #CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
 #CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
@@ -259,8 +334,15 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
 #M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
-#C5CORR         #Reaction: 29-CU-65(N,G)29-CU-66,,SIG
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 29-CU-65(N,G)29-CU-66,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
 #+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (29-CU-65(N,G)29-CU-66,,SIG)
 #+               #[1]#DECAY-DATA (29-CU-66,,DG,1040.,0.10) #Ix_old=0.1
@@ -268,16 +350,16 @@
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0834236
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        11407006    1.08342     -           1.08342     -
+#/C5CORR        11407006    1.21570     1.12209     1.08342     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          11407006    CS          1           1.08342     1.08342     1.08342     +8.34%      1.08342     [MONIT]::in115ng
+#XCORR          11407006    CS          1           1.21570     1.21570     1.21570     +21.6%      1.21570     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 29065   3 102    195000.0  50000.0.01516793 3.2503-3                                       W.S.Lyon*,           (59)11407  6  7.7811-4                   3.2503-3 5.13                       21.4     21.4                                        1.08342361.0834237
+    1 29065   3 102    195000.0  50000.0.01701982 3.5622-3                                       W.S.Lyon*,           (59)11407  6  3.8763-4                   3.5622-3 2.28                       20.9     20.9    0.195    0.01     0.21880814.9745-3 1.21570161.1874013
 #/C5DATA        0
 #/DATASET       11407006 
 #DATASET        11407007   20091005
@@ -304,6 +386,10 @@
 #PRODUCT        31-GA-72
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -320,13 +406,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 31-GA-71(N,G)31-GA-72,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407007    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407007    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 31071   3 102    195000.0  50000.0    0.053    0.003                                       W.S.Lyon,            (59)11407  7 0.0027189                      0.003 5.13                       5.66     5.66
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 31071   3 102    195000.0  50000.0.05947091 1.9643-3                                       W.S.Lyon*,           (59)11407  7  1.3545-3                   1.9643-3 2.28                       3.30     3.30    0.195    0.01     0.21880814.9745-3 1.12209260.6547804
 #/C5DATA        0
 #/DATASET       11407007 
 #DATASET        11407008   20091005
@@ -353,6 +455,10 @@
 #PRODUCT        32-GE-75
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -369,13 +475,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 32-GE-74(N,G)32-GE-75,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407008    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407008    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 32074   3 102    195000.0  50000.0    0.019    0.002                                       W.S.Lyon,            (59)11407  8  9.747E-4                      0.002 5.13                       10.5     10.5
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 32074   3 102    195000.0  50000.0.02131976 2.0189-3                                       W.S.Lyon*,           (59)11407  8  4.8556-4                   2.0189-3 2.28                       9.47     9.47    0.195    0.01     0.21880814.9745-3 1.12209261.0094486
 #/C5DATA        0
 #/DATASET       11407008 
 #DATASET        11407009   20091005
@@ -402,6 +524,10 @@
 #PRODUCT        33-AS-76
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -418,13 +544,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 33-AS-75(N,G)33-AS-76,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407009    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407009    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 33075   3 102    195000.0  50000.0     0.15    0.015                                       W.S.Lyon,            (59)11407  9  0.007695                      0.015 5.13                       10       10
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 33075   3 102    195000.0  50000.00.1683139.01494776                                       W.S.Lyon*,           (59)11407  9  3.8334-3                  .01494776 2.28                       8.88     8.88    0.195    0.01     0.21880814.9745-3 1.12209260.9965175
 #/C5DATA        0
 #/DATASET       11407009 
 #DATASET        11407010   20091005
@@ -451,6 +593,10 @@
 #PRODUCT        35-BR-82
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -467,13 +613,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 35-BR-81(N,G)35-BR-82,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407010    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407010    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 35081   3 102    195000.0  50000.0    0.137    0.015                                       W.S.Lyon,            (59)11407 10 0.0070281                      0.015 5.13                       10.9     10.9
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 35081   3 102    195000.0  50000.00.1537267.01527618                                       W.S.Lyon*,           (59)11407 10  3.5011-3                  .01527618 2.28                       9.94     9.94    0.195    0.01     0.21880814.9745-3 1.12209261.0184122
 #/C5DATA        0
 #/DATASET       11407010 
 #DATASET        11407011   20091005
@@ -500,6 +662,10 @@
 #PRODUCT        40-ZR-95
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -516,13 +682,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-94(N,G)40-ZR-95,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407011    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407011    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 40094   3 102    195000.0  50000.0    0.042    0.008                                       W.S.Lyon,            (59)11407 11 0.0021546                      0.008 5.13                       19       19
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40094   3 102    195000.0  50000.0.04712789 8.7114-3                                       W.S.Lyon*,           (59)11407 11 .00107334                   8.7114-3 2.28                       18.5     18.5    0.195    0.01     0.21880814.9745-3 1.12209261.0889275
 #/C5DATA        0
 #/DATASET       11407011 
 #DATASET        11407012   20091005
@@ -549,6 +731,10 @@
 #PRODUCT        40-ZR-97
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -565,13 +751,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 40-ZR-96(N,G)40-ZR-97,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407012    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407012    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 40096   3 102    195000.0  50000.0    0.007    0.002                                       W.S.Lyon,            (59)11407 12  3.591E-4                      0.002 5.13                       28.6     28.6
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 40096   3 102    195000.0  50000.0 7.8546-3 2.2150-3                                       W.S.Lyon*,           (59)11407 12  1.7889-4                   2.2150-3 2.28                       28.2     28.2    0.195    0.01     0.21880814.9745-3 1.12209261.1074753
 #/C5DATA        0
 #/DATASET       11407012 
 #DATASET        11407013   20091005
@@ -702,6 +904,10 @@
 #PRODUCT        44-RU-97
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -718,13 +924,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 44-RU-96(N,G)44-RU-97,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407015    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407015    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 44096   3 102    195000.0  50000.0     0.14    0.028                                       W.S.Lyon,            (59)11407 15  0.007182                      0.028 5.13                       20       20
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 44096   3 102    195000.0  50000.0 0.1570930.0305775                                       W.S.Lyon*,           (59)11407 15  3.5778-3                  0.0305775 2.28                       19.5     19.5    0.195    0.01     0.21880814.9745-3 1.12209261.0920534
 #/C5DATA        0
 #/DATASET       11407015 
 #DATASET        11407016   20091005
@@ -751,9 +973,13 @@
 #PRODUCT        44-RU-103
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.10%
+#CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
 #CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
 #CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
@@ -773,8 +999,15 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
 #M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
-#C5CORR         #Reaction: 44-RU-102(N,G)44-RU-103,,SIG
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 44-RU-102(N,G)44-RU-103,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
 #+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (44-RU-102(N,G)44-RU-103,,SIG)
 #+               #[1]#DECAY-DATA (44-RU-103,,DG,500.,0.90) #Ix_old=0.9
@@ -782,16 +1015,16 @@
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=0.98901093
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        11407016    0.989011    -           0.989011    -
+#/C5CORR        11407016    1.10976     1.12209     0.989011    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          11407016    CS          1           0.989011    0.989011    0.989011    -1.10%      1.01111     [MONIT]::in115ng
+#XCORR          11407016    CS          1           1.10976     1.10976     1.10976     +11.0%      1.10976     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 44102   3 102    195000.0  50000.00.1879121.02472527                                       W.S.Lyon*,           (59)11407 16 .00963989                  .02472527 5.13                       13.2     13.2                                        0.98901090.9890109
+    1 44102   3 102    195000.0  50000.00.2108547.02599595                                       W.S.Lyon*,           (59)11407 16  4.8022-3                  .02599595 2.28                       12.3     12.3    0.195    0.01     0.21880814.9745-3 1.10976181.0398378
 #/C5DATA        0
 #/DATASET       11407016 
 #DATASET        11407017   20091005
@@ -818,6 +1051,10 @@
 #PRODUCT        44-RU-105
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -834,13 +1071,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 44-RU-104(N,G)44-RU-105,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407017    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407017    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 44104   3 102    195000.0  50000.0    0.028    0.005                                       W.S.Lyon,            (59)11407 17 0.0014364                      0.005 5.13                       17.9     17.9
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 44104   3 102    195000.0  50000.00.0314186 5.4214-3                                       W.S.Lyon*,           (59)11407 17  7.1556-4                   5.4214-3 2.28                       17.3     17.3    0.195    0.01     0.21880814.9745-3 1.12209261.0842787
 #/C5DATA        0
 #/DATASET       11407017 
 #DATASET        11407018   20091005
@@ -867,9 +1120,13 @@
 #PRODUCT        46-PD-109
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]+25.3%
+#CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
 #CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
 #CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
@@ -889,8 +1146,15 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
 #M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
-#C5CORR         #Reaction: 46-PD-108(N,G)46-PD-109,,SIG
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 46-PD-108(N,G)46-PD-109,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
 #+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (46-PD-108(N,G)46-PD-109,,SIG)
 #+               #[1]#DECAY-DATA (46-PD-109-G,,DG,88.,0.046) #Ix_old=0.046
@@ -898,16 +1162,16 @@
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.253406
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        11407018    1.25341     -           1.25341     -
+#/C5CORR        11407018    1.40644     1.12209     1.25341     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          11407018    CS          1           1.25341     1.25341     1.25341     +25.3%      1.25341     [MONIT]::in115ng
+#XCORR          11407018    CS          1           1.40644     1.40644     1.40644     +40.6%      1.40644     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 46108   3 102    195000.0  50000.0.09651227.01002725                                       W.S.Lyon*,           (59)11407 18  4.9511-3                  .01002725 5.13                       10.4     10.4                                        1.253406 1.2534062
+    1 46108   3 102    195000.0  50000.00.1082957.01009035                                       W.S.Lyon*,           (59)11407 18  2.4664-3                  .01009035 2.28                       9.32     9.32    0.195    0.01     0.21880814.9745-3 1.40643761.2612942
 #/C5DATA        0
 #/DATASET       11407018 
 #DATASET        11407019   20091005
@@ -934,6 +1198,10 @@
 #PRODUCT        47-AG-108
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -950,13 +1218,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 47-AG-107(N,G)47-AG-108,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407019    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407019    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 47107   3 102    195000.0  50000.0     0.29     0.06                                       W.S.Lyon,            (59)11407 19  0.014877                       0.06 5.13                       20.7     20.7
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 47107   3 102    195000.0  50000.00.3254068.06564288                                       W.S.Lyon*,           (59)11407 19  7.4112-3                  .06564288 2.28                       20.2     20.2    0.195    0.01     0.21880814.9745-3 1.12209261.094048
 #/C5DATA        0
 #/DATASET       11407019 
 #DATASET        11407020   20091005
@@ -1031,6 +1315,10 @@
 #PRODUCT        51-SB-122
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1047,13 +1335,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 51-SB-121(N,G)51-SB-122,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407021    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407021    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 51121   3 102    195000.0  50000.0      0.4     0.04                                       W.S.Lyon,            (59)11407 21   0.02052                       0.04 5.13                       10       10
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 51121   3 102    195000.0  50000.0 0.4488370.0398607                                       W.S.Lyon*,           (59)11407 21 .01022228                  0.0398607 2.28                       8.88     8.88    0.195    0.01     0.21880814.9745-3 1.12209260.9965176
 #/C5DATA        0
 #/DATASET       11407021 
 #DATASET        11407022   20091005
@@ -1080,9 +1384,13 @@
 #PRODUCT        51-SB-124
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]+2.25%
+#CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
 #CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
 #CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
@@ -1102,8 +1410,15 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
 #M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
-#C5CORR         #Reaction: 51-SB-123(N,G)51-SB-124,,SIG
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 51-SB-123(N,G)51-SB-124,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
 #+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (51-SB-123(N,G)51-SB-124,,SIG)
 #+               #[1]#DECAY-DATA (51-SB-124-G,,DG,600.,1.00) #Ix_old=1.0
@@ -1111,16 +1426,16 @@
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0224949
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        11407022    1.02249     -           1.02249     -
+#/C5CORR        11407022    1.14733     1.12209     1.02249     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          11407022    CS          1           1.02249     1.02249     1.02249     +2.25%      1.02249     [MONIT]::in115ng
+#XCORR          11407022    CS          1           1.14733     1.14733     1.14733     +14.7%      1.14733     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 51123   3 102    195000.0  50000.00.2862986.03067484                                       W.S.Lyon*,           (59)11407 22 .01468712                  .03067484 5.13                       10.7     10.7                                        1.02249491.0224949
+    1 51123   3 102    195000.0  50000.00.32125350.0310913                                       W.S.Lyon*,           (59)11407 22  7.3166-3                  0.0310913 2.28                       9.68     9.68    0.195    0.01     0.21880814.9745-3 1.147334 1.0363768
 #/C5DATA        0
 #/DATASET       11407022 
 #DATASET        11407023   20091005
@@ -1147,6 +1462,10 @@
 #PRODUCT        53-I-128
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1163,13 +1482,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 53-I-127(N,G)53-I-128,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407023    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407023    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 53127   3 102    195000.0  50000.0    0.175    0.015                                       W.S.Lyon,            (59)11407 23 0.0089775                      0.015 5.13                       8.57     8.57
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 53127   3 102    195000.0  50000.00.1963662.01420632                                       W.S.Lyon*,           (59)11407 23  4.4722-3                  .01420632 2.28                       7.23     7.23    0.195    0.01     0.21880814.9745-3 1.12209260.947088
 #/C5DATA        0
 #/DATASET       11407023 
 #DATASET        11407024   20091005
@@ -1196,6 +1531,10 @@
 #PRODUCT        56-BA-139
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1212,13 +1551,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 56-BA-138(N,G)56-BA-139,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407024    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407024    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 56138   3 102    195000.0  50000.0   0.0032   3.0E-4                                       W.S.Lyon,            (59)11407 24 1.6416E-4                     3.0E-4 5.13                       9.38     9.38
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 56138   3 102    195000.0  50000.0 3.5907-3 2.9339-4                                       W.S.Lyon*,           (59)11407 24  8.1778-5                   2.9339-4 2.28                       8.17     8.17    0.195    0.01     0.21880814.9745-3 1.12209260.9779532
 #/C5DATA        0
 #/DATASET       11407024 
 #DATASET        11407025   20091005
@@ -1245,6 +1600,10 @@
 #PRODUCT        57-LA-140
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1261,13 +1620,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 57-LA-139(N,G)57-LA-140,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407025    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407025    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 57139   3 102    195000.0  50000.0     0.01    0.002                                       W.S.Lyon,            (59)11407 25   5.13E-4                      0.002 5.13                       20       20
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 57139   3 102    195000.0  50000.0.01122093 2.1841-3                                       W.S.Lyon*,           (59)11407 25  2.5556-4                   2.1841-3 2.28                       19.5     19.5    0.195    0.01     0.21880814.9745-3 1.12209261.0920534
 #/C5DATA        0
 #/DATASET       11407025 
 #DATASET        11407026   20091005
@@ -1294,6 +1669,10 @@
 #PRODUCT        58-CE-143
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1310,13 +1689,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 58-CE-142(N,G)58-CE-143,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407026    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407026    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 58142   3 102    195000.0  50000.0    0.022    0.005                                       W.S.Lyon,            (59)11407 26 0.0011286                      0.005 5.13                       22.7     22.7
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 58142   3 102    195000.0  50000.0.02468604 5.4945-3                                       W.S.Lyon*,           (59)11407 26  5.6223-4                   5.4945-3 2.28                       22.3     22.3    0.195    0.01     0.21880814.9745-3 1.12209261.0989019
 #/C5DATA        0
 #/DATASET       11407026 
 #DATASET        11407027   20091005
@@ -1343,6 +1738,10 @@
 #PRODUCT        59-PR-142
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1359,13 +1758,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 59-PR-141(N,G)59-PR-142,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407027    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407027    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 59141   3 102    195000.0  50000.0    0.038    0.004                                       W.S.Lyon,            (59)11407 27 0.0019494                      0.004 5.13                       10.5     10.5
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 59141   3 102    195000.0  50000.0.04263952 4.0378-3                                       W.S.Lyon*,           (59)11407 27  9.7112-4                   4.0378-3 2.28                       9.47     9.47    0.195    0.01     0.21880814.9745-3 1.12209261.0094486
 #/C5DATA        0
 #/DATASET       11407027 
 #DATASET        11407028   20091005
@@ -1392,9 +1807,13 @@
 #PRODUCT        62-SM-153
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]+23.5%
+#CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
 #CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
 #CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
@@ -1414,8 +1833,15 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
 #M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
-#C5CORR         #Reaction: 62-SM-152(N,G)62-SM-153,,SIG
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 62-SM-152(N,G)62-SM-153,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
 #+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (62-SM-152(N,G)62-SM-153,,SIG)
 #+               #[1]#DECAY-DATA (62-SM-153,,DG,105.,0.36) #Ix_old=0.36
@@ -1423,16 +1849,16 @@
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.2354153
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        11407028    1.23542     -           1.23542     -
+#/C5CORR        11407028    1.38625     1.12209     1.23542     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          11407028    CS          1           1.23542     1.23542     1.23542     +23.5%      1.23542     [MONIT]::in115ng
+#XCORR          11407028    CS          1           1.38625     1.38625     1.38625     +38.6%      1.38625     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 62152   3 102    195000.0  50000.00.18531230.0247083                                       W.S.Lyon*,           (59)11407 28  9.5065-3                  0.0247083 5.13                       13.3     13.3                                        1.23541531.2354152
+    1 62152   3 102    195000.0  50000.00.2079376.02602527                                       W.S.Lyon*,           (59)11407 28  4.7358-3                  .02602527 2.28                       12.5     12.5    0.195    0.01     0.21880814.9745-3 1.38625041.3012635
 #/C5DATA        0
 #/DATASET       11407028 
 #DATASET        11407029   20091005
@@ -1459,6 +1885,10 @@
 #PRODUCT        64-GD-159
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1475,13 +1905,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 64-GD-158(N,G)64-GD-159,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407029    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407029    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 64158   3 102    195000.0  50000.0    0.111    0.015                                       W.S.Lyon,            (59)11407 29 0.0056943                      0.015 5.13                       13.5     13.5
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 64158   3 102    195000.0  50000.00.1245523.01582771                                       W.S.Lyon*,           (59)11407 29  2.8367-3                  .01582771 2.28                       12.7     12.7    0.195    0.01     0.21880814.9745-3 1.12209261.0551804
 #/C5DATA        0
 #/DATASET       11407029 
 #DATASET        11407030   20091005
@@ -1508,6 +1954,10 @@
 #PRODUCT        74-W-187
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1524,13 +1974,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 74-W-186(N,G)74-W-187,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407030    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407030    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 74186   3 102    195000.0  50000.0      0.1     0.02                                       W.S.Lyon,            (59)11407 30   0.00513                       0.02 5.13                       20       20
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 74186   3 102    195000.0  50000.00.1122093.02184107                                       W.S.Lyon*,           (59)11407 30  2.5556-3                  .02184107 2.28                       19.5     19.5    0.195    0.01     0.21880814.9745-3 1.12209261.0920534
 #/C5DATA        0
 #/DATASET       11407030 
 #DATASET        11407031   20091005
@@ -1557,9 +2023,13 @@
 #PRODUCT        76-OS-191
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]-17.0%
+#CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
 #CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
 #CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
@@ -1579,8 +2049,15 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
 #M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
-#C5CORR         #Reaction: 76-OS-190(N,G)76-OS-191,,SIG
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 76-OS-190(N,G)76-OS-191,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
 #+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (76-OS-190(N,G)76-OS-191,,SIG)
 #+               #[1]#DECAY-DATA (76-OS-191-G,,DG,130.,0.22) #Ix_old=0.22
@@ -1588,16 +2065,16 @@
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=0.8301887
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        11407031    0.830189    -           0.830189    -
+#/C5CORR        11407031    0.931549    1.12209     0.830189    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          11407031    CS          1           0.830189    0.830189    0.830189    -17.0%      1.20455     [MONIT]::in115ng
+#XCORR          11407031    CS          1           0.931549    0.931549    0.931549    -6.85%      1.07348     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 76190   3 102    195000.0  50000.00.1660377.02490566                                       W.S.Lyon*,           (59)11407 31  8.5177-3                  .02490566 5.13                       15       15                                          0.83018870.8301886
+    1 76190   3 102    195000.0  50000.00.1863097.02660188                                       W.S.Lyon*,           (59)11407 31  4.2432-3                  .02660188 2.28                       14.3     14.3    0.195    0.01     0.21880814.9745-3 0.93154860.8867293
 #/C5DATA        0
 #/DATASET       11407031 
 #DATASET        11407032   20091005
@@ -1624,9 +2101,13 @@
 #PRODUCT        79-AU-198
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.648%
+#CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
 #CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
 #CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
@@ -1646,8 +2127,15 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
 #M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
-#C5CORR         #Reaction: 79-AU-197(N,G)79-AU-198,,SIG
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 79-AU-197(N,G)79-AU-198,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
 #+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (79-AU-197(N,G)79-AU-198,,SIG)
 #+               #[1]#DECAY-DATA (79-AU-198-G,,DG,410.,0.95) #Ix_old=0.95
@@ -1655,16 +2143,16 @@
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99351597
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        11407032    0.993516    -           0.993516    -
+#/C5CORR        11407032    1.11482     1.12209     0.993516    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          11407032    CS          1           0.993516    0.993516    0.993516    -0.648%     1.00653     [MONIT]::in115ng
+#XCORR          11407032    CS          1           1.11482     1.11482     1.11482     +11.5%      1.11482     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 79197   3 102    195000.0  50000.00.3179251.01987032                                       W.S.Lyon*,           (59)11407 32 .01630956                  .01987032 5.13                       6.25     6.25                                        0.993516 0.993516
+    1 79197   3 102    195000.0  50000.00.35674140.0151069                                       W.S.Lyon*,           (59)11407 32 0.0081248                  0.0151069 2.28                       4.23     4.23    0.195    0.01     0.21880814.9745-3 1.11481690.7553452
 #/C5DATA        0
 #/DATASET       11407032 
 #DATASET        11407033   20091005
@@ -1691,9 +2179,13 @@
 #PRODUCT        80-HG-203
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.77%
+#CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(MON): dTot
 #CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(MON): dSys
 #CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
@@ -1713,8 +2205,15 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
 #M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
-#C5CORR         #Reaction: 80-HG-202(N,G)80-HG-203,,SIG
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 80-HG-202(N,G)80-HG-203,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
 #+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (80-HG-202(N,G)80-HG-203,,SIG)
 #+               #[1]#DECAY-DATA (80-HG-203,,DG,280.,0.83) #Ix_old=0.83
@@ -1722,16 +2221,16 @@
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0176557
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        11407033    1.01766     -           1.01766     -
+#/C5CORR        11407033    1.14190     1.12209     1.01766     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          11407033    CS          1           1.01766     1.01766     1.01766     +1.77%      1.01766     [MONIT]::in115ng
+#XCORR          11407033    CS          1           1.14190     1.14190     1.14190     +14.2%      1.14190     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 80202   3 102    195000.0  50000.0.03256499 5.0883-3                                       W.S.Lyon*,           (59)11407 33  1.6706-3                   5.0883-3 5.13                       15.6     15.6                                        1.01765571.0176557
+    1 80202   3 102    195000.0  50000.0.03654093 5.4569-3                                       W.S.Lyon*,           (59)11407 33  8.3222-4                   5.4569-3 2.28                       14.9     14.9    0.195    0.01     0.21880814.9745-3 1.141904 1.0913712
 #/C5DATA        0
 #/DATASET       11407033 
 #DATASET        11407034   20091005
@@ -1758,6 +2257,10 @@
 #PRODUCT        92-U-239
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=5.13%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.1220926(2.0e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1774,13 +2277,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             Point: XS(b)=0.195(5.13%)  EN-NRM(eV):195000.0
+#M1             Point: XS(b)=0.2188081(2.27%)  EN-NRM(eV):195000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 92-U-238(N,G)92-U-239,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              #[0]#En=195000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.195
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.195MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        11407034    1.12209     1.12209     -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          11407034    CS          1           1.12209     1.12209     1.12209     +12.2%      1.12209     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 92238   3 102    195000.0  50000.0     0.12    0.017                                       W.S.Lyon,            (59)11407 34  0.006156                      0.017 5.13                       14.2     14.2
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92238   3 102    195000.0  50000.00.1346511.01804348                                       W.S.Lyon*,           (59)11407 34  3.0667-3                  .01804348 2.28                       13.4     13.4    0.195    0.01     0.21880814.9745-3 1.12209261.0613811
 #/C5DATA        0
 #/DATASET       11407034 
 #/C5.2.3        1               33              33              0               33              

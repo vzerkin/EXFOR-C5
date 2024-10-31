@@ -24,7 +24,7 @@
 #PRODUCT        11-NA-24
 #C4ReaCode      (N,A),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[4]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[4]*1.0027316(1.5e7)
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
@@ -44,33 +44,33 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 13-AL-27(N,A)11-NA-24,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977002    0.993801    0.993801    -           -
+#/C5CORR        12977002    1.00034     1.00034     -           -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977002    CS          5           0.993801    0.993801    0.993801    -0.620%     1.00624     [MONIT]::nb93n2n
+#XCORR          12977002    CS          5           0.981113    1.01856     1.00034     +0.0343%    1.01925     exfor::10709002_nb93n2n
 #C5DATA         5
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 13027   3 107 A    1.45E7 400000.00.1162747 6.4745-4                                       L.R.Greenwood*       (87)12977  2  6.4745-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 13027   3 107 A   1.465E7 400000.00.1122995 6.2532-4                                       L.R.Greenwood*       (87)12977  2  6.2532-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 13027   3 107 A    1.48E7 400000.00.1103119 6.1425-4                                       L.R.Greenwood*       (87)12977  2  6.1425-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 13027   3 107 A   1.485E7 400000.00.1063367 5.9211-4                                       L.R.Greenwood*       (87)12977  2  5.9211-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 13027   3 107 A    1.49E7 400000.00.1073305 5.9765-4                                       L.R.Greenwood*       (87)12977  2  5.9765-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
+    1 13027   3 107 A    1.45E7 400000.00.1147902 7.9432-4                                       L.R.Greenwood*       (87)12977  2  7.9432-4                            0.69                                0.69    0.4684865.018739460.459638 .003180580.98111260.1697259
+    1 13027   3 107 A   1.465E7 400000.00.1117257 7.8979-4                                       L.R.Greenwood*       (87)12977  2  7.8979-4                            0.71                                0.71    0.4644   0.018576 0.459163 .003245830.988723 0.1747324
+    1 13027   3 107 A    1.48E7 400000.00.1130597 8.1610-4                                       L.R.Greenwood*       (87)12977  2  8.1610-4                            0.72                                0.72    0.45     0.018    0.45835  .003308521.01855560.1838067
+    1 13027   3 107 A   1.485E7 400000.00.1081332 7.8591-4                                       L.R.Greenwood*       (87)12977  2  7.8591-4                            0.73                                0.73    0.4530556.018122220.4578535.003327691.01059020.1836248
+    1 13027   3 107 A    1.49E7 400000.0 0.108295 7.9248-4                                       L.R.Greenwood*       (87)12977  2  7.9248-4                            0.73                                0.73    0.4561111.018244450.457357 .003346861.00273160.1834451
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -85,11 +85,11 @@
 #COVARDATA      1           5           5
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      0.116275    0.56         100
-1.465E7     1.465E7     0.1123      0.56         63 100
-1.48E7      1.48E7      0.110312    0.56         50 63 100
-1.485E7     1.485E7     0.106337    0.56         50 50 88 100
-1.49E7      1.49E7      0.107331    0.56         50 50 75 88 100
+1.45E7      1.45E7      0.11479     0.69         100
+1.465E7     1.465E7     0.111726    0.71         62 100
+1.48E7      1.48E7      0.11306     0.72         50 62 100
+1.485E7     1.485E7     0.108133    0.73         50 50 88 100
+1.49E7      1.49E7      0.108295    0.73         50 50 75 88 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977002 
@@ -118,7 +118,7 @@
 #PRODUCT        19-K-42
 #C4ReaCode      (N,A),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[1]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[1]*1.0027316(1.5e7)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.996%
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
@@ -141,35 +141,35 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 21-SC-45(N,A)19-K-42,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (21-SC-45(N,A)19-K-42,,SIG)
 #+               #[1]#DECAY-DATA (19-K-42,12.36HR,DG,1524.7,0.179) #Ix_old=0.179
 #+                a1=0.179/0.1808;            #[1]#DECAY-DATA: correction to new 1524.6 keV gamma-yield per decay K-42 Ix_new=0.1808
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99004424
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977004    0.983907    0.993801    0.990044    -
+#/C5CORR        12977004    0.982047    0.991922    0.990044    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977004    CS          2           0.983907    0.983907    0.983907    -1.61%      1.01636     [MONIT]::nb93n2n
+#XCORR          12977004    CS          2           0.971345    0.992749    0.982047    -1.80%      1.02950     exfor::10709002_nb93n2n
 #C5DATA         2
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 21045   3 107 A    1.45E7 400000.0.05706662 5.2399-3                                       L.R.Greenwood*       (87)12977  4  5.2399-3                            9.18                                9.18    0.463    0.01852  0.46013  .002562140.98390720.9034287
-    1 21045   3 107 A    1.49E7 400000.0 0.053131 4.8785-3                                       L.R.Greenwood*       (87)12977  4  4.8785-3                            9.18                                9.18    0.463    0.01852  0.46013  .002562140.98390720.9034286
+    1 21045   3 107 A    1.45E7 400000.0 0.056338 5.1782-3                                       L.R.Greenwood*       (87)12977  4  5.1782-3                            9.19                                9.19    0.4684865.018739460.459638 .003180580.97134490.8927861
+    1 21045   3 107 A    1.49E7 400000.0.05360843 4.9289-3                                       L.R.Greenwood*       (87)12977  4  4.9289-3                            9.19                                9.19    0.4561111.018244450.457357 .003346860.99274860.9127647
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -184,8 +184,8 @@
 #COVARDATA      1           2           2
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      5.7067-2    9.18         100
-1.49E7      1.49E7      0.053131    9.18         50 100
+1.45E7      1.45E7      0.056338    9.19         100
+1.49E7      1.49E7      5.3608-2    9.19         50 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977004 
@@ -214,7 +214,7 @@
 #PRODUCT        21-SC-46
 #C4ReaCode      (N,X),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[4]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[4]*1.0027316(1.5e7)
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
@@ -234,33 +234,33 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 22-TI-0(N,X)21-SC-46,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977005    0.993801    0.993801    -           -
+#/C5CORR        12977005    1.00034     1.00034     -           -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977005    CS          5           0.993801    0.993801    0.993801    -0.620%     1.00624     [MONIT]::nb93n2n
+#XCORR          12977005    CS          5           0.981113    1.01856     1.00034     +0.0343%    1.01925     exfor::10709002_nb93n2n
 #C5DATA         5
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 22000   39000 A    1.45E7 400000.0.02444751 1.3613-4           21046.9                     L.R.Greenwood*       (87)12977  5  1.3613-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.138345
-    1 22000   39000 A   1.465E7 400000.0.02424875 1.3502-4           21046.9                     L.R.Greenwood*       (87)12977  5  1.3502-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 22000   39000 A    1.48E7 400000.0.02434813 1.3558-4           21046.9                     L.R.Greenwood*       (87)12977  5  1.3558-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.138345
-    1 22000   39000 A   1.485E7 400000.0.02454689 1.3668-4           21046.9                     L.R.Greenwood*       (87)12977  5  1.3668-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383437
-    1 22000   39000 A    1.49E7 400000.0.02424875 1.3502-4           21046.9                     L.R.Greenwood*       (87)12977  5  1.3502-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
+    1 22000   39000 A    1.45E7 400000.0.02413537 1.6701-4           21046.9                     L.R.Greenwood*       (87)12977  5  1.6701-4                            0.69                                0.69    0.4684865.018739460.459638 .003180580.98111260.1697263
+    1 22000   39000 A   1.465E7 400000.0.02412484 1.7054-4           21046.9                     L.R.Greenwood*       (87)12977  5  1.7054-4                            0.71                                0.71    0.4644   0.018576 0.459163 .003245830.988723 0.1747324
+    1 22000   39000 A    1.48E7 400000.0.02495461 1.8013-4           21046.9                     L.R.Greenwood*       (87)12977  5  1.8013-4                            0.72                                0.72    0.45     0.018    0.45835  .003308521.01855560.1838071
+    1 22000   39000 A   1.485E7 400000.0.02496158 1.8142-4           21046.9                     L.R.Greenwood*       (87)12977  5  1.8142-4                            0.73                                0.73    0.4530556.018122220.4578535.003327691.01059020.1836243
+    1 22000   39000 A    1.49E7 400000.0.02446665 1.7904-4           21046.9                     L.R.Greenwood*       (87)12977  5  1.7904-4                            0.73                                0.73    0.4561111.018244450.457357 .003346861.00273160.1834451
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -275,11 +275,11 @@
 #COVARDATA      1           5           5
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      2.4448-2    0.56         100
-1.465E7     1.465E7     2.4249-2    0.56         63 100
-1.48E7      1.48E7      2.4348-2    0.56         50 63 100
-1.485E7     1.485E7     2.4547-2    0.56         50 50 88 100
-1.49E7      1.49E7      2.4249-2    0.56         50 50 75 87 100
+1.45E7      1.45E7      2.4135-2    0.69         100
+1.465E7     1.465E7     2.4125-2    0.71         62 100
+1.48E7      1.48E7      2.4955-2    0.72         50 63 100
+1.485E7     1.485E7     2.4962-2    0.73         50 50 87 100
+1.49E7      1.49E7      2.4467-2    0.73         50 50 75 87 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977005 
@@ -308,7 +308,7 @@
 #PRODUCT        21-SC-47
 #C4ReaCode      (N,X),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[4]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[4]*1.0027316(1.5e7)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.439%
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
@@ -331,38 +331,38 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 22-TI-0(N,X)21-SC-47,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (22-TI-0(N,X)21-SC-47,,SIG)
 #+               #[1]#DECAY-DATA (21-SC-47,3.422D,DG,159.4,0.68) #Ix_old=0.68
 #+                a1=0.68/0.683;              #[1]#DECAY-DATA: correction to new 159.381 keV gamma-yield per decay Sc-47 Ix_new=0.683
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99560755
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977006    0.989436    0.993801    0.995608    -
+#/C5CORR        12977006    0.995949    1.00034     0.995608    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977006    CS          5           0.989436    0.989436    0.989436    -1.06%      1.01068     [MONIT]::nb93n2n
+#XCORR          12977006    CS          5           0.976803    1.01408     0.995949    -0.405%     1.02375     exfor::10709002_nb93n2n
 #C5DATA         5
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 22000   39000 A    1.45E7 400000.0.01919506 1.0688-4           21047.9                     L.R.Greenwood*       (87)12977  6  1.0688-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.989436 0.1377368
-    1 22000   39000 A   1.465E7 400000.0.02097604 1.1680-4           21047.9                     L.R.Greenwood*       (87)12977  6  1.1680-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.989436 0.1377373
-    1 22000   39000 A    1.48E7 400000.0.02206442 1.2286-4           21047.9                     L.R.Greenwood*       (87)12977  6  1.2286-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.989436 0.1377368
-    1 22000   39000 A   1.485E7 400000.0.02325175 1.2947-4           21047.9                     L.R.Greenwood*       (87)12977  6  1.2947-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.989436 0.1377373
-    1 22000   39000 A    1.49E7 400000.0.02325175 1.2947-4           21047.9                     L.R.Greenwood*       (87)12977  6  1.2947-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.989436 0.1377373
+    1 22000   39000 A    1.45E7 400000.0.01894998 1.3113-4           21047.9                     L.R.Greenwood*       (87)12977  6  1.3113-4                            0.69                                0.69    0.4684865.018739460.459638 .003180580.97680310.1689804
+    1 22000   39000 A   1.465E7 400000.0.02086886 1.4752-4           21047.9                     L.R.Greenwood*       (87)12977  6  1.4752-4                            0.71                                0.71    0.4644   0.018576 0.459163 .003245830.98438010.1739653
+    1 22000   39000 A    1.48E7 400000.0.02261402 1.6324-4           21047.9                     L.R.Greenwood*       (87)12977  6  1.6324-4                            0.72                                0.72    0.45     0.018    0.45835  .003308521.01408170.1829993
+    1 22000   39000 A   1.485E7 400000.0.02364455 1.7185-4           21047.9                     L.R.Greenwood*       (87)12977  6  1.7185-4                            0.73                                0.73    0.4530556.018122220.4578535.003327691.00615120.1828187
+    1 22000   39000 A    1.49E7 400000.0.02346069 1.7168-4           21047.9                     L.R.Greenwood*       (87)12977  6  1.7168-4                            0.73                                0.73    0.4561111.018244450.457357 .003346860.99832710.1826397
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -377,11 +377,11 @@
 #COVARDATA      1           5           5
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      1.9195-2    0.56         100
-1.465E7     1.465E7     0.020976    0.56         63 100
-1.48E7      1.48E7      2.2064-2    0.56         50 63 100
-1.485E7     1.485E7     2.3252-2    0.56         50 50 87 100
-1.49E7      1.49E7      2.3252-2    0.56         50 50 75 87 100
+1.45E7      1.45E7      0.01895     0.69         100
+1.465E7     1.465E7     2.0869-2    0.71         63 100
+1.48E7      1.48E7      0.022614    0.72         50 63 100
+1.485E7     1.485E7     2.3645-2    0.73         50 50 87 100
+1.49E7      1.49E7      2.3461-2    0.73         50 50 75 88 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977006 
@@ -410,7 +410,7 @@
 #PRODUCT        21-SC-48
 #C4ReaCode      (N,P),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[4]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[4]*1.0027316(1.5e7)
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
@@ -430,33 +430,33 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 22-TI-48(N,P)21-SC-48,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977007    0.993801    0.993801    -           -
+#/C5CORR        12977007    1.00034     1.00034     -           -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977007    CS          5           0.993801    0.993801    0.993801    -0.620%     1.00624     [MONIT]::nb93n2n
+#XCORR          12977007    CS          5           0.981113    1.01856     1.00034     +0.0343%    1.01925     exfor::10709002_nb93n2n
 #C5DATA         5
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 22048   3 103 A    1.45E7 400000.0.06559089 3.6523-4                                       L.R.Greenwood*       (87)12977  7  3.6523-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383437
-    1 22048   3 103 A   1.465E7 400000.0.06896982 3.8404-4                                       L.R.Greenwood*       (87)12977  7  3.8404-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383432
-    1 22048   3 103 A    1.48E7 400000.0.06718096 3.7408-4                                       L.R.Greenwood*       (87)12977  7  3.7408-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.138345
-    1 22048   3 103 A   1.485E7 400000.0.06708159 3.7353-4                                       L.R.Greenwood*       (87)12977  7  3.7353-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 22048   3 103 A    1.49E7 400000.0.06588902 3.6689-4                                       L.R.Greenwood*       (87)12977  7  3.6689-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
+    1 22048   3 103 A    1.45E7 400000.0.06475344 4.4807-4                                       L.R.Greenwood*       (87)12977  7  4.4807-4                            0.69                                0.69    0.4684865.018739460.459638 .003180580.98111260.1697253
+    1 22048   3 103 A   1.465E7 400000.0.06861739 4.8505-4                                       L.R.Greenwood*       (87)12977  7  4.8505-4                            0.71                                0.71    0.4644   0.018576 0.459163 .003245830.988723 0.1747314
+    1 22048   3 103 A    1.48E7 400000.0.06885436 4.9701-4                                       L.R.Greenwood*       (87)12977  7  4.9701-4                            0.72                                0.72    0.45     0.018    0.45835  .003308521.01855560.1838071
+    1 22048   3 103 A   1.485E7 400000.0.06821484 4.9579-4                                       L.R.Greenwood*       (87)12977  7  4.9579-4                            0.73                                0.73    0.4530556.018122220.4578535.003327691.01059020.1836248
+    1 22048   3 103 A    1.49E7 400000.00.0664811 4.8650-4                                       L.R.Greenwood*       (87)12977  7  4.8650-4                            0.73                                0.73    0.4561111.018244450.457357 .003346861.00273160.183445
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -471,11 +471,11 @@
 #COVARDATA      1           5           5
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      6.5591-2    0.56         100
-1.465E7     1.465E7     6.8970-2    0.56         63 100
-1.48E7      1.48E7      0.067181    0.56         50 63 100
-1.485E7     1.485E7     6.7082-2    0.56         50 50 87 100
-1.49E7      1.49E7      0.065889    0.56         50 50 75 87 100
+1.45E7      1.45E7      6.4753-2    0.69         100
+1.465E7     1.465E7     6.8617-2    0.71         62 100
+1.48E7      1.48E7      6.8854-2    0.72         50 62 100
+1.485E7     1.485E7     6.8215-2    0.73         50 50 87 100
+1.49E7      1.49E7      6.6481-2    0.73         50 50 75 88 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977007 
@@ -504,7 +504,7 @@
 #PRODUCT        25-MN-54
 #C4ReaCode      (N,2N),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[4]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[4]*1.0027316(1.5e7)
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
@@ -524,33 +524,33 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 25-MN-55(N,2N)25-MN-54,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977008    0.993801    0.993801    -           -
+#/C5CORR        12977008    1.00034     1.00034     -           -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977008    CS          5           0.993801    0.993801    0.993801    -0.620%     1.00624     [MONIT]::nb93n2n
+#XCORR          12977008    CS          5           0.981113    1.01856     1.00034     +0.0343%    1.01925     exfor::10709002_nb93n2n
 #C5DATA         5
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 25055   3  16 A    1.45E7 400000.00.7860969 4.3772-3                                       L.R.Greenwood*       (87)12977  8  4.3772-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383437
-    1 25055   3  16 A   1.465E7 400000.0 0.819886 4.5654-3                                       L.R.Greenwood*       (87)12977  8  4.5654-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 25055   3  16 A    1.48E7 400000.00.8019976 4.4658-3                                       L.R.Greenwood*       (87)12977  8  4.4658-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.138345
-    1 25055   3  16 A   1.485E7 400000.00.8218737 4.5764-3                                       L.R.Greenwood*       (87)12977  8  4.5764-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 25055   3  16 A    1.49E7 400000.0 0.834793 4.6484-3                                       L.R.Greenwood*       (87)12977  8  4.6484-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
+    1 25055   3  16 A    1.45E7 400000.00.7760602 5.3701-3                                       L.R.Greenwood*       (87)12977  8  5.3701-3                            0.69                                0.69    0.4684865.018739460.459638 .003180580.98111260.1697253
+    1 25055   3  16 A   1.465E7 400000.00.8156965.00576617                                       L.R.Greenwood*       (87)12977  8 .00576617                            0.71                                0.71    0.4644   0.018576 0.459163 .003245830.988723 0.1747324
+    1 25055   3  16 A    1.48E7 400000.00.8219744 5.9333-3                                       L.R.Greenwood*       (87)12977  8  5.9333-3                            0.72                                0.72    0.45     0.018    0.45835  .003308521.01855560.1838071
+    1 25055   3  16 A   1.485E7 400000.00.8357581.00607431                                       L.R.Greenwood*       (87)12977  8 .00607431                            0.73                                0.73    0.4530556.018122220.4578535.003327691.01059020.1836248
+    1 25055   3  16 A    1.49E7 400000.00.8422945 6.1638-3                                       L.R.Greenwood*       (87)12977  8  6.1638-3                            0.73                                0.73    0.4561111.018244450.457357 .003346861.00273160.1834451
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -565,11 +565,11 @@
 #COVARDATA      1           5           5
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      0.786097    0.56         100
-1.465E7     1.465E7     0.819886    0.56         62 100
-1.48E7      1.48E7      0.801998    0.56         50 63 100
-1.485E7     1.485E7     0.821874    0.56         50 50 87 100
-1.49E7      1.49E7      0.834793    0.56         50 50 75 87 100
+1.45E7      1.45E7      0.77606     0.69         100
+1.465E7     1.465E7     0.815696    0.71         62 100
+1.48E7      1.48E7      0.821974    0.72         50 62 100
+1.485E7     1.485E7     0.835758    0.73         50 50 88 100
+1.49E7      1.49E7      0.842295    0.73         50 50 75 88 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977008 
@@ -598,7 +598,7 @@
 #PRODUCT        25-MN-54
 #C4ReaCode      (N,P),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[4]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[4]*1.0027316(1.5e7)
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
@@ -618,33 +618,33 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 26-FE-54(N,P)25-MN-54,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977009    0.993801    0.993801    -           -
+#/C5CORR        12977009    1.00034     1.00034     -           -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977009    CS          5           0.993801    0.993801    0.993801    -0.620%     1.00624     [MONIT]::nb93n2n
+#XCORR          12977009    CS          5           0.981113    1.01856     1.00034     +0.0343%    1.01925     exfor::10709002_nb93n2n
 #C5DATA         5
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 26054   3 103 A    1.45E7 400000.00.3289482 1.8317-3                                       L.R.Greenwood*       (87)12977  9  1.8317-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 26054   3 103 A   1.465E7 400000.00.3090722 0.001721                                       L.R.Greenwood*       (87)12977  9  0.001721                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 26054   3 103 A    1.48E7 400000.00.3011218 1.6767-3                                       L.R.Greenwood*       (87)12977  9  1.6767-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 26054   3 103 A   1.485E7 400000.00.2961528 1.6491-3                                       L.R.Greenwood*       (87)12977  9  1.6491-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 26054   3 103 A    1.49E7 400000.00.2941652 0.001638                                       L.R.Greenwood*       (87)12977  9  0.001638                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
+    1 26054   3 103 A    1.45E7 400000.00.3247483 2.2472-3                                       L.R.Greenwood*       (87)12977  9  2.2472-3                            0.69                                0.69    0.4684865.018739460.459638 .003180580.98111260.1697259
+    1 26054   3 103 A   1.465E7 400000.00.3074929 2.1737-3                                       L.R.Greenwood*       (87)12977  9  2.1737-3                            0.71                                0.71    0.4644   0.018576 0.459163 .003245830.988723 0.1747324
+    1 26054   3 103 A    1.48E7 400000.00.3086224 2.2277-3                                       L.R.Greenwood*       (87)12977  9  2.2277-3                            0.72                                0.72    0.45     0.018    0.45835  .003308521.01855560.1838067
+    1 26054   3 103 A   1.485E7 400000.00.3011559 2.1888-3                                       L.R.Greenwood*       (87)12977  9  2.1888-3                            0.73                                0.73    0.4530556.018122220.4578535.003327691.01059020.1836248
+    1 26054   3 103 A    1.49E7 400000.00.2968085 2.1720-3                                       L.R.Greenwood*       (87)12977  9  2.1720-3                            0.73                                0.73    0.4561111.018244450.457357 .003346861.00273160.1834451
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -659,11 +659,11 @@
 #COVARDATA      1           5           5
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      0.328948    0.56         100
-1.465E7     1.465E7     0.309072    0.56         63 100
-1.48E7      1.48E7      0.301122    0.56         50 63 100
-1.485E7     1.485E7     0.296153    0.56         50 50 87 100
-1.49E7      1.49E7      0.294165    0.56         50 50 75 87 100
+1.45E7      1.45E7      0.324748    0.69         100
+1.465E7     1.465E7     0.307493    0.71         63 100
+1.48E7      1.48E7      0.308622    0.72         50 62 100
+1.485E7     1.485E7     0.301156    0.73         50 50 87 100
+1.49E7      1.49E7      0.296809    0.73         50 50 75 88 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977009 
@@ -692,7 +692,7 @@
 #PRODUCT        24-CR-51
 #C4ReaCode      (N,A),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[4]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[4]*1.0027316(1.5e7)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.807%
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
@@ -715,38 +715,38 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 26-FE-54(N,A)24-CR-51,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (26-FE-54(N,A)24-CR-51,,SIG)
 #+               #[1]#DECAY-DATA (24-CR-51,27.704D,DG,320.1,0.0983) #Ix_old=0.0983
 #+                a1=0.0983/0.0991;           #[1]#DECAY-DATA: correction to new 320.0824 keV gamma-yield per decay Cr-51 Ix_new=0.0991
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9919274
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977010    0.985779    0.993801    0.991927    -
+#/C5CORR        12977010    0.992267    1.00034     0.991927    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977010    CS          5           0.985779    0.985779    0.985779    -1.42%      1.01443     [MONIT]::nb93n2n
+#XCORR          12977010    CS          5           0.973192    1.01033     0.992267    -0.773%     1.02755     exfor::10709002_nb93n2n
 #C5DATA         5
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 26054   3 107 A    1.45E7 400000.0.08990302 5.0061-4                                       L.R.Greenwood*       (87)12977 10  5.0061-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.98577870.1372277
-    1 26054   3 107 A   1.465E7 400000.0.09118453 5.0774-4                                       L.R.Greenwood*       (87)12977 10  5.0774-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.98577870.1372269
-    1 26054   3 107 A    1.48E7 400000.0.09128311 5.0829-4                                       L.R.Greenwood*       (87)12977 10  5.0829-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.98577870.1372277
-    1 26054   3 107 A   1.485E7 400000.0.09197316 5.1213-4                                       L.R.Greenwood*       (87)12977 10  5.1213-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.98577870.1372269
-    1 26054   3 107 A    1.49E7 400000.0.09138168 5.0884-4                                       L.R.Greenwood*       (87)12977 10  5.0884-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.98577870.1372282
+    1 26054   3 107 A    1.45E7 400000.0.08875515 6.1416-4                                       L.R.Greenwood*       (87)12977 10  6.1416-4                            0.69                                0.69    0.4684865.018739460.459638 .003180580.97319250.1683558
+    1 26054   3 107 A   1.465E7 400000.0.09071859 6.4129-4                                       L.R.Greenwood*       (87)12977 10  6.4129-4                            0.71                                0.71    0.4644   0.018576 0.459163 .003245830.98074140.1733213
+    1 26054   3 107 A    1.48E7 400000.0.09355686 6.7532-4                                       L.R.Greenwood*       (87)12977 10  6.7532-4                            0.72                                0.72    0.45     0.018    0.45835  .003308521.01033320.1823229
+    1 26054   3 107 A   1.485E7 400000.0.09352692 6.7975-4                                       L.R.Greenwood*       (87)12977 10  6.7975-4                            0.73                                0.73    0.4530556.018122220.4578535.003327691.00243210.1821419
+    1 26054   3 107 A    1.49E7 400000.0.09220283 6.7472-4                                       L.R.Greenwood*       (87)12977 10  6.7472-4                            0.73                                0.73    0.4561111.018244450.457357 .003346860.99463690.1819645
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -761,11 +761,11 @@
 #COVARDATA      1           5           5
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      0.089903    0.56         100
-1.465E7     1.465E7     9.1185-2    0.56         62 100
-1.48E7      1.48E7      9.1283-2    0.56         50 62 100
-1.485E7     1.485E7     9.1973-2    0.56         50 50 87 100
-1.49E7      1.49E7      9.1382-2    0.56         50 50 75 88 100
+1.45E7      1.45E7      8.8755-2    0.69         100
+1.465E7     1.465E7     9.0719-2    0.71         62 100
+1.48E7      1.48E7      9.3557-2    0.72         50 63 100
+1.485E7     1.485E7     9.3527-2    0.73         50 50 88 100
+1.49E7      1.49E7      9.2203-2    0.73         50 50 75 87 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977010 
@@ -794,7 +794,7 @@
 #PRODUCT        26-FE-59
 #C4ReaCode      (N,P),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[4]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[4]*1.0027316(1.5e7)
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
@@ -814,33 +814,33 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 27-CO-59(N,P)26-FE-59,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977011    0.993801    0.993801    -           -
+#/C5CORR        12977011    1.00034     1.00034     -           -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977011    CS          5           0.993801    0.993801    0.993801    -0.620%     1.00624     [MONIT]::nb93n2n
+#XCORR          12977011    CS          5           0.981113    1.01856     1.00034     +0.0343%    1.01925     exfor::10709002_nb93n2n
 #C5DATA         5
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 27059   3 103 A    1.45E7 400000.0.04859688 2.7060-4                                       L.R.Greenwood*       (87)12977 11  2.7060-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 27059   3 103 A   1.465E7 400000.0.04720556 2.6286-4                                       L.R.Greenwood*       (87)12977 11  2.6286-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.138345
-    1 27059   3 103 A    1.48E7 400000.0.04581424 2.5511-4                                       L.R.Greenwood*       (87)12977 11  2.5511-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 27059   3 103 A   1.485E7 400000.0.04561549 2.5400-4                                       L.R.Greenwood*       (87)12977 11  2.5400-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383432
-    1 27059   3 103 A    1.49E7 400000.0.04561549 2.5400-4                                       L.R.Greenwood*       (87)12977 11  2.5400-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383432
+    1 27059   3 103 A    1.45E7 400000.0.04797641 3.3198-4                                       L.R.Greenwood*       (87)12977 11  3.3198-4                            0.69                                0.69    0.4684865.018739460.459638 .003180580.98111260.169726
+    1 27059   3 103 A   1.465E7 400000.0.04696434 3.3199-4                                       L.R.Greenwood*       (87)12977 11  3.3199-4                            0.71                                0.71    0.4644   0.018576 0.459163 .003245830.988723 0.1747328
+    1 27059   3 103 A    1.48E7 400000.0.04695542 3.3894-4                                       L.R.Greenwood*       (87)12977 11  3.3894-4                            0.72                                0.72    0.45     0.018    0.45835  .003308521.01855560.1838067
+    1 27059   3 103 A   1.485E7 400000.00.0463861 3.3713-4                                       L.R.Greenwood*       (87)12977 11  3.3713-4                            0.73                                0.73    0.4530556.018122220.4578535.003327691.01059020.1836239
+    1 27059   3 103 A    1.49E7 400000.0.04602539 3.3680-4                                       L.R.Greenwood*       (87)12977 11  3.3680-4                            0.73                                0.73    0.4561111.018244450.457357 .003346861.00273160.1834441
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -855,11 +855,11 @@
 #COVARDATA      1           5           5
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      4.8597-2    0.56         100
-1.465E7     1.465E7     4.7206-2    0.56         63 100
-1.48E7      1.48E7      4.5814-2    0.56         50 63 100
-1.485E7     1.485E7     4.5615-2    0.56         50 50 88 100
-1.49E7      1.49E7      4.5615-2    0.56         50 50 75 88 100
+1.45E7      1.45E7      4.7976-2    0.69         100
+1.465E7     1.465E7     4.6964-2    0.71         63 100
+1.48E7      1.48E7      4.6955-2    0.72         50 63 100
+1.485E7     1.485E7     4.6386-2    0.73         50 50 87 100
+1.49E7      1.49E7      4.6025-2    0.73         50 50 75 87 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977011 
@@ -888,7 +888,7 @@
 #PRODUCT        27-CO-58
 #C4ReaCode      (N,2N),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[4]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[4]*1.0027316(1.5e7)
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
@@ -908,33 +908,33 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 27-CO-59(N,2N)27-CO-58,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977012    0.993801    0.993801    -           -
+#/C5CORR        12977012    1.00034     1.00034     -           -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977012    CS          5           0.993801    0.993801    0.993801    -0.620%     1.00624     [MONIT]::nb93n2n
+#XCORR          12977012    CS          5           0.981113    1.01856     1.00034     +0.0343%    1.01925     exfor::10709002_nb93n2n
 #C5DATA         5
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 27059   3  16 A    1.45E7 400000.00.7662208 4.2665-3                                       L.R.Greenwood*       (87)12977 12  4.2665-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 27059   3  16 A   1.465E7 400000.00.7841092 4.3662-3                                       L.R.Greenwood*       (87)12977 12  4.3662-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.138345
-    1 27059   3  16 A    1.48E7 400000.00.7950411 4.4270-3                                       L.R.Greenwood*       (87)12977 12  4.4270-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 27059   3  16 A   1.485E7 400000.00.7910659 4.4049-3                                       L.R.Greenwood*       (87)12977 12  4.4049-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383437
-    1 27059   3  16 A    1.49E7 400000.00.7980224 4.4436-3                                       L.R.Greenwood*       (87)12977 12  4.4436-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.138345
+    1 27059   3  16 A    1.45E7 400000.00.7564378 5.2343-3                                       L.R.Greenwood*       (87)12977 12  5.2343-3                            0.69                                0.69    0.4684865.018739460.459638 .003180580.98111260.1697259
+    1 27059   3  16 A   1.465E7 400000.00.7801024 5.5146-3                                       L.R.Greenwood*       (87)12977 12  5.5146-3                            0.71                                0.71    0.4644   0.018576 0.459163 .003245830.988723 0.1747328
+    1 27059   3  16 A    1.48E7 400000.00.8148446 5.8818-3                                       L.R.Greenwood*       (87)12977 12  5.8818-3                            0.72                                0.72    0.45     0.018    0.45835  .003308521.01855560.1838067
+    1 27059   3  16 A   1.485E7 400000.00.8044299 5.8466-3                                       L.R.Greenwood*       (87)12977 12  5.8466-3                            0.73                                0.73    0.4530556.018122220.4578535.003327691.01059020.1836243
+    1 27059   3  16 A    1.49E7 400000.00.8051934 5.8923-3                                       L.R.Greenwood*       (87)12977 12  5.8923-3                            0.73                                0.73    0.4561111.018244450.457357 .003346861.00273160.1834454
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -949,11 +949,11 @@
 #COVARDATA      1           5           5
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      0.766221    0.56         100
-1.465E7     1.465E7     0.784109    0.56         63 100
-1.48E7      1.48E7      0.795041    0.56         50 63 100
-1.485E7     1.485E7     0.791066    0.56         50 50 87 100
-1.49E7      1.49E7      0.798022    0.56         50 50 75 88 100
+1.45E7      1.45E7      0.756438    0.69         100
+1.465E7     1.465E7     0.780102    0.71         63 100
+1.48E7      1.48E7      0.814845    0.72         50 63 100
+1.485E7     1.485E7     0.80443     0.73         50 50 88 100
+1.49E7      1.49E7      0.805193    0.73         50 50 75 87 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977012 
@@ -982,7 +982,7 @@
 #PRODUCT        27-CO-58
 #C4ReaCode      (N,P),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[4]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[4]*1.0027316(1.5e7)
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
@@ -1002,33 +1002,33 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 28-NI-58(N,P)27-CO-58,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977013    0.993801    0.993801    -           -
+#/C5CORR        12977013    1.00034     1.00034     -           -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977013    CS          5           0.993801    0.993801    0.993801    -0.620%     1.00624     [MONIT]::nb93n2n
+#XCORR          12977013    CS          5           0.981113    1.01856     1.00034     +0.0343%    1.01925     exfor::10709002_nb93n2n
 #C5DATA         5
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 28058   3 103 A    1.45E7 400000.00.3269606 1.8206-3                                       L.R.Greenwood*       (87)12977 13  1.8206-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 28058   3 103 A   1.465E7 400000.0 0.310066 1.7265-3                                       L.R.Greenwood*       (87)12977 13  1.7265-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 28058   3 103 A    1.48E7 400000.00.3011218 1.6767-3                                       L.R.Greenwood*       (87)12977 13  1.6767-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 28058   3 103 A   1.485E7 400000.00.2931713 1.6325-3                                       L.R.Greenwood*       (87)12977 13  1.6325-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.138345
-    1 28058   3 103 A    1.49E7 400000.00.2931713 1.6325-3                                       L.R.Greenwood*       (87)12977 13  1.6325-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.138345
+    1 28058   3 103 A    1.45E7 400000.0 0.322786 2.2336-3                                       L.R.Greenwood*       (87)12977 13  2.2336-3                            0.69                                0.69    0.4684865.018739460.459638 .003180580.98111260.1697259
+    1 28058   3 103 A   1.465E7 400000.00.3084816 2.1807-3                                       L.R.Greenwood*       (87)12977 13  2.1807-3                            0.71                                0.71    0.4644   0.018576 0.459163 .003245830.988723 0.1747324
+    1 28058   3 103 A    1.48E7 400000.00.3086224 2.2277-3                                       L.R.Greenwood*       (87)12977 13  2.2277-3                            0.72                                0.72    0.45     0.018    0.45835  .003308521.01855560.1838067
+    1 28058   3 103 A   1.485E7 400000.00.2981241 2.1668-3                                       L.R.Greenwood*       (87)12977 13  2.1668-3                            0.73                                0.73    0.4530556.018122220.4578535.003327691.01059020.1836252
+    1 28058   3 103 A    1.49E7 400000.00.2958058 2.1647-3                                       L.R.Greenwood*       (87)12977 13  2.1647-3                            0.73                                0.73    0.4561111.018244450.457357 .003346861.00273160.1834454
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -1043,11 +1043,11 @@
 #COVARDATA      1           5           5
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      0.326961    0.56         100
-1.465E7     1.465E7     0.310066    0.56         63 100
-1.48E7      1.48E7      0.301122    0.56         50 63 100
-1.485E7     1.485E7     0.293171    0.56         50 50 87 100
-1.49E7      1.49E7      0.293171    0.56         50 50 75 87 100
+1.45E7      1.45E7      0.322786    0.69         100
+1.465E7     1.465E7     0.308482    0.71         62 100
+1.48E7      1.48E7      0.308622    0.72         50 63 100
+1.485E7     1.485E7     0.298124    0.73         50 50 88 100
+1.49E7      1.49E7      0.295806    0.73         50 50 75 88 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977013 
@@ -1076,7 +1076,7 @@
 #PRODUCT        28-NI-57
 #C4ReaCode      (N,2N),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[4]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[4]*1.0027316(1.5e7)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]-4.65%
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
@@ -1099,38 +1099,38 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 28-NI-58(N,2N)28-NI-57,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (28-NI-58(N,2N)28-NI-57,,SIG)
 #+               #[1]#DECAY-DATA (28-NI-57,36.08HR,DG,1377.6,0.779) #Ix_old=0.779
 #+                a1=0.779/0.817;             #[1]#DECAY-DATA: correction to new 1377.63 keV gamma-yield per decay Ni-57 Ix_new=0.817
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9534884
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977014    0.947578    0.993801    0.953488    -
+#/C5CORR        12977014    0.953815    1.00034     0.953488    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977014    CS          5           0.947578    0.947578    0.947578    -5.24%      1.05532     [MONIT]::nb93n2n
+#XCORR          12977014    CS          5           0.935479    0.971181    0.953815    -4.62%      1.06897     exfor::10709002_nb93n2n
 #C5DATA         5
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 28058   3  16 A    1.45E7 400000.0.03136483 1.7465-4                                       L.R.Greenwood*       (87)12977 14  1.7465-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.947578 0.1319091
-    1 28058   3  16 A   1.465E7 400000.0.03619748 2.0156-4                                       L.R.Greenwood*       (87)12977 14  2.0156-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.947578 0.1319104
-    1 28058   3  16 A    1.48E7 400000.0.03790312 2.1106-4                                       L.R.Greenwood*       (87)12977 14  2.1106-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.947578 0.1319099
-    1 28058   3  16 A   1.485E7 400000.0.03904021 2.1739-4                                       L.R.Greenwood*       (87)12977 14  2.1739-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.947578 0.1319099
-    1 28058   3  16 A    1.49E7 400000.0.03875594 2.1580-4                                       L.R.Greenwood*       (87)12977 14  2.1580-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.947578 0.1319099
+    1 28058   3  16 A    1.45E7 400000.0.03096437 2.1426-4                                       L.R.Greenwood*       (87)12977 14  2.1426-4                            0.69                                0.69    0.4684865.018739460.459638 .003180580.93547950.1618311
+    1 28058   3  16 A   1.465E7 400000.0.03601251 2.5457-4                                       L.R.Greenwood*       (87)12977 14  2.5457-4                            0.71                                0.71    0.4644   0.018576 0.459163 .003245830.942736 0.1666057
+    1 28058   3  16 A    1.48E7 400000.0.03884724 2.8041-4                                       L.R.Greenwood*       (87)12977 14  2.8041-4                            0.72                                0.72    0.45     0.018    0.45835  .003308520.971181 0.1752575
+    1 28058   3  16 A   1.485E7 400000.0.03969974 2.8854-4                                       L.R.Greenwood*       (87)12977 14  2.8854-4                            0.73                                0.73    0.4530556.018122220.4578535.003327690.963586 0.1750842
+    1 28058   3  16 A    1.49E7 400000.00.0391042 2.8616-4                                       L.R.Greenwood*       (87)12977 14  2.8616-4                            0.73                                0.73    0.4561111.018244450.457357 .003346860.95609290.1749127
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -1145,11 +1145,11 @@
 #COVARDATA      1           5           5
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      3.1365-2    0.56         100
-1.465E7     1.465E7     3.6197-2    0.56         63 100
-1.48E7      1.48E7      3.7903-2    0.56         50 63 100
-1.485E7     1.485E7     3.9040-2    0.56         50 50 87 100
-1.49E7      1.49E7      3.8756-2    0.56         50 50 75 87 100
+1.45E7      1.45E7      3.0964-2    0.69         100
+1.465E7     1.465E7     3.6013-2    0.71         62 100
+1.48E7      1.48E7      3.8847-2    0.72         50 63 100
+1.485E7     1.485E7     3.9700-2    0.73         50 50 87 100
+1.49E7      1.49E7      3.9104-2    0.73         50 50 75 88 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977014 
@@ -1178,7 +1178,7 @@
 #PRODUCT        27-CO-60
 #C4ReaCode      (N,P),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[4]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[4]*1.0027316(1.5e7)
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
@@ -1198,33 +1198,33 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 28-NI-60(N,P)27-CO-60,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977015    0.993801    0.993801    -           -
+#/C5CORR        12977015    1.00034     1.00034     -           -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977015    CS          5           0.993801    0.993801    0.993801    -0.620%     1.00624     [MONIT]::nb93n2n
+#XCORR          12977015    CS          5           0.981113    1.01856     1.00034     +0.0343%    1.01925     exfor::10709002_nb93n2n
 #C5DATA         5
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 28060   3 103 A    1.45E7 400000.00.1411198 7.8580-4                                       L.R.Greenwood*       (87)12977 15  7.8580-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 28060   3 103 A   1.465E7 400000.00.1371446 7.6366-4                                       L.R.Greenwood*       (87)12977 15  7.6366-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.138345
-    1 28060   3 103 A    1.48E7 400000.00.1341632 7.4706-4                                       L.R.Greenwood*       (87)12977 15  7.4706-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 28060   3 103 A   1.485E7 400000.00.1311818 7.3046-4                                       L.R.Greenwood*       (87)12977 15  7.3046-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.138345
-    1 28060   3 103 A    1.49E7 400000.00.1311818 7.3046-4                                       L.R.Greenwood*       (87)12977 15  7.3046-4                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.138345
+    1 28060   3 103 A    1.45E7 400000.0 0.139318 9.6404-4                                       L.R.Greenwood*       (87)12977 15  9.6404-4                            0.69                                0.69    0.4684865.018739460.459638 .003180580.98111260.1697259
+    1 28060   3 103 A   1.465E7 400000.00.1364438 9.6453-4                                       L.R.Greenwood*       (87)12977 15  9.6453-4                            0.71                                0.71    0.4644   0.018576 0.459163 .003245830.988723 0.1747328
+    1 28060   3 103 A    1.48E7 400000.0 0.137505 9.9256-4                                       L.R.Greenwood*       (87)12977 15  9.9256-4                            0.72                                0.72    0.45     0.018    0.45835  .003308521.01855560.1838067
+    1 28060   3 103 A   1.485E7 400000.00.1333979 9.6954-4                                       L.R.Greenwood*       (87)12977 15  9.6954-4                            0.73                                0.73    0.4530556.018122220.4578535.003327691.01059020.1836253
+    1 28060   3 103 A    1.49E7 400000.00.1323606 9.6859-4                                       L.R.Greenwood*       (87)12977 15  9.6859-4                            0.73                                0.73    0.4561111.018244450.457357 .003346861.00273160.1834454
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -1239,11 +1239,11 @@
 #COVARDATA      1           5           5
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      0.14112     0.56         100
-1.465E7     1.465E7     0.137145    0.56         63 100
-1.48E7      1.48E7      0.134163    0.56         50 63 100
-1.485E7     1.485E7     0.131182    0.56         50 50 87 100
-1.49E7      1.49E7      0.131182    0.56         50 50 75 87 100
+1.45E7      1.45E7      0.139318    0.69         100
+1.465E7     1.465E7     0.136444    0.71         63 100
+1.48E7      1.48E7      0.137505    0.72         50 63 100
+1.485E7     1.485E7     0.133398    0.73         50 50 87 100
+1.49E7      1.49E7      0.132361    0.73         50 50 75 88 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977015 
@@ -1272,7 +1272,7 @@
 #PRODUCT        27-CO-60
 #C4ReaCode      (N,A),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[4]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[4]*1.0027316(1.5e7)
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
@@ -1292,33 +1292,33 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 29-CU-63(N,A)27-CO-60,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977016    0.993801    0.993801    -           -
+#/C5CORR        12977016    1.00034     1.00034     -           -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977016    CS          5           0.993801    0.993801    0.993801    -0.620%     1.00624     [MONIT]::nb93n2n
+#XCORR          12977016    CS          5           0.981113    1.01856     1.00034     +0.0343%    1.01925     exfor::10709002_nb93n2n
 #C5DATA         5
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 29063   3 107 A    1.45E7 400000.0.04094461 3.7596-3                                       L.R.Greenwood*       (87)12977 16  3.7596-3                            9.18                                9.18    0.463    0.01852  0.46013  .002562140.99380120.9125134
-    1 29063   3 107 A   1.465E7 400000.0.04014957 3.6866-3                                       L.R.Greenwood*       (87)12977 16  3.6866-3                            9.18                                9.18    0.463    0.01852  0.46013  .002562140.99380120.9125134
-    1 29063   3 107 A    1.48E7 400000.0.03816198 3.5041-3                                       L.R.Greenwood*       (87)12977 16  3.5041-3                            9.18                                9.18    0.463    0.01852  0.46013  .002562140.99380120.9125133
-    1 29063   3 107 A   1.485E7 400000.0.03855949 3.5406-3                                       L.R.Greenwood*       (87)12977 16  3.5406-3                            9.18                                9.18    0.463    0.01852  0.46013  .002562140.99380120.9125133
-    1 29063   3 107 A    1.49E7 400000.0.03985143 3.6592-3                                       L.R.Greenwood*       (87)12977 16  3.6592-3                            9.18                                9.18    0.463    0.01852  0.46013  .002562140.99380120.9125133
+    1 29063   3 107 A    1.45E7 400000.0.04042184 3.7153-3                                       L.R.Greenwood*       (87)12977 16  3.7153-3                            9.19                                9.19    0.4684865.018739460.459638 .003180580.98111260.9017638
+    1 29063   3 107 A   1.465E7 400000.0.03994441 3.6718-3                                       L.R.Greenwood*       (87)12977 16  3.6718-3                            9.19                                9.19    0.4644   0.018576 0.459163 .003245830.988723 0.9088711
+    1 29063   3 107 A    1.48E7 400000.0.03911255 3.5958-3                                       L.R.Greenwood*       (87)12977 16  3.5958-3                            9.19                                9.19    0.45     0.018    0.45835  .003308521.01855560.9364123
+    1 29063   3 107 A   1.485E7 400000.00.0392109.00360502                                       L.R.Greenwood*       (87)12977 16 .00360502                            9.19                                9.19    0.4530556.018122220.4578535.003327691.01059020.9291289
+    1 29063   3 107 A    1.49E7 400000.0.04020954 3.6970-3                                       L.R.Greenwood*       (87)12977 16  3.6970-3                            9.19                                9.19    0.4561111.018244450.457357 .003346861.00273160.9219433
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -1333,11 +1333,11 @@
 #COVARDATA      1           5           5
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      4.0945-2    9.18         100
-1.465E7     1.465E7     4.0150-2    9.18         63 100
-1.48E7      1.48E7      0.038162    9.18         50 62 100
-1.485E7     1.485E7     3.8559-2    9.18         50 50 88 100
-1.49E7      1.49E7      3.9851-2    9.18         50 50 75 88 100
+1.45E7      1.45E7      4.0422-2    9.19         100
+1.465E7     1.465E7     3.9944-2    9.19         62 100
+1.48E7      1.48E7      3.9113-2    9.19         50 63 100
+1.485E7     1.485E7     3.9211-2    9.19         50 50 88 100
+1.49E7      1.49E7      4.0210-2    9.19         50 50 75 87 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977016 
@@ -1366,7 +1366,7 @@
 #PRODUCT        39-Y-88
 #C4ReaCode      (N,2N),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[1]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[1]*1.0027316(1.5e7)
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
@@ -1386,30 +1386,30 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 39-Y-89(N,2N)39-Y-88,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977017    0.993801    0.993801    -           -
+#/C5CORR        12977017    0.991922    0.991922    -           -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977017    CS          2           0.993801    0.993801    0.993801    -0.620%     1.00624     [MONIT]::nb93n2n
+#XCORR          12977017    CS          2           0.981113    1.00273     0.991922    -0.808%     1.01925     exfor::10709002_nb93n2n
 #C5DATA         2
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 39089   3  16 A    1.45E7 400000.00.9232414 5.1409-3                                       L.R.Greenwood*       (87)12977 17  5.1409-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 39089   3  16 A    1.49E7 400000.00.9848571 5.4839-3                                       L.R.Greenwood*       (87)12977 17  5.4839-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383437
+    1 39089   3  16 A    1.45E7 400000.00.9114537 6.3070-3                                       L.R.Greenwood*       (87)12977 17  6.3070-3                            0.69                                0.69    0.4684865.018739460.459638 .003180580.98111260.1697259
+    1 39089   3  16 A    1.49E7 400000.00.9937071 7.2717-3                                       L.R.Greenwood*       (87)12977 17  7.2717-3                            0.73                                0.73    0.4561111.018244450.457357 .003346861.00273160.1834445
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -1424,8 +1424,8 @@
 #COVARDATA      1           2           2
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      0.923241    0.56         100
-1.49E7      1.49E7      0.984857    0.56         50 100
+1.45E7      1.45E7      0.911454    0.69         100
+1.49E7      1.49E7      0.993707    0.73         50 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977017 
@@ -1454,7 +1454,7 @@
 #PRODUCT        37-RB-86
 #C4ReaCode      (N,A),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[1]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[1]*1.0027316(1.5e7)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.62%
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
@@ -1477,35 +1477,35 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 39-Y-89(N,A)37-RB-86,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (39-Y-89(N,A)37-RB-86,,SIG)
 #+               #[1]#DECAY-DATA (37-RB-86-G,18.66D,DG,1076.6,0.0878) #Ix_old=0.0878
 #+                a1=0.0878/0.0864;           #[1]#DECAY-DATA: correction to new 1077 keV gamma-yield per decay Rb-86-g Ix_new=0.0864
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0162038
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977018    1.00990     0.993801    1.01620     -
+#/C5CORR        12977018    1.00799     0.991922    1.01620     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977018    CS          2           1.00990     1.00990     1.00990     +0.990%     1.00990     [MONIT]::nb93n2n
+#XCORR          12977018    CS          2           0.997010    1.01898     1.00799     +0.799%     1.01898     exfor::10709002_nb93n2n
 #C5DATA         2
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 39089   3 107 A    1.45E7 400000.0 5.5545-3 6.8775-4                                       L.R.Greenwood*       (87)12977 18  6.8775-4                            12.4                                12.4    0.463    0.01852  0.46013  .002562141.00990450.9618831
-    1 39089   3 107 A    1.49E7 400000.0 5.8574-3 7.2526-4                                       L.R.Greenwood*       (87)12977 18  7.2526-4                            12.4                                12.4    0.463    0.01852  0.46013  .002562141.00990450.9618831
+    1 39089   3 107 A    1.45E7 400000.0 5.4836-3 6.7934-4                                       L.R.Greenwood*       (87)12977 18  6.7934-4                            12.4                                12.4    0.4684865.018739460.459638 .003180580.99701030.9501245
+    1 39089   3 107 A    1.49E7 400000.0 5.9101-3 7.3231-4                                       L.R.Greenwood*       (87)12977 18  7.3231-4                            12.4                                12.4    0.4561111.018244450.457357 .003346861.01897950.9712399
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -1520,8 +1520,8 @@
 #COVARDATA      1           2           2
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      5.5545-3    12.38        100
-1.49E7      1.49E7      5.8574-3    12.38        50 100
+1.45E7      1.45E7      5.4836-3    12.39        100
+1.49E7      1.49E7      5.9101-3    12.39        50 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977018 
@@ -1550,7 +1550,7 @@
 #PRODUCT        40-ZR-95
 #C4ReaCode      (N,2N),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[4]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[4]*1.0027316(1.5e7)
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
@@ -1570,33 +1570,33 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 40-ZR-96(N,2N)40-ZR-95,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977020    0.993801    0.993801    -           -
+#/C5CORR        12977020    1.00034     1.00034     -           -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977020    CS          5           0.993801    0.993801    0.993801    -0.620%     1.00624     [MONIT]::nb93n2n
+#XCORR          12977020    CS          5           0.981113    1.01856     1.00034     +0.0343%    1.01925     exfor::10709002_nb93n2n
 #C5DATA         5
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 40096   3  16 A    1.45E7 400000.01.5980325 8.8983-3                                       L.R.Greenwood*       (87)12977 20  8.8983-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 40096   3  16 A   1.465E7 400000.0 1.570206 8.7433-3                                       L.R.Greenwood*       (87)12977 20  8.7433-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383437
-    1 40096   3  16 A    1.48E7 400000.01.5711999 8.7489-3                                       L.R.Greenwood*       (87)12977 20  8.7489-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.138345
-    1 40096   3  16 A   1.485E7 400000.01.5890883 8.8485-3                                       L.R.Greenwood*       (87)12977 20  8.8485-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
-    1 40096   3  16 A    1.49E7 400000.01.5831255 8.8153-3                                       L.R.Greenwood*       (87)12977 20  8.8153-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
+    1 40096   3  16 A    1.45E7 400000.01.5776291.01091677                                       L.R.Greenwood*       (87)12977 20 .01091677                            0.69                                0.69    0.4684865.018739460.459638 .003180580.98111260.1697259
+    1 40096   3  16 A   1.465E7 400000.01.5621824.01104305                                       L.R.Greenwood*       (87)12977 20 .01104305                            0.71                                0.71    0.4644   0.018576 0.459163 .003245830.988723 0.1747318
+    1 40096   3  16 A    1.48E7 400000.01.6103365.01162396                                       L.R.Greenwood*       (87)12977 20 .01162396                            0.72                                0.72    0.45     0.018    0.45835  .003308521.01855560.1838071
+    1 40096   3  16 A   1.485E7 400000.01.6159338.01174464                                       L.R.Greenwood*       (87)12977 20 .01174464                            0.73                                0.73    0.4530556.018122220.4578535.003327691.01059020.1836248
+    1 40096   3  16 A    1.49E7 400000.01.5973514.01168912                                       L.R.Greenwood*       (87)12977 20 .01168912                            0.73                                0.73    0.4561111.018244450.457357 .003346861.00273160.183445
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -1611,11 +1611,11 @@
 #COVARDATA      1           5           5
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      1.59803     0.56         100
-1.465E7     1.465E7     1.57021     0.56         62 100
-1.48E7      1.48E7      1.5712      0.56         50 63 100
-1.485E7     1.485E7     1.58909     0.56         50 50 87 100
-1.49E7      1.49E7      1.58312     0.56         50 50 75 87 100
+1.45E7      1.45E7      1.57763     0.69         100
+1.465E7     1.465E7     1.56218     0.71         62 100
+1.48E7      1.48E7      1.61034     0.72         50 62 100
+1.485E7     1.485E7     1.61593     0.73         50 50 87 100
+1.49E7      1.49E7      1.59735     0.73         50 50 75 87 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977020 
@@ -1644,7 +1644,7 @@
 #PRODUCT        47-AG-106-M
 #C4ReaCode      (N,2N),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[2]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[2]*1.0027316(1.5e7)
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
@@ -1664,31 +1664,31 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 47-AG-107(N,2N)47-AG-106-M,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977021    0.993801    0.993801    -           -
+#/C5CORR        12977021    1.00080     1.00080     -           -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977021    CS          3           0.993801    0.993801    0.993801    -0.620%     1.00624     [MONIT]::nb93n2n
+#XCORR          12977021    CS          3           0.981113    1.01856     1.00080     +0.0800%    1.01925     exfor::10709002_nb93n2n
 #C5DATA         3
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 47107   3  16MA    1.45E7 400000.00.5436094.00302695                                       L.R.Greenwood*       (87)12977 21 .00302695                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383432
-    1 47107   3  16MA    1.48E7 400000.00.5475846 3.0491-3                                       L.R.Greenwood*       (87)12977 21  3.0491-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383432
-    1 47107   3  16MA    1.49E7 400000.00.5634853 3.1377-3                                       L.R.Greenwood*       (87)12977 21  3.1377-3                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.138345
+    1 47107   3  16MA    1.45E7 400000.00.5366687 3.7136-3                                       L.R.Greenwood*       (87)12977 21  3.7136-3                            0.69                                0.69    0.4684865.018739460.459638 .003180580.98111260.1697249
+    1 47107   3  16MA    1.48E7 400000.00.5612243 4.0511-3                                       L.R.Greenwood*       (87)12977 21  4.0511-3                            0.72                                0.72    0.45     0.018    0.45835  .003308521.01855560.1838057
+    1 47107   3  16MA    1.49E7 400000.00.5685487 4.1605-3                                       L.R.Greenwood*       (87)12977 21  4.1605-3                            0.73                                0.73    0.4561111.018244450.457357 .003346861.00273160.1834454
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -1703,9 +1703,9 @@
 #COVARDATA      1           3           3
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      0.543609    0.56         100
-1.48E7      1.48E7      0.547585    0.56         50 100
-1.49E7      1.49E7      0.563485    0.56         50 75 100
+1.45E7      1.45E7      0.536669    0.69         100
+1.48E7      1.48E7      0.561224    0.72         50 100
+1.49E7      1.49E7      0.568549    0.73         50 75 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977021 
@@ -1734,7 +1734,7 @@
 #PRODUCT        69-TM-168
 #C4ReaCode      (N,2N),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[1]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[1]*1.0027316(1.5e7)
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
@@ -1754,30 +1754,30 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 69-TM-169(N,2N)69-TM-168,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977022    0.993801    0.993801    -           -
+#/C5CORR        12977022    0.991922    0.991922    -           -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977022    CS          2           0.993801    0.993801    0.993801    -0.620%     1.00624     [MONIT]::nb93n2n
+#XCORR          12977022    CS          2           0.981113    1.00273     0.991922    -0.808%     1.01925     exfor::10709002_nb93n2n
 #C5DATA         2
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 69169   3  16 A    1.45E7 400000.01.9269807.01073004                                       L.R.Greenwood*       (87)12977 22 .01073004                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.138345
-    1 69169   3  16 A    1.49E7 400000.01.9339373.01076874                                       L.R.Greenwood*       (87)12977 22 .01076874                            0.56                                0.56    0.463    0.01852  0.46013  .002562140.99380120.1383445
+    1 69169   3  16 A    1.45E7 400000.01.9023775.01316398                                       L.R.Greenwood*       (87)12977 22 .01316398                            0.69                                0.69    0.4684865.018739460.459638 .003180580.98111260.1697263
+    1 69169   3  16 A    1.49E7 400000.01.9513158.01427936                                       L.R.Greenwood*       (87)12977 22 .01427936                            0.73                                0.73    0.4561111.018244450.457357 .003346861.00273160.1834451
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -1792,8 +1792,8 @@
 #COVARDATA      1           2           2
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      1.92698     0.56         100
-1.49E7      1.49E7      1.93394     0.56         50 100
+1.45E7      1.45E7      1.90238     0.69         100
+1.49E7      1.49E7      1.95132     0.73         50 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977022 
@@ -1822,7 +1822,7 @@
 #PRODUCT        79-AU-196
 #C4ReaCode      (N,2N),SIG
 #CompNotes      Revised column:DATA-ERR,PER-CENT to ERR-SYS,PER-CENT
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.99380124(1.5e7) Data[4]*0.99380124(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9811126(1.5e7) Data[4]*1.0027316(1.5e7)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.828%
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
@@ -1845,38 +1845,38 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92,,SIG
-#M0             Point: XS(b)=0.463(4%)  EN-NRM(eV):1.45E7
-#M1             Point: XS(b)=0.46013(0.56%)  EN-NRM(eV):1.45E7
+#M0             Monitor:{exfor:10709002$nb93n2n}
+#M1             Monitor:{recom$nb93n2n}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 79-AU-197(N,2N)79-AU-196,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92,,SIG
-#+              #[0]#En=1.45E7
-#+              a0=[MONIT];                   #[0]#old monitor point 0.463
-#+              m1:recom$nb93n2n;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [14.5MeV]
-#+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              #m0: {10709002,D.R.Nethaway,J,JIN,40,1285,1978} $ nb93n2n;#[0]#old monit-ref
+#+              m0: exfor$10709002_nb93n2n;   #[0]#old monitor(energy) in EXFOR
+#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              dy=dy/y;                      #[0]#to rel. uncertainties----
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (79-AU-197(N,2N)79-AU-196,,SIG)
 #+               #[1]#DECAY-DATA (79-AU-196-G,6.183D,DG,355.7,0.8772) #Ix_old=0.8772
 #+                a1=0.8772/0.87;             #[1]#DECAY-DATA: correction to new 355.73 keV gamma-yield per decay Au-196-g Ix_new=0.87
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0082759
-#+              dy=dy*y;                      #to abs. uncertainties
+#+              dy=dy*y;                      #[0]#to abs. uncertainties
 #+
-#/C5CORR        12977023    1.00203     0.993801    1.00828     -
+#/C5CORR        12977023    1.00862     1.00034     1.00828     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          12977023    CS          5           1.00203     1.00203     1.00203     +0.203%     1.00203     [MONIT]::nb93n2n
+#XCORR          12977023    CS          5           0.989232    1.02699     1.00862     +0.862%     1.02699     exfor::10709002_nb93n2n
 #C5DATA         5
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 79197   3  16 A    1.45E7 400000.02.1553576.01200167                                       L.R.Greenwood*       (87)12977 23 .01200167                            0.56                                0.56    0.463    0.01852  0.46013  .002562141.00202580.1394894
-    1 79197   3  16 A   1.465E7 400000.02.1583638.01201841                                       L.R.Greenwood*       (87)12977 23 .01201841                            0.56                                0.56    0.463    0.01852  0.46013  .002562141.00202580.1394894
-    1 79197   3  16 A    1.48E7 400000.02.1753983.01211326                                       L.R.Greenwood*       (87)12977 23 .01211326                            0.56                                0.56    0.463    0.01852  0.46013  .002562141.00202580.1394894
-    1 79197   3  16 A   1.485E7 400000.02.1764002.01211889                                       L.R.Greenwood*       (87)12977 23 .01211889                            0.56                                0.56    0.463    0.01852  0.46013  .002562141.00202580.1394899
-    1 79197   3  16 A    1.49E7 400000.0 2.178404  0.01213                                       L.R.Greenwood*       (87)12977 23   0.01213                            0.56                                0.56    0.463    0.01852  0.46013  .002562141.00202580.1394894
+    1 79197   3  16 A    1.45E7 400000.02.1278384.01472407                                       L.R.Greenwood*       (87)12977 23 .01472407                            0.69                                0.69    0.4684865.018739460.459638 .003180580.98923220.1711306
+    1 79197   3  16 A   1.465E7 400000.02.1473346.01517954                                       L.R.Greenwood*       (87)12977 23 .01517954                            0.71                                0.71    0.4644   0.018576 0.459163 .003245830.99690560.1761785
+    1 79197   3  16 A    1.48E7 400000.02.2295847.01609387                                       L.R.Greenwood*       (87)12977 23 .01609387                            0.72                                0.72    0.45     0.018    0.45835  .003308521.026985 0.1853278
+    1 79197   3  16 A   1.485E7 400000.02.2131677.01608539                                       L.R.Greenwood*       (87)12977 23 .01608539                            0.73                                0.73    0.4530556.018122220.4578535.003327691.01895370.1851449
+    1 79197   3  16 A    1.49E7 400000.02.19797950.0160844                                       L.R.Greenwood*       (87)12977 23 0.0160844                            0.73                                0.73    0.4561111.018244450.457357 .003346861.01103010.1849632
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -1891,11 +1891,11 @@
 #COVARDATA      1           5           5
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      2.15536     0.56         100
-1.465E7     1.465E7     2.15836     0.56         63 100
-1.48E7      1.48E7      2.1754      0.56         50 63 100
-1.485E7     1.485E7     2.1764      0.56         50 50 87 100
-1.49E7      1.49E7      2.1784      0.56         50 50 75 87 100
+1.45E7      1.45E7      2.12784     0.69         100
+1.465E7     1.465E7     2.14734     0.71         62 100
+1.48E7      1.48E7      2.22958     0.72         50 62 100
+1.485E7     1.485E7     2.21317     0.73         50 50 87 100
+1.49E7      1.49E7      2.19798     0.73         50 50 75 88 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       12977023 

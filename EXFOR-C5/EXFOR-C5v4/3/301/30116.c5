@@ -46,12 +46,12 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      49-IN-115(N,INL)49-IN-115-M,,SIG
 #M0             exfor:[EN,MONIT,MONIT-ERR]
-#M1             Monitor:{recom$in115ninl}
+#M1             Monitor:{recom$in115ninlm}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 49-IN-113(N,INL)49-IN-113-M,,SIG
 #+              #[0]#Monitor:  49-IN-115(N,INL)49-IN-115-M,,SIG
 #+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
-#+              m1: recom$in115ninl;          #[0]#new monitor(energy)
+#+              m1: recom$in115ninlm;         #[0]#new monitor(energy)
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
@@ -59,7 +59,7 @@
 #+
 #/C5CORR        30116002    0.985273    0.985273    -           -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          30116002    CS          2           0.956849    1.01370     0.985273    -1.47%      1.04510     [EN,MONIT,MONIT-ERR]::in115ninl
+#XCORR          30116002    CS          2           0.956849    1.01370     0.985273    -1.47%      1.04510     [EN,MONIT,MONIT-ERR]::in115ninlm
 #C5DATA         2
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
@@ -123,14 +123,14 @@
 #+              #[0]#Monitor:  49-IN-115(N,INL)49-IN-115-M,,SIG
 #+              #[0]#En=1.47E7
 #+              a0=[MONIT];                   #[0]#old monitor point 0.063
-#+              a1=recom$in115ninl[EN];       #[0]#new monitor point [14.7MeV]
+#+              a1=recom$in115ninlm[EN];      #[0]#new monitor point [14.7MeV]
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y*a1/a0;                    #[0]#renormalizing CS
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
 #/C5CORR        30116003    0.956849    0.956849    -           -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          30116003    CS          1           0.956849    0.956849    0.956849    -4.32%      1.04510     [MONIT]::in115ninl
+#XCORR          30116003    CS          1           0.956849    0.956849    0.956849    -4.32%      1.04510     [MONIT]::in115ninlm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    

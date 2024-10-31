@@ -23,6 +23,10 @@
 #REAC1          N,F
 #C4ReaCode      (N,F),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.21%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9803441(5.4e-3)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -41,14 +45,27 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      92-U-235(N,F),,SIG
 #M0             Point: XS(b)=1325.0(1.21%)  EN-NRM(eV):0.00538
-#M1             Point: XS(b)=  EN-NRM(eV):0.00538
+#M1             Point: XS(b)=1298.9559(0.55%)  EN-NRM(eV):0.00538
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 96-CM-243(N,F),,SIG
+#+              #[0]#Monitor:  92-U-235(N,F),,SIG
+#+              #[0]#En=0.00538
+#+              a0=[MONIT];                   #[0]#old monitor point 1325.0
+#+              a1=recom$u235nf[EN];          #[0]#new monitor point [5.38E-9MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23577002    0.980344    0.980344    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23577002    CS          1           0.980344    0.980344    0.980344    -1.97%      1.02005     [MONIT]::u235nf
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 96243   3  18     0.00538            1240.0     28.0                                       O.Serot,             (05)23577  2 15.004001                       28.0 1.21                       2.26     2.26    1325.0   16.0
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 96243   3  18     0.00538         1215.626724.125742                                       O.Serot*,            (05)23577  2 6.7026925                  24.125742 0.55                       1.98     1.98    1325.0   16.0     1298.95597.091956 0.98034410.8616337
 #/C5DATA        0
 #/DATASET       23577002 
 #DATASET        23577003   20200801
@@ -124,6 +141,10 @@
 #REAC1          N,F
 #C4ReaCode      (N,F),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.21%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9803441(5.4e-3)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -142,14 +163,27 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      92-U-235(N,F),,SIG
 #M0             Point: XS(b)=1325.0(1.21%)  EN-NRM(eV):0.00538
-#M1             Point: XS(b)=  EN-NRM(eV):0.00538
+#M1             Point: XS(b)=1298.9559(0.55%)  EN-NRM(eV):0.00538
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 96-CM-246(N,F),,SIG
+#+              #[0]#Monitor:  92-U-235(N,F),,SIG
+#+              #[0]#En=0.00538
+#+              a0=[MONIT];                   #[0]#old monitor point 1325.0
+#+              a1=recom$u235nf[EN];          #[0]#new monitor point [5.38E-9MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23577004    0.980344    0.980344    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23577004    CS          1           0.980344    0.980344    0.980344    -1.97%      1.02005     [MONIT]::u235nf
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 96246   3  18     0.00538             0.025    0.047                                       O.Serot,             (05)23577  4  3.025E-4                      0.047 1.21                       188      188     1325.0   16.0
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 96246   3  18     0.00538         0.0245086.04607541                                       O.Serot*,            (05)23577  4  1.3513-4                  .04607541 0.55                       188      188     1325.0   16.0     1298.95597.091956 0.98034410.980328
 #/C5DATA        0
 #/DATASET       23577004 
 #DATASET        23577005   20200801
@@ -225,6 +259,10 @@
 #REAC1          N,F
 #C4ReaCode      (N,F),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.21%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9803441(5.4e-3)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -243,14 +281,27 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      92-U-235(N,F),,SIG
 #M0             Point: XS(b)=1325.0(1.21%)  EN-NRM(eV):0.00538
-#M1             Point: XS(b)=  EN-NRM(eV):0.00538
+#M1             Point: XS(b)=1298.9559(0.55%)  EN-NRM(eV):0.00538
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 96-CM-248(N,F),,SIG
+#+              #[0]#Monitor:  92-U-235(N,F),,SIG
+#+              #[0]#En=0.00538
+#+              a0=[MONIT];                   #[0]#old monitor point 1325.0
+#+              a1=recom$u235nf[EN];          #[0]#new monitor point [5.38E-9MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23577006    0.980344    0.980344    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23577006    CS          1           0.980344    0.980344    0.980344    -1.97%      1.02005     [MONIT]::u235nf
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 96248   3  18     0.00538         0.6850001.08400001                                       O.Serot,             (05)23577  6 0.0082885                  .08400001 1.21                       12.3     12.3    1325.0   16.0
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 96248   3  18     0.00538         0.6715358.08203066                                       O.Serot*,            (05)23577  6  3.7027-3                  .08203066 0.55                       12.2     12.2    1325.0   16.0     1298.95597.091956 0.98034410.9765554
 #/C5DATA        0
 #/DATASET       23577006 
 #DATASET        23577007   20200801

@@ -24,6 +24,10 @@
 #PRODUCT        18-AR-41
 #C4ReaCode      (N,G),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=3.0%
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.94763863(3.7e5)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -40,13 +44,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M1,,SIG
+#M0             Point: XS(b)=0.18(3%)  EN-NRM(eV):370000.0
+#M1             Point: XS(b)=0.170575(2.24%)  EN-NRM(eV):370000.0
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 18-AR-40(N,G)18-AR-41,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M1,,SIG
+#+              #[0]#En=370000.0
+#+              a0=[MONIT];                   #[0]#old monitor point 0.18
+#+              a1=recom$in115ngm[EN];        #[0]#new monitor point [0.37MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        14398002    0.947639    0.947639    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          14398002    CS          1           0.947639    0.947639    0.947639    -5.24%      1.05525     [MONIT]::in115ngm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 18040   3 102 C  370000.0 100000.0  0.00119   6.0E-5                                       M.Bhike,             (14)14398  2   3.57E-51.5023E-5            6.0E-5 3        1.26              5.04     5.04
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 18040   3 102 C  370000.0 100000.0.00112769 5.2196-5                                       M.Bhike*,            (14)14398  2  2.5220-51.5023E-5          5.2196-5 2.24     1.33              4.63     4.63    0.18     0.0054   0.170575 .003814720.94763860.8699262
 #/C5DATA        0
 #/DATASET       14398002 
 #DATASET        14398003   20140404
@@ -100,12 +120,12 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      49-IN-115(N,INL)49-IN-115-M,,SIG
 #M0             exfor:[EN,MONIT,MONIT-ERR]
-#M1             Monitor:{recom$in115ninl}
+#M1             Monitor:{recom$in115ninlm}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 18-AR-40(N,G)18-AR-41,,SIG
 #+              #[0]#Monitor:  49-IN-115(N,INL)49-IN-115-M,,SIG
 #+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
-#+              m1: recom$in115ninl;          #[0]#new monitor(energy)
+#+              m1: recom$in115ninlm;         #[0]#new monitor(energy)
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
@@ -118,7 +138,7 @@
 #+
 #/C5CORR        14398003    1.00325     1.00106     -           1.00218
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          14398003    CS          8           0.981259    1.02244     1.00325     +0.325%     1.02244     [EN,MONIT,MONIT-ERR]::in115ninl
+#XCORR          14398003    CS          8           0.981259    1.02244     1.00325     +0.325%     1.02244     [EN,MONIT,MONIT-ERR]::in115ninlm
 #C5DATA         8
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    

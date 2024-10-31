@@ -27,7 +27,7 @@
 #CompNotes      ERR-ANALYS:(ERR-S,0.2,4.8)    ADDED AS COMMON:ERR-S,PER-CENT=0.2%
 #CompNotes      ERR-ANALYS:(ERR-6,1.,1.8)     ADDED AS COMMON:ERR-6,PER-CENT=1.0%
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=3
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0013218(1.4e7) Data[2]*1.0005436(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0004741(1.4e7) Data[2]*1.0002502(1.5e7)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]-3.23%
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
@@ -53,12 +53,12 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
 #M0             exfor:[EN,MONIT,MONIT-ERR]
-#M1             Monitor:{recom$nb93n2n}
+#M1             Monitor:{recom$nb93n2nm}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 64-GD-160(N,2N)64-GD-159,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
 #+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
-#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              m1: recom$nb93n2nm;           #[0]#new monitor(energy)
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
@@ -69,18 +69,18 @@
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=0.96774197
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        31621002    0.968736    1.00103     0.967742    -
+#/C5CORR        31621002    0.968368    1.00065     0.967742    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31621002    CS          3           0.968268    0.969021    0.968736    -3.13%      1.03277     [EN,MONIT,MONIT-ERR]::nb93n2n
+#XCORR          31621002    CS          3           0.967984    0.968920    0.968368    -3.16%      1.03307     [EN,MONIT,MONIT-ERR]::nb93n2nm
 #C5DATA         3
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 64160   3  16      1.35E7 200000.01.8799012.07766256                                       Pu Zhong-Sheng*,     (05)31621  2 .05831534  0.00388         .07766256 3.10     0.21              4.13     4.13    0.4524   0.0057   0.452998 .002680130.96902110.9356936
+    1 64160   3  16      1.35E7 200000.01.8783096 0.077608                                       Pu Zhong-Sheng*,     (05)31621  2 .05828086  0.00388          0.077608 3.10     0.21              4.13     4.13    0.4524   0.0057   0.4526145.002696610.96820070.9350361
     1 64160   3  16      1.41E7 100000.02.2517705.08568511                                       Pu Zhong-Sheng*,     (05)31621  2 .06965747 0.004648         .08568511 3.09     0.21              3.81     3.81    0.4591   0.0056   0.459659 .002502550.96892020.9313598
-    1 64160   3  16      1.46E7 200000.01.9200757.07162101                                       Pu Zhong-Sheng*,     (05)31621  2 .05948181 0.003966         .07162101 3.10     0.21              3.73     3.73    0.4599   0.0056   0.46015  .002597720.968268 0.9301429
+    1 64160   3  16      1.46E7 200000.01.9195127.07169916                                       Pu Zhong-Sheng*,     (05)31621  2 .05958372 0.003966         .07169916 3.10     0.21              3.74     3.74    0.4599   0.0056   0.46001512.7496-3 0.96798410.9311578
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -95,9 +95,9 @@
 #COVARDATA      1           3           3
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.35E7      1.35E7      1.8799      3.11         100
+1.35E7      1.35E7      1.87831     3.11         100
 1.41E7      1.41E7      2.25177     3.1          50 100
-1.46E7      1.46E7      1.92008     3.1          50 54 100
+1.46E7      1.46E7      1.91951     3.11         50 54 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       31621002 
@@ -129,7 +129,7 @@
 #CompNotes      ERR-ANALYS:(ERR-S,0.2,4.8)    ADDED AS COMMON:ERR-S,PER-CENT=0.2%
 #CompNotes      ERR-ANALYS:(ERR-6,1.,1.8)     ADDED AS COMMON:ERR-6,PER-CENT=1.0%
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=3
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0013218(1.4e7) Data[2]*1.0005436(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0004741(1.4e7) Data[2]*1.0002502(1.5e7)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]-16.7%
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
@@ -155,12 +155,12 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
 #M0             exfor:[EN,MONIT,MONIT-ERR]
-#M1             Monitor:{recom$nb93n2n}
+#M1             Monitor:{recom$nb93n2nm}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 64-GD-158(N,P)63-EU-158,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
 #+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
-#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              m1: recom$nb93n2nm;           #[0]#new monitor(energy)
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
@@ -171,18 +171,18 @@
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=0.8333333
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        31621003    0.834190    1.00103     0.833333    -
+#/C5CORR        31621003    0.833873    1.00065     0.833333    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31621003    CS          3           0.833786    0.834435    0.834190    -16.6%      1.19935     [EN,MONIT,MONIT-ERR]::nb93n2n
+#XCORR          31621003    CS          3           0.833542    0.834348    0.833873    -16.6%      1.19970     [EN,MONIT,MONIT-ERR]::nb93n2nm
 #C5DATA         3
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 64158   3 103      1.35E7 200000.0 1.5854-3 8.1558-5                                       Pu Zhong-Sheng*,     (05)31621  3  4.9181-5   3.8E-6          8.1558-5 3.10     0.24              5.14     5.14    0.4524   0.0057   0.452998 .002680130.83443480.8155844
+    1 64158   3 103      1.35E7 200000.0 1.5841-3 8.1497-5                                       Pu Zhong-Sheng*,     (05)31621  3  4.9152-5   3.8E-6          8.1497-5 3.10     0.24              5.14     5.14    0.4524   0.0057   0.4526145.002696610.83372840.8149695
     1 64158   3 103      1.41E7 100000.0 1.7521-3 8.1213-5                                       Pu Zhong-Sheng*,     (05)31621  3  5.4201-5   4.2E-6          8.1213-5 3.09     0.24              4.64     4.64    0.4591   0.0056   0.459659 .002502550.83434790.8121327
-    1 64158   3 103      1.46E7 200000.0 2.9183-3 7.7206-5                                       Pu Zhong-Sheng*,     (05)31621  3  9.0401-5   7.0E-6          7.7206-5 3.10     0.24              2.65     2.65    0.4599   0.0056   0.46015  .002597720.83378630.7720573
+    1 64158   3 103      1.46E7 200000.0 2.9174-3 7.7395-5                                       Pu Zhong-Sheng*,     (05)31621  3  9.0556-5   7.0E-6          7.7395-5 3.10     0.24              2.65     2.65    0.4599   0.0056   0.46001512.7496-3 0.83354180.773954
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -197,9 +197,9 @@
 #COVARDATA      1           3           3
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.35E7      1.35E7      1.5854-3    3.11         100
+1.35E7      1.35E7      1.5841-3    3.11         100
 1.41E7      1.41E7      1.7521-3    3.1          50 100
-1.46E7      1.46E7      2.9183-3    3.11         50 54 100
+1.46E7      1.46E7      2.9174-3    3.11         50 54 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       31621003 

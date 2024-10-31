@@ -43,18 +43,8 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
-#X4MONITOR      13-AL-27(P,X)11-NA-22,,SIG
-#M0             Point: XS(b)=0.016  EN-NRM(eV):6.0E8
-#M1             Point: XS(b)=  EN-NRM(eV):6.0E8
-#C5CORR         #[0]#---Monitor xs-data
-#+              #[0]#Reaction: 56-BA-0(P,X)54-XE-127-G,CUM,SIG
-#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-22,,SIG
-#+              #[0]#En=6.0E8
-#+              a0=[MONIT];                   #[0]#old monitor point 0.016
-#+              m1:recom$al27px;             #[0]#new monitor
-#+              a1=m1;                        #[0]#new monitor point [600.0MeV]
+#C5CORR         #Reaction: 56-BA-0(P,X)54-XE-127-G,CUM,SIG
 #+              dy=dy/y;                      #to rel. uncertainties
-#+              y=y*a1/a0;                    #[0]#renormalizing CS
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (56-BA-0(P,X)54-XE-127-G,CUM,SIG)
 #+               #[1]#DECAY-DATA (54-XE-127-G,36.4D,DG,202.84,0.68) #Ix_old=0.68
@@ -62,17 +52,17 @@
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9898108
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        O0279002    0.989811    1.00000     0.989811    -
+#/C5CORR        O0279002    0.989811    -           0.989811    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          O0279002    CS          2           0.989811    0.989811    0.989811    -1.02%      1.01029     [MONIT]::al27px
+#XCORR          O0279002    CS          2           0.989811    0.989811    0.989811    -1.02%      1.01029     m0: {,J.Tobaillem+,R,CEA-N-1466,1981} : al27px;::al27px
 #C5DATA         2
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 56000   39001G      6.0E8         .04662009 6.0378-3           54127.9                     K.J.Mathew*,         (94)O0279  2                             6.0378-3                            13       13      0.016                               0.98981080.9898108
- 1001 56000   39001G      6.0E8         .04473946 2.4745-3           54127.9                     K.J.Mathew*,         (94)O0279  2                             2.4745-3                            5.53     5.53    0.016                               0.98981080.9898109
+ 1001 56000   39001G      6.0E8         .04662009 6.0378-3           54127.9                     K.J.Mathew*,         (94)O0279  2                             6.0378-3                            13       13                                          0.98981080.9898108
+ 1001 56000   39001G      6.0E8         .04473946 2.4745-3           54127.9                     K.J.Mathew*,         (94)O0279  2                             2.4745-3                            5.53     5.53                                        0.98981080.9898109
 #/C5DATA        0
 #/DATASET       O0279002 
 #DATASET        O0279003   19970118

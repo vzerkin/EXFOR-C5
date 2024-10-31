@@ -13,10 +13,12 @@
 #DATE           20131010
 #INSTITUTE      4RUSKUR,3BULBLA
 #METHOD         TOF,COINC
-#REACTION       92-U-235(N,ABS),,ALF,,AV
+#REACTION_X4    92-U-235(N,ABS),,ALF,,AV
+#REACTION       92-U-235(N,G),,SIG,,AV
 #C4Reaction     (N,ABS),ALF,,AV
-#ReactionType   ALF
-#MF             203
+#ReactionTyp_X4 ALF
+#ReactionType   CS
+#MF             3
 #MT             102
 #PROJ           1
 #TARG           92235            
@@ -24,13 +26,18 @@
 #REAC1          N,ABS
 #C4ReaCode      (N,ABS),ALF,,AV
 #CompNotes      OPERATION...  Value=(Min+Max)/2  Min:EN-MIN, Max:EN-MAX
-#Quantity       Capture-to-fission cross section ratio
-#DataUnits0     NO-DIM
-#DataUnits      ?
+#CompNotes      CALCULATE(MF203:RATIO->MF3:SIG): Data[0]*610.67(2.3e-2)
+#CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(MON): dSys
+#Quantity_X4    Capture-to-fission cross section ratio
+#Quantity       Cross section
+#DataUnits_X4   NO-DIM
+#DataUnits      B
 #D4REAC         R0#
 #ReaCombi       a
 #C4FOUND        1 
-#C4BEGIN        [    1 92235 203 102   ]
+#C4BEGIN        [    1 92235   3 102   ]
 #DATA-HDR       DATA
 #VarFamily      [0 2        ]
 #xVariables     1
@@ -41,13 +48,16 @@
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #REAC-RATIO     (92-U-235(N,G),,SIG,,AV)/(92-U-235(N,F),,SIG,,AV)
+#Ratio2CS       1
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30745002    ALF         1           610.670     610.670     610.670     +6.10e+04%  610.670                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
-#Units                       EV       EV   NO-DIM   NO-DIM                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 92235 203 102       0.023    0.007    0.169   0.0035                                       Yu.V.Adamchuk,       (88)30745  2  0.002704 0.002197            0.0035 1.60     1.30              2.07     2.07
+#Units                       EV       EV        B        B                                    
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 92235   3 102       0.023    0.007 103.20322.1949658                                       Yu.V.Adamchuk*,      (88)30745  2 1.7251853 0.002197         2.1949658 1.67     0.002             2.13     2.13                      610.67   2.9564   610.67   1.0269591
 #/C5DATA        0
 #/DATASET       30745002 
 #/C5.2.3        1               1               1               0               1               

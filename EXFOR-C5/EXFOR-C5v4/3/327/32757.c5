@@ -26,7 +26,7 @@
 #CompNotes      ERR-ANALYS:(ERR-10,1.1,2.5,U) ADDED AS COMMON:ERR-10,PER-CENT=1.1%
 #CompNotes      ERR-ANALYS:(ERR-11,0.6,1.1,U) ADDED AS COMMON:ERR-11,PER-CENT=0.6%
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=4
-#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0089304(1.4e7) Data[3]*1.0034233(1.5e7)
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0082144(1.4e7) Data[3]*1.003241(1.5e7)
 #CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.147%
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
@@ -52,12 +52,12 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #X4MONITOR      41-NB-93(N,2N)41-NB-92-M,,SIG
 #M0             exfor:[EN,MONIT,MONIT-ERR]
-#M1             Monitor:{recom$nb93n2n}
+#M1             Monitor:{recom$nb93n2nm}
 #C5CORR         #[0]#---Monitor xs-data
 #+              #[0]#Reaction: 40-ZR-96(N,2N)40-ZR-95,,SIG
 #+              #[0]#Monitor:  41-NB-93(N,2N)41-NB-92-M,,SIG
 #+              m0: [EN,MONIT,MONIT-ERR];     #[0]#old monitor(energy)
-#+              m1: recom$nb93n2n;            #[0]#new monitor(energy)
+#+              m1: recom$nb93n2nm;           #[0]#new monitor(energy)
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
@@ -68,19 +68,19 @@
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0014712
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        32757002    1.00664     1.00516     1.00147     -
+#/C5CORR        32757002    1.00614     1.00467     1.00147     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          32757002    CS          4           1.00457     1.01041     1.00664     +0.664%     1.01041     [EN,MONIT,MONIT-ERR]::nb93n2n
+#XCORR          32757002    CS          4           1.00403     1.00970     1.00614     +0.614%     1.00970     [EN,MONIT,MONIT-ERR]::nb93n2nm
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 40096   3  16      1.36E7         1.5742263.05888363                                       Pu Zhongsheng*,      (03)32757  2 .04728507.01952169         .05888363 3        1.24              3.74     3.74    0.4507   0.0074   0.454725 .002635571.01041470.9346609
-    1 40096   3  16      1.42E7         1.4687586.06124146                                       Pu Zhongsheng*,      (03)32757  2 .04401473.01828122         .06124146 3        1.24              4.17     4.17    0.4576   0.0045   0.459984 .002496451.00668850.9877655
-    1 40096   3  16      1.44E7          1.471697.06521331                                       Pu Zhongsheng*,      (03)32757  2 .044131290.0183564         .06521331 3        1.25              4.43     4.43    0.4587   0.0045   0.46012  .002526621.00457130.9880803
-    1 40096   3  16      1.47E7         1.56261890.0693358                                       Pu Zhongsheng*,      (03)32757  2 0.04693490.0194841         0.0693358 3        1.25              4.44     4.44    0.4586   0.0056   0.46017  .002650861.00489950.9765606
+    1 40096   3  16      1.36E7         1.5731089.05884676                                       Pu Zhongsheng*,      (03)32757  2 .04725764.01952169         .05884676 3        1.24              3.74     3.74    0.4507   0.0074   0.4544022.002642861.00969760.9340755
+    1 40096   3  16      1.42E7         1.4679483.06123158                                       Pu Zhongsheng*,      (03)32757  2 0.0440237.01828122         .06123158 3        1.25              4.17     4.17    0.4576   0.0045   0.45973022.5520-3 1.00613310.9876061
+    1 40096   3  16      1.44E7          1.470906.06522922                                       Pu Zhongsheng*,      (03)32757  2 .044182850.0183564         .06522922 3        1.25              4.43     4.43    0.4587   0.0045   0.45987272.6508-3 1.00403140.9883214
+    1 40096   3  16      1.47E7         1.5623348.06939051                                       Pu Zhongsheng*,      (03)32757  2 .047025750.0194841         .06939051 3.01     1.25              4.44     4.44    0.4586   0.0056   0.46008632.7990-3 1.00471690.9773312
 #/C5DATA        0
 #/DATASET       32757002 
 #/C5.2.3        1               1               1               0               4               

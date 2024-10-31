@@ -23,6 +23,7 @@
 #REAC1          N,INL
 #PRODUCT        49-IN-115-M
 #C4ReaCode      (N,INL),SIG
+#CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.882471(5.3e5) Data[3]*1.0507469(1.3e6)
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -39,16 +40,31 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      49-IN-115(N,G)49-IN-116-M,,SIG
+#M0             exfor:[EN,MONIT]
+#M1             Monitor:{recom$in115ngm}
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 49-IN-115(N,INL)49-IN-115-M,,SIG
+#+              #[0]#Monitor:  49-IN-115(N,G)49-IN-116-M,,SIG
+#+              m0: [EN,MONIT];               #[0]#old monitor(energy)
+#+              m1: recom$in115ngm;           #[0]#new monitor(energy)
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y/m0*m1;                    #[0]#renormalizing CS
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30484002    0.944009    0.944009    -           -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30484002    CS          4           0.832305    1.05075     0.944009    -5.60%      1.20148     [EN,MONIT]::in115ngm
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 49115   3   4MA  530000.0 140000.0   0.0068   8.0E-4                                       L.Adamski,           (80)30484  2                               8.0E-4                            11.8     11.8
-    1 49115   3   4MA  860000.0 210000.0   0.0346   0.0039                                       L.Adamski,           (80)30484  2                               0.0039                            11.3     11.3
-    1 49115   3   4MA 1200000.0 150000.0   0.0887   0.0099                                       L.Adamski,           (80)30484  2                               0.0099                            11.2     11.2
-    1 49115   3   4MA 1310000.0  70000.0   0.1232    0.014                                       L.Adamski,           (80)30484  2                                0.014                            11.4     11.4
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 49115   3   4MA  530000.0 140000.0 6.0008-3   8.0E-4                                       L.Adamski*,          (80)30484  2                               8.0E-4                            13.3     13.3    0.182             0.16060974.1784-3 0.882471
+    1 49115   3   4MA  860000.0 210000.0.02879774   0.0039                                       L.Adamski*,          (80)30484  2                               0.0039                            13.5     13.5    0.2               0.16646095.4670-3 0.8323046
+    1 49115   3   4MA 1200000.0 150000.00.0896324   0.0099                                       L.Adamski*,          (80)30484  2                               0.0099                            11       11      0.176             0.17785017.6249-3 1.0105119
+    1 49115   3   4MA 1310000.0  70000.0 0.129452    0.014                                       L.Adamski*,          (80)30484  2                                0.014                            10.8     10.8    0.17              0.178627 .007665041.0507469
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -63,10 +79,10 @@
 #COVARDATA      1           4           4
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-530000.     530000.     0.0068      11.76        100
-860000.     860000.     0.0346      11.27        29 100
-1.2e+06     1.2e+06     0.0887      11.16        25 28 100
-1310000.    1310000.    0.1232      11.36        25 25 43 100
+530000.     530000.     6.0008-3    13.33        100
+860000.     860000.     2.8798-2    13.54        29 100
+1.2e+06     1.2e+06     8.9632-2    11.05        25 28 100
+1310000.    1310000.    0.129452    10.81        25 25 43 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       30484002 
