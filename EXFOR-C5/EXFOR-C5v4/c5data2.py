@@ -42,7 +42,7 @@ import plotly
 from plotly.graph_objs import Scatter, Layout 
 from pprint import pprint
 
-print("Program: c5data2.py, ver.2024-10-18")
+print("Program: c5data2.py, ver.2024-11-01")
 print("Author:  V.Zerkin, IAEA, Vienna, 2023-2024")
 print("Purpose: find datasets by reaction, select renormalized datasets, load C5-dataset,")
 print("         extract data, recalculate original values, plot by Plotly\n")
@@ -185,7 +185,7 @@ plot1['layout']=Layout(title='Cross sections \u03c3(E): '+plotTitle
 	+' #Datasets:'+str(iok)
 	+'/'+str(n2) #total after filtering out: superseded or withdrawn, and preliminary
 	+'/'+str(n1) #total
-	+'<br><i>EXFOR-C5, by V.Zerkin, IAEA-NDS, 2010-2024, ver.2024-10-18 //running:'+ct+'</i>'
+	+'<br><i>EXFOR-C5, by V.Zerkin, IAEA-NDS, 2010-2024, ver.2024-11-01 //running:'+ct+'</i>'
 	,xaxis=xaxis,yaxis=yaxis
 	,plot_bgcolor='white'
 	,legend=dict(traceorder="grouped")
@@ -193,5 +193,8 @@ plot1['layout']=Layout(title='Cross sections \u03c3(E): '+plotTitle
 
 outhtml='c5data2'
 plotly.offline.plot(plot1,filename=outhtml+'.html')
+
+#needs: $ pip3 install -U kaleido
+plotly.io.write_image(plot1,outhtml+'.png',width=1200,height=790)
 
 print('\nProgram successfully completed')
