@@ -7,7 +7,7 @@
 
                             Full EXFOR in C5 format
            Created 3-August-2023 by Viktor Zerkin, V.Zerkin@iaea.org
-               Last updated: 31-October-2024, V.Zerkin@gmail.com
+              Last updated: 02-December-2024, V.Zerkin@gmail.com
 _______________________________________________________________________________
 
 Contents:
