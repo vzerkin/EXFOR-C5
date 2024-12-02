@@ -203,6 +203,10 @@
 #REAC1          4-BE-9,X
 #PRODUCT        81-TL-200
 #C4ReaCode      (4-BE-9,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.68%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -219,16 +223,28 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 79-AU-197(4-BE-9,X)81-TL-200,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (79-AU-197(4-BE-9,X)81-TL-200,,SIG)
+#+               #[1]#DECAY-DATA (81-TL-200,26.1HR,DG,367.9,0.870) #Ix_old=0.87
+#+                a1=0.87/0.8849;             #[1]#DECAY-DATA: correction to new 367.942 keV gamma-yield per decay Tl-200 Ix_new=0.8849
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.983162
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        S0222006    0.983162    -           0.983162    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          S0222006    CS          4           0.983162    0.983162    0.983162    -1.68%      1.01713                
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 4009 79197   39000      4.57E7           0.10767  0.00763           81200.9                     G.S.Li,              (19)S0222  6 0.0055947                    0.00763 5.20                       7.09     7.09
- 4009 79197   39000      4.69E7           0.10474  0.00752           81200.9                     G.S.Li,              (19)S0222  6 .00544245                    0.00752 5.20                       7.18     7.18
- 4009 79197   39000      4.79E7         .09668001  0.00636           81200.9                     G.S.Li,              (19)S0222  6 0.0050236                    0.00636 5.20                       6.58     6.58
- 4009 79197   39000      4.89E7           0.09103  0.00692           81200.9                     G.S.Li,              (19)S0222  6 0.0047301                    0.00692 5.20                       7.60     7.60
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 4009 79197   39000      4.57E7         0.1058571 7.5015-3           81200.9                     G.S.Li*,             (19)S0222  6  5.5005-3                   7.5015-3 5.20                       7.09     7.09                                        0.983162 0.983162
+ 4009 79197   39000      4.69E7         0.1029764 7.3934-3           81200.9                     G.S.Li*,             (19)S0222  6 .00535081                   7.3934-3 5.20                       7.18     7.18                                        0.983162 0.9831619
+ 4009 79197   39000      4.79E7         .09505211.00625291           81200.9                     G.S.Li*,             (19)S0222  6  4.9390-3                  .00625291 5.20                       6.58     6.58                                        0.983162 0.9831619
+ 4009 79197   39000      4.89E7         .08949724 6.8035-3           81200.9                     G.S.Li*,             (19)S0222  6  4.6505-3                   6.8035-3 5.20                       7.60     7.60                                        0.983162 0.983162
 #/C5DATA        0
 #/DATASET       S0222006 
 #/C5.2.3        1               4               5               0               16              

@@ -316,6 +316,10 @@
 #PRODUCT        46-PD-111-M
 #C4ReaCode      (D,X),SIG
 #CompNotes      ERR-ANALYS:(ERR-S,1.0,20.)    ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+35.7%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -332,21 +336,33 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 46-PD-0(D,X)46-PD-111-M,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (46-PD-0(D,X)46-PD-111-M,,SIG)
+#+               #[1]#DECAY-DATA (46-PD-111-M,5.5HR,DG,172.18,0.46) #Ix_old=0.46
+#+                a1=0.46/0.339;              #[1]#DECAY-DATA: correction to new 172.18 keV gamma-yield per decay Pd-111-m Ix_new=0.339
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.3569323
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D4372008    1.35693     -           1.35693     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D4372008    CS          9           1.35693     1.35693     1.35693     +35.7%      1.35693                
 #C5DATA         9
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1002 46000   39000M    3.143E7 970000.0   8.9E-4   1.2E-4           46111.9                     F.Ditroi,            (17)D4372  8 8.1083E-5   8.9E-6            1.2E-4 9.11     1                 13.5     13.5
- 1002 46000   39000M     3.33E7 890000.0   9.2E-4   1.7E-4           46111.9                     F.Ditroi,            (17)D4372  8 8.3816E-5   9.2E-6            1.7E-4 9.11     1                 18.5     18.5
- 1002 46000   39000M    3.511E7 810000.0   8.9E-4   1.6E-4           46111.9                     F.Ditroi,            (17)D4372  8 8.1083E-5   8.9E-6            1.6E-4 9.11     1                 18       18
- 1002 46000   39000M    3.761E7 700000.0   8.8E-4   1.7E-4           46111.9                     F.Ditroi,            (17)D4372  8 8.0172E-5   8.8E-6            1.7E-4 9.11     1                 19.3     19.3
- 1002 46000   39000M      4.0E7 590000.0   6.1E-4   1.4E-4           46111.9                     F.Ditroi,            (17)D4372  8 5.5574E-5   6.1E-6            1.4E-4 9.11     1                 23       23
- 1002 46000   39000M    4.228E7 490000.0   7.0E-4   1.4E-4           46111.9                     F.Ditroi,            (17)D4372  8 6.3773E-5   7.0E-6            1.4E-4 9.11     1                 20       20
- 1002 46000   39000M    4.448E7 390000.0   7.1E-4   1.8E-4           46111.9                     F.Ditroi,            (17)D4372  8 6.4684E-5   7.1E-6            1.8E-4 9.11     1                 25.4     25.4
- 1002 46000   39000M    4.659E7 290000.0   4.5E-4   1.3E-4           46111.9                     F.Ditroi,            (17)D4372  8 4.0997E-5   4.5E-6            1.3E-4 9.11     1                 28.9     28.9
- 1002 46000   39000M    4.863E7 200000.0   3.6E-4   1.2E-4           46111.9                     F.Ditroi,            (17)D4372  8 3.2798E-5   3.6E-6            1.2E-4 9.11     1                 33.3     33.3
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1002 46000   39000M    3.143E7 970000.0.00120767 1.6283-4           46111.9                     F.Ditroi*,           (17)D4372  8  1.1002-4   8.9E-6          1.6283-4 9.11     0.74              13.5     13.5                                        1.35693231.3569323
+ 1002 46000   39000M     3.33E7 890000.0 1.2484-3 2.3068-4           46111.9                     F.Ditroi*,           (17)D4372  8  1.1373-4   9.2E-6          2.3068-4 9.11     0.74              18.5     18.5                                        1.35693231.3569323
+ 1002 46000   39000M    3.511E7 810000.0.00120767 2.1711-4           46111.9                     F.Ditroi*,           (17)D4372  8  1.1002-4   8.9E-6          2.1711-4 9.11     0.74              18       18                                          1.35693231.3569322
+ 1002 46000   39000M    3.761E7 700000.00.0011941 2.3068-4           46111.9                     F.Ditroi*,           (17)D4372  8  1.0879-4   8.8E-6          2.3068-4 9.11     0.74              19.3     19.3                                        1.35693231.3569322
+ 1002 46000   39000M      4.0E7 590000.0 8.2773-4 1.8997-4           46111.9                     F.Ditroi*,           (17)D4372  8  7.5410-5   6.1E-6          1.8997-4 9.11     0.74              23       23                                          1.35693231.3569323
+ 1002 46000   39000M    4.228E7 490000.0 9.4985-4 1.8997-4           46111.9                     F.Ditroi*,           (17)D4372  8  8.6536-5   7.0E-6          1.8997-4 9.11     0.74              20       20                                          1.35693231.3569324
+ 1002 46000   39000M    4.448E7 390000.0 9.6342-4 2.4425-4           46111.9                     F.Ditroi*,           (17)D4372  8  8.7772-5   7.1E-6          2.4425-4 9.11     0.74              25.4     25.4                                        1.35693231.3569323
+ 1002 46000   39000M    4.659E7 290000.0 6.1062-4 1.7640-4           46111.9                     F.Ditroi*,           (17)D4372  8  5.5630-5   4.5E-6          1.7640-4 9.11     0.74              28.9     28.9                                        1.35693231.3569323
+ 1002 46000   39000M    4.863E7 200000.0 4.8850-4 1.6283-4           46111.9                     F.Ditroi*,           (17)D4372  8  4.4505-5   3.6E-6          1.6283-4 9.11     0.74              33.3     33.3                                        1.35693231.3569323
 #/C5DATA        0
 #/DATASET       D4372008 
 #DATASET        D4372009   20171127

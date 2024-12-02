@@ -6976,6 +6976,8 @@
 #REAC1          P,X
 #PRODUCT        40-ZR-88
 #C4ReaCode      (P,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.103%
+#CompNotes      MODIFY(DEC): dData
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -6992,13 +6994,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 52-TE-CMP(P,X)40-ZR-88,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (52-TE-CMP(P,X)40-ZR-88,,SIG)
+#+               #[1]#DECAY-DATA (40-ZR-88,83.4D,DG,392.9,97.2E-02) #Ix_old=0.972
+#+                a1=0.972/0.973;             #[1]#DECAY-DATA: correction to new 392.87 keV gamma-yield per decay Zr-88 Ix_new=0.973
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99897224
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O0768157    0.998972    -           0.998972    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O0768157    CS          1           0.998972    0.998972    0.998972    -0.103%     1.00103                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 52000   39000       1.7E9            0.0109   7.0E-4           40088.9                     E.Porras,            (00)O0768157             7.0E-4                            6.42                       6.42
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 52000   39000       1.7E9         0.0108888 6.9928-4           40088.9                     E.Porras*,           (00)O0768157             7.0E-4                            6.43                       6.42                                        0.99897220.9989722
 #/C5DATA        0
 #/DATASET       O0768157 
 #DATASET        O0768158   20221115

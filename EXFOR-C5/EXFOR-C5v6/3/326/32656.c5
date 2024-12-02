@@ -268,6 +268,9 @@
 #REAC1          N,P
 #PRODUCT        33-AS-76
 #C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+10.6%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -284,13 +287,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 34-SE-76(N,P)33-AS-76,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (34-SE-76(N,P)33-AS-76,,SIG)
+#+               #[1]#DECAY-DATA (33-AS-76,26.32HR,DG,559.0,0.45) #Ix_old=0.45
+#+                a1=0.45/0.407;              #[1]#DECAY-DATA: correction to new 559.086 keV gamma-yield per decay As-76 Ix_new=0.407
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.105651
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32656006    1.10565     -           1.10565     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32656006    CS          1           1.10565     1.10565     1.10565     +10.6%      1.10565                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 34076   3 103 A    1.46E7 300000.0    0.061    0.005                                       Guozhu He,           (05)32656  6                                0.005                            8.20     8.20
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 34076   3 103 A    1.46E7 300000.0.06744471 5.5283-3                                       Guozhu He*,          (05)32656  6                             5.5283-3                            8.20     8.20                                        1.105651 1.105651
 #/C5DATA        0
 #/DATASET       32656006 
 #DATASET        32656007   20060615

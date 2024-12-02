@@ -101,9 +101,13 @@
 #PRODUCT        30-ZN-63
 #C4ReaCode      (N,2N),SIG
 #CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0164579(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.20%
 #CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
 #CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -131,18 +135,23 @@
 #+              a1=recom$au197n2n[EN];        #[0]#new monitor point [14.54MeV]
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (30-ZN-64(N,2N)30-ZN-63,,SIG)
+#+               #[1]#DECAY-DATA (30-ZN-63,38.47MIN,DG,669.6,0.082) #Ix_old=0.082
+#+                a1=0.082/0.083;             #[1]#DECAY-DATA: correction to new 669.64 keV gamma-yield per decay Zn-63 Ix_new=0.083
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9879519
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        33137003    1.01646     1.01646     -           -
+#/C5CORR        33137003    1.00421     1.01646     0.987952    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          33137003    CS          1           1.01646     1.01646     1.01646     +1.65%      1.01646     [MONIT]::au197n2n
+#XCORR          33137003    CS          1           1.00421     1.00421     1.00421     +0.421%     1.00421     [MONIT]::au197n2n
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 30064   3  16     1.454E74000.00020.1791914 9.9467-3                                       I.Pasha*,            (19)33137  3  5.3187-30.0086227          9.9467-3 2.97     4.81              5.55     5.55    2.1236   .020492742.15855  0.02256051.01645791.0191264
+    1 30064   3  16     1.454E74000.00020.1770325 9.8268-3                                       I.Pasha*,            (19)33137  3  5.2546-30.0086227          9.8268-3 2.97     4.87              5.55     5.55    2.1236   .020492742.15855  0.02256051.00421151.006848
 #/C5DATA        0
 #/DATASET       33137003 
 #DATASET        33137004   20200324

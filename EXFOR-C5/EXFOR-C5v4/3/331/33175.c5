@@ -26,6 +26,10 @@
 #REAC1          N,2N
 #PRODUCT        70-YB-167
 #C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.79%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -42,13 +46,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 70-YB-168(N,2N)70-YB-167,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (70-YB-168(N,2N)70-YB-167,,SIG)
+#+               #[1]#DECAY-DATA (70-YB-167,17.5MIN,DG,113.32,0.55) #Ix_old=0.55
+#+                a1=0.55/0.56;               #[1]#DECAY-DATA: correction to new 113.32 keV gamma-yield per decay Yb-167 Ix_new=0.56
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.98214287
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        33175002    0.982143    -           0.982143    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          33175002    CS          1           0.982143    0.982143    0.982143    -1.79%      1.01818                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 70168   3  16     1.477E7 340000.01.90841020.1417949                                       G.T.Bholane,         (22)33175  2 0.1417277                  0.1417949 7.43                       7.43     7.43
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 70168   3  16     1.477E7 340000.01.87433150.1392629                                       G.T.Bholane*,        (22)33175  2 0.1391969                  0.1392629 7.43                       7.43     7.43                                        0.98214290.9821429
 #/C5DATA        0
 #/DATASET       33175002 
 #DATASET        33175003   20220512

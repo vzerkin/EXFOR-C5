@@ -1572,6 +1572,10 @@
 #PRODUCT        21-SC-48
 #C4ReaCode      (P,X),SIG
 #CompNotes      ERR-ANALYS:(ERR-1,,1.)        ADDED AS COMMON:ERR-1,PER-CENT=0.5%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.103%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1588,14 +1592,26 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 23-V-0(P,X)21-SC-48,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (23-V-0(P,X)21-SC-48,,SIG)
+#+               #[1]#DECAY-DATA (21-SC-48,43.67HR,DG,1037.522,0.976) #Ix_old=0.976
+#+                a1=0.976/0.975;             #[1]#DECAY-DATA: correction to new 1037.522 keV gamma-yield per decay Sc-48 Ix_new=0.975
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0010257
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        E2768031    1.00103     -           1.00103     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          E2768031    CS          2           1.00103     1.00103     1.00103     +0.103%     1.00103                
 #C5DATA         2
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 23000   39000       4.0E8           0.00513   3.0E-4           21048.9                     K.Nakano,            (21)E2768 31  1.763E-4                     3.0E-4 3.44                       5.85     5.85
- 1001 23000   39000       3.0E9           0.00519   3.0E-4           21048.9                     K.Nakano,            (21)E2768 31 1.7836E-4                     3.0E-4 3.44                       5.78     5.78
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 23000   39000       4.0E8          5.1353-3 3.0031-4           21048.9                     K.Nakano*,           (21)E2768 31  1.7648-4                   3.0031-4 3.44                       5.85     5.85                                        1.00102571.0010257
+ 1001 23000   39000       3.0E9          5.1953-3 3.0031-4           21048.9                     K.Nakano*,           (21)E2768 31  1.7854-4                   3.0031-4 3.44                       5.78     5.78                                        1.00102571.0010257
 #/C5DATA        0
 #/DATASET       E2768031 
 #DATASET        E2768032   20231202

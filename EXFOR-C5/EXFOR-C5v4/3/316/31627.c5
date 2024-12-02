@@ -27,9 +27,13 @@
 #CompNotes      ERR-ANALYS:(ERR-S,0.2,5.0)    ADDED AS COMMON:ERR-S,PER-CENT=0.2%
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=3
 #CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0004741(1.4e7) Data[2]*1.0002502(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.385%
 #CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
 #CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -57,20 +61,25 @@
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y/m0*m1;                    #[0]#renormalizing CS
 #+              dy=(dy**2-dm0**2+dm1**2)**0.5; #[0]#replace monitor uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (60-ND-150(N,2N)60-ND-149,,SIG)
+#+               #[1]#DECAY-DATA (60-ND-149,1.728HR,DG,211.309,0.259) #Ix_old=0.259
+#+                a1=0.259/0.26;              #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.26
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9961539
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        31627002    1.00065     1.00065     -           -
+#/C5CORR        31627002    0.996799    1.00065     0.996154    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31627002    CS          3           1.00025     1.00122     1.00065     +0.0647%    1.00122     [EN,MONIT,MONIT-ERR]::nb93n2nm
+#XCORR          31627002    CS          3           0.996403    0.997367    0.996799    -0.320%     1.00361     [EN,MONIT,MONIT-ERR]::nb93n2nm
 #C5DATA         3
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 60150   3  16      1.35E7 200000.0 2.037966.08197533                                       Pu Zhong-Sheng*,     (04)31627  2 .05986069 0.004074         .08197533 2.94     0.20              4.02     4.02    0.4524   0.0057   0.4526145.002696611.00047410.9644156
-    1 60150   3  16      1.41E7 100000.01.73911490.0653828                                       Pu Zhong-Sheng*,     (04)31627  2 0.0509102 0.003474         0.0653828 2.93     0.20              3.76     3.76    0.4591   0.0056   0.459659 .002502551.00121750.9615117
-    1 60150   3  16      1.46E7 200000.01.6574147.06259361                                       Pu Zhong-Sheng*,     (04)31627  2 .04870509 0.003314         .06259361 2.94     0.20              3.78     3.78    0.4599   0.0056   0.46001512.7496-3 1.00025020.9629784
+    1 60150   3  16      1.35E7 200000.02.0301275.08166004                                       Pu Zhong-Sheng*,     (04)31627  2 .05963045 0.004074         .08166004 2.94     0.20              4.02     4.02    0.4524   0.0057   0.4526145.002696610.99662610.9607062
+    1 60150   3  16      1.41E7 100000.0 1.732426.06513133                                       Pu Zhong-Sheng*,     (04)31627  2 0.0507144 0.003474         .06513133 2.93     0.20              3.76     3.76    0.4591   0.0056   0.459659 .002502550.99736670.9578136
+    1 60150   3  16      1.46E7 200000.01.6510401.06235287                                       Pu Zhong-Sheng*,     (04)31627  2 .04851776 0.003314         .06235287 2.94     0.20              3.78     3.78    0.4599   0.0056   0.46001512.7496-3 0.99640320.9592747
 #/C5DATA        0
 #/DATASET       31627002 
 #DATASET        31627003   20150525
@@ -101,7 +110,7 @@
 #CompNotes      ERR-ANALYS:(ERR-S,0.2,5.0)    ADDED AS COMMON:ERR-S,PER-CENT=0.2%
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=3
 #CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0004741(1.4e7) Data[2]*1.0002502(1.5e7)
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.35%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.190%
 #CompNotes      MODIFY(MON): dData
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(MON): dTot
@@ -138,22 +147,22 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (60-ND-148(N,2N)60-ND-147,,SIG)
 #+               #[1]#DECAY-DATA (60-ND-147,10.98D,DG,531.016,0.130851) #Ix_old=0.130851
-#+                a1=0.130851/0.134;          #[1]#DECAY-DATA: correction to new 531.016 keV gamma-yield per decay Nd-147 Ix_new=0.134
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9765
+#+                a1=0.130851/0.1311;         #[1]#DECAY-DATA: correction to new 531.012 keV gamma-yield per decay Nd-147 Ix_new=0.1311
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9981007
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        31627003    0.977132    1.00065     0.976500    -
+#/C5CORR        31627003    0.998747    1.00065     0.998101    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31627003    CS          3           0.976744    0.977689    0.977132    -2.29%      1.02381     [EN,MONIT,MONIT-ERR]::nb93n2nm
+#XCORR          31627003    CS          3           0.998350    0.999316    0.998747    -0.125%     1.00165     [EN,MONIT,MONIT-ERR]::nb93n2nm
 #C5DATA         3
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 60148   3  16      1.35E7 200000.01.3618864.05460947                                       Pu Zhong-Sheng*,     (04)31627  3 .04000236 0.002788         .05460947 2.94     0.20              4.01     4.01    0.4524   0.0057   0.4526145.002696610.97696290.9415427
-    1 60148   3  16      1.41E7 100000.01.3844075.05058639                                       Pu Zhong-Sheng*,     (04)31627  3 .04052664 0.002832         .05058639 2.93     0.20              3.65     3.65    0.4591   0.0056   0.459659 .002502550.97768880.9367849
-    1 60148   3  16      1.46E7 200000.0 1.910512.07141212                                       Pu Zhong-Sheng*,     (04)31627  3 .05614265 0.003912         .07141212 2.94     0.20              3.74     3.74    0.4599   0.0056   0.46001512.7496-3 0.97674430.939633
+    1 60148   3  16      1.35E7 200000.01.3920121.05581747                                       Pu Zhong-Sheng*,     (04)31627  3 .04088724 0.002788         .05581747 2.94     0.20              4.01     4.01    0.4524   0.0057   0.4526145.002696610.99857390.9623702
+    1 60148   3  16      1.41E7 100000.01.4150314.05170539                                       Pu Zhong-Sheng*,     (04)31627  3 .04142311 0.002832         .05170539 2.93     0.20              3.65     3.65    0.4591   0.0056   0.459659 .002502550.99931590.9575071
+    1 60148   3  16      1.46E7 200000.01.95277360.0729918                                       Pu Zhong-Sheng*,     (04)31627  3 .05738455 0.003912         0.0729918 2.94     0.20              3.74     3.74    0.4599   0.0056   0.46001512.7496-3 0.99835040.9604182
 #/C5DATA        0
 #/DATASET       31627003 
 #DATASET        31627004   20150525

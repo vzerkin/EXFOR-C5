@@ -28,7 +28,7 @@
 #C4ReaCode      (8-O-16,X)CUM,SIG
 #CompNotes      ERR-ANALYS:(ERR-3,,3.)        ADDED AS COMMON:ERR-3,PER-CENT=1.5%
 #CompNotes      ERR-ANALYS:(ERR-4,,6.)        ADDED AS COMMON:ERR-4,PER-CENT=3.0%
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+6.49%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-4.65%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #CompNotes      MODIFY(DEC): dSys
@@ -53,20 +53,20 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (65-TB-159(8-O-16,X)71-LU-167,CUM,SIG)
 #+               #[1]#DECAY-DATA (71-LU-167-G,51.5MIN,DG,239.13,0.082) #Ix_old=0.082
-#+                a1=0.082/0.077;             #[1]#DECAY-DATA: correction to new 239.22 keV gamma-yield per decay Lu-167-g Ix_new=0.077
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0649351
+#+                a1=0.082/0.086;             #[1]#DECAY-DATA: correction to new 239.22 keV gamma-yield per decay Lu-167-g Ix_new=0.086
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.95348835
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        D6086002    1.06494     -           1.06494     -
+#/C5CORR        D6086002    0.953488    -           0.953488    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          D6086002    CS          1           1.06494     1.06494     1.06494     +6.49%      1.06494                
+#XCORR          D6086002    CS          1           0.953488    0.953488    0.953488    -4.65%      1.04878                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 8016 65159   39001       9.0E7         .04898701 7.0286-3           71167.9                     P.P.Singh*,          (07)D6086  2  5.4824-3                   7.0286-3 11.2                       14.3     14.3                                        1.06493511.0649351
+ 8016 65159   39001       9.0E7         .04386047 6.2930-3           71167.9                     P.P.Singh*,          (07)D6086  2  4.9087-3                   6.2930-3 11.2                       14.3     14.3                                        0.95348830.9534883
 #/C5DATA        0
 #/DATASET       D6086002 
 #DATASET        D6086003   20091105
@@ -152,6 +152,10 @@
 #C4ReaCode      (8-O-16,X)CUM,SIG
 #CompNotes      ERR-ANALYS:(ERR-3,,3.)        ADDED AS COMMON:ERR-3,PER-CENT=1.5%
 #CompNotes      ERR-ANALYS:(ERR-4,,6.)        ADDED AS COMMON:ERR-4,PER-CENT=3.0%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.87%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cumulative cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -168,13 +172,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 65-TB-159(8-O-16,X)70-YB-167,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (65-TB-159(8-O-16,X)70-YB-167,CUM,SIG)
+#+               #[1]#DECAY-DATA (70-YB-167,17.5MIN,DG,143.46,0.0210) #Ix_old=0.021
+#+                a1=0.021/0.0214;            #[1]#DECAY-DATA: correction to new 143.46 keV gamma-yield per decay Yb-167 Ix_new=0.0214
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.98130834
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D6086004    0.981308    -           0.981308    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D6086004    CS          1           0.981308    0.981308    0.981308    -1.87%      1.01905                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 8016 65159   39001       9.0E7             0.049   0.0076           70167.9                     P.P.Singh,           (07)D6086  4 0.0054838                     0.0076 11.2                       15.5     15.5
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 8016 65159   39001       9.0E7         .04808411 7.4579-3           70167.9                     P.P.Singh*,          (07)D6086  4  5.3813-3                   7.4579-3 11.2                       15.5     15.5                                        0.98130830.9813083
 #/C5DATA        0
 #/DATASET       D6086004 
 #DATASET        D6086005   20091105

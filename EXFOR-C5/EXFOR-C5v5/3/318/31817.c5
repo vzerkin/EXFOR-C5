@@ -25,6 +25,10 @@
 #REAC1          N,G
 #PRODUCT        29-CU-64
 #C4ReaCode      (N,G),SIG,,SPA
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.593%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -41,13 +45,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 29-CU-63(N,G)29-CU-64,,SIG,,SPA
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (29-CU-63(N,G)29-CU-64,,SIG,,SPA)
+#+               #[1]#DECAY-DATA (29-CU-64,12.7004HR,DG,1345.8,0.004748) #Ix_old=0.004748
+#+                a1=0.004748/0.00472;        #[1]#DECAY-DATA: correction to new 1345.77 keV gamma-yield per decay Cu-64 Ix_new=0.00472
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0059321
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        318170022   1.00593     -           1.00593     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          318170022   CS          1           1.00593     1.00593     1.00593     +0.593%     1.00593                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                    SpT     dSpT     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 29063   3 102 A   28000.0         .07280001   0.0019                                       L.Weissman,          (19)31817  220.0019054                     0.0019 2.62                       2.61     2.61
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 29063   3 102 A   28000.0         .07323187 1.9113-3                                       L.Weissman*,         (19)31817  22 1.9167-3                   1.9113-3 2.62                       2.61     2.61                                        1.00593211.0059321
 #/C5DATA        0
 #/DATASET       318170022
 #DATASET        318170032  20200506

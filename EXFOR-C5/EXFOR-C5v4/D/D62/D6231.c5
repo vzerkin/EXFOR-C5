@@ -165,6 +165,10 @@
 #CompNotes      ERR-ANALYS:(ERR-3,,10.)       ADDED AS COMMON:ERR-3,PER-CENT=5.0%
 #CompNotes      ERR-ANALYS:(ERR-4,,2.)        ADDED AS COMMON:ERR-4,PER-CENT=1.0%
 #CompNotes      ERR-ANALYS:(ERR-5,,1.)        ADDED AS COMMON:ERR-5,PER-CENT=0.5%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.508%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Independent cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -181,18 +185,30 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 49-IN-115(8-O-16,X)56-BA-126,IND,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (49-IN-115(8-O-16,X)56-BA-126,IND,SIG)
+#+               #[1]#DECAY-DATA (56-BA-126,100.0MIN,DG,233.6,0.196) #Ix_old=0.196
+#+                a1=0.196/0.197;             #[1]#DECAY-DATA: correction to new 233.6 keV gamma-yield per decay Ba-126 Ix_new=0.197
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99492383
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D6231005    0.994924    -           0.994924    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D6231005    CS          6           0.994924    0.994924    0.994924    -0.508%     1.00510                
 #C5DATA         6
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 8016 49115   39000      6.57E71930000.0  0.00199   3.0E-4           56126.9                     K.Kumar,             (13)D6231  5 1.0436E-4                     3.0E-4 5.24                       15.1     15.1
- 8016 49115   39000      7.46E71870000.0   0.0044   7.0E-4           56126.9                     K.Kumar,             (13)D6231  5 2.3074E-4                     7.0E-4 5.24                       15.9     15.9
- 8016 49115   39000      8.32E71720000.0   0.0301   0.0045           56126.9                     K.Kumar,             (13)D6231  5 0.0015785                     0.0045 5.24                       15       15
- 8016 49115   39000      9.11E71600000.0   0.1288   0.0193           56126.9                     K.Kumar,             (13)D6231  5 .00675433                     0.0193 5.24                       15       15
- 8016 49115   39000      9.63E7 800000.0    0.195   0.0292           56126.9                     K.Kumar,             (13)D6231  5 .01022589                     0.0292 5.24                       15       15
- 8016 49115   39000      1.05E8 780000.0   0.2665   0.0399           56126.9                     K.Kumar,             (13)D6231  5 .01397538                     0.0399 5.24                       15       15
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 8016 49115   39000      6.57E71930000.0 1.9799-3 2.9848-4           56126.9                     K.Kumar*,            (13)D6231  5  1.0383-4                   2.9848-4 5.24                       15.1     15.1                                        0.99492380.9949239
+ 8016 49115   39000      7.46E71870000.0 4.3777-3 6.9645-4           56126.9                     K.Kumar*,            (13)D6231  5  2.2957-4                   6.9645-4 5.24                       15.9     15.9                                        0.99492380.9949239
+ 8016 49115   39000      8.32E71720000.0.02994721 4.4772-3           56126.9                     K.Kumar*,            (13)D6231  5  1.5705-3                   4.4772-3 5.24                       15       15                                          0.99492380.9949238
+ 8016 49115   39000      9.11E71600000.00.1281462.01920203           56126.9                     K.Kumar*,            (13)D6231  5  6.7200-3                  .01920203 5.24                       15       15                                          0.99492380.9949238
+ 8016 49115   39000      9.63E7 800000.00.1940101.02905178           56126.9                     K.Kumar*,            (13)D6231  5 .01017398                  .02905178 5.24                       15       15                                          0.99492380.9949238
+ 8016 49115   39000      1.05E8 780000.00.2651472.03969746           56126.9                     K.Kumar*,            (13)D6231  5 .01390444                  .03969746 5.24                       15       15                                          0.99492380.9949239
 #/C5DATA        0
 #/DATASET       D6231005 
 #DATASET        D6231006   20150122

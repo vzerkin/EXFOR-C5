@@ -714,10 +714,6 @@
 #C4ReaCode      (P,X)CUM,SIG
 #CompNotes      ERR-ANALYS:(ERR-1,6.7,11.9)   ADDED AS COMMON:ERR-1,PER-CENT=6.7%
 #CompNotes      ERR-ANALYS:(ERR-2,7.,10.)     ADDED AS COMMON:ERR-2,PER-CENT=7.0%
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.207%
-#CompNotes      MODIFY(DEC): dData
-#CompNotes      MODIFY(DEC): dTot
-#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cumulative cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -734,27 +730,15 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
-#C5CORR         #Reaction: 90-TH-232(P,X)58-CE-141,CUM,SIG
-#+              dy=dy/y;                      #to rel. uncertainties
-#+               #[1]#---Reaction decay-data
-#+               #[1]#REACTION   (90-TH-232(P,X)58-CE-141,CUM,SIG)
-#+               #[1]#DECAY-DATA (58-CE-141,32.50D,DG,145.4,0.483) #Ix_old=0.483
-#+                a1=0.483/0.484;             #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.484
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9979339
-#+              dy=dy*y;                      #to abs. uncertainties
-#+
-#/C5CORR        C2251010    0.997934    -           0.997934    -
-#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          C2251010    CS          3           0.997934    0.997934    0.997934    -0.207%     1.00207                
 #C5DATA         3
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 90232   39001      8.96E7 400000.0.01576735 1.9959-3           58141.9                     J.R.Griswold*,       (16)C2251 10  1.7192-3                   1.9959-3 10.9                       12.7     12.7                                        0.99793390.9979339
- 1001 90232   39001      1.28E8 400000.0.01147624 1.5967-3           58141.9                     J.R.Griswold*,       (16)C2251 10  1.2513-3                   1.5967-3 10.9                       13.9     13.9                                        0.99793390.9979339
- 1001 90232   39001     1.918E8 400000.0 9.3806-3 1.0977-3           58141.9                     J.R.Griswold*,       (16)C2251 10  1.0228-3                   1.0977-3 10.9                       11.7     11.7                                        0.99793390.9979339
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 90232   39001      8.96E7 400000.0   0.0158    0.002           58141.9                     J.R.Griswold,        (16)C2251 10 .00172278                      0.002 10.9                       12.7     12.7
+ 1001 90232   39001      1.28E8 400000.0   0.0115   0.0016           58141.9                     J.R.Griswold,        (16)C2251 10 0.0012539                     0.0016 10.9                       13.9     13.9
+ 1001 90232   39001     1.918E8 400000.0   0.0094   0.0011           58141.9                     J.R.Griswold,        (16)C2251 10 0.0010249                     0.0011 10.9                       11.7     11.7
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -769,9 +753,9 @@
 #COVARDATA      1           3           3
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-8.96E7      8.96E7      1.5767-2    12.66        100
-1.28E8      1.28E8      1.1476-2    13.91        42 100
-1.918E8     1.918E8     9.3806-3    11.7         40 37 100
+8.96E7      8.96E7      0.0158      12.66        100
+1.28E8      1.28E8      0.0115      13.91        42 100
+1.918E8     1.918E8     0.0094      11.7         40 37 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       C2251010 

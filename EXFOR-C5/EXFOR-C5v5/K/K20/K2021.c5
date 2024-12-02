@@ -438,7 +438,7 @@
 #PRODUCT        56-BA-126
 #C4ReaCode      (G,F)CUM,SIG,,BRA
 #CompNotes      OPERATION...  Value=Max  Max:EN-MAX
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+2.04%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.52%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #Quantity       Cumulative cross section
@@ -462,22 +462,22 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (79-AU-197(G,F)56-BA-126,CUM,SIG,,BRA)
 #+               #[1]#DECAY-DATA (56-BA-126,1.67HR,DG,233.6,0.2) #Ix_old=0.2
-#+                a1=0.2/0.196;               #[1]#DECAY-DATA: correction to new 233.6 keV gamma-yield per decay Ba-126 Ix_new=0.196
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0204082
+#+                a1=0.2/0.197;               #[1]#DECAY-DATA: correction to new 233.6 keV gamma-yield per decay Ba-126 Ix_new=0.197
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0152285
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        K2021006    1.02041     -           1.02041     -
+#/C5CORR        K2021006    1.01523     -           1.01523     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          K2021006    CS          3           1.02041     1.02041     1.02041     +2.04%      1.02041                
+#XCORR          K2021006    CS          3           1.01523     1.01523     1.01523     +1.52%      1.01523                
 #C5DATA         3
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    0 79197   3  18 A     7.0E8          1.3878-6 6.6327-7     56.0    126.0                     H.Haba*,             (00)K2021  6                             6.6327-7                            47.8     47.8                                        1.02040821.0204082
-    0 79197   3  18 A     1.0E9          2.7551-6 8.1633-7     56.0    126.0                     H.Haba*,             (00)K2021  6                             8.1633-7                            29.6     29.6                                        1.02040821.0204082
-    0 79197   3  18 A     1.1E9          1.0010-6 1.6735-7     56.0    126.0                     H.Haba*,             (00)K2021  6                             1.6735-7                            16.7     16.7                                        1.02040821.020408
+    0 79197   3  18 A     7.0E8          1.3807-6 6.5990-7     56.0    126.0                     H.Haba*,             (00)K2021  6                             6.5990-7                            47.8     47.8                                        1.01522851.0152285
+    0 79197   3  18 A     1.0E9          2.7411-6 8.1218-7     56.0    126.0                     H.Haba*,             (00)K2021  6                             8.1218-7                            29.6     29.6                                        1.01522851.0152285
+    0 79197   3  18 A     1.1E9          9.9594-7 1.6650-7     56.0    126.0                     H.Haba*,             (00)K2021  6                             1.6650-7                            16.7     16.7                                        1.01522851.0152285
 #/C5DATA        0
 #/DATASET       K2021006 
 #DATASET        K2021007   20070712
@@ -4203,6 +4203,9 @@
 #PRODUCT        33-AS-76
 #C4ReaCode      (G,F),SIG,,BRA
 #CompNotes      OPERATION...  Value=Max  Max:EN-MAX
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+10.6%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -4219,22 +4222,34 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 79-AU-197(G,F)33-AS-76,,SIG,,BRA
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (79-AU-197(G,F)33-AS-76,,SIG,,BRA)
+#+               #[1]#DECAY-DATA (33-AS-76,1.097D,DG,559.1,0.45) #Ix_old=0.45
+#+                a1=0.45/0.407;              #[1]#DECAY-DATA: correction to new 559.086 keV gamma-yield per decay As-76 Ix_new=0.407
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.105651
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        K2021044    1.10565     -           1.10565     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          K2021044    CS          10          1.10565     1.10565     1.10565     +10.6%      1.10565                
 #C5DATA         10
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    0 79197   3  18 A     3.0E8            4.7E-6   1.1E-6     33.0     76.0                     H.Haba,              (00)K2021 44                               1.1E-6                            23.4     23.4
-    0 79197   3  18 A     3.5E8            1.1E-5   3.0E-6     33.0     76.0                     H.Haba,              (00)K2021 44                               3.0E-6                            27.3     27.3
-    0 79197   3  18 A     4.0E8            1.1E-5   1.0E-6     33.0     76.0                     H.Haba,              (00)K2021 44                               1.0E-6                            9.09     9.09
-    0 79197   3  18 A     5.0E8            1.4E-5   2.0E-6     33.0     76.0                     H.Haba,              (00)K2021 44                               2.0E-6                            14.3     14.3
-    0 79197   3  18 A     5.5E8            1.6E-5   1.0E-6     33.0     76.0                     H.Haba,              (00)K2021 44                               1.0E-6                            6.25     6.25
-    0 79197   3  18 A     6.5E8            2.2E-5   2.0E-6     33.0     76.0                     H.Haba,              (00)K2021 44                               2.0E-6                            9.09     9.09
-    0 79197   3  18 A     7.0E8            2.0E-5   1.0E-6     33.0     76.0                     H.Haba,              (00)K2021 44                               1.0E-6                            5        5
-    0 79197   3  18 A     8.0E8            2.5E-5   2.0E-6     33.0     76.0                     H.Haba,              (00)K2021 44                               2.0E-6                            8        8
-    0 79197   3  18 A     1.0E9            2.3E-5   1.0E-6     33.0     76.0                     H.Haba,              (00)K2021 44                               1.0E-6                            4.35     4.35
-    0 79197   3  18 A     1.1E9            3.2E-5   2.0E-6     33.0     76.0                     H.Haba,              (00)K2021 44                               2.0E-6                            6.25     6.25
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    0 79197   3  18 A     3.0E8          5.1966-6 1.2162-6     33.0     76.0                     H.Haba*,             (00)K2021 44                             1.2162-6                            23.4     23.4                                        1.105651 1.105651
+    0 79197   3  18 A     3.5E8          1.2162-5 3.3170-6     33.0     76.0                     H.Haba*,             (00)K2021 44                             3.3170-6                            27.3     27.3                                        1.105651 1.105651
+    0 79197   3  18 A     4.0E8          1.2162-5 1.1057-6     33.0     76.0                     H.Haba*,             (00)K2021 44                             1.1057-6                            9.09     9.09                                        1.105651 1.1056511
+    0 79197   3  18 A     5.0E8          1.5479-5 2.2113-6     33.0     76.0                     H.Haba*,             (00)K2021 44                             2.2113-6                            14.3     14.3                                        1.105651 1.105651
+    0 79197   3  18 A     5.5E8          1.7690-5 1.1057-6     33.0     76.0                     H.Haba*,             (00)K2021 44                             1.1057-6                            6.25     6.25                                        1.105651 1.105651
+    0 79197   3  18 A     6.5E8          2.4324-5 2.2113-6     33.0     76.0                     H.Haba*,             (00)K2021 44                             2.2113-6                            9.09     9.09                                        1.105651 1.1056511
+    0 79197   3  18 A     7.0E8          2.2113-5 1.1057-6     33.0     76.0                     H.Haba*,             (00)K2021 44                             1.1057-6                            5        5                                           1.105651 1.105651
+    0 79197   3  18 A     8.0E8          2.7641-5 2.2113-6     33.0     76.0                     H.Haba*,             (00)K2021 44                             2.2113-6                            8        8                                           1.105651 1.105651
+    0 79197   3  18 A     1.0E9          2.5430-5 1.1057-6     33.0     76.0                     H.Haba*,             (00)K2021 44                             1.1057-6                            4.35     4.35                                        1.105651 1.105651
+    0 79197   3  18 A     1.1E9          3.5381-5 2.2113-6     33.0     76.0                     H.Haba*,             (00)K2021 44                             2.2113-6                            6.25     6.25                                        1.105651 1.105651
 #/C5DATA        0
 #/DATASET       K2021044 
 #DATASET        K20210451  20070712
@@ -4977,7 +4992,7 @@
 #PRODUCT        33-AS-71
 #C4ReaCode      (G,F)CUM,SIG,,BRA
 #CompNotes      OPERATION...  Value=Max  Max:EN-MAX
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.485%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.546%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #Quantity       Cumulative cross section
@@ -5001,24 +5016,24 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (79-AU-197(G,F)33-AS-71,CUM,SIG,,BRA)
 #+               #[1]#DECAY-DATA (33-AS-71,2.720D,DG,175.0,0.82) #Ix_old=0.82
-#+                a1=0.82/0.824;              #[1]#DECAY-DATA: correction to new 174.954 keV gamma-yield per decay As-71 Ix_new=0.824
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9951456
+#+                a1=0.82/0.8245;             #[1]#DECAY-DATA: correction to new 174.954 keV gamma-yield per decay As-71 Ix_new=0.8245
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9945421
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        K2021051    0.995146    -           0.995146    -
+#/C5CORR        K2021051    0.994542    -           0.994542    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          K2021051    CS          5           0.995146    0.995146    0.995146    -0.485%     1.00488                
+#XCORR          K2021051    CS          5           0.994542    0.994542    0.994542    -0.546%     1.00549                
 #C5DATA         5
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    0 79197   3  18 A     5.5E8          1.1743-6 2.1893-7     33.0     71.0                     H.Haba*,             (00)K2021 51                             2.1893-7                            18.6     18.6                                        0.99514560.9951456
-    0 79197   3  18 A     7.0E8          9.4439-7 1.3534-7     33.0     71.0                     H.Haba*,             (00)K2021 51                             1.3534-7                            14.3     14.3                                        0.99514560.9951456
-    0 79197   3  18 A     8.0E8          1.2937-6 2.9854-7     33.0     71.0                     H.Haba*,             (00)K2021 51                             2.9854-7                            23.1     23.1                                        0.99514560.9951457
-    0 79197   3  18 A     1.0E9          1.5524-6 1.4927-7     33.0     71.0                     H.Haba*,             (00)K2021 51                             1.4927-7                            9.62     9.62                                        0.99514560.9951456
-    0 79197   3  18 A     1.1E9          2.8859-6 2.9854-7     33.0     71.0                     H.Haba*,             (00)K2021 51                             2.9854-7                            10.3     10.3                                        0.99514560.9951457
+    0 79197   3  18 A     5.5E8          1.1736-6 2.1880-7     33.0     71.0                     H.Haba*,             (00)K2021 51                             2.1880-7                            18.6     18.6                                        0.99454210.9945422
+    0 79197   3  18 A     7.0E8          9.4382-7 1.3526-7     33.0     71.0                     H.Haba*,             (00)K2021 51                             1.3526-7                            14.3     14.3                                        0.99454210.9945422
+    0 79197   3  18 A     8.0E8          1.2929-6 2.9836-7     33.0     71.0                     H.Haba*,             (00)K2021 51                             2.9836-7                            23.1     23.1                                        0.99454210.9945422
+    0 79197   3  18 A     1.0E9          1.5515-6 1.4918-7     33.0     71.0                     H.Haba*,             (00)K2021 51                             1.4918-7                            9.62     9.62                                        0.99454210.9945421
+    0 79197   3  18 A     1.1E9          2.8842-6 2.9836-7     33.0     71.0                     H.Haba*,             (00)K2021 51                             2.9836-7                            10.3     10.3                                        0.99454210.9945421
 #/C5DATA        0
 #/DATASET       K2021051 
 #DATASET        K20210521  20070712
@@ -5047,7 +5062,7 @@
 #PRODUCT        30-ZN-71-M
 #C4ReaCode      (G,F)CUM,SIG,,BRA
 #CompNotes      OPERATION...  Value=Max  Max:EN-MAX
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.75%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+4.49%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #Quantity       Cumulative cross section
@@ -5071,26 +5086,26 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (79-AU-197(G,F)30-ZN-71-M,CUM,SIG,,BRA)
 #+               #[1]#DECAY-DATA (30-ZN-71-M,3.96HR,DG,386.3,0.93) #Ix_old=0.93
-#+                a1=0.93/0.914;              #[1]#DECAY-DATA: correction to new 386.28 keV gamma-yield per decay Zn-71-m Ix_new=0.914
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0175055
+#+                a1=0.93/0.89;               #[1]#DECAY-DATA: correction to new 386.371 keV gamma-yield per decay Zn-71-m Ix_new=0.89
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0449438
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        K20210521   1.01751     -           1.01751     -
+#/C5CORR        K20210521   1.04494     -           1.04494     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          K20210521   CS          7           1.01751     1.01751     1.01751     +1.75%      1.01751                
+#XCORR          K20210521   CS          7           1.04494     1.04494     1.04494     +4.49%      1.04494                
 #C5DATA         7
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    0 79197   3  18MA     3.0E8          2.8490-6 4.0700-7     30.0     71.0                     H.Haba*,             (00)K2021 521                            4.0700-7                            14.3     14.3                                        1.01750551.0175055
-    0 79197   3  18MA     3.5E8          3.2560-6 5.0875-7     30.0     71.0                     H.Haba*,             (00)K2021 521                            5.0875-7                            15.6     15.6                                        1.01750551.0175055
-    0 79197   3  18MA     4.0E8          3.1543-6 3.0525-7     30.0     71.0                     H.Haba*,             (00)K2021 521                            3.0525-7                            9.68     9.68                                        1.01750551.0175055
-    0 79197   3  18MA     5.0E8          3.3578-6 3.0525-7     30.0     71.0                     H.Haba*,             (00)K2021 521                            3.0525-7                            9.09     9.09                                        1.01750551.0175055
-    0 79197   3  18MA     6.5E8          7.4278-6 1.0175-6     30.0     71.0                     H.Haba*,             (00)K2021 521                            1.0175-6                            13.7     13.7                                        1.01750551.0175055
-    0 79197   3  18MA     7.0E8          6.7155-6 4.0700-7     30.0     71.0                     H.Haba*,             (00)K2021 521                            4.0700-7                            6.06     6.06                                        1.01750551.0175055
-    0 79197   3  18MA     1.1E9          5.3928-6 3.0525-7     30.0     71.0                     H.Haba*,             (00)K2021 521                            3.0525-7                            5.66     5.66                                        1.01750551.0175056
+    0 79197   3  18MA     3.0E8          2.9258-6 4.1798-7     30.0     71.0                     H.Haba*,             (00)K2021 521                            4.1798-7                            14.3     14.3                                        1.04494381.0449438
+    0 79197   3  18MA     3.5E8          3.3438-6 5.2247-7     30.0     71.0                     H.Haba*,             (00)K2021 521                            5.2247-7                            15.6     15.6                                        1.04494381.0449438
+    0 79197   3  18MA     4.0E8          3.2393-6 3.1348-7     30.0     71.0                     H.Haba*,             (00)K2021 521                            3.1348-7                            9.68     9.68                                        1.04494381.0449438
+    0 79197   3  18MA     5.0E8          3.4483-6 3.1348-7     30.0     71.0                     H.Haba*,             (00)K2021 521                            3.1348-7                            9.09     9.09                                        1.04494381.0449437
+    0 79197   3  18MA     6.5E8          7.6281-6 1.0449-6     30.0     71.0                     H.Haba*,             (00)K2021 521                            1.0449-6                            13.7     13.7                                        1.04494381.0449438
+    0 79197   3  18MA     7.0E8          6.8966-6 4.1798-7     30.0     71.0                     H.Haba*,             (00)K2021 521                            4.1798-7                            6.06     6.06                                        1.04494381.0449437
+    0 79197   3  18MA     1.1E9          5.5382-6 3.1348-7     30.0     71.0                     H.Haba*,             (00)K2021 521                            3.1348-7                            5.66     5.66                                        1.04494381.0449438
 #/C5DATA        0
 #/DATASET       K20210521
 #DATASET        K20210522  20070712
@@ -5119,7 +5134,7 @@
 #PRODUCT        30-ZN-71-M
 #C4ReaCode      (G,F)CUM,SIG,,BRA
 #CompNotes      OPERATION...  Value=Max  Max:EN-MAX
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.75%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+4.49%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #Quantity       Cumulative cross section
@@ -5143,31 +5158,31 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (79-AU-197(G,F)30-ZN-71-M,CUM,SIG,,BRA)
 #+               #[1]#DECAY-DATA (30-ZN-71-M,3.96HR,DG,386.3,0.93) #Ix_old=0.93
-#+                a1=0.93/0.914;              #[1]#DECAY-DATA: correction to new 386.28 keV gamma-yield per decay Zn-71-m Ix_new=0.914
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0175055
+#+                a1=0.93/0.89;               #[1]#DECAY-DATA: correction to new 386.371 keV gamma-yield per decay Zn-71-m Ix_new=0.89
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0449438
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        K20210522   1.01751     -           1.01751     -
+#/C5CORR        K20210522   1.04494     -           1.04494     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          K20210522   CS          12          1.01751     1.01751     1.01751     +1.75%      1.01751                
+#XCORR          K20210522   CS          12          1.04494     1.04494     1.04494     +4.49%      1.04494                
 #C5DATA         12
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    0 79197   3  18MA     3.0E8          2.6455-6 6.1050-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            6.1050-7                            23.1     23.1                                        1.01750551.0175055
-    0 79197   3  18MA     3.5E8          2.5438-6 5.0875-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            5.0875-7                            20       20                                          1.01750551.0175055
-    0 79197   3  18MA     4.0E8          2.9508-6 3.0525-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            3.0525-7                            10.3     10.3                                        1.01750551.0175055
-    0 79197   3  18MA     5.0E8          3.6630-6 4.0700-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            4.0700-7                            11.1     11.1                                        1.01750551.0175055
-    0 79197   3  18MA     5.5E8          4.3753-6 7.1225-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            7.1225-7                            16.3     16.3                                        1.01750551.0175055
-    0 79197   3  18MA     6.5E8          4.9858-6 5.0875-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            5.0875-7                            10.2     10.2                                        1.01750551.0175055
-    0 79197   3  18MA     7.0E8          4.9858-6 6.1050-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            6.1050-7                            12.2     12.2                                        1.01750551.0175055
-    0 79197   3  18MA     8.0E8          6.4103-6 5.0875-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            5.0875-7                            7.94     7.94                                        1.01750551.0175055
-    0 79197   3  18MA     9.0E8          6.3085-6 6.1050-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            6.1050-7                            9.68     9.68                                        1.01750551.0175055
-    0 79197   3  18MA     9.5E8          5.5963-6 1.0175-6     30.0     71.0                     H.Haba*,             (00)K2021 522                            1.0175-6                            18.2     18.2                                        1.01750551.0175056
-    0 79197   3  18MA     1.0E9          6.9190-6 6.1050-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            6.1050-7                            8.82     8.82                                        1.01750551.0175055
-    0 79197   3  18MA     1.1E9          5.9015-6 4.0700-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            4.0700-7                            6.90     6.90                                        1.01750551.0175055
+    0 79197   3  18MA     3.0E8          2.7169-6 6.2697-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            6.2697-7                            23.1     23.1                                        1.04494381.0449438
+    0 79197   3  18MA     3.5E8          2.6124-6 5.2247-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            5.2247-7                            20       20                                          1.04494381.0449438
+    0 79197   3  18MA     4.0E8          3.0303-6 3.1348-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            3.1348-7                            10.3     10.3                                        1.04494381.0449438
+    0 79197   3  18MA     5.0E8          3.7618-6 4.1798-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            4.1798-7                            11.1     11.1                                        1.04494381.0449438
+    0 79197   3  18MA     5.5E8          4.4933-6 7.3146-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            7.3146-7                            16.3     16.3                                        1.04494381.0449439
+    0 79197   3  18MA     6.5E8          5.1202-6 5.2247-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            5.2247-7                            10.2     10.2                                        1.04494381.0449438
+    0 79197   3  18MA     7.0E8          5.1202-6 6.2697-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            6.2697-7                            12.2     12.2                                        1.04494381.0449438
+    0 79197   3  18MA     8.0E8          6.5831-6 5.2247-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            5.2247-7                            7.94     7.94                                        1.04494381.0449438
+    0 79197   3  18MA     9.0E8          6.4787-6 6.2697-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            6.2697-7                            9.68     9.68                                        1.04494381.0449438
+    0 79197   3  18MA     9.5E8          5.7472-6 1.0449-6     30.0     71.0                     H.Haba*,             (00)K2021 522                            1.0449-6                            18.2     18.2                                        1.04494381.0449439
+    0 79197   3  18MA     1.0E9          7.1056-6 6.2697-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            6.2697-7                            8.82     8.82                                        1.04494381.0449438
+    0 79197   3  18MA     1.1E9          6.0607-6 4.1798-7     30.0     71.0                     H.Haba*,             (00)K2021 522                            4.1798-7                            6.90     6.90                                        1.04494381.0449437
 #/C5DATA        0
 #/DATASET       K20210522
 #DATASET        K2021053   20200117

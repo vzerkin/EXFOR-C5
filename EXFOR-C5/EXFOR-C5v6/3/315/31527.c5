@@ -168,9 +168,13 @@
 #C4ReaCode      (N,3N),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=0.97%
 #CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9805065(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-15.2%
 #CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
 #CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -198,18 +202,23 @@
 #+              a1=recom$al27na[EN];          #[0]#new monitor point [14.8MeV]
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (63-EU-151(N,3N)63-EU-149,,SIG)
+#+               #[1]#DECAY-DATA (63-EU-149,93.1D,DG,327.5,0.0403) #Ix_old=0.0403
+#+                a1=0.0403/0.0475;           #[1]#DECAY-DATA: correction to new 327.526 keV gamma-yield per decay Eu-149 Ix_new=0.0475
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.8484211
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        31527004    0.980506    0.980506    -           -
+#/C5CORR        31527004    0.831882    0.980506    0.848421    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31527004    CS          1           0.980506    0.980506    0.980506    -1.95%      1.01988     [MONIT]::al27na
+#XCORR          31527004    CS          1           0.831882    0.831882    0.831882    -16.8%      1.20209     [MONIT]::al27na
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 63151   3  17      1.48E7 200000.0 2.5983-3 3.9155-4                                       Gongping Li*,        (02)31527  4  1.1017-5                   3.9155-4 0.42                       15.1     15.1    0.1132   0.0011   0.11099334.7501-4 0.98050650.9788674
+    1 63151   3  17      1.48E7 200000.0 2.2045-3 3.3220-4                                       Gongping Li*,        (02)31527  4  9.3475-6                   3.3220-4 0.42                       15.1     15.1    0.1132   0.0011   0.11099334.7501-4 0.83188240.8304917
 #/C5DATA        0
 #/DATASET       31527004 
 #DATASET        31527005   20030320

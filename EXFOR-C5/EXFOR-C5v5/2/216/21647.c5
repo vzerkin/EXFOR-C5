@@ -116,6 +116,7 @@
 #CompNotes      ERR-ANALYS:(ERR-7,0.4,2.0)    ADDED AS COMMON:ERR-7,PER-CENT=0.4%
 #CompNotes      ERR-ANALYS:(ERR-8,,0.2)       ADDED AS COMMON:ERR-8,PER-CENT=0.1%
 #CompNotes      ERR-ANALYS:(ERR-9,,0.2)       ADDED AS COMMON:ERR-9,PER-CENT=0.1%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.290%
 #CompNotes      RENORMALIZE(DEC-MON): Data[*]+0.105%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
@@ -138,6 +139,11 @@
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
 #C5CORR         #Reaction: 58-CE-140(N,G)58-CE-141,,SIG,,SPA
 #+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (58-CE-140(N,G)58-CE-141,,SIG,,SPA)
+#+               #[1]#DECAY-DATA (58-CE-141,32.51D,DG,145.44,.4844) #Ix_old=0.4844
+#+                a1=0.4844/0.483;            #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0028986
 #+               #[2]#---Monitor decay-data
 #+               #[2]#MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,SPA)
 #+               #[2]#DECAY-MON  (79-AU-198-G,2.69D,DG,411.79,0.9552) #Im_old=0.9552
@@ -145,16 +151,16 @@
 #+                y=y*a2;                     #[2]#Renorm.factor: a2=1.0010469
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        21647003    1.00105     -           -           1.00105
+#/C5CORR        21647003    1.00395     -           1.00290     1.00105
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          21647003    CS          1           1.00105     1.00105     1.00105     +0.105%     1.00105                
+#XCORR          21647003    CS          1           1.00395     1.00395     1.00395     +0.395%     1.00395                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                    SpT     dSpT     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 58140   3 102 S   25000.0         .01264322 5.7060-4                                       H.Beer*,             (80)21647  3  4.4490-4 6.315E-5          5.7060-4 3.52     0.50              4.51     4.51                                        1.00104691.0010469
+    1 58140   3 102 S   25000.0         .01267987 5.7225-4                                       H.Beer*,             (80)21647  3  4.4618-4 6.315E-5          5.7225-4 3.52     0.50              4.51     4.51                                        1.00394851.0039485
 #/C5DATA        0
 #/DATASET       21647003 
 #DATASET        21647004   20210801
@@ -883,6 +889,10 @@
 #CompNotes      ERR-ANALYS:(ERR-7,0.4,2.0)    ADDED AS COMMON:ERR-7,PER-CENT=0.4%
 #CompNotes      ERR-ANALYS:(ERR-8,,0.2)       ADDED AS COMMON:ERR-8,PER-CENT=0.1%
 #CompNotes      ERR-ANALYS:(ERR-9,,0.2)       ADDED AS COMMON:ERR-9,PER-CENT=0.1%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.290%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -899,13 +909,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 58-CE-140(N,G)58-CE-141,,SIG,,SPA
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (58-CE-140(N,G)58-CE-141,,SIG,,SPA)
+#+               #[1]#DECAY-DATA (58-CE-141,32.51D,DG,145.44,.4844) #Ix_old=0.4844
+#+                a1=0.4844/0.483;            #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0028986
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        216470142   1.00290     -           1.00290     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          216470142   CS          1           1.00290     1.00290     1.00290     +0.290%     1.00290                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                    SpT     dSpT     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 58140   3 102     25000.0           0.01342   5.2E-4                                       H.Beer,              (80)21647 142 3.584E-4  6.71E-5            5.2E-4 2.67     0.50              3.87     3.87
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 58140   3 102     25000.0         0.0134589 5.2151-4                                       H.Beer*,             (80)21647 142 3.5944-4  6.71E-5          5.2151-4 2.67     0.50              3.87     3.87                                        1.00289861.0028986
 #/C5DATA        0
 #/DATASET       216470142
 #DATASET        216470152  20210801
@@ -1275,6 +1297,10 @@
 #CompNotes      ERR-ANALYS:(ERR-7,0.4,2.0)    ADDED AS COMMON:ERR-7,PER-CENT=0.4%
 #CompNotes      ERR-ANALYS:(ERR-8,,0.2)       ADDED AS COMMON:ERR-8,PER-CENT=0.1%
 #CompNotes      ERR-ANALYS:(ERR-9,,0.2)       ADDED AS COMMON:ERR-9,PER-CENT=0.1%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.290%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1291,13 +1317,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 58-CE-140(N,G)58-CE-141,,SIG,,MXW,DERIV
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (58-CE-140(N,G)58-CE-141,,SIG,,MXW,DERIV)
+#+               #[1]#DECAY-DATA (58-CE-141,32.51D,DG,145.44,.4844) #Ix_old=0.4844
+#+                a1=0.4844/0.483;            #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0028986
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        21647020    1.00290     -           1.00290     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          21647020    CS          1           1.00290     1.00290     1.00290     +0.290%     1.00290                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                    SpT     dSpT     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 58140   3 102 D   30000.0           0.01224   4.7E-4                                       H.Beer,              (80)21647 20 3.2689E-4  6.12E-5            4.7E-4 2.67     0.50              3.84     3.84
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 58140   3 102 D   30000.0         .01227548 4.7136-4                                       H.Beer*,             (80)21647 20  3.2784-4  6.12E-5          4.7136-4 2.67     0.50              3.84     3.84                                        1.00289861.0028986
 #/C5DATA        0
 #/DATASET       21647020 
 #DATASET        21647021   20210801

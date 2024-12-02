@@ -97,6 +97,10 @@
 #PRODUCT        90-TH-231
 #C4ReaCode      (N,2N),SIG
 #CompNotes      ERR-ANALYS:(ERR-S,5.,10.)     ADDED AS COMMON:ERR-S,PER-CENT=5.0%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.94%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -113,14 +117,26 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 90-TH-232(N,2N)90-TH-231,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (90-TH-232(N,2N)90-TH-231,,SIG)
+#+               #[1]#DECAY-DATA (90-TH-231,25.52HR,DG,84.2,0.066) #Ix_old=0.066
+#+                a1=0.066/0.068;             #[1]#DECAY-DATA: correction to new 84.214 keV gamma-yield per decay Th-231 Ix_new=0.068
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.97058815
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        33042003    0.970588    -           0.970588    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          33042003    CS          2           0.970588    0.970588    0.970588    -2.94%      1.03030                
 #C5DATA         2
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 90232   3  16 A 8040000.0 300000.01.5662901  0.06211                                       R.Crasta,            (12)33042  3 .06505292.07831451           0.06211 4.15     5                 3.97     3.97
-    1 90232   3  16 A    1.19E7 350000.0  2.09793  0.02513                                       R.Crasta,            (12)33042  3 .087133580.1048965           0.02513 4.15     5                 1.20     1.20
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 90232   3  16 A 8040000.0 300000.01.5202227.06028323                                       R.Crasta*,           (12)33042  3 .06313959.07831451         .06028323 4.15     5.15              3.97     3.97                                        0.97058810.9705881
+    1 90232   3  16 A    1.19E7 350000.0 2.036226.02439088                                       R.Crasta*,           (12)33042  3 .084570820.1048965         .02439088 4.15     5.15              1.20     1.20                                        0.97058810.9705882
 #/C5DATA        0
 #/DATASET       33042003 
 #/C5.2.3        1               2               2               0               4               

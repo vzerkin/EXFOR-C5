@@ -151,6 +151,9 @@
 #REAC1          N,2N
 #PRODUCT        70-YB-167
 #C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.79%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -167,13 +170,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 70-YB-168(N,2N)70-YB-167,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (70-YB-168(N,2N)70-YB-167,,SIG)
+#+               #[1]#DECAY-DATA (70-YB-167,17.5MIN,DG,113.336,0.55) #Ix_old=0.55
+#+                a1=0.55/0.56;               #[1]#DECAY-DATA: correction to new 113.32 keV gamma-yield per decay Yb-167 Ix_new=0.56
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.98214287
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31497004    0.982143    -           0.982143    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31497004    CS          1           0.982143    0.982143    0.982143    -1.79%      1.01818                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 70168   3  16      1.47E7 200000.01.9120001     0.12                                       XIANGZHONG KONG,     (98)31497  4                                 0.12                            6.28     6.28
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 70168   3  16      1.47E7 200000.01.87785720.1178571                                       XIANGZHONG KONG*,    (98)31497  4                            0.1178571                            6.28     6.28                                        0.98214290.9821428
 #/C5DATA        0
 #/DATASET       31497004 
 #DATASET        31497005   19990209
@@ -859,6 +874,9 @@
 #REAC1          N,P
 #PRODUCT        67-HO-167
 #C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.79%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -875,13 +893,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 68-ER-167(N,P)67-HO-167,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (68-ER-167(N,P)67-HO-167,,SIG)
+#+               #[1]#DECAY-DATA (67-HO-167,3.1HR,DG,346.48,0.57) #Ix_old=0.57
+#+                a1=0.57/0.56;               #[1]#DECAY-DATA: correction to new 346.547 keV gamma-yield per decay Ho-167 Ix_new=0.56
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0178571
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31497016    1.01786     -           1.01786     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31497016    CS          1           1.01786     1.01786     1.01786     +1.79%      1.01786                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 68167   3 103      1.47E7 200000.0   0.0032   6.0E-4                                       XIANGZHONG KONG,     (98)31497 16                               6.0E-4                            18.8     18.8
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 68167   3 103      1.47E7 200000.0 3.2571-3 6.1071-4                                       XIANGZHONG KONG*,    (98)31497 16                             6.1071-4                            18.8     18.8                                        1.01785711.0178572
 #/C5DATA        0
 #/DATASET       31497016 
 #DATASET        31497017   19990209
@@ -1021,9 +1051,6 @@
 #REAC1          N,A
 #PRODUCT        60-ND-147
 #C4ReaCode      (N,A),SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.24%
-#CompNotes      MODIFY(DEC): dData
-#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1040,25 +1067,13 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
-#C5CORR         #Reaction: 62-SM-150(N,A)60-ND-147,,SIG
-#+              dy=dy/y;                      #to rel. uncertainties
-#+               #[1]#---Reaction decay-data
-#+               #[1]#REACTION   (62-SM-150(N,A)60-ND-147,,SIG)
-#+               #[1]#DECAY-DATA (60-ND-147,10.98D,DG,531.013,0.131) #Ix_old=0.131
-#+                a1=0.131/0.134;             #[1]#DECAY-DATA: correction to new 531.016 keV gamma-yield per decay Nd-147 Ix_new=0.134
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9776119
-#+              dy=dy*y;                      #to abs. uncertainties
-#+
-#/C5CORR        31497019    0.977612    -           0.977612    -
-#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31497019    CS          1           0.977612    0.977612    0.977612    -2.24%      1.02290                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 62150   3 107      1.47E7 200000.0.00332388 4.8881-4                                       XIANGZHONG KONG*,    (98)31497 19                             4.8881-4                            14.7     14.7                                        0.97761190.977612
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 62150   3 107      1.47E7 200000.0   0.0034   5.0E-4                                       XIANGZHONG KONG,     (98)31497 19                               5.0E-4                            14.7     14.7
 #/C5DATA        0
 #/DATASET       31497019 
 #DATASET        31497020   19990209
@@ -1085,7 +1100,7 @@
 #REAC1          N,A
 #PRODUCT        60-ND-149
 #C4ReaCode      (N,A),SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.41%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.00%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
@@ -1109,20 +1124,20 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (62-SM-152(N,A)60-ND-149,,SIG)
 #+               #[1]#DECAY-DATA (60-ND-149,1.73HR,DG,211.293,0.273) #Ix_old=0.273
-#+                a1=0.273/0.259;             #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.259
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.054054
+#+                a1=0.273/0.26;              #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.26
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0500001
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        31497020    1.05405     -           1.05405     -
+#/C5CORR        31497020    1.05000     -           1.05000     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31497020    CS          1           1.05405     1.05405     1.05405     +5.41%      1.05405                
+#XCORR          31497020    CS          1           1.05000     1.05000     1.05000     +5.00%      1.05000                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 62152   3 107      1.47E7 200000.0 2.3189-3 3.1622-4                                       XIANGZHONG KONG*,    (98)31497 20                             3.1622-4                            13.6     13.6                                        1.054054 1.054054
+    1 62152   3 107      1.47E7 200000.0  0.00231  3.15E-4                                       XIANGZHONG KONG*,    (98)31497 20                              3.15E-4                            13.6     13.6                                        1.05000011.0500001
 #/C5DATA        0
 #/DATASET       31497020 
 #DATASET        31497021   19990209
@@ -1631,7 +1646,7 @@
 #REAC1          N,A
 #PRODUCT        70-YB-177
 #C4ReaCode      (N,A),SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+8.27%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+7.84%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
@@ -1655,20 +1670,20 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (72-HF-180(N,A)70-YB-177,,SIG)
 #+               #[1]#DECAY-DATA (70-YB-177-G,1.9HR,DG,1080.25,0.055) #Ix_old=0.055
-#+                a1=0.055/0.0508;            #[1]#DECAY-DATA: correction to new 1080.204 keV gamma-yield per decay Yb-177-g Ix_new=0.0508
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0826771
+#+                a1=0.055/0.051;             #[1]#DECAY-DATA: correction to new 1080.204 keV gamma-yield per decay Yb-177-g Ix_new=0.051
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0784314
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        31497029    1.08268     -           1.08268     -
+#/C5CORR        31497029    1.07843     -           1.07843     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31497029    CS          1           1.08268     1.08268     1.08268     +8.27%      1.08268                
+#XCORR          31497029    CS          1           1.07843     1.07843     1.07843     +7.84%      1.07843                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 72180   3 107      1.47E7 200000.0 9.7441-4 2.1654-4                                       XIANGZHONG KONG*,    (98)31497 29                             2.1654-4                            22.2     22.2                                        1.08267711.0826771
+    1 72180   3 107      1.47E7 200000.0 9.7059-4 2.1569-4                                       XIANGZHONG KONG*,    (98)31497 29                             2.1569-4                            22.2     22.2                                        1.07843141.0784314
 #/C5DATA        0
 #/DATASET       31497029 
 #/C5M.2.3       1               28              28              0               28              

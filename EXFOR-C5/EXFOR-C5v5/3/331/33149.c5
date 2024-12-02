@@ -26,6 +26,10 @@
 #REAC1          N,2N
 #PRODUCT        58-CE-141
 #C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.207%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -42,13 +46,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 58-CE-142(N,2N)58-CE-141,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (58-CE-142(N,2N)58-CE-141,,SIG)
+#+               #[1]#DECAY-DATA (58-CE-141,32.511D,DG,145.44,0.484) #Ix_old=0.484
+#+                a1=0.484/0.483;             #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0020703
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        33149002    1.00207     -           1.00207     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          33149002    CS          1           1.00207     1.00207     1.00207     +0.207%     1.00207                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 58142   3  16      1.35E7 300000.0     2.05  0.46658                                       H.B.Sachhidananda,   (20)33149  2 0.1976838                    0.46658 9.64                       22.8     22.8
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 58142   3  16      1.35E7 300000.0 2.054244 0.467546                                       H.B.Sachhidananda*,  (20)33149  2 0.1980931                   0.467546 9.64                       22.8     22.8                                        1.00207031.0020703
 #/C5DATA        0
 #/DATASET       33149002 
 #DATASET        33149003   20211202
@@ -78,6 +94,10 @@
 #REAC1          N,2N
 #PRODUCT        58-CE-141
 #C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.207%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -94,13 +114,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 58-CE-142(N,2N)58-CE-141,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (58-CE-142(N,2N)58-CE-141,,SIG)
+#+               #[1]#DECAY-DATA (58-CE-141,32.511D,DG,145.44,0.484) #Ix_old=0.484
+#+                a1=0.484/0.483;             #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0020703
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        33149003    1.00207     -           1.00207     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          33149003    CS          1           1.00207     1.00207     1.00207     +0.207%     1.00207                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 58142   3  16      1.35E7 300000.0     2.12 0.580668                                       H.B.Sachhidananda,   (20)33149  3 0.3610286                   0.580668 17                         27.4     27.4
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 58142   3  16      1.35E7 300000.0 2.1243890.5818701                                       H.B.Sachhidananda*,  (20)33149  3 0.3617761                  0.5818701 17                         27.4     27.4                                        1.00207031.0020703
 #/C5DATA        0
 #/DATASET       33149003 
 #DATASET        33149004   20211202

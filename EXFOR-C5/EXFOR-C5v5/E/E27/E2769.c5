@@ -822,9 +822,6 @@
 #REAC1          P,X
 #PRODUCT        21-SC-48
 #C4ReaCode      (P,X),SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.102%
-#CompNotes      MODIFY(DEC): dData
-#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -841,26 +838,14 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
-#C5CORR         #Reaction: 22-TI-0(P,X)21-SC-48,,SIG
-#+              dy=dy/y;                      #to rel. uncertainties
-#+               #[1]#---Reaction decay-data
-#+               #[1]#REACTION   (22-TI-0(P,X)21-SC-48,,SIG)
-#+               #[1]#DECAY-DATA (21-SC-48,43.71HR,DG,1037.52,0.975) #Ix_old=0.975
-#+                a1=0.975/0.976;             #[1]#DECAY-DATA: correction to new 1037.522 keV gamma-yield per decay Sc-48 Ix_new=0.976
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9989754
-#+              dy=dy*y;                      #to abs. uncertainties
-#+
-#/C5CORR        E2769014    0.998975    -           0.998975    -
-#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          E2769014    CS          2           0.998975    0.998975    0.998975    -0.102%     1.00103                
 #C5DATA         2
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 22000   39000       8.0E8          3.1767-3 1.1988-4           21048.9                     K.Sugihara*,         (23)E2769 14                             1.1988-4                            3.77     3.77                                        0.99897540.9989754
- 1001 22000   39000       3.0E9          3.3566-3 1.2987-4           21048.9                     K.Sugihara*,         (23)E2769 14                             1.2987-4                            3.87     3.87                                        0.99897540.9989755
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 22000   39000       8.0E8           0.00318   1.2E-4           21048.9                     K.Sugihara,          (23)E2769 14                               1.2E-4                            3.77     3.77
+ 1001 22000   39000       3.0E9           0.00336   1.3E-4           21048.9                     K.Sugihara,          (23)E2769 14                               1.3E-4                            3.87     3.87
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -875,8 +860,8 @@
 #COVARDATA      1           2           2
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-8.0E8       8.0E8       3.1767-3    3.77         100
-3.0E9       3.0E9       3.3566-3    3.87         25 100
+8.0E8       8.0E8       0.00318     3.77         100
+3.0E9       3.0E9       0.00336     3.87         25 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       E2769014 
@@ -2647,6 +2632,9 @@
 #REAC1          P,X
 #PRODUCT        35-BR-76
 #C4ReaCode      (P,X)CUM,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.45%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cumulative cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -2663,14 +2651,26 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 41-NB-93(P,X)35-BR-76,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (41-NB-93(P,X)35-BR-76,CUM,SIG)
+#+               #[1]#DECAY-DATA (35-BR-76-G,16.2HR,DG,657.02,0.159) #Ix_old=0.159
+#+                a1=0.159/0.163;             #[1]#DECAY-DATA: correction to new 657.09 keV gamma-yield per decay Br-76-g Ix_new=0.163
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.97546005
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        E2769043    0.975460    -           0.975460    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          E2769043    CS          2           0.975460    0.975460    0.975460    -2.45%      1.02516                
 #C5DATA         2
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 41093   39001       8.0E8            0.0225   0.0016           35076.9                     K.Sugihara,          (23)E2769 43                               0.0016                            7.11     7.11
- 1001 41093   39001       3.0E9            0.0122   8.0E-4           35076.9                     K.Sugihara,          (23)E2769 43                               8.0E-4                            6.56     6.56
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 41093   39001       8.0E8         .02194785 1.5607-3           35076.9                     K.Sugihara*,         (23)E2769 43                             1.5607-3                            7.11     7.11                                        0.97546010.97546
+ 1001 41093   39001       3.0E9         .01190061 7.8037-4           35076.9                     K.Sugihara*,         (23)E2769 43                             7.8037-4                            6.56     6.56                                        0.97546010.97546
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -2685,8 +2685,8 @@
 #COVARDATA      1           2           2
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-8.0E8       8.0E8       0.0225      7.11         100
-3.0E9       3.0E9       0.0122      6.56         25 100
+8.0E8       8.0E8       2.1948-2    7.11         100
+3.0E9       3.0E9       1.1901-2    6.56         25 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       E2769043 
@@ -2783,6 +2783,9 @@
 #REAC1          P,X
 #PRODUCT        36-KR-76
 #C4ReaCode      (P,X)CUM,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+3.45%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cumulative cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -2799,13 +2802,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 41-NB-93(P,X)36-KR-76,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (41-NB-93(P,X)36-KR-76,CUM,SIG)
+#+               #[1]#DECAY-DATA (36-KR-76,14.8HR,DG,315.7,0.39) #Ix_old=0.39
+#+                a1=0.39/0.377;              #[1]#DECAY-DATA: correction to new 315.8 keV gamma-yield per decay Kr-76 Ix_new=0.377
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0344827
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        E2769045    1.03448     -           1.03448     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          E2769045    CS          1           1.03448     1.03448     1.03448     +3.45%      1.03448                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 41093   39001       8.0E8            0.0042   4.5E-4           36076.9                     K.Sugihara,          (23)E2769 45                               4.5E-4                            10.7     10.7
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 41093   39001       8.0E8          4.3448-3 4.6552-4           36076.9                     K.Sugihara*,         (23)E2769 45                             4.6552-4                            10.7     10.7                                        1.03448271.0344827
 #/C5DATA        0
 #/DATASET       E2769045 
 #DATASET        E2769046   20240314

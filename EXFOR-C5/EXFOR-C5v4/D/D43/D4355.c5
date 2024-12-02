@@ -437,6 +437,10 @@
 #PRODUCT        58-CE-141
 #C4ReaCode      (D,2P),SIG
 #CompNotes      ERR-ANALYS:(ERR-S,2.0,15.0)   ADDED AS COMMON:ERR-S,PER-CENT=2.0%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.207%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -453,19 +457,31 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 59-PR-141(D,2P)58-CE-141,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (59-PR-141(D,2P)58-CE-141,,SIG)
+#+               #[1]#DECAY-DATA (58-CE-141,32.05D,DG,145.44,0.484) #Ix_old=0.484
+#+                a1=0.484/0.483;             #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0020703
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D4355009    1.00207     -           1.00207     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D4355009    CS          7           1.00207     1.00207     1.00207     +0.207%     1.00207                
 #C5DATA         7
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1002 59141   3 111       3.6E7 700000.0   0.0011   1.0E-4                                       A.Hermanne,          (16)D4355  9 1.2969E-4   2.2E-5            1.0E-4 11.8     2                 9.09     9.09
- 1002 59141   3 111      3.82E7 600000.0   0.0014   2.0E-4                                       A.Hermanne,          (16)D4355  9 1.6506E-4   2.8E-5            2.0E-4 11.8     2                 14.3     14.3
- 1002 59141   3 111      4.03E7 500000.0   0.0015   2.0E-4                                       A.Hermanne,          (16)D4355  9 1.7685E-4   3.0E-5            2.0E-4 11.8     2                 13.3     13.3
- 1002 59141   3 111      4.25E7 400000.0   0.0016   2.0E-4                                       A.Hermanne,          (16)D4355  9 1.8864E-4   3.2E-5            2.0E-4 11.8     2                 12.5     12.5
- 1002 59141   3 111      4.45E7 300000.0   0.0017   2.0E-4                                       A.Hermanne,          (16)D4355  9 2.0043E-4   3.4E-5            2.0E-4 11.8     2                 11.8     11.8
- 1002 59141   3 111      4.66E7 200000.0   0.0019   2.0E-4                                       A.Hermanne,          (16)D4355  9 2.2401E-4   3.8E-5            2.0E-4 11.8     2                 10.5     10.5
- 1002 59141   3 111      4.87E7 200000.0   0.0015   2.0E-4                                       A.Hermanne,          (16)D4355  9 1.7685E-4   3.0E-5            2.0E-4 11.8     2                 13.3     13.3
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1002 59141   3 111       3.6E7 700000.0 1.1023-3 1.0021-4                                       A.Hermanne*,         (16)D4355  9  1.2996-4   2.2E-5          1.0021-4 11.8     2                 9.09     9.09                                        1.00207031.0020702
+ 1002 59141   3 111      3.82E7 600000.0 1.4029-3 2.0041-4                                       A.Hermanne*,         (16)D4355  9  1.6540-4   2.8E-5          2.0041-4 11.8     2                 14.3     14.3                                        1.00207031.0020703
+ 1002 59141   3 111      4.03E7 500000.0 1.5031-3 2.0041-4                                       A.Hermanne*,         (16)D4355  9  1.7722-4   3.0E-5          2.0041-4 11.8     2                 13.3     13.3                                        1.00207031.0020703
+ 1002 59141   3 111      4.25E7 400000.0 1.6033-3 2.0041-4                                       A.Hermanne*,         (16)D4355  9  1.8903-4   3.2E-5          2.0041-4 11.8     2                 12.5     12.5                                        1.00207031.0020703
+ 1002 59141   3 111      4.45E7 300000.0 1.7035-3 2.0041-4                                       A.Hermanne*,         (16)D4355  9  2.0084-4   3.4E-5          2.0041-4 11.8     2                 11.8     11.8                                        1.00207031.0020702
+ 1002 59141   3 111      4.66E7 200000.0 1.9039-3 2.0041-4                                       A.Hermanne*,         (16)D4355  9  2.2447-4   3.8E-5          2.0041-4 11.8     2                 10.5     10.5                                        1.00207031.0020703
+ 1002 59141   3 111      4.87E7 200000.0 1.5031-3 2.0041-4                                       A.Hermanne*,         (16)D4355  9  1.7722-4   3.0E-5          2.0041-4 11.8     2                 13.3     13.3                                        1.00207031.0020703
 #/C5DATA        0
 #/DATASET       D4355009 
 #DATASET        D4355010   20160926
@@ -494,7 +510,7 @@
 #PRODUCT        70-YB-166
 #C4ReaCode      (D,5N),SIG
 #CompNotes      ERR-ANALYS:(ERR-S,2.0,15.0)   ADDED AS COMMON:ERR-S,PER-CENT=2.0%
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.26%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.56%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #CompNotes      MODIFY(DEC): dSys
@@ -519,27 +535,27 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (69-TM-169(D,5N)70-YB-166,,SIG)
 #+               #[1]#DECAY-DATA (70-YB-166,56.7HR,DG,82.3,0.152) #Ix_old=0.152
-#+                a1=0.152/0.15552099;        #[1]#DECAY-DATA: correction to new 82.29 keV gamma-yield per decay Yb-166 Ix_new=0.15552099
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.97736
+#+                a1=0.152/0.156;             #[1]#DECAY-DATA: correction to new 82.29 keV gamma-yield per decay Yb-166 Ix_new=0.156
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9743589
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        D4355010    0.977360    -           0.977360    -
+#/C5CORR        D4355010    0.974359    -           0.974359    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          D4355010    CS          8           0.977360    0.977360    0.977360    -2.26%      1.02316                
+#XCORR          D4355010    CS          8           0.974359    0.974359    0.974359    -2.56%      1.02632                
 #C5DATA         8
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1002 69169   3 152      3.49E7 800000.00.1387851.01661512                                       A.Hermanne*,         (16)D4355 10 .01636252  0.00284         .01661512 11.8     2.05              12       12                                          0.97736  0.97736
- 1002 69169   3 152      3.71E7 700000.00.32643820.0390944                                       A.Hermanne*,         (16)D4355 10 0.0384865  0.00668         0.0390944 11.8     2.05              12       12                                          0.97736  0.97736
- 1002 69169   3 152      3.93E7 600000.00.44763090.0537548                                       A.Hermanne*,         (16)D4355 10 .05277491  0.00916         0.0537548 11.8     2.05              12       12                                          0.97736  0.97736
- 1002 69169   3 152      4.14E7 500000.00.7467031.08991712                                       A.Hermanne*,         (16)D4355 10 .08803499  0.01528         .08991712 11.8     2.05              12       12                                          0.97736  0.97736
- 1002 69169   3 152      4.35E7 400000.00.7750465.09284922                                       A.Hermanne*,         (16)D4355 10 .09137663  0.01586         .09284922 11.8     2.05              12       12                                          0.97736  0.9773601
- 1002 69169   3 152      4.55E7 300000.0 0.817073 0.097736                                       A.Hermanne*,         (16)D4355 10 0.0963315  0.01672          0.097736 11.8     2.05              12       12                                          0.97736  0.97736
- 1002 69169   3 152      4.76E7 200000.00.5942349.07134729                                       A.Hermanne*,         (16)D4355 10 .07005926  0.01216         .07134729 11.8     2.05              12       12                                          0.97736  0.97736
- 1002 69169   3 152      4.98E7 200000.00.6763331.08112087                                       A.Hermanne*,         (16)D4355 10 0.0797385  0.01384         .08112087 11.8     2.05              12       12                                          0.97736  0.97736
+ 1002 69169   3 152      3.49E7 800000.0 0.1383590.0165641                                       A.Hermanne*,         (16)D4355 10 .01631228  0.00284         0.0165641 11.8     2.05              12       12                                          0.97435890.9743589
+ 1002 69169   3 152      3.71E7 700000.00.3254359.03897436                                       A.Hermanne*,         (16)D4355 10 .03836833  0.00668         .03897436 11.8     2.05              12       12                                          0.97435890.9743589
+ 1002 69169   3 152      3.93E7 600000.00.4462564.05358974                                       A.Hermanne*,         (16)D4355 10 .05261286  0.00916         .05358974 11.8     2.05              12       12                                          0.97435890.974359
+ 1002 69169   3 152      4.14E7 500000.00.7444103.08964103                                       A.Hermanne*,         (16)D4355 10 .08776468  0.01528         .08964103 11.8     2.05              12       12                                          0.97435890.9743589
+ 1002 69169   3 152      4.35E7 400000.00.7726666.09256411                                       A.Hermanne*,         (16)D4355 10 .09109605  0.01586         .09256411 11.8     2.05              12       12                                          0.97435890.974359
+ 1002 69169   3 152      4.55E7 300000.0 0.814564.09743589                                       A.Hermanne*,         (16)D4355 10 0.0960357  0.01672         .09743589 11.8     2.05              12       12                                          0.97435890.9743589
+ 1002 69169   3 152      4.76E7 200000.00.59241020.0711282                                       A.Hermanne*,         (16)D4355 10 .06984414  0.01216         0.0711282 11.8     2.05              12       12                                          0.97435890.9743589
+ 1002 69169   3 152      4.98E7 200000.00.6742563.08087178                                       A.Hermanne*,         (16)D4355 10 .07949366  0.01384         .08087178 11.8     2.05              12       12                                          0.97435890.9743589
 #/C5DATA        0
 #/DATASET       D4355010 
 #DATASET        D4355011   20160926
@@ -679,6 +695,10 @@
 #PRODUCT        69-TM-167
 #C4ReaCode      (D,X)CUM,SIG
 #CompNotes      ERR-ANALYS:(ERR-S,2.0,15.0)   ADDED AS COMMON:ERR-S,PER-CENT=2.0%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.69%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cumulative cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -695,20 +715,32 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 69-TM-169(D,X)69-TM-167,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (69-TM-169(D,X)69-TM-167,CUM,SIG)
+#+               #[1]#DECAY-DATA (69-TM-167,9.25D,DG,207.7,0.42) #Ix_old=0.42
+#+                a1=0.42/0.413;              #[1]#DECAY-DATA: correction to new 207.801 keV gamma-yield per decay Tm-167 Ix_new=0.413
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0169492
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D4355013    1.01695     -           1.01695     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D4355013    CS          8           1.01695     1.01695     1.01695     +1.69%      1.01695                
 #C5DATA         8
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1002 69169   39001      3.49E7 800000.00.8710001    0.105           69167.9                     A.Hermanne,          (16)D4355 13 0.1026894  0.01742             0.105 11.8     2                 12.1     12.1
- 1002 69169   39001      3.71E7 700000.0    0.848    0.102           69167.9                     A.Hermanne,          (16)D4355 13 .09997773  0.01696             0.102 11.8     2                 12       12
- 1002 69169   39001      3.93E7 600000.00.6620001    0.079           69167.9                     A.Hermanne,          (16)D4355 13 .07804865  0.01324             0.079 11.8     2                 11.9     11.9
- 1002 69169   39001      4.14E7 500000.0    0.728    0.087           69167.9                     A.Hermanne,          (16)D4355 13 .08582994  0.01456             0.087 11.8     2                 12       12
- 1002 69169   39001      4.35E7 400000.0     0.61.07300001           69167.9                     A.Hermanne,          (16)D4355 13 .07191794   0.0122         .07300001 11.8     2                 12       12
- 1002 69169   39001      4.55E7 300000.0    0.554    0.067           69167.9                     A.Hermanne,          (16)D4355 13 .06531564  0.01108             0.067 11.8     2                 12.1     12.1
- 1002 69169   39001      4.76E7 200000.00.6760001.08100001           69167.9                     A.Hermanne,          (16)D4355 13 .07969923  0.01352         .08100001 11.8     2                 12       12
- 1002 69169   39001      4.98E7 200000.0    0.661    0.079           69167.9                     A.Hermanne,          (16)D4355 13 .07793075  0.01322             0.079 11.8     2                 12       12
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1002 69169   39001      3.49E7 800000.00.88576290.1067797           69167.9                     A.Hermanne*,         (16)D4355 13 0.1044299  0.01742         0.1067797 11.8     1.97              12.1     12.1                                        1.01694921.0169492
+ 1002 69169   39001      3.71E7 700000.00.86237290.1037288           69167.9                     A.Hermanne*,         (16)D4355 13 0.1016723  0.01696         0.1037288 11.8     1.97              12       12                                          1.01694921.0169492
+ 1002 69169   39001      3.93E7 600000.00.6732205.08033898           69167.9                     A.Hermanne*,         (16)D4355 13 0.0793715  0.01324         .08033898 11.8     1.97              11.9     11.9                                        1.01694921.0169492
+ 1002 69169   39001      4.14E7 500000.0 0.740339.08847458           69167.9                     A.Hermanne*,         (16)D4355 13 .08728469  0.01456         .08847458 11.8     1.97              12       12                                          1.01694921.0169492
+ 1002 69169   39001      4.35E7 400000.0 0.6203390.0742373           69167.9                     A.Hermanne*,         (16)D4355 13 0.0731369   0.0122         0.0742373 11.8     1.97              12       12                                          1.01694921.0169493
+ 1002 69169   39001      4.55E7 300000.00.56338980.0681356           69167.9                     A.Hermanne*,         (16)D4355 13 .06642269  0.01108         0.0681356 11.8     1.97              12.1     12.1                                        1.01694921.0169492
+ 1002 69169   39001      4.76E7 200000.00.6874577.08237289           69167.9                     A.Hermanne*,         (16)D4355 13 .08105007  0.01352         .08237289 11.8     1.97              12       12                                          1.01694921.0169492
+ 1002 69169   39001      4.98E7 200000.00.6722034.08033899           69167.9                     A.Hermanne*,         (16)D4355 13 .07925161  0.01322         .08033899 11.8     1.97              12       12                                          1.01694921.0169492
 #/C5DATA        0
 #/DATASET       D4355013 
 #DATASET        D4355014   20160926

@@ -347,6 +347,9 @@
 #REAC1          10-NE-20,X
 #PRODUCT        35-BR-76
 #C4ReaCode      (10-NE-20,X)CUM,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.817%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cumulative cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -363,18 +366,30 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 27-CO-59(10-NE-20,X)35-BR-76,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (27-CO-59(10-NE-20,X)35-BR-76,CUM,SIG)
+#+               #[1]#DECAY-DATA (35-BR-76-G,16.2HR,DG,559.1,0.740) #Ix_old=0.74
+#+                a1=0.74/0.734;              #[1]#DECAY-DATA: correction to new 559.12 keV gamma-yield per decay Br-76-g Ix_new=0.734
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0081744
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D61850041   1.00817     -           1.00817     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D61850041   CS          6           1.00817     1.00817     1.00817     +0.817%     1.00817                
 #C5DATA         6
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-10020 27059   39001      6.29E71000000.0   0.1072   0.0072           35076.9                     D.Singh,             (11)D6185  41                              0.0072                            6.72     6.72
-10020 27059   39001      7.52E7 800000.0   0.1827   0.0123           35076.9                     D.Singh,             (11)D6185  41                              0.0123                            6.73     6.73
-10020 27059   39001      8.65E7 800000.0.09680001   0.0065           35076.9                     D.Singh,             (11)D6185  41                              0.0065                            6.71     6.71
-10020 27059   39001      9.71E7 700000.0   0.0142    0.001           35076.9                     D.Singh,             (11)D6185  41                               0.001                            7.04     7.04
-10020 27059   39001      1.07E8 700000.0   0.0023   2.0E-4           35076.9                     D.Singh,             (11)D6185  41                              2.0E-4                            8.70     8.70
-10020 27059   39001     1.163E8 600000.0   4.0E-4   1.0E-4           35076.9                     D.Singh,             (11)D6185  41                              1.0E-4                            25       25
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39001      6.29E71000000.00.1080763 7.2589-3           35076.9                     D.Singh*,            (11)D6185  41                            7.2589-3                            6.72     6.72                                        1.00817441.0081745
+10020 27059   39001      7.52E7 800000.00.1841935.01240055           35076.9                     D.Singh*,            (11)D6185  41                           .01240055                            6.73     6.73                                        1.00817441.0081744
+10020 27059   39001      8.65E7 800000.0.09759129 6.5531-3           35076.9                     D.Singh*,            (11)D6185  41                            6.5531-3                            6.71     6.71                                        1.00817441.0081744
+10020 27059   39001      9.71E7 700000.0.01431608 1.0082-3           35076.9                     D.Singh*,            (11)D6185  41                            1.0082-3                            7.04     7.04                                        1.00817441.0081743
+10020 27059   39001      1.07E8 700000.0 2.3188-3 2.0163-4           35076.9                     D.Singh*,            (11)D6185  41                            2.0163-4                            8.70     8.70                                        1.00817441.0081744
+10020 27059   39001     1.163E8 600000.0 4.0327-4 1.0082-4           35076.9                     D.Singh*,            (11)D6185  41                            1.0082-4                            25       25                                          1.00817441.0081744
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -389,12 +404,12 @@
 #COVARDATA      1           6           6
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-6.29E7      6.29E7      0.1072      6.72         100
-7.52E7      7.52E7      0.1827      6.73         38 100
-8.65E7      8.65E7      0.0968      6.71         28 39 100
-9.71E7      9.71E7      0.0142      7.04         25 29 40 100
-1.07E8      1.07E8      0.0023      8.7          25 25 31 41 100
-1.163E8     1.163E8     4.0E-4      25.0         25 25 25 32 41 100
+6.29E7      6.29E7      0.108076    6.72         100
+7.52E7      7.52E7      0.184194    6.73         38 100
+8.65E7      8.65E7      9.7591-2    6.71         28 39 100
+9.71E7      9.71E7      1.4316-2    7.04         25 29 40 100
+1.07E8      1.07E8      2.3188-3    8.7          25 25 31 41 100
+1.163E8     1.163E8     4.0327-4    25.0         25 25 25 32 41 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       D61850041
@@ -424,6 +439,9 @@
 #REAC1          10-NE-20,X
 #PRODUCT        35-BR-76
 #C4ReaCode      (10-NE-20,X)IND,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.817%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Independent cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -440,18 +458,30 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 27-CO-59(10-NE-20,X)35-BR-76,IND,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (27-CO-59(10-NE-20,X)35-BR-76,IND,SIG)
+#+               #[1]#DECAY-DATA (35-BR-76-G,16.2HR,DG,559.1,0.740) #Ix_old=0.74
+#+                a1=0.74/0.734;              #[1]#DECAY-DATA: correction to new 559.12 keV gamma-yield per decay Br-76-g Ix_new=0.734
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0081744
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D61850042   1.00817     -           1.00817     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D61850042   CS          6           1.00817     1.00817     1.00817     +0.817%     1.00817                
 #C5DATA         6
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-10020 27059   39000      6.29E71000000.0   0.0282   0.0019           35076.9                     D.Singh,             (11)D6185  42                              0.0019                            6.74     6.74
-10020 27059   39000      7.52E7 800000.0   0.0621   0.0042           35076.9                     D.Singh,             (11)D6185  42                              0.0042                            6.76     6.76
-10020 27059   39000      8.65E7 800000.0   0.0416   0.0028           35076.9                     D.Singh,             (11)D6185  42                              0.0028                            6.73     6.73
-10020 27059   39000      9.71E7 700000.0   0.0061   4.0E-4           35076.9                     D.Singh,             (11)D6185  42                              4.0E-4                            6.56     6.56
-10020 27059   39000      1.07E8 700000.0   0.0011   1.0E-4           35076.9                     D.Singh,             (11)D6185  42                              1.0E-4                            9.09     9.09
-10020 27059   39000     1.163E8 600000.0   2.0E-4   2.0E-5           35076.9                     D.Singh,             (11)D6185  42                              2.0E-5                            10       10
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+10020 27059   39000      6.29E71000000.0.02843052 1.9155-3           35076.9                     D.Singh*,            (11)D6185  42                            1.9155-3                            6.74     6.74                                        1.00817441.0081744
+10020 27059   39000      7.52E7 800000.0.06260763 4.2343-3           35076.9                     D.Singh*,            (11)D6185  42                            4.2343-3                            6.76     6.76                                        1.00817441.0081743
+10020 27059   39000      8.65E7 800000.0.04194006 2.8229-3           35076.9                     D.Singh*,            (11)D6185  42                            2.8229-3                            6.73     6.73                                        1.00817441.0081744
+10020 27059   39000      9.71E7 700000.0 6.1499-3 4.0327-4           35076.9                     D.Singh*,            (11)D6185  42                            4.0327-4                            6.56     6.56                                        1.00817441.0081744
+10020 27059   39000      1.07E8 700000.0 1.1090-3 1.0082-4           35076.9                     D.Singh*,            (11)D6185  42                            1.0082-4                            9.09     9.09                                        1.00817441.0081744
+10020 27059   39000     1.163E8 600000.0 2.0163-4 2.0163-5           35076.9                     D.Singh*,            (11)D6185  42                            2.0163-5                            10       10                                          1.00817441.0081744
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -466,12 +496,12 @@
 #COVARDATA      1           6           6
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-6.29E7      6.29E7      0.0282      6.74         100
-7.52E7      7.52E7      0.0621      6.76         38 100
-8.65E7      8.65E7      0.0416      6.73         28 39 100
-9.71E7      9.71E7      0.0061      6.56         25 29 40 100
-1.07E8      1.07E8      0.0011      9.09         25 25 31 41 100
-1.163E8     1.163E8     2.0E-4      10.0         25 25 25 32 41 100
+6.29E7      6.29E7      2.8431-2    6.74         100
+7.52E7      7.52E7      6.2608-2    6.76         38 100
+8.65E7      8.65E7      4.1940-2    6.73         28 39 100
+9.71E7      9.71E7      6.1499-3    6.56         25 29 40 100
+1.07E8      1.07E8      1.1090-3    9.09         25 25 31 41 100
+1.163E8     1.163E8     2.0163-4    10.0         25 25 25 32 41 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       D61850042

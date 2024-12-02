@@ -26,9 +26,6 @@
 #REAC1          G,N
 #PRODUCT        58-CE-141
 #C4ReaCode      (G,N),SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.227%
-#CompNotes      MODIFY(DEC): dData
-#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -45,31 +42,19 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
-#C5CORR         #Reaction: 58-CE-142(G,N)58-CE-141,,SIG
-#+              dy=dy/y;                      #to rel. uncertainties
-#+               #[1]#---Reaction decay-data
-#+               #[1]#REACTION   (58-CE-142(G,N)58-CE-141,,SIG)
-#+               #[1]#DECAY-DATA (58-CE-141,32.508D,DG,145.433,0.4829) #Ix_old=0.4829
-#+                a1=0.4829/0.484;            #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.484
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9977273
-#+              dy=dy*y;                      #to abs. uncertainties
-#+
-#/C5CORR        L0188002    0.997727    -           0.997727    -
-#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          L0188002    CS          7           0.997727    0.997727    0.997727    -0.227%     1.00228     m0: {,S.Muller+,J,PR/C,73,025804,2006} : re187gn;::re187gn
 #C5DATA         7
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    0 58142   3   4   7640000.0 191000.00.0101868 2.3945-3                                       A.Sauerwein*,        (14)L0188  2                             2.3945-3                            23.5     23.5                                        0.99772730.9977272
-    0 58142   3   4   8149000.0 205000.0.02202982 4.6295-3                                       A.Sauerwein*,        (14)L0188  2                             4.6295-3                            21       21                                          0.99772730.9977273
-    0 58142   3   4   8465000.0 239000.0.02005432 4.3202-3                                       A.Sauerwein*,        (14)L0188  2                             4.3202-3                            21.5     21.5                                        0.99772730.9977273
-    0 58142   3   4   8758000.0 243000.0.02526245 4.5895-3                                       A.Sauerwein*,        (14)L0188  2                             4.5895-3                            18.2     18.2                                        0.99772730.9977273
-    0 58142   3   4   9102000.0 238000.0.03009146 5.4376-3                                       A.Sauerwein*,        (14)L0188  2                             5.4376-3                            18.1     18.1                                        0.99772730.9977272
-    0 58142   3   4   9315000.0 283000.0.02975223 4.9188-3                                       A.Sauerwein*,        (14)L0188  2                             4.9188-3                            16.5     16.5                                        0.99772730.9977272
-    0 58142   3   4   9669000.0 300000.0.03923064 6.9641-3                                       A.Sauerwein*,        (14)L0188  2                             6.9641-3                            17.8     17.8                                        0.99772730.9977273
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    0 58142   3   4   7640000.0 191000.0  0.01021   0.0024                                       A.Sauerwein,         (14)L0188  2                               0.0024                            23.5     23.5
+    0 58142   3   4   8149000.0 205000.0  0.02208  0.00464                                       A.Sauerwein,         (14)L0188  2                              0.00464                            21       21
+    0 58142   3   4   8465000.0 239000.0   0.0201  0.00433                                       A.Sauerwein,         (14)L0188  2                              0.00433                            21.5     21.5
+    0 58142   3   4   8758000.0 243000.0  0.02532   0.0046                                       A.Sauerwein,         (14)L0188  2                               0.0046                            18.2     18.2
+    0 58142   3   4   9102000.0 238000.0  0.03016  0.00545                                       A.Sauerwein,         (14)L0188  2                              0.00545                            18.1     18.1
+    0 58142   3   4   9315000.0 283000.0  0.02982  0.00493                                       A.Sauerwein,         (14)L0188  2                              0.00493                            16.5     16.5
+    0 58142   3   4   9669000.0 300000.0  0.03932  0.00698                                       A.Sauerwein,         (14)L0188  2                              0.00698                            17.8     17.8
 #/C5DATA        0
 #/DATASET       L0188002 
 #/C5.2.3        1               1               1               0               7               

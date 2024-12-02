@@ -482,9 +482,13 @@
 #C4ReaCode      (N,P),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=7.69%
 #CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0335122(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+11.9%
 #CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
 #CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -512,18 +516,23 @@
 #+              a1=recom$al27np[EN];          #[0]#new monitor point [14.7MeV]
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (32-GE-76(N,P)31-GA-76,,SIG)
+#+               #[1]#DECAY-DATA (31-GA-76,27.SEC,DG,563.,0.66) #Ix_old=0.66
+#+                a1=0.66/0.59;               #[1]#DECAY-DATA: correction to new 562.93 keV gamma-yield per decay Ga-76 Ix_new=0.59
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.1186441
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        20770014    1.03351     1.03351     -           -
+#/C5CORR        20770014    1.15613     1.03351     1.11864     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          20770014    CS          1           1.03351     1.03351     1.03351     +3.35%      1.03351     [MONIT]::al27np
+#XCORR          20770014    CS          1           1.15613     1.15613     1.15613     +15.6%      1.15613     [MONIT]::al27np
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 32076   3 103      1.47E7 300000.0 3.2039-3 1.5313-3                                       R.Rieppo*,           (76)20770 14  4.7015-5                   1.5313-3 1.47                       47.8     47.8    .065000010.005    0.06717839.9389E-41.03351221.0208579
+    1 32076   3 103      1.47E7 300000.0.00358401 1.7130-3                                       R.Rieppo*,           (76)20770 14  5.2593-5                   1.7130-3 1.47                       47.8     47.8    .065000010.005    0.06717839.9389E-41.15613231.1419767
 #/C5DATA        0
 #/DATASET       20770014 
 #/C5M.2.3       1               7               7               0               7               

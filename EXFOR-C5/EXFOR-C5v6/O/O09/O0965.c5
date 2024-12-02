@@ -190,6 +190,9 @@
 #REAC1          P,X
 #PRODUCT        90-TH-231
 #C4ReaCode      (P,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.94%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -206,19 +209,31 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 90-TH-232(P,X)90-TH-231,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (90-TH-232(P,X)90-TH-231,,SIG)
+#+               #[1]#DECAY-DATA (90-TH-231,1.063D,DG,84.2,0.066) #Ix_old=0.066
+#+                a1=0.066/0.068;             #[1]#DECAY-DATA: correction to new 84.214 keV gamma-yield per decay Th-231 Ix_new=0.068
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.97058815
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O0965005    0.970588    -           0.970588    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O0965005    CS          7           0.970588    0.970588    0.970588    -2.94%      1.03030                
 #C5DATA         7
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 90232   39000      1.11E7 100000.0   2.2E-4   5.0E-5           90231.9                     A.Roshchin,          (97)O0965  5                               5.0E-5                            22.7     22.7
- 1001 90232   39000      1.23E7 100000.0   4.9E-4   7.0E-5           90231.9                     A.Roshchin,          (97)O0965  5                               7.0E-5                            14.3     14.3
- 1001 90232   39000      1.35E7 100000.0  0.00192   3.7E-4           90231.9                     A.Roshchin,          (97)O0965  5                               3.7E-4                            19.3     19.3
- 1001 90232   39000      1.46E7 100000.0   0.0065   3.1E-4           90231.9                     A.Roshchin,          (97)O0965  5                               3.1E-4                            4.77     4.77
- 1001 90232   39000      1.56E7 100000.0   0.0123   0.0012           90231.9                     A.Roshchin,          (97)O0965  5                               0.0012                            9.76     9.76
- 1001 90232   39000      1.66E7 100000.0   0.0204   9.0E-4           90231.9                     A.Roshchin,          (97)O0965  5                               9.0E-4                            4.41     4.41
- 1001 90232   39000      1.75E7 100000.0   0.0289   0.0016           90231.9                     A.Roshchin,          (97)O0965  5                               0.0016                            5.54     5.54
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 90232   39000      1.11E7 100000.0 2.1353-4 4.8529-5           90231.9                     A.Roshchin*,         (97)O0965  5                             4.8529-5                            22.7     22.7                                        0.97058810.9705881
+ 1001 90232   39000      1.23E7 100000.0 4.7559-4 6.7941-5           90231.9                     A.Roshchin*,         (97)O0965  5                             6.7941-5                            14.3     14.3                                        0.97058810.9705882
+ 1001 90232   39000      1.35E7 100000.0 1.8635-3 3.5912-4           90231.9                     A.Roshchin*,         (97)O0965  5                             3.5912-4                            19.3     19.3                                        0.97058810.9705881
+ 1001 90232   39000      1.46E7 100000.0 6.3088-3 3.0088-4           90231.9                     A.Roshchin*,         (97)O0965  5                             3.0088-4                            4.77     4.77                                        0.97058810.9705881
+ 1001 90232   39000      1.56E7 100000.0.01193823 1.1647-3           90231.9                     A.Roshchin*,         (97)O0965  5                             1.1647-3                            9.76     9.76                                        0.97058810.9705881
+ 1001 90232   39000      1.66E7 100000.0   0.0198 8.7353-4           90231.9                     A.Roshchin*,         (97)O0965  5                             8.7353-4                            4.41     4.41                                        0.97058810.9705881
+ 1001 90232   39000      1.75E7 100000.0  0.02805 1.5529-3           90231.9                     A.Roshchin*,         (97)O0965  5                             1.5529-3                            5.54     5.54                                        0.97058810.9705881
 #/C5DATA        0
 #/DATASET       O0965005 
 #/C5.2.3        1               4               4               0               26              

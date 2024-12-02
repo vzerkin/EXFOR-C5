@@ -304,6 +304,10 @@
 #PRODUCT        56-BA-129-G
 #C4ReaCode      (P,5N),SIG
 #CompNotes      ERR-ANALYS:(ERR-5,0.1,10.)    ADDED AS COMMON:ERR-5,PER-CENT=0.1%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.182%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -320,20 +324,32 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 55-CS-133(P,5N)56-BA-129-G,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (55-CS-133(P,5N)56-BA-129-G,,SIG)
+#+               #[1]#DECAY-DATA (56-BA-129-G,2.23HR,DG,129.14,0.0551) #Ix_old=0.0551
+#+                a1=0.0551/0.055;            #[1]#DECAY-DATA: correction to new 129.14 keV gamma-yield per decay Ba-129-g Ix_new=0.055
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0018182
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D4226005    1.00182     -           1.00182     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D4226005    CS          8           1.00182     1.00182     1.00182     +0.182%     1.00182                
 #C5DATA         8
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 55133   3 152GA    4.66E71600000.0   0.0397   0.0058                                       F.Tarkanyi,          (10)D4226  5 0.0041259                     0.0058 10.4                       14.6     14.6
- 1001 55133   3 152GA    5.01E71400000.0.06900001     0.01                                       F.Tarkanyi,          (10)D4226  5  0.007171                       0.01 10.4                       14.5     14.5
- 1001 55133   3 152GA    5.35E71200000.0    0.107    0.016                                       F.Tarkanyi,          (10)D4226  5 .01112028                      0.016 10.4                       15       15
- 1001 55133   3 152GA    5.66E71000000.0    0.115    0.017                                       F.Tarkanyi,          (10)D4226  5 0.0119517                      0.017 10.4                       14.8     14.8
- 1001 55133   3 152GA    5.98E7 800000.0.09500001    0.014                                       F.Tarkanyi,          (10)D4226  5 0.0098731                      0.014 10.4                       14.7     14.7
- 1001 55133   3 152GA    6.26E7 600000.0    0.108    0.016                                       F.Tarkanyi,          (10)D4226  5 .01122421                      0.016 10.4                       14.8     14.8
- 1001 55133   3 152GA    6.53E7 500000.0    0.075    0.011                                       F.Tarkanyi,          (10)D4226  5 .00779459                      0.011 10.4                       14.7     14.7
- 1001 55133   3 152GA     6.8E7 300000.0   0.0313   0.0046                                       F.Tarkanyi,          (10)D4226  5 0.0032529                     0.0046 10.4                       14.7     14.7
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 55133   3 152GA    4.66E71600000.0.03977218 5.8105-3                                       F.Tarkanyi*,         (10)D4226  5  4.1334-3                   5.8105-3 10.4                       14.6     14.6                                        1.00181821.0018182
+ 1001 55133   3 152GA    5.01E71400000.0.06912547.01001818                                       F.Tarkanyi*,         (10)D4226  5  7.1840-3                  .01001818 10.4                       14.5     14.5                                        1.00181821.0018182
+ 1001 55133   3 152GA    5.35E71200000.00.1071945.01602909                                       F.Tarkanyi*,         (10)D4226  5 0.0111405                  .01602909 10.4                       15       15                                          1.00181821.0018182
+ 1001 55133   3 152GA    5.66E71000000.00.1152091.01703091                                       F.Tarkanyi*,         (10)D4226  5 .01197343                  .01703091 10.4                       14.8     14.8                                        1.00181821.0018182
+ 1001 55133   3 152GA    5.98E7 800000.0.09517274.01402545                                       F.Tarkanyi*,         (10)D4226  5  9.8911-3                  .01402545 10.4                       14.7     14.7                                        1.00181821.0018182
+ 1001 55133   3 152GA    6.26E7 600000.00.1081964.01602909                                       F.Tarkanyi*,         (10)D4226  5 .01124462                  .01602909 10.4                       14.8     14.8                                        1.00181821.0018182
+ 1001 55133   3 152GA    6.53E7 500000.0.07513636  0.01102                                       F.Tarkanyi*,         (10)D4226  5  7.8088-3                    0.01102 10.4                       14.7     14.7                                        1.00181821.0018181
+ 1001 55133   3 152GA     6.8E7 300000.0.03135691 4.6084-3                                       F.Tarkanyi*,         (10)D4226  5  3.2588-3                   4.6084-3 10.4                       14.7     14.7                                        1.00181821.0018182
 #/C5DATA        0
 #/DATASET       D4226005 
 #DATASET        D4226006   20091105

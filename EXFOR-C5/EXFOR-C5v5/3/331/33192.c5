@@ -235,9 +235,13 @@
 #PRODUCT        33-AS-76
 #C4ReaCode      (N,P),SIG
 #CompNotes      RENORMALIZE(SIG-MON): Data[0]*0.9977795(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+10.6%
 #CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
 #CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -265,18 +269,23 @@
 #+              a1=recom$al27na[EN];          #[0]#new monitor point [14.77MeV]
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (34-SE-76(N,P)33-AS-76,,SIG)
+#+               #[1]#DECAY-DATA (33-AS-76,26.24HR,DG,559.1,0.450) #Ix_old=0.45
+#+                a1=0.45/0.407;              #[1]#DECAY-DATA: correction to new 559.086 keV gamma-yield per decay As-76 Ix_new=0.407
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.105651
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        33192006    0.997779    0.997779    -           -
+#/C5CORR        33192006    1.10320     0.997779    1.10565     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          33192006    CS          1           0.997779    0.997779    0.997779    -0.222%     1.00223     [MONIT]::al27na
+#XCORR          33192006    CS          1           1.10320     1.10320     1.10320     +10.3%      1.10320     [MONIT]::al27na
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 34076   3 103 A   1.477E7 340000.0.04661627 3.8197-3                                       T.S.Ganesapandy*,    (23)33192  6  5.8945-3                   3.8197-3 12.6                       8.19     8.19    0.11169  2.7300-3 0.111442 4.7080-4 0.99777950.9573126
+    1 34076   3 103 A   1.477E7 340000.0.05154132.00422323                                       T.S.Ganesapandy*,    (23)33192  6  6.5172-3                  .00422323 12.6                       8.19     8.19    0.11169  2.7300-3 0.111442 4.7080-4 1.10319591.0584537
 #/C5DATA        0
 #/DATASET       33192006 
 #/C5M.2.3       1               4               6               0               4               

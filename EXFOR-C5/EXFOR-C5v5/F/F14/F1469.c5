@@ -192,6 +192,10 @@
 #PRODUCT        69-TM-167
 #C4ReaCode      (A,2N),SIG
 #CompNotes      ERR-ANALYS:(ERR-4,10.,30.)    ADDED AS COMMON:ERR-4,PER-CENT=10.0%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.69%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -208,23 +212,35 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 67-HO-165(A,2N)69-TM-167,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (67-HO-165(A,2N)69-TM-167,,SIG)
+#+               #[1]#DECAY-DATA (69-TM-167,9.25D,DG,207.801,0.420) #Ix_old=0.42
+#+                a1=0.42/0.413;              #[1]#DECAY-DATA: correction to new 207.801 keV gamma-yield per decay Tm-167 Ix_new=0.413
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0169492
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        F1469005    1.01695     -           1.01695     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          F1469005    CS          11          1.01695     1.01695     1.01695     +1.69%      1.01695                
 #C5DATA         11
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 2004 67165   3  16 A    2.73E72900000.01.1250001     0.25                                       E.S.Kormazeva,       (22)F1469  5 0.1720919                       0.25 15.3                       22.2     22.2
- 2004 67165   3  16 A     3.1E72400000.0   0.5958    0.145                                       E.S.Kormazeva,       (22)F1469  5 .09113988                      0.145 15.3                       24.3     24.3
- 2004 67165   3  16 A    3.44E72100000.0   0.2191    0.057                                       E.S.Kormazeva,       (22)F1469  5 .03351586                      0.057 15.3                       26       26
- 2004 67165   3  16 A    3.77E71900000.0   0.1374   0.0344                                       E.S.Kormazeva,       (22)F1469  5 .02101816                     0.0344 15.3                       25       25
- 2004 67165   3  16 A    4.08E71600000.0    0.113   0.0222                                       E.S.Kormazeva,       (22)F1469  5 .01728568                     0.0222 15.3                       19.6     19.6
- 2004 67165   3  16 A     4.4E71400000.0   0.0642   0.0102                                       E.S.Kormazeva,       (22)F1469  5 0.0098207                     0.0102 15.3                       15.9     15.9
- 2004 67165   3  16 A    4.67E71200000.0   0.0488   0.0076                                       E.S.Kormazeva,       (22)F1469  5  0.007465                     0.0076 15.3                       15.6     15.6
- 2004 67165   3  16 A    4.97E71100000.0   0.0429   0.0082                                       E.S.Kormazeva,       (22)F1469  5 0.0065624                     0.0082 15.3                       19.1     19.1
- 2004 67165   3  16 A    5.25E7 900000.0   0.0332   0.0052                                       E.S.Kormazeva,       (22)F1469  5 0.0050786                     0.0052 15.3                       15.7     15.7
- 2004 67165   3  16 A    5.55E7 700000.0    0.029   0.0045                                       E.S.Kormazeva,       (22)F1469  5 0.0044361                     0.0045 15.3                       15.5     15.5
- 2004 67165   3  16 A    5.88E7 600000.0   0.0244   0.0038                                       E.S.Kormazeva,       (22)F1469  5 0.0037325                     0.0038 15.3                       15.6     15.6
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 2004 67165   3  16 A    2.73E72900000.0 1.1440680.2542373                                       E.S.Kormazeva*,      (22)F1469  5 0.1750087                  0.2542373 15.3                       22.2     22.2                                        1.01694921.0169492
+ 2004 67165   3  16 A     3.1E72400000.00.60589830.1474576                                       E.S.Kormazeva*,      (22)F1469  5 .09268463                  0.1474576 15.3                       24.3     24.3                                        1.01694921.0169492
+ 2004 67165   3  16 A    3.44E72100000.00.22281360.0579661                                       E.S.Kormazeva*,      (22)F1469  5 .03408393                  0.0579661 15.3                       26       26                                          1.01694921.0169492
+ 2004 67165   3  16 A    3.77E71900000.00.1397288.03498305                                       E.S.Kormazeva*,      (22)F1469  5 0.0213744                  .03498305 15.3                       25       25                                          1.01694921.0169492
+ 2004 67165   3  16 A    4.08E71600000.00.1149153.02257627                                       E.S.Kormazeva*,      (22)F1469  5 .01757866                  .02257627 15.3                       19.6     19.6                                        1.01694921.0169492
+ 2004 67165   3  16 A     4.4E71400000.0.06528813.01037288                                       E.S.Kormazeva*,      (22)F1469  5  9.9872-3                  .01037288 15.3                       15.9     15.9                                        1.01694921.0169492
+ 2004 67165   3  16 A    4.67E71200000.0.04962712 7.7288-3                                       E.S.Kormazeva*,      (22)F1469  5  7.5915-3                   7.7288-3 15.3                       15.6     15.6                                        1.01694921.0169492
+ 2004 67165   3  16 A    4.97E71100000.0.04362712 8.3390-3                                       E.S.Kormazeva*,      (22)F1469  5  6.6736-3                   8.3390-3 15.3                       19.1     19.1                                        1.01694921.0169492
+ 2004 67165   3  16 A    5.25E7 900000.0.03376271 5.2881-3                                       E.S.Kormazeva*,      (22)F1469  5  5.1647-3                   5.2881-3 15.3                       15.7     15.7                                        1.01694921.0169492
+ 2004 67165   3  16 A    5.55E7 700000.0.02949153 4.5763-3                                       E.S.Kormazeva*,      (22)F1469  5  4.5113-3                   4.5763-3 15.3                       15.5     15.5                                        1.01694921.0169492
+ 2004 67165   3  16 A    5.88E7 600000.0.02481356 3.8644-3                                       E.S.Kormazeva*,      (22)F1469  5  3.7958-3                   3.8644-3 15.3                       15.6     15.6                                        1.01694921.0169492
 #/C5DATA        0
 #/DATASET       F1469005 
 #DATASET        F1469006   20230113

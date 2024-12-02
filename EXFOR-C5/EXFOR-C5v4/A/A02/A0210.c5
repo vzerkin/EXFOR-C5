@@ -691,10 +691,6 @@
 #REAC1          HE3,X
 #PRODUCT        21-SC-48
 #C4ReaCode      (HE3,X)IND,SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.102%
-#CompNotes      MODIFY(DEC): dData
-#CompNotes      MODIFY(DEC): dTot
-#CompNotes      MODIFY(DEC): dSys
 #Quantity       Independent cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -711,27 +707,15 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
-#C5CORR         #Reaction: 27-CO-59(HE3,X)21-SC-48,IND,SIG
-#+              dy=dy/y;                      #to rel. uncertainties
-#+               #[1]#---Reaction decay-data
-#+               #[1]#REACTION   (27-CO-59(HE3,X)21-SC-48,IND,SIG)
-#+               #[1]#DECAY-DATA (21-SC-48,43.67HR,DG,1037.4,0.975) #Ix_old=0.975
-#+                a1=0.975/0.976;             #[1]#DECAY-DATA: correction to new 1037.522 keV gamma-yield per decay Sc-48 Ix_new=0.976
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9989754
-#+              dy=dy*y;                      #to abs. uncertainties
-#+
-#/C5CORR        A0210017    0.998975    -           0.998975    -
-#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          A0210017    CS          3           0.998975    0.998975    0.998975    -0.102%     1.00103                
 #C5DATA         3
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 2003 27059   39000     1.132E81300000.0 7.5922-5 4.7951-5           21048.9                     R.Michel*,           (83)A0210 17  1.5184-6                   4.7951-5 2                          63.2     63.2                                        0.99897540.9989754
- 2003 27059   39000     1.209E81200000.0 1.0289-4 3.9959-5           21048.9                     R.Michel*,           (83)A0210 17  2.0579-6                   3.9959-5 2                          38.8     38.8                                        0.99897540.9989753
- 2003 27059   39000     1.281E81000000.0 1.3087-4 3.3965-5           21048.9                     R.Michel*,           (83)A0210 17  2.6173-6                   3.3965-5 2                          26       26                                          0.99897540.9989753
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 2003 27059   39000     1.132E81300000.0   7.6E-5   4.8E-5           21048.9                     R.Michel,            (83)A0210 17   1.52E-6                     4.8E-5 2                          63.2     63.2
+ 2003 27059   39000     1.209E81200000.0  1.03E-4   4.0E-5           21048.9                     R.Michel,            (83)A0210 17   2.06E-6                     4.0E-5 2                          38.8     38.8
+ 2003 27059   39000     1.281E81000000.0  1.31E-4   3.4E-5           21048.9                     R.Michel,            (83)A0210 17   2.62E-6                     3.4E-5 2                          26       26
 #/C5DATA        0
 #/DATASET       A0210017 
 #DATASET        A0210018   20160317
@@ -879,7 +863,7 @@
 #REAC1          HE3,X
 #PRODUCT        21-SC-44-M
 #C4ReaCode      (HE3,X),SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.865%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.830%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #CompNotes      MODIFY(DEC): dSys
@@ -904,25 +888,25 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (27-CO-59(HE3,X)21-SC-44-M,,SIG)
 #+               #[1]#DECAY-DATA (21-SC-44-M,2.44D,DG,271.4,0.86) #Ix_old=0.86
-#+                a1=0.86/0.8675;             #[1]#DECAY-DATA: correction to new 271.241 keV gamma-yield per decay Sc-44-m Ix_new=0.8675
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99135447
+#+                a1=0.86/0.8672;             #[1]#DECAY-DATA: correction to new 271.251 keV gamma-yield per decay Sc-44-m Ix_new=0.8672
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99169743
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        A0210020    0.991354    -           0.991354    -
+#/C5CORR        A0210020    0.991697    -           0.991697    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          A0210020    CS          6           0.991354    0.991354    0.991354    -0.865%     1.00872                
+#XCORR          A0210020    CS          6           0.991697    0.991697    0.991697    -0.830%     1.00837                
 #C5DATA         6
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 2003 27059   39000M     9.24E71600000.0 9.4179-5 1.0607-4           21044.9                     R.Michel*,           (83)A0210 20  1.8836-6                   1.0607-4 2                          112.6    112.6                                       0.99135450.9913545
- 2003 27059   39000M     9.96E71500000.0 1.5862-4 1.5862-4           21044.9                     R.Michel*,           (83)A0210 20  3.1723-6                   1.5862-4 2                          100      100                                         0.99135450.9913544
- 2003 27059   39000M    1.066E81400000.0 2.1810-4 1.7844-4           21044.9                     R.Michel*,           (83)A0210 20  4.3620-6                   1.7844-4 2                          81.8     81.8                                        0.99135450.9913545
- 2003 27059   39000M    1.132E81300000.0 2.8749-4 1.2888-4           21044.9                     R.Michel*,           (83)A0210 20  5.7499-6                   1.2888-4 2                          44.8     44.8                                        0.99135450.9913545
- 2003 27059   39000M    1.209E81200000.0 4.1141-4 8.9222-5           21044.9                     R.Michel*,           (83)A0210 20  8.2282-6                   8.9222-5 2                          21.7     21.7                                        0.99135450.9913545
- 2003 27059   39000M    1.281E81000000.0 6.8106-4 9.1205-5           21044.9                     R.Michel*,           (83)A0210 20  1.3621-5                   9.1205-5 2                          13.4     13.4                                        0.99135450.9913543
+ 2003 27059   39000M     9.24E71600000.0 9.4211-5 1.0611-4           21044.9                     R.Michel*,           (83)A0210 20  1.8842-6                   1.0611-4 2                          112.6    112.6                                       0.99169740.9916974
+ 2003 27059   39000M     9.96E71500000.0 1.5867-4 1.5867-4           21044.9                     R.Michel*,           (83)A0210 20  3.1734-6                   1.5867-4 2                          100      100                                         0.99169740.9916974
+ 2003 27059   39000M    1.066E81400000.0 2.1817-4 1.7851-4           21044.9                     R.Michel*,           (83)A0210 20  4.3635-6                   1.7851-4 2                          81.8     81.8                                        0.99169740.9916974
+ 2003 27059   39000M    1.132E81300000.0 2.8759-4 1.2892-4           21044.9                     R.Michel*,           (83)A0210 20  5.7518-6                   1.2892-4 2                          44.8     44.8                                        0.99169740.9916975
+ 2003 27059   39000M    1.209E81200000.0 4.1155-4 8.9253-5           21044.9                     R.Michel*,           (83)A0210 20  8.2311-6                   8.9253-5 2                          21.7     21.7                                        0.99169740.9916974
+ 2003 27059   39000M    1.281E81000000.0 6.8130-4 9.1236-5           21044.9                     R.Michel*,           (83)A0210 20  1.3626-5                   9.1236-5 2                          13.4     13.4                                        0.99169740.9916974
 #/C5DATA        0
 #/DATASET       A0210020 
 #/C5.2.3        1               14              19              0               188             

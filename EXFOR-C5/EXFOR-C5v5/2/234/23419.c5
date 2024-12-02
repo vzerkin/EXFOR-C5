@@ -340,6 +340,10 @@
 #PRODUCT        82-PB-200
 #C4ReaCode      (N,X),SIG
 #CompNotes      ERR-ANALYS:(ERR-S,,30.)       ADDED AS COMMON:ERR-S,PER-CENT=15.0%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.262%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -356,13 +360,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 83-BI-209(N,X)82-PB-200,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (83-BI-209(N,X)82-PB-200,,SIG)
+#+               #[1]#DECAY-DATA (82-PB-200,21.5HR,DG,147.7,0.382) #Ix_old=0.382
+#+                a1=0.382/0.381;             #[1]#DECAY-DATA: correction to new 147.63 keV gamma-yield per decay Pb-200 Ix_new=0.381
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0026246
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23419009    1.00262     -           1.00262     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23419009    CS          1           1.00262     1.00262     1.00262     +0.262%     1.00262                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 83209   39000      3.86E81000000.0    0.074    0.021           82200.9                     H.Yashima,           (14)23419  9 .01569777   0.0111             0.021 21.2     15                28.4     28.4
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 83209   39000      3.86E81000000.0.07419422.02105512           82200.9                     H.Yashima*,          (14)23419  9 .01573897   0.0111         .02105512 21.2     15                28.4     28.4                                        1.00262461.0026245
 #/C5DATA        0
 #/DATASET       23419009 
 #DATASET        23419010   20180830
@@ -393,7 +409,7 @@
 #PRODUCT        82-PB-201
 #C4ReaCode      (N,X),SIG
 #CompNotes      ERR-ANALYS:(ERR-S,,30.)       ADDED AS COMMON:ERR-S,PER-CENT=15.0%
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.130%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.04%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #CompNotes      MODIFY(DEC): dSys
@@ -418,20 +434,20 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (83-BI-209(N,X)82-PB-201,,SIG)
 #+               #[1]#DECAY-DATA (82-PB-201-G,9.33HR,DG,331.2,0.769) #Ix_old=0.769
-#+                a1=0.769/0.77;              #[1]#DECAY-DATA: correction to new 331.15 keV gamma-yield per decay Pb-201-g Ix_new=0.77
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99870133
+#+                a1=0.769/0.785;             #[1]#DECAY-DATA: correction to new 331.15 keV gamma-yield per decay Pb-201-g Ix_new=0.785
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9796178
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        23419010    0.998701    -           0.998701    -
+#/C5CORR        23419010    0.979618    -           0.979618    -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          23419010    CS          1           0.998701    0.998701    0.998701    -0.130%     1.00130                
+#XCORR          23419010    CS          1           0.979618    0.979618    0.979618    -2.04%      1.02081                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 83209   39000      3.86E81000000.0.09987014.02796364           82201.9                     H.Yashima*,          (14)23419 10 .02118566    0.015         .02796364 21.2     15                28       28                                          0.99870130.9987013
+    1 83209   39000      3.86E81000000.0.097961780.0274293           82201.9                     H.Yashima*,          (14)23419 10 .02078084    0.015         0.0274293 21.2     15.3              28       28                                          0.97961780.9796177
 #/C5DATA        0
 #/DATASET       23419010 
 #DATASET        23419011   20180830

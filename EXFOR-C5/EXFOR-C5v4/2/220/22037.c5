@@ -5424,6 +5424,10 @@
 #CompNotes      ERR-ANALYS:(ERR-6,,1.)        ADDED AS COMMON:ERR-6,PER-CENT=0.5%
 #CompNotes      ERR-ANALYS:(ERR-7,,3.)        ADDED AS COMMON:ERR-7,PER-CENT=1.5%
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=2
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+10.6%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -5440,13 +5444,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 33-AS-75(N,G)33-AS-76,,SIG,,MXW
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (33-AS-75(N,G)33-AS-76,,SIG,,MXW)
+#+               #[1]#DECAY-DATA (33-AS-76,26.4HR,DG,559.,0.450) #Ix_old=0.45
+#+                a1=0.45/0.407;              #[1]#DECAY-DATA: correction to new 559.086 keV gamma-yield per decay As-76 Ix_new=0.407
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.105651
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        220370292   1.10565     -           1.10565     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          220370292   CS          1           1.10565     1.10565     1.10565     +10.6%      1.10565                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                    SpT     dSpT     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 33075   3 102     25000.0             0.654    0.028                                       G.Walter,            (84)22037 292.03323254  0.00654             0.028 5.08     1                 4.28     4.28
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 33075   3 102     25000.0         0.7230958.03095823                                       G.Walter*,           (84)22037 292.03674359  0.00654         .03095823 5.08     0.90              4.28     4.28                                        1.105651 1.105651
 #/C5DATA        0
 #/DATASET       220370292
 #DATASET        220370293  20210803
@@ -5483,6 +5499,10 @@
 #CompNotes      ERR-ANALYS:(ERR-6,,1.)        ADDED AS COMMON:ERR-6,PER-CENT=0.5%
 #CompNotes      ERR-ANALYS:(ERR-7,,3.)        ADDED AS COMMON:ERR-7,PER-CENT=1.5%
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT:L=2
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+10.6%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -5499,13 +5519,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 33-AS-75(N,G)33-AS-76,,SIG,,MXW,DERIV
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (33-AS-75(N,G)33-AS-76,,SIG,,MXW,DERIV)
+#+               #[1]#DECAY-DATA (33-AS-76,26.4HR,DG,559.,0.450) #Ix_old=0.45
+#+                a1=0.45/0.407;              #[1]#DECAY-DATA: correction to new 559.086 keV gamma-yield per decay As-76 Ix_new=0.407
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.105651
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        220370293   1.10565     -           1.10565     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          220370293   CS          1           1.10565     1.10565     1.10565     +10.6%      1.10565                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                    SpT     dSpT     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 33075   3 102     30000.0         0.5970001     0.03                                       G.Walter,            (84)22037 293.03468771  0.00597              0.03 5.81     1                 5.03     5.03
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 33075   3 102     30000.0         0.6600738.03316953                                       G.Walter*,           (84)22037 2930.0383525  0.00597         .03316953 5.81     0.90              5.03     5.03                                        1.105651 1.105651
 #/C5DATA        0
 #/DATASET       220370293
 #DATASET        220370301  20210803

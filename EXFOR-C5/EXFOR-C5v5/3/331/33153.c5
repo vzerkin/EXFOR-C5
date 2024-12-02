@@ -99,9 +99,13 @@
 #PRODUCT        60-ND-147
 #C4ReaCode      (N,2N),SIG
 #CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0086682(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+2.21%
 #CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
 #CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -129,18 +133,23 @@
 #+              a1=recom$au197n2n[EN];        #[0]#new monitor point [14.54MeV]
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (60-ND-148(N,2N)60-ND-147,,SIG)
+#+               #[1]#DECAY-DATA (60-ND-147,10.98D,DG,531.02,0.134) #Ix_old=0.134
+#+                a1=0.134/0.1311;            #[1]#DECAY-DATA: correction to new 531.012 keV gamma-yield per decay Nd-147 Ix_new=0.1311
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0221206
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        33153004    1.00867     1.00867     -           -
+#/C5CORR        33153004    1.03098     1.00867     1.02212     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          33153004    CS          1           1.00867     1.00867     1.00867     +0.867%     1.00867     [MONIT]::au197n2n
+#XCORR          33153004    CS          1           1.03098     1.03098     1.03098     +3.10%      1.03098     [MONIT]::au197n2n
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 60148   3  16     1.454E7 480000.01.82932050.2933807                                       A.M.Sunitha*,        (20)33153  4 0.27282220.1159426         0.2933807 14.9     6.34              16       16      2.14     .023088462.15855  0.02256051.00866821.0085278
+    1 60148   3  16     1.454E7 480000.01.86978610.2998705                                       A.M.Sunitha*,        (20)33153  4 0.27885710.1159426         0.2998705 14.9     6.20              16       16      2.14     .023088462.15855  0.02256051.03098051.0308369
 #/C5DATA        0
 #/DATASET       33153004 
 #DATASET        33153005   20210824

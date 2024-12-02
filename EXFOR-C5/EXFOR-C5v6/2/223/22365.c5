@@ -76,6 +76,10 @@
 #REAC1          N,P
 #PRODUCT        13-AL-30
 #C4ReaCode      (N,P),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.154%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -92,13 +96,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 14-SI-30(N,P)13-AL-30,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (14-SI-30(N,P)13-AL-30,,SIG)
+#+               #[1]#DECAY-DATA (13-AL-30,3.60SEC,DG,2235.0,0.651) #Ix_old=0.651
+#+                a1=0.651/0.65;              #[1]#DECAY-DATA: correction to new 2235.23 keV gamma-yield per decay Al-30 Ix_new=0.65
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0015385
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22365003    1.00154     -           1.00154     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22365003    CS          1           1.00154     1.00154     1.00154     +0.154%     1.00154                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 14030   3 103     1.487E7  90000.0   0.03860.0075656                                       Y.Satoh,             (95)22365  3  0.007555                  0.0075656 19.6                       19.6     19.6
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 14030   3 103     1.487E7  90000.0.03865939.00757724                                       Y.Satoh*,            (95)22365  3  7.5666-3                  .00757724 19.6                       19.6     19.6                                        1.00153851.0015385
 #/C5DATA        0
 #/DATASET       22365003 
 #DATASET        22365004   20150824
@@ -127,7 +143,7 @@
 #REAC1          N,X
 #PRODUCT        51-SB-122-M
 #C4ReaCode      (N,X),SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+3.63%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+4.36%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #CompNotes      MODIFY(DEC): dSys
@@ -152,20 +168,20 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (52-TE-123(N,X)51-SB-122-M,,SIG)
 #+               #[1]#DECAY-DATA (51-SB-122-M,4.196MIN,DG,61.45,0.574) #Ix_old=0.574
-#+                a1=0.574/0.5539;            #[1]#DECAY-DATA: correction to new 61.413 keV gamma-yield per decay Sb-122-m Ix_new=0.5539
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0362881
+#+                a1=0.574/0.55;              #[1]#DECAY-DATA: correction to new 61.413 keV gamma-yield per decay Sb-122-m Ix_new=0.55
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0436363
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        22365004    1.03629     -           1.03629     -
+#/C5CORR        22365004    1.04364     -           1.04364     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          22365004    CS          1           1.03629     1.03629     1.03629     +3.63%      1.03629                
+#XCORR          22365004    CS          1           1.04364     1.04364     1.04364     +4.36%      1.04364                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 52123   39000MS   1.487E7  90000.0 3.1089-4 3.5752-5           51122.9                     Y.Satoh*,            (95)22365  4  3.5875-5                   3.5752-5 11.5                       11.5     11.5                                        1.03628811.036288
+    1 52123   39000MS   1.487E7  90000.0 3.1309-4 3.6005-5           51122.9                     Y.Satoh*,            (95)22365  4  3.6130-5                   3.6005-5 11.5                       11.5     11.5                                        1.04363631.0436363
 #/C5DATA        0
 #/DATASET       22365004 
 #DATASET        22365005   20150824

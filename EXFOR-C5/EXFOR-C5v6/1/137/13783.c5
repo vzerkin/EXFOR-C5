@@ -123,6 +123,9 @@
 #REAC1          N,G
 #PRODUCT        64-GD-149
 #C4ReaCode      (N,G),SIG,,MXW
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+2.51%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -139,13 +142,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 64-GD-148(N,G)64-GD-149,,SIG,,MXW
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (64-GD-148(N,G)64-GD-149,,SIG,,MXW)
+#+               #[1]#DECAY-DATA (64-GD-149,9.3D,DG,298.,0.286) #Ix_old=0.286
+#+                a1=0.286/0.279;             #[1]#DECAY-DATA: correction to new 298.633 keV gamma-yield per decay Gd-149 Ix_new=0.279
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0250896
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        13783004    1.02509     -           1.02509     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          13783004    CS          1           1.02509     1.02509     1.02509     +2.51%      1.02509                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                    SpE     dSpE     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 64148   3 102 S    0.0253           14000.0   1400.0                                       K.S.Krane            (99)13783  4                               1400.0                            10       10
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 64148   3 102 S    0.0253         14351.2551435.1255                                       K.S.Krane*           (99)13783  4                            1435.1255                            10       10                                          1.02508961.0250896
 #/C5DATA        0
 #/DATASET       13783004 
 #DATASET        13783005   20120420
@@ -196,7 +211,7 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (67-HO-166-M(N,G)67-HO-167,,SIG,,MXW)
 #+               #[1]#DECAY-DATA (67-HO-167,3.1HR,DG,238.,0.05) #Ix_old=0.05
-#+                a1=0.05/0.051;              #[1]#DECAY-DATA: correction to new 237.9 keV gamma-yield per decay Ho-167 Ix_new=0.051
+#+                a1=0.05/0.051;              #[1]#DECAY-DATA: correction to new 237.873 keV gamma-yield per decay Ho-167 Ix_new=0.051
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9803922
 #+              dy=dy*y;                      #to abs. uncertainties
 #+

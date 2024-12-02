@@ -38,6 +38,10 @@
 #CompNotes      ERR-ANALYS:(ERR-10,,16.)      ADDED AS COMMON:ERR-10,PER-CENT=8.0%
 #CompNotes      ERR-ANALYS:(ERR-11,,12.)      ADDED AS COMMON:ERR-11,PER-CENT=6.0%
 #CompNotes      ERR-ANALYS:(ERR-12,,0.5)      ADDED AS COMMON:ERR-12,PER-CENT=0.25%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.100%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -54,15 +58,27 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 42-MO-0(N,X)41-NB-94,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (42-MO-0(N,X)41-NB-94,,SIG)
+#+               #[1]#DECAY-DATA (41-NB-94,20300.YR,DG,871.1,0.999) #Ix_old=0.999
+#+                a1=0.999/0.998;             #[1]#DECAY-DATA: correction to new 871.091 keV gamma-yield per decay Nb-94 Ix_new=0.998
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.001002
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        22803002    1.00100     -           1.00100     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          22803002    CS          3           1.00100     1.00100     1.00100     +0.100%     1.00100                
 #C5DATA         3
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 42000   39000      1.45E7 700000.0   0.0099   0.0016           41094.9                     P.Reimer,            (02)22803  2 0.00150650.0012375            0.0016 15.2     12.5              16.2     16.2
-    1 42000   39000       1.8E7 700000.0   0.0176   0.0014           41094.9                     P.Reimer,            (02)22803  2 0.0026782   0.0022            0.0014 15.2     12.5              7.95     7.95
-    1 42000   39000      2.03E7 300000.0   0.0283   0.0073           41094.9                     P.Reimer,            (02)22803  2 0.00430650.0035375            0.0073 15.2     12.5              25.8     25.8
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 42000   39000      1.45E7 700000.0 9.9099-3 1.6016-3           41094.9                     P.Reimer*,           (02)22803  2 .001508010.0012375          1.6016-3 15.2     12.5              16.2     16.2                                        1.001002 1.001002
+    1 42000   39000       1.8E7 700000.0.01761763 1.4014-3           41094.9                     P.Reimer*,           (02)22803  2  2.6809-3   0.0022          1.4014-3 15.2     12.5              7.95     7.95                                        1.001002 1.001002
+    1 42000   39000      2.03E7 300000.0.02832836 7.3073-3           41094.9                     P.Reimer*,           (02)22803  2  4.3108-30.0035375          7.3073-3 15.2     12.5              25.8     25.8                                        1.001002 1.001002
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -77,9 +93,9 @@
 #COVARDATA      1           3           3
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.45E7      1.45E7      0.0099      19.69        100
-1.8E7       1.8E7       0.0176      19.69        30 100
-2.03E7      2.03E7      0.0283      19.69        30 36 100
+1.45E7      1.45E7      9.9099-3    19.69        100
+1.8E7       1.8E7       1.7618-2    19.68        30 100
+2.03E7      2.03E7      2.8328-2    19.69        30 36 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       22803002 

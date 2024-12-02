@@ -590,6 +590,10 @@
 #PRODUCT        21-SC-48
 #C4ReaCode      (A,X),SIG
 #CompNotes      ERR-ANALYS:(ERR-S,3.8,31.9)   ADDED AS COMMON:ERR-S,PER-CENT=3.8%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.103%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -606,18 +610,32 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#X4MONITOR      22-TI-0(A,X)24-CR-51,,SIG
+#M0             Point: XS(b)=0.0264  EN-NRM(eV):5.0E7
+#C5CORR         #Reaction: 22-TI-0(A,X)21-SC-48,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (22-TI-0(A,X)21-SC-48,,SIG)
+#+               #[1]#DECAY-DATA (21-SC-48,43.67HR,DG,1037.522,0.976) #Ix_old=0.976
+#+                a1=0.976/0.975;             #[1]#DECAY-DATA: correction to new 1037.522 keV gamma-yield per decay Sc-48 Ix_new=0.975
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0010257
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        E2536013    1.00103     -           1.00103     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          E2536013    CS          6           1.00103     1.00103     1.00103     +0.103%     1.00103     [MONIT]::ti0ax
 #C5DATA         6
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 2004 22000   39000      2.68E7 800000.0   1.0E-5      0.0           21048.9                     A.R.Usman,           (17)E2536 13 6.7464E-7   3.8E-7               0.0 6.75     3.80
- 2004 22000   39000      3.28E7 700000.0   1.9E-4   3.0E-5           21048.9                     A.R.Usman,           (17)E2536 13 1.2818E-5  7.22E-6            3.0E-5 6.75     3.80              15.8     15.8
- 2004 22000   39000      3.81E7 600000.0   3.8E-4   3.0E-5           21048.9                     A.R.Usman,           (17)E2536 13 2.5636E-5 1.444E-5            3.0E-5 6.75     3.80              7.89     7.89
- 2004 22000   39000      4.29E7 500000.0   8.1E-4   7.0E-5           21048.9                     A.R.Usman,           (17)E2536 13 5.4646E-5 3.078E-5            7.0E-5 6.75     3.80              8.64     8.64
- 2004 22000   39000      4.74E7 500000.0    0.001   1.0E-4           21048.9                     A.R.Usman,           (17)E2536 13 6.7464E-5   3.8E-5            1.0E-4 6.75     3.80              10       10
- 2004 22000   39000      5.02E7 500000.0   0.0014   1.0E-4           21048.9                     A.R.Usman,           (17)E2536 13  9.445E-5  5.32E-5            1.0E-4 6.75     3.80              7.14     7.14
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 2004 22000   39000      2.68E7 800000.0 1.0010-5      0.0           21048.9                     A.R.Usman*,          (17)E2536 13  6.7533-7   3.8E-7               0.0 6.75     3.80                                                                   1.0010257
+ 2004 22000   39000      3.28E7 700000.0 1.9019-4 3.0031-5           21048.9                     A.R.Usman*,          (17)E2536 13  1.2831-5  7.22E-6          3.0031-5 6.75     3.80              15.8     15.8                                        1.00102571.0010257
+ 2004 22000   39000      3.81E7 600000.0 3.8039-4 3.0031-5           21048.9                     A.R.Usman*,          (17)E2536 13  2.5662-5 1.444E-5          3.0031-5 6.75     3.80              7.89     7.89                                        1.00102571.0010257
+ 2004 22000   39000      4.29E7 500000.0 8.1083-4 7.0072-5           21048.9                     A.R.Usman*,          (17)E2536 13  5.4702-5 3.078E-5          7.0072-5 6.75     3.80              8.64     8.64                                        1.00102571.0010257
+ 2004 22000   39000      4.74E7 500000.0 1.0010-3 1.0010-4           21048.9                     A.R.Usman*,          (17)E2536 13  6.7533-5   3.8E-5          1.0010-4 6.75     3.80              10       10                                          1.00102571.0010257
+ 2004 22000   39000      5.02E7 500000.0 1.4014-3 1.0010-4           21048.9                     A.R.Usman*,          (17)E2536 13  9.4547-5  5.32E-5          1.0010-4 6.75     3.80              7.14     7.14                                        1.00102571.0010258
 #/C5DATA        0
 #/DATASET       E2536013 
 #/C5M.2.3       1               11              12              0               60              

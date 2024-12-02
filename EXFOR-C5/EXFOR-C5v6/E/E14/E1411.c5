@@ -1464,7 +1464,7 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (92-U-233(P,F)48-CD-115-G,(CUM),SIG)
 #+               #[1]#DECAY-DATA (48-CD-115-G,53.5HR,DG,336.3,0.497) #Ix_old=0.497
-#+                a1=0.497/0.4602;            #[1]#DECAY-DATA: correction to new 336.241 keV gamma-yield per decay Cd-115-g Ix_new=0.4602
+#+                a1=0.497/0.4602;            #[1]#DECAY-DATA: correction to new 336.24 keV gamma-yield per decay Cd-115-g Ix_new=0.4602
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0799652
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
@@ -2460,6 +2460,9 @@
 #REAC1          P,F
 #PRODUCT        58-CE-141
 #C4ReaCode      (P,F)(CUM),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.207%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section (uncertain if cumulative)
 #DataUnits0     B
 #DataUnits      ?
@@ -2476,19 +2479,31 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 92-U-233(P,F)58-CE-141,(CUM),SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (92-U-233(P,F)58-CE-141,(CUM),SIG)
+#+               #[1]#DECAY-DATA (58-CE-141,32.5D,DG,145.5,0.484) #Ix_old=0.484
+#+                a1=0.484/0.483;             #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0020703
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        E1411039    1.00207     -           1.00207     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          E1411039    CS+         7           1.00207     1.00207     1.00207     +0.207%     1.00207                
 #C5DATA         7
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 92233   3  18   9800000.0            4.3E-4   9.0E-5     58.0    141.0                     T.Ohtsuki,           (91)E1411 39                               9.0E-5                            20.9     20.9
- 1001 92233   3  18      1.12E7           0.00225   3.1E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411 39                               3.1E-4                            13.8     13.8
- 1001 92233   3  18      1.22E7           0.00524   6.2E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411 39                               6.2E-4                            11.8     11.8
- 1001 92233   3  18       1.3E7           0.00812   7.8E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411 39                               7.8E-4                            9.61     9.61
- 1001 92233   3  18      1.39E7           0.01171   5.8E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411 39                               5.8E-4                            4.95     4.95
- 1001 92233   3  18      1.46E7           0.01062   7.8E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411 39                               7.8E-4                            7.34     7.34
- 1001 92233   3  18      1.55E7           0.01039   5.6E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411 39                               5.6E-4                            5.39     5.39
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 92233   3  18   9800000.0          4.3089-4 9.0186-5     58.0    141.0                     T.Ohtsuki*,          (91)E1411 39                             9.0186-5                            20.9     20.9                                        1.00207031.0020703
+ 1001 92233   3  18      1.12E7          2.2547-3 3.1064-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411 39                             3.1064-4                            13.8     13.8                                        1.00207031.0020704
+ 1001 92233   3  18      1.22E7          5.2508-3 6.2128-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411 39                             6.2128-4                            11.8     11.8                                        1.00207031.0020703
+ 1001 92233   3  18       1.3E7          8.1368-3 7.8161-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411 39                             7.8161-4                            9.61     9.61                                        1.00207031.0020703
+ 1001 92233   3  18      1.39E7         .01173424 5.8120-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411 39                             5.8120-4                            4.95     4.95                                        1.00207031.0020704
+ 1001 92233   3  18      1.46E7         .01064199 7.8161-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411 39                             7.8161-4                            7.34     7.34                                        1.00207031.0020703
+ 1001 92233   3  18      1.55E7         .01041151 5.6116-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411 39                             5.6116-4                            5.39     5.39                                        1.00207031.0020703
 #/C5DATA        0
 #/DATASET       E1411039 
 #DATASET        E1411040   20040311
@@ -2666,7 +2681,7 @@
 #REAC1          P,F
 #PRODUCT        60-ND-149
 #C4ReaCode      (P,F)(CUM),SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.41%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.00%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section (uncertain if cumulative)
@@ -2690,25 +2705,25 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (92-U-233(P,F)60-ND-149,(CUM),SIG)
 #+               #[1]#DECAY-DATA (60-ND-149,1.73HR,DG,211.3,0.273) #Ix_old=0.273
-#+                a1=0.273/0.259;             #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.259
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.054054
+#+                a1=0.273/0.26;              #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.26
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0500001
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        E1411042    1.05405     -           1.05405     -
+#/C5CORR        E1411042    1.05000     -           1.05000     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          E1411042    CS+         6           1.05405     1.05405     1.05405     +5.41%      1.05405                
+#XCORR          E1411042    CS+         6           1.05000     1.05000     1.05000     +5.00%      1.05000                
 #C5DATA         6
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 92233   3  18      1.12E7          7.2730-4 1.6865-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 42                             1.6865-4                            23.2     23.2                                        1.054054 1.054054
- 1001 92233   3  18      1.22E7          1.0541-3 1.8973-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 42                             1.8973-4                            18       18                                          1.054054 1.054054
- 1001 92233   3  18       1.3E7          1.6022-3 3.5838-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 42                             3.5838-4                            22.4     22.4                                        1.054054 1.054054
- 1001 92233   3  18      1.39E7          2.0659-3 2.8459-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 42                             2.8459-4                            13.8     13.8                                        1.054054 1.054054
- 1001 92233   3  18      1.46E7         .00254027 3.0568-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 42                             3.0568-4                            12       12                                          1.054054 1.054054
- 1001 92233   3  18      1.55E7          2.9830-3 2.3189-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 42                             2.3189-4                            7.77     7.77                                        1.054054 1.054054
+ 1001 92233   3  18      1.12E7          7.245E-4  1.68E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 42                              1.68E-4                            23.2     23.2                                        1.05000011.0500001
+ 1001 92233   3  18      1.22E7           0.00105  1.89E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 42                              1.89E-4                            18       18                                          1.05000011.0500001
+ 1001 92233   3  18       1.3E7          0.001596  3.57E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 42                              3.57E-4                            22.4     22.4                                        1.05000011.0500001
+ 1001 92233   3  18      1.39E7          0.002058 2.835E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 42                             2.835E-4                            13.8     13.8                                        1.05000011.0500001
+ 1001 92233   3  18      1.46E7         0.0025305 3.045E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 42                             3.045E-4                            12       12                                          1.05000011.0500001
+ 1001 92233   3  18      1.55E7         0.0029715  2.31E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 42                              2.31E-4                            7.77     7.77                                        1.05000011.0500001
 #/C5DATA        0
 #/DATASET       E1411042 
 #DATASET        E1411043   20040311
@@ -3785,7 +3800,7 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (92-U-235(P,F)48-CD-115-G,(CUM),SIG)
 #+               #[1]#DECAY-DATA (48-CD-115-G,53.5HR,DG,336.3,0.497) #Ix_old=0.497
-#+                a1=0.497/0.4602;            #[1]#DECAY-DATA: correction to new 336.241 keV gamma-yield per decay Cd-115-g Ix_new=0.4602
+#+                a1=0.497/0.4602;            #[1]#DECAY-DATA: correction to new 336.24 keV gamma-yield per decay Cd-115-g Ix_new=0.4602
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0799652
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
@@ -4797,6 +4812,9 @@
 #REAC1          P,F
 #PRODUCT        58-CE-141
 #C4ReaCode      (P,F)(CUM),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.207%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section (uncertain if cumulative)
 #DataUnits0     B
 #DataUnits      ?
@@ -4813,20 +4831,32 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 92-U-235(P,F)58-CE-141,(CUM),SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (92-U-235(P,F)58-CE-141,(CUM),SIG)
+#+               #[1]#DECAY-DATA (58-CE-141,32.5D,DG,145.5,0.484) #Ix_old=0.484
+#+                a1=0.484/0.483;             #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0020703
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        E1411073    1.00207     -           1.00207     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          E1411073    CS+         8           1.00207     1.00207     1.00207     +0.207%     1.00207                
 #C5DATA         8
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 92235   3  18   9000000.0            6.1E-4   2.0E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411 73                               2.0E-4                            32.8     32.8
- 1001 92235   3  18      1.02E7           0.00157   1.0E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411 73                               1.0E-4                            6.37     6.37
- 1001 92235   3  18      1.14E7           0.00367   2.7E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411 73                               2.7E-4                            7.36     7.36
- 1001 92235   3  18       1.2E7           0.00555   3.1E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411 73                               3.1E-4                            5.59     5.59
- 1001 92235   3  18      1.25E7           0.00836   6.2E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411 73                               6.2E-4                            7.42     7.42
- 1001 92235   3  18      1.36E7           0.01175   4.7E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411 73                               4.7E-4                            4        4
- 1001 92235   3  18      1.46E7           0.01735   5.4E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411 73                               5.4E-4                            3.11     3.11
- 1001 92235   3  18      1.56E7           0.02167   9.5E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411 73                               9.5E-4                            4.38     4.38
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 92235   3  18   9000000.0          6.1126-4 2.0041-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411 73                             2.0041-4                            32.8     32.8                                        1.00207031.0020703
+ 1001 92235   3  18      1.02E7         .00157325 1.0021-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411 73                             1.0021-4                            6.37     6.37                                        1.00207031.0020704
+ 1001 92235   3  18      1.14E7          3.6776-3 2.7056-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411 73                             2.7056-4                            7.36     7.36                                        1.00207031.0020703
+ 1001 92235   3  18       1.2E7         .00556149 3.1064-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411 73                             3.1064-4                            5.59     5.59                                        1.00207031.0020703
+ 1001 92235   3  18      1.25E7          8.3773-3 6.2128-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411 73                             6.2128-4                            7.42     7.42                                        1.00207031.0020703
+ 1001 92235   3  18      1.36E7         .01177433 4.7097-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411 73                             4.7097-4                            4        4                                           1.00207031.0020703
+ 1001 92235   3  18      1.46E7         .01738592 5.4112-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411 73                             5.4112-4                            3.11     3.11                                        1.00207031.0020703
+ 1001 92235   3  18      1.56E7         .02171486 9.5197-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411 73                             9.5197-4                            4.38     4.38                                        1.00207031.0020703
 #/C5DATA        0
 #/DATASET       E1411073 
 #DATASET        E1411074   20040311
@@ -5004,7 +5034,7 @@
 #REAC1          P,F
 #PRODUCT        60-ND-149
 #C4ReaCode      (P,F)(CUM),SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.41%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.00%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section (uncertain if cumulative)
@@ -5028,28 +5058,28 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (92-U-235(P,F)60-ND-149,(CUM),SIG)
 #+               #[1]#DECAY-DATA (60-ND-149,1.73HR,DG,211.3,0.273) #Ix_old=0.273
-#+                a1=0.273/0.259;             #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.259
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.054054
+#+                a1=0.273/0.26;              #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.26
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0500001
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        E1411076    1.05405     -           1.05405     -
+#/C5CORR        E1411076    1.05000     -           1.05000     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          E1411076    CS+         9           1.05405     1.05405     1.05405     +5.41%      1.05405                
+#XCORR          E1411076    CS+         9           1.05000     1.05000     1.05000     +5.00%      1.05000                
 #C5DATA         9
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 92235   3  18   9000000.0          1.3703-4 6.3243-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411 76                             6.3243-5                            46.2     46.2                                        1.054054 1.0540539
- 1001 92235   3  18      1.02E7          5.2703-4 5.2703-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411 76                             5.2703-5                            10       10                                          1.054054 1.0540541
- 1001 92235   3  18      1.14E7          1.2754-3 9.4865-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411 76                             9.4865-5                            7.44     7.44                                        1.054054 1.054054
- 1001 92235   3  18       1.2E7          2.0449-3   3.9E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 76                               3.9E-4                            19.1     19.1                                        1.054054 1.054054
- 1001 92235   3  18      1.25E7          2.6773-3 3.5838-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 76                             3.5838-4                            13.4     13.4                                        1.054054 1.054054
- 1001 92235   3  18      1.36E7          3.0357-3 5.1649-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 76                             5.1649-4                            17       17                                          1.054054 1.0540541
- 1001 92235   3  18      1.46E7          4.5851-3 3.5838-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 76                             3.5838-4                            7.82     7.82                                        1.054054 1.0540541
- 1001 92235   3  18      1.56E7          8.2743-3 8.6432-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 76                             8.6432-4                            10.4     10.4                                        1.054054 1.054054
- 1001 92235   3  18       1.8E7         .01441946 8.7486-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 76                             8.7486-4                            6.07     6.07                                        1.054054 1.054054
+ 1001 92235   3  18   9000000.0          1.365E-4   6.3E-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411 76                               6.3E-5                            46.2     46.2                                        1.05000011.0500001
+ 1001 92235   3  18      1.02E7           5.25E-4  5.25E-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411 76                              5.25E-5                            10       10                                          1.05000011.0500001
+ 1001 92235   3  18      1.14E7         0.0012705 9.45e-05     60.0    149.0                     T.Ohtsuki*,          (91)E1411 76                             9.45e-05                            7.44     7.44                                        1.05000011.0500002
+ 1001 92235   3  18       1.2E7          0.002037 3.885E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 76                             3.885E-4                            19.1     19.1                                        1.05000011.0500001
+ 1001 92235   3  18      1.25E7          0.002667  3.57E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 76                              3.57E-4                            13.4     13.4                                        1.05000011.0500001
+ 1001 92235   3  18      1.36E7          0.003024 5.1450-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 76                             5.1450-4                            17       17                                          1.05000011.0500002
+ 1001 92235   3  18      1.46E7         0.0045675  3.57E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 76                              3.57E-4                            7.82     7.82                                        1.05000011.0500001
+ 1001 92235   3  18      1.56E7         0.0082425 0.000861     60.0    149.0                     T.Ohtsuki*,          (91)E1411 76                             0.000861                            10.4     10.4                                        1.05000011.0500001
+ 1001 92235   3  18       1.8E7          0.014364 8.715E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411 76                             8.715E-4                            6.07     6.07                                        1.05000011.0500001
 #/C5DATA        0
 #/DATASET       E1411076 
 #DATASET        E1411077   20040311
@@ -6188,7 +6218,7 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (92-U-236(P,F)48-CD-115-G,(CUM),SIG)
 #+               #[1]#DECAY-DATA (48-CD-115-G,53.5HR,DG,336.3,0.497) #Ix_old=0.497
-#+                a1=0.497/0.4602;            #[1]#DECAY-DATA: correction to new 336.241 keV gamma-yield per decay Cd-115-g Ix_new=0.4602
+#+                a1=0.497/0.4602;            #[1]#DECAY-DATA: correction to new 336.24 keV gamma-yield per decay Cd-115-g Ix_new=0.4602
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0799652
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
@@ -7182,6 +7212,9 @@
 #REAC1          P,F
 #PRODUCT        58-CE-141
 #C4ReaCode      (P,F)(CUM),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.207%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section (uncertain if cumulative)
 #DataUnits0     B
 #DataUnits      ?
@@ -7198,20 +7231,32 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 92-U-236(P,F)58-CE-141,(CUM),SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (92-U-236(P,F)58-CE-141,(CUM),SIG)
+#+               #[1]#DECAY-DATA (58-CE-141,32.5D,DG,145.5,0.484) #Ix_old=0.484
+#+                a1=0.484/0.483;             #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0020703
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        E1411108    1.00207     -           1.00207     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          E1411108    CS+         8           1.00207     1.00207     1.00207     +0.207%     1.00207                
 #C5DATA         8
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 92236   3  18   9000000.0            1.7E-4   4.0E-5     58.0    141.0                     T.Ohtsuki,           (91)E1411108                               4.0E-5                            23.5     23.5
- 1001 92236   3  18      1.02E7           0.00114   7.0E-5     58.0    141.0                     T.Ohtsuki,           (91)E1411108                               7.0E-5                            6.14     6.14
- 1001 92236   3  18      1.12E7           0.00284   2.2E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411108                               2.2E-4                            7.75     7.75
- 1001 92236   3  18      1.21E7           0.00507   2.0E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411108                               2.0E-4                            3.94     3.94
- 1001 92236   3  18      1.31E7           0.00818   2.9E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411108                               2.9E-4                            3.55     3.55
- 1001 92236   3  18       1.4E7           0.01115   6.5E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411108                               6.5E-4                            5.83     5.83
- 1001 92236   3  18      1.48E7           0.01409   5.4E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411108                               5.4E-4                            3.83     3.83
- 1001 92236   3  18      1.56E7           0.02235   3.6E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411108                               3.6E-4                            1.61     1.61
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 92236   3  18   9000000.0          1.7035-4 4.0083-5     58.0    141.0                     T.Ohtsuki*,          (91)E1411108                             4.0083-5                            23.5     23.5                                        1.00207031.0020704
+ 1001 92236   3  18      1.02E7         .00114236 7.0145-5     58.0    141.0                     T.Ohtsuki*,          (91)E1411108                             7.0145-5                            6.14     6.14                                        1.00207031.0020703
+ 1001 92236   3  18      1.12E7         .00284588 2.2046-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411108                             2.2046-4                            7.75     7.75                                        1.00207031.0020703
+ 1001 92236   3  18      1.21E7          5.0805-3 2.0041-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411108                             2.0041-4                            3.94     3.94                                        1.00207031.0020704
+ 1001 92236   3  18      1.31E7          8.1969-3 2.9060-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411108                             2.9060-4                            3.55     3.55                                        1.00207031.0020703
+ 1001 92236   3  18       1.4E7         .01117308 6.5135-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411108                             6.5135-4                            5.83     5.83                                        1.00207031.0020703
+ 1001 92236   3  18      1.48E7         .01411917 5.4112-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411108                             5.4112-4                            3.83     3.83                                        1.00207031.0020703
+ 1001 92236   3  18      1.56E7         .02239627 3.6075-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411108                             3.6075-4                            1.61     1.61                                        1.00207031.0020703
 #/C5DATA        0
 #/DATASET       E1411108 
 #DATASET        E1411109   20040311
@@ -7389,7 +7434,7 @@
 #REAC1          P,F
 #PRODUCT        60-ND-149
 #C4ReaCode      (P,F)(CUM),SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.41%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.00%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section (uncertain if cumulative)
@@ -7413,27 +7458,27 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (92-U-236(P,F)60-ND-149,(CUM),SIG)
 #+               #[1]#DECAY-DATA (60-ND-149,1.73HR,DG,211.3,0.273) #Ix_old=0.273
-#+                a1=0.273/0.259;             #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.259
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.054054
+#+                a1=0.273/0.26;              #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.26
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0500001
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        E1411111    1.05405     -           1.05405     -
+#/C5CORR        E1411111    1.05000     -           1.05000     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          E1411111    CS+         8           1.05405     1.05405     1.05405     +5.41%      1.05405                
+#XCORR          E1411111    CS+         8           1.05000     1.05000     1.05000     +5.00%      1.05000                
 #C5DATA         8
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 92236   3  18   9000000.0          5.2703-5 2.1081-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411111                             2.1081-5                            40       40                                          1.054054 1.0540541
- 1001 92236   3  18      1.02E7          5.6919-4 7.3784-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411111                             7.3784-5                            13       13                                          1.054054 1.054054
- 1001 92236   3  18      1.12E7          1.0119-3 1.5811-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411111                             1.5811-4                            15.6     15.6                                        1.054054 1.054054
- 1001 92236   3  18      1.21E7          1.7076-3 1.6865-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411111                             1.6865-4                            9.88     9.88                                        1.054054 1.054054
- 1001 92236   3  18      1.31E7          2.6141-3 2.4243-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411111                             2.4243-4                            9.27     9.27                                        1.054054 1.054054
- 1001 92236   3  18       1.4E7          2.9408-3 1.6865-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411111                             1.6865-4                            5.73     5.73                                        1.054054 1.054054
- 1001 92236   3  18      1.48E7          4.0897-3 6.3243-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411111                             6.3243-4                            15.5     15.5                                        1.054054 1.0540539
- 1001 92236   3  18      1.56E7          5.7657-3 7.0622-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411111                             7.0622-4                            12.2     12.2                                        1.054054 1.054054
+ 1001 92236   3  18   9000000.0           5.25E-5   2.1E-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411111                               2.1E-5                            40       40                                          1.05000011.0500001
+ 1001 92236   3  18      1.02E7           5.67E-4 7.35e-05     60.0    149.0                     T.Ohtsuki*,          (91)E1411111                             7.35e-05                            13       13                                          1.05000011.0500001
+ 1001 92236   3  18      1.12E7          0.001008 1.575E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411111                             1.575E-4                            15.6     15.6                                        1.05000011.0500001
+ 1001 92236   3  18      1.21E7          0.001701  1.68E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411111                              1.68E-4                            9.88     9.88                                        1.05000011.0500001
+ 1001 92236   3  18      1.31E7          0.002604 2.415E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411111                             2.415E-4                            9.27     9.27                                        1.05000011.0500001
+ 1001 92236   3  18       1.4E7         0.0029295  1.68E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411111                              1.68E-4                            5.73     5.73                                        1.05000011.0500001
+ 1001 92236   3  18      1.48E7          0.004074  0.00063     60.0    149.0                     T.Ohtsuki*,          (91)E1411111                              0.00063                            15.5     15.5                                        1.05000011.0500001
+ 1001 92236   3  18      1.56E7          5.7435-3 7.0350-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411111                             7.0350-4                            12.2     12.2                                        1.05000011.0500001
 #/C5DATA        0
 #/DATASET       E1411111 
 #DATASET        E1411112   20040311
@@ -8858,7 +8903,7 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (93-NP-237(P,F)48-CD-115-G,(CUM),SIG)
 #+               #[1]#DECAY-DATA (48-CD-115-G,53.5HR,DG,336.3,0.497) #Ix_old=0.497
-#+                a1=0.497/0.4602;            #[1]#DECAY-DATA: correction to new 336.241 keV gamma-yield per decay Cd-115-g Ix_new=0.4602
+#+                a1=0.497/0.4602;            #[1]#DECAY-DATA: correction to new 336.24 keV gamma-yield per decay Cd-115-g Ix_new=0.4602
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0799652
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
@@ -10149,6 +10194,9 @@
 #REAC1          P,F
 #PRODUCT        58-CE-141
 #C4ReaCode      (P,F)(CUM),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.207%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section (uncertain if cumulative)
 #DataUnits0     B
 #DataUnits      ?
@@ -10165,35 +10213,47 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 93-NP-237(P,F)58-CE-141,(CUM),SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (93-NP-237(P,F)58-CE-141,(CUM),SIG)
+#+               #[1]#DECAY-DATA (58-CE-141,32.5D,DG,145.5,0.484) #Ix_old=0.484
+#+                a1=0.484/0.483;             #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0020703
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        E1411143    1.00207     -           1.00207     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          E1411143    CS+         23          1.00207     1.00207     1.00207     +0.207%     1.00207                
 #C5DATA         23
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 93237   3  18      1.02E7           0.00263   6.2E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411143                               6.2E-4                            23.6     23.6
- 1001 93237   3  18      1.12E7           0.00475   9.8E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411143                               9.8E-4                            20.6     20.6
- 1001 93237   3  18      1.26E7           0.01093   1.2E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411143                               1.2E-4                            1.10     1.10
- 1001 93237   3  18      1.28E7           0.01217   5.0E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411143                               5.0E-4                            4.11     4.11
- 1001 93237   3  18      1.36E7           0.01528  0.00104     58.0    141.0                     T.Ohtsuki,           (91)E1411143                              0.00104                            6.81     6.81
- 1001 93237   3  18      1.42E7           0.01562   9.1E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411143                               9.1E-4                            5.83     5.83
- 1001 93237   3  18      1.47E7           0.02384  0.00121     58.0    141.0                     T.Ohtsuki,           (91)E1411143                              0.00121                            5.08     5.08
- 1001 93237   3  18       1.5E7           0.02233  0.00101     58.0    141.0                     T.Ohtsuki,           (91)E1411143                              0.00101                            4.52     4.52
- 1001 93237   3  18      1.55E7           0.02888  0.00101     58.0    141.0                     T.Ohtsuki,           (91)E1411143                              0.00101                            3.50     3.50
- 1001 93237   3  18      1.65E7           0.02503  0.00258     58.0    141.0                     T.Ohtsuki,           (91)E1411143                              0.00258                            10.3     10.3
- 1001 93237   3  18      1.75E7            0.0324  0.00198     58.0    141.0                     T.Ohtsuki,           (91)E1411143                              0.00198                            6.11     6.11
- 1001 93237   3  18      1.85E7           0.03301  0.00101     58.0    141.0                     T.Ohtsuki,           (91)E1411143                              0.00101                            3.06     3.06
- 1001 93237   3  18      1.95E7           0.03098   6.1E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411143                               6.1E-4                            1.97     1.97
- 1001 93237   3  18      2.05E7           0.04102   0.0026     58.0    141.0                     T.Ohtsuki,           (91)E1411143                               0.0026                            6.34     6.34
- 1001 93237   3  18      2.16E7            0.0375  0.00239     58.0    141.0                     T.Ohtsuki,           (91)E1411143                              0.00239                            6.37     6.37
- 1001 93237   3  18      2.25E7           0.03863  0.00176     58.0    141.0                     T.Ohtsuki,           (91)E1411143                              0.00176                            4.56     4.56
- 1001 93237   3  18      2.36E7         .04356001  0.00404     58.0    141.0                     T.Ohtsuki,           (91)E1411143                              0.00404                            9.27     9.27
- 1001 93237   3  18      2.46E7           0.04064  0.00178     58.0    141.0                     T.Ohtsuki,           (91)E1411143                              0.00178                            4.38     4.38
- 1001 93237   3  18      2.55E7           0.04538  0.00134     58.0    141.0                     T.Ohtsuki,           (91)E1411143                              0.00134                            2.95     2.95
- 1001 93237   3  18      2.65E7           0.05632  0.00155     58.0    141.0                     T.Ohtsuki,           (91)E1411143                              0.00155                            2.75     2.75
- 1001 93237   3  18      2.75E7           0.04904  0.00208     58.0    141.0                     T.Ohtsuki,           (91)E1411143                              0.00208                            4.24     4.24
- 1001 93237   3  18      2.88E7            0.0317  0.00225     58.0    141.0                     T.Ohtsuki,           (91)E1411143                              0.00225                            7.10     7.10
- 1001 93237   3  18      3.17E7           0.03656  0.00219     58.0    141.0                     T.Ohtsuki,           (91)E1411143                              0.00219                            5.99     5.99
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 93237   3  18      1.02E7          2.6354-3 6.2128-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             6.2128-4                            23.6     23.6                                        1.00207031.0020703
+ 1001 93237   3  18      1.12E7          4.7598-3 9.8203-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             9.8203-4                            20.6     20.6                                        1.00207031.0020703
+ 1001 93237   3  18      1.26E7         .01095263 1.2025-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             1.2025-4                            1.10     1.10                                        1.00207031.0020703
+ 1001 93237   3  18      1.28E7         0.0121952 5.0104-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             5.0104-4                            4.11     4.11                                        1.00207031.0020703
+ 1001 93237   3  18      1.36E7         .01531163 1.0422-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             1.0422-3                            6.81     6.81                                        1.00207031.0020703
+ 1001 93237   3  18      1.42E7         .01565234 9.1188-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             9.1188-4                            5.83     5.83                                        1.00207031.0020703
+ 1001 93237   3  18      1.47E7         .02388936 1.2125-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             1.2125-3                            5.08     5.08                                        1.00207031.0020703
+ 1001 93237   3  18       1.5E7         .02237623 1.0121-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             1.0121-3                            4.52     4.52                                        1.00207031.0020703
+ 1001 93237   3  18      1.55E7         .02893979 1.0121-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             1.0121-3                            3.50     3.50                                        1.00207031.0020703
+ 1001 93237   3  18      1.65E7         .02508182 2.5853-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             2.5853-3                            10.3     10.3                                        1.00207031.0020703
+ 1001 93237   3  18      1.75E7         .03246708 1.9841-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             1.9841-3                            6.11     6.11                                        1.00207031.0020703
+ 1001 93237   3  18      1.85E7         .03307834 1.0121-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             1.0121-3                            3.06     3.06                                        1.00207031.0020703
+ 1001 93237   3  18      1.95E7         .03104414 6.1126-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             6.1126-4                            1.97     1.97                                        1.00207031.0020703
+ 1001 93237   3  18      2.05E7         .04110492 2.6054-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             2.6054-3                            6.34     6.34                                        1.00207031.0020704
+ 1001 93237   3  18      2.16E7         .03757764 2.3949-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             2.3949-3                            6.37     6.37                                        1.00207031.0020702
+ 1001 93237   3  18      2.25E7         .03870998 1.7636-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             1.7636-3                            4.56     4.56                                        1.00207031.0020703
+ 1001 93237   3  18      2.36E7         .04365019 4.0484-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             4.0484-3                            9.27     9.27                                        1.00207031.0020702
+ 1001 93237   3  18      2.46E7         .04072414 1.7837-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             1.7837-3                            4.38     4.38                                        1.00207031.0020703
+ 1001 93237   3  18      2.55E7         .04547395 1.3428-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             1.3428-3                            2.95     2.95                                        1.00207031.0020704
+ 1001 93237   3  18      2.65E7         0.0564366 1.5532-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             1.5532-3                            2.75     2.75                                        1.00207031.0020703
+ 1001 93237   3  18      2.75E7         .04914153 2.0843-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             2.0843-3                            4.24     4.24                                        1.00207031.0020704
+ 1001 93237   3  18      2.88E7         .03176563 2.2547-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             2.2547-3                            7.10     7.10                                        1.00207031.0020702
+ 1001 93237   3  18      3.17E7         .03663569 2.1945-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411143                             2.1945-3                            5.99     5.99                                        1.00207031.0020703
 #/C5DATA        0
 #/DATASET       E1411143 
 #DATASET        E1411144   20040311
@@ -10409,7 +10469,7 @@
 #REAC1          P,F
 #PRODUCT        60-ND-149
 #C4ReaCode      (P,F)(CUM),SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.41%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.00%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section (uncertain if cumulative)
@@ -10433,49 +10493,49 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (93-NP-237(P,F)60-ND-149,(CUM),SIG)
 #+               #[1]#DECAY-DATA (60-ND-149,1.73HR,DG,211.3,0.273) #Ix_old=0.273
-#+                a1=0.273/0.259;             #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.259
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.054054
+#+                a1=0.273/0.26;              #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.26
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0500001
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        E1411146    1.05405     -           1.05405     -
+#/C5CORR        E1411146    1.05000     -           1.05000     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          E1411146    CS+         30          1.05405     1.05405     1.05405     +5.41%      1.05405                
+#XCORR          E1411146    CS+         30          1.05000     1.05000     1.05000     +5.00%      1.05000                
 #C5DATA         30
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 93237   3  18   9800000.0          2.6351-4 9.4865-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             9.4865-5                            36       36                                          1.054054 1.054054
- 1001 93237   3  18      1.02E7          5.5865-4 1.7919-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             1.7919-4                            32.1     32.1                                        1.054054 1.054054
- 1001 93237   3  18      1.08E7          1.2332-3 2.6351-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             2.6351-4                            21.4     21.4                                        1.054054 1.0540539
- 1001 93237   3  18      1.12E7          1.2332-3 2.0027-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             2.0027-4                            16.2     16.2                                        1.054054 1.0540541
- 1001 93237   3  18      1.19E7           0.00234 6.8514-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             6.8514-4                            29.3     29.3                                        1.054054 1.054054
- 1001 93237   3  18      1.26E7          3.4995-3 4.2162-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             4.2162-4                            12       12                                          1.054054 1.054054
- 1001 93237   3  18      1.28E7          3.4784-3 4.7432-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             4.7432-4                            13.6     13.6                                        1.054054 1.0540541
- 1001 93237   3  18      1.32E7           0.00312 6.5351-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             6.5351-4                            20.9     20.9                                        1.054054 1.054054
- 1001 93237   3  18      1.36E7          5.8816-3 2.7405-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             2.7405-4                            4.66     4.66                                        1.054054 1.054054
- 1001 93237   3  18      1.37E7         .00447973 5.3757-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             5.3757-4                            12       12                                          1.054054 1.054054
- 1001 93237   3  18      1.42E7          4.7749-3 1.0435-3     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             1.0435-3                            21.9     21.9                                        1.054054 1.054054
- 1001 93237   3  18      1.44E7          5.9870-3 4.2162-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             4.2162-4                            7.04     7.04                                        1.054054 1.054054
- 1001 93237   3  18      1.47E7          5.0068-3 1.0224-3     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             1.0224-3                            20.4     20.4                                        1.054054 1.0540541
- 1001 93237   3  18       1.5E7          7.8843-3 3.7946-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             3.7946-4                            4.81     4.81                                        1.054054 1.054054
- 1001 93237   3  18      1.51E7         .01012946 7.0622-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             7.0622-4                            6.97     6.97                                        1.054054 1.054054
- 1001 93237   3  18      1.55E7         .01054054 9.0649-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             9.0649-4                            8.60     8.60                                        1.054054 1.054054
- 1001 93237   3  18      1.65E7          9.7532-3 4.5324-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             4.5324-4                            4.65     4.65                                        1.054054 1.054054
- 1001 93237   3  18      1.75E7          9.7648-3 6.3243-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             6.3243-4                            6.48     6.48                                        1.054054 1.054054
- 1001 93237   3  18      1.85E7         .01193189 9.1703-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             9.1703-4                            7.69     7.69                                        1.054054 1.054054
- 1001 93237   3  18      1.95E7         .01172108 2.4876-3     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             2.4876-3                            21.2     21.2                                        1.054054 1.0540541
- 1001 93237   3  18      2.05E7         0.0121427 9.5919-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             9.5919-4                            7.90     7.90                                        1.054054 1.054054
- 1001 93237   3  18      2.16E7         .01308081 8.7486-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             8.7486-4                            6.69     6.69                                        1.054054 1.054054
- 1001 93237   3  18      2.25E7         .01475676 1.1278-3     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             1.1278-3                            7.64     7.64                                        1.054054 1.054054
- 1001 93237   3  18      2.36E7         .01304919 3.1622-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             3.1622-5                            0.24     0.24                                        1.054054 1.0540539
- 1001 93237   3  18      2.46E7         .01410324 1.5389-3     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             1.5389-3                            10.9     10.9                                        1.054054 1.054054
- 1001 93237   3  18      2.55E7         .01703351 8.7486-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             8.7486-4                            5.14     5.14                                        1.054054 1.0540541
- 1001 93237   3  18      2.65E7          9.5919-3 9.0649-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             9.0649-4                            9.45     9.45                                        1.054054 1.054054
- 1001 93237   3  18      2.75E7         .01335486 9.4865-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             9.4865-4                            7.10     7.10                                        1.054054 1.0540541
- 1001 93237   3  18      2.88E7         0.0120373 9.8027-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             9.8027-4                            8.14     8.14                                        1.054054 1.0540541
- 1001 93237   3  18      3.17E7          8.6011-3 8.6432-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             8.6432-4                            10       10                                          1.054054 1.054054
+ 1001 93237   3  18   9800000.0          2.625E-4 9.45e-05     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             9.45e-05                            36       36                                          1.05000011.0500001
+ 1001 93237   3  18      1.02E7          5.565E-4 1.785E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             1.785E-4                            32.1     32.1                                        1.05000011.0500001
+ 1001 93237   3  18      1.08E7         0.0012285 2.625E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             2.625E-4                            21.4     21.4                                        1.05000011.0500001
+ 1001 93237   3  18      1.12E7         0.0012285 1.995E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             1.995E-4                            16.2     16.2                                        1.05000011.0500002
+ 1001 93237   3  18      1.19E7          0.002331 6.825E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             6.825E-4                            29.3     29.3                                        1.05000011.0500001
+ 1001 93237   3  18      1.26E7          0.003486   4.2E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                               4.2E-4                            12       12                                          1.05000011.0500001
+ 1001 93237   3  18      1.28E7          0.003465 4.725E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             4.725E-4                            13.6     13.6                                        1.05000011.0500001
+ 1001 93237   3  18      1.32E7          0.003108 0.000651     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             0.000651                            20.9     20.9                                        1.05000011.0500001
+ 1001 93237   3  18      1.36E7          0.005859  2.73E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                              2.73E-4                            4.66     4.66                                        1.05000011.0500001
+ 1001 93237   3  18      1.37E7          4.4625-3 5.355E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             5.355E-4                            12       12                                          1.05000011.0500001
+ 1001 93237   3  18      1.42E7         0.00475650.0010395     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                            0.0010395                            21.9     21.9                                        1.05000011.0500002
+ 1001 93237   3  18      1.44E7          0.005964   4.2E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                               4.2E-4                            7.04     7.04                                        1.05000011.0500001
+ 1001 93237   3  18      1.47E7         0.00498750.0010185     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                            0.0010185                            20.4     20.4                                        1.05000011.0500001
+ 1001 93237   3  18       1.5E7          0.007854  3.78E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                              3.78E-4                            4.81     4.81                                        1.05000011.0500001
+ 1001 93237   3  18      1.51E7         0.0100905 7.0350-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             7.0350-4                            6.97     6.97                                        1.05000011.0500001
+ 1001 93237   3  18      1.55E7            0.0105  9.03E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                              9.03E-4                            8.60     8.60                                        1.05000011.0500001
+ 1001 93237   3  18      1.65E7         .00971565 4.515E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             4.515E-4                            4.65     4.65                                        1.05000011.0500001
+ 1001 93237   3  18      1.75E7         0.0097272  0.00063     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                              0.00063                            6.48     6.48                                        1.05000011.0500001
+ 1001 93237   3  18      1.85E7          0.011886 9.135E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             9.135E-4                            7.69     7.69                                        1.05000011.0500001
+ 1001 93237   3  18      1.95E7          0.011676 0.002478     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             0.002478                            21.2     21.2                                        1.05000011.0500001
+ 1001 93237   3  18      2.05E7          0.012096 9.555E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             9.555E-4                            7.90     7.90                                        1.05000011.05
+ 1001 93237   3  18      2.16E7         0.0130305 8.7150-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             8.7150-4                            6.69     6.69                                        1.05000011.0500001
+ 1001 93237   3  18      2.25E7            0.01470.0011235     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                            0.0011235                            7.64     7.64                                        1.05000011.0500001
+ 1001 93237   3  18      2.36E7          0.012999  3.15E-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                              3.15E-5                            0.24     0.24                                        1.05000011.0500001
+ 1001 93237   3  18      2.46E7          0.014049 0.001533     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             0.001533                            10.9     10.9                                        1.05000011.0500001
+ 1001 93237   3  18      2.55E7          0.016968 8.715E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             8.715E-4                            5.14     5.14                                        1.05000011.0500001
+ 1001 93237   3  18      2.65E7          0.009555  9.03E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                              9.03E-4                            9.45     9.45                                        1.05000011.0500001
+ 1001 93237   3  18      2.75E7         0.0133035  9.45E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                              9.45E-4                            7.10     7.10                                        1.05000011.0500001
+ 1001 93237   3  18      2.88E7          0.011991 9.765E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                             9.765E-4                            8.14     8.14                                        1.05000011.0500001
+ 1001 93237   3  18      3.17E7          0.008568  8.61E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411146                              8.61E-4                            10       10                                          1.05000011.0500001
 #/C5DATA        0
 #/DATASET       E1411146 
 #DATASET        E1411147   20040311
@@ -11597,7 +11657,7 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (94-PU-239(P,F)48-CD-115-G,(CUM),SIG)
 #+               #[1]#DECAY-DATA (48-CD-115-G,53.5HR,DG,336.3,0.497) #Ix_old=0.497
-#+                a1=0.497/0.4602;            #[1]#DECAY-DATA: correction to new 336.241 keV gamma-yield per decay Cd-115-g Ix_new=0.4602
+#+                a1=0.497/0.4602;            #[1]#DECAY-DATA: correction to new 336.24 keV gamma-yield per decay Cd-115-g Ix_new=0.4602
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0799652
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
@@ -12570,6 +12630,9 @@
 #REAC1          P,F
 #PRODUCT        58-CE-141
 #C4ReaCode      (P,F)(CUM),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.207%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section (uncertain if cumulative)
 #DataUnits0     B
 #DataUnits      ?
@@ -12586,17 +12649,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 94-PU-239(P,F)58-CE-141,(CUM),SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (94-PU-239(P,F)58-CE-141,(CUM),SIG)
+#+               #[1]#DECAY-DATA (58-CE-141,32.5D,DG,145.5,0.484) #Ix_old=0.484
+#+                a1=0.484/0.483;             #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0020703
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        E1411178    1.00207     -           1.00207     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          E1411178    CS+         5           1.00207     1.00207     1.00207     +0.207%     1.00207                
 #C5DATA         5
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 94239   3  18      1.12E7           0.00155   3.1E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411178                               3.1E-4                            20       20
- 1001 94239   3  18      1.22E7           0.00488   4.4E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411178                               4.4E-4                            9.02     9.02
- 1001 94239   3  18       1.3E7            0.0069  0.00142     58.0    141.0                     T.Ohtsuki,           (91)E1411178                              0.00142                            20.6     20.6
- 1001 94239   3  18      1.39E7           0.00896  0.00169     58.0    141.0                     T.Ohtsuki,           (91)E1411178                              0.00169                            18.9     18.9
- 1001 94239   3  18      1.55E7           0.01169  0.00267     58.0    141.0                     T.Ohtsuki,           (91)E1411178                              0.00267                            22.8     22.8
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 94239   3  18      1.12E7          1.5532-3 3.1064-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411178                             3.1064-4                            20       20                                          1.00207031.0020703
+ 1001 94239   3  18      1.22E7          4.8901-3 4.4091-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411178                             4.4091-4                            9.02     9.02                                        1.00207031.0020703
+ 1001 94239   3  18       1.3E7          6.9143-3.00142294     58.0    141.0                     T.Ohtsuki*,          (91)E1411178                            .00142294                            20.6     20.6                                        1.00207031.0020703
+ 1001 94239   3  18      1.39E7         .00897855 1.6935-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411178                             1.6935-3                            18.9     18.9                                        1.00207031.0020703
+ 1001 94239   3  18      1.55E7         0.0117142 2.6755-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411178                             2.6755-3                            22.8     22.8                                        1.00207031.0020703
 #/C5DATA        0
 #/DATASET       E1411178 
 #DATASET        E1411179   20040311
@@ -12771,7 +12846,7 @@
 #REAC1          P,F
 #PRODUCT        60-ND-149
 #C4ReaCode      (P,F)(CUM),SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.41%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.00%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section (uncertain if cumulative)
@@ -12795,25 +12870,25 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (94-PU-239(P,F)60-ND-149,(CUM),SIG)
 #+               #[1]#DECAY-DATA (60-ND-149,1.73HR,DG,211.3,0.273) #Ix_old=0.273
-#+                a1=0.273/0.259;             #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.259
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.054054
+#+                a1=0.273/0.26;              #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.26
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0500001
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        E1411181    1.05405     -           1.05405     -
+#/C5CORR        E1411181    1.05000     -           1.05000     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          E1411181    CS+         6           1.05405     1.05405     1.05405     +5.41%      1.05405                
+#XCORR          E1411181    CS+         6           1.05000     1.05000     1.05000     +5.00%      1.05000                
 #C5DATA         6
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 94239   3  18      1.12E7          2.7405-4 1.3703-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411181                             1.3703-4                            50       50                                          1.054054 1.054054
- 1001 94239   3  18      1.22E7          1.2965-3 2.3189-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411181                             2.3189-4                            17.9     17.9                                        1.054054 1.054054
- 1001 94239   3  18       1.3E7         .00196054 2.3189-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411181                             2.3189-4                            11.8     11.8                                        1.054054 1.054054
- 1001 94239   3  18      1.39E7          2.5824-3 4.8486-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411181                             4.8486-4                            18.8     18.8                                        1.054054 1.0540541
- 1001 94239   3  18      1.46E7          3.3941-3 2.7405-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411181                             2.7405-4                            8.07     8.07                                        1.054054 1.054054
- 1001 94239   3  18      1.55E7          3.8051-3 6.2189-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411181                             6.2189-4                            16.3     16.3                                        1.054054 1.0540541
+ 1001 94239   3  18      1.12E7           2.73E-4 1.365E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411181                             1.365E-4                            50       50                                          1.05000011.0500001
+ 1001 94239   3  18      1.22E7         0.0012915  2.31E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411181                              2.31E-4                            17.9     17.9                                        1.05000011.0500001
+ 1001 94239   3  18       1.3E7          0.001953  2.31E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411181                              2.31E-4                            11.8     11.8                                        1.05000011.0500001
+ 1001 94239   3  18      1.39E7         0.0025725  4.83E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411181                              4.83E-4                            18.8     18.8                                        1.05000011.0500001
+ 1001 94239   3  18      1.46E7          0.003381  2.73E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411181                              2.73E-4                            8.07     8.07                                        1.05000011.0500001
+ 1001 94239   3  18      1.55E7         0.0037905 6.1950-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411181                             6.1950-4                            16.3     16.3                                        1.05000011.0500001
 #/C5DATA        0
 #/DATASET       E1411181 
 #DATASET        E1411182   20040311
@@ -13744,7 +13819,7 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (94-PU-242(P,F)48-CD-115-G,(CUM),SIG)
 #+               #[1]#DECAY-DATA (48-CD-115-G,53.5HR,DG,336.3,0.497) #Ix_old=0.497
-#+                a1=0.497/0.4602;            #[1]#DECAY-DATA: correction to new 336.241 keV gamma-yield per decay Cd-115-g Ix_new=0.4602
+#+                a1=0.497/0.4602;            #[1]#DECAY-DATA: correction to new 336.24 keV gamma-yield per decay Cd-115-g Ix_new=0.4602
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0799652
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
@@ -14474,6 +14549,9 @@
 #REAC1          P,F
 #PRODUCT        58-CE-141
 #C4ReaCode      (P,F)(CUM),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.207%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section (uncertain if cumulative)
 #DataUnits0     B
 #DataUnits      ?
@@ -14490,14 +14568,26 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 94-PU-242(P,F)58-CE-141,(CUM),SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (94-PU-242(P,F)58-CE-141,(CUM),SIG)
+#+               #[1]#DECAY-DATA (58-CE-141,32.5D,DG,145.5,0.484) #Ix_old=0.484
+#+                a1=0.484/0.483;             #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0020703
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        E1411208    1.00207     -           1.00207     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          E1411208    CS+         2           1.00207     1.00207     1.00207     +0.207%     1.00207                
 #C5DATA         2
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 94242   3  18       1.2E7           0.01828   5.1E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411208                               5.1E-4                            2.79     2.79
- 1001 94242   3  18       1.8E7           0.00705   2.6E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411208                               2.6E-4                            3.69     3.69
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 94242   3  18       1.2E7         .01831784 5.1106-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411208                             5.1106-4                            2.79     2.79                                        1.00207031.0020703
+ 1001 94242   3  18       1.8E7          7.0646-3 2.6054-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411208                             2.6054-4                            3.69     3.69                                        1.00207031.0020703
 #/C5DATA        0
 #/DATASET       E1411208 
 #DATASET        E1411209   20040311
@@ -14662,7 +14752,7 @@
 #REAC1          P,F
 #PRODUCT        60-ND-149
 #C4ReaCode      (P,F)(CUM),SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.41%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.00%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section (uncertain if cumulative)
@@ -14686,21 +14776,21 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (94-PU-242(P,F)60-ND-149,(CUM),SIG)
 #+               #[1]#DECAY-DATA (60-ND-149,1.73HR,DG,211.3,0.273) #Ix_old=0.273
-#+                a1=0.273/0.259;             #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.259
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.054054
+#+                a1=0.273/0.26;              #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.26
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0500001
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        E1411211    1.05405     -           1.05405     -
+#/C5CORR        E1411211    1.05000     -           1.05000     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          E1411211    CS+         2           1.05405     1.05405     1.05405     +5.41%      1.05405                
+#XCORR          E1411211    CS+         2           1.05000     1.05000     1.05000     +5.00%      1.05000                
 #C5DATA         2
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 94242   3  18       1.2E7          9.9924-3 1.2649-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411211                             1.2649-4                            1.27     1.27                                        1.054054 1.054054
- 1001 94242   3  18       1.8E7          2.1292-3 1.8973-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411211                             1.8973-4                            8.91     8.91                                        1.054054 1.054054
+ 1001 94242   3  18       1.2E7          0.009954  1.26E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411211                              1.26E-4                            1.27     1.27                                        1.05000011.0500001
+ 1001 94242   3  18       1.8E7          0.002121  1.89E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411211                              1.89E-4                            8.91     8.91                                        1.05000011.0500001
 #/C5DATA        0
 #/DATASET       E1411211 
 #DATASET        E1411212   20040311
@@ -15805,7 +15895,7 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (94-PU-244(P,F)48-CD-115-G,(CUM),SIG)
 #+               #[1]#DECAY-DATA (48-CD-115-G,53.5HR,DG,336.3,0.497) #Ix_old=0.497
-#+                a1=0.497/0.4602;            #[1]#DECAY-DATA: correction to new 336.241 keV gamma-yield per decay Cd-115-g Ix_new=0.4602
+#+                a1=0.497/0.4602;            #[1]#DECAY-DATA: correction to new 336.24 keV gamma-yield per decay Cd-115-g Ix_new=0.4602
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0799652
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
@@ -16718,6 +16808,9 @@
 #REAC1          P,F
 #PRODUCT        58-CE-141
 #C4ReaCode      (P,F)(CUM),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.207%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section (uncertain if cumulative)
 #DataUnits0     B
 #DataUnits      ?
@@ -16734,19 +16827,31 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 94-PU-244(P,F)58-CE-141,(CUM),SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (94-PU-244(P,F)58-CE-141,(CUM),SIG)
+#+               #[1]#DECAY-DATA (58-CE-141,32.5D,DG,145.5,0.484) #Ix_old=0.484
+#+                a1=0.484/0.483;             #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0020703
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        E1411242    1.00207     -           1.00207     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          E1411242    CS+         7           1.00207     1.00207     1.00207     +0.207%     1.00207                
 #C5DATA         7
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 94244   3  18      1.02E7           0.00237   3.6E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411242                               3.6E-4                            15.2     15.2
- 1001 94244   3  18      1.17E7           0.00502   3.5E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411242                               3.5E-4                            6.97     6.97
- 1001 94244   3  18       1.2E7           0.00753   4.7E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411242                               4.7E-4                            6.24     6.24
- 1001 94244   3  18      1.31E7           0.01072  0.00175     58.0    141.0                     T.Ohtsuki,           (91)E1411242                              0.00175                            16.3     16.3
- 1001 94244   3  18      1.44E7           0.01442  0.00169     58.0    141.0                     T.Ohtsuki,           (91)E1411242                              0.00169                            11.7     11.7
- 1001 94244   3  18      1.56E7            0.0191  0.00137     58.0    141.0                     T.Ohtsuki,           (91)E1411242                              0.00137                            7.17     7.17
- 1001 94244   3  18       1.8E7           0.02382  0.00167     58.0    141.0                     T.Ohtsuki,           (91)E1411242                              0.00167                            7.01     7.01
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 94244   3  18      1.02E7          2.3749-3 3.6075-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411242                             3.6075-4                            15.2     15.2                                        1.00207031.0020703
+ 1001 94244   3  18      1.17E7          5.0304-3 3.5072-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411242                             3.5072-4                            6.97     6.97                                        1.00207031.0020703
+ 1001 94244   3  18       1.2E7          7.5456-3 4.7097-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411242                             4.7097-4                            6.24     6.24                                        1.00207031.0020703
+ 1001 94244   3  18      1.31E7         .01074219 1.7536-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411242                             1.7536-3                            16.3     16.3                                        1.00207031.0020703
+ 1001 94244   3  18      1.44E7         .01444985 1.6935-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411242                             1.6935-3                            11.7     11.7                                        1.00207031.0020703
+ 1001 94244   3  18      1.56E7         .01913954 1.3728-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411242                             1.3728-3                            7.17     7.17                                        1.00207031.0020703
+ 1001 94244   3  18       1.8E7         .02386932 1.6735-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411242                             1.6735-3                            7.01     7.01                                        1.00207031.0020703
 #/C5DATA        0
 #/DATASET       E1411242 
 #DATASET        E1411243   20040311
@@ -16922,7 +17027,7 @@
 #REAC1          P,F
 #PRODUCT        60-ND-149
 #C4ReaCode      (P,F)(CUM),SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.41%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.00%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section (uncertain if cumulative)
@@ -16946,26 +17051,26 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (94-PU-244(P,F)60-ND-149,(CUM),SIG)
 #+               #[1]#DECAY-DATA (60-ND-149,1.73HR,DG,211.3,0.273) #Ix_old=0.273
-#+                a1=0.273/0.259;             #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.259
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.054054
+#+                a1=0.273/0.26;              #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.26
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0500001
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        E1411245    1.05405     -           1.05405     -
+#/C5CORR        E1411245    1.05000     -           1.05000     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          E1411245    CS+         7           1.05405     1.05405     1.05405     +5.41%      1.05405                
+#XCORR          E1411245    CS+         7           1.05000     1.05000     1.05000     +5.00%      1.05000                
 #C5DATA         7
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 94244   3  18      1.02E7          6.1135-4 9.4865-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411245                             9.4865-5                            15.5     15.5                                        1.054054 1.054054
- 1001 94244   3  18      1.17E7         .00291973 4.1108-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411245                             4.1108-4                            14.1     14.1                                        1.054054 1.054054
- 1001 94244   3  18       1.2E7          3.0989-3 2.0027-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411245                             2.0027-4                            6.46     6.46                                        1.054054 1.054054
- 1001 94244   3  18      1.31E7          3.6576-3 9.3811-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411245                             9.3811-4                            25.6     25.6                                        1.054054 1.054054
- 1001 94244   3  18      1.44E7          4.8065-3 1.0330-3     60.0    149.0                     T.Ohtsuki*,          (91)E1411245                             1.0330-3                            21.5     21.5                                        1.054054 1.054054
- 1001 94244   3  18      1.56E7          5.9976-3 4.3216-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411245                             4.3216-4                            7.21     7.21                                        1.054054 1.054054
- 1001 94244   3  18       1.8E7         0.0119846 2.6141-3     60.0    149.0                     T.Ohtsuki*,          (91)E1411245                             2.6141-3                            21.8     21.8                                        1.054054 1.054054
+ 1001 94244   3  18      1.02E7           6.09E-4 9.45e-05     60.0    149.0                     T.Ohtsuki*,          (91)E1411245                             9.45e-05                            15.5     15.5                                        1.05000011.0500002
+ 1001 94244   3  18      1.17E7         0.0029085 4.095E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411245                             4.095E-4                            14.1     14.1                                        1.05000011.0500001
+ 1001 94244   3  18       1.2E7          0.003087 1.995E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411245                             1.995E-4                            6.46     6.46                                        1.05000011.0500001
+ 1001 94244   3  18      1.31E7         0.0036435 9.3450-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411245                             9.3450-4                            25.6     25.6                                        1.05000011.0500001
+ 1001 94244   3  18      1.44E7          0.004788 0.001029     60.0    149.0                     T.Ohtsuki*,          (91)E1411245                             0.001029                            21.5     21.5                                        1.05000011.0500002
+ 1001 94244   3  18      1.56E7         0.0059745 4.305E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411245                             4.305E-4                            7.21     7.21                                        1.05000011.0500001
+ 1001 94244   3  18       1.8E7         0.0119385 0.002604     60.0    149.0                     T.Ohtsuki*,          (91)E1411245                             0.002604                            21.8     21.8                                        1.05000011.0500001
 #/C5DATA        0
 #/DATASET       E1411245 
 #DATASET        E1411246   20040311
@@ -18078,7 +18183,7 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (95-AM-241(P,F)48-CD-115-G,(CUM),SIG)
 #+               #[1]#DECAY-DATA (48-CD-115-G,53.5HR,DG,336.3,0.497) #Ix_old=0.497
-#+                a1=0.497/0.4602;            #[1]#DECAY-DATA: correction to new 336.241 keV gamma-yield per decay Cd-115-g Ix_new=0.4602
+#+                a1=0.497/0.4602;            #[1]#DECAY-DATA: correction to new 336.24 keV gamma-yield per decay Cd-115-g Ix_new=0.4602
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0799652
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
@@ -18912,6 +19017,9 @@
 #REAC1          P,F
 #PRODUCT        58-CE-141
 #C4ReaCode      (P,F)(CUM),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.207%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section (uncertain if cumulative)
 #DataUnits0     B
 #DataUnits      ?
@@ -18928,19 +19036,31 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 95-AM-241(P,F)58-CE-141,(CUM),SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (95-AM-241(P,F)58-CE-141,(CUM),SIG)
+#+               #[1]#DECAY-DATA (58-CE-141,32.5D,DG,145.5,0.484) #Ix_old=0.484
+#+                a1=0.484/0.483;             #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0020703
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        E1411275    1.00207     -           1.00207     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          E1411275    CS+         7           1.00207     1.00207     1.00207     +0.207%     1.00207                
 #C5DATA         7
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 95241   3  18   9000000.0            6.0E-4   5.0E-5     58.0    141.0                     T.Ohtsuki,           (91)E1411275                               5.0E-5                            8.33     8.33
- 1001 95241   3  18       1.1E7           0.00312   2.5E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411275                               2.5E-4                            8.01     8.01
- 1001 95241   3  18       1.2E7             0.003   2.4E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411275                               2.4E-4                            8        8
- 1001 95241   3  18      1.37E7           0.01884  0.00151     58.0    141.0                     T.Ohtsuki,           (91)E1411275                              0.00151                            8.01     8.01
- 1001 95241   3  18       1.4E7           0.00725   5.8E-4     58.0    141.0                     T.Ohtsuki,           (91)E1411275                               5.8E-4                            8        8
- 1001 95241   3  18       1.5E7           0.01274  0.00102     58.0    141.0                     T.Ohtsuki,           (91)E1411275                              0.00102                            8.01     8.01
- 1001 95241   3  18       1.6E7           0.03196  0.00256     58.0    141.0                     T.Ohtsuki,           (91)E1411275                              0.00256                            8.01     8.01
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 95241   3  18   9000000.0          6.0124-4 5.0104-5     58.0    141.0                     T.Ohtsuki*,          (91)E1411275                             5.0104-5                            8.33     8.33                                        1.00207031.0020704
+ 1001 95241   3  18       1.1E7          3.1265-3 2.5052-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411275                             2.5052-4                            8.01     8.01                                        1.00207031.0020703
+ 1001 95241   3  18       1.2E7          3.0062-3 2.4050-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411275                             2.4050-4                            8        8                                           1.00207031.0020703
+ 1001 95241   3  18      1.37E7          0.018879 1.5131-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411275                             1.5131-3                            8.01     8.01                                        1.00207031.0020702
+ 1001 95241   3  18       1.4E7          7.2650-3 5.8120-4     58.0    141.0                     T.Ohtsuki*,          (91)E1411275                             5.8120-4                            8        8                                           1.00207031.0020703
+ 1001 95241   3  18       1.5E7         .01276638 1.0221-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411275                             1.0221-3                            8.01     8.01                                        1.00207031.0020703
+ 1001 95241   3  18       1.6E7         .032026170.0025653     58.0    141.0                     T.Ohtsuki*,          (91)E1411275                            0.0025653                            8.01     8.01                                        1.00207031.0020704
 #/C5DATA        0
 #/DATASET       E1411275 
 #DATASET        E1411276   20040311
@@ -19117,7 +19237,7 @@
 #REAC1          P,F
 #PRODUCT        60-ND-149
 #C4ReaCode      (P,F)(CUM),SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.41%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.00%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section (uncertain if cumulative)
@@ -19141,27 +19261,27 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (95-AM-241(P,F)60-ND-149,(CUM),SIG)
 #+               #[1]#DECAY-DATA (60-ND-149,1.73HR,DG,211.3,0.273) #Ix_old=0.273
-#+                a1=0.273/0.259;             #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.259
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.054054
+#+                a1=0.273/0.26;              #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.26
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0500001
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        E1411278    1.05405     -           1.05405     -
+#/C5CORR        E1411278    1.05000     -           1.05000     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          E1411278    CS+         8           1.05405     1.05405     1.05405     +5.41%      1.05405                
+#XCORR          E1411278    CS+         8           1.05000     1.05000     1.05000     +5.00%      1.05000                
 #C5DATA         8
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 95241   3  18   9000000.0          1.6865-4 1.0541-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411278                             1.0541-5                            6.25     6.25                                        1.054054 1.054054
- 1001 95241   3  18       1.0E7          4.4270-4 3.1622-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411278                             3.1622-5                            7.14     7.14                                        1.054054 1.0540539
- 1001 95241   3  18       1.1E7          1.0962-3 8.4324-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411278                             8.4324-5                            7.69     7.69                                        1.054054 1.0540539
- 1001 95241   3  18       1.2E7          2.3716-3 1.8973-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411278                             1.8973-4                            8        8                                           1.054054 1.054054
- 1001 95241   3  18      1.37E7         .00683027 5.4811-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411278                             5.4811-4                            8.02     8.02                                        1.054054 1.054054
- 1001 95241   3  18       1.4E7          4.4059-3 3.4784-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411278                             3.4784-4                            7.89     7.89                                        1.054054 1.054054
- 1001 95241   3  18       1.5E7          3.0778-3 2.4243-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411278                             2.4243-4                            7.88     7.88                                        1.054054 1.054054
- 1001 95241   3  18       1.6E7         .00469054 3.7946-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411278                             3.7946-4                            8.09     8.09                                        1.054054 1.054054
+ 1001 95241   3  18   9000000.0           1.68E-4  1.05E-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411278                              1.05E-5                            6.25     6.25                                        1.05000011.0500001
+ 1001 95241   3  18       1.0E7           4.41E-4  3.15E-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411278                              3.15E-5                            7.14     7.14                                        1.05000011.0500001
+ 1001 95241   3  18       1.1E7          0.001092   8.4E-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411278                               8.4E-5                            7.69     7.69                                        1.05000011.0500001
+ 1001 95241   3  18       1.2E7         0.0023625  1.89E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411278                              1.89E-4                            8        8                                           1.05000011.0500001
+ 1001 95241   3  18      1.37E7          0.006804  5.46E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411278                              5.46E-4                            8.02     8.02                                        1.05000011.0500001
+ 1001 95241   3  18       1.4E7          0.004389 3.465E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411278                             3.465E-4                            7.89     7.89                                        1.05000011.0500001
+ 1001 95241   3  18       1.5E7          0.003066 2.415E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411278                             2.415E-4                            7.88     7.88                                        1.05000011.0500001
+ 1001 95241   3  18       1.6E7         0.0046725 0.000378     60.0    149.0                     T.Ohtsuki*,          (91)E1411278                             0.000378                            8.09     8.09                                        1.05000011.0500002
 #/C5DATA        0
 #/DATASET       E1411278 
 #DATASET        E1411279   20040311
@@ -20045,7 +20165,7 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (95-AM-243(P,F)48-CD-115-G,(CUM),SIG)
 #+               #[1]#DECAY-DATA (48-CD-115-G,53.5HR,DG,336.3,0.497) #Ix_old=0.497
-#+                a1=0.497/0.4602;            #[1]#DECAY-DATA: correction to new 336.241 keV gamma-yield per decay Cd-115-g Ix_new=0.4602
+#+                a1=0.497/0.4602;            #[1]#DECAY-DATA: correction to new 336.24 keV gamma-yield per decay Cd-115-g Ix_new=0.4602
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0799652
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
@@ -20616,6 +20736,9 @@
 #REAC1          P,F
 #PRODUCT        58-CE-141
 #C4ReaCode      (P,F)(CUM),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.207%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section (uncertain if cumulative)
 #DataUnits0     B
 #DataUnits      ?
@@ -20632,13 +20755,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 95-AM-243(P,F)58-CE-141,(CUM),SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (95-AM-243(P,F)58-CE-141,(CUM),SIG)
+#+               #[1]#DECAY-DATA (58-CE-141,32.5D,DG,145.5,0.484) #Ix_old=0.484
+#+                a1=0.484/0.483;             #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0020703
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        E1411301    1.00207     -           1.00207     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          E1411301    CS+         1           1.00207     1.00207     1.00207     +0.207%     1.00207                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 95243   3  18      1.56E7           0.01533  0.00246     58.0    141.0                     T.Ohtsuki,           (91)E1411301                              0.00246                            16       16
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 95243   3  18      1.56E7         .01536174 2.4651-3     58.0    141.0                     T.Ohtsuki*,          (91)E1411301                             2.4651-3                            16       16                                          1.00207031.0020703
 #/C5DATA        0
 #/DATASET       E1411301 
 #DATASET        E1411302   20040311
@@ -20807,7 +20942,7 @@
 #REAC1          P,F
 #PRODUCT        60-ND-149
 #C4ReaCode      (P,F)(CUM),SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.41%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+5.00%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section (uncertain if cumulative)
@@ -20831,23 +20966,23 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (95-AM-243(P,F)60-ND-149,(CUM),SIG)
 #+               #[1]#DECAY-DATA (60-ND-149,1.73HR,DG,211.3,0.273) #Ix_old=0.273
-#+                a1=0.273/0.259;             #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.259
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.054054
+#+                a1=0.273/0.26;              #[1]#DECAY-DATA: correction to new 211.309 keV gamma-yield per decay Nd-149 Ix_new=0.26
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0500001
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        E1411304    1.05405     -           1.05405     -
+#/C5CORR        E1411304    1.05000     -           1.05000     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          E1411304    CS+         4           1.05405     1.05405     1.05405     +5.41%      1.05405                
+#XCORR          E1411304    CS+         4           1.05000     1.05000     1.05000     +5.00%      1.05000                
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 95243   3  18      1.04E7          4.1108-4 8.4324-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411304                             8.4324-5                            20.5     20.5                                        1.054054 1.054054
- 1001 95243   3  18       1.2E7          3.0041-3 4.9541-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411304                             4.9541-4                            16.5     16.5                                        1.054054 1.054054
- 1001 95243   3  18       1.4E7          2.5824-3 4.2162-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411304                             4.2162-4                            16.3     16.3                                        1.054054 1.0540541
- 1001 95243   3  18      1.56E7          5.4916-3 8.8541-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411304                             8.8541-4                            16.1     16.1                                        1.054054 1.054054
+ 1001 95243   3  18      1.04E7          4.095E-4   8.4E-5     60.0    149.0                     T.Ohtsuki*,          (91)E1411304                               8.4E-5                            20.5     20.5                                        1.05000011.0500001
+ 1001 95243   3  18       1.2E7         0.0029925 4.935E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411304                             4.935E-4                            16.5     16.5                                        1.05000011.0500001
+ 1001 95243   3  18       1.4E7         0.0025725   4.2E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411304                               4.2E-4                            16.3     16.3                                        1.05000011.0500001
+ 1001 95243   3  18      1.56E7         0.0054705  8.82E-4     60.0    149.0                     T.Ohtsuki*,          (91)E1411304                              8.82E-4                            16.1     16.1                                        1.05000011.0500001
 #/C5DATA        0
 #/DATASET       E1411304 
 #DATASET        E1411305   20040311

@@ -1462,6 +1462,10 @@
 #CompNotes      ERR-ANALYS:(ERR-4,,5.)        ADDED AS COMMON:ERR-4,PER-CENT=2.5%
 #CompNotes      ERR-ANALYS:(ERR-5,,2.)        ADDED AS COMMON:ERR-5,PER-CENT=1.0%
 #CompNotes      ERR-ANALYS:(ERR-6,,10.)       ADDED AS COMMON:ERR-6,PER-CENT=5.0%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.671%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Independent cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1478,14 +1482,26 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 73-TA-181(8-O-16,X)62-SM-141-M,IND,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (73-TA-181(8-O-16,X)62-SM-141-M,IND,SIG)
+#+               #[1]#DECAY-DATA (62-SM-141-M,22.6MIN,DG,196.88,0.74) #Ix_old=0.74
+#+                a1=0.74/0.745;              #[1]#DECAY-DATA: correction to new 196.6 keV gamma-yield per decay Sm-141-m Ix_new=0.745
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9932886
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D6189026    0.993289    -           0.993289    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D6189026    CS          2           0.993289    0.993289    0.993289    -0.671%     1.00676                
 #C5DATA         2
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 8016 73181   39000MA     9.7E7             0.003   1.5E-4           62141.9                     Vijay R.Sharma,      (11)D6189 26 1.9153E-4                     1.5E-4 6.38                       5        5
- 8016 73181   39000MA     1.0E8            0.0057   3.7E-4           62141.9                     Vijay R.Sharma,      (11)D6189 26 3.6391E-4                     3.7E-4 6.38                       6.49     6.49
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 8016 73181   39000MA     9.7E7          2.9799-3 1.4899-4           62141.9                     Vijay R.Sharma*,     (11)D6189 26  1.9024-4                   1.4899-4 6.38                       5        5                                           0.99328860.9932886
+ 8016 73181   39000MA     1.0E8          5.6617-3 3.6752-4           62141.9                     Vijay R.Sharma*,     (11)D6189 26  3.6147-4                   3.6752-4 6.38                       6.49     6.49                                        0.99328860.9932886
 #/C5DATA        0
 #/DATASET       D6189026 
 #/C5.2.3        1               24              25              0               41              

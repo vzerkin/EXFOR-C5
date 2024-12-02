@@ -452,7 +452,7 @@
 #PRODUCT        33-AS-71
 #C4ReaCode      (P,X)CUM,SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=4.76%
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.46%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.39%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #CompNotes      MODIFY(DEC): dSys
@@ -486,20 +486,20 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (39-Y-89(P,X)33-AS-71,CUM,SIG)
 #+               #[1]#DECAY-DATA (33-AS-71,64.8HR,DG,174.9,0.836) #Ix_old=0.836
-#+                a1=0.836/0.824;             #[1]#DECAY-DATA: correction to new 174.954 keV gamma-yield per decay As-71 Ix_new=0.824
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0145631
+#+                a1=0.836/0.8245;            #[1]#DECAY-DATA: correction to new 174.954 keV gamma-yield per decay As-71 Ix_new=0.8245
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0139478
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        T0145009    1.01456     1.00000     1.01456     -
+#/C5CORR        T0145009    1.01395     1.00000     1.01395     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          T0145009    CS          1           1.01456     1.01456     1.01456     +1.46%      1.01456     [MONIT]::al27px
+#XCORR          T0145009    CS          1           1.01395     1.01395     1.01395     +1.39%      1.01395     [MONIT]::al27px
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 39089   39001       8.0E8         .01146456 8.1165-4           33071.9                     M.J.Tobin*,          (89)T0145  9  5.4571-4                   8.1165-4 4.76                       7.08     7.08    0.0105   5.0E-4                     1.01456311.0145631
+ 1001 39089   39001       8.0E8         .01145761 8.1116-4           33071.9                     M.J.Tobin*,          (89)T0145  9  5.4538-4                   8.1116-4 4.76                       7.08     7.08    0.0105   5.0E-4                     1.01394781.0139478
 #/C5DATA        0
 #/DATASET       T0145009 
 #DATASET        T0145010   20010213
@@ -677,6 +677,10 @@
 #PRODUCT        33-AS-76
 #C4ReaCode      (P,X),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=4.76%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+10.6%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -696,13 +700,31 @@
 #X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
 #M0             Point: XS(b)=0.0105(4.76%)  EN-NRM(eV):8.0E8
 #M1             Point: XS(b)=  EN-NRM(eV):8.0E8
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 39-Y-89(P,X)33-AS-76,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              #[0]#En=8.0E8
+#+              a0=[MONIT];                   #[0]#old monitor point 0.0105
+#+              a1=recom$al27px[EN];          #[0]#new monitor point [800.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (39-Y-89(P,X)33-AS-76,,SIG)
+#+               #[1]#DECAY-DATA (33-AS-76,26.3HR,DG,559.1,0.45) #Ix_old=0.45
+#+                a1=0.45/0.407;              #[1]#DECAY-DATA: correction to new 559.086 keV gamma-yield per decay As-76 Ix_new=0.407
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.105651
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        T0145012    1.10565     1.00000     1.10565     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          T0145012    CS          1           1.10565     1.10565     1.10565     +10.6%      1.10565     [MONIT]::al27px
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 39089   39000       8.0E8            5.0E-4   7.0E-5           33076.9                     M.J.Tobin,           (89)T0145 12   2.38E-5                     7.0E-5 4.76                       14       14      0.0105   5.0E-4
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 39089   39000       8.0E8          5.5283-4 7.7396-5           33076.9                     M.J.Tobin*,          (89)T0145 12  2.6314-5                   7.7396-5 4.76                       14       14      0.0105   5.0E-4                     1.105651 1.1056509
 #/C5DATA        0
 #/DATASET       T0145012 
 #DATASET        T0145013   20010213
@@ -1639,6 +1661,10 @@
 #PRODUCT        35-BR-76
 #C4ReaCode      (P,X),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=4.76%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.817%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1658,13 +1684,31 @@
 #X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
 #M0             Point: XS(b)=0.0105(4.76%)  EN-NRM(eV):8.0E8
 #M1             Point: XS(b)=  EN-NRM(eV):8.0E8
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 39-Y-89(P,X)35-BR-76,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              #[0]#En=8.0E8
+#+              a0=[MONIT];                   #[0]#old monitor point 0.0105
+#+              a1=recom$al27px[EN];          #[0]#new monitor point [800.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (39-Y-89(P,X)35-BR-76,,SIG)
+#+               #[1]#DECAY-DATA (35-BR-76-G,16.1HR,DG,559.,0.74) #Ix_old=0.74
+#+                a1=0.74/0.734;              #[1]#DECAY-DATA: correction to new 559.12 keV gamma-yield per decay Br-76-g Ix_new=0.734
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0081744
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        T0145026    1.00817     1.00000     1.00817     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          T0145026    CS          1           1.00817     1.00817     1.00817     +0.817%     1.00817     [MONIT]::al27px
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 39089   39000       8.0E8            0.0261   0.0038           35076.9                     M.J.Tobin,           (89)T0145 26 .00124236                     0.0038 4.76                       14.6     14.6    0.0105   5.0E-4
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 39089   39000       8.0E8         .02631335 3.8311-3           35076.9                     M.J.Tobin*,          (89)T0145 26  1.2525-3                   3.8311-3 4.76                       14.6     14.6    0.0105   5.0E-4                     1.00817441.0081744
 #/C5DATA        0
 #/DATASET       T0145026 
 #DATASET        T0145027M  20010213
@@ -3057,7 +3101,7 @@
 #PRODUCT        33-AS-71
 #C4ReaCode      (P,X)CUM,SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=4.76%
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.46%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.39%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #CompNotes      MODIFY(DEC): dSys
@@ -3091,20 +3135,20 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (42-MO-92(P,X)33-AS-71,CUM,SIG)
 #+               #[1]#DECAY-DATA (33-AS-71,64.8HR,DG,174.9,0.836) #Ix_old=0.836
-#+                a1=0.836/0.824;             #[1]#DECAY-DATA: correction to new 174.954 keV gamma-yield per decay As-71 Ix_new=0.824
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0145631
+#+                a1=0.836/0.8245;            #[1]#DECAY-DATA: correction to new 174.954 keV gamma-yield per decay As-71 Ix_new=0.8245
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0139478
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        T0145050    1.01456     1.00000     1.01456     -
+#/C5CORR        T0145050    1.01395     1.00000     1.01395     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          T0145050    CS          1           1.01456     1.01456     1.01456     +1.46%      1.01456     [MONIT]::al27px
+#XCORR          T0145050    CS          1           1.01395     1.01395     1.01395     +1.39%      1.01395     [MONIT]::al27px
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 42092   39001       8.0E8         .01075437 1.0146-3           33071.9                     M.J.Tobin*,          (89)T0145 50  5.1191-4                   1.0146-3 4.76                       9.43     9.43    0.0105   5.0E-4                     1.01456311.0145631
+ 1001 42092   39001       8.0E8         .01074785 1.0139-3           33071.9                     M.J.Tobin*,          (89)T0145 50  5.1160-4                   1.0139-3 4.76                       9.43     9.43    0.0105   5.0E-4                     1.01394781.0139478
 #/C5DATA        0
 #/DATASET       T0145050 
 #DATASET        T0145051   20010213
@@ -3282,6 +3326,10 @@
 #PRODUCT        33-AS-76
 #C4ReaCode      (P,X),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=4.76%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+10.6%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -3301,13 +3349,31 @@
 #X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
 #M0             Point: XS(b)=0.0105(4.76%)  EN-NRM(eV):8.0E8
 #M1             Point: XS(b)=  EN-NRM(eV):8.0E8
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 42-MO-92(P,X)33-AS-76,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              #[0]#En=8.0E8
+#+              a0=[MONIT];                   #[0]#old monitor point 0.0105
+#+              a1=recom$al27px[EN];          #[0]#new monitor point [800.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (42-MO-92(P,X)33-AS-76,,SIG)
+#+               #[1]#DECAY-DATA (33-AS-76,26.3HR,DG,559.1,0.45) #Ix_old=0.45
+#+                a1=0.45/0.407;              #[1]#DECAY-DATA: correction to new 559.086 keV gamma-yield per decay As-76 Ix_new=0.407
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.105651
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        T0145053    1.10565     1.00000     1.10565     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          T0145053    CS          1           1.10565     1.10565     1.10565     +10.6%      1.10565     [MONIT]::al27px
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 42092   39000       8.0E8            1.6E-4   4.0E-5           33076.9                     M.J.Tobin,           (89)T0145 53  7.616E-6                     4.0E-5 4.76                       25       25      0.0105   5.0E-4
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 42092   39000       8.0E8          1.7690-4 4.4226-5           33076.9                     M.J.Tobin*,          (89)T0145 53  8.4206-6                   4.4226-5 4.76                       25       25      0.0105   5.0E-4                     1.105651 1.105651
 #/C5DATA        0
 #/DATASET       T0145053 
 #DATASET        T0145054   20010213
@@ -3763,7 +3829,7 @@
 #PRODUCT        33-AS-71
 #C4ReaCode      (P,X)CUM,SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=4.76%
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.46%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.39%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #CompNotes      MODIFY(DEC): dSys
@@ -3797,20 +3863,20 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (42-MO-96(P,X)33-AS-71,CUM,SIG)
 #+               #[1]#DECAY-DATA (33-AS-71,64.8HR,DG,174.9,0.836) #Ix_old=0.836
-#+                a1=0.836/0.824;             #[1]#DECAY-DATA: correction to new 174.954 keV gamma-yield per decay As-71 Ix_new=0.824
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0145631
+#+                a1=0.836/0.8245;            #[1]#DECAY-DATA: correction to new 174.954 keV gamma-yield per decay As-71 Ix_new=0.8245
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0139478
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        T0145060    1.01456     1.00000     1.01456     -
+#/C5CORR        T0145060    1.01395     1.00000     1.01395     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          T0145060    CS          1           1.01456     1.01456     1.01456     +1.46%      1.01456     [MONIT]::al27px
+#XCORR          T0145060    CS          1           1.01395     1.01395     1.01395     +1.39%      1.01395     [MONIT]::al27px
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 42096   39001       8.0E8          5.1743-3 4.0583-4           33071.9                     M.J.Tobin*,          (89)T0145 60  2.4630-4                   4.0583-4 4.76                       7.84     7.84    0.0105   5.0E-4                     1.01456311.0145631
+ 1001 42096   39001       8.0E8          5.1711-3 4.0558-4           33071.9                     M.J.Tobin*,          (89)T0145 60  2.4615-4                   4.0558-4 4.76                       7.84     7.84    0.0105   5.0E-4                     1.01394781.0139478
 #/C5DATA        0
 #/DATASET       T0145060 
 #DATASET        T0145061   20010213
@@ -3988,6 +4054,10 @@
 #PRODUCT        33-AS-76
 #C4ReaCode      (P,X),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=4.76%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+10.6%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -4007,13 +4077,31 @@
 #X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
 #M0             Point: XS(b)=0.0105(4.76%)  EN-NRM(eV):8.0E8
 #M1             Point: XS(b)=  EN-NRM(eV):8.0E8
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 42-MO-96(P,X)33-AS-76,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              #[0]#En=8.0E8
+#+              a0=[MONIT];                   #[0]#old monitor point 0.0105
+#+              a1=recom$al27px[EN];          #[0]#new monitor point [800.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (42-MO-96(P,X)33-AS-76,,SIG)
+#+               #[1]#DECAY-DATA (33-AS-76,26.3HR,DG,559.1,0.45) #Ix_old=0.45
+#+                a1=0.45/0.407;              #[1]#DECAY-DATA: correction to new 559.086 keV gamma-yield per decay As-76 Ix_new=0.407
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.105651
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        T0145063    1.10565     1.00000     1.10565     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          T0145063    CS          1           1.10565     1.10565     1.10565     +10.6%      1.10565     [MONIT]::al27px
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 42096   39000       8.0E8            2.8E-4   2.0E-5           33076.9                     M.J.Tobin,           (89)T0145 63 1.3328E-5                     2.0E-5 4.76                       7.14     7.14    0.0105   5.0E-4
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 42096   39000       8.0E8          3.0958-4 2.2113-5           33076.9                     M.J.Tobin*,          (89)T0145 63  1.4736-5                   2.2113-5 4.76                       7.14     7.14    0.0105   5.0E-4                     1.105651 1.1056511
 #/C5DATA        0
 #/DATASET       T0145063 
 #DATASET        T0145064   20010213
@@ -4628,7 +4716,7 @@
 #PRODUCT        33-AS-71
 #C4ReaCode      (P,X)CUM,SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=4.76%
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.46%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.39%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #CompNotes      MODIFY(DEC): dSys
@@ -4662,20 +4750,20 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (42-MO-100(P,X)33-AS-71,CUM,SIG)
 #+               #[1]#DECAY-DATA (33-AS-71,64.8HR,DG,174.9,0.836) #Ix_old=0.836
-#+                a1=0.836/0.824;             #[1]#DECAY-DATA: correction to new 174.954 keV gamma-yield per decay As-71 Ix_new=0.824
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0145631
+#+                a1=0.836/0.8245;            #[1]#DECAY-DATA: correction to new 174.954 keV gamma-yield per decay As-71 Ix_new=0.8245
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0139478
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        T0145074    1.01456     1.00000     1.01456     -
+#/C5CORR        T0145074    1.01395     1.00000     1.01395     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          T0145074    CS          1           1.01456     1.01456     1.01456     +1.46%      1.01456     [MONIT]::al27px
+#XCORR          T0145074    CS          1           1.01395     1.01395     1.01395     +1.39%      1.01395     [MONIT]::al27px
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 42100   39001       8.0E8          2.3335-3 2.0291-4           33071.9                     M.J.Tobin*,          (89)T0145 74  1.1107-4                   2.0291-4 4.76                       8.70     8.70    0.0105   5.0E-4                     1.01456311.0145631
+ 1001 42100   39001       8.0E8         .00233208 2.0279-4           33071.9                     M.J.Tobin*,          (89)T0145 74  1.1101-4                   2.0279-4 4.76                       8.70     8.70    0.0105   5.0E-4                     1.01394781.0139478
 #/C5DATA        0
 #/DATASET       T0145074 
 #DATASET        T0145075   20010213
@@ -4853,6 +4941,10 @@
 #PRODUCT        33-AS-76
 #C4ReaCode      (P,X),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=4.76%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+10.6%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -4872,13 +4964,31 @@
 #X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
 #M0             Point: XS(b)=0.0105(4.76%)  EN-NRM(eV):8.0E8
 #M1             Point: XS(b)=  EN-NRM(eV):8.0E8
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 42-MO-100(P,X)33-AS-76,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              #[0]#En=8.0E8
+#+              a0=[MONIT];                   #[0]#old monitor point 0.0105
+#+              a1=recom$al27px[EN];          #[0]#new monitor point [800.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (42-MO-100(P,X)33-AS-76,,SIG)
+#+               #[1]#DECAY-DATA (33-AS-76,26.3HR,DG,559.1,0.45) #Ix_old=0.45
+#+                a1=0.45/0.407;              #[1]#DECAY-DATA: correction to new 559.086 keV gamma-yield per decay As-76 Ix_new=0.407
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.105651
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        T0145077    1.10565     1.00000     1.10565     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          T0145077    CS          1           1.10565     1.10565     1.10565     +10.6%      1.10565     [MONIT]::al27px
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 42100   39000       8.0E8            8.0E-4   1.0E-4           33076.9                     M.J.Tobin,           (89)T0145 77  3.808E-5                     1.0E-4 4.76                       12.5     12.5    0.0105   5.0E-4
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 42100   39000       8.0E8          8.8452-4 1.1057-4           33076.9                     M.J.Tobin*,          (89)T0145 77  4.2103-5                   1.1057-4 4.76                       12.5     12.5    0.0105   5.0E-4                     1.105651 1.105651
 #/C5DATA        0
 #/DATASET       T0145077 
 #DATASET        T0145078   20010213
@@ -5493,7 +5603,7 @@
 #PRODUCT        33-AS-71
 #C4ReaCode      (P,X)CUM,SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=4.76%
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.46%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.39%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #CompNotes      MODIFY(DEC): dSys
@@ -5527,20 +5637,20 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (52-TE-130(P,X)33-AS-71,CUM,SIG)
 #+               #[1]#DECAY-DATA (33-AS-71,64.8HR,DG,174.9,0.836) #Ix_old=0.836
-#+                a1=0.836/0.824;             #[1]#DECAY-DATA: correction to new 174.954 keV gamma-yield per decay As-71 Ix_new=0.824
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0145631
+#+                a1=0.836/0.8245;            #[1]#DECAY-DATA: correction to new 174.954 keV gamma-yield per decay As-71 Ix_new=0.8245
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0139478
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        T0145088    1.01456     1.00000     1.01456     -
+#/C5CORR        T0145088    1.01395     1.00000     1.01395     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          T0145088    CS          1           1.01456     1.01456     1.01456     +1.46%      1.01456     [MONIT]::al27px
+#XCORR          T0145088    CS          1           1.01395     1.01395     1.01395     +1.39%      1.01395     [MONIT]::al27px
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 52130   39001       8.0E8          1.0146-4 3.0437-5           33071.9                     M.J.Tobin*,          (89)T0145 88  4.8293-6                   3.0437-5 4.76                       30       30      0.0105   5.0E-4                     1.01456311.0145631
+ 1001 52130   39001       8.0E8          1.0139-4 3.0418-5           33071.9                     M.J.Tobin*,          (89)T0145 88  4.8264-6                   3.0418-5 4.76                       30       30      0.0105   5.0E-4                     1.01394781.0139478
 #/C5DATA        0
 #/DATASET       T0145088 
 #DATASET        T0145089   20010213
@@ -5718,6 +5828,10 @@
 #PRODUCT        33-AS-76
 #C4ReaCode      (P,X),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=4.76%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+10.6%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -5737,13 +5851,31 @@
 #X4MONITOR      13-AL-27(P,X)11-NA-24,,SIG
 #M0             Point: XS(b)=0.0105(4.76%)  EN-NRM(eV):8.0E8
 #M1             Point: XS(b)=  EN-NRM(eV):8.0E8
+#C5CORR         #[0]#---Monitor xs-data
+#+              #[0]#Reaction: 52-TE-130(P,X)33-AS-76,,SIG
+#+              #[0]#Monitor:  13-AL-27(P,X)11-NA-24,,SIG
+#+              #[0]#En=8.0E8
+#+              a0=[MONIT];                   #[0]#old monitor point 0.0105
+#+              a1=recom$al27px[EN];          #[0]#new monitor point [800.0MeV]
+#+              dy=dy/y;                      #to rel. uncertainties
+#+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (52-TE-130(P,X)33-AS-76,,SIG)
+#+               #[1]#DECAY-DATA (33-AS-76,26.3HR,DG,559.1,0.45) #Ix_old=0.45
+#+                a1=0.45/0.407;              #[1]#DECAY-DATA: correction to new 559.086 keV gamma-yield per decay As-76 Ix_new=0.407
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.105651
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        T0145091    1.10565     1.00000     1.10565     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          T0145091    CS          1           1.10565     1.10565     1.10565     +10.6%      1.10565     [MONIT]::al27px
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 52130   39000       8.0E8            7.4E-4   1.2E-4           33076.9                     M.J.Tobin,           (89)T0145 91 3.5224E-5                     1.2E-4 4.76                       16.2     16.2    0.0105   5.0E-4
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 52130   39000       8.0E8          8.1818-4 1.3268-4           33076.9                     M.J.Tobin*,          (89)T0145 91  3.8945-5                   1.3268-4 4.76                       16.2     16.2    0.0105   5.0E-4                     1.105651 1.1056509
 #/C5DATA        0
 #/DATASET       T0145091 
 #DATASET        T0145092   20010213

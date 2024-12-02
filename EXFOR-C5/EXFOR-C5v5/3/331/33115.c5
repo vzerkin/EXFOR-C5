@@ -26,6 +26,10 @@
 #REAC1          N,2N
 #PRODUCT        90-TH-231
 #C4ReaCode      (N,2N),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-2.94%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -42,14 +46,26 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 90-TH-232(N,2N)90-TH-231,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (90-TH-232(N,2N)90-TH-231,,SIG)
+#+               #[1]#DECAY-DATA (90-TH-231,24.52HR,DG,84.2,0.066) #Ix_old=0.066
+#+                a1=0.066/0.068;             #[1]#DECAY-DATA: correction to new 84.214 keV gamma-yield per decay Th-231 Ix_new=0.068
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.97058815
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        33115002    0.970588    -           0.970588    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          33115002    CS          2           0.970588    0.970588    0.970588    -2.94%      1.03030                
 #C5DATA         2
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 90232   3  16   8970000.0 680000.0     1.82     0.27                                       M.Karkera,           (18)33115  2 0.1650493 0.139117              0.27 9.07     7.64              14.8     14.8
-    1 90232   3  16     1.652E7 600000.0     0.62      0.1                                       M.Karkera,           (18)33115  2 0.0562286.06165892               0.1 9.07     9.94              16.1     16.1
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 90232   3  16   8970000.0 680000.01.76647040.2620588                                       M.Karkera*,          (18)33115  2 0.1601949 0.139117         0.2620588 9.07     7.88              14.8     14.8                                        0.97058810.9705882
+    1 90232   3  16     1.652E7 600000.00.6017647.09705882                                       M.Karkera*,          (18)33115  2 .05457481.06165892         .09705882 9.07     10.2              16.1     16.1                                        0.97058810.9705881
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -64,8 +80,8 @@
 #COVARDATA      1           2           2
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-8970000.    8970000.    1.82        11.86        100
-1.652E7     1.652E7     0.62        13.46        26 100
+8970000.    8970000.    1.76647     12.01        100
+1.652E7     1.652E7     0.601765    13.68        25 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       33115002 

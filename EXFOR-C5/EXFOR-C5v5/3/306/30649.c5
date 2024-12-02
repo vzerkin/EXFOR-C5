@@ -23,9 +23,6 @@
 #REAC1          N,2N
 #PRODUCT        60-ND-141-M
 #C4ReaCode      (N,2N),SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.109%
-#CompNotes      MODIFY(DEC): dData
-#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -42,25 +39,13 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
-#C5CORR         #Reaction: 60-ND-142(N,2N)60-ND-141-M,,SIG
-#+              dy=dy/y;                      #to rel. uncertainties
-#+               #[1]#---Reaction decay-data
-#+               #[1]#REACTION   (60-ND-142(N,2N)60-ND-141-M,,SIG)
-#+               #[1]#DECAY-DATA (60-ND-141-M,62.4SEC,DG,756.5,0.915) #Ix_old=0.915
-#+                a1=0.915/0.916;             #[1]#DECAY-DATA: correction to new 756.51 keV gamma-yield per decay Nd-141-m Ix_new=0.916
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9989083
-#+              dy=dy*y;                      #to abs. uncertainties
-#+
-#/C5CORR        30649002M   0.998908    -           0.998908    -
-#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          30649002M   CS          1           0.998908    0.998908    0.998908    -0.109%     1.00109                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 60142   3  16MA    1.48E7 250000.00.7551746.06992359                                       S.Gmuca*,            (83)30649  2M                           .06992359                            9.26     9.26                                        0.99890830.9989083
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 60142   3  16MA    1.48E7 250000.0    0.756.07000001                                       S.Gmuca,             (83)30649  2M                           .07000001                            9.26     9.26
 #/C5DATA        0
 #/DATASET       30649002M
 #DATASET        30649002G  20090830
@@ -785,6 +770,9 @@
 #REAC1          N,A
 #PRODUCT        58-CE-141
 #C4ReaCode      (N,A),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.207%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -801,13 +789,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 60-ND-144(N,A)58-CE-141,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (60-ND-144(N,A)58-CE-141,,SIG)
+#+               #[1]#DECAY-DATA (58-CE-141,32.5D,DG,145.4,0.484) #Ix_old=0.484
+#+                a1=0.484/0.483;             #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0020703
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        30649011    1.00207     -           1.00207     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          30649011    CS          1           1.00207     1.00207     1.00207     +0.207%     1.00207                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 60144   3 107 A    1.48E7 250000.0   0.0045   6.0E-4                                       S.Gmuca,             (83)30649 11                               6.0E-4                            13.3     13.3
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 60144   3 107 A    1.48E7 250000.0 4.5093-3 6.0124-4                                       S.Gmuca*,            (83)30649 11                             6.0124-4                            13.3     13.3                                        1.00207031.0020703
 #/C5DATA        0
 #/DATASET       30649011 
 #DATASET        30649012   20090830

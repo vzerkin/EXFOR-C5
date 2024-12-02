@@ -290,10 +290,6 @@
 #REAC1          N,P
 #PRODUCT        21-SC-48
 #C4ReaCode      (N,P),SIG,,FIS
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.110%
-#CompNotes      MODIFY(DEC): dData
-#CompNotes      MODIFY(DEC): dTot
-#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -310,25 +306,13 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
-#C5CORR         #Reaction: 22-TI-48(N,P)21-SC-48,,SIG,,FIS
-#+              dy=dy/y;                      #to rel. uncertainties
-#+               #[1]#---Reaction decay-data
-#+               #[1]#REACTION   (22-TI-48(N,P)21-SC-48,,SIG,,FIS)
-#+               #[1]#DECAY-DATA (21-SC-48,1.83D,DG,1312.0,0.9999) #Ix_old=0.9999
-#+                a1=0.9999/1.001;            #[1]#DECAY-DATA: correction to new 1312.12 keV gamma-yield per decay Sc-48 Ix_new=1.001
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.998901
-#+              dy=dy*y;                      #to abs. uncertainties
-#+
-#/C5CORR        14171007    0.998901    -           0.998901    -
-#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          14171007    CS          1           0.998901    0.998901    0.998901    -0.110%     1.00110                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                    SpT     dSpT     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 22048   3 103   1420000.0          4.3352-4 3.5982-5                                       V.Spiegel*,          (79)14171  7  3.0020-5  8.68E-6          3.5982-5 6.92     2                 8.30     8.30                                        0.998901 0.9989011
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 22048   3 103   1420000.0           4.34E-43.6022E-5                                       V.Spiegel,           (79)14171  7 3.0053E-5  8.68E-6         3.6022E-5 6.92     2                 8.30     8.30
 #/C5DATA        0
 #/DATASET       14171007 
 #DATASET        14171008   20160927

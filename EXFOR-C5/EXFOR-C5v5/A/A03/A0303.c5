@@ -1187,7 +1187,7 @@
 #REAC1          6-C-12,F
 #PRODUCT        56-BA-141
 #C4ReaCode      (6-C-12,F)CUM,SIG
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.10%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+2.68%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #Quantity       Cumulative cross section
@@ -1211,20 +1211,20 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (90-TH-232(6-C-12,F)56-BA-141,CUM,SIG)
 #+               #[1]#DECAY-DATA (56-BA-141,18.3MIN,DG,190.3,0.460) #Ix_old=0.46
-#+                a1=0.46/0.455;              #[1]#DECAY-DATA: correction to new 190.328 keV gamma-yield per decay Ba-141 Ix_new=0.455
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.010989
+#+                a1=0.46/0.448;              #[1]#DECAY-DATA: correction to new 190.328 keV gamma-yield per decay Ba-141 Ix_new=0.448
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0267857
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        A0303023    1.01099     -           1.01099     -
+#/C5CORR        A0303023    1.02679     -           1.02679     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          A0303023    CS          1           1.01099     1.01099     1.01099     +1.10%      1.01099                
+#XCORR          A0303023    CS          1           1.02679     1.02679     1.02679     +2.68%      1.02679                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 6012 90232   3  18       7.2E7          9.9380-3 2.4264-4     56.0    141.0                     A.Ramaswami*,        (00)A0303 23                             2.4264-4                            2.44     2.44                                        1.010989 1.010989
+ 6012 90232   3  18       7.2E7         0.0100933 2.4643-4     56.0    141.0                     A.Ramaswami*,        (00)A0303 23                             2.4643-4                            2.44     2.44                                        1.02678571.0267857
 #/C5DATA        0
 #/DATASET       A0303023 
 #DATASET        A0303024   20160129
@@ -1364,6 +1364,9 @@
 #REAC1          6-C-12,F
 #PRODUCT        58-CE-141
 #C4ReaCode      (6-C-12,F)CUM,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.207%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cumulative cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1380,13 +1383,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 90-TH-232(6-C-12,F)58-CE-141,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (90-TH-232(6-C-12,F)58-CE-141,CUM,SIG)
+#+               #[1]#DECAY-DATA (58-CE-141,32.5HR,DG,145.4,0.484) #Ix_old=0.484
+#+                a1=0.484/0.483;             #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0020703
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        A0303026    1.00207     -           1.00207     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          A0303026    CS          1           1.00207     1.00207     1.00207     +0.207%     1.00207                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 6012 90232   3  18       7.2E7           0.01948   3.2E-4     58.0    141.0                     A.Ramaswami,         (00)A0303 26                               3.2E-4                            1.64     1.64
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 6012 90232   3  18       7.2E7         .01952033 3.2066-4     58.0    141.0                     A.Ramaswami*,        (00)A0303 26                             3.2066-4                            1.64     1.64                                        1.00207031.0020704
 #/C5DATA        0
 #/DATASET       A0303026 
 #DATASET        A0303027   20160129

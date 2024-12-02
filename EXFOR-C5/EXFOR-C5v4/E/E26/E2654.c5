@@ -151,6 +151,10 @@
 #C4ReaCode      (P,X),SIG
 #CompNotes      ERR-ANALYS:(ERR-S,0.6,7.6)    ADDED AS COMMON:ERR-S,PER-CENT=0.6%
 #CompNotes      ERR-ANALYS:(ERR-5,0.3,19.0)   ADDED AS COMMON:ERR-5,PER-CENT=0.3%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.69%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -167,15 +171,27 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 69-TM-169(P,X)69-TM-167,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (69-TM-169(P,X)69-TM-167,,SIG)
+#+               #[1]#DECAY-DATA (69-TM-167,9.25D,DG,207.80,0.42) #Ix_old=0.42
+#+                a1=0.42/0.413;              #[1]#DECAY-DATA: correction to new 207.801 keV gamma-yield per decay Tm-167 Ix_new=0.413
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0169492
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        E2654004    1.01695     -           1.01695     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          E2654004    CS          3           1.01695     1.01695     1.01695     +1.69%      1.01695     m0: {,A.Hermanne+,J,NDS,148,338,2018} : ti0px;::ti0px
 #C5DATA         3
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 69169   39000      1.62E7 400000.0  0.00123   5.8E-4           69167.9                     M.Saito,             (20)E2654  4 1.3866E-4  7.38E-6            5.8E-4 11.3     0.60              47.2     47.2
- 1001 69169   39000      1.68E7 300000.0  0.00147   5.1E-4           69167.9                     M.Saito,             (20)E2654  4 1.6572E-4  8.82E-6            5.1E-4 11.3     0.60              34.7     34.7
- 1001 69169   39000      1.75E7 300000.0  0.00205   5.8E-4           69167.9                     M.Saito,             (20)E2654  4 2.3111E-4  1.23E-5            5.8E-4 11.3     0.60              28.3     28.3
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 69169   39000      1.62E7 400000.0 1.2508-3 5.8983-4           69167.9                     M.Saito*,            (20)E2654  4  1.4101-4  7.38E-6          5.8983-4 11.3     0.59              47.2     47.2                                        1.01694921.0169492
+ 1001 69169   39000      1.68E7 300000.0 1.4949-3 5.1864-4           69167.9                     M.Saito*,            (20)E2654  4  1.6853-4  8.82E-6          5.1864-4 11.3     0.59              34.7     34.7                                        1.01694921.0169492
+ 1001 69169   39000      1.75E7 300000.0 2.0847-3 5.8983-4           69167.9                     M.Saito*,            (20)E2654  4  2.3503-4  1.23E-5          5.8983-4 11.3     0.59              28.3     28.3                                        1.01694921.0169492
 #/C5DATA        0
 #/DATASET       E2654004 
 #/C5.2.3        1               3               3               0               26              

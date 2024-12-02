@@ -107,6 +107,10 @@
 #CompNotes      ERR-ANALYS:(ERR-3,0.29,3.4)   ADDED AS COMMON:ERR-3,PER-CENT=0.29%
 #CompNotes      ERR-ANALYS:(ERR-4,3.6,10.)    ADDED AS COMMON:ERR-4,PER-CENT=3.6%
 #CompNotes      ERR-ANALYS:(ERR-5,5.1,19.)    ADDED AS COMMON:ERR-5,PER-CENT=5.1%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-4.76%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -123,16 +127,28 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 30-ZN-64(P,N)31-GA-64,,SIG,,,DERIV
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (30-ZN-64(P,N)31-GA-64,,SIG,,,DERIV)
+#+               #[1]#DECAY-DATA (31-GA-64,2.627MIN,DG,991.51,0.46) #Ix_old=0.46
+#+                a1=0.46/0.483;              #[1]#DECAY-DATA: correction to new 991.56 keV gamma-yield per decay Ga-64 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.95238096
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        O2528005    0.952381    -           0.952381    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          O2528005    CS          4           0.952381    0.952381    0.952381    -4.76%      1.05000                
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 30064   3   4 D 8450000.0  30000.0    0.028    0.005                                       A.Espinosa Rodriguez,(21)O2528  5 0.0017767                      0.005 6.35                       17.9     17.9
- 1001 30064   3   4 D 8960000.0  30000.0.07000001     0.01                                       A.Espinosa Rodriguez,(21)O2528  5 0.0044419                       0.01 6.35                       14.3     14.3
- 1001 30064   3   4 D 9370000.0  20000.0     0.11     0.03                                       A.Espinosa Rodriguez,(21)O2528  5 0.0069801                       0.03 6.35                       27.3     27.3
- 1001 30064   3   4 D 9450000.0  20000.0    0.114    0.009                                       A.Espinosa Rodriguez,(21)O2528  5 0.0072339                      0.009 6.35                       7.89     7.89
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 30064   3   4 D 8450000.0  30000.0.02666667 4.7619-3                                       A.Espinosa Rodriguez*(21)O2528  5  1.6921-3                   4.7619-3 6.35                       17.9     17.9                                        0.952381 0.9523809
+ 1001 30064   3   4 D 8960000.0  30000.0.06666668.00952381                                       A.Espinosa Rodriguez*(21)O2528  5  4.2304-3                  .00952381 6.35                       14.3     14.3                                        0.952381 0.952381
+ 1001 30064   3   4 D 9370000.0  20000.00.1047619.02857143                                       A.Espinosa Rodriguez*(21)O2528  5  6.6477-3                  .02857143 6.35                       27.3     27.3                                        0.952381 0.952381
+ 1001 30064   3   4 D 9450000.0  20000.00.1085714 8.5714-3                                       A.Espinosa Rodriguez*(21)O2528  5  6.8894-3                   8.5714-3 6.35                       7.89     7.89                                        0.952381 0.952381
 #/C5DATA        0
 #/DATASET       O2528005 
 #/C5.2.3        1               2               4               0               19              

@@ -28,7 +28,7 @@
 #PRODUCT        29-CU-64
 #C4ReaCode      (N,P),SIG,,FIS
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=6.25%
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.421%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.212%
 #CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(DEC): dTot
 #CompNotes      MODIFY(DEC): dSys
@@ -53,20 +53,20 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (30-ZN-64(N,P)29-CU-64,,SIG,,FIS)
 #+               #[1]#DECAY-DATA (29-CU-64,12.700HR,DG,1345.77,0.00473) #Ix_old=0.00473
-#+                a1=0.00473/0.00475;         #[1]#DECAY-DATA: correction to new 1345.77 keV gamma-yield per decay Cu-64 Ix_new=0.00475
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9957895
+#+                a1=0.00473/0.00472;         #[1]#DECAY-DATA: correction to new 1345.77 keV gamma-yield per decay Cu-64 Ix_new=0.00472
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0021187
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        31553002    0.995790    -           0.995790    -
+#/C5CORR        31553002    1.00212     -           1.00212     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31553002    CS          1           0.995790    0.995790    0.995790    -0.421%     1.00423                
+#XCORR          31553002    CS          1           1.00212     1.00212     1.00212     +0.212%     1.00212                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                    SpE     dSpE     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 30064   3 103 A 1500000.0         .03724253 1.3941-3                                       I.M.Cohen*,          (05)31553  2  2.3277-3                   1.3941-3 6.25                       3.74     3.74                                        0.99578950.9957896
+    1 30064   3 103 A 1500000.0         .03747924 1.4030-3                                       I.M.Cohen*,          (05)31553  2  2.3425-3                   1.4030-3 6.25                       3.74     3.74                                        1.00211871.0021187
 #/C5DATA        0
 #/DATASET       31553002 
 #DATASET        31553003   20051129
@@ -98,6 +98,10 @@
 #PRODUCT        30-ZN-63
 #C4ReaCode      (N,2N),SIG,,FIS
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=6.25%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.20%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -114,13 +118,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 30-ZN-64(N,2N)30-ZN-63,,SIG,,FIS
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (30-ZN-64(N,2N)30-ZN-63,,SIG,,FIS)
+#+               #[1]#DECAY-DATA (30-ZN-63,38.47MIN,DG,669.62,0.082) #Ix_old=0.082
+#+                a1=0.082/0.083;             #[1]#DECAY-DATA: correction to new 669.64 keV gamma-yield per decay Zn-63 Ix_new=0.083
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9879519
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        31553003    0.987952    -           0.987952    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          31553003    CS          1           0.987952    0.987952    0.987952    -1.20%      1.01220                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                    SpE     dSpE     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 30064   3  16 A 1500000.0           2.34E-5   2.0E-6                                       I.M.Cohen,           (05)31553  3 1.4625E-6                     2.0E-6 6.25                       8.55     8.55
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30064   3  16 A 1500000.0          2.3118-5 1.9759-6                                       I.M.Cohen*,          (05)31553  3  1.4449-6                   1.9759-6 6.25                       8.55     8.55                                        0.98795190.9879518
 #/C5DATA        0
 #/DATASET       31553003 
 #DATASET        31553004   20051129

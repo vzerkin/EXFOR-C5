@@ -27,6 +27,9 @@
 #PRODUCT        81-TL-200
 #C4ReaCode      (4-BE-9,X),SIG
 #CompNotes      CONVERTED INC-ENERGY C.M. TO LAB: EN_LAB=EN_CM*1.0457548
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.68%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -43,24 +46,36 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 79-AU-197(4-BE-9,X)81-TL-200,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (79-AU-197(4-BE-9,X)81-TL-200,,SIG)
+#+               #[1]#DECAY-DATA (81-TL-200,26.1HR,DG,367.9,0.870) #Ix_old=0.87
+#+                a1=0.87/0.8849;             #[1]#DECAY-DATA: correction to new 367.942 keV gamma-yield per decay Tl-200 Ix_new=0.8849
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.983162
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D6403002    0.983162    -           0.983162    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D6403002    CS          12          0.983162    0.983162    0.983162    -1.68%      1.01713                
 #C5DATA         12
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 4009 79197   39000    3.3046E7            1.5E-4   2.0E-6           81200.9                     M.Kaushik,           (21)D6403  2                               2.0E-6                            1.33     1.33
- 4009 79197   39000     3.451E7            7.6E-4   1.0E-5           81200.9                     M.Kaushik,           (21)D6403  2                               1.0E-5                            1.32     1.32
- 4009 79197   39000    3.5556E7            0.0035   5.0E-5           81200.9                     M.Kaushik,           (21)D6403  2                               5.0E-5                            1.43     1.43
- 4009 79197   39000    3.6601E7            0.0105   9.0E-5           81200.9                     M.Kaushik,           (21)D6403  2                               9.0E-5                            0.86     0.86
- 4009 79197   39000    3.7647E7            0.0225   2.0E-4           81200.9                     M.Kaushik,           (21)D6403  2                               2.0E-4                            0.89     0.89
- 4009 79197   39000    3.8588E7            0.0366   5.0E-4           81200.9                     M.Kaushik,           (21)D6403  2                               5.0E-4                            1.37     1.37
- 4009 79197   39000   3.96341E7            0.0552   4.0E-4           81200.9                     M.Kaushik,           (21)D6403  2                               4.0E-4                            0.72     0.72
- 4009 79197   39000    3.9948E7             0.068   6.0E-4           81200.9                     M.Kaushik,           (21)D6403  2                               6.0E-4                            0.88     0.88
- 4009 79197   39000    4.0575E7            0.0921   8.0E-4           81200.9                     M.Kaushik,           (21)D6403  2                               8.0E-4                            0.87     0.87
- 4009 79197   39000   4.26668E7            0.0957   8.0E-4           81200.9                     M.Kaushik,           (21)D6403  2                               8.0E-4                            0.84     0.84
- 4009 79197   39000    4.4654E7            0.1443   0.0013           81200.9                     M.Kaushik,           (21)D6403  2                               0.0013                            0.90     0.90
- 4009 79197   39000    4.6745E7            0.1191   0.0012           81200.9                     M.Kaushik,           (21)D6403  2                               0.0012                            1.01     1.01
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 4009 79197   39000    3.3046E7          1.4747-4 1.9663-6           81200.9                     M.Kaushik*,          (21)D6403  2                             1.9663-6                            1.33     1.33                                        0.983162 0.983162
+ 4009 79197   39000     3.451E7          7.4720-4 9.8316-6           81200.9                     M.Kaushik*,          (21)D6403  2                             9.8316-6                            1.32     1.32                                        0.983162 0.983162
+ 4009 79197   39000    3.5556E7          3.4411-3 4.9158-5           81200.9                     M.Kaushik*,          (21)D6403  2                             4.9158-5                            1.43     1.43                                        0.983162 0.983162
+ 4009 79197   39000    3.6601E7         0.0103232 8.8485-5           81200.9                     M.Kaushik*,          (21)D6403  2                             8.8485-5                            0.86     0.86                                        0.983162 0.983162
+ 4009 79197   39000    3.7647E7         .02212115 1.9663-4           81200.9                     M.Kaushik*,          (21)D6403  2                             1.9663-4                            0.89     0.89                                        0.983162 0.983162
+ 4009 79197   39000    3.8588E7         .03598373 4.9158-4           81200.9                     M.Kaushik*,          (21)D6403  2                             4.9158-4                            1.37     1.37                                        0.983162 0.9831619
+ 4009 79197   39000   3.96341E7         .05427054 3.9326-4           81200.9                     M.Kaushik*,          (21)D6403  2                             3.9326-4                            0.72     0.72                                        0.983162 0.9831619
+ 4009 79197   39000    3.9948E7         .06685502 5.8990-4           81200.9                     M.Kaushik*,          (21)D6403  2                             5.8990-4                            0.88     0.88                                        0.983162 0.983162
+ 4009 79197   39000    4.0575E7         .09054922 7.8653-4           81200.9                     M.Kaushik*,          (21)D6403  2                             7.8653-4                            0.87     0.87                                        0.983162 0.983162
+ 4009 79197   39000   4.26668E7         .09408861 7.8653-4           81200.9                     M.Kaushik*,          (21)D6403  2                             7.8653-4                            0.84     0.84                                        0.983162 0.983162
+ 4009 79197   39000    4.4654E7         0.1418703 1.2781-3           81200.9                     M.Kaushik*,          (21)D6403  2                             1.2781-3                            0.90     0.90                                        0.983162 0.983162
+ 4009 79197   39000    4.6745E7         0.1170946 1.1798-3           81200.9                     M.Kaushik*,          (21)D6403  2                             1.1798-3                            1.01     1.01                                        0.983162 0.983162
 #/C5DATA        0
 #/DATASET       D6403002 
 #DATASET        D6403003   20211112

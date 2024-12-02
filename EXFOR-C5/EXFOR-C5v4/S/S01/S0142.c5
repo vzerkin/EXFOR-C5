@@ -290,6 +290,9 @@
 #REAC1          6-C-12,X
 #PRODUCT        51-SB-116-M
 #C4ReaCode      (6-C-12,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+8.25%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -306,19 +309,31 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 49-IN-115(6-C-12,X)51-SB-116-M,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (49-IN-115(6-C-12,X)51-SB-116-M,,SIG)
+#+               #[1]#DECAY-DATA (51-SB-116-M,60.3MIN,DG,407.4,0.42) #Ix_old=0.42
+#+                a1=0.42/0.388;              #[1]#DECAY-DATA: correction to new 407.351 keV gamma-yield per decay Sb-116-m Ix_new=0.388
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0824741
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        S01420032   1.08247     -           1.08247     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          S01420032   CS          7           1.08247     1.08247     1.08247     +8.25%      1.08247                
 #C5DATA         7
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 6012 49115   39000M   4.7201E7         4.3011E-5 1.347E-5           51116.9                     Sun Tongyu,          (87)S0142  32                            1.347E-5                            31.3     31.3
- 6012 49115   39000M   5.3783E7         1.4721E-45.3018E-5           51116.9                     Sun Tongyu,          (87)S0142  32                           5.3018E-5                            36       36
- 6012 49115   39000M   6.0747E7         3.1071E-46.9605E-5           51116.9                     Sun Tongyu,          (87)S0142  32                           6.9605E-5                            22.4     22.4
- 6012 49115   39000M    6.275E7         4.3391E-48.7949E-5           51116.9                     Sun Tongyu,          (87)S0142  32                           8.7949E-5                            20.3     20.3
- 6012 49115   39000M   6.6327E7         6.7335E-41.5811E-4           51116.9                     Sun Tongyu,          (87)S0142  32                           1.5811E-4                            23.5     23.5
- 6012 49115   39000M   6.9713E7         8.0983E-41.5562E-4           51116.9                     Sun Tongyu,          (87)S0142  32                           1.5562E-4                            19.2     19.2
- 6012 49115   39000M   7.2194E7         8.2419E-41.8463E-4           51116.9                     Sun Tongyu,          (87)S0142  32                           1.8463E-4                            22.4     22.4
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 6012 49115   39000M   4.7201E7          4.6558-5 1.4581-5           51116.9                     Sun Tongyu*,         (87)S0142  32                            1.4581-5                            31.3     31.3                                        1.08247411.0824741
+ 6012 49115   39000M   5.3783E7          1.5935-4 5.7391-5           51116.9                     Sun Tongyu*,         (87)S0142  32                            5.7391-5                            36       36                                          1.08247411.0824741
+ 6012 49115   39000M   6.0747E7          3.3634-4 7.5346-5           51116.9                     Sun Tongyu*,         (87)S0142  32                            7.5346-5                            22.4     22.4                                        1.08247411.0824741
+ 6012 49115   39000M    6.275E7          4.6970-4 9.5203-5           51116.9                     Sun Tongyu*,         (87)S0142  32                            9.5203-5                            20.3     20.3                                        1.08247411.0824741
+ 6012 49115   39000M   6.6327E7          7.2888-41.7115E-4           51116.9                     Sun Tongyu*,         (87)S0142  32                           1.7115E-4                            23.5     23.5                                        1.08247411.0824741
+ 6012 49115   39000M   6.9713E7         8.7662E-4 1.6845-4           51116.9                     Sun Tongyu*,         (87)S0142  32                            1.6845-4                            19.2     19.2                                        1.08247411.0824741
+ 6012 49115   39000M   7.2194E7          8.9216-4 1.9986-4           51116.9                     Sun Tongyu*,         (87)S0142  32                            1.9986-4                            22.4     22.4                                        1.08247411.082474
 #/C5DATA        0
 #/DATASET       S01420032
 #DATASET        S01420033  20151021

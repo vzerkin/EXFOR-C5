@@ -136,6 +136,9 @@
 #REAC1          D,X
 #PRODUCT        29-CU-64
 #C4ReaCode      (D,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.636%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -152,21 +155,33 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 29-CU-0(D,X)29-CU-64,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (29-CU-0(D,X)29-CU-64,,SIG)
+#+               #[1]#DECAY-DATA (29-CU-64,12.701HR,DG,1345.77,0.00475) #Ix_old=0.00475
+#+                a1=0.00475/0.00472;         #[1]#DECAY-DATA: correction to new 1345.77 keV gamma-yield per decay Cu-64 Ix_new=0.00472
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0063559
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        E2467004    1.00636     -           1.00636     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          E2467004    CS          9           1.00636     1.00636     1.00636     +0.636%     1.00636     m0: {,S.M.Qaim+,R,IAEA-TECDOC-1211,2001} : ni0dx;::ni0dx
 #C5DATA         9
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1002 29000   39000 A 9030000.0259999.98   0.2116  0.01737           29064.9                     M.U.Khandaker,       (14)E2467  4                              0.01737                            8.21     8.21
- 1002 29000   39000 A    1.06E7 230000.0  0.18834   0.0156           29064.9                     M.U.Khandaker,       (14)E2467  4                               0.0156                            8.28     8.28
- 1002 29000   39000 A   1.341E7 190000.0   0.1363    0.012           29064.9                     M.U.Khandaker,       (14)E2467  4                                0.012                            8.80     8.80
- 1002 29000   39000 A   1.587E7 180000.0  0.11725  0.01076           29064.9                     M.U.Khandaker,       (14)E2467  4                              0.01076                            9.18     9.18
- 1002 29000   39000 A    1.86E7 150000.0.09613001  0.00944           29064.9                     M.U.Khandaker,       (14)E2467  4                              0.00944                            9.82     9.82
- 1002 29000   39000 A   1.943E7 150000.0.09720001  0.00953           29064.9                     M.U.Khandaker,       (14)E2467  4                              0.00953                            9.80     9.80
- 1002 29000   39000 A   2.024E7 140000.0  0.09535  0.00946           29064.9                     M.U.Khandaker,       (14)E2467  4                              0.00946                            9.92     9.92
- 1002 29000   39000 A   2.101E7 140000.0  0.09085  0.00929           29064.9                     M.U.Khandaker,       (14)E2467  4                              0.00929                            10.2     10.2
- 1002 29000   39000 A   2.285E7129999.99  0.11372  0.01073           29064.9                     M.U.Khandaker,       (14)E2467  4                              0.01073                            9.44     9.44
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1002 29000   39000 A 9030000.0259999.980.21294490.0174804           29064.9                     M.U.Khandaker*,      (14)E2467  4                            0.0174804                            8.21     8.21                                        1.00635591.0063559
+ 1002 29000   39000 A    1.06E7 230000.00.1895371.01569915           29064.9                     M.U.Khandaker*,      (14)E2467  4                            .01569915                            8.28     8.28                                        1.00635591.0063559
+ 1002 29000   39000 A   1.341E7 190000.00.1371663.01207627           29064.9                     M.U.Khandaker*,      (14)E2467  4                            .01207627                            8.80     8.80                                        1.00635591.0063559
+ 1002 29000   39000 A   1.587E7 180000.00.1179952.01082839           29064.9                     M.U.Khandaker*,      (14)E2467  4                            .01082839                            9.18     9.18                                        1.00635591.0063559
+ 1002 29000   39000 A    1.86E7 150000.0.09674101   0.0095           29064.9                     M.U.Khandaker*,      (14)E2467  4                               0.0095                            9.82     9.82                                        1.00635591.0063559
+ 1002 29000   39000 A   1.943E7 150000.0.09781781 9.5906-3           29064.9                     M.U.Khandaker*,      (14)E2467  4                             9.5906-3                            9.80     9.80                                        1.00635591.006356
+ 1002 29000   39000 A   2.024E7 140000.0.09595603 9.5201-3           29064.9                     M.U.Khandaker*,      (14)E2467  4                             9.5201-3                            9.92     9.92                                        1.00635591.0063559
+ 1002 29000   39000 A   2.101E7 140000.0.09142744 9.3490-3           29064.9                     M.U.Khandaker*,      (14)E2467  4                             9.3490-3                            10.2     10.2                                        1.00635591.006356
+ 1002 29000   39000 A   2.285E7129999.990.11444280.0107982           29064.9                     M.U.Khandaker*,      (14)E2467  4                            0.0107982                            9.44     9.44                                        1.00635591.0063558
 #/C5DATA        0
 #/DATASET       E2467004 
 #DATASET        E2467005   20141119

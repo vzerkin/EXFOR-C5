@@ -179,6 +179,10 @@
 #CompNotes      ERR-ANALYS:(ERR-5,,2.)        ADDED AS COMMON:ERR-5,PER-CENT=1.0%
 #CompNotes      ERR-ANALYS:(ERR-6,,10.)       ADDED AS COMMON:ERR-6,PER-CENT=5.0%
 #CompNotes      ERR-ANALYS:(ERR-7,,1.)        ADDED AS COMMON:ERR-7,PER-CENT=0.5%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.817%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -195,21 +199,33 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 32-GE-74(8-O-16,X)35-BR-76,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (32-GE-74(8-O-16,X)35-BR-76,,SIG)
+#+               #[1]#DECAY-DATA (35-BR-76-G,16.20HR,DG,559.0,0.740) #Ix_old=0.74
+#+                a1=0.74/0.734;              #[1]#DECAY-DATA: correction to new 559.12 keV gamma-yield per decay Br-76-g Ix_new=0.734
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0081744
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D6298004    1.00817     -           1.00817     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D6298004    CS          9           1.00817     1.00817     1.00817     +0.817%     1.00817                
 #C5DATA         9
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 8016 32074   39000      7.45E71100000.0.07700001    0.014           35076.9                     D.Singh,             (13)D6298  4 0.0047932                      0.014 6.22                       18.2     18.2
- 8016 32074   39000      7.88E71300000.0   0.0876   0.0159           35076.9                     D.Singh,             (13)D6298  4 0.0054531                     0.0159 6.23                       18.2     18.2
- 8016 32074   39000      8.31E71200000.0   0.1204   0.0232           35076.9                     D.Singh,             (13)D6298  4 .00749484                     0.0232 6.22                       19.3     19.3
- 8016 32074   39000      8.73E71300000.0   0.2294   0.0422           35076.9                     D.Singh,             (13)D6298  4 .01428004                     0.0422 6.22                       18.4     18.4
- 8016 32074   39000      9.16E71400000.0   0.2931   0.0352           35076.9                     D.Singh,             (13)D6298  4 .01824533                     0.0352 6.22                       12       12
- 8016 32074   39000      9.57E71200000.0   0.3344   0.0467           35076.9                     D.Singh,             (13)D6298  4 .02081623                     0.0467 6.22                       14       14
- 8016 32074   39000      9.94E71200000.0   0.4322   0.0455           35076.9                     D.Singh,             (13)D6298  4 .02690424                     0.0455 6.22                       10.5     10.5
- 8016 32074   39000     1.048E81300000.0    0.435   0.0651           35076.9                     D.Singh,             (13)D6298  4 .02707853                     0.0651 6.22                       15       15
- 8016 32074   39000     1.116E81300000.00.5021001   0.0895           35076.9                     D.Singh,             (13)D6298  4 .03125547                     0.0895 6.22                       17.8     17.8
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 8016 32074   39000      7.45E71100000.0.07762944.01411444           35076.9                     D.Singh*,            (13)D6298  4  4.8324-3                  .01411444 6.22                       18.2     18.2                                        1.00817441.0081745
+ 8016 32074   39000      7.88E71300000.0.08831608.01602997           35076.9                     D.Singh*,            (13)D6298  4  5.4977-3                  .01602997 6.22                       18.2     18.2                                        1.00817441.0081744
+ 8016 32074   39000      8.31E71200000.00.1213842.02338964           35076.9                     D.Singh*,            (13)D6298  4  7.5561-3                  .02338964 6.22                       19.3     19.3                                        1.00817441.0081744
+ 8016 32074   39000      8.73E71300000.00.2312752.04254496           35076.9                     D.Singh*,            (13)D6298  4 .01439677                  .04254496 6.22                       18.4     18.4                                        1.00817441.0081744
+ 8016 32074   39000      9.16E71400000.00.2954959.03548774           35076.9                     D.Singh*,            (13)D6298  4 .01839448                  .03548774 6.22                       12       12                                          1.00817441.0081744
+ 8016 32074   39000      9.57E71200000.00.3371335.04708175           35076.9                     D.Singh*,            (13)D6298  4 .02098639                  .04708175 6.22                       14       14                                          1.00817441.0081744
+ 8016 32074   39000      9.94E71200000.0 0.435733.04587194           35076.9                     D.Singh*,            (13)D6298  4 .02712417                  .04587194 6.22                       10.5     10.5                                        1.00817441.0081744
+ 8016 32074   39000     1.048E81300000.00.4385559.06563215           35076.9                     D.Singh*,            (13)D6298  4 .02729988                  .06563215 6.22                       15       15                                          1.00817441.0081743
+ 8016 32074   39000     1.116E81300000.00.5062045.09023161           35076.9                     D.Singh*,            (13)D6298  4 .03151096                  .09023161 6.22                       17.8     17.8                                        1.00817441.0081744
 #/C5DATA        0
 #/DATASET       D6298004 
 #/C5.2.3        1               3               3               0               29              

@@ -94,6 +94,9 @@
 #REAC1          8-O-16,X
 #PRODUCT        35-BR-76
 #C4ReaCode      (8-O-16,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.817%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -110,20 +113,32 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 33-AS-75(8-O-16,X)35-BR-76,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (33-AS-75(8-O-16,X)35-BR-76,,SIG)
+#+               #[1]#DECAY-DATA (35-BR-76-G,16.2HR,DG,559.1,0.74) #Ix_old=0.74
+#+                a1=0.74/0.734;              #[1]#DECAY-DATA: correction to new 559.12 keV gamma-yield per decay Br-76-g Ix_new=0.734
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0081744
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D6039003    1.00817     -           1.00817     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D6039003    CS          8           1.00817     1.00817     1.00817     +0.817%     1.00817                
 #C5DATA         8
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 8016 33075   39000      8.31E7            0.0032   4.0E-4           35076.9                     R.Guin,              (08)D6039  3                               4.0E-4                            12.5     12.5
- 8016 33075   39000      8.69E7             0.003   4.0E-4           35076.9                     R.Guin,              (08)D6039  3                               4.0E-4                            13.3     13.3
- 8016 33075   39000      9.17E7            0.0049   5.0E-4           35076.9                     R.Guin,              (08)D6039  3                               5.0E-4                            10.2     10.2
- 8016 33075   39000      9.55E7            0.0038   4.0E-4           35076.9                     R.Guin,              (08)D6039  3                               4.0E-4                            10.5     10.5
- 8016 33075   39000      9.89E7            0.0049   4.0E-4           35076.9                     R.Guin,              (08)D6039  3                               4.0E-4                            8.16     8.16
- 8016 33075   39000     1.037E8            0.0071   6.0E-4           35076.9                     R.Guin,              (08)D6039  3                               6.0E-4                            8.45     8.45
- 8016 33075   39000     1.067E8            0.0099   7.0E-4           35076.9                     R.Guin,              (08)D6039  3                               7.0E-4                            7.07     7.07
- 8016 33075   39000      1.11E8            0.0111   7.0E-4           35076.9                     R.Guin,              (08)D6039  3                               7.0E-4                            6.31     6.31
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 8016 33075   39000      8.31E7          3.2262-3 4.0327-4           35076.9                     R.Guin*,             (08)D6039  3                             4.0327-4                            12.5     12.5                                        1.00817441.0081744
+ 8016 33075   39000      8.69E7          3.0245-3 4.0327-4           35076.9                     R.Guin*,             (08)D6039  3                             4.0327-4                            13.3     13.3                                        1.00817441.0081744
+ 8016 33075   39000      9.17E7          4.9401-3 5.0409-4           35076.9                     R.Guin*,             (08)D6039  3                             5.0409-4                            10.2     10.2                                        1.00817441.0081744
+ 8016 33075   39000      9.55E7          3.8311-3 4.0327-4           35076.9                     R.Guin*,             (08)D6039  3                             4.0327-4                            10.5     10.5                                        1.00817441.0081744
+ 8016 33075   39000      9.89E7          4.9401-3 4.0327-4           35076.9                     R.Guin*,             (08)D6039  3                             4.0327-4                            8.16     8.16                                        1.00817441.0081744
+ 8016 33075   39000     1.037E8          7.1580-3 6.0490-4           35076.9                     R.Guin*,             (08)D6039  3                             6.0490-4                            8.45     8.45                                        1.00817441.0081744
+ 8016 33075   39000     1.067E8          9.9809-3 7.0572-4           35076.9                     R.Guin*,             (08)D6039  3                             7.0572-4                            7.07     7.07                                        1.00817441.0081743
+ 8016 33075   39000      1.11E8         .01119074 7.0572-4           35076.9                     R.Guin*,             (08)D6039  3                             7.0572-4                            6.31     6.31                                        1.00817441.0081744
 #/C5DATA        0
 #/DATASET       D6039003 
 #DATASET        D6039004   20211216

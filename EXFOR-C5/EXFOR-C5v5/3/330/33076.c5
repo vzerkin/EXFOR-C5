@@ -25,6 +25,10 @@
 #REAC1          N,G
 #PRODUCT        30-ZN-71-M
 #C4ReaCode      (N,G),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+2.70%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -41,16 +45,28 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 30-ZN-70(N,G)30-ZN-71-M,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (30-ZN-70(N,G)30-ZN-71-M,,SIG)
+#+               #[1]#DECAY-DATA (30-ZN-71-M,3.96HR,DG,386.280,0.9140) #Ix_old=0.914
+#+                a1=0.914/0.89;              #[1]#DECAY-DATA: correction to new 386.371 keV gamma-yield per decay Zn-71-m Ix_new=0.89
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0269663
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        33076002    1.02697     -           1.02697     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          33076002    CS          4           1.02697     1.02697     1.02697     +2.70%      1.02697     m0: {,A.D.Carlson,J,NDS,110,3215,2009} : au197ng;::au197ng
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 30070   3 102M   400000.0 300000.0  0.001821.1397E-4                                       R.Pachuau,           (18)33076  2 4.9234E-51.0208E-41.2358E-51.1397E-4 2.71     5.61     0.68     6.26     6.26                      0.16083  .00320162
-    1 30070   3 102M   700000.0 200000.0  0.00199 6.374E-5                                       R.Pachuau,           (18)33076  2 5.3711E-53.0592E-51.5522E-5 6.374E-5 2.70     1.54     0.78     3.20     3.20                      0.096251 .00200169
-    1 30070   3 102M   960000.0 300000.0  0.00183 1.636E-4                                       R.Pachuau,           (18)33076  2  4.941E-51.5479E-41.8849E-5 1.636E-4 2.70     8.46     1.03     8.94     8.94                      0.086165 .00353378
-    1 30070   3 102M  1690000.0 300000.0  0.001339.5321E-5                                       R.Pachuau,           (18)33076  2 3.6015E-58.6172E-51.9431E-59.5321E-5 2.71     6.48     1.46     7.17     7.17                      .064573251.5990-3
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30070   3 102M   400000.0 300000.0 1.8691-3 1.1704-4                                       R.Pachuau*,          (18)33076  2  5.0562-51.0208E-4 1.2691-5 1.1704-4 2.71     5.46     0.68     6.26     6.26                      0.16083  .003201621.02696631.0269663
+    1 30070   3 102M   700000.0 200000.0 2.0437-3 6.5459-5                                       R.Pachuau*,          (18)33076  2  5.5159-53.0592E-5 1.5941-5 6.5459-5 2.70     1.50     0.78     3.20     3.20                      0.096251 .002001691.02696631.0269663
+    1 30070   3 102M   960000.0 300000.0 1.8793-3 1.6801-4                                       R.Pachuau*,          (18)33076  2  5.0742-51.5479E-4 1.9357-5 1.6801-4 2.70     8.24     1.03     8.94     8.94                      0.086165 .003533781.02696631.0269663
+    1 30070   3 102M  1690000.0 300000.0 1.3659-3 9.7891-5                                       R.Pachuau*,          (18)33076  2  3.6986-58.6172E-5 1.9955-5 9.7891-5 2.71     6.31     1.46     7.17     7.17                      .064573251.5990-3 1.02696631.0269663
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -65,10 +81,10 @@
 #COVARDATA      1           4           4
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-400000.     400000.     0.00182     6.26         100
-700000.     700000.     0.00199     3.2          38 100
-960000.     960000.     0.00183     8.94         13 27 100
-1690000.    1690000.    0.00133     7.17         16 32 11 100
+400000.     400000.     1.8691-3    6.13         100
+700000.     700000.     2.0437-3    3.18         39 100
+960000.     960000.     1.8793-3    8.73         14 28 100
+1690000.    1690000.    1.3659-3    7.02         17 33 12 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       33076002 

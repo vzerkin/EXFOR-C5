@@ -356,6 +356,10 @@
 #CompNotes      ERR-ANALYS:(ERR-7,0.02,2.4)   ADDED AS COMMON:ERR-7,PER-CENT=0.02%
 #CompNotes      ERR-ANALYS:(ERR-8,0.,5.)      ADDED AS COMMON:ERR-8,PER-CENT=2.5%
 #CompNotes      ERR-ANALYS:(ERR-9,0.1,1.0)    ADDED AS COMMON:ERR-9,PER-CENT=0.1%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.86%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -372,13 +376,25 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 68-ER-168(N,A)66-DY-165-M,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (68-ER-168(N,A)66-DY-165-M,,SIG)
+#+               #[1]#DECAY-DATA (66-DY-165-M,1.2576MIN,DG,515.5,0.015310) #Ix_old=0.01531
+#+                a1=0.01531/0.0156;          #[1]#DECAY-DATA: correction to new 515.47 keV gamma-yield per decay Dy-165-m Ix_new=0.0156
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.98141026
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        326930052   0.981410    -           0.981410    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          326930052   CS          1           0.981410    0.981410    0.981410    -1.86%      1.01894                
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 68168   3 107M     1.48E7 200000.0   9.0E-4   2.0E-4                                       Junhua Luo,          (11)32693  52 2.987E-5   9.0E-7            2.0E-4 3.32     0.10              22.2     22.2
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 68168   3 107M     1.48E7 200000.0 8.8327-4 1.9628-4                                       Junhua Luo*,         (11)32693  52 2.9315-5   9.0E-7          1.9628-4 3.32     0.10              22.2     22.2                                        0.98141030.9814103
 #/C5DATA        0
 #/DATASET       326930052
 #DATASET        326930061  20211005
@@ -540,6 +556,10 @@
 #CompNotes      ERR-ANALYS:(ERR-7,0.02,2.4)   ADDED AS COMMON:ERR-7,PER-CENT=0.02%
 #CompNotes      ERR-ANALYS:(ERR-8,0.,5.)      ADDED AS COMMON:ERR-8,PER-CENT=2.5%
 #CompNotes      ERR-ANALYS:(ERR-9,0.1,1.0)    ADDED AS COMMON:ERR-9,PER-CENT=0.1%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.414%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -556,14 +576,26 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 68-ER-170(N,A)66-DY-167,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (68-ER-170(N,A)66-DY-167,,SIG)
+#+               #[1]#DECAY-DATA (66-DY-167,6.208MIN,DG,569.7,0.481) #Ix_old=0.481
+#+                a1=0.481/0.483;             #[1]#DECAY-DATA: correction to new 569.7 keV gamma-yield per decay Dy-167 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9958592
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        326930063   0.995859    -           0.995859    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          326930063   CS          2           0.995859    0.995859    0.995859    -0.414%     1.00416                
 #C5DATA         2
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 68170   3 107      1.35E7 200000.0   8.4E-4   8.0E-5                                       Junhua Luo,          (11)32693  632.7879E-5   8.4E-7            8.0E-5 3.32     0.10              9.52     9.52
-    1 68170   3 107      1.48E7 200000.0   9.7E-4   3.9E-4                                       Junhua Luo,          (11)32693  633.2194E-5   9.7E-7            3.9E-4 3.32     0.10              40.2     40.2
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 68170   3 107      1.35E7 200000.0 8.3652-4 7.9669-5                                       Junhua Luo*,         (11)32693  63 2.7764-5   8.4E-7          7.9669-5 3.32     0.10              9.52     9.52                                        0.99585920.9958593
+    1 68170   3 107      1.48E7 200000.0 9.6598-4 3.8839-4                                       Junhua Luo*,         (11)32693  63 3.2061-5   9.7E-7          3.8839-4 3.32     0.10              40.2     40.2                                        0.99585920.9958592
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -578,8 +610,8 @@
 #COVARDATA      1           2           2
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.35E7      1.35E7      8.4E-4      3.32         100
-1.48E7      1.48E7      9.7E-4      3.32         50 100
+1.35E7      1.35E7      8.3652-4    3.32         100
+1.48E7      1.48E7      9.6598-4    3.32         50 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       326930063

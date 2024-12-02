@@ -117,9 +117,13 @@
 #C4ReaCode      (N,2N),SIG
 #CompNotes      RECALCULATED COLUMN:MONIT-ERR,B  TO:PER-CENT=1.09%
 #CompNotes      RENORMALIZE(SIG-MON): Data[0]*1.0008403(1.5e7)
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+20.1%
 #CompNotes      MODIFY(MON): dData
+#CompNotes      MODIFY(DEC): dData
 #CompNotes      MODIFY(MON): dTot
+#CompNotes      MODIFY(DEC): dTot
 #CompNotes      MODIFY(MON): dSys
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -147,18 +151,23 @@
 #+              a1=recom$nb93n2nm[EN];        #[0]#new monitor point [14.7MeV]
 #+              dy=dy/y;                      #to rel. uncertainties
 #+              y=y*a1/a0;                    #[0]#renormalizing CS
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (76-OS-192(N,2N)76-OS-191-M,,SIG)
+#+               #[1]#DECAY-DATA (76-OS-191-M,13.10HR,DG,74.38,0.000729) #Ix_old=7.29E-4
+#+                a1=7.29E-4/6.07E-4;         #[1]#DECAY-DATA: correction to new 74.38 keV gamma-yield per decay Os-191-m Ix_new=6.07E-4
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.2009884
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
-#/C5CORR        31618003    1.00084     1.00084     -           -
+#/C5CORR        31618003    1.20200     1.00084     1.20099     -
 #XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          31618003    CS          1           1.00084     1.00084     1.00084     +0.0840%    1.00084     [MONIT]::nb93n2nm
+#XCORR          31618003    CS          1           1.20200     1.20200     1.20200     +20.2%      1.20200     [MONIT]::nb93n2nm
 #C5DATA         1
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
 #Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
 #---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 76192   3  16MA    1.47E7 200000.01.02686210.1859259                                       Liangyong Zhao*,     (08)31618  3 .02150334                  0.1859259 2.09                       18.1     18.1    0.4597   0.005    0.46008632.7990-3 1.00084030.9996017
+    1 76192   3  16MA    1.47E7 200000.01.23324950.2232949                                       Liangyong Zhao*,     (08)31618  3 .02582527                  0.2232949 2.09                       18.1     18.1    0.4597   0.005    0.46008632.7990-3 1.20199761.20051
 #/C5DATA        0
 #/DATASET       31618003 
 #DATASET        31618004   20080721

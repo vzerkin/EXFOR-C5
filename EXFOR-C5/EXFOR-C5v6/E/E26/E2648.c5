@@ -400,6 +400,10 @@
 #C4ReaCode      (D,X)CUM,SIG
 #CompNotes      ERR-ANALYS:(ERR-S,0.5,30.5)   ADDED AS COMMON:ERR-S,PER-CENT=0.5%
 #CompNotes      ERR-ANALYS:(ERR-5,,13.)       ADDED AS COMMON:ERR-5,PER-CENT=6.5%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.20%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cumulative cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -416,18 +420,30 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 30-ZN-0(D,X)30-ZN-63,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (30-ZN-0(D,X)30-ZN-63,CUM,SIG)
+#+               #[1]#DECAY-DATA (30-ZN-63,38.47MIN,DG,669.62,0.082) #Ix_old=0.082
+#+                a1=0.082/0.083;             #[1]#DECAY-DATA: correction to new 669.64 keV gamma-yield per decay Zn-63 Ix_new=0.083
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9879519
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        E2648008    0.987952    -           0.987952    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          E2648008    CS          6           0.987952    0.987952    0.987952    -1.20%      1.01220     m0: {,A.Hermanne+,J,NDS,148,338,2018} : ti0dx;::ti0dx
 #C5DATA         6
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1002 30000   39001      1.56E7 400000.0   0.0053   0.0026           30063.9                     Z.Tsoodol,           (20)E2648  8  6.299E-4  2.65E-5            0.0026 11.9     0.50              49.1     49.1
- 1002 30000   39001      1.73E7 400000.0   0.0082   0.0024           30063.9                     Z.Tsoodol,           (20)E2648  8 9.7456E-4   4.1E-5            0.0024 11.9     0.50              29.3     29.3
- 1002 30000   39001      1.89E7 400000.0   0.0083   0.0021           30063.9                     Z.Tsoodol,           (20)E2648  8 9.8644E-4  4.15E-5            0.0021 11.9     0.50              25.3     25.3
- 1002 30000   39001      2.04E7 300000.0    0.023   0.0034           30063.9                     Z.Tsoodol,           (20)E2648  8 0.0027335  1.15E-4            0.0034 11.9     0.50              14.8     14.8
- 1002 30000   39001      2.19E7 300000.0   0.0353   0.0046           30063.9                     Z.Tsoodol,           (20)E2648  8 0.0041954 1.765E-4            0.0046 11.9     0.50              13       13
- 1002 30000   39001      2.32E7 300000.0.06090001   0.0072           30063.9                     Z.Tsoodol,           (20)E2648  8 0.0072379 3.045E-4            0.0072 11.9     0.50              11.8     11.8
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1002 30000   39001      1.56E7 400000.0 5.2361-3 2.5687-3           30063.9                     Z.Tsoodol*,          (20)E2648  8  6.2231-4  2.65E-5          2.5687-3 11.9     0.51              49.1     49.1                                        0.98795190.9879518
+ 1002 30000   39001      1.73E7 400000.0 8.1012-3 2.3711-3           30063.9                     Z.Tsoodol*,          (20)E2648  8  9.6282-4   4.1E-5          2.3711-3 11.9     0.51              29.3     29.3                                        0.98795190.9879519
+ 1002 30000   39001      1.89E7 400000.0   0.0082 2.0747-3           30063.9                     Z.Tsoodol*,          (20)E2648  8  9.7456-4  4.15E-5          2.0747-3 11.9     0.51              25.3     25.3                                        0.98795190.9879518
+ 1002 30000   39001      2.04E7 300000.0.02272289 3.3590-3           30063.9                     Z.Tsoodol*,          (20)E2648  8  2.7006-3  1.15E-4          3.3590-3 11.9     0.51              14.8     14.8                                        0.98795190.9879518
+ 1002 30000   39001      2.19E7 300000.00.0348747 4.5446-3           30063.9                     Z.Tsoodol*,          (20)E2648  8  4.1449-3 1.765E-4          4.5446-3 11.9     0.51              13       13                                          0.98795190.9879519
+ 1002 30000   39001      2.32E7 300000.0.06016628 7.1133-3           30063.9                     Z.Tsoodol*,          (20)E2648  8  7.1507-3 3.045E-4          7.1133-3 11.9     0.51              11.8     11.8                                        0.98795190.9879519
 #/C5DATA        0
 #/DATASET       E2648008 
 #DATASET        E2648009   20200811

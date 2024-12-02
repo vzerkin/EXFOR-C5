@@ -144,6 +144,10 @@
 #CompNotes      ERR-ANALYS:(ERR-1,,1.)        ADDED AS COMMON:ERR-1,PER-CENT=0.5%
 #CompNotes      ERR-ANALYS:(ERR-2,,2.)        ADDED AS COMMON:ERR-2,PER-CENT=1.0%
 #CompNotes      ERR-ANALYS:(ERR-3,,10.)       ADDED AS COMMON:ERR-3,PER-CENT=5.0%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.87%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -160,16 +164,28 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 65-TB-159(8-O-16,X)70-YB-167,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (65-TB-159(8-O-16,X)70-YB-167,,SIG)
+#+               #[1]#DECAY-DATA (70-YB-167,17.5MIN,DG,143.46,0.0210) #Ix_old=0.021
+#+                a1=0.021/0.0214;            #[1]#DECAY-DATA: correction to new 143.46 keV gamma-yield per decay Yb-167 Ix_new=0.0214
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.98130834
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D6016004    0.981308    -           0.981308    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D6016004    CS          4           0.981308    0.981308    0.981308    -1.87%      1.01905                
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 8016 65159   39000 A    8.32E7 900000.0    0.009  0.00123           70167.9                     P.P.Singh,           (08)D6016  4 4.6111E-4                    0.00123 5.12                       13.7     13.7
- 8016 65159   39000 A    8.72E7 800000.0    0.028  0.00422           70167.9                     P.P.Singh,           (08)D6016  4 0.0014346                    0.00422 5.12                       15.1     15.1
- 8016 65159   39000 A    8.96E71000000.0    0.049  0.00594           70167.9                     P.P.Singh,           (08)D6016  4 0.0025105                    0.00594 5.12                       12.1     12.1
- 8016 65159   39000 A    9.46E7 400000.0    0.021  0.00363           70167.9                     P.P.Singh,           (08)D6016  4 .00107593                    0.00363 5.12                       17.3     17.3
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 8016 65159   39000 A    8.32E7 900000.0 8.8318-3 1.2070-3           70167.9                     P.P.Singh*,          (08)D6016  4  4.5249-4                   1.2070-3 5.12                       13.7     13.7                                        0.98130830.9813085
+ 8016 65159   39000 A    8.72E7 800000.0.02747663 4.1411-3           70167.9                     P.P.Singh*,          (08)D6016  4  1.4078-3                   4.1411-3 5.12                       15.1     15.1                                        0.98130830.9813083
+ 8016 65159   39000 A    8.96E71000000.0.04808411 5.8290-3           70167.9                     P.P.Singh*,          (08)D6016  4  2.4636-3                   5.8290-3 5.12                       12.1     12.1                                        0.98130830.9813083
+ 8016 65159   39000 A    9.46E7 400000.0.02060748 3.5621-3           70167.9                     P.P.Singh*,          (08)D6016  4  1.0558-3                   3.5621-3 5.12                       17.3     17.3                                        0.98130830.9813083
 #/C5DATA        0
 #/DATASET       D6016004 
 #DATASET        D6016005   20230615

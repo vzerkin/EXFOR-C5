@@ -224,6 +224,10 @@
 #REAC1          8-O-16,X
 #PRODUCT        36-KR-76
 #C4ReaCode      (8-O-16,X)CUM,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+3.45%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cumulative cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -240,19 +244,31 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 30-ZN-66(8-O-16,X)36-KR-76,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (30-ZN-66(8-O-16,X)36-KR-76,CUM,SIG)
+#+               #[1]#DECAY-DATA (36-KR-76,14.8HR,DG,315.7,0.39) #Ix_old=0.39
+#+                a1=0.39/0.377;              #[1]#DECAY-DATA: correction to new 315.8 keV gamma-yield per decay Kr-76 Ix_new=0.377
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0344827
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        A0745005    1.03448     -           1.03448     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          A0745005    CS          7           1.03448     1.03448     1.03448     +3.45%      1.03448                
 #C5DATA         7
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 8016 30066   39001     6.126E7             0.038    0.002           36076.9                     Suparna Sodaye,      (06)A0745  5    0.0019                      0.002 5                          5.26     5.26
- 8016 30066   39001     6.643E7            0.0623   0.0021           36076.9                     Suparna Sodaye,      (06)A0745  5  0.003115                     0.0021 5                          3.37     3.37
- 8016 30066   39001     7.158E7         .06900001    0.002           36076.9                     Suparna Sodaye,      (06)A0745  5   0.00345                      0.002 5                          2.90     2.90
- 8016 30066   39001     7.669E7         .07466001  0.00266           36076.9                     Suparna Sodaye,      (06)A0745  5  0.003733                    0.00266 5                          3.56     3.56
- 8016 30066   39001      8.18E7            0.0556   0.0035           36076.9                     Suparna Sodaye,      (06)A0745  5   0.00278                     0.0035 5                          6.29     6.29
- 8016 30066   39001     8.692E7         .03733001   0.0015           36076.9                     Suparna Sodaye,      (06)A0745  5 0.0018665                     0.0015 5                          4.02     4.02
- 8016 30066   39001     9.304E7            0.0253   0.0026           36076.9                     Suparna Sodaye,      (06)A0745  5  0.001265                     0.0026 5                          10.3     10.3
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 8016 30066   39001     6.126E7         .03931034 2.0690-3           36076.9                     Suparna Sodaye*,     (06)A0745  5  1.9655-3                   2.0690-3 5                          5.26     5.26                                        1.03448271.0344828
+ 8016 30066   39001     6.643E7         .06444827 2.1724-3           36076.9                     Suparna Sodaye*,     (06)A0745  5  3.2224-3                   2.1724-3 5                          3.37     3.37                                        1.03448271.0344827
+ 8016 30066   39001     7.158E7         .07137932 2.0690-3           36076.9                     Suparna Sodaye*,     (06)A0745  5  3.5690-3                   2.0690-3 5                          2.90     2.90                                        1.03448271.0344827
+ 8016 30066   39001     7.669E7         .07723449 2.7517-3           36076.9                     Suparna Sodaye*,     (06)A0745  5  3.8617-3                   2.7517-3 5                          3.56     3.56                                        1.03448271.0344827
+ 8016 30066   39001      8.18E7         .05751724.00362069           36076.9                     Suparna Sodaye*,     (06)A0745  5  2.8759-3                  .00362069 5                          6.29     6.29                                        1.03448271.0344827
+ 8016 30066   39001     8.692E7         .03861725 1.5517-3           36076.9                     Suparna Sodaye*,     (06)A0745  5  1.9309-3                   1.5517-3 5                          4.02     4.02                                        1.03448271.0344827
+ 8016 30066   39001     9.304E7         .02617241 2.6897-3           36076.9                     Suparna Sodaye*,     (06)A0745  5  1.3086-3                   2.6897-3 5                          10.3     10.3                                        1.03448271.0344827
 #/C5DATA        0
 #/DATASET       A0745005 
 #DATASET        A0745006   20070528
@@ -906,6 +922,10 @@
 #REAC1          17-CL-37,X
 #PRODUCT        36-KR-76
 #C4ReaCode      (17-CL-37,X)CUM,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+3.45%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cumulative cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -922,16 +942,28 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 21-SC-45(17-CL-37,X)36-KR-76,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (21-SC-45(17-CL-37,X)36-KR-76,CUM,SIG)
+#+               #[1]#DECAY-DATA (36-KR-76,14.8HR,DG,315.7,0.39) #Ix_old=0.39
+#+                a1=0.39/0.377;              #[1]#DECAY-DATA: correction to new 315.8 keV gamma-yield per decay Kr-76 Ix_new=0.377
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0344827
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        A0745017    1.03448     -           1.03448     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          A0745017    CS          4           1.03448     1.03448     1.03448     +3.45%      1.03448                
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-17037 21045   39001       1.0E8            0.0217   0.0027           36076.9                     Suparna Sodaye,      (06)A0745 17  0.001085                     0.0027 5                          12.4     12.4
-17037 21045   39001      1.08E8            0.0291   0.0028           36076.9                     Suparna Sodaye,      (06)A0745 17  0.001455                     0.0028 5                          9.62     9.62
-17037 21045   39001      1.16E8             0.035   0.0033           36076.9                     Suparna Sodaye,      (06)A0745 17   0.00175                     0.0033 5                          9.43     9.43
-17037 21045   39001      1.24E8            0.0301    0.003           36076.9                     Suparna Sodaye,      (06)A0745 17  0.001505                      0.003 5                          9.97     9.97
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+17037 21045   39001       1.0E8         .02244828 2.7931-3           36076.9                     Suparna Sodaye*,     (06)A0745 17  1.1224-3                   2.7931-3 5                          12.4     12.4                                        1.03448271.0344827
+17037 21045   39001      1.08E8         .03010345 2.8966-3           36076.9                     Suparna Sodaye*,     (06)A0745 17  1.5052-3                   2.8966-3 5                          9.62     9.62                                        1.03448271.0344828
+17037 21045   39001      1.16E8         .03620689 3.4138-3           36076.9                     Suparna Sodaye*,     (06)A0745 17  1.8103-3                   3.4138-3 5                          9.43     9.43                                        1.03448271.0344826
+17037 21045   39001      1.24E8         .03113793 3.1034-3           36076.9                     Suparna Sodaye*,     (06)A0745 17  1.5569-3                   3.1034-3 5                          9.97     9.97                                        1.03448271.0344827
 #/C5DATA        0
 #/DATASET       A0745017 
 #DATASET        A0745018   20070528
@@ -1012,6 +1044,10 @@
 #REAC1          17-CL-37,X
 #PRODUCT        35-BR-76
 #C4ReaCode      (17-CL-37,X)CUM,SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.817%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cumulative cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1028,16 +1064,28 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 21-SC-45(17-CL-37,X)35-BR-76,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (21-SC-45(17-CL-37,X)35-BR-76,CUM,SIG)
+#+               #[1]#DECAY-DATA (35-BR-76,16.2HR,DG,559.1,0.740) #Ix_old=0.74
+#+                a1=0.74/0.734;              #[1]#DECAY-DATA: correction to new 559.12 keV gamma-yield per decay Br-76 Ix_new=0.734
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0081744
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        A0745019    1.00817     -           1.00817     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          A0745019    CS          4           1.00817     1.00817     1.00817     +0.817%     1.00817                
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-17037 21045   39001       1.0E8             0.002   0.0018           35076.9                     Suparna Sodaye,      (06)A0745 19    1.0E-4                     0.0018 5                          90       90
-17037 21045   39001      1.08E8             0.004   0.0023           35076.9                     Suparna Sodaye,      (06)A0745 19    2.0E-4                     0.0023 5                          57.5     57.5
-17037 21045   39001      1.16E8            0.0042   0.0057           35076.9                     Suparna Sodaye,      (06)A0745 19    2.1E-4                     0.0057 5                          135.7    135.7
-17037 21045   39001      1.24E8            0.0145   0.0099           35076.9                     Suparna Sodaye,      (06)A0745 19   7.25E-4                     0.0099 5                          68.3     68.3
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+17037 21045   39001       1.0E8          2.0163-3 1.8147-3           35076.9                     Suparna Sodaye*,     (06)A0745 19  1.0082-4                   1.8147-3 5                          90       90                                          1.00817441.0081744
+17037 21045   39001      1.08E8          4.0327-3 2.3188-3           35076.9                     Suparna Sodaye*,     (06)A0745 19  2.0163-4                   2.3188-3 5                          57.5     57.5                                        1.00817441.0081745
+17037 21045   39001      1.16E8          4.2343-3 5.7466-3           35076.9                     Suparna Sodaye*,     (06)A0745 19  2.1172-4                   5.7466-3 5                          135.7    135.7                                       1.00817441.0081745
+17037 21045   39001      1.24E8         .01461853 9.9809-3           35076.9                     Suparna Sodaye*,     (06)A0745 19  7.3093-4                   9.9809-3 5                          68.3     68.3                                        1.00817441.0081744
 #/C5DATA        0
 #/DATASET       A0745019 
 #DATASET        A0745020   20070528

@@ -1988,6 +1988,7 @@
 #REAC1          N,G
 #PRODUCT        33-AS-76
 #C4ReaCode      (N,G),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+10.6%
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -2004,28 +2005,40 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 33-AS-75(N,G)33-AS-76,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (33-AS-75(N,G)33-AS-76,,SIG)
+#+               #[1]#DECAY-DATA ((1.)33-AS-76,26.24HR,DG,559.1,0.45) #Ix_old=0.45
+#+                a1=0.45/0.407;              #[1]#DECAY-DATA: correction to new 559.086 keV gamma-yield per decay As-76 Ix_new=0.407
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.105651
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23266075    1.10565     -           1.10565     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23266075    CS          16          1.10565     1.10565     1.10565     +10.6%      1.10565                
 #C5DATA         16
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 33075   3 102 C    0.0253              3.88                                                F.Farina Arbocco,    (13)23266 75 
-    1 33075   3 102 C    0.0253              3.99                                                F.Farina Arbocco,    (13)23266 75 
-    1 33075   3 102 C    0.0253              3.87                                                F.Farina Arbocco,    (13)23266 75 
-    1 33075   3 102 C    0.0253               3.9                                                F.Farina Arbocco,    (13)23266 75 
-    1 33075   3 102 C    0.0253              4.14                                                F.Farina Arbocco,    (13)23266 75 
-    1 33075   3 102 C    0.0253              3.91                                                F.Farina Arbocco,    (13)23266 75 
-    1 33075   3 102 C    0.0253              3.66                                                F.Farina Arbocco,    (13)23266 75 
-    1 33075   3 102 C    0.0253              3.83                                                F.Farina Arbocco,    (13)23266 75 
-    1 33075   3 102 C    0.0253              3.85                                                F.Farina Arbocco,    (13)23266 75 
-    1 33075   3 102 C    0.0253              3.76                                                F.Farina Arbocco,    (13)23266 75 
-    1 33075   3 102 C    0.0253               3.8                                                F.Farina Arbocco,    (13)23266 75 
-    1 33075   3 102 C    0.0253              3.84                                                F.Farina Arbocco,    (13)23266 75 
-    1 33075   3 102 C    0.0253              3.94                                                F.Farina Arbocco,    (13)23266 75 
-    1 33075   3 102 C    0.0253              3.95                                                F.Farina Arbocco,    (13)23266 75 
-    1 33075   3 102 C    0.0253              3.81                                                F.Farina Arbocco,    (13)23266 75 
-    1 33075   3 102 C    0.0253              3.82                                                F.Farina Arbocco,    (13)23266 75 
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 33075   3 102 C    0.0253          4.289926                                                F.Farina Arbocco*,   (13)23266 75                                                                                                                      1.105651
+    1 33075   3 102 C    0.0253         4.4115477                                                F.Farina Arbocco*,   (13)23266 75                                                                                                                      1.105651
+    1 33075   3 102 C    0.0253          4.278869                                                F.Farina Arbocco*,   (13)23266 75                                                                                                                      1.105651
+    1 33075   3 102 C    0.0253          4.312039                                                F.Farina Arbocco*,   (13)23266 75                                                                                                                      1.105651
+    1 33075   3 102 C    0.0253          4.577395                                                F.Farina Arbocco*,   (13)23266 75                                                                                                                      1.105651
+    1 33075   3 102 C    0.0253          4.323096                                                F.Farina Arbocco*,   (13)23266 75                                                                                                                      1.105651
+    1 33075   3 102 C    0.0253          4.046683                                                F.Farina Arbocco*,   (13)23266 75                                                                                                                      1.105651
+    1 33075   3 102 C    0.0253         4.2346435                                                F.Farina Arbocco*,   (13)23266 75                                                                                                                      1.105651
+    1 33075   3 102 C    0.0253         4.2567563                                                F.Farina Arbocco*,   (13)23266 75                                                                                                                      1.105651
+    1 33075   3 102 C    0.0253          4.157248                                                F.Farina Arbocco*,   (13)23266 75                                                                                                                      1.105651
+    1 33075   3 102 C    0.0253         4.2014737                                                F.Farina Arbocco*,   (13)23266 75                                                                                                                      1.105651
+    1 33075   3 102 C    0.0253            4.2457                                                F.Farina Arbocco*,   (13)23266 75                                                                                                                      1.105651
+    1 33075   3 102 C    0.0253          4.356265                                                F.Farina Arbocco*,   (13)23266 75                                                                                                                      1.105651
+    1 33075   3 102 C    0.0253         4.3673215                                                F.Farina Arbocco*,   (13)23266 75                                                                                                                      1.105651
+    1 33075   3 102 C    0.0253           4.21253                                                F.Farina Arbocco*,   (13)23266 75                                                                                                                      1.105651
+    1 33075   3 102 C    0.0253          4.223587                                                F.Farina Arbocco*,   (13)23266 75                                                                                                                      1.105651
 #/C5DATA        0
 #/DATASET       23266075 
 #DATASET        23266078   20230215

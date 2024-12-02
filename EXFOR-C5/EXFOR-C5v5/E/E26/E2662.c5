@@ -679,7 +679,7 @@
 #+               #[1]#---Reaction decay-data
 #+               #[1]#REACTION   (50-SN-0(3-LI-7,X)52-TE-121-M,CUM,SIG)
 #+               #[1]#DECAY-DATA (52-TE-121-M,154.D,DG,212.189,0.814) #Ix_old=0.814
-#+                a1=0.814/0.815;             #[1]#DECAY-DATA: correction to new 212.189 keV gamma-yield per decay Te-121-m Ix_new=0.815
+#+                a1=0.814/0.815;             #[1]#DECAY-DATA: correction to new 212.19 keV gamma-yield per decay Te-121-m Ix_new=0.815
 #+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99877304
 #+              dy=dy*y;                      #to abs. uncertainties
 #+
@@ -1226,6 +1226,9 @@
 #REAC1          3-LI-7,X
 #PRODUCT        51-SB-116-M
 #C4ReaCode      (3-LI-7,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+8.25%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -1242,20 +1245,32 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 50-SN-0(3-LI-7,X)51-SB-116-M,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (50-SN-0(3-LI-7,X)51-SB-116-M,,SIG)
+#+               #[1]#DECAY-DATA (51-SB-116-M,60.3MIN,DG,407.351,0.42) #Ix_old=0.42
+#+                a1=0.42/0.388;              #[1]#DECAY-DATA: correction to new 407.351 keV gamma-yield per decay Sb-116-m Ix_new=0.388
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0824741
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        E2662020    1.08247     -           1.08247     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          E2662020    CS          8           1.08247     1.08247     1.08247     +8.25%      1.08247                
 #C5DATA         8
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 3007 50000   39000M     3.13E7 200000.0  0.00139   7.4E-4           51116.9                     I.Nishinaka,         (17)E2662 20                               7.4E-4                            53.2     53.2
- 3007 50000   39000M     3.75E7 200000.0  0.00173   7.9E-4           51116.9                     I.Nishinaka,         (17)E2662 20                               7.9E-4                            45.7     45.7
- 3007 50000   39000M     4.28E7 100000.0  0.00772   9.3E-4           51116.9                     I.Nishinaka,         (17)E2662 20                               9.3E-4                            12       12
- 3007 50000   39000M     4.76E7 200000.0   0.0141   8.0E-4           51116.9                     I.Nishinaka,         (17)E2662 20                               8.0E-4                            5.67     5.67
- 3007 50000   39000M     5.08E7 200000.0   0.0224    0.002           51116.9                     I.Nishinaka,         (17)E2662 20                                0.002                            8.93     8.93
- 3007 50000   39000M     5.36E7 200000.0   0.0236   0.0019           51116.9                     I.Nishinaka,         (17)E2662 20                               0.0019                            8.05     8.05
- 3007 50000   39000M     5.63E7 200000.0   0.0258   0.0019           51116.9                     I.Nishinaka,         (17)E2662 20                               0.0019                            7.36     7.36
- 3007 50000   39000M     5.88E7 200000.0   0.0297   0.0018           51116.9                     I.Nishinaka,         (17)E2662 20                               0.0018                            6.06     6.06
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 3007 50000   39000M     3.13E7 200000.0 1.5046-3 8.0103-4           51116.9                     I.Nishinaka*,        (17)E2662 20                             8.0103-4                            53.2     53.2                                        1.08247411.0824741
+ 3007 50000   39000M     3.75E7 200000.0.00187268 8.5515-4           51116.9                     I.Nishinaka*,        (17)E2662 20                             8.5515-4                            45.7     45.7                                        1.08247411.0824741
+ 3007 50000   39000M     4.28E7 100000.0 8.3567-3 1.0067-3           51116.9                     I.Nishinaka*,        (17)E2662 20                             1.0067-3                            12       12                                          1.08247411.0824741
+ 3007 50000   39000M     4.76E7 200000.0.01526289 8.6598-4           51116.9                     I.Nishinaka*,        (17)E2662 20                             8.6598-4                            5.67     5.67                                        1.08247411.0824741
+ 3007 50000   39000M     5.08E7 200000.0.02424742 2.1649-3           51116.9                     I.Nishinaka*,        (17)E2662 20                             2.1649-3                            8.93     8.93                                        1.08247411.0824741
+ 3007 50000   39000M     5.36E7 200000.0.02554639 2.0567-3           51116.9                     I.Nishinaka*,        (17)E2662 20                             2.0567-3                            8.05     8.05                                        1.08247411.0824741
+ 3007 50000   39000M     5.63E7 200000.0.02792783 2.0567-3           51116.9                     I.Nishinaka*,        (17)E2662 20                             2.0567-3                            7.36     7.36                                        1.08247411.0824741
+ 3007 50000   39000M     5.88E7 200000.0.03214948 1.9485-3           51116.9                     I.Nishinaka*,        (17)E2662 20                             1.9485-3                            6.06     6.06                                        1.08247411.0824741
 #/C5DATA        0
 #/DATASET       E2662020 
 #/C5M.2.3       1               19              19              0               167             

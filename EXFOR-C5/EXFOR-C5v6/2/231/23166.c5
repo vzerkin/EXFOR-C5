@@ -230,6 +230,10 @@
 #REAC1          N,G
 #PRODUCT        30-ZN-71-M
 #C4ReaCode      (N,G),SIG,,SPA
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.13%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -246,16 +250,28 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 30-ZN-70(N,G)30-ZN-71-M,,SIG,,SPA
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (30-ZN-70(N,G)30-ZN-71-M,,SIG,,SPA)
+#+               #[1]#DECAY-DATA (30-ZN-71-M,3.96HR,DG,487.30,0.612) #Ix_old=0.612
+#+                a1=0.612/0.619;             #[1]#DECAY-DATA: correction to new 487.402 keV gamma-yield per decay Zn-71-m Ix_new=0.619
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9886914
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23166006    0.988691    -           0.988691    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23166006    CS          4           0.988691    0.988691    0.988691    -1.13%      1.01144                
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                    SpT     dSpT     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 30070   3 102MS   25000.0           0.00669   4.0E-4                                       R.Reifarth,          (12)23166  6 3.4925E-4 5.352E-5            4.0E-4 5.22     0.80              5.98     5.98
-    1 30070   3 102MS   25000.0           0.00746   4.3E-4                                       R.Reifarth,          (12)23166  6 3.8945E-4 5.968E-5            4.3E-4 5.22     0.80              5.76     5.76
-    1 30070   3 102MS   25000.0           0.00639   3.7E-4                                       R.Reifarth,          (12)23166  6 3.3359E-4 5.112E-5            3.7E-4 5.22     0.80              5.79     5.79
-    1 30070   3 102MS   25000.0           0.00675   4.7E-4                                       R.Reifarth,          (12)23166  6 3.5238E-4   5.4E-5            4.7E-4 5.22     0.80              6.96     6.96
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30070   3 102MS   25000.0          6.6143-3 3.9548-4                                       R.Reifarth*,         (12)23166  6  3.4530-4 5.352E-5          3.9548-4 5.22     0.81              5.98     5.98                                        0.98869140.9886914
+    1 30070   3 102MS   25000.0          7.3756-3 4.2514-4                                       R.Reifarth*,         (12)23166  6  3.8505-4 5.968E-5          4.2514-4 5.22     0.81              5.76     5.76                                        0.98869140.9886914
+    1 30070   3 102MS   25000.0          6.3177-3 3.6582-4                                       R.Reifarth*,         (12)23166  6  3.2982-4 5.112E-5          3.6582-4 5.22     0.81              5.79     5.79                                        0.98869140.9886913
+    1 30070   3 102MS   25000.0          6.6737-3 4.6468-4                                       R.Reifarth*,         (12)23166  6  3.4840-4   5.4E-5          4.6468-4 5.22     0.81              6.96     6.96                                        0.98869140.9886914
 #/C5DATA        0
 #/DATASET       23166006 
 #DATASET        23166007   20211119
@@ -701,6 +717,10 @@
 #REAC1          N,G
 #PRODUCT        30-ZN-71-M
 #C4ReaCode      (N,G),SIG,,SPA
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-1.13%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -717,16 +737,28 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 30-ZN-70(N,G)30-ZN-71-M,,SIG,,SPA
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (30-ZN-70(N,G)30-ZN-71-M,,SIG,,SPA)
+#+               #[1]#DECAY-DATA (30-ZN-71-M,3.96HR,DG,487.30,0.612) #Ix_old=0.612
+#+                a1=0.612/0.619;             #[1]#DECAY-DATA: correction to new 487.402 keV gamma-yield per decay Zn-71-m Ix_new=0.619
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9886914
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        23166015    0.988691    -           0.988691    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          23166015    CS          4           0.988691    0.988691    0.988691    -1.13%      1.01144                
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                    SpT     dSpT     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 30070   3 102M    25000.0            0.0071   4.0E-4                                       R.Reifarth,          (12)23166 15 3.6196E-4  5.68E-5            4.0E-4 5.10     0.80              5.63     5.63
-    1 30070   3 102M    25000.0           0.00792   4.3E-4                                       R.Reifarth,          (12)23166 15 4.0376E-4 6.336E-5            4.3E-4 5.10     0.80              5.43     5.43
-    1 30070   3 102M    25000.0           0.00679   3.7E-4                                       R.Reifarth,          (12)23166 15 3.4616E-4 5.432E-5            3.7E-4 5.10     0.80              5.45     5.45
-    1 30070   3 102M    25000.0           0.00717   4.7E-4                                       R.Reifarth,          (12)23166 15 3.6553E-4 5.736E-5            4.7E-4 5.10     0.80              6.56     6.56
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 30070   3 102M    25000.0          7.0197-3 3.9548-4                                       R.Reifarth*,         (12)23166 15  3.5787-4  5.68E-5          3.9548-4 5.10     0.81              5.63     5.63                                        0.98869140.9886914
+    1 30070   3 102M    25000.0          7.8304-3 4.2514-4                                       R.Reifarth*,         (12)23166 15  3.9919-4 6.336E-5          4.2514-4 5.10     0.81              5.43     5.43                                        0.98869140.9886913
+    1 30070   3 102M    25000.0          6.7132-3 3.6582-4                                       R.Reifarth*,         (12)23166 15  3.4225-4 5.432E-5          3.6582-4 5.10     0.81              5.45     5.45                                        0.98869140.9886913
+    1 30070   3 102M    25000.0          7.0889-3 4.6468-4                                       R.Reifarth*,         (12)23166 15  3.6140-4 5.736E-5          4.6468-4 5.10     0.81              6.56     6.56                                        0.98869140.9886914
 #/C5DATA        0
 #/DATASET       23166015 
 #DATASET        231660162  20211119

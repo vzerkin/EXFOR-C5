@@ -23,6 +23,10 @@
 #REAC1          D,3N
 #PRODUCT        40-ZR-88
 #C4ReaCode      (D,3N),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.103%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -39,21 +43,33 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 39-Y-89(D,3N)40-ZR-88,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (39-Y-89(D,3N)40-ZR-88,,SIG)
+#+               #[1]#DECAY-DATA (40-ZR-88,83.4D,DG,392.9,0.972) #Ix_old=0.972
+#+                a1=0.972/0.973;             #[1]#DECAY-DATA: correction to new 392.87 keV gamma-yield per decay Zr-88 Ix_new=0.973
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.99897224
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        E2051003    0.998972    -           0.998972    -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          E2051003    CS          9           0.998972    0.998972    0.998972    -0.103%     1.00103     m0: {,F.Tarkanyi+,R,IAEA-TECDOC-1211,2001} : al27dx;::al27dx
 #C5DATA         9
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1002 39089   3  17      1.01E7            2.5E-4   2.0E-5                                       M.S.Uddin,           (07)E2051  3 1.6771E-5                     2.0E-5 6.71                       8        8
- 1002 39089   3  17      1.57E7            5.0E-4   4.0E-5                                       M.S.Uddin,           (07)E2051  3 3.3541E-5                     4.0E-5 6.71                       8        8
- 1002 39089   3  17      2.03E7             0.079   0.0043                                       M.S.Uddin,           (07)E2051  3 0.0052995                     0.0043 6.71                       5.44     5.44
- 1002 39089   3  17      2.41E7              0.42    0.022                                       M.S.Uddin,           (07)E2051  3 .02817446                      0.022 6.71                       5.24     5.24
- 1002 39089   3  17      2.76E7             0.633    0.032                                       M.S.Uddin,           (07)E2051  3 .04246293                      0.032 6.71                       5.06     5.06
- 1002 39089   3  17      3.07E7             0.716    0.036                                       M.S.Uddin,           (07)E2051  3 .04803074                      0.036 6.71                       5.03     5.03
- 1002 39089   3  17      3.37E7         0.7180001    0.035                                       M.S.Uddin,           (07)E2051  3 .04816491                      0.035 6.71                       4.87     4.87
- 1002 39089   3  17      3.64E7             0.613     0.03                                       M.S.Uddin,           (07)E2051  3 .04112129                       0.03 6.71                       4.89     4.89
- 1002 39089   3  17      3.91E7         0.5230001    0.026                                       M.S.Uddin,           (07)E2051  3 .03508391                      0.026 6.71                       4.97     4.97
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1002 39089   3  17      1.01E7          2.4974-4 1.9979-5                                       M.S.Uddin*,          (07)E2051  3  1.6754-5                   1.9979-5 6.71                       8        8                                           0.99897220.9989723
+ 1002 39089   3  17      1.57E7          4.9949-4 3.9959-5                                       M.S.Uddin*,          (07)E2051  3  3.3507-5                   3.9959-5 6.71                       8        8                                           0.99897220.9989723
+ 1002 39089   3  17      2.03E7         .07891881 4.2956-3                                       M.S.Uddin*,          (07)E2051  3  5.2941-3                   4.2956-3 6.71                       5.44     5.44                                        0.99897220.9989722
+ 1002 39089   3  17      2.41E7         0.4195683.02197739                                       M.S.Uddin*,          (07)E2051  3 0.0281455                  .02197739 6.71                       5.24     5.24                                        0.99897220.9989722
+ 1002 39089   3  17      2.76E7         0.6323494.03196711                                       M.S.Uddin*,          (07)E2051  3 .04241929                  .03196711 6.71                       5.06     5.06                                        0.99897220.9989722
+ 1002 39089   3  17      3.07E7         0.7152641 0.035963                                       M.S.Uddin*,          (07)E2051  3 .04798138                   0.035963 6.71                       5.03     5.03                                        0.99897220.9989722
+ 1002 39089   3  17      3.37E7         0.7172622.03496403                                       M.S.Uddin*,          (07)E2051  3 .04811541                  .03496403 6.71                       4.87     4.87                                        0.99897220.9989722
+ 1002 39089   3  17      3.64E7           0.61237.02996917                                       M.S.Uddin*,          (07)E2051  3 .04107903                  .02996917 6.71                       4.89     4.89                                        0.99897220.9989722
+ 1002 39089   3  17      3.91E7         0.5224626.02597328                                       M.S.Uddin*,          (07)E2051  3 .03504785                  .02597328 6.71                       4.97     4.97                                        0.99897220.9989722
 #/C5DATA        0
 #/DATASET       E2051003 
 #DATASET        E2051004   20080131

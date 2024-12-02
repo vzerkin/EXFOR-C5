@@ -340,10 +340,6 @@
 #CompNotes      ERR-ANALYS:(ERR-6,0.7,6.43)   ADDED AS COMMON:ERR-6,PER-CENT=0.7%
 #CompNotes      ERR-ANALYS:(ERR-7,3.1,5.4)    ADDED AS COMMON:ERR-7,PER-CENT=3.1%
 #CompNotes      ERR-ANALYS:(MONIT-ERR,9.,13.) ADDED AS COMMON:MONIT-ERR,PER-CENT=9.0%
-#CompNotes      RENORMALIZE(DEC-DAT): Data[*]-0.102%
-#CompNotes      MODIFY(DEC): dData
-#CompNotes      MODIFY(DEC): dTot
-#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -360,35 +356,23 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
-#C5CORR         #Reaction: 22-TI-0(A,X)21-SC-48,,SIG
-#+              dy=dy/y;                      #to rel. uncertainties
-#+               #[1]#---Reaction decay-data
-#+               #[1]#REACTION   (22-TI-0(A,X)21-SC-48,,SIG)
-#+               #[1]#DECAY-DATA (21-SC-48,1.82D,DG,1037.5,0.975) #Ix_old=0.975
-#+                a1=0.975/0.976;             #[1]#DECAY-DATA: correction to new 1037.522 keV gamma-yield per decay Sc-48 Ix_new=0.976
-#+                y=y*a1;                     #[1]#Renorm.factor: a1=0.9989754
-#+              dy=dy*y;                      #to abs. uncertainties
-#+
-#/C5CORR        O2304006    0.998975    -           0.998975    -
-#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
-#XCORR          O2304006    CS          11          0.998975    0.998975    0.998975    -0.102%     1.00103     m0: {,F.TARKANYI+,R,IAEA-TECDOC-1211,49,2001} : ti0ax;::ti0ax
 #C5DATA         11
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 2004 22000   39000      2.73E71800000.0 6.9928-5 9.9898-6           21048.9                     M.S.Uddin*,          (16)O2304  6  9.1202-6                   9.9898-6 13                         14.3     14.3                                        0.99897540.9989755
- 2004 22000   39000      2.84E71600000.0 1.5984-4 2.9969-5           21048.9                     M.S.Uddin*,          (16)O2304  6  2.0847-5                   2.9969-5 13                         18.8     18.8                                        0.99897540.9989753
- 2004 22000   39000      3.01E71600000.0 1.8981-4 2.9969-5           21048.9                     M.S.Uddin*,          (16)O2304  6  2.4755-5                   2.9969-5 13                         15.8     15.8                                        0.99897540.9989754
- 2004 22000   39000      3.13E71600000.0 1.9980-4 2.9969-5           21048.9                     M.S.Uddin*,          (16)O2304  6  2.6057-5                   2.9969-5 13                         15       15                                          0.99897540.9989754
- 2004 22000   39000      3.27E71400000.0 3.3965-4 4.9949-5           21048.9                     M.S.Uddin*,          (16)O2304  6  4.4299-5                   4.9949-5 13                         14.7     14.7                                        0.99897540.9989753
- 2004 22000   39000      3.39E71400000.0 3.8960-4 4.9949-5           21048.9                     M.S.Uddin*,          (16)O2304  6  5.0813-5                   4.9949-5 13                         12.8     12.8                                        0.99897540.9989754
- 2004 22000   39000      3.49E71400000.0 4.2956-4 5.9939-5           21048.9                     M.S.Uddin*,          (16)O2304  6  5.6025-5                   5.9939-5 13                         14       14                                          0.99897540.9989754
- 2004 22000   39000       3.6E71400000.0 4.7951-4 5.9939-5           21048.9                     M.S.Uddin*,          (16)O2304  6  6.2539-5                   5.9939-5 13                         12.5     12.5                                        0.99897540.9989754
- 2004 22000   39000      3.73E71400000.0 5.1947-4 6.9928-5           21048.9                     M.S.Uddin*,          (16)O2304  6  6.7751-5                   6.9928-5 13                         13.5     13.5                                        0.99897540.9989755
- 2004 22000   39000      3.83E71400000.0 5.6942-4 6.9928-5           21048.9                     M.S.Uddin*,          (16)O2304  6  7.4265-5                   6.9928-5 13                         12.3     12.3                                        0.99897540.9989755
- 2004 22000   39000      3.92E71400000.0 6.0938-4 6.9928-5           21048.9                     M.S.Uddin*,          (16)O2304  6  7.9476-5                   6.9928-5 13                         11.5     11.5                                        0.99897540.9989753
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 2004 22000   39000      2.73E71800000.0   7.0E-5   1.0E-5           21048.9                     M.S.Uddin,           (16)O2304  6 9.1296E-6                     1.0E-5 13                         14.3     14.3
+ 2004 22000   39000      2.84E71600000.0   1.6E-4   3.0E-5           21048.9                     M.S.Uddin,           (16)O2304  6 2.0868E-5                     3.0E-5 13                         18.8     18.8
+ 2004 22000   39000      3.01E71600000.0   1.9E-4   3.0E-5           21048.9                     M.S.Uddin,           (16)O2304  6  2.478E-5                     3.0E-5 13                         15.8     15.8
+ 2004 22000   39000      3.13E71600000.0   2.0E-4   3.0E-5           21048.9                     M.S.Uddin,           (16)O2304  6 2.6084E-5                     3.0E-5 13                         15       15
+ 2004 22000   39000      3.27E71400000.0   3.4E-4   5.0E-5           21048.9                     M.S.Uddin,           (16)O2304  6 4.4344E-5                     5.0E-5 13                         14.7     14.7
+ 2004 22000   39000      3.39E71400000.0   3.9E-4   5.0E-5           21048.9                     M.S.Uddin,           (16)O2304  6 5.0865E-5                     5.0E-5 13                         12.8     12.8
+ 2004 22000   39000      3.49E71400000.0   4.3E-4   6.0E-5           21048.9                     M.S.Uddin,           (16)O2304  6 5.6082E-5                     6.0E-5 13                         14       14
+ 2004 22000   39000       3.6E71400000.0   4.8E-4   6.0E-5           21048.9                     M.S.Uddin,           (16)O2304  6 6.2603E-5                     6.0E-5 13                         12.5     12.5
+ 2004 22000   39000      3.73E71400000.0   5.2E-4   7.0E-5           21048.9                     M.S.Uddin,           (16)O2304  6  6.782E-5                     7.0E-5 13                         13.5     13.5
+ 2004 22000   39000      3.83E71400000.0   5.7E-4   7.0E-5           21048.9                     M.S.Uddin,           (16)O2304  6 7.4341E-5                     7.0E-5 13                         12.3     12.3
+ 2004 22000   39000      3.92E71400000.0   6.1E-4   7.0E-5           21048.9                     M.S.Uddin,           (16)O2304  6 7.9558E-5                     7.0E-5 13                         11.5     11.5
 #/C5DATA        0
 #/DATASET       O2304006 
 #/C5M.2.3       1               5               5               0               90              

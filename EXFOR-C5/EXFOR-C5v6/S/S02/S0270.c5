@@ -200,6 +200,10 @@
 #C4ReaCode      (P,X),SIG
 #CompNotes      ERR-ANALYS:(ERR-S,,10.)       ADDED AS COMMON:ERR-S,PER-CENT=5.0%
 #CompNotes      ERR-ANALYS:(ERR-1,3.,5.)      ADDED AS COMMON:ERR-1,PER-CENT=3.0%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.636%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -216,16 +220,28 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 29-CU-0(P,X)29-CU-64,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (29-CU-0(P,X)29-CU-64,,SIG)
+#+               #[1]#DECAY-DATA (29-CU-64,12.70HR,DG,1345.77,0.00475) #Ix_old=0.00475
+#+                a1=0.00475/0.00472;         #[1]#DECAY-DATA: correction to new 1345.77 keV gamma-yield per decay Cu-64 Ix_new=0.00472
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0063559
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        S0270005    1.00636     -           1.00636     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          S0270005    CS          4           1.00636     1.00636     1.00636     +0.636%     1.00636                
 #C5DATA         4
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 29000   39000     1.435E7 410000.0  0.01537  0.00151           29064.9                     B.Liu,               (21)S0270  5 0.0010537 7.685E-4           0.00151 6.86     5                 9.82     9.82
- 1001 29000   39000     1.578E7 350000.0   0.0371  0.00301           29064.9                     B.Liu,               (21)S0270  5 0.0025434 0.001855           0.00301 6.86     5                 8.11     8.11
- 1001 29000   39000     1.712E7 290000.0  0.05497  0.00429           29064.9                     B.Liu,               (21)S0270  5 0.00376860.0027485           0.00429 6.86     5                 7.80     7.80
- 1001 29000   39000     1.838E7 220000.0  0.07095  0.00561           29064.9                     B.Liu,               (21)S0270  5 0.00486410.0035475           0.00561 6.86     5                 7.91     7.91
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 29000   39000     1.435E7 410000.0.01546769 1.5196-3           29064.9                     B.Liu*,              (21)S0270  5  1.0604-3 7.685E-4          1.5196-3 6.86     4.97              9.82     9.82                                        1.00635591.0063559
+ 1001 29000   39000     1.578E7 350000.00.0373358 3.0291-3           29064.9                     B.Liu*,              (21)S0270  5  2.5596-3 0.001855          3.0291-3 6.86     4.97              8.11     8.11                                        1.00635591.0063559
+ 1001 29000   39000     1.712E7 290000.0.05531938 4.3173-3           29064.9                     B.Liu*,              (21)S0270  5  3.7926-30.0027485          4.3173-3 6.86     4.97              7.80     7.80                                        1.00635591.0063559
+ 1001 29000   39000     1.838E7 220000.0.07140095 5.6457-3           29064.9                     B.Liu*,              (21)S0270  5  4.8950-30.0035475          5.6457-3 6.86     4.97              7.91     7.91                                        1.00635591.0063558
 #/C5DATA        0
 #/DATASET       S0270005 
 #DATASET        S0270006   20220520

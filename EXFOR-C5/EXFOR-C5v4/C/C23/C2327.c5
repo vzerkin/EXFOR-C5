@@ -836,6 +836,9 @@
 #REAC1          P,X
 #PRODUCT        29-CU-64
 #C4ReaCode      (P,X),SIG
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.636%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -852,18 +855,30 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 29-CU-0(P,X)29-CU-64,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (29-CU-0(P,X)29-CU-64,,SIG)
+#+               #[1]#DECAY-DATA (29-CU-64,12.701HR,DG,1345.77,0.00475) #Ix_old=0.00475
+#+                a1=0.00475/0.00472;         #[1]#DECAY-DATA: correction to new 1345.77 keV gamma-yield per decay Cu-64 Ix_new=0.00472
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0063559
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        C2327017    1.00636     -           1.00636     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          C2327017    CS          6           1.00636     1.00636     1.00636     +0.636%     1.00636                
 #C5DATA         6
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 1001 29000   39000     4.105E71620000.0.06330001   0.0036           29064.9                     A.S.Voyles,          (18)C2327 17                               0.0036                            5.69     5.69
- 1001 29000   39000      5.21E71250000.0   0.0557    0.003           29064.9                     A.S.Voyles,          (18)C2327 17                                0.003                            5.39     5.39
- 1001 29000   39000     6.158E71030000.0   0.0502   0.0028           29064.9                     A.S.Voyles,          (18)C2327 17                               0.0028                            5.58     5.58
- 1001 29000   39000     7.017E7 910000.0   0.0455   0.0027           29064.9                     A.S.Voyles,          (18)C2327 17                               0.0027                            5.93     5.93
- 1001 29000   39000     7.995E7 670000.0   0.0428   0.0024           29064.9                     A.S.Voyles,          (18)C2327 17                               0.0024                            5.61     5.61
- 1001 29000   39000     8.974E7 480000.0   0.0387   0.0027           29064.9                     A.S.Voyles,          (18)C2327 17                               0.0027                            6.98     6.98
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 1001 29000   39000     4.105E71620000.0.06370234 3.6229-3           29064.9                     A.S.Voyles*,         (18)C2327 17                             3.6229-3                            5.69     5.69                                        1.00635591.0063559
+ 1001 29000   39000      5.21E71250000.0.05605402 3.0191-3           29064.9                     A.S.Voyles*,         (18)C2327 17                             3.0191-3                            5.39     5.39                                        1.00635591.0063559
+ 1001 29000   39000     6.158E71030000.0.05051906 2.8178-3           29064.9                     A.S.Voyles*,         (18)C2327 17                             2.8178-3                            5.58     5.58                                        1.00635591.0063559
+ 1001 29000   39000     7.017E7 910000.0.04578919 2.7172-3           29064.9                     A.S.Voyles*,         (18)C2327 17                             2.7172-3                            5.93     5.93                                        1.00635591.0063559
+ 1001 29000   39000     7.995E7 670000.0.04307203 2.4153-3           29064.9                     A.S.Voyles*,         (18)C2327 17                             2.4153-3                            5.61     5.61                                        1.00635591.0063559
+ 1001 29000   39000     8.974E7 480000.0.03894597 2.7172-3           29064.9                     A.S.Voyles*,         (18)C2327 17                             2.7172-3                            6.98     6.98                                        1.00635591.0063559
 #/C5DATA        0
 #/DATASET       C2327017 
 #DATASET        C2327018   20180404

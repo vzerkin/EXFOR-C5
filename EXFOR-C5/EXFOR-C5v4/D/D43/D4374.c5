@@ -213,6 +213,10 @@
 #PRODUCT        69-TM-167
 #C4ReaCode      (A,X)CUM,SIG
 #CompNotes      ERR-ANALYS:(ERR-S,1.0,10.)    ADDED AS COMMON:ERR-S,PER-CENT=1.0%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+1.69%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cumulative cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -229,17 +233,29 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 70-YB-0(A,X)69-TM-167,CUM,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (70-YB-0(A,X)69-TM-167,CUM,SIG)
+#+               #[1]#DECAY-DATA (69-TM-167,9.25D,DG,207.80,0.42) #Ix_old=0.42
+#+                a1=0.42/0.413;              #[1]#DECAY-DATA: correction to new 207.801 keV gamma-yield per decay Tm-167 Ix_new=0.413
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0169492
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        D4374005    1.01695     -           1.01695     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          D4374005    CS          5           1.01695     1.01695     1.01695     +1.69%      1.01695     m0: {,F.Tarkanyi+,R,IAEA-NDS-1211,49,2001} : ti0ax;::ti0ax
 #C5DATA         5
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData               ZAP                  
 #Units                       EV       EV        B        B            NO-DIM                  
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
- 2004 70000   39001      2.67E7 600000.0   1.9E-4   7.0E-5           69167.9                     F.Tarkanyi,          (17)D4374  5 2.0464E-5   1.9E-6            7.0E-5 10.8     1                 36.8     36.8
- 2004 70000   39001      2.96E7 500000.0   3.2E-4   6.0E-5           69167.9                     F.Tarkanyi,          (17)D4374  5 3.4465E-5   3.2E-6            6.0E-5 10.8     1                 18.8     18.8
- 2004 70000   39001      3.23E7 400000.0   3.7E-4   9.0E-5           69167.9                     F.Tarkanyi,          (17)D4374  5  3.985E-5   3.7E-6            9.0E-5 10.8     1                 24.3     24.3
- 2004 70000   39001      3.48E7 400000.0   3.6E-4   1.8E-4           69167.9                     F.Tarkanyi,          (17)D4374  5 3.8773E-5   3.6E-6            1.8E-4 10.8     1                 50       50
- 2004 70000   39001      3.72E7 300000.0   3.8E-4   1.6E-4           69167.9                     F.Tarkanyi,          (17)D4374  5 4.0927E-5   3.8E-6            1.6E-4 10.8     1                 42.1     42.1
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+ 2004 70000   39001      2.67E7 600000.0 1.9322-4 7.1186-5           69167.9                     F.Tarkanyi*,         (17)D4374  5  2.0811-5   1.9E-6          7.1186-5 10.8     0.98              36.8     36.8                                        1.01694921.0169492
+ 2004 70000   39001      2.96E7 500000.0 3.2542-4 6.1017-5           69167.9                     F.Tarkanyi*,         (17)D4374  5  3.5049-5   3.2E-6          6.1017-5 10.8     0.98              18.8     18.8                                        1.01694921.0169492
+ 2004 70000   39001      3.23E7 400000.0 3.7627-4 9.1525-5           69167.9                     F.Tarkanyi*,         (17)D4374  5  4.0525-5   3.7E-6          9.1525-5 10.8     0.98              24.3     24.3                                        1.01694921.0169492
+ 2004 70000   39001      3.48E7 400000.0 3.6610-4 1.8305-4           69167.9                     F.Tarkanyi*,         (17)D4374  5  3.9430-5   3.6E-6          1.8305-4 10.8     0.98              50       50                                          1.01694921.0169492
+ 2004 70000   39001      3.72E7 300000.0 3.8644-4 1.6271-4           69167.9                     F.Tarkanyi*,         (17)D4374  5  4.1621-5   3.8E-6          1.6271-4 10.8     0.98              42.1     42.1                                        1.01694921.0169492
 #/C5DATA        0
 #/DATASET       D4374005 
 #/C5.2.3        1               4               4               0               43              

@@ -262,6 +262,10 @@
 #C4ReaCode      (N,2N),SIG
 #CompNotes      ERR-ANALYS:(ERR-S,0.5,1.1)    ADDED AS COMMON:ERR-S,PER-CENT=0.5%
 #CompNotes      ERR-ANALYS:(MONIT-ERR,1.5,3.) ADDED AS COMMON:MONIT-ERR,PER-CENT=1.5%
+#CompNotes      RENORMALIZE(DEC-DAT): Data[*]+0.207%
+#CompNotes      MODIFY(DEC): dData
+#CompNotes      MODIFY(DEC): dTot
+#CompNotes      MODIFY(DEC): dSys
 #Quantity       Cross section
 #DataUnits0     B
 #DataUnits      ?
@@ -278,15 +282,27 @@
 #C5EXT1         132         (4F9.0)     dSys,dStat,dOther,dTot //Absolute fully correlated, uncerrelated, partially correlated and total uncertainties
 #C5EXT2         168         (9F9.0)     dSys,dStat,dOther,dTotal,dData,M0,dM0,M1,dM1 //Relative uncertainties and monitor data
 #+                                    //dSys,dStat,dOther,dTot,dData,M0,dM0,M1,dM1:: in per-cents; M0:old montor;  M1:new monitor
+#C5CORR         #Reaction: 58-CE-142(N,2N)58-CE-141,,SIG
+#+              dy=dy/y;                      #to rel. uncertainties
+#+               #[1]#---Reaction decay-data
+#+               #[1]#REACTION   (58-CE-142(N,2N)58-CE-141,,SIG)
+#+               #[1]#DECAY-DATA (58-CE-141,32.5D,DG,145.44,0.484) #Ix_old=0.484
+#+                a1=0.484/0.483;             #[1]#DECAY-DATA: correction to new 145.4433 keV gamma-yield per decay Ce-141 Ix_new=0.483
+#+                y=y*a1;                     #[1]#Renorm.factor: a1=1.0020703
+#+              dy=dy*y;                      #to abs. uncertainties
+#+
+#/C5CORR        32514005    1.00207     -           1.00207     -
+#XCORRvars      DatasetID   ReacType    nPnt        Fc_min      Fc_Max      Fc_ave      Update_ave  max:Fc,1/Fc Monit0      
+#XCORR          32514005    CS          3           1.00207     1.00207     1.00207     +0.207%     1.00207                
 #C5DATA         3
 #C.M.Flag       0000                                                                            
 #Headers                     EN      dEN     Data    dData                                    
 #Units                       EV       EV        B        B                                    
-#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1    
-#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
-    1 58142   3  16      1.35E7  70000.02.0500002      0.1                                       Kong Xiangzhong,     (95)32514  5 .04548275  0.01025               0.1 2.22     0.50              4.88     4.88
-    1 58142   3  16     1.418E7  70000.02.0800002      0.1                                       Kong Xiangzhong,     (95)32514  5 .04614836   0.0104               0.1 2.22     0.50              4.81     4.81
-    1 58142   3  16      1.48E7 110000.02.0430002      0.1                                       Kong Xiangzhong,     (95)32514  5 .04532745 0.010215               0.1 2.22     0.50              4.89     4.89
+#Proj Targ M MF MT PXC   Energy  dEnergy     Data   dData Cos/LO/ZP dCos/LO/AP LVL/HL dLVL/HL I78 Refer (YY)              EntrySubP  dSys     dStat   dOther    dTot     dSys%    dStat%  dOther%   dTot%   dData%     M0      dM0       M1      dM1       Fc      FcErr  
+#---><---->o<-><-->ooo<-------><-------><-------><-------><-------><-------><-------><-------><-><-----------------------><---><->o<-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><-------><------->
+    1 58142   3  16      1.35E7  70000.02.0542443 0.100207                                       Kong Xiangzhong*,    (95)32514  5 .04557692  0.01025          0.100207 2.22     0.50              4.88     4.88                                        1.00207031.0020702
+    1 58142   3  16     1.418E7  70000.02.0843065 0.100207                                       Kong Xiangzhong*,    (95)32514  5 0.0462439   0.0104          0.100207 2.22     0.50              4.81     4.81                                        1.00207031.0020703
+    1 58142   3  16      1.48E7 110000.02.0472298 0.100207                                       Kong Xiangzhong*,    (95)32514  5 .04542129 0.010215          0.100207 2.22     0.50              4.89     4.89                                        1.00207031.0020702
 #/C5DATA        0
 #COVARIANCE     2               Generated
 #COMMENT        Default2. EXFOR software ver.2020-09-24, by V.Zerkin@iaea.org (IAEA-NDS)
@@ -301,9 +317,9 @@
 #COVARDATA      1           3           3
 #EnMin(eV)  EnMax(eV)   Data(b)     Std.dev.(%) Correlations(%)
 #----------><----------><----------><----------><---Values: separated by space; line length: unlimited....
-1.35E7      1.35E7      2.05        2.27         100
-1.418E7     1.418E7     2.08        2.27         48 100
-1.48E7      1.48E7      2.043       2.27         48 50 100
+1.35E7      1.35E7      2.05424     2.27         100
+1.418E7     1.418E7     2.08431     2.27         48 100
+1.48E7      1.48E7      2.04723     2.27         48 50 100
 #/COVARDATA
 #/COVARIANCE
 #/DATASET       32514005 
